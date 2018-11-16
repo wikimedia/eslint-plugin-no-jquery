@@ -3,7 +3,7 @@
 const rule = require('../rules/no-css')
 const RuleTester = require('eslint').RuleTester
 
-const error = 'Prefer getComputedStyle to $.css'
+const error = 'Prefer getComputedStyle to css'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-css', rule, {
