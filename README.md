@@ -1,6 +1,6 @@
 # eslint-plugin-jquery
 
-Disallow jQuery functions with native equivalents.
+Disallow jQuery functions with native equivalents. This is the Wikimedia-maintained fork of this project.
 
 ## Installation
 
