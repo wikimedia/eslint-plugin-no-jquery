@@ -3,8 +3,8 @@
 const rule = require('../rules/no-data')
 const RuleTester = require('eslint').RuleTester
 
-const error = 'Prefer WeakMap to $.data'
-const removeError = 'Prefer WeakMap to $.removeData'
+const error = 'Prefer WeakMap to data'
+const removeError = 'Prefer WeakMap to removeData'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-data', rule, {
