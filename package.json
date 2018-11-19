@@ -1,8 +1,11 @@
 {
-  "name": "eslint-plugin-jquery",
+  "name": "@wikimedia/eslint-plugin-jquery",
   "version": "1.3.2-wmf.1",
   "description": "Disallow jQuery functions with native equivalents.",
-  "repository": "dgraham/eslint-plugin-jquery",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wikimedia/eslint-plugin-jquery.git"
+  },
   "license": "MIT",
   "keywords": [
     "eslint",
@@ -23,5 +26,13 @@
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
     "prettier": "^1.14.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/wikimedia/eslint-plugin-jquery/issues"
+  },
+  "homepage": "https://github.com/wikimedia/eslint-plugin-jquery#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {}
 }
