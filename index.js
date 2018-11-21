@@ -44,6 +44,7 @@ module.exports = {
     'no-proxy': require('./rules/no-proxy'),
     'no-ready': require('./rules/no-ready'),
     'no-serialize': require('./rules/no-serialize'),
+    'no-global-selector': require('./rules/no-global-selector'),
     'no-show': require('./rules/no-show'),
     'no-size': require('./rules/no-size'),
     'no-sizzle': require('./rules/no-sizzle'),
