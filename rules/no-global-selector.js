@@ -1,5 +1,8 @@
 'use strict'
 
+// HTML regex (modified from jQuery)
+const rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/
+
 module.exports = {
   meta: {
     docs: {},
@@ -26,8 +29,6 @@ module.exports = {
         ) {
           return
         }
-        // HTML regex (modified from jQuery)
-        const rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/
         const match = rquickExpr.exec(value)
         if (match) return
 
