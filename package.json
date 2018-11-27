@@ -2,14 +2,19 @@
   "name": "eslint-plugin-jquery",
   "version": "1.3.2-wmf.1",
   "description": "Disallow jQuery functions with native equivalents.",
-  "repository": "dgraham/eslint-plugin-jquery",
+  "repository": "wikimedia/eslint-plugin-jquery",
   "license": "MIT",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "David Graham",
+  "contributors": [
+    "David Graham",
+    "Ed Sanders",
+    "Brendan Abbott",
+    "Mackie Underdown"
+  ],
   "main": "index.js",
   "scripts": {
     "pretest": "eslint .",
