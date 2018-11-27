@@ -61,6 +61,7 @@ Add `jquery` to the plugins section of your `.eslintrc` configuration file. You 
     "jquery/no-map-collection": 2,
     "jquery/no-map-util": 2,
     "jquery/no-merge": 2,
+    "jquery/no-noop": 2,
     "jquery/no-param": 2,
     "jquery/no-parent": 2,
     "jquery/no-parents": 2,
