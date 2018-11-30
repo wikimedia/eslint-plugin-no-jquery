@@ -1,28 +1,28 @@
 'use strict'
 
-const rule = require('../rules/no-bind')
+const rule = require('../rules/no-live')
 const RuleTester = require('eslint').RuleTester
 
-const error = 'Prefer $.on/addEventListener to bind'
+const error = 'Prefer $.on/addEventListener to live'
 
 const ruleTester = new RuleTester()
-ruleTester.run('no-bind', rule, {
-  valid: ['bind()', '[].bind()', 'div.bind()', 'div.bind'],
+ruleTester.run('no-live', rule, {
+  valid: ['live()', '[].live()', 'div.live()', 'div.live'],
   invalid: [
     {
-      code: '$("div").bind()',
+      code: '$("div").live()',
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
-      code: '$div.bind()',
+      code: '$div.live()',
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
-      code: '$("div").first().bind()',
+      code: '$("div").first().live()',
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
-      code: '$("div").append($("input").bind())',
+      code: '$("div").append($("input").live())',
       errors: [{message: error, type: 'CallExpression'}]
     }
   ]
