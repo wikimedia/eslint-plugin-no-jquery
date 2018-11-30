@@ -1,28 +1,28 @@
 'use strict'
 
-const rule = require('../rules/no-bind')
+const rule = require('../rules/no-unbind')
 const RuleTester = require('eslint').RuleTester
 
-const error = 'Prefer $.on/addEventListener to bind'
+const error = 'Prefer $.off/removeEventListener to unbind'
 
 const ruleTester = new RuleTester()
-ruleTester.run('no-bind', rule, {
-  valid: ['bind()', '[].bind()', 'div.bind()', 'div.bind'],
+ruleTester.run('no-unbind', rule, {
+  valid: ['unbind()', '[].unbind()', 'div.unbind()', 'div.unbind'],
   invalid: [
     {
-      code: '$("div").bind()',
+      code: '$("div").unbind()',
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
-      code: '$div.bind()',
+      code: '$div.unbind()',
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
-      code: '$("div").first().bind()',
+      code: '$("div").first().unbind()',
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
-      code: '$("div").append($("input").bind())',
+      code: '$("div").append($("input").unbind())',
       errors: [{message: error, type: 'CallExpression'}]
     }
   ]
