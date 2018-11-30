@@ -17,7 +17,7 @@ module.exports = {
         if (utils.isjQuery(node)) {
           context.report({
             node: node,
-            message: 'Prefer off/removeEventListener to unbind'
+            message: 'Prefer $.off/removeEventListener to unbind'
           })
         }
       }

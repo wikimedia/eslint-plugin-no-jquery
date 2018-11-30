@@ -17,7 +17,7 @@ module.exports = {
         if (utils.isjQuery(node)) {
           context.report({
             node: node,
-            message: 'Prefer on/addEventListener to bind'
+            message: 'Prefer $.on/addEventListener to bind'
           })
         }
       }

@@ -3,7 +3,7 @@
 const rule = require('../rules/no-unbind')
 const RuleTester = require('eslint').RuleTester
 
-const error = 'Prefer off/removeEventListener to unbind'
+const error = 'Prefer $.off/removeEventListener to unbind'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-unbind', rule, {
