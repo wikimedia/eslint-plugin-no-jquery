@@ -17,6 +17,7 @@ module.exports = {
     'no-each': require('./rules/no-each'),
     'no-each-collection': require('./rules/no-each-collection'),
     'no-each-util': require('./rules/no-each-util'),
+    'no-event-shorthand': require('./rules/no-event-shorthand'),
     'no-extend': require('./rules/no-extend'),
     'no-fade': require('./rules/no-fade'),
     'no-filter': require('./rules/no-filter'),
