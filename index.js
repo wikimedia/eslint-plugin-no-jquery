@@ -70,6 +70,10 @@ module.exports = {
     'no-wrap': require('./rules/no-wrap')
   },
   configs: {
+    // Use this profile if you want to avoid all known deprecated jQuery tools.
+    deprecated: {
+      extends: 'plugin:jquery/deprecated-3.3'
+    },
     // Use this profile if you're writing code targetting jQuery 3.3.x environments.
     'deprecated-3.3': {
       extends: 'plugin:jquery/deprecated-3.0',
