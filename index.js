@@ -55,6 +55,7 @@ module.exports = {
     'no-toggle': require('./rules/no-toggle'),
     'no-trigger': require('./rules/no-trigger'),
     'no-trim': require('./rules/no-trim'),
+    'no-unique': require('./rules/no-unique'),
     'no-val': require('./rules/no-val'),
     'no-when': require('./rules/no-when'),
     'no-wrap': require('./rules/no-wrap')
