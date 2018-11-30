@@ -3,7 +3,7 @@
 const rule = require('../rules/no-delegate')
 const RuleTester = require('eslint').RuleTester
 
-const error = 'Prefer addEventListener to delegate'
+const error = 'Prefer $.on/addEventListener to delegate'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-delegate', rule, {
