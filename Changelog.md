@@ -1,4 +1,8 @@
 # eslint-plugin-jquery release history for Wikimedia fork of upstream project
+## v1.3.2-wmf.3
+* Revert package name, breaking npm package references to instead fix git references (Ed Sanders)
+
+
 ## v1.3.2-wmf.2
 * Provide version-specific deprecation profiles (James D. Forrester)
 * Move 'deprecated' profile as a pointer to latest, remove old 'slim' profile (Ed Sanders)
