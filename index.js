@@ -63,6 +63,7 @@ module.exports = {
     'no-trim': require('./rules/no-trim'),
     'no-type': require('./rules/no-type'),
     'no-unbind': require('./rules/no-unbind'),
+    'no-unique': require('./rules/no-unique'),
     'no-val': require('./rules/no-val'),
     'no-when': require('./rules/no-when'),
     'no-wrap': require('./rules/no-wrap')
