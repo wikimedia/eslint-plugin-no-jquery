@@ -45,6 +45,7 @@ module.exports = {
     'no-parents': require('./rules/no-parents'),
     'no-parse-html': require('./rules/no-parse-html'),
     'no-parse-html-literal': require('./rules/no-parse-html-literal'),
+    'no-parse-json': require('./rules/no-parse-json'),
     'no-prop': require('./rules/no-prop'),
     'no-proxy': require('./rules/no-proxy'),
     'no-ready': require('./rules/no-ready'),
