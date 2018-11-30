@@ -24,6 +24,19 @@ Add `jquery` to the plugins section of your `.eslintrc` configuration file. You 
 
 ```json
 {
+  "extends": "plugin:jquery/deprecated",
+  "plugins": [
+    "jquery"
+  ]
+}
+```
+
+The pre-set profile `plugin:jquery/deprecated` includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use profiles targetting specific versions of jQuery if you know the environment in which your code will operate. There are profiles for jQuery 3.3.x+ environments (`deprecated-3.3`), 3.0.x+ (`deprecated-3.0`), and several others for completeness.
+
+Alternatively, you can pick out rules individually:
+
+```json
+{
   "plugins": [
     "jquery"
   ],
