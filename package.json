@@ -1,5 +1,5 @@
 {
-  "name": "@wikimedia/eslint-plugin-jquery",
+  "name": "eslint-plugin-jquery",
   "version": "1.3.2-wmf.2",
   "description": "Disallow jQuery functions with native equivalents.",
   "repository": {
