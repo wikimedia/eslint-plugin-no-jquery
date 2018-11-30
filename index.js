@@ -70,91 +70,6 @@ module.exports = {
     'no-wrap': require('./rules/no-wrap')
   },
   configs: {
-    // Use this profile if you're writing code and want to avoid all known deprecated jQuery tools.
-    deprecated: {
-      rules: {
-        'jquery/no-ajax': 2,
-        'jquery/no-ajax-events': 2,
-        'jquery/no-and-self': 2,
-        'jquery/no-animate': 2,
-        'jquery/no-attr': 2,
-        'jquery/no-bind': 2,
-        'jquery/no-class': 2,
-        'jquery/no-clone': 2,
-        'jquery/no-closest': 2,
-        'jquery/no-css': 2,
-        'jquery/no-data': 2,
-        'jquery/no-deferred': 2,
-        'jquery/no-delegate': 2,
-        'jquery/no-die': 2,
-        'jquery/no-each': 2,
-        'jquery/no-each-collection': 2,
-        'jquery/no-each-util': 2,
-        'jquery/no-event-shorthand': 2,
-        'jquery/no-extend': 2,
-        'jquery/no-fade': 2,
-        'jquery/no-filter': 2,
-        'jquery/no-find': 2,
-        'jquery/no-global-eval': 2,
-        'jquery/no-grep': 2,
-        'jquery/no-has': 2,
-        'jquery/no-hide': 2,
-        'jquery/no-html': 2,
-        'jquery/no-in-array': 2,
-        'jquery/no-is-array': 2,
-        'jquery/no-is-function': 2,
-        'jquery/no-is-window': 2,
-        'jquery/no-is': 2,
-        'jquery/no-live': 2,
-        'jquery/no-load': 2,
-        'jquery/no-map': 2,
-        'jquery/no-map-collection': 2,
-        'jquery/no-map-util': 2,
-        'jquery/no-merge': 2,
-        'jquery/no-noop': 2,
-        'jquery/no-param': 2,
-        'jquery/no-parent': 2,
-        'jquery/no-parents': 2,
-        'jquery/no-parse-html': 2,
-        'jquery/no-parse-html-literal': 2,
-        'jquery/no-parse-json': 2,
-        'jquery/no-prop': 2,
-        'jquery/no-proxy': 2,
-        'jquery/no-ready': 2,
-        'jquery/no-serialize': 2,
-        'jquery/no-global-selector': 2,
-        'jquery/no-show': 2,
-        'jquery/no-size': 2,
-        'jquery/no-sizzle': 2,
-        'jquery/no-slide': 2,
-        'jquery/no-submit': 2,
-        'jquery/no-text': 2,
-        'jquery/no-toggle': 2,
-        'jquery/no-trigger': 2,
-        'jquery/no-trim': 2,
-        'jquery/no-type': 2,
-        'jquery/no-unbind': 2,
-        'jquery/no-undelegate': 2,
-        'jquery/no-unique': 2,
-        'jquery/no-val': 2,
-        'jquery/no-when': 2,
-        'jquery/no-wrap': 2
-      }
-    },
-    slim: {
-      rules: {
-        'jquery/no-ajax': 2,
-        'jquery/no-animate': 2,
-        'jquery/no-fade': 2,
-        'jquery/no-hide': 2,
-        'jquery/no-load': 2,
-        'jquery/no-param': 2,
-        'jquery/no-serialize': 2,
-        'jquery/no-show': 2,
-        'jquery/no-slide': 2,
-        'jquery/no-toggle': 2
-      }
-    },
     // Use this profile if you're writing code targetting jQuery 3.3.x environments.
     'deprecated-3.3': {
       extends: 'plugin:jquery/deprecated-3.0',
@@ -180,7 +95,7 @@ module.exports = {
     'deprecated-1.10': {
       extends: 'plugin:jquery/deprecated-1.9',
       rules: {
-        // FIXME: `$().context`
+        // FIXME: `$(...).context`
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.9.x environments.
@@ -196,22 +111,22 @@ module.exports = {
       rules: {
         'jquery/no-and-self': 2,
         // FIXME: `deferred.pipe()`
-        // FIXME: `$().error`
-        'jquery/no-load': 2,
-        'jquery/no-size': 2,
-        'jquery/no-toggle': 2
-        // FIXME: `$().unload`
+        // FIXME: `$(...).error()`
+        // FIXME: `$(...).load(fn)` (excluding `$(...).load(url,...)`)
+        'jquery/no-size': 2
+        // FIXME: `$(...).toggle(fn,fn) (excluding https://api.jquery.com/toggle/)
+        // FIXME: `$(...).unload()`
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.7.x environments.
     'deprecated-1.7': {
       extends: 'plugin:jquery/deprecated-1.3',
       rules: {
-        // FIXME: `deferred.isRejected()/isResolved`
+        // FIXME: `deferred.isRejected()/isResolved()`
         'jquery/no-die': 2,
-        'jquery/no-live': 2,
-        // FIXME: `$.sub() (removed 1.9)`
-        'jquery/no-global-selector': 2
+        'jquery/no-live': 2
+        // FIXME: `$.sub()`
+        // FIXME: `$(...).selector`
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.3.x environments.
