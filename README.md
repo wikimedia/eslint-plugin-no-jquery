@@ -30,6 +30,7 @@ Add `jquery` to the plugins section of your `.eslintrc` configuration file. You 
   "rules": {
     "jquery/no-ajax": 2,
     "jquery/no-ajax-events": 2,
+    "jquery/no-and-self": 2,
     "jquery/no-animate": 2,
     "jquery/no-attr": 2,
     "jquery/no-bind": 2,
@@ -61,6 +62,7 @@ Add `jquery` to the plugins section of your `.eslintrc` configuration file. You 
     "jquery/no-map-collection": 2,
     "jquery/no-map-util": 2,
     "jquery/no-merge": 2,
+    "jquery/no-noop": 2,
     "jquery/no-param": 2,
     "jquery/no-parent": 2,
     "jquery/no-parents": 2,
@@ -81,6 +83,7 @@ Add `jquery` to the plugins section of your `.eslintrc` configuration file. You 
     "jquery/no-trigger": 2,
     "jquery/no-trim": 2,
     "jquery/no-type": 2,
+    "jquery/no-unbind": 2,
     "jquery/no-val": 2,
     "jquery/no-when": 2,
     "jquery/no-wrap": 2
