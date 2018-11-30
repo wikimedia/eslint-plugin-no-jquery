@@ -4,6 +4,7 @@ module.exports = {
   rules: {
     'no-ajax': require('./rules/no-ajax'),
     'no-ajax-events': require('./rules/no-ajax-events'),
+    'no-and-self': require('./rules/no-and-self'),
     'no-animate': require('./rules/no-animate'),
     'no-attr': require('./rules/no-attr'),
     'no-bind': require('./rules/no-bind'),
@@ -57,6 +58,7 @@ module.exports = {
     'no-toggle': require('./rules/no-toggle'),
     'no-trigger': require('./rules/no-trigger'),
     'no-trim': require('./rules/no-trim'),
+    'no-unbind': require('./rules/no-unbind'),
     'no-val': require('./rules/no-val'),
     'no-when': require('./rules/no-when'),
     'no-wrap': require('./rules/no-wrap')
