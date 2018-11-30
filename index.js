@@ -78,8 +78,8 @@ module.exports = {
     'deprecated-3.3': {
       extends: 'plugin:jquery/deprecated-3.0',
       rules: {
-        'no-is-function': 2,
-        'no-is-window': 2
+        'jquery/no-is-function': 2,
+        'jquery/no-is-window': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 3.0.x environments.
