@@ -1,4 +1,24 @@
 # eslint-plugin-jquery release history for Wikimedia fork of upstream project
+## v1.3.2-wmf.2
+* Provide version-specific deprecation profiles (James D. Forrester)
+* Move 'deprecated' profile as a pointer to latest, remove old 'slim' profile (Ed Sanders)
+
+* New rule: `no-and-self` (Ed Sanders)
+* New rule: `no-die` and `no-live` (Ed Sanders)
+* New rule: `no-event-shorthand` (Ed Sanders)
+* New rule: `no-global-selector` (Ed Sanders)
+* New rule: `no-is-window` (Ed Sanders)
+* New rule: `no-noop` (Ed Sanders)
+* New rule: `no-parse-html-literal` (Ed Sanders)
+* New rule: `no-parse-json` (Ed Sanders)
+* New rule: `no-type` (Ed Sanders)
+* New rule: `no-unbind` (Ed Sanders)
+* New rule: `no-undelegate` (Ed Sanders)
+* New rule: `no-unique` (Ed Sanders)
+
+* Miscellaneous release-related clean-up (James D. Forrester)
+
+
 ## v1.3.2-wmf.1
 * New rule: `no-is-array` (Mackie Underdown)
 * New rule: `no-is-function` (Brendan Abbott; renamed by Ed Sanders pre-release)
