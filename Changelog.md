@@ -1,4 +1,8 @@
 # eslint-plugin-jquery release history for Wikimedia fork of upstream project
+## v1.3.2-wmf.4
+* Fix typo in profile listing (Ed Sanders)
+
+
 ## v1.3.2-wmf.3
 * Revert package name, breaking npm package references to instead fix git references (Ed Sanders)
 
