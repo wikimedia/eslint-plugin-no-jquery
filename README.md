@@ -84,6 +84,7 @@ Add `jquery` to the plugins section of your `.eslintrc` configuration file. You 
     "jquery/no-toggle": 2,
     "jquery/no-trigger": 2,
     "jquery/no-trim": 2,
+    "jquery/no-type": 2,
     "jquery/no-unbind": 2,
     "jquery/no-val": 2,
     "jquery/no-when": 2,
