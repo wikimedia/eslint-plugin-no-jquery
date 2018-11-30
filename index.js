@@ -35,6 +35,7 @@ module.exports = {
     'no-map-collection': require('./rules/no-map-collection'),
     'no-map-util': require('./rules/no-map-util'),
     'no-merge': require('./rules/no-merge'),
+    'no-noop': require('./rules/no-noop'),
     'no-param': require('./rules/no-param'),
     'no-parent': require('./rules/no-parent'),
     'no-parents': require('./rules/no-parents'),
