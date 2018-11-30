@@ -29,6 +29,7 @@ module.exports = {
     'no-in-array': require('./rules/no-in-array'),
     'no-is-array': require('./rules/no-is-array'),
     'no-is-function': require('./rules/no-is-function'),
+    'no-is-window': require('./rules/no-is-window'),
     'no-is': require('./rules/no-is'),
     'no-load': require('./rules/no-load'),
     'no-map': require('./rules/no-map'),
