@@ -1,28 +1,28 @@
 'use strict'
 
-const rule = require('../rules/no-bind')
+const rule = require('../rules/no-and-self')
 const RuleTester = require('eslint').RuleTester
 
-const error = 'Prefer $.on/addEventListener to bind'
+const error = 'Prefer $.addBack to $.andSelf'
 
 const ruleTester = new RuleTester()
-ruleTester.run('no-bind', rule, {
-  valid: ['bind()', '[].bind()', 'div.bind()', 'div.bind'],
+ruleTester.run('no-andSelf', rule, {
+  valid: ['andSelf()', '[].andSelf()', 'div.andSelf()', 'div.andSelf'],
   invalid: [
     {
-      code: '$("div").bind()',
+      code: '$("div").andSelf()',
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
-      code: '$div.bind()',
+      code: '$div.andSelf()',
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
-      code: '$("div").first().bind()',
+      code: '$("div").first().andSelf()',
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
-      code: '$("div").append($("input").bind())',
+      code: '$("div").append($("input").andSelf())',
       errors: [{message: error, type: 'CallExpression'}]
     }
   ]
