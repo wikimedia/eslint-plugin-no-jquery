@@ -45,6 +45,7 @@ Add `jquery` to the plugins section of your `.eslintrc` configuration file. You 
     "jquery/no-each": 2,
     "jquery/no-each-collection": 2,
     "jquery/no-each-util": 2,
+    "jquery/no-event-shorthand": 2,
     "jquery/no-extend": 2,
     "jquery/no-fade": 2,
     "jquery/no-filter": 2,
