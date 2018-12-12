@@ -3,10 +3,10 @@
 const rule = require('../rules/no-fade')
 const RuleTester = require('eslint').RuleTester
 
-const inError = 'fadeIn is not allowed'
-const outError = 'fadeOut is not allowed'
-const toError = 'fadeTo is not allowed'
-const toggleError = 'fadeToggle is not allowed'
+const inError = 'Prefer CSS transitions to $.fadeIn'
+const outError = 'Prefer CSS transitions to $.fadeOut'
+const toError = 'Prefer CSS transitions to $.fadeTo'
+const toggleError = 'Prefer CSS transitions to $.fadeToggle'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-fade', rule, {
