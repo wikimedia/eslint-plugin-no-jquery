@@ -3,9 +3,9 @@
 const rule = require('../rules/no-slide')
 const RuleTester = require('eslint').RuleTester
 
-const downError = '$.slideDown is not allowed'
-const toggleError = '$.slideToggle is not allowed'
-const upError = '$.slideUp is not allowed'
+const downError = 'Prefer CSS transitions to $.slideDown'
+const toggleError = 'Prefer CSS transitions to $.slideToggle'
+const upError = 'Prefer CSS transitions to $.slideUp'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-slide', rule, {

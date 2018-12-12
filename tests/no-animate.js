@@ -3,7 +3,7 @@
 const rule = require('../rules/no-animate')
 const RuleTester = require('eslint').RuleTester
 
-const error = 'animate is not allowed'
+const error = 'Prefer CSS transitions to $.animate'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-animate', rule, {

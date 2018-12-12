@@ -17,7 +17,7 @@ module.exports = {
         if (utils.isjQuery(node)) {
           context.report({
             node: node,
-            message: 'animate is not allowed'
+            message: 'Prefer CSS transitions to $.animate'
           })
         }
       }
