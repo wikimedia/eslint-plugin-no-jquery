@@ -45,6 +45,7 @@ Alternatively, you can pick out rules individually:
     "jquery/no-ajax-events": 2,
     "jquery/no-and-self": 2,
     "jquery/no-animate": 2,
+    "jquery/no-animate-toggle": 2,
     "jquery/no-attr": 2,
     "jquery/no-bind": 2,
     "jquery/no-class": 2,

@@ -6,6 +6,7 @@ module.exports = {
     'no-ajax-events': require('./rules/no-ajax-events'),
     'no-and-self': require('./rules/no-and-self'),
     'no-animate': require('./rules/no-animate'),
+    'no-animate-toggle': require('./rules/no-animate-toggle'),
     'no-attr': require('./rules/no-attr'),
     'no-bind': require('./rules/no-bind'),
     'no-class': require('./rules/no-class'),
