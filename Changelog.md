@@ -1,4 +1,10 @@
 # eslint-plugin-jquery release history for Wikimedia fork of upstream project
+
+## v1.3.2-wmf.5
+* New rule: `no-animate-toggle` (Ed Sanders)
+* Add "Prefer CSS transitions" to animation rule messages (Ed Sanders)
+
+
 ## v1.3.2-wmf.4
 * Fix typo in profile listing (Ed Sanders)
 
