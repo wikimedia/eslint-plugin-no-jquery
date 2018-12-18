@@ -47,7 +47,8 @@ module.exports = {
         if (utils.isjQuery(node)) {
           context.report({
             node: node,
-            message: 'Prefer $.on to $.' + node.callee.property.name
+            message:
+              'Prefer $.on or $.trigger to $.' + node.callee.property.name
           })
         }
       }
