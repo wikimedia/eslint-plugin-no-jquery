@@ -3,6 +3,7 @@
 ## v1.3.2-wmf.5
 * New rule: `no-animate-toggle` (Ed Sanders)
 * Add "Prefer CSS transitions" to animation rule messages (Ed Sanders)
+* Add " or $.trigger" to `no-event-shorthand` warning (Ed Sanders)
 
 
 ## v1.3.2-wmf.4
