@@ -10,9 +10,13 @@ function traverse(node, test) {
         node = node.object
         if (node.property) {
           if (node.property.type === 'Identifier') {
+            // e.g. $foo in this.$foo.bar(), returns true
+            // or foo in $this.foo.bar(), returns false
             return test(node.property)
           }
           if (node.property.type === 'Literal') {
+            // e.g. 0 in $foo[0].bar()
+            // or 'prop' in $foo['prop'].bar()
             return false
           }
         }
