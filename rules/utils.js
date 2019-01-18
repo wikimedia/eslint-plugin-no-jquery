@@ -36,6 +36,5 @@ function isjQuery(node) {
 }
 
 module.exports = {
-  traverse: traverse,
   isjQuery: isjQuery
 }
