@@ -18,6 +18,10 @@ ruleTester.run('no-clone', rule, {
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
+      code: 'this.prop.$div.clone()',
+      errors: [{message: error, type: 'CallExpression'}]
+    },
+    {
       code: '$("div").first().clone()',
       errors: [{message: error, type: 'CallExpression'}]
     },
