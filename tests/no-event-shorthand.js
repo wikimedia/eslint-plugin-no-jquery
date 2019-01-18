@@ -54,6 +54,10 @@ forbidden.forEach(function(rule) {
       errors: [{message: error, type: 'CallExpression'}]
     },
     {
+      code: 'this.prop.$div.' + rule + '()',
+      errors: [{message: error, type: 'CallExpression'}]
+    },
+    {
       code: '$("div").first().' + rule + '()',
       errors: [{message: error, type: 'CallExpression'}]
     },
