@@ -19,6 +19,11 @@ ruleTester.run('no-animate-toggle', rule, {
     '$("div").toggle',
 
     '$div.toggle()',
+    '$div.toggle(false)',
+    '$div.toggle(true)',
+    '$div.toggle(variableCouldBeBoolean)',
+    '$div.toggle(!!"0")',
+    '$div.toggle(getBoolean())',
     '$("div").toggle()',
     '$("div").toggle'
   ],
@@ -28,20 +33,20 @@ ruleTester.run('no-animate-toggle', rule, {
       errors: [{message: showError, type: 'CallExpression'}]
     },
     {
-      code: '$div.show("fast")',
+      code: '$div.show(500)',
       errors: [{message: showError, type: 'CallExpression'}]
     },
     {
-      code: '$("div").first().show("fast")',
+      code: '$("div").first().show({duration:"slow"})',
       errors: [{message: showError, type: 'CallExpression'}]
     },
     {
-      code: '$("div").append($("input").show("fast"))',
+      code: '$("div").append($("input").show({duration:"slow"}))',
       errors: [{message: showError, type: 'CallExpression'}]
     },
 
     {
-      code: '$("div").hide(500)',
+      code: '$("div").hide("fast")',
       errors: [{message: hideError, type: 'CallExpression'}]
     },
     {
@@ -49,20 +54,20 @@ ruleTester.run('no-animate-toggle', rule, {
       errors: [{message: hideError, type: 'CallExpression'}]
     },
     {
-      code: '$("div").first().hide(500)',
+      code: '$("div").first().hide({duration:"slow"})',
       errors: [{message: hideError, type: 'CallExpression'}]
     },
     {
-      code: '$("div").append($("input").hide(500))',
+      code: '$("div").append($("input").hide({duration:"slow"}))',
       errors: [{message: hideError, type: 'CallExpression'}]
     },
 
     {
-      code: '$("div").toggle({duration:"slow"})',
+      code: '$("div").toggle("fast")',
       errors: [{message: toggleError, type: 'CallExpression'}]
     },
     {
-      code: '$div.toggle({duration:"slow"})',
+      code: '$div.toggle(500)',
       errors: [{message: toggleError, type: 'CallExpression'}]
     },
     {
