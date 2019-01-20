@@ -8,7 +8,18 @@ function traverse(node, test) {
         break
       case 'MemberExpression':
         node = node.object
-        if (test(node.property)) return true
+        if (node.property) {
+          if (node.property.type === 'Identifier') {
+            // e.g. $foo in this.$foo.bar(), returns true
+            // or foo in $this.foo.bar(), returns false
+            return test(node.property)
+          }
+          if (node.property.type === 'Literal') {
+            // e.g. 0 in $foo[0].bar()
+            // or 'prop' in $foo['prop'].bar()
+            return false
+          }
+        }
         break
       case 'Identifier':
         return test(node)
@@ -25,10 +36,15 @@ function traverse(node, test) {
 //
 // Examples
 //
-//   // $('div').find('p').first()
-//   // $div.find('p').first()
-//   // this.$div.find('p').first()
-//   isjQuery(firstNode) // => true
+//   Returns true for:
+//     $('div').find('p').focus()
+//     $div.find('p').focus()
+//     this.$div.find('p').focus()
+//
+//   Returns false for:
+//     div.focus()
+//     $div[0].focus()
+//     $div.remove.bind()
 //
 // Returns true if the function call node is attached to a jQuery element set.
 function isjQuery(node) {

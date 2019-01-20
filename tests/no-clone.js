@@ -7,7 +7,15 @@ const error = 'Prefer cloneNode to clone'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-clone', rule, {
-  valid: ['clone()', '[].clone()', 'div.clone()', 'div.clone'],
+  valid: [
+    'clone()',
+    '[].clone()',
+    'div.clone()',
+    'div.clone',
+    '$div.prop.clone()',
+    '$div["prop"].clone()',
+    '$div[0].clone()'
+  ],
   invalid: [
     {
       code: '$("div").clone()',
