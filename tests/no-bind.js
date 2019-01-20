@@ -7,7 +7,13 @@ const error = 'Prefer $.on/addEventListener to bind'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-bind', rule, {
-  valid: ['bind()', '[].bind()', 'div.bind()', 'div.bind'],
+  valid: [
+    'bind()',
+    '[].bind()',
+    'div.bind()',
+    'div.bind',
+    '$div.remove.bind($div)'
+  ],
   invalid: [
     {
       code: '$("div").bind()',
