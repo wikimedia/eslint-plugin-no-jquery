@@ -20,6 +20,7 @@ module.exports = {
     'no-each': require('./rules/no-each'),
     'no-each-collection': require('./rules/no-each-collection'),
     'no-each-util': require('./rules/no-each-util'),
+    'no-error-shorthand': require('./rules/no-error-shorthand'),
     'no-event-shorthand': require('./rules/no-event-shorthand'),
     'no-extend': require('./rules/no-extend'),
     'no-fade': require('./rules/no-fade'),
@@ -37,6 +38,7 @@ module.exports = {
     'no-is': require('./rules/no-is'),
     'no-live': require('./rules/no-live'),
     'no-load': require('./rules/no-load'),
+    'no-load-shorthand': require('./rules/no-load-shorthand'),
     'no-map': require('./rules/no-map'),
     'no-map-collection': require('./rules/no-map-collection'),
     'no-map-util': require('./rules/no-map-util'),
@@ -66,6 +68,7 @@ module.exports = {
     'no-unbind': require('./rules/no-unbind'),
     'no-undelegate': require('./rules/no-undelegate'),
     'no-unique': require('./rules/no-unique'),
+    'no-unload-shorthand': require('./rules/no-unload-shorthand'),
     'no-val': require('./rules/no-val'),
     'no-when': require('./rules/no-when'),
     'no-wrap': require('./rules/no-wrap')
@@ -116,11 +119,11 @@ module.exports = {
       rules: {
         'jquery/no-and-self': 2,
         // FIXME: `deferred.pipe()`
-        // FIXME: `$(...).error()`
-        // FIXME: `$(...).load(fn)` (excluding `$(...).load(url,...)`)
-        'jquery/no-size': 2
+        'jquery/no-error-shorthand': 2,
+        'jquery/no-load-shorthand': 2,
+        'jquery/no-size': 2,
         // FIXME: `$(...).toggle(fn,fn) (excluding https://api.jquery.com/toggle/)
-        // FIXME: `$(...).unload()`
+        'jquery/no-unload-shorthand': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.7.x environments.
