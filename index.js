@@ -51,6 +51,7 @@ module.exports = {
     'no-prop': require('./rules/no-prop'),
     'no-proxy': require('./rules/no-proxy'),
     'no-ready': require('./rules/no-ready'),
+    'no-ready-shorthand': require('./rules/no-ready-shorthand'),
     'no-serialize': require('./rules/no-serialize'),
     'no-global-selector': require('./rules/no-global-selector'),
     'no-show': require('./rules/no-show'),
@@ -93,6 +94,7 @@ module.exports = {
         'jquery/no-undelegate': 2,
         // FIXME: `$.fx.interval`
         'jquery/no-parse-json': 2,
+        'jquery/no-ready-shorthand': 2,
         'jquery/no-unique': 2
       }
     },
