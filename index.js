@@ -9,6 +9,8 @@ module.exports = {
     'no-animate-toggle': require('./rules/no-animate-toggle'),
     'no-attr': require('./rules/no-attr'),
     'no-bind': require('./rules/no-bind'),
+    'no-box-model': require('./rules/no-box-model'),
+    'no-browser': require('./rules/no-browser'),
     'no-class': require('./rules/no-class'),
     'no-clone': require('./rules/no-clone'),
     'no-closest': require('./rules/no-closest'),
@@ -61,6 +63,7 @@ module.exports = {
     'no-sizzle': require('./rules/no-sizzle'),
     'no-slide': require('./rules/no-slide'),
     'no-submit': require('./rules/no-submit'),
+    'no-support': require('./rules/no-support'),
     'no-text': require('./rules/no-text'),
     'no-toggle': require('./rules/no-toggle'),
     'no-trigger': require('./rules/no-trigger'),
@@ -110,7 +113,7 @@ module.exports = {
     'deprecated-1.9': {
       extends: 'plugin:jquery/deprecated-1.8',
       rules: {
-        // FIXME: `$.support`
+        'jquery/no-support': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.8.x environments.
@@ -140,8 +143,8 @@ module.exports = {
     // Use this profile if you're writing code targetting jQuery 1.3.x environments.
     'deprecated-1.3': {
       rules: {
-        // FIXME: `$.boxModel`
-        // FIXME: `$.browser`
+        'jquery/no-box-model': 2,
+        'jquery/no-browser': 2
       }
     }
   }
