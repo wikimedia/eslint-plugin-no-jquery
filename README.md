@@ -77,6 +77,7 @@ Alternatively, you can pick out rules individually:
     "jquery/no-in-array": 2,
     "jquery/no-is-array": 2,
     "jquery/no-is-function": 2,
+    "jquery/no-is-numeric": 2,
     "jquery/no-is-window": 2,
     "jquery/no-is": 2,
     "jquery/no-live": 2,
