@@ -42,6 +42,7 @@ module.exports = {
     return {
       CallExpression: function(node) {
         if (node.callee.type !== 'MemberExpression') return
+        if (node.callee.object.name === '$') return
         if (forbidden.indexOf(node.callee.property.name) === -1) return
 
         if (utils.isjQuery(node)) {
