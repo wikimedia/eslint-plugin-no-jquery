@@ -30,6 +30,7 @@ module.exports = {
       'click',
       'contextmenu',
       'dblclick',
+      'hover',
       'mousedown',
       'mouseenter',
       'mouseleave',
