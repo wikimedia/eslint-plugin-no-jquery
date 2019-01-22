@@ -9,7 +9,6 @@ module.exports = {
   create: function(context) {
     return {
       MemberExpression: function(node) {
-        if (node.type !== 'MemberExpression') return
         if (node.object.name !== '$') return
         if (node.property.name !== 'noop') return
 
