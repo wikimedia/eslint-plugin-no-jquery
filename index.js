@@ -12,6 +12,7 @@ module.exports = {
     'no-class': require('./rules/no-class'),
     'no-clone': require('./rules/no-clone'),
     'no-closest': require('./rules/no-closest'),
+    'no-context-prop': require('./rules/no-context-prop'),
     'no-css': require('./rules/no-css'),
     'no-data': require('./rules/no-data'),
     'no-deferred': require('./rules/no-deferred'),
@@ -52,6 +53,7 @@ module.exports = {
     'no-prop': require('./rules/no-prop'),
     'no-proxy': require('./rules/no-proxy'),
     'no-ready': require('./rules/no-ready'),
+    'no-selector-prop': require('./rules/no-selector-prop'),
     'no-serialize': require('./rules/no-serialize'),
     'no-global-selector': require('./rules/no-global-selector'),
     'no-show': require('./rules/no-show'),
@@ -101,7 +103,7 @@ module.exports = {
     'deprecated-1.10': {
       extends: 'plugin:jquery/deprecated-1.9',
       rules: {
-        // FIXME: `$(...).context`
+        'jquery/no-context-prop': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.9.x environments.
@@ -130,9 +132,9 @@ module.exports = {
       rules: {
         // FIXME: `deferred.isRejected()/isResolved()`
         'jquery/no-die': 2,
-        'jquery/no-live': 2
+        'jquery/no-live': 2,
         // FIXME: `$.sub()`
-        // FIXME: `$(...).selector`
+        'jquery/no-selector-prop': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.3.x environments.
