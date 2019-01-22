@@ -16,6 +16,18 @@ module.exports = {
         if (node.callee.type !== 'MemberExpression') return
         if (forbidden.indexOf(node.callee.property.name) === -1) return
         if (node.arguments.length === 0) return
+        if (
+          node.arguments.length === 1 &&
+          node.callee.property.name === 'toggle'
+        ) {
+          let possibleBool = true
+          const arg = node.arguments[0]
+          if (arg.type === 'Literal') {
+            possibleBool = typeof arg.value === 'boolean'
+          }
+          if (arg.type === 'ObjectExpression') possibleBool = false
+          if (possibleBool) return
+        }
 
         if (utils.isjQuery(node)) {
           context.report({
