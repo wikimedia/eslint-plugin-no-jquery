@@ -40,6 +40,7 @@ forbidden.forEach(function(rule) {
   const error = 'Prefer $.on or $.trigger to $.' + rule
   valid = valid.concat(
     rule + '()',
+    '$.' + rule + '()',
     '[].' + rule + '()',
     'div.' + rule + '()',
     'div.' + rule

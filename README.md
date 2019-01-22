@@ -62,6 +62,7 @@ Alternatively, you can pick out rules individually:
     "jquery/no-each": 2,
     "jquery/no-each-collection": 2,
     "jquery/no-each-util": 2,
+    "jQuery/no-error-shorthand": 2,
     "jquery/no-event-shorthand": 2,
     "jquery/no-extend": 2,
     "jquery/no-fade": 2,
@@ -80,6 +81,7 @@ Alternatively, you can pick out rules individually:
     "jquery/no-is": 2,
     "jquery/no-live": 2,
     "jquery/no-load": 2,
+    "jquery/no-load-shorthand": 2,
     "jquery/no-map": 2,
     "jquery/no-map-collection": 2,
     "jquery/no-map-util": 2,
@@ -111,6 +113,7 @@ Alternatively, you can pick out rules individually:
     "jquery/no-unbind": 2,
     "jquery/no-undelegate": 2,
     "jquery/no-unique": 2,
+    "jquery/no-unload-shorthand": 2,
     "jquery/no-val": 2,
     "jquery/no-when": 2,
     "jquery/no-wrap": 2
