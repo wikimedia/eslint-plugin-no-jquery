@@ -7,7 +7,7 @@ const error = 'Prefer typeof to $.isFunction'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-is-function', rule, {
-  valid: ['isFunction()', 'myClass.isFunction()'],
+  valid: ['isFunction()', 'myClass.isFunction()', '$div.isFunction()'],
   invalid: [
     {
       code: '$.isFunction()',
