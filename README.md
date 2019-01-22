@@ -96,6 +96,7 @@ Alternatively, you can pick out rules individually:
     "jquery/no-prop": 2,
     "jquery/no-proxy": 2,
     "jquery/no-ready": 2,
+    "jquery/no-ready-shorthand": 2,
     "jquery/no-global-selector": 2,
     "jquery/no-selector-prop": 2,
     "jquery/no-serialize": 2,
