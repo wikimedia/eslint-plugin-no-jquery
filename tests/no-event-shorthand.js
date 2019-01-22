@@ -25,6 +25,7 @@ const forbidden = [
   'click',
   'contextmenu',
   'dblclick',
+  'hover',
   'mousedown',
   'mouseenter',
   'mouseleave',
