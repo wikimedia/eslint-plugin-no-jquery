@@ -25,6 +25,7 @@ module.exports = {
     'no-fade': require('./rules/no-fade'),
     'no-filter': require('./rules/no-filter'),
     'no-find': require('./rules/no-find'),
+    'no-fx-interval': require('./rules/no-fx-interval'),
     'no-global-eval': require('./rules/no-global-eval'),
     'no-grep': require('./rules/no-grep'),
     'no-has': require('./rules/no-has'),
@@ -91,7 +92,7 @@ module.exports = {
         'jquery/no-unbind': 2,
         'jquery/no-delegate': 2,
         'jquery/no-undelegate': 2,
-        // FIXME: `$.fx.interval`
+        'jquery/no-fx-interval': 2,
         'jquery/no-parse-json': 2,
         'jquery/no-unique': 2
       }

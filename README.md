@@ -64,6 +64,7 @@ Alternatively, you can pick out rules individually:
     "jquery/no-fade": 2,
     "jquery/no-filter": 2,
     "jquery/no-find": 2,
+    "jquery/no-fx-interval": 2,
     "jquery/no-global-eval": 2,
     "jquery/no-grep": 2,
     "jquery/no-has": 2,
