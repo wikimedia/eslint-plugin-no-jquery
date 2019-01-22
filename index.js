@@ -9,9 +9,12 @@ module.exports = {
     'no-animate-toggle': require('./rules/no-animate-toggle'),
     'no-attr': require('./rules/no-attr'),
     'no-bind': require('./rules/no-bind'),
+    'no-box-model': require('./rules/no-box-model'),
+    'no-browser': require('./rules/no-browser'),
     'no-class': require('./rules/no-class'),
     'no-clone': require('./rules/no-clone'),
     'no-closest': require('./rules/no-closest'),
+    'no-context-prop': require('./rules/no-context-prop'),
     'no-css': require('./rules/no-css'),
     'no-data': require('./rules/no-data'),
     'no-deferred': require('./rules/no-deferred'),
@@ -26,6 +29,7 @@ module.exports = {
     'no-fade': require('./rules/no-fade'),
     'no-filter': require('./rules/no-filter'),
     'no-find': require('./rules/no-find'),
+    'no-fx-interval': require('./rules/no-fx-interval'),
     'no-global-eval': require('./rules/no-global-eval'),
     'no-grep': require('./rules/no-grep'),
     'no-has': require('./rules/no-has'),
@@ -53,6 +57,7 @@ module.exports = {
     'no-prop': require('./rules/no-prop'),
     'no-proxy': require('./rules/no-proxy'),
     'no-ready': require('./rules/no-ready'),
+    'no-selector-prop': require('./rules/no-selector-prop'),
     'no-serialize': require('./rules/no-serialize'),
     'no-global-selector': require('./rules/no-global-selector'),
     'no-show': require('./rules/no-show'),
@@ -60,6 +65,7 @@ module.exports = {
     'no-sizzle': require('./rules/no-sizzle'),
     'no-slide': require('./rules/no-slide'),
     'no-submit': require('./rules/no-submit'),
+    'no-support': require('./rules/no-support'),
     'no-text': require('./rules/no-text'),
     'no-toggle': require('./rules/no-toggle'),
     'no-trigger': require('./rules/no-trigger'),
@@ -94,7 +100,7 @@ module.exports = {
         'jquery/no-unbind': 2,
         'jquery/no-delegate': 2,
         'jquery/no-undelegate': 2,
-        // FIXME: `$.fx.interval`
+        'jquery/no-fx-interval': 2,
         'jquery/no-parse-json': 2,
         'jquery/no-unique': 2
       }
@@ -103,14 +109,14 @@ module.exports = {
     'deprecated-1.10': {
       extends: 'plugin:jquery/deprecated-1.9',
       rules: {
-        // FIXME: `$(...).context`
+        'jquery/no-context-prop': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.9.x environments.
     'deprecated-1.9': {
       extends: 'plugin:jquery/deprecated-1.8',
       rules: {
-        // FIXME: `$.support`
+        'jquery/no-support': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.8.x environments.
@@ -132,16 +138,16 @@ module.exports = {
       rules: {
         // FIXME: `deferred.isRejected()/isResolved()`
         'jquery/no-die': 2,
-        'jquery/no-live': 2
+        'jquery/no-live': 2,
         // FIXME: `$.sub()`
-        // FIXME: `$(...).selector`
+        'jquery/no-selector-prop': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.3.x environments.
     'deprecated-1.3': {
       rules: {
-        // FIXME: `$.boxModel`
-        // FIXME: `$.browser`
+        'jquery/no-box-model': 2,
+        'jquery/no-browser': 2
       }
     }
   }
