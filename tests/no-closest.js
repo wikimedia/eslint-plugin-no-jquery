@@ -3,7 +3,7 @@
 const rule = require('../rules/no-closest')
 const RuleTester = require('eslint').RuleTester
 
-const error = 'Prefer closest to closest'
+const error = 'Prefer Element.closest to $.closest'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-closest', rule, {

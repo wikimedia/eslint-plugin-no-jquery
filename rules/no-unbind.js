@@ -2,25 +2,7 @@
 
 const utils = require('./utils.js')
 
-module.exports = {
-  meta: {
-    docs: {},
-    schema: []
-  },
-
-  create: function(context) {
-    return {
-      CallExpression: function(node) {
-        if (node.callee.type !== 'MemberExpression') return
-        if (node.callee.property.name !== 'unbind') return
-
-        if (utils.isjQuery(node)) {
-          context.report({
-            node: node,
-            message: 'Prefer $.off/removeEventListener to unbind'
-          })
-        }
-      }
-    }
-  }
-}
+module.exports = utils.createCollectionMethodRule(
+  'unbind',
+  'Prefer $.off/removeEventListener to unbind'
+)

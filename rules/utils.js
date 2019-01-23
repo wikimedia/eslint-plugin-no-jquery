@@ -51,6 +51,108 @@ function isjQuery(node) {
   return traverse(node, id => !!id && id.name.startsWith('$'))
 }
 
+function createRule(create) {
+  return {
+    meta: {
+      docs: {},
+      schema: []
+    },
+    create: create
+  }
+}
+
+function createCollectionMethodRule(methods, message) {
+  methods = Array.isArray(methods) ? methods : [methods]
+  return createRule(function(context) {
+    return {
+      CallExpression: function(node) {
+        if (node.callee.type !== 'MemberExpression') return
+        const name = node.callee.property.name
+        if (methods.indexOf(name) === -1) return
+        if (node.callee.object.name === '$') return
+
+        if (isjQuery(node)) {
+          context.report({
+            node: node,
+            message:
+              typeof message === 'function'
+                ? message(node)
+                : message || '$.' + name + ' is not allowed'
+          })
+        }
+      }
+    }
+  })
+}
+
+function createCollectionPropertyRule(property, message) {
+  return createRule(function(context) {
+    return {
+      MemberExpression: function(node) {
+        const name = node.property.name
+        if (name !== property) return
+        if (node.parent.callee === node) return
+
+        if (isjQuery(node)) {
+          context.report({
+            node: node,
+            message:
+              typeof message === 'function'
+                ? message(node)
+                : message || '$.' + name + ' is not allowed'
+          })
+        }
+      }
+    }
+  })
+}
+
+function createUtilMethodRule(methods, message) {
+  methods = Array.isArray(methods) ? methods : [methods]
+  return createRule(function(context) {
+    return {
+      CallExpression: function(node) {
+        if (node.callee.type !== 'MemberExpression') return
+        const name = node.callee.property.name
+        if (methods.indexOf(name) === -1) return
+        if (node.callee.object.name !== '$') return
+
+        context.report({
+          node: node,
+          message:
+            typeof message === 'function'
+              ? message(node)
+              : message || '$.' + name + ' is not allowed'
+        })
+      }
+    }
+  })
+}
+
+function createUtilPropertyRule(property, message) {
+  return createRule(function(context) {
+    return {
+      MemberExpression: function(node) {
+        if (node.object.name !== '$') return
+        const name = node.property.name
+        if (name !== property) return
+
+        context.report({
+          node: node,
+          message:
+            typeof message === 'function'
+              ? message(node)
+              : message || '$.' + name + ' is not allowed'
+        })
+      }
+    }
+  })
+}
+
 module.exports = {
-  isjQuery: isjQuery
+  isjQuery: isjQuery,
+  createCollectionMethodRule: createCollectionMethodRule,
+  createCollectionPropertyRule: createCollectionPropertyRule,
+  createUtilMethodRule: createUtilMethodRule,
+  createUtilPropertyRule: createUtilPropertyRule
 }

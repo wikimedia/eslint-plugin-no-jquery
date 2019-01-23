@@ -1,23 +1,8 @@
 'use strict'
 
-module.exports = {
-  meta: {
-    docs: {},
-    schema: []
-  },
+const utils = require('./utils.js')
 
-  create: function(context) {
-    return {
-      CallExpression: function(node) {
-        if (node.callee.type !== 'MemberExpression') return
-        if (node.callee.object.name !== '$') return
-        if (node.callee.property.name !== 'type') return
-
-        context.report({
-          node: node,
-          message: 'Prefer typeof/instanceof to $.type'
-        })
-      }
-    }
-  }
-}
+module.exports = utils.createUtilMethodRule(
+  'type',
+  'Prefer typeof/instanceof to $.type'
+)

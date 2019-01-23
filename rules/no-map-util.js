@@ -1,23 +1,5 @@
 'use strict'
 
-module.exports = {
-  meta: {
-    docs: {},
-    schema: []
-  },
+const utils = require('./utils.js')
 
-  create: function(context) {
-    return {
-      CallExpression: function(node) {
-        if (node.callee.type !== 'MemberExpression') return
-        if (node.callee.object.name !== '$') return
-        if (node.callee.property.name !== 'map') return
-
-        context.report({
-          node: node,
-          message: 'Prefer Array#map to $.map'
-        })
-      }
-    }
-  }
-}
+module.exports = utils.createUtilMethodRule('map', 'Prefer Array#map to $.map')

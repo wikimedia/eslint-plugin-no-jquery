@@ -1,22 +1,5 @@
 'use strict'
 
-module.exports = {
-  meta: {
-    docs: {},
-    schema: []
-  },
+const utils = require('./utils.js')
 
-  create: function(context) {
-    return {
-      MemberExpression: function(node) {
-        if (node.object.name !== '$') return
-        if (node.property.name !== 'boxModel') return
-
-        context.report({
-          node: node,
-          message: '$.boxModel is not allowed'
-        })
-      }
-    }
-  }
-}
+module.exports = utils.createUtilPropertyRule('boxModel')
