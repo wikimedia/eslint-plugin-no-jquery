@@ -1,23 +1,5 @@
 'use strict'
 
-module.exports = {
-  meta: {
-    docs: {},
-    schema: []
-  },
+const utils = require('./utils.js')
 
-  create: function(context) {
-    return {
-      CallExpression: function(node) {
-        if (node.callee.type !== 'MemberExpression') return
-        if (node.callee.object.name !== '$') return
-        if (node.callee.property.name !== 'isWindow') return
-
-        context.report({
-          node: node,
-          message: '$.isWindow is not allowed'
-        })
-      }
-    }
-  }
-}
+module.exports = utils.createUtilMethodRule('isWindow')

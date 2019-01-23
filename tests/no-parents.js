@@ -3,7 +3,7 @@
 const rule = require('../rules/no-parents')
 const RuleTester = require('eslint').RuleTester
 
-const error = 'Prefer closest to $.parents'
+const error = 'Prefer Element.closest to $.parents'
 
 const ruleTester = new RuleTester()
 ruleTester.run('no-parents', rule, {

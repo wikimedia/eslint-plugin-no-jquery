@@ -2,25 +2,7 @@
 
 const utils = require('./utils.js')
 
-module.exports = {
-  meta: {
-    docs: {},
-    schema: []
-  },
-
-  create: function(context) {
-    return {
-      CallExpression: function(node) {
-        if (node.callee.type !== 'MemberExpression') return
-        if (node.callee.property.name !== 'parents') return
-
-        if (utils.isjQuery(node)) {
-          context.report({
-            node: node,
-            message: 'Prefer closest to $.parents'
-          })
-        }
-      }
-    }
-  }
-}
+module.exports = utils.createCollectionMethodRule(
+  'parents',
+  'Prefer Element.closest to $.parents'
+)
