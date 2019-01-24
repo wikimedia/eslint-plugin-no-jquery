@@ -50,6 +50,7 @@ module.exports = {
     'no-merge': require('./rules/no-merge'),
     'no-noop': require('./rules/no-noop'),
     'no-now': require('./rules/no-now'),
+    'no-on-ready': require('./rules/no-on-ready'),
     'no-param': require('./rules/no-param'),
     'no-parent': require('./rules/no-parent'),
     'no-parents': require('./rules/no-parents'),
@@ -131,6 +132,7 @@ module.exports = {
         // FIXME: `deferred.pipe()`
         'jquery/no-error-shorthand': 2,
         'jquery/no-load-shorthand': 2,
+        'jquery/no-on-ready': 2,
         'jquery/no-size': 2,
         // FIXME: `$(...).toggle(fn,fn) (excluding https://api.jquery.com/toggle/)
         'jquery/no-unload-shorthand': 2

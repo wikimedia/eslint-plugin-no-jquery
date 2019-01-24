@@ -89,6 +89,7 @@ Alternatively, you can pick out rules individually:
     "jquery/no-merge": 2,
     "jquery/no-noop": 2,
     "jquery/no-now": 2,
+    "jquery/no-on-ready": 2,
     "jquery/no-param": 2,
     "jquery/no-parent": 2,
     "jquery/no-parents": 2,
