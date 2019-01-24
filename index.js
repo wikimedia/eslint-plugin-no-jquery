@@ -34,6 +34,7 @@ module.exports = {
     'no-grep': require('./rules/no-grep'),
     'no-has': require('./rules/no-has'),
     'no-hide': require('./rules/no-hide'),
+    'no-hold-ready': require('./rules/no-hold-ready'),
     'no-html': require('./rules/no-html'),
     'no-in-array': require('./rules/no-in-array'),
     'no-is-array': require('./rules/no-is-array'),
@@ -67,6 +68,7 @@ module.exports = {
     'no-size': require('./rules/no-size'),
     'no-sizzle': require('./rules/no-sizzle'),
     'no-slide': require('./rules/no-slide'),
+    'no-sub': require('./rules/no-sub'),
     'no-submit': require('./rules/no-submit'),
     'no-support': require('./rules/no-support'),
     'no-text': require('./rules/no-text'),
@@ -143,7 +145,7 @@ module.exports = {
         // FIXME: `deferred.isRejected()/isResolved()`
         'jquery/no-die': 2,
         'jquery/no-live': 2,
-        // FIXME: `$.sub()`
+        'jquery/no-sub': 2,
         'jquery/no-selector-prop': 2
       }
     },
