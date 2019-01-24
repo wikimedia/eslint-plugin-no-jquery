@@ -6,7 +6,7 @@ const RuleTester = require('eslint').RuleTester
 const error = '.on("ready") is not allowed'
 
 const ruleTester = new RuleTester()
-ruleTester.run('no-animate-on', rule, {
+ruleTester.run('no-on-ready', rule, {
   valid: [
     '$(document).on("click", function(){})',
     '$(document).on()',
