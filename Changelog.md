@@ -1,5 +1,30 @@
 # eslint-plugin-jquery release history for Wikimedia fork of upstream project
 
+## v1.3.2-wmf.6
+* New rule: `no-box-model` (Ed Sanders)
+* New rule: `no-browser` (Ed Sanders)
+* New rule: `no-context-prop` (Ed Sanders)
+* New rule: `no-error-shorthand` (Ed Sanders)
+* New rule: `no-fx-interval` (Ed Sanders)
+* New rule: `no-hold-ready` (Ed Sanders)
+* New rule: `no-is-numeric` (Ed Sanders)
+* New rule: `no-load-shorthand` (Ed Sanders)
+* New rule: `no-now` (Ed Sanders)
+* New rule: `no-on-ready` (Ed Sanders)
+* New rule: `no-ready-shorthand` (Ed Sanders)
+* New rule: `no-selector-prop` (Ed Sanders)
+* New rule: `no-sub` (Ed Sanders)
+* New rule: `no-support` (Ed Sanders)
+* New rule: `no-unload-shorthand` (Ed Sanders)
+
+* Bug: Fix `isjQuery` util to match `$`-prefixed properties (Ed Sanders)
+* Bug: Fix `isjQuery` to not match methods of jQuery properties (Ed Sanders)
+* Bug: Only catch `toggle(arg)` if `arg` is definitely not a boolean (Ed Sanders)
+
+* Code: De-deduplicate rule generation (Ed Sanders)
+* Code: Remove useless export of traverse method (Ed Sanders)
+
+
 ## v1.3.2-wmf.5
 * New rule: `no-animate-toggle` (Ed Sanders)
 * Add "Prefer CSS transitions" to animation rule messages (Ed Sanders)
