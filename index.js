@@ -88,74 +88,74 @@ module.exports = {
   configs: {
     // Use this profile if you want to avoid all known deprecated jQuery tools.
     deprecated: {
-      extends: 'plugin:jquery/deprecated-3.3'
+      extends: 'plugin:no-jquery/deprecated-3.3'
     },
     // Use this profile if you're writing code targetting jQuery 3.3.x environments.
     'deprecated-3.3': {
-      extends: 'plugin:jquery/deprecated-3.0',
+      extends: 'plugin:no-jquery/deprecated-3.0',
       rules: {
-        'jquery/no-is-function': 2,
-        'jquery/no-is-window': 2
+        'no-jquery/no-is-function': 2,
+        'no-jquery/no-is-window': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 3.0.x environments.
     'deprecated-3.0': {
-      extends: 'plugin:jquery/deprecated-1.10',
+      extends: 'plugin:no-jquery/deprecated-1.10',
       rules: {
-        'jquery/no-bind': 2,
-        'jquery/no-unbind': 2,
-        'jquery/no-delegate': 2,
-        'jquery/no-undelegate': 2,
-        'jquery/no-fx-interval': 2,
-        'jquery/no-parse-json': 2,
-        'jquery/no-ready-shorthand': 2,
-        'jquery/no-unique': 2
+        'no-jquery/no-bind': 2,
+        'no-jquery/no-unbind': 2,
+        'no-jquery/no-delegate': 2,
+        'no-jquery/no-undelegate': 2,
+        'no-jquery/no-fx-interval': 2,
+        'no-jquery/no-parse-json': 2,
+        'no-jquery/no-ready-shorthand': 2,
+        'no-jquery/no-unique': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.10.x environments.
     'deprecated-1.10': {
-      extends: 'plugin:jquery/deprecated-1.9',
+      extends: 'plugin:no-jquery/deprecated-1.9',
       rules: {
-        'jquery/no-context-prop': 2
+        'no-jquery/no-context-prop': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.9.x environments.
     'deprecated-1.9': {
-      extends: 'plugin:jquery/deprecated-1.8',
+      extends: 'plugin:no-jquery/deprecated-1.8',
       rules: {
-        'jquery/no-support': 2
+        'no-jquery/no-support': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.8.x environments.
     'deprecated-1.8': {
-      extends: 'plugin:jquery/deprecated-1.7',
+      extends: 'plugin:no-jquery/deprecated-1.7',
       rules: {
-        'jquery/no-and-self': 2,
+        'no-jquery/no-and-self': 2,
         // FIXME: `deferred.pipe()`
-        'jquery/no-error-shorthand': 2,
-        'jquery/no-load-shorthand': 2,
-        'jquery/no-on-ready': 2,
-        'jquery/no-size': 2,
+        'no-jquery/no-error-shorthand': 2,
+        'no-jquery/no-load-shorthand': 2,
+        'no-jquery/no-on-ready': 2,
+        'no-jquery/no-size': 2,
         // FIXME: `$(...).toggle(fn,fn) (excluding https://api.jquery.com/toggle/)
-        'jquery/no-unload-shorthand': 2
+        'no-jquery/no-unload-shorthand': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.7.x environments.
     'deprecated-1.7': {
-      extends: 'plugin:jquery/deprecated-1.3',
+      extends: 'plugin:no-jquery/deprecated-1.3',
       rules: {
         // FIXME: `deferred.isRejected()/isResolved()`
-        'jquery/no-die': 2,
-        'jquery/no-live': 2,
-        'jquery/no-sub': 2,
-        'jquery/no-selector-prop': 2
+        'no-jquery/no-die': 2,
+        'no-jquery/no-live': 2,
+        'no-jquery/no-sub': 2,
+        'no-jquery/no-selector-prop': 2
       }
     },
     // Use this profile if you're writing code targetting jQuery 1.3.x environments.
     'deprecated-1.3': {
       rules: {
-        'jquery/no-box-model': 2,
-        'jquery/no-browser': 2
+        'no-jquery/no-box-model': 2,
+        'no-jquery/no-browser': 2
       }
     }
   }
