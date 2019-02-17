@@ -1,4 +1,6 @@
-# eslint-plugin-jquery release history for Wikimedia fork of upstream project
+# eslint-plugin-no-jquery release history
+
+# Release history as wikimedia/eslint-plugin-jquery
 
 ## v1.3.2-wmf.6
 * New rule: `no-box-model` (Ed Sanders)
