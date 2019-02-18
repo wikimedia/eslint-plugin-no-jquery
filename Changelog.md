@@ -1,5 +1,9 @@
 # eslint-plugin-no-jquery release history
 
+## v2.0.0
+* Renamed repository, rules and documentation to eslint-plugin-no-jquery (Ed Sanders)
+* Update eslint dev dependency to 5.14.0 (Ed Sanders)
+
 # Release history as wikimedia/eslint-plugin-jquery
 
 ## v1.3.2-wmf.6
