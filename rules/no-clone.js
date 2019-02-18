@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-const utils = require('./utils.js')
+const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
-  'clone',
-  'Prefer cloneNode to clone'
-)
+	'clone',
+	'Prefer cloneNode to clone'
+);

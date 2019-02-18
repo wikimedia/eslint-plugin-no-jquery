@@ -1,5 +1,5 @@
-'use strict'
+'use strict';
 
-const utils = require('./utils.js')
+const utils = require( './utils.js' );
 
-module.exports = utils.createUtilMethodRule('isWindow')
+module.exports = utils.createUtilMethodRule( 'isWindow' );

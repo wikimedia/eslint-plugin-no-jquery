@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-const utils = require('./utils.js')
+const utils = require( './utils.js' );
 
 module.exports = utils.createUtilMethodRule(
-  'parseHTML',
-  'Prefer createHTMLDocument to $.parseHTML'
-)
+	'parseHTML',
+	'Prefer createHTMLDocument to $.parseHTML'
+);

@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-const utils = require('./utils.js')
+const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
-  'delegate',
-  'Prefer $.on/addEventListener to delegate'
-)
+	'delegate',
+	'Prefer $.on/addEventListener to delegate'
+);

@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-const utils = require('./utils.js')
+const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
-  'ready',
-  'Prefer $ to $.ready'
-)
+	'ready',
+	'Prefer $ to $.ready'
+);

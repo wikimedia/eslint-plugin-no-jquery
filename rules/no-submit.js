@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-const utils = require('./utils.js')
+const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
-  'submit',
-  'Prefer dispatchEvent + form.submit() to $.submit'
-)
+	'submit',
+	'Prefer dispatchEvent + form.submit() to $.submit'
+);

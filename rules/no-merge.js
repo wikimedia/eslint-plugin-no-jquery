@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-const utils = require('./utils.js')
+const utils = require( './utils.js' );
 
 module.exports = utils.createUtilMethodRule(
-  'merge',
-  'Prefer Array#concat to $.merge'
-)
+	'merge',
+	'Prefer Array#concat to $.merge'
+);
