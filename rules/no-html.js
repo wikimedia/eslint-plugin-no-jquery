@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-const utils = require('./utils.js')
+const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
-  'html',
-  'Prefer innerHTML to $.html'
-)
+	'html',
+	'Prefer innerHTML to $.html'
+);
