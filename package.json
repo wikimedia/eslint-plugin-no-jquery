@@ -19,10 +19,10 @@
     "test": "mocha --reporter dot tests/"
   },
   "peerDependencies": {
-    "eslint": ">=5.7.0"
+    "eslint": ">=2.3.0"
   },
   "devDependencies": {
-    "eslint": "^5.14.0",
+    "eslint": "^5.13.0",
     "eslint-config-wikimedia": "^0.10.1",
     "mocha": "^5.2.0"
   },
