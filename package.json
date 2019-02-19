@@ -19,7 +19,7 @@
     "test": "mocha --reporter dot tests/"
   },
   "peerDependencies": {
-    "eslint": ">=5.7.0"
+    "eslint": ">=2.3.0"
   },
   "devDependencies": {
     "eslint": "^5.14.0",
