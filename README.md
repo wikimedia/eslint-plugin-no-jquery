@@ -44,7 +44,7 @@ Alternatively, you can pick out rules individually:
     "no-jquery/no-ajax": "error",
     "no-jquery/no-ajax-events": "error",
     "no-jquery/no-and-self": "error",
-    "no-jquery/no-animate": "error",
+    "no-jquery/no-animate": [ "error", { "allowScroll": true } ],
     "no-jquery/no-animate-toggle": "error",
     "no-jquery/no-attr": "error",
     "no-jquery/no-bind": "error",
