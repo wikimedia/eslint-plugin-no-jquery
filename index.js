@@ -12,6 +12,7 @@ module.exports = {
 		'no-box-model': require( './rules/no-box-model' ),
 		'no-browser': require( './rules/no-browser' ),
 		'no-class': require( './rules/no-class' ),
+		'no-class-state': require( './rules/no-class-state' ),
 		'no-clone': require( './rules/no-clone' ),
 		'no-closest': require( './rules/no-closest' ),
 		'no-context-prop': require( './rules/no-context-prop' ),
