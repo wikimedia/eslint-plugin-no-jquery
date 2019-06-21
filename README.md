@@ -22,13 +22,13 @@ $ npm install eslint-plugin-no-jquery --save-dev
 
 ## Usage
 
-Add `jquery` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `no-jquery` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
   "extends": "plugin:no-jquery/deprecated",
   "plugins": [
-    "jquery"
+    "no-jquery"
   ]
 }
 ```
@@ -40,7 +40,7 @@ Alternatively, you can pick out rules individually:
 ```json
 {
   "plugins": [
-    "jquery"
+    "no-jquery"
   ],
   "rules": {
     "no-jquery/no-ajax": "error",
@@ -53,6 +53,7 @@ Alternatively, you can pick out rules individually:
     "no-jquery/no-box-model": "error",
     "no-jquery/no-browser": "error",
     "no-jquery/no-class": "error",
+    "no-jquery/no-class-state": "error",
     "no-jquery/no-clone": "error",
     "no-jquery/no-closest": "error",
     "no-jquery/no-context-prop": "error",
