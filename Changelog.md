@@ -1,5 +1,12 @@
 # eslint-plugin-no-jquery release history
 
+## v2.1.0
+* New rule: `no-class-state` (Ed Sanders)
+
+* README: Fix plugin name (Maurício Meneghini Fauth)
+* build: Upgrade eslint-config-wikimedia to 0.12.0 (James D. Forrester)
+
+
 ## v2.0.0
 * New rule options: `[{allowScroll:true}]` in `no-animate` (Ed Sanders)
 
@@ -7,6 +14,7 @@
 * Update eslint dev dependency to 5.14.0 (Ed Sanders)
 
 # Release history as wikimedia/eslint-plugin-jquery
+
 
 ## v1.3.2-wmf.6
 * New rule: `no-box-model` (Ed Sanders)
