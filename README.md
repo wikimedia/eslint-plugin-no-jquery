@@ -53,6 +53,7 @@ Alternatively, you can pick out rules individually:
     "no-jquery/no-box-model": "error",
     "no-jquery/no-browser": "error",
     "no-jquery/no-class": "error",
+    "no-jquery/no-class-state": "error",
     "no-jquery/no-clone": "error",
     "no-jquery/no-closest": "error",
     "no-jquery/no-context-prop": "error",
