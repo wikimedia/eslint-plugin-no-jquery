@@ -5,7 +5,9 @@ const RuleTester = require( 'eslint' ).RuleTester;
 
 const error = 'Prefer $.on or $.trigger to $.load';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester( {
+	parserOptions: { ecmaVersion: 2015 }
+} );
 ruleTester.run( 'no-load-shorthand', rule, {
 	valid: [
 		'load()',
@@ -23,6 +25,10 @@ ruleTester.run( 'no-load-shorthand', rule, {
 		},
 		{
 			code: '$div.load(function() {})',
+			errors: [ { message: error, type: 'CallExpression' } ]
+		},
+		{
+			code: '$div.load(() => {})',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{

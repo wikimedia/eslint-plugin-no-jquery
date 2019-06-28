@@ -51,6 +51,10 @@ function isjQuery( node ) {
 	return traverse( node, ( id ) => !!id && id.name.startsWith( '$' ) );
 }
 
+function isFunction( node ) {
+	return node.type === 'FunctionExpression' || node.type === 'ArrowFunctionExpression';
+}
+
 function createRule( create ) {
 	return {
 		meta: {
@@ -167,6 +171,7 @@ function createUtilPropertyRule( property, message ) {
 
 module.exports = {
 	isjQuery: isjQuery,
+	isFunction: isFunction,
 	createCollectionMethodRule: createCollectionMethodRule,
 	createCollectionPropertyRule: createCollectionPropertyRule,
 	createUtilMethodRule: createUtilMethodRule,
