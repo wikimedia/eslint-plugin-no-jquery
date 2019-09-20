@@ -22,8 +22,8 @@
   },
   "devDependencies": {
     "eslint": "^5.14.0",
-    "eslint-config-wikimedia": "^0.12.0",
-    "mocha": "^5.2.0"
+    "eslint-config-wikimedia": "^0.14.1",
+    "mocha": "^6.2.0"
   },
   "bugs": {
     "url": "https://github.com/wikimedia/eslint-plugin-no-jquery/issues"
