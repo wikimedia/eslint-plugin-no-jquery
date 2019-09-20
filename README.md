@@ -56,6 +56,7 @@ Alternatively, you can pick out rules individually:
     "no-jquery/no-class-state": "error",
     "no-jquery/no-clone": "error",
     "no-jquery/no-closest": "error",
+    "no-jquery/no-constructor-attributes": "error",
     "no-jquery/no-context-prop": "error",
     "no-jquery/no-css": "error",
     "no-jquery/no-data": "error",

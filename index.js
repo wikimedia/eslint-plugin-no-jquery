@@ -15,6 +15,7 @@ module.exports = {
 		'no-class-state': require( './rules/no-class-state' ),
 		'no-clone': require( './rules/no-clone' ),
 		'no-closest': require( './rules/no-closest' ),
+		'no-constructor-attributes': require( './rules/no-constructor-attributes' ),
 		'no-context-prop': require( './rules/no-context-prop' ),
 		'no-css': require( './rules/no-css' ),
 		'no-data': require( './rules/no-data' ),

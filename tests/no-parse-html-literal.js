@@ -17,6 +17,7 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 		'$(function() {})',
 		'$("<div>")',
 		'$("<div></div>")',
+		'$("<div>", {width:100})',
 		'$("<div/>")',
 		'$("<div />")',
 		'$("<" + "div" + ">")',
