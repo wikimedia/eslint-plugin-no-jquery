@@ -29,7 +29,7 @@ ruleTester.run( 'no-constructor-attributes', rule, {
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		// This isn't a documented signature of $.add, but due to the
-		// way it is imlpemented it does work
+		// way it is implemented it does work
 		{
 			code: '$div.add("<div>", {width:100, class:"foo"})',
 			errors: [ { message: error, type: 'CallExpression' } ]
