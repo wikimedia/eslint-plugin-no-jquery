@@ -13,39 +13,55 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 		'$("")',
 		'$([])',
 		'$(variable)',
+		'$(variable1 = variable2)',
 		'$(function() {})',
 		'$("<div>")',
+		'$("<div></div>")',
 		'$("<div/>")',
 		'$("<div />")',
+		'$("<" + "div" + ">")',
+		// $.html
+		'$div.html()',
+		'$div.html(variable)',
+		// $.append
+		'$div.append(variable)',
+		// $.add
+		'$div.add(variable)',
+
 		// $.parseHTML
 		'$.parseHTML(variable)',
-		'$.parseHTML(variable1 + variable2)'
-		// '$.parseHTML("string" + variable)'
+		'$.parseHTML(variable1 + variable2)',
+		// TODO: This passes, but maybe it shouldn't?
+		'$.parseHTML("string" + variable)'
 	],
+	// Build test cases by joining methods with strings
 	invalid: [
-		{
-			code: '$("<div>contents</div>")',
-			errors: [ { message: error, type: 'CallExpression' } ]
-		},
-		{
-			code: '$("<div attr=val>")',
-			errors: [ { message: error, type: 'CallExpression' } ]
-		},
-		{
-			code: '$("<div attr=val/>")',
-			errors: [ { message: error, type: 'CallExpression' } ]
-		},
+		// Methods
+		'$',
+		'$div.html',
+		'$div.append',
+		'$div.add',
+		'$.parseHTML'
+	].reduce( function ( acc, method ) {
+		return acc.concat(
+			[
+				// Strings
+				'"<div>contents</div>"',
+				'"<div attr=val>"',
+				'"<div attr=val />"',
+				'"<div>" + "content" + "</div>"'
+			].map( function ( string ) {
+				return {
+					code: method + '(' + string + ')',
+					errors: [ { message: error, type: 'CallExpression' } ]
+				};
+			} )
+		);
+	}, [] ).concat( [
+		// In addition, don't event use $.parseHTML for single tags
 		{
 			code: '$.parseHTML("<div>")',
 			errors: [ { message: error, type: 'CallExpression' } ]
-		},
-		{
-			code: '$.parseHTML("<div>" + "</div>")',
-			errors: [ { message: error, type: 'CallExpression' } ]
-		},
-		{
-			code: '$.parseHTML("<div>" + "content" + "</div>")',
-			errors: [ { message: error, type: 'CallExpression' } ]
 		}
-	]
+	] )
 } );
