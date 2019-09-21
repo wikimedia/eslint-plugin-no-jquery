@@ -1,10 +1,51 @@
 # eslint-plugin-no-jquery release history
 
+## v2.2.0
+* New rule: `no-error` (Ed Sanders)
+* New rule: `no-node-name` (Ed Sanders)
+* New rule: `no-camel-case` (Christophe Coevoet)
+* New rule: `no-contains` (Christophe Coevoet)
+* New rule: `no-is-empty-object` (Ed Sanders)
+* New rule: `no-is-plain-object` (Ed Sanders)
+* New rule: `no-constructor-attributes` (Ed Sanders)
+
+* Rule fix: Add `removeAttr` to `no-attr` rule (Ed Sanders)
+* Rule fix: Add `removeProp` to `no-remove-prop` rule (Ed Sanders)
+* Rule fix: Include the `$.css` utility in the `no-css` rule (Ed Sanders)
+* Rule fix: Include the `$.clone` utility in the `no-clone` rule (Ed Sanders)
+* Rule fix: Add fixer for `no-unique` (Ed Sanders)
+* Rule fix: Add fixer for `no-and-self` (Ed Sanders)
+* Rule fix: Add fixer for no-parse-json (Ed Sanders)
+* Rule fix: Add fixer for `no-is-array` (Ed Sanders)
+* Rule fix: Add ajax method shorthands to `no-ajax-events` and `no-event-shorthand` (Ed Sanders)
+* Rule fix: Detect concatenated selectors in `no-sizzle` (Ed Sanders)
+* Rule fix: Separate out positional sizzle selectors and add to `deprecated-3.4` (Ed Sanders)
+* Rule fix: Handle concatenated strings and other methods in `no-parse-html-literal` (Ed Sanders)
+* Rule fix: Make error message in `no-parse-html-literal` less specific (Ed Sanders)
+
+* Docs: Document `npm run doc` (Ed Sanders)
+* Docs: Comment in documentation when rules are fixable (Ed Sanders)
+* Docs: Document when rules are included in a deprecation set (Ed Sanders)
+* Docs: Build documentation from tests (Ed Sanders)
+
+* Bug: Fix the detection of jQuery collection calls for non-fluent APIs (e.g. `.toArray()`) (Christophe Coevoet)
+* Bug: Support arrow functions (Ed Sanders)
+
+* Code: Introduce and use createCollectionOrUtilMethodRule (Ed Sanders)
+* Code: Update development dependencies (Ed Sanders)
+
+* Add global settings for configuring jQuery constructor/variable names (Ed Sanders)
+* Add `files` list to package.json (Ed Sanders)
+* Update deprecations rulesets (Ed Sanders)
+* Add an EditorConfig config file (Christophe Coevoet)
+* Improve messages references methods vs static methods (Christophe Coevoet)
+
 ## v2.1.0
 * New rule: `no-class-state` (Ed Sanders)
 
-* README: Fix plugin name (Maurício Meneghini Fauth)
-* build: Upgrade eslint-config-wikimedia to 0.12.0 (James D. Forrester)
+* Docs: Fix plugin name (Maurício Meneghini Fauth)
+
+* Code: Upgrade eslint-config-wikimedia to 0.12.0 (James D. Forrester)
 
 
 ## v2.0.0
@@ -88,7 +129,7 @@
 * Deprecated rule: `no-each` (Ed Sanders)
 * Deprecated rule: `no-map` (Ed Sanders)
 
-* code: Update development dependencies (David Graham)
-* code: Refactor to use new rule format (Ed Sanders)
+* Code: Update development dependencies (David Graham)
+* Code: Refactor to use new rule format (Ed Sanders)
 
 * README: Note that this is a fork (James D. Forrester)
