@@ -52,6 +52,10 @@ function buildRuleDetails( tests, icon ) {
 class RuleTesterAndDocs extends RuleTester {
 	run( name, rule, tests ) {
 		if ( process.argv.includes( '--doc' ) ) {
+			if ( name === 'settings' ) {
+				return;
+			}
+
 			let output = '';
 
 			output += '# ' + name + '\n\n';

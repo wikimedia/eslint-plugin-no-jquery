@@ -3,21 +3,21 @@
 const utils = require( './utils.js' );
 
 // $(function(){})
-function isDirect( node ) {
+function isDirect( context, node ) {
 	return (
 		node.callee.type === 'Identifier' &&
-		node.callee.name === '$' &&
+		utils.isjQueryConstructor( context, node.callee.name ) &&
 		node.arguments[ 0 ] &&
 		utils.isFunction( node.arguments[ 0 ] )
 	);
 }
 
 // $(document).ready()
-function isChained( node ) {
+function isChained( context, node ) {
 	return (
 		node.callee.type === 'MemberExpression' &&
 		node.callee.property.name === 'ready' &&
-		utils.isjQuery( node )
+		utils.isjQuery( context, node )
 	);
 }
 
@@ -32,7 +32,7 @@ module.exports = {
 	create: function ( context ) {
 		return {
 			CallExpression: function ( node ) {
-				if ( isDirect( node ) || isChained( node ) ) {
+				if ( isDirect( context, node ) || isChained( context, node ) ) {
 					context.report( {
 						node: node,
 						message: '$.ready is not allowed'

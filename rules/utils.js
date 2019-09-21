@@ -66,6 +66,13 @@ function traverse( node, variableTest, constructorTest ) {
 	}
 }
 
+function isjQueryConstructor( context, name ) {
+	const constructorAliases =
+		( context.settings && context.settings[ 'no-jquery' ] && context.settings[ 'no-jquery' ].constructorAliases ) ||
+		[ '$' ];
+	return constructorAliases.indexOf( name ) !== -1;
+}
+
 // Traverses from a node up to its root parent to determine if it
 // originated from a jQuery `$()` function.
 //
@@ -77,6 +84,7 @@ function traverse( node, variableTest, constructorTest ) {
 //     $('div').find('p').focus()
 //     $div.find('p').focus()
 //     this.$div.find('p').focus()
+//     $.each()
 //
 //   Returns false for:
 //     div.focus()
@@ -85,13 +93,17 @@ function traverse( node, variableTest, constructorTest ) {
 //     $method('foo').focus()
 //
 // Returns true if the function call node is attached to a jQuery element set.
-function isjQuery( node ) {
+function isjQuery( context, node ) {
+	const variablePattern = new RegExp(
+		( context.settings && context.settings[ 'no-jquery' ] && context.settings[ 'no-jquery' ].variablePattern ) ||
+		'^\\$.'
+	);
 	return traverse(
 		node,
 		// variableTest
-		( id ) => !!id && id.name.startsWith( '$' ),
+		( id ) => !!id && variablePattern.test( id.name ),
 		// constructorTest
-		( id ) => !!id && id.name === '$'
+		( id ) => !!id && isjQueryConstructor( context, id.name )
 	);
 }
 
@@ -131,12 +143,12 @@ function createCollectionMethodRule( methods, message ) {
 				const name = node.callee.property.name;
 				if (
 					methods.indexOf( name ) === -1 ||
-					node.callee.object.name === '$'
+					isjQueryConstructor( context, node.callee.object.name )
 				) {
 					return;
 				}
 
-				if ( isjQuery( node.callee ) ) {
+				if ( isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
 						message: typeof message === 'function' ?
@@ -167,7 +179,7 @@ function createCollectionPropertyRule( property, message ) {
 					return;
 				}
 
-				if ( isjQuery( node ) ) {
+				if ( isjQuery( context, node ) ) {
 					context.report( {
 						node: node,
 						message: typeof message === 'function' ?
@@ -199,7 +211,7 @@ function createUtilMethodRule( methods, message, fixable, fix ) {
 				const name = node.callee.property.name;
 				if (
 					methods.indexOf( name ) === -1 ||
-					node.callee.object.name !== '$'
+					!isjQueryConstructor( context, node.callee.object.name )
 				) {
 					return;
 				}
@@ -226,7 +238,7 @@ function createUtilPropertyRule( property, message ) {
 	return createRule( function ( context ) {
 		return {
 			MemberExpression: function ( node ) {
-				if ( node.object.name !== '$' ) {
+				if ( !isjQueryConstructor( context, node.object.name ) ) {
 					return;
 				}
 				const name = node.property.name;
@@ -268,7 +280,7 @@ function createCollectionOrUtilMethodRule( methods, message ) {
 				if ( methods.indexOf( name ) === -1 ) {
 					return;
 				}
-				if ( isjQuery( node.callee ) ) {
+				if ( isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
 						message: typeof message === 'function' ?
@@ -283,6 +295,7 @@ function createCollectionOrUtilMethodRule( methods, message ) {
 
 module.exports = {
 	isjQuery: isjQuery,
+	isjQueryConstructor: isjQueryConstructor,
 	isFunction: isFunction,
 	createCollectionMethodRule: createCollectionMethodRule,
 	createCollectionPropertyRule: createCollectionPropertyRule,
