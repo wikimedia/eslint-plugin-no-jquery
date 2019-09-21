@@ -51,6 +51,7 @@ forbidden.forEach( function ( rule ) {
 		'$.' + rule + '()',
 		'[].' + rule + '()',
 		'div.' + rule + '()',
+		'$method(x).' + rule + '()',
 		'div.' + rule
 	);
 	invalid = invalid.concat(

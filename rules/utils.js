@@ -7,7 +7,7 @@ const nonCollectionReturningAccessors = [ 'val', 'text', 'html', 'data', 'innerH
 // Methods that return something else than a jQuery collection when called with a single argument
 const nonCollectionReturningValueAccessors = [ 'css', 'attr', 'prop' ];
 
-function traverse( node, test ) {
+function traverse( node, variableTest, constructorTest ) {
 	while ( node ) {
 		switch ( node.type ) {
 			case 'CallExpression':
@@ -45,7 +45,7 @@ function traverse( node, test ) {
 					if ( node.property.type === 'Identifier' ) {
 						// e.g. $foo in this.$foo.bar(), returns true
 						// or foo in $this.foo.bar(), returns false
-						return test( node.property );
+						return variableTest( node.property );
 					}
 					if ( node.property.type === 'Literal' ) {
 						// e.g. 0 in $foo[0].bar()
@@ -55,7 +55,11 @@ function traverse( node, test ) {
 				}
 				break;
 			case 'Identifier':
-				return test( node );
+				if ( node.parent && node.parent.type === 'CallExpression' ) {
+					return constructorTest( node );
+				} else {
+					return variableTest( node ) || constructorTest( node );
+				}
 			default:
 				return false;
 		}
@@ -78,10 +82,17 @@ function traverse( node, test ) {
 //     div.focus()
 //     $div[0].focus()
 //     $div.remove.bind()
+//     $method('foo').focus()
 //
 // Returns true if the function call node is attached to a jQuery element set.
 function isjQuery( node ) {
-	return traverse( node, ( id ) => !!id && id.name.startsWith( '$' ) );
+	return traverse(
+		node,
+		// variableTest
+		( id ) => !!id && id.name.startsWith( '$' ),
+		// constructorTest
+		( id ) => !!id && id.name === '$'
+	);
 }
 
 function isFunction( node ) {
