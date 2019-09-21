@@ -90,7 +90,14 @@ module.exports = {
 	configs: {
 		// Use this profile if you want to avoid all known deprecated jQuery tools.
 		deprecated: {
-			extends: 'plugin:no-jquery/deprecated-3.3'
+			extends: 'plugin:no-jquery/deprecated-3.4'
+		},
+		// Use this profile if you're writing code targetting jQuery 3.4.x environments.
+		'deprecated-3.4': {
+			extends: 'plugin:no-jquery/deprecated-3.3',
+			rules: {
+				'no-jquery/no-sizzle': [ 'error', { allowPositional: false, allowOther: true } ]
+			}
 		},
 		// Use this profile if you're writing code targetting jQuery 3.3.x environments.
 		'deprecated-3.3': {

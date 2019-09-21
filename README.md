@@ -110,7 +110,7 @@ Alternatively, you can pick out rules individually:
     "no-jquery/no-serialize": "error",
     "no-jquery/no-show": "error",
     "no-jquery/no-size": "error",
-    "no-jquery/no-sizzle": "error",
+    "no-jquery/no-sizzle": [ "error", { "allowPositional": false, "allowOther": true } ],
     "no-jquery/no-slide": "error",
     "no-jquery/no-sub": "error",
     "no-jquery/no-submit": "error",
