@@ -199,11 +199,49 @@ function createUtilPropertyRule( property, message ) {
 	}, description );
 }
 
+function createCollectionOrUtilMethodRule( methods, message ) {
+	methods = Array.isArray( methods ) ? methods : [ methods ];
+
+	let description = 'Disallows the .' + methods.join( '/' ) + ' ' +
+			( methods.length > 1 ? 'methods' : 'method' );
+
+	description += ' and $.' + methods.join( '/' ) + ' ' +
+			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
+
+	if ( typeof message === 'string' ) {
+		description += ' ' + message + '.';
+	}
+
+	return createRule( function ( context ) {
+		return {
+			CallExpression: function ( node ) {
+				if ( node.callee.type !== 'MemberExpression' ) {
+					return;
+				}
+				const name = node.callee.property.name;
+				if ( methods.indexOf( name ) === -1 ) {
+					return;
+				}
+
+				if ( isjQuery( node ) ) {
+					context.report( {
+						node: node,
+						message: typeof message === 'function' ?
+							message( node ) :
+							message || '$.' + name + ' is not allowed'
+					} );
+				}
+			}
+		};
+	}, description );
+}
+
 module.exports = {
 	isjQuery: isjQuery,
 	isFunction: isFunction,
 	createCollectionMethodRule: createCollectionMethodRule,
 	createCollectionPropertyRule: createCollectionPropertyRule,
 	createUtilMethodRule: createUtilMethodRule,
-	createUtilPropertyRule: createUtilPropertyRule
+	createUtilPropertyRule: createUtilPropertyRule,
+	createCollectionOrUtilMethodRule: createCollectionOrUtilMethodRule
 };

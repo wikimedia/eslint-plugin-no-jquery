@@ -1,6 +1,6 @@
 # no-text
 
-Disallows the .text method and $.text utility. Prefer Node#textContent.
+Disallows the .text method and $.text utility. Prefer Node#textContent to $.text.
 
 ## Rule details
 
