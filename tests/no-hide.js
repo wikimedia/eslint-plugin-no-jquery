@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-hide' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = '$.hide is not allowed';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-hide', rule, {
 	valid: [ 'hide()', '[].hide()', 'div.hide()', 'div.hide' ],
 	invalid: [

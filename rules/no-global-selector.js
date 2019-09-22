@@ -5,7 +5,9 @@ const rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/;
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows global selectors which search the whole document. Encourages users to keep references to DOM nodes in memory, instead of selecting them from the DOM each time.'
+		},
 		schema: []
 	},
 

@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-is-function' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer typeof to $.isFunction';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-is-function', rule, {
 	valid: [ 'isFunction()', 'myClass.isFunction()', '$div.isFunction()' ],
 	invalid: [

@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-clone' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer cloneNode to clone';
+const error = 'Prefer Node#cloneNode to $.clone';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-clone', rule, {
 	valid: [
 		'clone()',

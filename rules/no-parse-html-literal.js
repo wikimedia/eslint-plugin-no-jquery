@@ -27,7 +27,11 @@ function joinLiteral( node ) {
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows parsing of HTML literal strings using either the jQuery method $() or $.parseHTML. ' +
+				'Single tags are still allowed for creating new nodes as these don\'t tirgger the HTML parser. ' +
+				'DOM build and manipulation methods should be used instead.'
+		},
 		schema: []
 	},
 

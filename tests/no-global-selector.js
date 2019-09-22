@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-global-selector' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Global selectors are not allowed';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-global-selector', rule, {
 	valid: [
 		'$("<div>")',

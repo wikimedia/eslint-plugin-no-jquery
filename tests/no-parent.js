@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-parent' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer parentElement to $.parent';
+const error = 'Prefer node#parentElement to $.parent';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-parent', rule, {
 	valid: [ 'parent()', '[].parent()', 'div.parent()', 'div.parent' ],
 	invalid: [

@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-and-self' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer $.addBack to $.andSelf';
 
-const ruleTester = new RuleTester();
-ruleTester.run( 'no-andSelf', rule, {
+const ruleTester = new RuleTesterAndDocs();
+ruleTester.run( 'no-and-self', rule, {
 	valid: [ 'andSelf()', '[].andSelf()', 'div.andSelf()', 'div.andSelf' ],
 	invalid: [
 		{

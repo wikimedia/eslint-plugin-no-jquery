@@ -2,7 +2,9 @@
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows $.fx.interval.'
+		},
 		schema: []
 	},
 

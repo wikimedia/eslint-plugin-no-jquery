@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-load-shorthand' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer $.on or $.trigger to $.load';
 
-const ruleTester = new RuleTester( {
+const ruleTester = new RuleTesterAndDocs( {
 	parserOptions: { ecmaVersion: 2015 }
 } );
 ruleTester.run( 'no-load-shorthand', rule, {

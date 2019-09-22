@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-support' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = '$.support is not allowed';
 
-const ruleTester = new RuleTester();
-ruleTester.run( 'no-noop', rule, {
+const ruleTester = new RuleTesterAndDocs();
+ruleTester.run( 'no-support', rule, {
 	valid: [ 'support', 'a.support', 'support.foo', 'a.support.foo' ],
 	invalid: [
 		{

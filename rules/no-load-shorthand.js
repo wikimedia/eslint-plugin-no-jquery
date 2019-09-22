@@ -4,7 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows the .load method when used as a shorthand for `.on( \'load\', function )` or `.trigger( \'load\' )`. Prefer $.on or $.trigger.'
+		},
 		schema: []
 	},
 

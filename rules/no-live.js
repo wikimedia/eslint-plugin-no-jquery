@@ -4,5 +4,5 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
 	'live',
-	'Prefer $.on/addEventListener to live'
+	'Prefer $.on/EventTarget#addEventListener to $.live'
 );

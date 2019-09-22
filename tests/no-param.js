@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-param' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer FormData or URLSearchParams to $.param';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-param', rule, {
 	valid: [ 'param()', '"test".param()', '"test".param' ],
 	invalid: [

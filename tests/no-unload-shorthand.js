@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-unload-shorthand' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer $.on or $.trigger to $.unload';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-unload-shorthand', rule, {
 	valid: [
 		'unload()',

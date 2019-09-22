@@ -4,7 +4,11 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows selector extensions provided by Sizzle. Use the `allowPositional` option to allow positional selectors. ' +
+				'Use the `allowOther` option to allow all other selectors. These options are used in the `deprecated-3.4` ruleset as only positional ' +
+				'selectors were deprecated in that version.'
+		},
 		schema: [
 			{
 				type: 'object',
