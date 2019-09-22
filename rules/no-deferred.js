@@ -2,7 +2,9 @@
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows $.Deferred constructor. Prefer Promise.'
+		},
 		schema: []
 	},
 

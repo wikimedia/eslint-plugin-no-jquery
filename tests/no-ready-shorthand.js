@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-ready-shorthand' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer $ to $.ready';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-ready-shorthand', rule, {
 	valid: [
 		'ready()',

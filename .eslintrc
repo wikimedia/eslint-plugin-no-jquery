@@ -1,6 +1,8 @@
 {
 	"extends": [
-		"wikimedia/server"
+		"wikimedia",
+		"wikimedia/node",
+		"wikimedia/language/es2016"
 	],
 	"rules": {
 		"prefer-template": "off"

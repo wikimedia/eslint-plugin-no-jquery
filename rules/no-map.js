@@ -4,7 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows the .map method and $.map utility. Prefer Array#map.'
+		},
 		schema: []
 	},
 

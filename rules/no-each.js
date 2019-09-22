@@ -4,7 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows the .each method and $.each utility. Prefer Array#forEach.'
+		},
 		schema: []
 	},
 

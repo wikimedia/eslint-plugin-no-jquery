@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-animate' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer CSS transitions or CSS scroll-behaviour to $.animate';
 const errorNoScroll = 'Prefer CSS transitions to $.animate';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-animate', rule, {
 	valid: [
 		'animate()',

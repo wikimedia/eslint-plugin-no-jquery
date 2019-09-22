@@ -1,9 +1,9 @@
 'use strict';
 
 const rule = require( '../rules/no-ajax-events' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-ajax-events', rule, {
 	valid: [
 		'$(document).on("click", function(e){ })',
@@ -17,7 +17,7 @@ ruleTester.run( 'no-ajax-events', rule, {
 			code: '$(document).on("ajaxSend", function(e){ })',
 			errors: [
 				{
-					message: 'Prefer remoteForm to ajaxSend',
+					message: 'Prefer local event to ajaxSend',
 					type: 'CallExpression'
 				}
 			]
@@ -26,7 +26,7 @@ ruleTester.run( 'no-ajax-events', rule, {
 			code: '$(document).on("ajaxSuccess", function(e){ })',
 			errors: [
 				{
-					message: 'Prefer remoteForm to ajaxSuccess',
+					message: 'Prefer local event to ajaxSuccess',
 					type: 'CallExpression'
 				}
 			]
@@ -35,7 +35,7 @@ ruleTester.run( 'no-ajax-events', rule, {
 			code: '$form.on("ajaxError", function(e){ })',
 			errors: [
 				{
-					message: 'Prefer remoteForm to ajaxError',
+					message: 'Prefer local event to ajaxError',
 					type: 'CallExpression'
 				}
 			]
@@ -44,7 +44,7 @@ ruleTester.run( 'no-ajax-events', rule, {
 			code: '$form.on("ajaxComplete", function(e){ })',
 			errors: [
 				{
-					message: 'Prefer remoteForm to ajaxComplete',
+					message: 'Prefer local event to ajaxComplete',
 					type: 'CallExpression'
 				}
 			]
@@ -53,7 +53,7 @@ ruleTester.run( 'no-ajax-events', rule, {
 			code: '$form.on("ajaxStart", function(e){ })',
 			errors: [
 				{
-					message: 'Prefer remoteForm to ajaxStart',
+					message: 'Prefer local event to ajaxStart',
 					type: 'CallExpression'
 				}
 			]
@@ -62,7 +62,7 @@ ruleTester.run( 'no-ajax-events', rule, {
 			code: '$form.on("ajaxStop", function(e){ })',
 			errors: [
 				{
-					message: 'Prefer remoteForm to ajaxStop',
+					message: 'Prefer local event to ajaxStop',
 					type: 'CallExpression'
 				}
 			]

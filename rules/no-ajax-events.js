@@ -17,7 +17,9 @@ const Literal = 'Literal';
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows global ajax events handlers: ajaxStart/ajaxSend/ajaxSuccess/ajaxError/ajaxComplete/ajaxStop. Prefer local events.'
+		},
 		schema: []
 	},
 
@@ -37,7 +39,7 @@ module.exports = {
 					) {
 						context.report( {
 							node: node,
-							message: `Prefer remoteForm to ${arg.value}`
+							message: `Prefer local event to ${arg.value}`
 						} );
 					}
 				}

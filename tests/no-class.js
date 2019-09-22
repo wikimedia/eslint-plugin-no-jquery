@@ -1,14 +1,14 @@
 'use strict';
 
 const rule = require( '../rules/no-class' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const addError = 'Prefer classList to addClass';
-const hasError = 'Prefer classList to hasClass';
-const removeError = 'Prefer classList to removeClass';
-const toggleError = 'Prefer classList to toggleClass';
+const addError = 'Prefer Element#classList to addClass';
+const hasError = 'Prefer Element#classList to hasClass';
+const removeError = 'Prefer Element#classList to removeClass';
+const toggleError = 'Prefer Element#classList to toggleClass';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-class', rule, {
 	valid: [
 		'addClass()',

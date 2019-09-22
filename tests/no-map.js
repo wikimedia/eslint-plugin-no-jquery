@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-map' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer Array#map to $.map';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-map', rule, {
 	valid: [ 'map()', '[].map()', 'div.map()', 'div.map' ],
 	invalid: [

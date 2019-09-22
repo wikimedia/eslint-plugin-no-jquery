@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-load' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer fetch to $.load';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-load', rule, {
 	valid: [ 'load()', '[].load()', 'div.load()', 'div.load' ],
 	invalid: [

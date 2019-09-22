@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-ready' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = '$.ready is not allowed';
 
-const ruleTester = new RuleTester( {
+const ruleTester = new RuleTesterAndDocs( {
 	parserOptions: { ecmaVersion: 2015 }
 } );
 ruleTester.run( 'no-ready', rule, {

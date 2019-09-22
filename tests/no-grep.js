@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-grep' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer Array#filter to $.grep';
 
-const ruleTester = new RuleTester();
-ruleTester.run( 'no-in-array', rule, {
+const ruleTester = new RuleTesterAndDocs();
+ruleTester.run( 'no-grep', rule, {
 	valid: [ 'grep()', '"test".grep()', '"test".grep' ],
 	invalid: [
 		{

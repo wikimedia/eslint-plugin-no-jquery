@@ -1,13 +1,13 @@
 'use strict';
 
 const rule = require( '../rules/no-animate-toggle' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const showError = 'Prefer CSS transitions to $.show';
 const hideError = 'Prefer CSS transitions to $.hide';
 const toggleError = 'Prefer CSS transitions to $.toggle';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-animate-toggle', rule, {
 	valid: [
 		'$div.show()',

@@ -1,9 +1,9 @@
 'use strict';
 
 const rule = require( '../rules/no-event-shorthand' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 const forbidden = [
 	// Browser
 	'error',

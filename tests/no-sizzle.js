@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-sizzle' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Selector extensions are not allowed';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-sizzle', rule, {
 	valid: [
 		'find(":input")',

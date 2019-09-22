@@ -4,7 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows the .attr method and $.attr utility. Prefer Element#getAttribute/setAttribute.'
+		},
 		schema: []
 	},
 
@@ -22,7 +24,7 @@ module.exports = {
 					const getOrSet = node.arguments.length === 2 ? 'set' : 'get';
 					context.report( {
 						node: node,
-						message: `Prefer ${getOrSet}Attribute to attr`
+						message: `Prefer Element#${getOrSet}Attribute to attr`
 					} );
 				}
 			}

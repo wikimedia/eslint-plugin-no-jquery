@@ -4,5 +4,5 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createUtilMethodRule(
 	'parseHTML',
-	'Prefer createHTMLDocument to $.parseHTML'
+	'Prefer DOMImplementation#createHTMLDocument to $.parseHTML'
 );

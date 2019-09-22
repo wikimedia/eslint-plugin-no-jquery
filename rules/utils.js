@@ -55,10 +55,12 @@ function isFunction( node ) {
 	return node.type === 'FunctionExpression' || node.type === 'ArrowFunctionExpression';
 }
 
-function createRule( create ) {
+function createRule( create, description ) {
 	return {
 		meta: {
-			docs: {},
+			docs: {
+				description: description
+			},
 			schema: []
 		},
 		create: create
@@ -67,6 +69,14 @@ function createRule( create ) {
 
 function createCollectionMethodRule( methods, message ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
+
+	let description = 'Disallows the .' + methods.join( '/' ) + ' ' +
+			( methods.length > 1 ? 'methods' : 'method' ) + '.';
+
+	if ( typeof message === 'string' ) {
+		description += ' ' + message + '.';
+	}
+
 	return createRule( function ( context ) {
 		return {
 			CallExpression: function ( node ) {
@@ -91,10 +101,16 @@ function createCollectionMethodRule( methods, message ) {
 				}
 			}
 		};
-	} );
+	}, description );
 }
 
 function createCollectionPropertyRule( property, message ) {
+	let description = 'Disallows the $.' + property + ' property.';
+
+	if ( typeof message === 'string' ) {
+		description += ' ' + message + '.';
+	}
+
 	return createRule( function ( context ) {
 		return {
 			MemberExpression: function ( node ) {
@@ -116,11 +132,19 @@ function createCollectionPropertyRule( property, message ) {
 				}
 			}
 		};
-	} );
+	}, description );
 }
 
 function createUtilMethodRule( methods, message ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
+
+	let description = 'Disallows the $.' + methods.join( '/' ) + ' ' +
+			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
+
+	if ( typeof message === 'string' ) {
+		description += ' ' + message + '.';
+	}
+
 	return createRule( function ( context ) {
 		return {
 			CallExpression: function ( node ) {
@@ -143,10 +167,16 @@ function createUtilMethodRule( methods, message ) {
 				} );
 			}
 		};
-	} );
+	}, description );
 }
 
 function createUtilPropertyRule( property, message ) {
+	let description = 'Disallows the $.' + property + ' property.';
+
+	if ( typeof message === 'string' ) {
+		description += ' ' + message + '.';
+	}
+
 	return createRule( function ( context ) {
 		return {
 			MemberExpression: function ( node ) {
@@ -166,7 +196,7 @@ function createUtilPropertyRule( property, message ) {
 				} );
 			}
 		};
-	} );
+	}, description );
 }
 
 module.exports = {

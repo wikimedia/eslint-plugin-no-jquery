@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-undelegate' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.off/removeEventListener to undelegate';
+const error = 'Prefer $.off/EventTarget#removeEventListener to $.undelegate';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-undelegate', rule, {
 	valid: [
 		'undelegate()',

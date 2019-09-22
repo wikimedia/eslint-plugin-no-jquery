@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-live' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.on/addEventListener to live';
+const error = 'Prefer $.on/EventTarget#addEventListener to $.live';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-live', rule, {
 	valid: [ 'live()', '[].live()', 'div.live()', 'div.live' ],
 	invalid: [

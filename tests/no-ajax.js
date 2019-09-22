@@ -1,7 +1,7 @@
 'use strict';
 
 const rule = require( '../rules/no-ajax' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const ajaxError = 'Prefer fetch to $.ajax';
 const getError = 'Prefer fetch to $.get';
@@ -9,7 +9,7 @@ const jsonError = 'Prefer fetch to $.getJSON';
 const scriptError = 'Prefer fetch to $.getScript';
 const postError = 'Prefer fetch to $.post';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-ajax', rule, {
 	valid: [
 		'ajax()',

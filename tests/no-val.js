@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-val' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer value to $.val';
+const error = 'Prefer HTMLInputElement#value to $.val';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-val', rule, {
 	valid: [ 'val()', '[].val()', 'div.val()', 'div.val' ],
 	invalid: [
