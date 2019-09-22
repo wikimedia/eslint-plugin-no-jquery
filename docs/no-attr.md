@@ -1,6 +1,6 @@
 # no-attr
 
-Disallows the .attr method and $.attr utility. Prefer Element#getAttribute/setAttribute.
+Disallows the .attr method and $.attr utility.
 
 ## Rule details
 

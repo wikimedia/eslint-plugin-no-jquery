@@ -1,6 +1,6 @@
 # no-filter
 
-Disallows the .filter method and $.filter utility. Prefer Array#filter.
+Disallows the .filter method and $.filter utility. Prefer Array#filter to $.filter.
 
 ## Rule details
 

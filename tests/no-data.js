@@ -41,6 +41,10 @@ ruleTester.run( 'no-data', rule, {
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
+			code: '$.removeData()',
+			errors: [ { message: removeError, type: 'CallExpression' } ]
+		},
+		{
 			code: '$("div").removeData()',
 			errors: [ { message: removeError, type: 'CallExpression' } ]
 		},

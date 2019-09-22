@@ -1,6 +1,6 @@
 # no-prop
 
-Disallows the .prop method and $.prop utility. Prefer direct property access.
+Disallows the .prop method and $.prop utility. Prefer direct property access to $.prop.
 
 ## Rule details
 
