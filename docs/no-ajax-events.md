@@ -12,6 +12,12 @@ $form.on( 'ajaxError', function ( e ) { } );
 $form.on( 'ajaxComplete', function ( e ) { } );
 $form.on( 'ajaxStart', function ( e ) { } );
 $form.on( 'ajaxStop', function ( e ) { } );
+$( document ).ajaxSend( function ( e ) { } );
+$( document ).ajaxSuccess( function ( e ) { } );
+$form.ajaxError( function ( e ) { } );
+$form.ajaxComplete( function ( e ) { } );
+$form.ajaxStart( function ( e ) { } );
+$form.ajaxStop( function ( e ) { } );
 ```
 
 ✓ The following patterns are not considered errors:
@@ -21,4 +27,5 @@ $form.on( 'submit', function ( e ) { } );
 $form.on();
 on( 'ajaxSuccess', '.js-select-menu', function ( e ) { } );
 form.on( 'ajaxSend' );
+form.ajaxSend();
 ```

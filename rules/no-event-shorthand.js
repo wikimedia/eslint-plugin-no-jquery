@@ -31,7 +31,14 @@ module.exports = utils.createCollectionMethodRule(
 		'mousemove',
 		'mouseout',
 		'mouseover',
-		'mouseup'
+		'mouseup',
+		// AJAX
+		'ajaxStart',
+		'ajaxStop',
+		'ajaxComplete',
+		'ajaxError',
+		'ajaxSuccess',
+		'ajaxSend'
 	],
 	( node ) => `Prefer $.on or $.trigger to $.${node.callee.property.name}`
 );
