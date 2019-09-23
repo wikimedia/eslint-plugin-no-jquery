@@ -7,11 +7,25 @@ module.exports = {
 		docs: {
 			description: 'Disallows selector extensions provided by Sizzle.'
 		},
-		schema: []
+		schema: [
+			{
+				type: 'object',
+				properties: {
+					allowPositional: {
+						type: 'boolean'
+					},
+					allowOther: {
+						type: 'boolean'
+					}
+				},
+				additionalProperties: false
+			}
+		]
 	},
 
 	create: function ( context ) {
-		const forbidden = /:animated|:button|:checkbox|:eq|:even|:file|:first([^-]|$)|:gt|:has|:header|:hidden|:image|:input|:last([^-]|$)|:lt|:odd|:parent|:password|:radio|:reset|:selected|:submit|:text|:visible/;
+		const forbiddenPositional = /:eq|:even|:first([^-]|$)|:gt|:last([^-]|$)|:lt|:nth|:odd/;
+		const forbiddenOther = /:animated|:button|:checkbox|:file|:has|:header|:hidden|:image|:input|:parent|:password|:radio|:reset|:selected|:submit|:text|:visible/;
 		const traversals = [
 			'children',
 			'closest',
@@ -45,7 +59,17 @@ module.exports = {
 					return;
 				}
 
-				if ( forbidden.test( node.arguments[ 0 ].value ) ) {
+				const allowPositional = context.options[ 0 ] &&
+					context.options[ 0 ].allowPositional;
+				const allowOther = context.options[ 0 ] &&
+					context.options[ 0 ].allowOther;
+
+				if ( !allowPositional && forbiddenPositional.test( node.arguments[ 0 ].value ) ) {
+					context.report( {
+						node: node,
+						message: 'Positional selector extensions are not allowed'
+					} );
+				} else if ( !allowOther && forbiddenOther.test( node.arguments[ 0 ].value ) ) {
 					context.report( {
 						node: node,
 						message: 'Selector extensions are not allowed'

@@ -4,6 +4,7 @@ const rule = require( '../rules/no-sizzle' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Selector extensions are not allowed';
+const errorPositional = 'Positional selector extensions are not allowed';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-sizzle', rule, {
@@ -22,9 +23,82 @@ ruleTester.run( 'no-sizzle', rule, {
 		'$(this).find($())',
 		'$(this).find(function() {})',
 		'$(this).find()',
-		'$(function() {})'
+		'$(function() {})',
+		{
+			code: '$(":checked")',
+			options: [ { allowPositional: true } ]
+		},
+		{
+			code: '$(":animated")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":button")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":checkbox")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":file")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":has(.foo)")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":header")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":hidden")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":image")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":input")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":parent")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":password")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":radio")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":reset")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":submit")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":text")',
+			options: [ { allowOther: true } ]
+		},
+		{
+			code: '$(":visible")',
+			options: [ { allowOther: true } ]
+		}
 	],
 	invalid: [
+		{
+			code: '$(":animated")',
+			options: [ { allowPositional: true } ],
+			errors: [ { message: error, type: 'CallExpression' } ]
+		},
 		{
 			code: '$(":animated")',
 			errors: [ { message: error, type: 'CallExpression' } ]
@@ -38,12 +112,22 @@ ruleTester.run( 'no-sizzle', rule, {
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$(":eq")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$(":eq(2)")',
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+		},
+		{
+			code: '$(":eq(2)")',
+			options: [ { allowOther: true } ],
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
 		},
 		{
 			code: '$(":even")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+		},
+		{
+			code: '$(":even")',
+			options: [ { allowOther: true } ],
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
 		},
 		{
 			code: '$(":file")',
@@ -51,14 +135,24 @@ ruleTester.run( 'no-sizzle', rule, {
 		},
 		{
 			code: '$(":first")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
 		},
 		{
-			code: '$(":gt")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$(":first")',
+			options: [ { allowOther: true } ],
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
 		},
 		{
-			code: '$(":has")',
+			code: '$(":gt(2)")',
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+		},
+		{
+			code: '$(":gt(2)")',
+			options: [ { allowOther: true } ],
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+		},
+		{
+			code: '$(":has(.foo)")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
@@ -79,15 +173,39 @@ ruleTester.run( 'no-sizzle', rule, {
 		},
 		{
 			code: '$(":last")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
 		},
 		{
-			code: '$(":lt")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$(":last")',
+			options: [ { allowOther: true } ],
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+		},
+		{
+			code: '$(":lt(2)")',
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+		},
+		{
+			code: '$(":lt(2)")',
+			options: [ { allowOther: true } ],
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+		},
+		{
+			code: '$(":nth(2)")',
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+		},
+		{
+			code: '$(":nth(2)")',
+			options: [ { allowOther: true } ],
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
 		},
 		{
 			code: '$(":odd")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+		},
+		{
+			code: '$(":odd")',
+			options: [ { allowOther: true } ],
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
 		},
 		{
 			code: '$(":parent")',
@@ -122,87 +240,87 @@ ruleTester.run( 'no-sizzle', rule, {
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").children(":first")',
+			code: '$("div").children(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").closest(":first")',
+			code: '$("div").closest(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").filter(":first")',
+			code: '$("div").filter(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").find(":first")',
+			code: '$("div").find(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").has(":first")',
+			code: '$("div").has(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").is(":first")',
+			code: '$("div").is(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").next(":first")',
+			code: '$("div").next(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").nextAll(":first")',
+			code: '$("div").nextAll(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").nextUntil(":first")',
+			code: '$("div").nextUntil(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").not(":first")',
+			code: '$("div").not(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").parent(":first")',
+			code: '$("div").parent(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").parents(":first")',
+			code: '$("div").parents(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").parentsUntil(":first")',
+			code: '$("div").parentsUntil(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").prev(":first")',
+			code: '$("div").prev(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").prevAll(":first")',
+			code: '$("div").prevAll(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").prevUntil(":first")',
+			code: '$("div").prevUntil(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").siblings(":first")',
+			code: '$("div").siblings(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div:first")',
+			code: '$("div:visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div:first").find("p")',
+			code: '$("div:visible").find("p")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").find("p:first").addClass("test").find("p")',
+			code: '$("div").find("p:visible").addClass("test").find("p")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").find(":first")',
+			code: '$("div").find(":visible")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{

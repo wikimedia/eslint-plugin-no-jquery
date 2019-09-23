@@ -5,22 +5,27 @@ Disallows selector extensions provided by Sizzle.
 ## Rule details
 
 ✗ The following patterns are considered errors:
+✗ With `[{"allowPositional":true}]` options:
+```js
+$( ':animated' );
+```
 ```js
 $( ':animated' );
 $( ':button' );
 $( ':checkbox' );
-$( ':eq' );
+$( ':eq(2)' );
 $( ':even' );
 $( ':file' );
 $( ':first' );
-$( ':gt' );
-$( ':has' );
+$( ':gt(2)' );
+$( ':has(.foo)' );
 $( ':header' );
 $( ':hidden' );
 $( ':image' );
 $( ':input' );
 $( ':last' );
-$( ':lt' );
+$( ':lt(2)' );
+$( ':nth(2)' );
 $( ':odd' );
 $( ':parent' );
 $( ':password' );
@@ -30,29 +35,40 @@ $( ':selected' );
 $( ':submit' );
 $( ':text' );
 $( ':visible' );
-$( 'div' ).children( ':first' );
-$( 'div' ).closest( ':first' );
-$( 'div' ).filter( ':first' );
-$( 'div' ).find( ':first' );
-$( 'div' ).has( ':first' );
-$( 'div' ).is( ':first' );
-$( 'div' ).next( ':first' );
-$( 'div' ).nextAll( ':first' );
-$( 'div' ).nextUntil( ':first' );
-$( 'div' ).not( ':first' );
-$( 'div' ).parent( ':first' );
-$( 'div' ).parents( ':first' );
-$( 'div' ).parentsUntil( ':first' );
-$( 'div' ).prev( ':first' );
-$( 'div' ).prevAll( ':first' );
-$( 'div' ).prevUntil( ':first' );
-$( 'div' ).siblings( ':first' );
-$( 'div:first' );
-$( 'div:first' ).find( 'p' );
-$( 'div' ).find( 'p:first' ).addClass( 'test' ).find( 'p' );
-$( 'div' ).find( ':first' );
+$( 'div' ).children( ':visible' );
+$( 'div' ).closest( ':visible' );
+$( 'div' ).filter( ':visible' );
+$( 'div' ).find( ':visible' );
+$( 'div' ).has( ':visible' );
+$( 'div' ).is( ':visible' );
+$( 'div' ).next( ':visible' );
+$( 'div' ).nextAll( ':visible' );
+$( 'div' ).nextUntil( ':visible' );
+$( 'div' ).not( ':visible' );
+$( 'div' ).parent( ':visible' );
+$( 'div' ).parents( ':visible' );
+$( 'div' ).parentsUntil( ':visible' );
+$( 'div' ).prev( ':visible' );
+$( 'div' ).prevAll( ':visible' );
+$( 'div' ).prevUntil( ':visible' );
+$( 'div' ).siblings( ':visible' );
+$( 'div:visible' );
+$( 'div:visible' ).find( 'p' );
+$( 'div' ).find( 'p:visible' ).addClass( 'test' ).find( 'p' );
+$( 'div' ).find( ':visible' );
 $( 'div' ).find( 'div:animated' );
 $div.find( 'form input:checkbox' );
+```
+✗ With `[{"allowOther":true}]` options:
+```js
+$( ':eq(2)' );
+$( ':even' );
+$( ':first' );
+$( ':gt(2)' );
+$( ':last' );
+$( ':lt(2)' );
+$( ':nth(2)' );
+$( ':odd' );
 ```
 
 ✓ The following patterns are not considered errors:
@@ -72,4 +88,27 @@ $( this ).find( $() );
 $( this ).find( function () {} );
 $( this ).find();
 $( function () {} );
+```
+✓ With `[{"allowPositional":true}]` options:
+```js
+$( ':checked' );
+```
+✓ With `[{"allowOther":true}]` options:
+```js
+$( ':animated' );
+$( ':button' );
+$( ':checkbox' );
+$( ':file' );
+$( ':has(.foo)' );
+$( ':header' );
+$( ':hidden' );
+$( ':image' );
+$( ':input' );
+$( ':parent' );
+$( ':password' );
+$( ':radio' );
+$( ':reset' );
+$( ':submit' );
+$( ':text' );
+$( ':visible' );
 ```
