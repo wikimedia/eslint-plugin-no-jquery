@@ -15,7 +15,8 @@ ruleTester.run( 'no-map-util', rule, {
 		'$("div").map()',
 		'$div.map()',
 		'$("div").first().map()',
-		'$("div").append($("input").map())'
+		'$("div").append($("input").map())',
+		'$("select").val().map()'
 	],
 	invalid: [
 		{

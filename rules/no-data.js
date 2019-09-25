@@ -13,7 +13,7 @@ module.exports = {
 			CallExpression: function ( node ) {
 				if (
 					node.callee.type !== 'MemberExpression' ||
-					!utils.isjQuery( node )
+					!utils.isjQuery( node.callee )
 				) {
 					return;
 				}
