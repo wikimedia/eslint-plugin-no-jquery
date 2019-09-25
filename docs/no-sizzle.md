@@ -5,10 +5,6 @@ Disallows selector extensions provided by Sizzle. Use the `allowPositional` opti
 ## Rule details
 
 ✗ The following patterns are considered errors:
-✗ With `[{"allowPositional":true}]` options:
-```js
-$( ':animated' );
-```
 ```js
 $( ':animated' );
 $( ':button' );
@@ -58,6 +54,10 @@ $( 'div' ).find( 'p:visible' ).addClass( 'test' ).find( 'p' );
 $( 'div' ).find( ':visible' );
 $( 'div' ).find( 'div:animated' );
 $div.find( 'form input:checkbox' );
+```
+✗ With `[{"allowPositional":true}]` options:
+```js
+$( ':animated' );
 ```
 ✗ With `[{"allowOther":true}]` options:
 ```js

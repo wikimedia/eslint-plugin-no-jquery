@@ -96,11 +96,11 @@ ruleTester.run( 'no-sizzle', rule, {
 	invalid: [
 		{
 			code: '$(":animated")',
-			options: [ { allowPositional: true } ],
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
 			code: '$(":animated")',
+			options: [ { allowPositional: true } ],
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
