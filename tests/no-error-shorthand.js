@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-error-shorthand' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer $.on or $.trigger to $.error';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-error-shorthand', rule, {
 	valid: [ 'error()', '[].error()', 'div.error()', 'div.error', '$.error()' ],
 	invalid: [

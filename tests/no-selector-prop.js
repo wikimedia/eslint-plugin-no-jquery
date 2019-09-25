@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-selector-prop' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = '$.selector is not allowed';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-selector-prop', rule, {
 	valid: [
 		'selector',

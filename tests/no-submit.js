@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-submit' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer dispatchEvent + form.submit() to $.submit';
+const error = 'Prefer EventTarget#dispatchEvent + form.submit() to $.submit';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-submit', rule, {
 	valid: [ 'submit()', '[].submit()', 'form.submit()', 'form.submit' ],
 	invalid: [

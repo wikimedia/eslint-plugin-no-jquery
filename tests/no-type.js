@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-type' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer typeof/instanceof to $.type';
 
-const ruleTester = new RuleTester();
-ruleTester.run( 'no-extend', rule, {
+const ruleTester = new RuleTesterAndDocs();
+ruleTester.run( 'no-type', rule, {
 	valid: [ 'type()', 'myMethod.type()', 'myMethod.type' ],
 	invalid: [
 		{

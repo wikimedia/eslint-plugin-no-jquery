@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-parents' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer Element.closest to $.parents';
+const error = 'Prefer Element#closest to $.parents';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-parents', rule, {
 	valid: [ 'parents()', '[].parents()', 'div.parents()', 'div.parents' ],
 	invalid: [

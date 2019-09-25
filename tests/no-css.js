@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-css' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer getComputedStyle to css';
+const error = 'Prefer Window#getComputedStyle to $.css';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-css', rule, {
 	valid: [ 'css()', '[].css()', 'div.css()', 'div.css' ],
 	invalid: [

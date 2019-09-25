@@ -1,0 +1,22 @@
+# no-bind
+
+Disallows the .bind method. Prefer $.on/EventTarget#addEventListener to $.bind.
+
+## Rule details
+
+✗ The following patterns are considered errors:
+```js
+$( 'div' ).bind();
+$div.bind();
+$( 'div' ).first().bind();
+$( 'div' ).append( $( 'input' ).bind() );
+```
+
+✓ The following patterns are not considered errors:
+```js
+bind();
+[].bind();
+div.bind();
+div.bind;
+$div.remove.bind( $div );
+```

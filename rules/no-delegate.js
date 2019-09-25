@@ -4,5 +4,5 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
 	'delegate',
-	'Prefer $.on/addEventListener to delegate'
+	'Prefer $.on/EventTarget#addEventListener to $.delegate'
 );

@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-class-state' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Don\'t query the DOM state information';
+const error = 'Don\'t query the DOM for state information';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-class-state', rule, {
 	valid: [
 		'hasClass()',

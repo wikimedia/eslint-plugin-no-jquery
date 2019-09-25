@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-serialize' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const serializeError = 'Prefer FormData or URLSearchParams to $.serialize';
 const arrayError = 'Prefer FormData or URLSearchParams to $.serializeArray';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-serialize', rule, {
 	valid: [
 		'serialize()',

@@ -4,7 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows the .prop method and $.prop utility. Prefer direct property access.'
+		},
 		schema: []
 	},
 

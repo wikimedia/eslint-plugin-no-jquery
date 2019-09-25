@@ -4,7 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows the .find method and $.find utility. Prefer Document#querySelectorAll.'
+		},
 		schema: []
 	},
 
@@ -21,7 +23,7 @@ module.exports = {
 				if ( utils.isjQuery( node ) ) {
 					context.report( {
 						node: node,
-						message: 'Prefer querySelectorAll to $.find'
+						message: 'Prefer Document#querySelectorAll to $.find'
 					} );
 				}
 			}

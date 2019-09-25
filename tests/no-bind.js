@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-bind' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.on/addEventListener to bind';
+const error = 'Prefer $.on/EventTarget#addEventListener to $.bind';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-bind', rule, {
 	valid: [
 		'bind()',

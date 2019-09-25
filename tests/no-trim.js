@@ -1,16 +1,16 @@
 'use strict';
 
 const rule = require( '../rules/no-trim' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer String#trim to $.trim';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-trim', rule, {
-	valid: [ 'trim()', '"test".trim()', '"test".trim', '$("input").text().trim()' ],
+	valid: [ 'trim(" test ")', '" test ".trim()', '" test ".trim', '$("input").text().trim()' ],
 	invalid: [
 		{
-			code: '$.trim()',
+			code: '$.trim(" test ")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		}
 	]

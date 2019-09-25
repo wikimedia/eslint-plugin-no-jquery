@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-on-ready' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = '.on("ready") is not allowed';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-on-ready', rule, {
 	valid: [
 		'$(document).on("click", function(){})',

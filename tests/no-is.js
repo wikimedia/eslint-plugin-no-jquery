@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-is' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer matches to $.is';
+const error = 'Prefer Element#matches to $.is';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-is', rule, {
 	valid: [ 'is()', '[].is()', 'div.is()', 'div.is' ],
 	invalid: [

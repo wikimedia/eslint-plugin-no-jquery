@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-die' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.off/removeEventListener to die';
+const error = 'Prefer $.off/EventTarget#removeEventListener to $.die';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-die', rule, {
 	valid: [ 'die()', '[].die()', 'div.die()', 'div.die' ],
 	invalid: [

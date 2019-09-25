@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-constructor-attributes' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer $.attr to constructor attributes';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-constructor-attributes', rule, {
 	valid: [
 		'$(".div")',

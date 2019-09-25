@@ -4,7 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows the .filter method and $.filter utility. Prefer Array#filter.'
+		},
 		schema: []
 	},
 

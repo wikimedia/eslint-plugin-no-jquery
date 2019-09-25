@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-toggle' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = '$.toggle is not allowed';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-toggle', rule, {
 	valid: [ 'toggle()', '[].toggle()', 'div.toggle()', 'div.toggle' ],
 	invalid: [

@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-show' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = '$.show is not allowed';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-show', rule, {
 	valid: [ 'show()', '[].show()', 'div.show()', 'div.show' ],
 	invalid: [

@@ -4,7 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows the .data method and $.data utility. Prefer WeakMap.'
+		},
 		schema: []
 	},
 

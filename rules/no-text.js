@@ -4,7 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
-		docs: {},
+		docs: {
+			description: 'Disallows the .text method and $.text utility. Prefer Node#textContent.'
+		},
 		schema: []
 	},
 
@@ -21,7 +23,7 @@ module.exports = {
 				if ( utils.isjQuery( node.callee ) ) {
 					context.report( {
 						node: node,
-						message: 'Prefer textContent to $.text'
+						message: 'Prefer Node#textContent to $.text'
 					} );
 				}
 			}

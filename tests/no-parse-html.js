@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-parse-html' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer createHTMLDocument to $.parseHTML';
+const error = 'Prefer DOMImplementation#createHTMLDocument to $.parseHTML';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-parse-html', rule, {
 	valid: [ 'parseHTML()', '"test".parseHTML()', '"test".parseHTML' ],
 	invalid: [

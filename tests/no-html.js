@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-html' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer innerHTML to $.html';
+const error = 'Prefer Element#innerHTML to $.html';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-html', rule, {
 	valid: [ 'html()', '[].html()', 'div.html()', 'div.html' ],
 	invalid: [
