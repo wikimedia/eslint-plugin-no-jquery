@@ -7,7 +7,7 @@ const error = 'Prefer Array#map to $.map';
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-map-collection', rule, {
-	valid: [ 'map()', '[].map()', 'div.map()', 'div.map', '$.map()' ],
+	valid: [ 'map()', '[].map()', 'div.map()', 'div.map', '$.map()', '$("select").val().map()' ],
 	invalid: [
 		{
 			code: '$("div").map()',

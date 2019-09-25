@@ -18,7 +18,7 @@ module.exports = {
 					return;
 				}
 
-				if ( utils.isjQuery( node ) ) {
+				if ( utils.isjQuery( node.callee ) ) {
 					context.report( {
 						node: node,
 						message: 'Prefer textContent to $.text'

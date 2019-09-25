@@ -1,10 +1,43 @@
 'use strict';
 
+// Methods which always return something else than a jQuery collection
+const nonCollectionReturningMethods = [ 'toArray', 'get', 'position', 'serializeArray', 'serialize', 'index' ];
+// Methods that return something else than a jQuery collection when called without arguments
+const nonCollectionReturningAccessors = [ 'val', 'text', 'html', 'data', 'innerHeight', 'innerWidth', 'height', 'width', 'outerHeight', 'outerWidth', 'offset', 'scrollLeft', 'scrollTop' ];
+// Methods that return something else than a jQuery collection when called with a single argument
+const nonCollectionReturningValueAccessors = [ 'css', 'attr', 'prop' ];
+
 function traverse( node, test ) {
 	while ( node ) {
 		switch ( node.type ) {
 			case 'CallExpression':
+				if ( node.callee.type === 'MemberExpression' && node.callee.property.type === 'Identifier' ) {
+					const name = node.callee.property.name;
+
+					if ( nonCollectionReturningMethods.indexOf( name ) !== -1 ) {
+						// e.g. $foo.toArray(), returns false
+						return false;
+					}
+
+					if (
+						nonCollectionReturningAccessors.indexOf( name ) !== -1 &&
+						node.arguments.length === 0
+					) {
+						// e.g. $foo.val(), returns false
+						return false;
+					}
+
+					if (
+						nonCollectionReturningValueAccessors.indexOf( name ) !== -1 &&
+						node.arguments.length === 1
+					) {
+						// e.g. $foo.css("margin"), returns false
+						return false;
+					}
+				}
+
 				node = node.callee;
+
 				break;
 			case 'MemberExpression':
 				node = node.object;
@@ -81,7 +114,7 @@ function createCollectionMethodRule( methods, message ) {
 					return;
 				}
 
-				if ( isjQuery( node ) ) {
+				if ( isjQuery( node.callee ) ) {
 					context.report( {
 						node: node,
 						message: typeof message === 'function' ?

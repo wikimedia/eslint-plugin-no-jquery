@@ -18,7 +18,7 @@ module.exports = {
 					return;
 				}
 
-				if ( utils.isjQuery( node ) ) {
+				if ( utils.isjQuery( node.callee ) ) {
 					const getOrSet = node.arguments.length === 2 ? 'set' : 'get';
 					context.report( {
 						node: node,
