@@ -1,6 +1,6 @@
 # no-each
 
-Disallows the .each method and $.each utility. Prefer Array#forEach.
+Disallows the .each method and $.each utility. Prefer Array#forEach to $.each.
 
 ## Rule details
 
