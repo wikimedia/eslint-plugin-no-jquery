@@ -152,6 +152,10 @@ ruleTester.run( 'no-sizzle', rule, {
 			errors: [ { message: errorPositional, type: 'CallExpression' } ]
 		},
 		{
+			code: '$(this).find(":gt(" + n + ")")',
+			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+		},
+		{
 			code: '$(":has(.foo)")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
@@ -161,6 +165,10 @@ ruleTester.run( 'no-sizzle', rule, {
 		},
 		{
 			code: '$(":hidden")',
+			errors: [ { message: error, type: 'CallExpression' } ]
+		},
+		{
+			code: '$("." + className + ":hidden")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{

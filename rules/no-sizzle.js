@@ -2,6 +2,19 @@
 
 const utils = require( './utils.js' );
 
+function collectLiterals( node ) {
+	if ( node.type === 'BinaryExpression' ) {
+		return collectLiterals( node.left ) + collectLiterals( node.right );
+	} else if ( node.type === 'Literal' ) {
+		return node.value;
+	} else if ( node.type === 'Identifier' ) {
+		// Dummy value for regex matching
+		return 'A0';
+	} else {
+		return '';
+	}
+}
+
 module.exports = {
 	meta: {
 		docs: {
@@ -65,13 +78,14 @@ module.exports = {
 					context.options[ 0 ].allowPositional;
 				const allowOther = context.options[ 0 ] &&
 					context.options[ 0 ].allowOther;
+				const value = collectLiterals( node.arguments[ 0 ] );
 
-				if ( !allowPositional && forbiddenPositional.test( node.arguments[ 0 ].value ) ) {
+				if ( !allowPositional && forbiddenPositional.test( value ) ) {
 					context.report( {
 						node: node,
 						message: 'Positional selector extensions are not allowed'
 					} );
-				} else if ( !allowOther && forbiddenOther.test( node.arguments[ 0 ].value ) ) {
+				} else if ( !allowOther && forbiddenOther.test( value ) ) {
 					context.report( {
 						node: node,
 						message: 'Selector extensions are not allowed'
