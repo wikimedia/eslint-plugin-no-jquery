@@ -1,15 +1,19 @@
 'use strict';
 
 const rule = require( '../rules/no-attr' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const getError = 'Prefer getAttribute to attr';
-const setError = 'Prefer setAttribute to attr';
+const getError = 'Prefer Element#getAttribute to attr';
+const setError = 'Prefer Element#setAttribute to attr';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-attr', rule, {
 	valid: [ 'attr()', '[].attr()', 'div.attr()', 'div.attr' ],
 	invalid: [
+		{
+			code: '$.attr()',
+			errors: [ { message: getError, type: 'CallExpression' } ]
+		},
 		{
 			code: '$("div").attr()',
 			errors: [ { message: getError, type: 'CallExpression' } ]

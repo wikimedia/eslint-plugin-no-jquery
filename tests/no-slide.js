@@ -1,13 +1,13 @@
 'use strict';
 
 const rule = require( '../rules/no-slide' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const downError = 'Prefer CSS transitions to $.slideDown';
 const toggleError = 'Prefer CSS transitions to $.slideToggle';
 const upError = 'Prefer CSS transitions to $.slideUp';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-slide', rule, {
 	valid: [
 		'slideDown()',

@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-deferred' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer Promise to $.Deferred';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-deferred', rule, {
 	valid: [
 		'Deferred()',

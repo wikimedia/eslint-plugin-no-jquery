@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-hold-ready' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = '$.holdReady is not allowed';
 
-const ruleTester = new RuleTester();
-ruleTester.run( 'no-holdReady', rule, {
+const ruleTester = new RuleTesterAndDocs();
+ruleTester.run( 'no-hold-ready', rule, {
 	valid: [ 'holdReady()', '"test".holdReady()', '"test".holdReady' ],
 	invalid: [
 		{

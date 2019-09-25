@@ -15,13 +15,14 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint .",
-    "test": "mocha --reporter dot tests/"
+    "test": "mocha --reporter dot tests/",
+    "doc": "rm docs/* && mocha --reporter min tests/ --doc"
   },
   "peerDependencies": {
     "eslint": ">=2.3.0"
   },
   "devDependencies": {
-    "eslint": "^5.14.0",
+    "eslint": "^6.4.0",
     "eslint-config-wikimedia": "^0.14.1",
     "mocha": "^6.2.0"
   },

@@ -2,29 +2,7 @@
 
 const utils = require( './utils.js' );
 
-module.exports = {
-	meta: {
-		docs: {},
-		schema: []
-	},
-
-	create: function ( context ) {
-		return {
-			CallExpression: function ( node ) {
-				if (
-					node.callee.type !== 'MemberExpression' ||
-					node.callee.property.name !== 'filter'
-				) {
-					return;
-				}
-
-				if ( utils.isjQuery( node ) ) {
-					context.report( {
-						node: node,
-						message: 'Prefer Array#filter to $.filter'
-					} );
-				}
-			}
-		};
-	}
-};
+module.exports = utils.createCollectionOrUtilMethodRule(
+	'filter',
+	'Prefer Array#filter to $.filter'
+);

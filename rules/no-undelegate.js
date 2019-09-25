@@ -4,5 +4,5 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
 	'undelegate',
-	'Prefer $.off/removeEventListener to undelegate'
+	'Prefer $.off/EventTarget#removeEventListener to $.undelegate'
 );

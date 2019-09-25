@@ -1,10 +1,43 @@
 'use strict';
 
+// Methods which always return something else than a jQuery collection
+const nonCollectionReturningMethods = [ 'toArray', 'get', 'position', 'serializeArray', 'serialize', 'index' ];
+// Methods that return something else than a jQuery collection when called without arguments
+const nonCollectionReturningAccessors = [ 'val', 'text', 'html', 'data', 'innerHeight', 'innerWidth', 'height', 'width', 'outerHeight', 'outerWidth', 'offset', 'scrollLeft', 'scrollTop' ];
+// Methods that return something else than a jQuery collection when called with a single argument
+const nonCollectionReturningValueAccessors = [ 'css', 'attr', 'prop' ];
+
 function traverse( node, test ) {
 	while ( node ) {
 		switch ( node.type ) {
 			case 'CallExpression':
+				if ( node.callee.type === 'MemberExpression' && node.callee.property.type === 'Identifier' ) {
+					const name = node.callee.property.name;
+
+					if ( nonCollectionReturningMethods.indexOf( name ) !== -1 ) {
+						// e.g. $foo.toArray(), returns false
+						return false;
+					}
+
+					if (
+						nonCollectionReturningAccessors.indexOf( name ) !== -1 &&
+						node.arguments.length === 0
+					) {
+						// e.g. $foo.val(), returns false
+						return false;
+					}
+
+					if (
+						nonCollectionReturningValueAccessors.indexOf( name ) !== -1 &&
+						node.arguments.length === 1
+					) {
+						// e.g. $foo.css("margin"), returns false
+						return false;
+					}
+				}
+
 				node = node.callee;
+
 				break;
 			case 'MemberExpression':
 				node = node.object;
@@ -55,10 +88,12 @@ function isFunction( node ) {
 	return node.type === 'FunctionExpression' || node.type === 'ArrowFunctionExpression';
 }
 
-function createRule( create ) {
+function createRule( create, description ) {
 	return {
 		meta: {
-			docs: {},
+			docs: {
+				description: description
+			},
 			schema: []
 		},
 		create: create
@@ -67,6 +102,14 @@ function createRule( create ) {
 
 function createCollectionMethodRule( methods, message ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
+
+	let description = 'Disallows the .' + methods.join( '/' ) + ' ' +
+			( methods.length > 1 ? 'methods' : 'method' ) + '.';
+
+	if ( typeof message === 'string' ) {
+		description += ' ' + message + '.';
+	}
+
 	return createRule( function ( context ) {
 		return {
 			CallExpression: function ( node ) {
@@ -81,7 +124,7 @@ function createCollectionMethodRule( methods, message ) {
 					return;
 				}
 
-				if ( isjQuery( node ) ) {
+				if ( isjQuery( node.callee ) ) {
 					context.report( {
 						node: node,
 						message: typeof message === 'function' ?
@@ -91,10 +134,16 @@ function createCollectionMethodRule( methods, message ) {
 				}
 			}
 		};
-	} );
+	}, description );
 }
 
 function createCollectionPropertyRule( property, message ) {
+	let description = 'Disallows the $.' + property + ' property.';
+
+	if ( typeof message === 'string' ) {
+		description += ' ' + message + '.';
+	}
+
 	return createRule( function ( context ) {
 		return {
 			MemberExpression: function ( node ) {
@@ -116,11 +165,19 @@ function createCollectionPropertyRule( property, message ) {
 				}
 			}
 		};
-	} );
+	}, description );
 }
 
 function createUtilMethodRule( methods, message ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
+
+	let description = 'Disallows the $.' + methods.join( '/' ) + ' ' +
+			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
+
+	if ( typeof message === 'string' ) {
+		description += ' ' + message + '.';
+	}
+
 	return createRule( function ( context ) {
 		return {
 			CallExpression: function ( node ) {
@@ -143,10 +200,16 @@ function createUtilMethodRule( methods, message ) {
 				} );
 			}
 		};
-	} );
+	}, description );
 }
 
 function createUtilPropertyRule( property, message ) {
+	let description = 'Disallows the $.' + property + ' property.';
+
+	if ( typeof message === 'string' ) {
+		description += ' ' + message + '.';
+	}
+
 	return createRule( function ( context ) {
 		return {
 			MemberExpression: function ( node ) {
@@ -166,7 +229,43 @@ function createUtilPropertyRule( property, message ) {
 				} );
 			}
 		};
-	} );
+	}, description );
+}
+
+function createCollectionOrUtilMethodRule( methods, message ) {
+	methods = Array.isArray( methods ) ? methods : [ methods ];
+
+	let description = 'Disallows the .' + methods.join( '/' ) + ' ' +
+			( methods.length > 1 ? 'methods' : 'method' );
+
+	description += ' and $.' + methods.join( '/' ) + ' ' +
+			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
+
+	if ( typeof message === 'string' ) {
+		description += ' ' + message + '.';
+	}
+
+	return createRule( function ( context ) {
+		return {
+			CallExpression: function ( node ) {
+				if ( node.callee.type !== 'MemberExpression' ) {
+					return;
+				}
+				const name = node.callee.property.name;
+				if ( methods.indexOf( name ) === -1 ) {
+					return;
+				}
+				if ( isjQuery( node.callee ) ) {
+					context.report( {
+						node: node,
+						message: typeof message === 'function' ?
+							message( node ) :
+							message || '$.' + name + ' is not allowed'
+					} );
+				}
+			}
+		};
+	}, description );
 }
 
 module.exports = {
@@ -175,5 +274,6 @@ module.exports = {
 	createCollectionMethodRule: createCollectionMethodRule,
 	createCollectionPropertyRule: createCollectionPropertyRule,
 	createUtilMethodRule: createUtilMethodRule,
-	createUtilPropertyRule: createUtilPropertyRule
+	createUtilPropertyRule: createUtilPropertyRule,
+	createCollectionOrUtilMethodRule: createCollectionOrUtilMethodRule
 };

@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-noop' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer function() {} to $.noop';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-noop', rule, {
 	valid: [ 'foo.noop', 'foo.noop()', 'foo.noop(bar)' ],
 	invalid: [

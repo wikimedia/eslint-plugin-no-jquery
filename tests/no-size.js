@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-size' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer length to $.size';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-size', rule, {
 	valid: [ 'size()', '[].size()', 'div.size()', 'div.size' ],
 	invalid: [

@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-box-model' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = '$.boxModel is not allowed';
 
-const ruleTester = new RuleTester();
-ruleTester.run( 'no-noop', rule, {
+const ruleTester = new RuleTesterAndDocs();
+ruleTester.run( 'no-box-model', rule, {
 	valid: [ 'boxModel', 'a.boxModel', 'boxModel.foo', 'a.boxModel.foo' ],
 	invalid: [
 		{

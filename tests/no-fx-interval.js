@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-fx-interval' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = '$.fx.interval is not allowed';
 
-const ruleTester = new RuleTester();
-ruleTester.run( 'no-noop', rule, {
+const ruleTester = new RuleTesterAndDocs();
+ruleTester.run( 'no-fx-interval', rule, {
 	valid: [ 'interval', 'fx.interval', '$.interval', 'a.fx.interval', '$.fx' ],
 	invalid: [
 		{

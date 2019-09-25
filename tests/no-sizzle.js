@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-sizzle' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Selector extensions are not allowed';
 const errorPositional = 'Positional selector extensions are not allowed';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-sizzle', rule, {
 	valid: [
 		'find(":input")',
@@ -96,11 +96,11 @@ ruleTester.run( 'no-sizzle', rule, {
 	invalid: [
 		{
 			code: '$(":animated")',
-			options: [ { allowPositional: true } ],
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
 			code: '$(":animated")',
+			options: [ { allowPositional: true } ],
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{

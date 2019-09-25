@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../rules/no-unbind' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.off/removeEventListener to unbind';
+const error = 'Prefer $.off/EventTarget#removeEventListener to $.unbind';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-unbind', rule, {
 	valid: [ 'unbind()', '[].unbind()', 'div.unbind()', 'div.unbind' ],
 	invalid: [

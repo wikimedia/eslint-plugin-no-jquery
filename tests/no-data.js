@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../rules/no-data' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'Prefer WeakMap to data';
 const removeError = 'Prefer WeakMap to removeData';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-data', rule, {
 	valid: [
 		'data()',
@@ -20,6 +20,10 @@ ruleTester.run( 'no-data', rule, {
 		'div.removeData'
 	],
 	invalid: [
+		{
+			code: '$.data()',
+			errors: [ { message: error, type: 'CallExpression' } ]
+		},
 		{
 			code: '$("div").data()',
 			errors: [ { message: error, type: 'CallExpression' } ]
@@ -35,6 +39,10 @@ ruleTester.run( 'no-data', rule, {
 		{
 			code: '$("div").append($("input").data())',
 			errors: [ { message: error, type: 'CallExpression' } ]
+		},
+		{
+			code: '$.removeData()',
+			errors: [ { message: removeError, type: 'CallExpression' } ]
 		},
 		{
 			code: '$("div").removeData()',

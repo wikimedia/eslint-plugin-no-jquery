@@ -1,14 +1,18 @@
 'use strict';
 
 const rule = require( '../rules/no-text' );
-const RuleTester = require( 'eslint' ).RuleTester;
+const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer textContent to $.text';
+const error = 'Prefer Node#textContent to $.text';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-text', rule, {
 	valid: [ 'text()', '[].text()', 'div.text()', 'div.text' ],
 	invalid: [
+		{
+			code: '$.text()',
+			errors: [ { message: error, type: 'CallExpression' } ]
+		},
 		{
 			code: '$("div").text()',
 			errors: [ { message: error, type: 'CallExpression' } ]
