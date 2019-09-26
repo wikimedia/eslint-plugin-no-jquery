@@ -88,12 +88,13 @@ function isFunction( node ) {
 	return node.type === 'FunctionExpression' || node.type === 'ArrowFunctionExpression';
 }
 
-function createRule( create, description ) {
+function createRule( create, description, fixable ) {
 	return {
 		meta: {
 			docs: {
 				description: description
 			},
+			fixable: fixable,
 			schema: []
 		},
 		create: create
@@ -168,7 +169,7 @@ function createCollectionPropertyRule( property, message ) {
 	}, description );
 }
 
-function createUtilMethodRule( methods, message ) {
+function createUtilMethodRule( methods, message, fixable, fix ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the $.' + methods.join( '/' ) + ' ' +
@@ -196,11 +197,12 @@ function createUtilMethodRule( methods, message ) {
 					node: node,
 					message: typeof message === 'function' ?
 						message( node ) :
-						message || '$.' + name + ' is not allowed'
+						message || '$.' + name + ' is not allowed',
+					fix: fix && fix.bind( this, node )
 				} );
 			}
 		};
-	}, description );
+	}, description, fixable );
 }
 
 function createUtilPropertyRule( property, message ) {

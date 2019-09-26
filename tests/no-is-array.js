@@ -10,8 +10,9 @@ ruleTester.run( 'no-is-array', rule, {
 	valid: [ 'isArray()', '"test".isArray()', '"test".isArray' ],
 	invalid: [
 		{
-			code: '$.isArray()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$.isArray( [] )',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: 'Array.isArray( [] )'
 		}
 	]
 } );

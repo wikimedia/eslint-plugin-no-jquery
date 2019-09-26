@@ -8,7 +8,7 @@ This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
 
 ✗ The following patterns are considered errors:
 ```js
-$.isArray();
+$.isArray( [] );
 ```
 
 ✓ The following patterns are not considered errors:
