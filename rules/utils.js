@@ -198,7 +198,7 @@ function createUtilMethodRule( methods, message, fixable, fix ) {
 					message: typeof message === 'function' ?
 						message( node ) :
 						message || '$.' + name + ' is not allowed',
-					fix: fix.bind( this, node )
+					fix: fix && fix.bind( this, node )
 				} );
 			}
 		};
