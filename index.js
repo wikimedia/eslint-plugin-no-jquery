@@ -11,6 +11,7 @@ module.exports = {
 		'no-bind': require( './rules/no-bind' ),
 		'no-box-model': require( './rules/no-box-model' ),
 		'no-browser': require( './rules/no-browser' ),
+		'no-camel-case': require( './rules/no-camel-case' ),
 		'no-class': require( './rules/no-class' ),
 		'no-class-state': require( './rules/no-class-state' ),
 		'no-clone': require( './rules/no-clone' ),
@@ -105,6 +106,7 @@ module.exports = {
 		'deprecated-3.3': {
 			extends: 'plugin:no-jquery/deprecated-3.0',
 			rules: {
+				'no-jquery/no-camel-case': 'error',
 				'no-jquery/no-is-function': 'error',
 				'no-jquery/no-is-window': 'error'
 			}
