@@ -2,6 +2,8 @@
 
 Disallows the $.boxModel property.
 
+This rule is enabled in `plugin:no-jquery/deprecated-1.3`.
+
 ## Rule details
 
 ✗ The following patterns are considered errors:

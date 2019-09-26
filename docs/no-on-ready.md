@@ -2,6 +2,8 @@
 
 Disallows using the ready event on the document.
 
+This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
+
 ## Rule details
 
 ✗ The following patterns are considered errors:
