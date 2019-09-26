@@ -29,7 +29,8 @@ module.exports = {
 				if (
 					typeof value !== 'string' ||
 					!value ||
-					value === '#' ) {
+					value[ 0 ] === '#'
+				) {
 					return;
 				}
 
