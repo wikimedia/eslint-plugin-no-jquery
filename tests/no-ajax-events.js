@@ -3,6 +3,10 @@
 const rule = require( '../rules/no-ajax-events' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
+function getErrors( method ) {
+	return [ { type: 'CallExpression', message: 'Prefer local event to ' + method } ];
+}
+
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-ajax-events', rule, {
 	valid: [
@@ -10,62 +14,59 @@ ruleTester.run( 'no-ajax-events', rule, {
 		'$form.on("submit", function(e){ })',
 		'$form.on()',
 		'on("ajaxSuccess", ".js-select-menu", function(e){ })',
-		'form.on("ajaxSend")'
+		'form.on("ajaxSend")',
+		'form.ajaxSend()'
+		// TODO: This should pass after #93
+		// '$.ajaxSend()'
 	],
 	invalid: [
 		{
 			code: '$(document).on("ajaxSend", function(e){ })',
-			errors: [
-				{
-					message: 'Prefer local event to ajaxSend',
-					type: 'CallExpression'
-				}
-			]
+			errors: getErrors( 'ajaxSend' )
 		},
 		{
 			code: '$(document).on("ajaxSuccess", function(e){ })',
-			errors: [
-				{
-					message: 'Prefer local event to ajaxSuccess',
-					type: 'CallExpression'
-				}
-			]
+			errors: getErrors( 'ajaxSuccess' )
 		},
 		{
 			code: '$form.on("ajaxError", function(e){ })',
-			errors: [
-				{
-					message: 'Prefer local event to ajaxError',
-					type: 'CallExpression'
-				}
-			]
+			errors: getErrors( 'ajaxError' )
 		},
 		{
 			code: '$form.on("ajaxComplete", function(e){ })',
-			errors: [
-				{
-					message: 'Prefer local event to ajaxComplete',
-					type: 'CallExpression'
-				}
-			]
+			errors: getErrors( 'ajaxComplete' )
 		},
 		{
 			code: '$form.on("ajaxStart", function(e){ })',
-			errors: [
-				{
-					message: 'Prefer local event to ajaxStart',
-					type: 'CallExpression'
-				}
-			]
+			errors: getErrors( 'ajaxStart' )
 		},
 		{
 			code: '$form.on("ajaxStop", function(e){ })',
-			errors: [
-				{
-					message: 'Prefer local event to ajaxStop',
-					type: 'CallExpression'
-				}
-			]
+			errors: getErrors( 'ajaxStop' )
+		},
+		{
+			code: '$(document).ajaxSend(function(e){ })',
+			errors: getErrors( 'ajaxSend' )
+		},
+		{
+			code: '$(document).ajaxSuccess(function(e){ })',
+			errors: getErrors( 'ajaxSuccess' )
+		},
+		{
+			code: '$form.ajaxError(function(e){ })',
+			errors: getErrors( 'ajaxError' )
+		},
+		{
+			code: '$form.ajaxComplete(function(e){ })',
+			errors: getErrors( 'ajaxComplete' )
+		},
+		{
+			code: '$form.ajaxStart(function(e){ })',
+			errors: getErrors( 'ajaxStart' )
+		},
+		{
+			code: '$form.ajaxStop(function(e){ })',
+			errors: getErrors( 'ajaxStop' )
 		}
 	]
 } );
