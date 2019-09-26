@@ -2,7 +2,6 @@
 
 const utils = require( './utils.js' );
 
-const methodName = 'on';
 const disallowedEvents = {
 	ajaxStart: true,
 	ajaxSend: true,
@@ -26,22 +25,30 @@ module.exports = {
 	create: function ( context ) {
 		return {
 			CallExpression: function ( node ) {
+				if ( node.callee.type !== MemberExpression ) {
+					return;
+				}
+				let usedMethod;
 				if (
-					node.callee.type === MemberExpression &&
-					node.callee.property.name === methodName &&
+					node.callee.property.name === 'on' &&
 					node.arguments.length >= 1
 				) {
 					const arg = node.arguments[ 0 ];
 					if (
 						arg.type === Literal &&
-						arg.value in disallowedEvents &&
-						utils.isjQuery( node )
+						arg.value in disallowedEvents
 					) {
-						context.report( {
-							node: node,
-							message: `Prefer local event to ${arg.value}`
-						} );
+						usedMethod = arg.value;
 					}
+				}
+				if ( node.callee.property.name in disallowedEvents ) {
+					usedMethod = node.callee.property.name;
+				}
+				if ( usedMethod && utils.isjQuery( node ) ) {
+					context.report( {
+						node: node,
+						message: `Prefer local event to ${usedMethod}`
+					} );
 				}
 			}
 		};

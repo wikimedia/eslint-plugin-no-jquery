@@ -2,6 +2,8 @@
 
 Disallows selector extensions provided by Sizzle. Use the `allowPositional` option to allow positional selectors. Use the `allowOther` option to allow all other selectors. These options are used in the `deprecated-3.4` ruleset as only positional selectors were deprecated in that version.
 
+This rule is enabled in `plugin:no-jquery/deprecated-3.4` with `[{"allowPositional":false,"allowOther":true}]` options.
+
 ## Rule details
 
 ✗ The following patterns are considered errors:

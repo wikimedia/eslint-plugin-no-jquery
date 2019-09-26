@@ -1,19 +1,17 @@
-# no-sub
+# no-is-plain-object
 
-Disallows the $.sub utility.
-
-This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
+Disallows the $.isPlainObject utility.
 
 ## Rule details
 
 ✗ The following patterns are considered errors:
 ```js
-$.sub();
+$.isPlainObject();
 ```
 
 ✓ The following patterns are not considered errors:
 ```js
-sub();
-'test'.sub();
-'test'.sub;
+isPlainObject();
+myClass.isPlainObject();
+$div.isPlainObject();
 ```

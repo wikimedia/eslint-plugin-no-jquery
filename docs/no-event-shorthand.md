@@ -1,6 +1,6 @@
 # no-event-shorthand
 
-Disallows the .error/resize/scroll/blur/change/focus/focusin/focusout/select/submit/keydown/keypress/keyup/click/contextmenu/dblclick/hover/mousedown/mouseenter/mouseleave/mousemove/mouseout/mouseover/mouseup methods.
+Disallows the .error/resize/scroll/blur/change/focus/focusin/focusout/select/submit/keydown/keypress/keyup/click/contextmenu/dblclick/hover/mousedown/mouseenter/mouseleave/mousemove/mouseout/mouseover/mouseup/ajaxStart/ajaxStop/ajaxComplete/ajaxError/ajaxSuccess/ajaxSend methods.
 
 ## Rule details
 
@@ -126,6 +126,36 @@ $div.mouseup();
 this.prop.$div.mouseup();
 $( 'div' ).first().mouseup();
 $( 'div' ).append( $( 'input' ).mouseup() );
+$( 'div' ).ajaxStart();
+$div.ajaxStart();
+this.prop.$div.ajaxStart();
+$( 'div' ).first().ajaxStart();
+$( 'div' ).append( $( 'input' ).ajaxStart() );
+$( 'div' ).ajaxStop();
+$div.ajaxStop();
+this.prop.$div.ajaxStop();
+$( 'div' ).first().ajaxStop();
+$( 'div' ).append( $( 'input' ).ajaxStop() );
+$( 'div' ).ajaxComplete();
+$div.ajaxComplete();
+this.prop.$div.ajaxComplete();
+$( 'div' ).first().ajaxComplete();
+$( 'div' ).append( $( 'input' ).ajaxComplete() );
+$( 'div' ).ajaxError();
+$div.ajaxError();
+this.prop.$div.ajaxError();
+$( 'div' ).first().ajaxError();
+$( 'div' ).append( $( 'input' ).ajaxError() );
+$( 'div' ).ajaxSuccess();
+$div.ajaxSuccess();
+this.prop.$div.ajaxSuccess();
+$( 'div' ).first().ajaxSuccess();
+$( 'div' ).append( $( 'input' ).ajaxSuccess() );
+$( 'div' ).ajaxSend();
+$div.ajaxSend();
+this.prop.$div.ajaxSend();
+$( 'div' ).first().ajaxSend();
+$( 'div' ).append( $( 'input' ).ajaxSend() );
 ```
 
 ✓ The following patterns are not considered errors:
@@ -250,4 +280,34 @@ $.mouseup();
 [].mouseup();
 div.mouseup();
 div.mouseup;
+ajaxStart();
+$.ajaxStart();
+[].ajaxStart();
+div.ajaxStart();
+div.ajaxStart;
+ajaxStop();
+$.ajaxStop();
+[].ajaxStop();
+div.ajaxStop();
+div.ajaxStop;
+ajaxComplete();
+$.ajaxComplete();
+[].ajaxComplete();
+div.ajaxComplete();
+div.ajaxComplete;
+ajaxError();
+$.ajaxError();
+[].ajaxError();
+div.ajaxError();
+div.ajaxError;
+ajaxSuccess();
+$.ajaxSuccess();
+[].ajaxSuccess();
+div.ajaxSuccess();
+div.ajaxSuccess;
+ajaxSend();
+$.ajaxSend();
+[].ajaxSend();
+div.ajaxSend();
+div.ajaxSend;
 ```

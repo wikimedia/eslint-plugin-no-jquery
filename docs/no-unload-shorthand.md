@@ -2,6 +2,8 @@
 
 Disallows the .unload method. Prefer $.on or $.trigger to $.unload.
 
+This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
+
 ## Rule details
 
 ✗ The following patterns are considered errors:

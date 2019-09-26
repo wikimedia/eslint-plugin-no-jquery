@@ -1,6 +1,6 @@
 # no-is-array
 
-Disallows the $.isArray utility. Prefer Array#isArray to $.isArray.
+Disallows the $.isArray utility. Prefer Array.isArray to $.isArray.
 
 ## Rule details
 
