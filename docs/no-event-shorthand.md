@@ -2,6 +2,8 @@
 
 Disallows the .error/resize/scroll/blur/change/focus/focusin/focusout/select/submit/keydown/keypress/keyup/click/contextmenu/dblclick/hover/mousedown/mouseenter/mouseleave/mousemove/mouseout/mouseover/mouseup/ajaxStart/ajaxStop/ajaxComplete/ajaxError/ajaxSuccess/ajaxSend methods.
 
+This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
+
 ## Rule details
 
 ✗ The following patterns are considered errors:

@@ -104,11 +104,25 @@ module.exports = {
 		},
 		// Use this profile if you're writing code targetting jQuery 3.3.x environments.
 		'deprecated-3.3': {
-			extends: 'plugin:no-jquery/deprecated-3.0',
+			extends: 'plugin:no-jquery/deprecated-3.2',
 			rules: {
 				'no-jquery/no-camel-case': 'error',
+				'no-jquery/no-event-shorthand': 'error',
 				'no-jquery/no-is-function': 'error',
-				'no-jquery/no-is-window': 'error'
+				'no-jquery/no-is-numeric': 'error',
+				'no-jquery/no-is-window': 'error',
+				'no-jquery/no-now': 'error',
+				'no-jquery/no-proxy': 'error',
+				'no-jquery/no-type': 'error'
+			}
+		},
+		// Use this profile if you're writing code targetting jQuery 3.3.x environments.
+		'deprecated-3.2': {
+			extends: 'plugin:no-jquery/deprecated-3.0',
+			rules: {
+				'no-jquery/no-hold-ready': 'error',
+				'no-jquery/no-is-array': 'error',
+				'no-jquery/no-node-name': 'error'
 			}
 		},
 		// Use this profile if you're writing code targetting jQuery 3.0.x environments.

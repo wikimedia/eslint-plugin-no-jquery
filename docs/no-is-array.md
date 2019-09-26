@@ -2,6 +2,8 @@
 
 Disallows the $.isArray utility. Prefer Array.isArray to $.isArray.
 
+This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
+
 ## Rule details
 
 ✗ The following patterns are considered errors:

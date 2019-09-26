@@ -2,6 +2,8 @@
 
 Disallows the $.camelCase utility.
 
+This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
+
 ## Rule details
 
 ✗ The following patterns are considered errors:
