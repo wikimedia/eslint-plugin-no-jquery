@@ -15,9 +15,9 @@ function allLiteral( node ) {
 	}
 }
 
-function joinLiteral( node ) {
+function joinLiterals( node ) {
 	if ( node.type === 'BinaryExpression' ) {
-		return joinLiteral( node.left ) + joinLiteral( node.right );
+		return joinLiterals( node.left ) + joinLiterals( node.right );
 	} else if ( node.type === 'Literal' ) {
 		return node.value;
 	} else {
@@ -71,7 +71,7 @@ module.exports = {
 
 				const arg = node.arguments[ 0 ];
 				if ( allowSingle ) {
-					const value = arg && allLiteral( arg ) && joinLiteral( arg );
+					const value = arg && allLiteral( arg ) && joinLiterals( arg );
 					if (
 						typeof value !== 'string' ||
 						!value ||
