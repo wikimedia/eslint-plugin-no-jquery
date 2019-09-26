@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-is-array' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer Array#isArray to $.isArray';
+const error = 'Prefer Array.isArray to $.isArray';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-is-array', rule, {

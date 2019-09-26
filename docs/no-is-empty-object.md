@@ -1,17 +1,17 @@
-# no-is-array
+# no-is-empty-object
 
-Disallows the $.isArray utility. Prefer Array.isArray to $.isArray.
+Disallows the $.isEmptyObject utility.
 
 ## Rule details
 
 ✗ The following patterns are considered errors:
 ```js
-$.isArray();
+$.isEmptyObject();
 ```
 
 ✓ The following patterns are not considered errors:
 ```js
-isArray();
-'test'.isArray();
-'test'.isArray;
+isEmptyObject();
+myClass.isEmptyObject();
+$div.isEmptyObject();
 ```

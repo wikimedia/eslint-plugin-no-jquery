@@ -40,6 +40,8 @@ module.exports = {
 		'no-html': require( './rules/no-html' ),
 		'no-in-array': require( './rules/no-in-array' ),
 		'no-is-array': require( './rules/no-is-array' ),
+		'no-is-empty-object': require( './rules/no-is-empty-object' ),
+		'no-is-plain-object': require( './rules/no-is-plain-object' ),
 		'no-is-function': require( './rules/no-is-function' ),
 		'no-is-numeric': require( './rules/no-is-numeric' ),
 		'no-is-window': require( './rules/no-is-window' ),

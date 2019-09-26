@@ -1,17 +1,17 @@
-# no-is-array
+# no-is-plain-object
 
-Disallows the $.isArray utility. Prefer Array.isArray to $.isArray.
+Disallows the $.isPlainObject utility.
 
 ## Rule details
 
 ✗ The following patterns are considered errors:
 ```js
-$.isArray();
+$.isPlainObject();
 ```
 
 ✓ The following patterns are not considered errors:
 ```js
-isArray();
-'test'.isArray();
-'test'.isArray;
+isPlainObject();
+myClass.isPlainObject();
+$div.isPlainObject();
 ```
