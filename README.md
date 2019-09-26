@@ -33,7 +33,7 @@ Add `no-jquery` to the plugins section of your `.eslintrc` configuration file. Y
 }
 ```
 
-The pre-set profile `plugin:no-jquery/deprecated` includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use profiles targetting specific versions of jQuery if you know the environment in which your code will operate. There are profiles for jQuery 3.3.x+ environments (`deprecated-3.3`), 3.0.x+ (`deprecated-3.0`), and several others for completeness.
+The pre-set profile `plugin:no-jquery/deprecated` includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use profiles targetting specific versions of jQuery if you know the environment in which your code will operate. There are profiles for jQuery 3.4.x+ environments (`deprecated-3.4`), 3.0.x+ (`deprecated-3.0`), and several others for completeness. Deprecation profiles are cumulative, so include all the rules for jQuery versions below them.
 
 ## Rules
 

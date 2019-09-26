@@ -4,6 +4,19 @@ const linter = new eslint.Linter();
 const cli = new eslint.CLIEngine();
 const config = cli.getConfigForFile( 'index.js' );
 const fs = require( 'fs' );
+const rulesets = require( './index' ).configs;
+
+const rulesData = {};
+
+for ( const name in rulesets ) {
+	const rules = rulesets[ name ].rules || {};
+	for ( const rule in rules ) {
+		rulesData[ rule.slice( 10 ) ] = {
+			ruleset: name,
+			options: Array.isArray( rules[ rule ] ) ? rules[ rule ].slice( 1 ) : null
+		};
+	}
+}
 
 function buildRuleDetails( tests, icon ) {
 	let output = '';
@@ -47,6 +60,15 @@ class RuleTesterAndDocs extends RuleTester {
 				output += rule.meta.docs.description + '\n\n';
 			} else {
 				console.warn( 'Rule ' + name + ' has no description.' );
+			}
+
+			if ( name in rulesData ) {
+				const data = rulesData[ name ];
+				output += 'This rule is enabled in `plugin:no-jquery/' + data.ruleset + '`';
+				if ( data.options ) {
+					output += ' with `' + JSON.stringify( data.options ) + '` options';
+				}
+				output += '.\n\n';
 			}
 
 			output += '## Rule details\n\n';
