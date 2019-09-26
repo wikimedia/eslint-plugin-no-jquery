@@ -2,6 +2,8 @@
 
 Disallows the $.support property.
 
+This rule is enabled in `plugin:no-jquery/deprecated-1.9`.
+
 ## Rule details
 
 ✗ The following patterns are considered errors:

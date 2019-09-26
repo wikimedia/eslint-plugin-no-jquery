@@ -2,6 +2,8 @@
 
 Disallows the $.parseJSON utility. Prefer JSON.parse to $.parseJSON.
 
+This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
+
 ## Rule details
 
 ✗ The following patterns are considered errors:
