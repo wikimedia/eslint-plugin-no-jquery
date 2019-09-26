@@ -32,7 +32,14 @@ const forbidden = [
 	'mousemove',
 	'mouseout',
 	'mouseover',
-	'mouseup'
+	'mouseup',
+	// AJAX
+	'ajaxStart',
+	'ajaxStop',
+	'ajaxComplete',
+	'ajaxError',
+	'ajaxSuccess',
+	'ajaxSend'
 ];
 let valid = [];
 let invalid = [];
