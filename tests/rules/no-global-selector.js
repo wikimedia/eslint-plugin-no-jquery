@@ -16,6 +16,7 @@ ruleTester.run( 'no-global-selector', rule, {
 		'$(".selector", context)',
 		'$(".selector", "#")',
 		'$(".selector", [])',
+		'$("#id")',
 		'$(function() {})',
 		// Variables could be a selector, but could equally be HTML or functions, so leave as valid
 		'$(variable)',
@@ -32,10 +33,6 @@ ruleTester.run( 'no-global-selector', rule, {
 	invalid: [
 		{
 			code: '$(".div")',
-			errors: [ { message: error, type: 'CallExpression' } ]
-		},
-		{
-			code: '$("#id")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
