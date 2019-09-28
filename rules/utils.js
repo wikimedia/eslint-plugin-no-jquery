@@ -69,7 +69,7 @@ function traverse( node, variableTest, constructorTest ) {
 function isjQueryConstructor( context, name ) {
 	const constructorAliases =
 		( context.settings && context.settings[ 'no-jquery' ] && context.settings[ 'no-jquery' ].constructorAliases ) ||
-		[ '$' ];
+		[ '$', 'jQuery' ];
 	return constructorAliases.indexOf( name ) !== -1;
 }
 

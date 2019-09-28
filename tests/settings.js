@@ -10,12 +10,18 @@ const extendedPattern = '^\\$.|^element$';
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'settings', rule, {
 	valid: [
-		'jQuery("div").each()',
-		'jQuery.each()',
 		'jq("div").each()',
 		'jq.each',
 		'div.each()',
 		'div.each',
+		{
+			code: 'jQuery("div").each()',
+			settings: { 'no-jquery': { constructorAliases: [ '$' ] } }
+		},
+		{
+			code: 'jQuery.each()',
+			settings: { 'no-jquery': { constructorAliases: [ '$' ] } }
+		},
 		{
 			code: '$("div").each()',
 			settings: { 'no-jquery': { constructorAliases: [ 'jQuery' ] } }

@@ -41,7 +41,7 @@ Alternatively, you can pick out rules individually (see below).
 
 The following global settings can be used under the "no-jquery" property to configure the linter:
 
-* `variablePattern` - An array of aliases for the jQuery constructor. Defaults to `[ "$" ]`
+* `variablePattern` - An array of aliases for the jQuery constructor. Defaults to `[ "$", "jQuery" ]`
 * `constructorAliases` - Regular expression pattern for matching jQuery variables. Defaults to `"^\\$."`
 
 ```json
