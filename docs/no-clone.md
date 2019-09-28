@@ -4,7 +4,7 @@ Disallows the .clone method. Prefer Node#cloneNode to $.clone.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( 'div' ).clone();
 $div.clone();
@@ -13,7 +13,7 @@ $( 'div' ).first().clone();
 $( 'div' ).append( $( 'input' ).clone() );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 clone();
 [].clone();

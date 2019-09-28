@@ -6,12 +6,12 @@ This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.isArray( [] );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 isArray();
 'test'.isArray();

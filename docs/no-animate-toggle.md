@@ -4,7 +4,7 @@ Disallows the duration argument when using the .show, .hide & .toggle methods. P
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( 'div' ).show( 'fast' );
 $div.show( 500 );
@@ -20,7 +20,7 @@ $( 'div' ).first().toggle( { duration: 'slow' } );
 $( 'div' ).append( $( 'input' ).toggle( { duration: 'slow' } ) );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 $div.show();
 $( 'div' ).show();
