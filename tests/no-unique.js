@@ -10,8 +10,9 @@ ruleTester.run( 'no-unique', rule, {
 	valid: [ 'unique()', '"test".unique()', '"test".unique' ],
 	invalid: [
 		{
-			code: '$.unique()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$.unique( [] )',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$.uniqueSort( [] )'
 		}
 	]
 } );
