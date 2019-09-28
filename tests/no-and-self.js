@@ -10,8 +10,9 @@ ruleTester.run( 'no-and-self', rule, {
 	valid: [ 'andSelf()', '[].andSelf()', 'div.andSelf()', 'div.andSelf' ],
 	invalid: [
 		{
-			code: '$("div").andSelf()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$("div").andSelf(".foo")',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").addBack(".foo")'
 		},
 		{
 			code: '$div.andSelf()',
@@ -19,7 +20,8 @@ ruleTester.run( 'no-and-self', rule, {
 		},
 		{
 			code: '$("div").first().andSelf()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").first().addBack()'
 		},
 		{
 			code: '$("div").append($("input").andSelf())',
