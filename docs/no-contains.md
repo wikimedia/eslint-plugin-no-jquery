@@ -12,6 +12,6 @@ $.contains();
 ✓ The following patterns are not considered errors:
 ```js
 contains();
-div.contains();
-div.contains;
+myClass.contains();
+$div.contains();
 ```
