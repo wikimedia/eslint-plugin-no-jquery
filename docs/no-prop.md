@@ -1,6 +1,6 @@
 # no-prop
 
-Disallows the .prop method and $.prop utility. Prefer direct property access to $.prop.
+Disallows the .prop/removeProp methods and $.prop/removeProp utilies.
 
 ## Rule details
 
@@ -11,6 +11,7 @@ $( 'div' ).prop();
 $div.prop();
 $( 'div' ).first().prop();
 $( 'div' ).append( $( 'input' ).prop() );
+$( 'div' ).removeProp();
 ```
 
 ✔️ The following patterns are not considered errors:
@@ -19,4 +20,6 @@ prop();
 [].prop();
 div.prop();
 div.prop;
+removeProp();
+div.removeProp();
 ```
