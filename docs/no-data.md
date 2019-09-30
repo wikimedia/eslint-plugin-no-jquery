@@ -4,7 +4,7 @@ Disallows the .data/removeData methods and $.data/removeData utilies.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.data();
 $( 'div' ).data();
@@ -16,7 +16,7 @@ $( 'div' ).removeData();
 $div.removeData();
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 data();
 [].data();

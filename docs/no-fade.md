@@ -4,7 +4,7 @@ Disallows the .fadeIn/fadeOut/fadeTo/fadeToggle methods.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( 'div' ).fadeIn();
 $div.fadeIn();
@@ -24,7 +24,7 @@ $( 'div' ).first().fadeToggle();
 $( 'div' ).append( $( 'input' ).fadeToggle() );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 fadeIn();
 [].fadeIn();

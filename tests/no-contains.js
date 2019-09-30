@@ -7,11 +7,7 @@ const error = 'Prefer Node#contains to $.contains';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-contains', rule, {
-	valid: [
-		'contains()',
-		'div.contains()',
-		'div.contains'
-	],
+	valid: [ 'contains()', 'myClass.contains()', '$div.contains()' ],
 	invalid: [
 		{
 			code: '$.contains()',

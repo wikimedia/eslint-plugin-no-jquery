@@ -4,7 +4,7 @@ Disallows the $.ajax/get/getJSON/getScript/post utilies.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.ajax();
 $.get();
@@ -13,7 +13,7 @@ $.getScript();
 $.post();
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 ajax();
 div.ajax();

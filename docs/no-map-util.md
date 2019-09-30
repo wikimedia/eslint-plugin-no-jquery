@@ -4,12 +4,12 @@ Disallows the $.map utility. Prefer Array#map to $.map.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.map();
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 map();
 [].map();
