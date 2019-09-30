@@ -35,6 +35,28 @@ Add `no-jquery` to the plugins section of your `.eslintrc` configuration file. Y
 
 The pre-set profile `plugin:no-jquery/deprecated` includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use profiles targetting specific versions of jQuery if you know the environment in which your code will operate. There are profiles for jQuery 3.4.x+ environments (`deprecated-3.4`), 3.0.x+ (`deprecated-3.0`), and several others for completeness. Deprecation profiles are cumulative, so include all the rules for jQuery versions below them.
 
+Alternatively, you can pick out rules individually (see below).
+
+## Settings
+
+The following global settings can be used under the "no-jquery" property to configure the linter:
+
+* `variablePattern` - An array of aliases for the jQuery constructor. Defaults to `[ "$", "jQuery" ]`
+* `constructorAliases` - Regular expression pattern for matching jQuery variables. Defaults to `"^\\$."`
+
+```json
+{
+  "settings": {
+    "no-jquery": {
+        "variablePattern": [ "$", "jQuery" ],
+        "constructorAliases": "^\\$.|^element$"
+    }
+  },
+  "plugins": [
+    "no-jquery"
+  ]
+```
+
 ## Rules
 
 * [no-jquery/no-ajax](docs/no-ajax.md)

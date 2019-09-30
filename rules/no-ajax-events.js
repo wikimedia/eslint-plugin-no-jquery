@@ -44,7 +44,7 @@ module.exports = {
 				if ( node.callee.property.name in disallowedEvents ) {
 					usedMethod = node.callee.property.name;
 				}
-				if ( usedMethod && utils.isjQuery( node ) ) {
+				if ( usedMethod && utils.isjQuery( context, node ) ) {
 					context.report( {
 						node: node,
 						message: `Prefer local event to ${usedMethod}`
