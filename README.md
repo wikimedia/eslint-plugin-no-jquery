@@ -151,6 +151,12 @@ npm install
 npm test
 ```
 
+To update documentation after modifying a rule or its tests, use
+
+```
+npm run doc
+```
+
 ## License
 
 Distributed under the MIT license. See LICENSE for details.
