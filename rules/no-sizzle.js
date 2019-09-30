@@ -65,7 +65,7 @@ module.exports = {
 			CallExpression: function ( node ) {
 				if (
 					!node.arguments[ 0 ] ||
-					!utils.isjQuery( node ) ||
+					!utils.isjQuery( context, node ) ||
 					(
 						node.callee.type === 'MemberExpression' &&
 						traversals.indexOf( node.callee.property.name ) === -1

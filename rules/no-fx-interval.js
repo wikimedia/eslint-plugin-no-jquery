@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require( './utils.js' );
+
 module.exports = {
 	meta: {
 		docs: {
@@ -12,7 +14,7 @@ module.exports = {
 		return {
 			MemberExpression: function ( node ) {
 				if (
-					node.object.name !== '$' ||
+					!utils.isjQueryConstructor( context, node.object.name ) ||
 					node.property.name !== 'fx' ||
 					!node.parent.property ||
 					node.parent.property.name !== 'interval'

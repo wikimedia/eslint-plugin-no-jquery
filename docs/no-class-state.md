@@ -4,7 +4,7 @@ Disallows .hasClass and .toggleClass to discourage querying the DOM for state in
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( 'div' ).hasClass();
 $div.hasClass();
@@ -16,7 +16,7 @@ $( 'div' ).first().toggleClass( 'myClass' );
 $( 'div' ).append( $( 'input' ).toggleClass( 'myClass' ) );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 hasClass();
 [].hasClass();

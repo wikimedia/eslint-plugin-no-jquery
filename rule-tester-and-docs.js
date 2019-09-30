@@ -52,6 +52,10 @@ function buildRuleDetails( tests, icon ) {
 class RuleTesterAndDocs extends RuleTester {
 	run( name, rule, tests ) {
 		if ( process.argv.includes( '--doc' ) ) {
+			if ( name === 'settings' ) {
+				return;
+			}
+
 			let output = '';
 
 			output += '# ' + name + '\n\n';
@@ -77,13 +81,13 @@ class RuleTesterAndDocs extends RuleTester {
 
 			output += '## Rule details\n\n';
 
-			output += '✗ The following patterns are considered errors:\n' +
-				buildRuleDetails( tests.invalid, '✗' );
+			output += '❌ The following patterns are considered errors:\n' +
+				buildRuleDetails( tests.invalid, '❌' );
 
 			output += '\n';
 
-			output += '✓ The following patterns are not considered errors:\n' +
-				buildRuleDetails( tests.valid, '✓' );
+			output += '✔️ The following patterns are not considered errors:\n' +
+				buildRuleDetails( tests.valid, '✔️' );
 
 			fs.writeFileSync(
 				'docs/' + name + '.md',

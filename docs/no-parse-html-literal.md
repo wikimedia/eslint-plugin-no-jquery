@@ -4,7 +4,7 @@ Disallows parsing of HTML literal strings using either the jQuery method $() or 
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( '<div>contents</div>' );
 $( '<div attr=val>' );
@@ -29,7 +29,7 @@ $.parseHTML( '<div>' + 'content' + '</div>' );
 $.parseHTML( '<div>' );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 $();
 $( '' );

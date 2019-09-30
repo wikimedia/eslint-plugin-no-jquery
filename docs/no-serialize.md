@@ -4,7 +4,7 @@ Disallows the .serialize/serializeArray methods.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( 'div' ).serialize();
 $div.serialize();
@@ -16,7 +16,7 @@ $( 'div' ).first().serializeArray();
 $( 'div' ).append( $( 'input' ).serializeArray() );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 serialize();
 [].serialize();

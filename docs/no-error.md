@@ -1,19 +1,17 @@
-# no-when
+# no-error
 
-Disallows the $.when utility. Prefer Promise.all to $.when.
+Disallows the $.error utility. Prefer throw to $.error.
 
 ## Rule details
 
 ❌ The following patterns are considered errors:
 ```js
-$.when( a, b );
+$.error();
 ```
 
 ✔️ The following patterns are not considered errors:
 ```js
-When();
-new When();
-'test'.when();
-'test'.when;
-$when();
+nodeName();
+myClass.nodeName();
+$div.nodeName();
 ```
