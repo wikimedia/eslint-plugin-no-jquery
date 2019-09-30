@@ -1,5 +1,9 @@
 # eslint-plugin-no-jquery release history
 
+## v2.2.1
+* Release: Update index.js and README with missing rules (Ed Sanders)
+
+
 ## v2.2.0
 * New rule: `no-camel-case` (Christophe Coevoet)
 * New rule: `no-constructor-attributes` (Ed Sanders)
@@ -41,6 +45,7 @@
 * Release: Update deprecation rulesets (Ed Sanders)
 
 * Improve messages' references to methods vs. static methods (Christophe Coevoet)
+
 
 ## v2.1.0
 * New rule: `no-class-state` (Ed Sanders)
