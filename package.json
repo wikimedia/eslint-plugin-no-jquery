@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-no-jquery",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Disallow jQuery functions with native equivalents.",
   "repository": {
     "type": "git",
