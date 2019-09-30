@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require( './utils.js' );
+
 // HTML regex (modified from jQuery)
 const rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/;
 
@@ -16,7 +18,7 @@ module.exports = {
 			CallExpression: function ( node ) {
 				if (
 					node.callee.type !== 'Identifier' ||
-					node.callee.name !== '$' ||
+					!utils.isjQueryConstructor( context, node.callee.name ) ||
 					!node.arguments[ 0 ] ||
 					node.arguments[ 0 ].type !== 'Literal'
 				) {

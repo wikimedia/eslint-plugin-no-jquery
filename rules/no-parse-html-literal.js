@@ -41,7 +41,7 @@ module.exports = {
 				let allowSingle;
 				if ( node.callee.type === 'Identifier' ) {
 					if ( !(
-						node.callee.name === '$' &&
+						utils.isjQueryConstructor( context, node.callee.name ) &&
 						node.arguments[ 0 ] &&
 						(
 							node.arguments[ 0 ].type === 'Literal' ||
@@ -53,13 +53,13 @@ module.exports = {
 					allowSingle = true;
 				} else if ( node.callee.type === 'MemberExpression' ) {
 					if (
-						node.callee.object.name === '$' &&
+						utils.isjQueryConstructor( context, node.callee.object.name ) &&
 						node.callee.property.name === 'parseHTML'
 					) {
 						allowSingle = false;
 					} else if (
 						[ 'html', 'append', 'add' ].indexOf( node.callee.property.name ) !== -1 &&
-						utils.isjQuery( node )
+						utils.isjQuery( context, node )
 					) {
 						allowSingle = true;
 					} else {

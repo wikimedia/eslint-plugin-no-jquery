@@ -4,12 +4,12 @@ Disallows the $.inArray utility. Prefer Array#indexOf to $.inArray.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.inArray();
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 inArray();
 'test'.inArray();

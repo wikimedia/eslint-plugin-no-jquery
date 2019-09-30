@@ -4,7 +4,7 @@ Disallows the .prop/removeProp methods and $.prop/removeProp utilies.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.prop();
 $( 'div' ).prop();
@@ -14,7 +14,7 @@ $( 'div' ).append( $( 'input' ).prop() );
 $( 'div' ).removeProp();
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 prop();
 [].prop();

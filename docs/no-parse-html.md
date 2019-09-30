@@ -4,12 +4,12 @@ Disallows the $.parseHTML utility. Prefer DOMImplementation#createHTMLDocument t
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.parseHTML();
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 parseHTML();
 'test'.parseHTML();

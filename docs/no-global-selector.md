@@ -4,7 +4,7 @@ Disallows global selectors which search the whole document. Encourages users to 
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( '.div' );
 $( '#id' );
@@ -17,7 +17,7 @@ $( '.selector', undefined );
 $( '.selector', $( '.context' ) );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 $( '<div>' );
 $( '<div attr=val>' );
