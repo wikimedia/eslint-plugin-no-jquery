@@ -1,11 +1,12 @@
 # no-clone
 
-Disallows the .clone method. Prefer Node#cloneNode to $.clone.
+Disallows the .clone method and $.clone utility. Prefer Node#cloneNode to $.clone.
 
 ## Rule details
 
 ❌ The following patterns are considered errors:
 ```js
+$.clone();
 $( 'div' ).clone();
 $div.clone();
 this.prop.$div.clone();
