@@ -4,12 +4,12 @@ Disallows the $.error utility. Prefer throw to $.error.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.error();
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 nodeName();
 myClass.nodeName();
