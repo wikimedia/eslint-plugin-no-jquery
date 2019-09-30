@@ -18,6 +18,10 @@ ruleTester.run( 'no-clone', rule, {
 	],
 	invalid: [
 		{
+			code: '$.clone()',
+			errors: [ { message: error, type: 'CallExpression' } ]
+		},
+		{
 			code: '$("div").clone()',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},

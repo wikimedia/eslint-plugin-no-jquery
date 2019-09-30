@@ -4,7 +4,7 @@ Disallows the .slideDown/slideToggle/slideUp methods.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( 'div' ).slideDown();
 $div.slideDown();
@@ -20,7 +20,7 @@ $( 'div' ).first().slideUp();
 $( 'div' ).append( $( 'input' ).slideUp() );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 slideDown();
 [].slideDown();
