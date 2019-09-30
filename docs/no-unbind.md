@@ -6,7 +6,7 @@ This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( 'div' ).unbind();
 $div.unbind();
@@ -14,7 +14,7 @@ $( 'div' ).first().unbind();
 $( 'div' ).append( $( 'input' ).unbind() );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 unbind();
 [].unbind();

@@ -4,7 +4,7 @@ Disallows the .attr method and $.attr utility.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.attr();
 $( 'div' ).attr();
@@ -15,7 +15,7 @@ $( 'div' ).attr( 'name' );
 $( 'div' ).attr( 'name', 'random' );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 attr();
 [].attr();

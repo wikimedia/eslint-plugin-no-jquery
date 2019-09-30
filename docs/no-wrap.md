@@ -4,7 +4,7 @@ Disallows the .wrap/wrapAll/wrapInner/unwrap methods.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( 'div' ).wrap();
 $div.wrap();
@@ -24,7 +24,7 @@ $( 'div' ).first().unwrap();
 $( 'div' ).append( $( 'input' ).unwrap() );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 wrap();
 [].wrap();

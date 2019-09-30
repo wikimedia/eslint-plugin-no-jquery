@@ -101,7 +101,7 @@ function createRule( create, description, fixable ) {
 	};
 }
 
-function createCollectionMethodRule( methods, message ) {
+function createCollectionMethodRule( methods, message, fixable, fix ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the .' + methods.join( '/' ) + ' ' +
@@ -130,12 +130,13 @@ function createCollectionMethodRule( methods, message ) {
 						node: node,
 						message: typeof message === 'function' ?
 							message( node ) :
-							message || '$.' + name + ' is not allowed'
+							message || '$.' + name + ' is not allowed',
+						fix: fix && fix.bind( this, node )
 					} );
 				}
 			}
 		};
-	}, description );
+	}, description, fixable );
 }
 
 function createCollectionPropertyRule( property, message ) {

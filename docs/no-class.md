@@ -4,7 +4,7 @@ Disallows the .addClass/hasClass/removeClass/toggleClass methods.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( 'div' ).addClass();
 $div.addClass();
@@ -24,7 +24,7 @@ $( 'div' ).first().toggleClass();
 $( 'div' ).append( $( 'input' ).toggleClass() );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 addClass();
 [].addClass();

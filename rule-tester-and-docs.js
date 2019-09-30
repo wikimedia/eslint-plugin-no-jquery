@@ -71,15 +71,19 @@ class RuleTesterAndDocs extends RuleTester {
 				output += '.\n\n';
 			}
 
+			if ( rule.meta.fixable ) {
+				output += '🔧 The `--fix` option can be used to fix problems reported by this rule.\n\n';
+			}
+
 			output += '## Rule details\n\n';
 
-			output += '✗ The following patterns are considered errors:\n' +
-				buildRuleDetails( tests.invalid, '✗' );
+			output += '❌ The following patterns are considered errors:\n' +
+				buildRuleDetails( tests.invalid, '❌' );
 
 			output += '\n';
 
-			output += '✓ The following patterns are not considered errors:\n' +
-				buildRuleDetails( tests.valid, '✓' );
+			output += '✔️ The following patterns are not considered errors:\n' +
+				buildRuleDetails( tests.valid, '✔️' );
 
 			fs.writeFileSync(
 				'docs/' + name + '.md',

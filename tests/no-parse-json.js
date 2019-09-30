@@ -7,11 +7,12 @@ const error = 'Prefer JSON.parse to $.parseJSON';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-parse-json', rule, {
-	valid: [ 'parseJSON()', '"test".parseJSON()', '"test".parseJSON' ],
+	valid: [ 'parseJSON()', '$div.parseJSON()', '"test".parseJSON' ],
 	invalid: [
 		{
-			code: '$.parseJSON()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$.parseJSON("{}")',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: 'JSON.parse("{}")'
 		}
 	]
 } );

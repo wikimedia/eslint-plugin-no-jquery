@@ -6,7 +6,7 @@ This rule is enabled in `plugin:no-jquery/deprecated-3.4` with `[{"allowPosition
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( ':animated' );
 $( ':button' );
@@ -59,11 +59,11 @@ $( 'div' ).find( ':visible' );
 $( 'div' ).find( 'div:animated' );
 $div.find( 'form input:checkbox' );
 ```
-✗ With `[{"allowPositional":true}]` options:
+❌ With `[{"allowPositional":true}]` options:
 ```js
 $( ':animated' );
 ```
-✗ With `[{"allowOther":true}]` options:
+❌ With `[{"allowOther":true}]` options:
 ```js
 $( ':eq(2)' );
 $( ':even' );
@@ -75,7 +75,7 @@ $( ':nth(2)' );
 $( ':odd' );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 find( ':input' );
 div.find( ':input' );
@@ -93,11 +93,11 @@ $( this ).find( function () {} );
 $( this ).find();
 $( function () {} );
 ```
-✓ With `[{"allowPositional":true}]` options:
+✔️ With `[{"allowPositional":true}]` options:
 ```js
 $( ':checked' );
 ```
-✓ With `[{"allowOther":true}]` options:
+✔️ With `[{"allowOther":true}]` options:
 ```js
 $( ':animated' );
 $( ':button' );
