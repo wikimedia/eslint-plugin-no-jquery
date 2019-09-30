@@ -4,12 +4,12 @@ Disallows the $.trim utility. Prefer String#trim to $.trim.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.trim( ' test ' );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 trim( ' test ' );
 ' test '.trim();

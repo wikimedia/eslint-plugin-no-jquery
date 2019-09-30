@@ -10,6 +10,10 @@ ruleTester.run( 'no-css', rule, {
 	valid: [ 'css()', '[].css()', 'div.css()', 'div.css' ],
 	invalid: [
 		{
+			code: '$.css()',
+			errors: [ { message: error, type: 'CallExpression' } ]
+		},
+		{
 			code: '$("div").css()',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},

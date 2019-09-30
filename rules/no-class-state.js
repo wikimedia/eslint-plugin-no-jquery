@@ -28,7 +28,7 @@ module.exports = {
 					return;
 				}
 
-				if ( utils.isjQuery( node ) ) {
+				if ( utils.isjQuery( context, node ) ) {
 					context.report( {
 						node: node,
 						message: 'Don\'t query the DOM for state information'

@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require( './utils.js' );
+
 module.exports = {
 	meta: {
 		docs: {
@@ -12,7 +14,7 @@ module.exports = {
 		function enforce( node ) {
 			if (
 				node.callee.type !== 'MemberExpression' ||
-				node.callee.object.name !== '$' ||
+				!utils.isjQueryConstructor( context, node.callee.object.name ) ||
 				node.callee.property.name !== 'Deferred'
 			) {
 				return;

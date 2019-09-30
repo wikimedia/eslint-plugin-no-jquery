@@ -4,7 +4,7 @@ Disallows global ajax events handlers: ajaxStart/ajaxSend/ajaxSuccess/ajaxError/
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $( document ).on( 'ajaxSend', function ( e ) { } );
 $( document ).on( 'ajaxSuccess', function ( e ) { } );
@@ -20,7 +20,7 @@ $form.ajaxStart( function ( e ) { } );
 $form.ajaxStop( function ( e ) { } );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 $( document ).on( 'click', function ( e ) { } );
 $form.on( 'submit', function ( e ) { } );

@@ -4,7 +4,7 @@ Disallows the .attr/removeAttr methods and $.attr/removeAttr utilies.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.attr();
 $( 'div' ).attr();
@@ -17,7 +17,7 @@ $.removeAttr();
 $( 'div' ).removeAttr( 'name' );
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 attr();
 [].attr();
