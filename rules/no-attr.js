@@ -3,6 +3,11 @@
 const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionOrUtilMethodRule(
-	'attr',
-	( node ) => 'Prefer Element#' + ( node.arguments.length === 2 ? 'set' : 'get' ) + 'Attribute to attr'
+	[ 'attr', 'removeAttr' ],
+	( node ) => 'Prefer Element#' +
+		(
+			node.callee.property.name === 'removeAttr' ? 'remove' :
+				node.arguments.length === 2 ? 'set' : 'get'
+		) +
+		'Attribute to ' + node.callee.property.name
 );

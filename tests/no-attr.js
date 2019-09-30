@@ -5,10 +5,11 @@ const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const getError = 'Prefer Element#getAttribute to attr';
 const setError = 'Prefer Element#setAttribute to attr';
+const removeError = 'Prefer Element#removeAttribute to removeAttr';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-attr', rule, {
-	valid: [ 'attr()', '[].attr()', 'div.attr()', 'div.attr' ],
+	valid: [ 'attr()', '[].attr()', 'div.attr()', 'div.attr', 'removeAttr()', 'div.removeAttr' ],
 	invalid: [
 		{
 			code: '$.attr()',
@@ -37,6 +38,14 @@ ruleTester.run( 'no-attr', rule, {
 		{
 			code: '$("div").attr("name", "random")',
 			errors: [ { message: setError, type: 'CallExpression' } ]
+		},
+		{
+			code: '$.removeAttr()',
+			errors: [ { message: removeError, type: 'CallExpression' } ]
+		},
+		{
+			code: '$("div").removeAttr("name")',
+			errors: [ { message: removeError, type: 'CallExpression' } ]
 		}
 	]
 } );
