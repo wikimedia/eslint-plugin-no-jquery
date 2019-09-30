@@ -4,12 +4,12 @@ Disallows the $.param utility. Prefer FormData or URLSearchParams to $.param.
 
 ## Rule details
 
-✗ The following patterns are considered errors:
+❌ The following patterns are considered errors:
 ```js
 $.param();
 ```
 
-✓ The following patterns are not considered errors:
+✔️ The following patterns are not considered errors:
 ```js
 param();
 'test'.param();
