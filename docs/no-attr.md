@@ -1,6 +1,6 @@
 # no-attr
 
-Disallows the .attr method and $.attr utility.
+Disallows the .attr/removeAttr methods and $.attr/removeAttr utilies.
 
 ## Rule details
 
@@ -13,6 +13,8 @@ $( 'div' ).first().attr();
 $( 'div' ).append( $( 'input' ).attr() );
 $( 'div' ).attr( 'name' );
 $( 'div' ).attr( 'name', 'random' );
+$.removeAttr();
+$( 'div' ).removeAttr( 'name' );
 ```
 
 ✔️ The following patterns are not considered errors:
@@ -21,4 +23,6 @@ attr();
 [].attr();
 div.attr();
 div.attr;
+removeAttr();
+div.removeAttr;
 ```
