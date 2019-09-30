@@ -8,12 +8,12 @@ This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 
 ✗ The following patterns are considered errors:
 ```js
-$.parseJSON();
+$.parseJSON( '{}' );
 ```
 
 ✓ The following patterns are not considered errors:
 ```js
 parseJSON();
-'test'.parseJSON();
+$div.parseJSON();
 'test'.parseJSON;
 ```
