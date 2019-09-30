@@ -18,6 +18,10 @@
     "test": "mocha --reporter dot tests/",
     "doc": "rm docs/* && mocha --reporter min tests/ --doc"
   },
+  "files": [
+    "index.js",
+    "rules/*"
+  ],
   "peerDependencies": {
     "eslint": ">=2.3.0"
   },
