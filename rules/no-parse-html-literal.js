@@ -91,7 +91,7 @@ module.exports = {
 
 				context.report( {
 					node: node,
-					message: 'Prefer DOM building to $.parseHTML on literals'
+					message: 'Prefer DOM building to parsing HTML literals'
 				} );
 			}
 		};
