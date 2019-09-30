@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-parse-html-literal' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer DOM building to $.parseHTML on literals';
+const error = 'Prefer DOM building to parsing HTML literals';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-parse-html-literal', rule, {
