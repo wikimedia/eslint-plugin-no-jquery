@@ -2,7 +2,7 @@
 
 const utils = require( './utils.js' );
 
-module.exports = utils.createCollectionMethodRule(
+module.exports = utils.createCollectionOrUtilMethodRule(
 	'clone',
 	'Prefer Node#cloneNode to $.clone'
 );
