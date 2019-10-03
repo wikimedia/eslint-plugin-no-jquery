@@ -18,9 +18,13 @@ for ( const name in rulesets ) {
 	}
 }
 
-function buildRuleDetails( tests, icon ) {
+function buildRuleDetails( tests, icon, showFixes ) {
 	let output = '';
 	const testsByOptions = {};
+
+	function lintFix( code ) {
+		return linter.verifyAndFix( code, config ).output;
+	}
 
 	tests.forEach( function ( test ) {
 		let options = '';
@@ -28,9 +32,18 @@ function buildRuleDetails( tests, icon ) {
 			options = JSON.stringify( test.options );
 		}
 		testsByOptions[ options ] = testsByOptions[ options ] || [];
-		testsByOptions[ options ].push(
-			linter.verifyAndFix( typeof test === 'string' ? test : test.code, config ).output
-		);
+		if ( showFixes && test.output ) {
+			testsByOptions[ options ].push(
+				lintFix( test.code ).trim() +
+				' /* → */ ' +
+				lintFix( test.output ).trim() +
+				'\n'
+			);
+		} else {
+			testsByOptions[ options ].push(
+				lintFix( typeof test === 'string' ? test : test.code )
+			);
+		}
 	} );
 
 	for ( const options in testsByOptions ) {
@@ -75,10 +88,6 @@ class RuleTesterAndDocs extends RuleTester {
 				output += '.\n\n';
 			}
 
-			if ( rule.meta.fixable ) {
-				output += '🔧 The `--fix` option can be used to fix problems reported by this rule.\n\n';
-			}
-
 			output += '## Rule details\n\n';
 
 			output += '❌ The following patterns are considered errors:\n' +
@@ -88,6 +97,12 @@ class RuleTesterAndDocs extends RuleTester {
 
 			output += '✔️ The following patterns are not considered errors:\n' +
 				buildRuleDetails( tests.valid, '✔️' );
+
+			if ( rule.meta.fixable ) {
+				output += '\n';
+				output += '🔧 The `--fix` option can be used to fix problems reported by this rule:\n';
+				output += buildRuleDetails( tests.invalid.filter( ( test ) => !!test.output ), '🔧', true );
+			}
 
 			fs.writeFileSync(
 				'docs/' + name + '.md',
