@@ -11,7 +11,8 @@ ruleTester.run( 'no-now', rule, {
 	invalid: [
 		{
 			code: '$.now()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: 'Date.now()'
 		}
 	]
 } );
