@@ -16,7 +16,7 @@ module.exports = {
 				if ( node.callee.type === 'MemberExpression' ) {
 					if ( !(
 						node.callee.property.name === 'add' &&
-						utils.isjQuery( context, node ) &&
+						utils.isjQuery( context, node.callee ) &&
 						node.arguments[ 1 ] &&
 						node.arguments[ 1 ].type === 'ObjectExpression'
 					) ) {

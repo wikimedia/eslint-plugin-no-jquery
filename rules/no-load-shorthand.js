@@ -23,7 +23,7 @@ module.exports = {
 					return;
 				}
 
-				if ( utils.isjQuery( context, node ) ) {
+				if ( utils.isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
 						message: 'Prefer $.on or $.trigger to $.load'

@@ -19,4 +19,6 @@ find();
 [].find();
 div.find();
 div.find;
+$.extend().find();
+$div.myPlugin( 'foo' ).find();
 ```

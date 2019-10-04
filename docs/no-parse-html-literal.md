@@ -45,6 +45,7 @@ $( '<div />' );
 $( '<' + 'div' + '>' );
 $div.html();
 $div.html( variable );
+$.html( '<div>contents</div>' );
 $div.append( variable );
 $div.add( variable );
 $.parseHTML( variable );

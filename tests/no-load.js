@@ -7,7 +7,7 @@ const error = 'Prefer fetch to $.load';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-load', rule, {
-	valid: [ 'load()', '[].load()', 'div.load()', 'div.load' ],
+	valid: [ 'load()', '[].load()', 'div.load()', 'div.load', '$.load()' ],
 	invalid: [
 		{
 			code: '$("div").load()',

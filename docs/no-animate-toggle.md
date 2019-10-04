@@ -25,6 +25,7 @@ $( 'div' ).append( $( 'input' ).toggle( { duration: 'slow' } ) );
 $div.show();
 $( 'div' ).show();
 $( 'div' ).show;
+$.show( 'fast' );
 $div.toggle();
 $( 'div' ).toggle();
 $( 'div' ).toggle;

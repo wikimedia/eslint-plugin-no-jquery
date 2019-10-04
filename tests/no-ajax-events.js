@@ -15,9 +15,8 @@ ruleTester.run( 'no-ajax-events', rule, {
 		'$form.on()',
 		'on("ajaxSuccess", ".js-select-menu", function(e){ })',
 		'form.on("ajaxSend")',
-		'form.ajaxSend()'
-		// TODO: This should pass after #93
-		// '$.ajaxSend()'
+		'form.ajaxSend()',
+		'$.ajaxSend()'
 	],
 	invalid: [
 		{

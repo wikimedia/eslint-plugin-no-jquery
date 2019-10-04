@@ -24,6 +24,7 @@ ready();
 [].ready();
 div.ready();
 div.ready;
+$.ready();
 $( 'div' );
 $( document );
 $();

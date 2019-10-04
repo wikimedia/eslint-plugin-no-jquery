@@ -13,6 +13,7 @@ ruleTester.run( 'no-animate-toggle', rule, {
 		'$div.show()',
 		'$("div").show()',
 		'$("div").show',
+		'$.show("fast")',
 
 		'$div.toggle()',
 		'$("div").toggle()',

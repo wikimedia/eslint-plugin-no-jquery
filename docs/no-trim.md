@@ -15,4 +15,5 @@ trim( ' test ' );
 ' test '.trim();
 ' test '.trim;
 $( 'input' ).text().trim();
+$( 'input' ).data( 'foo' ).trim();
 ```

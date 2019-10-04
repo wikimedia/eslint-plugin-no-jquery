@@ -16,6 +16,7 @@ ruleTester.run( 'no-ready', rule, {
 		'[].ready()',
 		'div.ready()',
 		'div.ready',
+		'$.ready()',
 		'$("div")',
 		'$(document)',
 		'$()'

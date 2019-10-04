@@ -1,11 +1,18 @@
 'use strict';
 
 // Methods which always return something else than a jQuery collection
-const nonCollectionReturningMethods = [ 'toArray', 'get', 'position', 'serializeArray', 'serialize', 'index' ];
+const nonCollectionReturningMethods = [ 'toArray', 'get', 'hasClass', 'position', 'promise', 'serializeArray', 'serialize', 'index', 'is' ];
 // Methods that return something else than a jQuery collection when called without arguments
-const nonCollectionReturningAccessors = [ 'val', 'text', 'html', 'data', 'innerHeight', 'innerWidth', 'height', 'width', 'outerHeight', 'outerWidth', 'offset', 'scrollLeft', 'scrollTop' ];
+const nonCollectionReturningAccessors = [ 'val', 'text', 'html', 'innerHeight', 'innerWidth', 'height', 'width', 'offset', 'scrollLeft', 'scrollTop' ];
 // Methods that return something else than a jQuery collection when called with a single argument
-const nonCollectionReturningValueAccessors = [ 'css', 'attr', 'prop' ];
+const nonCollectionReturningValueAccessors = [ 'attr', 'css', 'data', 'prop' ];
+
+// Object.keys( $.fn ).filter( ( k ) => typeof $.fn[k] === 'function' ).sort()
+const allKnownMethods = [ 'add', 'addBack', 'addClass', 'after', 'ajaxComplete', 'ajaxError', 'ajaxSend', 'ajaxStart', 'ajaxStop', 'ajaxSuccess', 'animate', 'append', 'appendTo', 'attr', 'before', 'bind', 'blur', 'change', 'children', 'clearQueue', 'click', 'clone', 'closest', 'constructor', 'contents', 'contextmenu', 'css', 'data', 'dblclick', 'delay', 'delegate', 'dequeue', 'detach', 'each', 'empty', 'end', 'eq', 'extend', 'fadeIn', 'fadeOut', 'fadeTo', 'fadeToggle', 'filter', 'find', 'finish', 'first', 'focus', 'focusin', 'focusout', 'get', 'has', 'hasClass', 'height', 'hide', 'hover', 'html', 'index', 'init', 'innerHeight', 'innerWidth', 'insertAfter', 'insertBefore', 'is', 'keydown', 'keypress', 'keyup', 'last', 'load', 'map', 'mousedown', 'mouseenter', 'mouseleave', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'next', 'nextAll', 'nextUntil', 'not', 'off', 'offset', 'offsetParent', 'on', 'one', 'outerHeight', 'outerWidth', 'parent', 'parents', 'parentsUntil', 'position', 'prepend', 'prependTo', 'prev', 'prevAll', 'prevUntil', 'promise', 'prop', 'push', 'pushStack', 'queue', 'ready', 'remove', 'removeAttr', 'removeClass', 'removeData', 'removeProp', 'replaceAll', 'replaceWith', 'resize', 'scroll', 'scrollLeft', 'scrollTop', 'select', 'serialize', 'serializeArray', 'show', 'siblings', 'slice', 'slideDown', 'slideToggle', 'slideUp', 'sort', 'splice', 'stop', 'submit', 'text', 'toArray', 'toggle', 'toggleClass', 'trigger', 'triggerHandler', 'unbind', 'undelegate', 'unwrap', 'val', 'width', 'wrap', 'wrapAll', 'wrapInner' ];
+
+function isFunction( node ) {
+	return node.type === 'FunctionExpression' || node.type === 'ArrowFunctionExpression';
+}
 
 function traverse( node, variableTest, constructorTest ) {
 	while ( node ) {
@@ -14,25 +21,62 @@ function traverse( node, variableTest, constructorTest ) {
 				if ( node.callee.type === 'MemberExpression' && node.callee.property.type === 'Identifier' ) {
 					const name = node.callee.property.name;
 
-					if ( nonCollectionReturningMethods.indexOf( name ) !== -1 ) {
-						// e.g. $foo.toArray(), returns false
+					if ( constructorTest( node.callee.object ) ) {
+						// Utilities never return collections
 						return false;
-					}
+					} else {
+						if ( nonCollectionReturningMethods.indexOf( name ) !== -1 ) {
+							// e.g. $foo.toArray()
+							return false;
+						}
 
-					if (
-						nonCollectionReturningAccessors.indexOf( name ) !== -1 &&
-						node.arguments.length === 0
-					) {
-						// e.g. $foo.val(), returns false
-						return false;
-					}
+						if (
+							nonCollectionReturningAccessors.indexOf( name ) !== -1 &&
+							node.arguments.length === 0
+						) {
+							// e.g. $foo.val()
+							return false;
+						}
 
-					if (
-						nonCollectionReturningValueAccessors.indexOf( name ) !== -1 &&
-						node.arguments.length === 1
-					) {
-						// e.g. $foo.css("margin"), returns false
-						return false;
+						if (
+							nonCollectionReturningValueAccessors.indexOf( name ) !== -1 && (
+								node.arguments.length === 0 || (
+									node.arguments.length === 1 &&
+									node.arguments[ 0 ].type !== 'ObjectExpression'
+								)
+							)
+						) {
+							// Key-value getter-setters may not return a collection if
+							//  - no arguments are passed, e.g. $foo.data()
+							//  - one argument is passed which isn't a plain object,
+							//    e.g. $foo.data("bar")
+							return false;
+						}
+
+						if (
+							( name === 'outerWidth' || name === 'outerHeight' ) && (
+								node.arguments.length === 0 || (
+									node.arguments.length === 1 && !(
+										node.arguments[ 0 ].type === 'Literal' &&
+										typeof node.arguments[ 0 ].value === 'number'
+									) && !isFunction( node.arguments[ 0 ] )
+								)
+							)
+						) {
+							// .outerWidth/outerHeight may not return a collection if
+							//  - no arguments are passed, e.g. $foo.outerWidth()
+							//  - one argument is passed which isn't a number or function,
+							//    e.g. $foo.outerWidth(true)
+							return false;
+						}
+
+						if ( allKnownMethods.indexOf( name ) === -1 ) {
+							// The method is not core jQuery, so we don't know if it returns
+							// a collection or not. Assume it doesn't so we don't get false
+							// positives
+							// e.g. $foo.getMyPluginValue(), returns false
+							return false;
+						}
 					}
 				}
 
@@ -40,8 +84,7 @@ function traverse( node, variableTest, constructorTest ) {
 
 				break;
 			case 'MemberExpression':
-				node = node.object;
-				if ( node.property ) {
+				if ( node.property && node.parent.type !== 'CallExpression' ) {
 					if ( node.property.type === 'Identifier' ) {
 						// e.g. $foo in this.$foo.bar(), returns true
 						// or foo in $this.foo.bar(), returns false
@@ -53,6 +96,7 @@ function traverse( node, variableTest, constructorTest ) {
 						return false;
 					}
 				}
+				node = node.object;
 				break;
 			case 'Identifier':
 				if ( node.parent && node.parent.type === 'CallExpression' ) {
@@ -105,10 +149,6 @@ function isjQuery( context, node ) {
 		// constructorTest
 		( id ) => !!id && isjQueryConstructor( context, id.name )
 	);
-}
-
-function isFunction( node ) {
-	return node.type === 'FunctionExpression' || node.type === 'ArrowFunctionExpression';
 }
 
 function createRule( create, description, fixable ) {
@@ -179,8 +219,7 @@ function createCollectionPropertyRule( property, message ) {
 				) {
 					return;
 				}
-
-				if ( isjQuery( context, node ) ) {
+				if ( isjQuery( context, node.object ) ) {
 					context.report( {
 						node: node,
 						message: typeof message === 'function' ?
