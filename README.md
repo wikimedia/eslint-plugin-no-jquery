@@ -147,6 +147,7 @@ The following global settings can be used under the "no-jquery" property to conf
 * [no-jquery/no-unique](docs/no-unique.md)
 * [no-jquery/no-unload-shorthand](docs/no-unload-shorthand.md)
 * [no-jquery/no-val](docs/no-val.md)
+* [no-jquery/no-variable-name](docs/no-variable-name.md)
 * [no-jquery/no-when](docs/no-when.md)
 * [no-jquery/no-wrap](docs/no-wrap.md)
 
