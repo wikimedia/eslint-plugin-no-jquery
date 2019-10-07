@@ -65,6 +65,10 @@ ruleTester.run( 'no-variable-name', rule, {
 			errors: [ { message: error, type: 'AssignmentExpression' } ]
 		},
 		{
+			code: 'div = $div.outerWidth(function(){})',
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
+		},
+		{
 			code: 'div = $div.outerWidth(number, true)',
 			errors: [ { message: error, type: 'AssignmentExpression' } ]
 		}

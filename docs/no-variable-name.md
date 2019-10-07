@@ -14,6 +14,7 @@ $foo.$div.bar = $( '<div>' );
 div = $div.data( 'foo', 'bar' );
 div = $div.data( { foo: 'bar' } );
 div = $div.outerWidth( 30 );
+div = $div.outerWidth( function () {} );
 div = $div.outerWidth( number, true );
 ```
 
