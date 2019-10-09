@@ -8,14 +8,14 @@ Originally a fork of [eslint-plugin-jquery](https://github.com/dgraham/eslint-pl
 
 You'll first need to install [ESLint](http://eslint.org):
 
-```
-$ npm install eslint --save-dev
+```sh
+npm install eslint --save-dev
 ```
 
 Next, install `eslint-plugin-no-jquery`:
 
-```
-$ npm install eslint-plugin-no-jquery --save-dev
+```sh
+npm install eslint-plugin-no-jquery --save-dev
 ```
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-no-jquery` globally.
@@ -55,6 +55,7 @@ The following global settings can be used under the "no-jquery" property to conf
   "plugins": [
     "no-jquery"
   ]
+}
 ```
 
 ## Rules
@@ -153,15 +154,21 @@ The following global settings can be used under the "no-jquery" property to conf
 
 ## Development
 
-```
+```sh
 npm install
 npm test
 ```
 
 To update documentation after modifying a rule or its tests, use
 
-```
+```sh
 npm run doc
+```
+
+To run a specific test or tests:
+
+```sh
+npm run testpath tests/no-ajax
 ```
 
 ## License
