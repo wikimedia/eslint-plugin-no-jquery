@@ -16,6 +16,7 @@
   "scripts": {
     "pretest": "eslint .",
     "test": "mocha --reporter dot tests/",
+    "testpath": "mocha",
     "doc": "rm docs/* && mocha --reporter min tests/ --doc"
   },
   "files": [
