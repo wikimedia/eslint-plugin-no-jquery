@@ -1,6 +1,6 @@
 'use strict';
 
-const rule = require( '../rules/no-variable-name' );
+const rule = require( '../rules/variable-pattern' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const error = 'jQuery collection names must match the variablePattern';
@@ -8,7 +8,7 @@ const error = 'jQuery collection names must match the variablePattern';
 const extendedPattern = '^\\$.|^element$';
 
 const ruleTester = new RuleTesterAndDocs();
-ruleTester.run( 'no-variable-name', rule, {
+ruleTester.run( 'variable-pattern', rule, {
 	valid: [
 		'var $div = $("<div>")',
 		'$div = $("<div>")',

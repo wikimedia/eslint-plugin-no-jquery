@@ -1,4 +1,4 @@
-# no-variable-name
+# variable-pattern
 
 Disallows variable names which don't match `variablePattern` in settings (by default a `$`-prefix).
 

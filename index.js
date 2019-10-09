@@ -2,6 +2,7 @@
 
 module.exports = {
 	rules: {
+		'variable-pattern': require( './rules/variable-pattern' ),
 		'no-ajax': require( './rules/no-ajax' ),
 		'no-ajax-events': require( './rules/no-ajax-events' ),
 		'no-and-self': require( './rules/no-and-self' ),
@@ -90,7 +91,6 @@ module.exports = {
 		'no-unique': require( './rules/no-unique' ),
 		'no-unload-shorthand': require( './rules/no-unload-shorthand' ),
 		'no-val': require( './rules/no-val' ),
-		'no-variable-name': require( './rules/no-variable-name' ),
 		'no-when': require( './rules/no-when' ),
 		'no-wrap': require( './rules/no-wrap' )
 	},
