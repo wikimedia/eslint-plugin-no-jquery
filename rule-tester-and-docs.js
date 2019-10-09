@@ -28,8 +28,11 @@ function buildRuleDetails( tests, icon, showFixes ) {
 
 	tests.forEach( function ( test ) {
 		let options = '';
-		if ( test.options ) {
-			options = JSON.stringify( test.options );
+		if ( test.options || test.settings ) {
+			options = JSON.stringify( {
+				options: test.options,
+				settings: test.settings
+			} );
 		}
 		testsByOptions[ options ] = testsByOptions[ options ] || [];
 		if ( showFixes && test.output ) {
@@ -48,7 +51,18 @@ function buildRuleDetails( tests, icon, showFixes ) {
 
 	for ( const options in testsByOptions ) {
 		if ( options ) {
-			output += icon + ' With `' + options + '` options:\n';
+			const optionsAndSettings = JSON.parse( options );
+			output += icon + ' With';
+			if ( optionsAndSettings.options ) {
+				output += ' `' + JSON.stringify( optionsAndSettings.options ) + '` options';
+			}
+			if ( optionsAndSettings.settings ) {
+				if ( optionsAndSettings.options ) {
+					output += ' and';
+				}
+				output += ' `' + JSON.stringify( optionsAndSettings.settings ) + '` settings';
+			}
+			output += ':\n';
 		}
 		output += '```js\n';
 		output += testsByOptions[ options ].join( '' );

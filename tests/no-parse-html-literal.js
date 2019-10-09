@@ -24,6 +24,7 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 		// $.html
 		'$div.html()',
 		'$div.html(variable)',
+		'$.html("<div>contents</div>")',
 		// $.append
 		'$div.append(variable)',
 		// $.add

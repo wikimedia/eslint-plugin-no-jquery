@@ -41,8 +41,8 @@ Alternatively, you can pick out rules individually (see below).
 
 The following global settings can be used under the "no-jquery" property to configure the linter:
 
-* `constructorAliases` - An array of aliases for the jQuery constructor. Defaults to `[ "$", "jQuery" ]`
-* `variablePattern` - Regular expression pattern for matching jQuery variables. Defaults to `"^\\$."`
+* `constructorAliases` - An array of aliases for the jQuery constructor. Defaults to `[ "$", "jQuery" ]`.
+* `variablePattern` - Regular expression pattern for matching jQuery variables. Defaults to `"^\\$."`. This pattern can be enforced with the [no-jquery/no-variable-name](docs/no-variable-name.md) rule.
 
 ```json
 {
@@ -148,6 +148,7 @@ The following global settings can be used under the "no-jquery" property to conf
 * [no-jquery/no-unique](docs/no-unique.md)
 * [no-jquery/no-unload-shorthand](docs/no-unload-shorthand.md)
 * [no-jquery/no-val](docs/no-val.md)
+* [no-jquery/no-variable-name](docs/no-variable-name.md)
 * [no-jquery/no-when](docs/no-when.md)
 * [no-jquery/no-wrap](docs/no-wrap.md)
 

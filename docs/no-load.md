@@ -18,4 +18,5 @@ load();
 [].load();
 div.load();
 div.load;
+$.load();
 ```

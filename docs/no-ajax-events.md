@@ -28,4 +28,5 @@ $form.on();
 on( 'ajaxSuccess', '.js-select-menu', function ( e ) { } );
 form.on( 'ajaxSend' );
 form.ajaxSend();
+$.ajaxSend();
 ```
