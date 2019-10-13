@@ -268,7 +268,7 @@ function createUtilMethodRule( methods, message, fixable, fix ) {
 	}, description, fixable );
 }
 
-function createUtilPropertyRule( property, message ) {
+function createUtilPropertyRule( property, message, fixable, fix ) {
 	let description = 'Disallows the $.' + property + ' property.';
 
 	if ( typeof message === 'string' ) {
@@ -290,11 +290,12 @@ function createUtilPropertyRule( property, message ) {
 					node: node,
 					message: typeof message === 'function' ?
 						message( node ) :
-						message || '$.' + name + ' is not allowed'
+						message || '$.' + name + ' is not allowed',
+					fix: fix && fix.bind( this, node )
 				} );
 			}
 		};
-	}, description );
+	}, description, fixable );
 }
 
 function createCollectionOrUtilMethodRule( methods, message ) {

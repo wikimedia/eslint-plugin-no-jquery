@@ -4,5 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createUtilPropertyRule(
 	'noop',
-	'Prefer function() {} to $.noop'
+	'Prefer function(){} to $.noop',
+	'code',
+	function ( node, fixer ) {
+		return fixer.replaceText( node, '(function(){})' );
+	}
 );
