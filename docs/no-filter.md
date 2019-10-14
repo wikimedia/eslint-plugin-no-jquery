@@ -20,3 +20,6 @@ filter();
 div.filter();
 div.filter;
 ```
+## Rule source
+
+* [rules/no-filter.js](../rules/no-filter.js)

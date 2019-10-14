@@ -19,3 +19,6 @@ submit();
 form.submit();
 form.submit;
 ```
+## Rule source
+
+* [rules/no-submit.js](../rules/no-submit.js)

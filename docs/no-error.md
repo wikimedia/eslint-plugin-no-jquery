@@ -15,3 +15,6 @@ nodeName();
 myClass.nodeName();
 $div.nodeName();
 ```
+## Rule source
+
+* [rules/no-error.js](../rules/no-error.js)

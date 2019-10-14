@@ -22,3 +22,6 @@ div.bind();
 div.bind;
 $div.remove.bind( $div );
 ```
+## Rule source
+
+* [rules/no-bind.js](../rules/no-bind.js)

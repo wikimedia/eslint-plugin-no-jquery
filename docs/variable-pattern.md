@@ -41,3 +41,6 @@ foo.bar = $.extend( {}, {} );
 ```js
 this.element = $( '<div>' );
 ```
+## Rule source
+
+* [rules/variable-pattern.js](../rules/variable-pattern.js)

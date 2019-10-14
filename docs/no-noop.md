@@ -16,3 +16,6 @@ foo.noop;
 foo.noop();
 foo.noop( bar );
 ```
+## Rule source
+
+* [rules/no-noop.js](../rules/no-noop.js)

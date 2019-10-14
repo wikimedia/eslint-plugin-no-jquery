@@ -19,3 +19,6 @@ has();
 div.has();
 div.has;
 ```
+## Rule source
+
+* [rules/no-has.js](../rules/no-has.js)

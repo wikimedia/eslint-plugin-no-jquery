@@ -17,3 +17,6 @@ proxy();
 'test'.proxy();
 'test'.proxy;
 ```
+## Rule source
+
+* [rules/no-proxy.js](../rules/no-proxy.js)

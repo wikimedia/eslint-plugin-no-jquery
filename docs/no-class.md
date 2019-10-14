@@ -43,3 +43,6 @@ toggleClass();
 div.toggleClass();
 div.toggleClass;
 ```
+## Rule source
+
+* [rules/no-class.js](../rules/no-class.js)

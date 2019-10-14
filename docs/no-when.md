@@ -17,3 +17,6 @@ new When();
 'test'.when;
 $when();
 ```
+## Rule source
+
+* [rules/no-when.js](../rules/no-when.js)

@@ -21,3 +21,6 @@ unbind();
 div.unbind();
 div.unbind;
 ```
+## Rule source
+
+* [rules/no-unbind.js](../rules/no-unbind.js)

@@ -22,3 +22,6 @@ div.unload();
 div.unload;
 $.unload();
 ```
+## Rule source
+
+* [rules/no-unload-shorthand.js](../rules/no-unload-shorthand.js)

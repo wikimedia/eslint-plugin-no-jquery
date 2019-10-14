@@ -21,3 +21,6 @@ size();
 div.size();
 div.size;
 ```
+## Rule source
+
+* [rules/no-size.js](../rules/no-size.js)

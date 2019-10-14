@@ -27,3 +27,6 @@ removeData();
 div.removeData();
 div.removeData;
 ```
+## Rule source
+
+* [rules/no-data.js](../rules/no-data.js)

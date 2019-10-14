@@ -25,3 +25,6 @@ $.load();
 $div.load( 'url' );
 $div.load( couldBeUrl );
 ```
+## Rule source
+
+* [rules/no-load-shorthand.js](../rules/no-load-shorthand.js)

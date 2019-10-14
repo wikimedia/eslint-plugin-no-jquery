@@ -19,3 +19,6 @@ val();
 div.val();
 div.val;
 ```
+## Rule source
+
+* [rules/no-val.js](../rules/no-val.js)

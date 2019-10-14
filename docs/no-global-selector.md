@@ -37,3 +37,6 @@ $( undefined );
 $( false );
 $( '#' );
 ```
+## Rule source
+
+* [rules/no-global-selector.js](../rules/no-global-selector.js)

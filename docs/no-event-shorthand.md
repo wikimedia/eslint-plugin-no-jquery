@@ -343,3 +343,6 @@ div.ajaxSend();
 $method( x ).ajaxSend();
 div.ajaxSend;
 ```
+## Rule source
+
+* [rules/no-event-shorthand.js](../rules/no-event-shorthand.js)

@@ -15,3 +15,6 @@ isEmptyObject();
 myClass.isEmptyObject();
 $div.isEmptyObject();
 ```
+## Rule source
+
+* [rules/no-is-empty-object.js](../rules/no-is-empty-object.js)

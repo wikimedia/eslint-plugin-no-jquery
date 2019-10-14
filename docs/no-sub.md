@@ -17,3 +17,6 @@ sub();
 'test'.sub();
 'test'.sub;
 ```
+## Rule source
+
+* [rules/no-sub.js](../rules/no-sub.js)

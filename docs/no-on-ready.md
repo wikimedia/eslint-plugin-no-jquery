@@ -26,3 +26,6 @@ $( function () {} );
 document.on( 'ready' );
 document.on( 'ready', function () {} );
 ```
+## Rule source
+
+* [rules/no-on-ready.js](../rules/no-on-ready.js)
