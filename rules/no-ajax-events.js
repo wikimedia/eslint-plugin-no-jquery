@@ -2,14 +2,14 @@
 
 const utils = require( './utils.js' );
 
-const disallowedEvents = {
-	ajaxStart: true,
-	ajaxSend: true,
-	ajaxSuccess: true,
-	ajaxError: true,
-	ajaxComplete: true,
-	ajaxStop: true
-};
+const disallowedEvents = [
+	'ajaxStart',
+	'ajaxSend',
+	'ajaxSuccess',
+	'ajaxError',
+	'ajaxComplete',
+	'ajaxStop'
+];
 
 const MemberExpression = 'MemberExpression';
 const Literal = 'Literal';
@@ -36,12 +36,12 @@ module.exports = {
 					const arg = node.arguments[ 0 ];
 					if (
 						arg.type === Literal &&
-						arg.value in disallowedEvents
+						disallowedEvents.includes( arg.value )
 					) {
 						usedMethod = arg.value;
 					}
 				}
-				if ( node.callee.property.name in disallowedEvents ) {
+				if ( disallowedEvents.includes( node.callee.property.name ) ) {
 					usedMethod = node.callee.property.name;
 				}
 				if ( usedMethod && utils.isjQuery( context, node ) ) {
