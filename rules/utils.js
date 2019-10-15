@@ -86,6 +86,10 @@ function traverse( node, variableTest, constructorTest ) {
 			case 'MemberExpression':
 				if ( node.property && node.parent.type !== 'CallExpression' ) {
 					if ( node.property.type === 'Identifier' ) {
+						if ( node.computed ) {
+							// e.g. foo[bar] can't be determined, returns false
+							return false;
+						}
 						// e.g. $foo in this.$foo.bar(), returns true
 						// or foo in $this.foo.bar(), returns false
 						return variableTest( node.property );
