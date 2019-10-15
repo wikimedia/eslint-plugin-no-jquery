@@ -1,19 +1,20 @@
 # no-data
 
-Disallows the .data/removeData methods and $.data/removeData utilies.
+Disallows the .data/removeData/hasData methods and $.data/removeData/hasData utilies.
 
 ## Rule details
 
 ❌ The following patterns are considered errors:
 ```js
-$.data();
-$( 'div' ).data();
-$div.data();
-$( 'div' ).first().data();
-$( 'div' ).append( $( 'input' ).data() );
-$.removeData();
-$( 'div' ).removeData();
-$div.removeData();
+$.data( elem, 'foo' );
+$( 'div' ).data( 'foo', 'bar' );
+$div.data( 'foo' );
+$( 'div' ).first().data( 'foo', 'bar' );
+$( 'div' ).append( $( 'input' ).data( 'foo' ) );
+$.removeData( elem, 'foo' );
+$( 'div' ).removeData( 'foo' );
+$div.removeData( 'foo' );
+$.hasData( elem );
 ```
 
 ✔️ The following patterns are not considered errors:
@@ -26,6 +27,10 @@ removeData();
 [].removeData();
 div.removeData();
 div.removeData;
+hasData();
+[].hasData();
+div.hasData();
+div.hasData;
 ```
 ## Rule source
 
