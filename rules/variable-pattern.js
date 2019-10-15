@@ -14,6 +14,9 @@ module.exports = {
 		function test( node, left, right ) {
 			if (
 				!utils.isjQuery( context, left ) &&
+				// If the variable name is computed (e.g. foo[bar]) we
+				// can't be sure this is not correctly named.
+				!left.computed &&
 				utils.isjQuery( context, right )
 			) {
 				context.report( {
