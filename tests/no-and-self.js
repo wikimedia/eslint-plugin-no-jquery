@@ -15,8 +15,9 @@ ruleTester.run( 'no-and-self', rule, {
 			output: '$("div").addBack(".foo")'
 		},
 		{
-			code: '$div.andSelf()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$div.andSelf(".foo")',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$div.addBack(".foo")'
 		},
 		{
 			code: '$("div").first().andSelf()',

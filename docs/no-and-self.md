@@ -9,7 +9,7 @@ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 ❌ The following patterns are considered errors:
 ```js
 $( 'div' ).andSelf( '.foo' );
-$div.andSelf();
+$div.andSelf( '.foo' );
 $( 'div' ).first().andSelf();
 $( 'div' ).append( $( 'input' ).andSelf() );
 ```
@@ -25,6 +25,7 @@ div.andSelf;
 🔧 The `--fix` option can be used to fix problems reported by this rule:
 ```js
 $( 'div' ).andSelf( '.foo' ); /* → */ $( 'div' ).addBack( '.foo' );
+$div.andSelf( '.foo' );       /* → */ $div.addBack( '.foo' );
 $( 'div' ).first().andSelf(); /* → */ $( 'div' ).first().addBack();
 ```
 ## Rule source

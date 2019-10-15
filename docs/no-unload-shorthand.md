@@ -8,7 +8,7 @@ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
 ❌ The following patterns are considered errors:
 ```js
-$( 'div' ).unload();
+$( 'div' ).unload( handler );
 $div.unload();
 $( 'div' ).first().unload();
 $( 'div' ).append( $( 'input' ).unload() );
@@ -21,6 +21,12 @@ unload();
 div.unload();
 div.unload;
 $.unload();
+```
+
+🔧 The `--fix` option can be used to fix problems reported by this rule:
+```js
+$( 'div' ).unload( handler ); /* → */ $( 'div' ).on( 'unload', handler );
+$div.unload();                /* → */ $div.trigger( 'unload' );
 ```
 ## Rule source
 
