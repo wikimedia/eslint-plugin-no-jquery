@@ -23,3 +23,6 @@ div.map;
 $( 'div' ).toArray().map();
 $( 'select' ).val().map();
 ```
+## Rule source
+
+* [rules/no-map.js](../rules/no-map.js)

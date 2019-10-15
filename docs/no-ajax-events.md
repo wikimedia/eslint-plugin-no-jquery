@@ -30,3 +30,6 @@ form.on( 'ajaxSend' );
 form.ajaxSend();
 $.ajaxSend();
 ```
+## Rule source
+
+* [rules/no-ajax-events.js](../rules/no-ajax-events.js)

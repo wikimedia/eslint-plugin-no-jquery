@@ -19,3 +19,6 @@ a.boxModel;
 boxModel.foo;
 a.boxModel.foo;
 ```
+## Rule source
+
+* [rules/no-box-model.js](../rules/no-box-model.js)

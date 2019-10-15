@@ -19,3 +19,6 @@ parents();
 div.parents();
 div.parents;
 ```
+## Rule source
+
+* [rules/no-parents.js](../rules/no-parents.js)

@@ -21,9 +21,16 @@ for ( const name in rulesets ) {
 function buildRuleDetails( tests, icon, showFixes ) {
 	let output = '';
 	const testsByOptions = {};
+	let maxCodeLength;
 
 	function lintFix( code ) {
 		return linter.verifyAndFix( code, config ).output;
+	}
+
+	if ( showFixes ) {
+		maxCodeLength = tests.reduce( function ( acc, test ) {
+			return Math.max( acc, lintFix( test.code ).trim().length );
+		}, 0 );
 	}
 
 	tests.forEach( function ( test ) {
@@ -36,8 +43,9 @@ function buildRuleDetails( tests, icon, showFixes ) {
 		}
 		testsByOptions[ options ] = testsByOptions[ options ] || [];
 		if ( showFixes && test.output ) {
+			const code = lintFix( test.code ).trim();
 			testsByOptions[ options ].push(
-				lintFix( test.code ).trim() +
+				code + ' '.repeat( Math.max( 0, maxCodeLength - code.length ) ) +
 				' /* → */ ' +
 				lintFix( test.output ).trim() +
 				'\n'
@@ -117,6 +125,9 @@ class RuleTesterAndDocs extends RuleTester {
 				output += '🔧 The `--fix` option can be used to fix problems reported by this rule:\n';
 				output += buildRuleDetails( tests.invalid.filter( ( test ) => !!test.output ), '🔧', true );
 			}
+
+			output += '## Rule source\n\n';
+			output += '* [rules/' + name + '.js](../rules/' + name + '.js)\n';
 
 			fs.writeFileSync(
 				'docs/' + name + '.md',

@@ -29,3 +29,6 @@ $( 'div' );
 $( document );
 $();
 ```
+## Rule source
+
+* [rules/no-ready.js](../rules/no-ready.js)

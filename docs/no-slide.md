@@ -35,3 +35,6 @@ slideUp();
 div.slideUp();
 div.slideUp;
 ```
+## Rule source
+
+* [rules/no-slide.js](../rules/no-slide.js)

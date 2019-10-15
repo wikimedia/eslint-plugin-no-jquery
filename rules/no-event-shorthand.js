@@ -6,8 +6,10 @@ module.exports = utils.createCollectionMethodRule(
 	[
 		// Browser
 		'error',
+		'load',
 		'resize',
 		'scroll',
+		'unload',
 		// Form
 		'blur',
 		'change',
@@ -40,5 +42,7 @@ module.exports = utils.createCollectionMethodRule(
 		'ajaxSuccess',
 		'ajaxSend'
 	],
-	( node ) => `Prefer $.on or $.trigger to $.${node.callee.property.name}`
+	( node ) => `Prefer $.on or $.trigger to $.${node.callee.property.name}`,
+	'code',
+	utils.eventShorthandFixer
 );

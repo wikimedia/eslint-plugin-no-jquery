@@ -19,10 +19,19 @@ ruleTester.run( 'variable-pattern', rule, {
 		'data = $("<div>").data(objectOrString)',
 		'data = $.data($div, "foo")',
 		'deferred = $.Deferred()',
+		'foo[unknownName] = $("<div>")',
+		'foo[$unknownName] = $("<div>")',
+		'$foo[unknownName] = $("<div>")',
+		'$foo[$unknownName] = $("<div>")',
+		// It is not possible for the linter to detect that this is a jQuery collection,
+		// but it is also the only way to store a plain array of jQuery collections.
+		'foo[3] = $("<div>")',
 		'list = $.map([], fn)',
 		'width = $div.outerWidth()',
 		'width = $div.outerWidth(true)',
 		'width = $div.outerWidth(numberOrBool)',
+		'n = $div.queue()',
+		'n = $div.queue("fx")',
 		'$foo.text = $("<div>").text()',
 		'var foo = $.extend( {}, {} )',
 		'foo.bar = $.extend( {}, {} )',
@@ -42,10 +51,6 @@ ruleTester.run( 'variable-pattern', rule, {
 		},
 		{
 			code: '$foo.div = $("<div>")',
-			errors: [ { message: error, type: 'AssignmentExpression' } ]
-		},
-		{
-			code: '$foo[3] = $("<div>")',
 			errors: [ { message: error, type: 'AssignmentExpression' } ]
 		},
 		{
@@ -70,6 +75,18 @@ ruleTester.run( 'variable-pattern', rule, {
 		},
 		{
 			code: 'div = $div.outerWidth(number, true)',
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
+		},
+		{
+			code: 'div = $div.queue("fx", newQueueOrCallBack)',
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
+		},
+		{
+			code: 'div = $div.queue(newQueueOrCallBack)',
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
+		},
+		{
+			code: 'div = $div.queue([])',
 			errors: [ { message: error, type: 'AssignmentExpression' } ]
 		}
 	]

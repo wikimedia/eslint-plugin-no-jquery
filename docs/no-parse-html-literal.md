@@ -89,3 +89,6 @@ $( '<div></div>' );
 $( '<div>' + '</div>' );
 $( '<div />' );
 ```
+## Rule source
+
+* [rules/no-parse-html-literal.js](../rules/no-parse-html-literal.js)

@@ -10,6 +10,7 @@ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 ```js
 $( 'div' ).load( function () {} );
 $div.load( function () {} );
+$div.load();
 $div.load( () => {} );
 $( 'div' ).first().load( function () {} );
 $( 'div' ).append( $( 'input' ).load( function () {} ) );
@@ -25,3 +26,12 @@ $.load();
 $div.load( 'url' );
 $div.load( couldBeUrl );
 ```
+
+🔧 The `--fix` option can be used to fix problems reported by this rule:
+```js
+$( 'div' ).load( function () {} ); /* → */ $( 'div' ).on( 'load', function () {} );
+$div.load();                       /* → */ $div.trigger( 'load' );
+```
+## Rule source
+
+* [rules/no-load-shorthand.js](../rules/no-load-shorthand.js)

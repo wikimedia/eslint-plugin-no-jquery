@@ -20,3 +20,6 @@ div.each();
 div.each;
 $.each();
 ```
+## Rule source
+
+* [rules/no-each-collection.js](../rules/no-each-collection.js)

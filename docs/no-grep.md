@@ -15,3 +15,6 @@ grep();
 'test'.grep();
 'test'.grep;
 ```
+## Rule source
+
+* [rules/no-grep.js](../rules/no-grep.js)

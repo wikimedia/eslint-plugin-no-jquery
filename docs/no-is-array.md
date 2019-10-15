@@ -22,3 +22,6 @@ isArray();
 ```js
 $.isArray( [] ); /* → */ Array.isArray( [] );
 ```
+## Rule source
+
+* [rules/no-is-array.js](../rules/no-is-array.js)

@@ -32,3 +32,6 @@ hasData();
 div.hasData();
 div.hasData;
 ```
+## Rule source
+
+* [rules/no-data.js](../rules/no-data.js)

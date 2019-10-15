@@ -31,3 +31,6 @@ post();
 div.post();
 div.post;
 ```
+## Rule source
+
+* [rules/no-ajax.js](../rules/no-ajax.js)

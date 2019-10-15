@@ -17,3 +17,6 @@ type();
 myMethod.type();
 myMethod.type;
 ```
+## Rule source
+
+* [rules/no-type.js](../rules/no-type.js)
