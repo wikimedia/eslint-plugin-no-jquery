@@ -21,3 +21,6 @@ delegate();
 div.delegate();
 div.delegate;
 ```
+## Rule source
+
+* [rules/no-delegate.js](../rules/no-delegate.js)

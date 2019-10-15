@@ -21,3 +21,6 @@ live();
 div.live();
 div.live;
 ```
+## Rule source
+
+* [rules/no-live.js](../rules/no-live.js)

@@ -19,3 +19,6 @@ show();
 div.show();
 div.show;
 ```
+## Rule source
+
+* [rules/no-show.js](../rules/no-show.js)

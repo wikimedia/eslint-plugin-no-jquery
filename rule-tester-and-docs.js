@@ -126,6 +126,9 @@ class RuleTesterAndDocs extends RuleTester {
 				output += buildRuleDetails( tests.invalid.filter( ( test ) => !!test.output ), '🔧', true );
 			}
 
+			output += '## Rule source\n\n';
+			output += '* [rules/' + name + '.js](../rules/' + name + '.js)\n';
+
 			fs.writeFileSync(
 				'docs/' + name + '.md',
 				output

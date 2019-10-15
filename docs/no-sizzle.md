@@ -116,3 +116,6 @@ $( ':submit' );
 $( ':text' );
 $( ':visible' );
 ```
+## Rule source
+
+* [rules/no-sizzle.js](../rules/no-sizzle.js)

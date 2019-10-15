@@ -43,3 +43,6 @@ unwrap();
 div.unwrap();
 div.unwrap;
 ```
+## Rule source
+
+* [rules/no-wrap.js](../rules/no-wrap.js)

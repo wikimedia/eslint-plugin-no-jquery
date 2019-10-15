@@ -497,3 +497,6 @@ this.prop.$div.ajaxSend( handler );               /* → */ this.prop.$div.on( '
 $( 'div' ).first().ajaxSend();                    /* → */ $( 'div' ).first().trigger( 'ajaxSend' );
 $( 'div' ).append( $( 'input' ).ajaxSend() );     /* → */ $( 'div' ).append( $( 'input' ).trigger( 'ajaxSend' ) );
 ```
+## Rule source
+
+* [rules/no-event-shorthand.js](../rules/no-event-shorthand.js)

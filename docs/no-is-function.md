@@ -17,3 +17,6 @@ isFunction();
 myClass.isFunction();
 $div.isFunction();
 ```
+## Rule source
+
+* [rules/no-is-function.js](../rules/no-is-function.js)

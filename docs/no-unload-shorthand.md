@@ -28,3 +28,6 @@ $.unload();
 $( 'div' ).unload( handler ); /* → */ $( 'div' ).on( 'unload', handler );
 $div.unload();                /* → */ $div.trigger( 'unload' );
 ```
+## Rule source
+
+* [rules/no-unload-shorthand.js](../rules/no-unload-shorthand.js)

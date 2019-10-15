@@ -19,3 +19,6 @@ toggle();
 div.toggle();
 div.toggle;
 ```
+## Rule source
+
+* [rules/no-toggle.js](../rules/no-toggle.js)

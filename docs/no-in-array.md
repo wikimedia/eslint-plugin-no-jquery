@@ -15,3 +15,6 @@ inArray();
 'test'.inArray();
 'test'.inArray;
 ```
+## Rule source
+
+* [rules/no-in-array.js](../rules/no-in-array.js)

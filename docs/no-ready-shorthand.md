@@ -24,3 +24,6 @@ $.ready();
 $( document ).on( 'ready', function () {} );
 $( function () {} );
 ```
+## Rule source
+
+* [rules/no-ready-shorthand.js](../rules/no-ready-shorthand.js)

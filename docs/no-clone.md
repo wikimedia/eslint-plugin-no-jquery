@@ -24,3 +24,6 @@ $div.prop.clone();
 $div.prop.clone();
 $div[ 0 ].clone();
 ```
+## Rule source
+
+* [rules/no-clone.js](../rules/no-clone.js)

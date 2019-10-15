@@ -15,3 +15,6 @@ globalEval();
 'test'.globalEval();
 'test'.globalEval;
 ```
+## Rule source
+
+* [rules/no-global-eval.js](../rules/no-global-eval.js)

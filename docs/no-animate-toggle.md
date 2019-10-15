@@ -38,3 +38,6 @@ $div.toggle( getBoolean() );
 $( 'div' ).toggle();
 $( 'div' ).toggle;
 ```
+## Rule source
+
+* [rules/no-animate-toggle.js](../rules/no-animate-toggle.js)

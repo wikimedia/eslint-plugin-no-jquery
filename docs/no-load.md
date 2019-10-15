@@ -20,3 +20,6 @@ div.load();
 div.load;
 $.load();
 ```
+## Rule source
+
+* [rules/no-load.js](../rules/no-load.js)

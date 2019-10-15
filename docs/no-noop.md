@@ -22,3 +22,6 @@ foo.noop( bar );
 $.noop;   /* → */ ( function () {} );
 $.noop(); /* → */ ( function () {}() );
 ```
+## Rule source
+
+* [rules/no-noop.js](../rules/no-noop.js)
