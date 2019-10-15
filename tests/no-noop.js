@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-noop' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer function() {} to $.noop';
+const error = 'Prefer function(){} to $.noop';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-noop', rule, {
@@ -11,11 +11,13 @@ ruleTester.run( 'no-noop', rule, {
 	invalid: [
 		{
 			code: '$.noop',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ { message: error, type: 'MemberExpression' } ],
+			output: '(function(){})'
 		},
 		{
 			code: '$.noop()',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ { message: error, type: 'MemberExpression' } ],
+			output: '(function(){})()'
 		}
 	]
 } );
