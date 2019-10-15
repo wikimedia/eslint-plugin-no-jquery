@@ -24,8 +24,8 @@ div.size;
 
 🔧 The `--fix` option can be used to fix problems reported by this rule:
 ```js
-$( 'div' ).size(); /* → */ $( 'div' ).length;
-$div.size(); /* → */ $div.length;
-$( 'div' ).first().size(); /* → */ $( 'div' ).first().length;
+$( 'div' ).size();                        /* → */ $( 'div' ).length;
+$div.size();                              /* → */ $div.length;
+$( 'div' ).first().size();                /* → */ $( 'div' ).first().length;
 $( 'div' ).append( $( 'input' ).size() ); /* → */ $( 'div' ).append( $( 'input' ).length );
 ```

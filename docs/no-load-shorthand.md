@@ -30,5 +30,5 @@ $div.load( couldBeUrl );
 🔧 The `--fix` option can be used to fix problems reported by this rule:
 ```js
 $( 'div' ).load( function () {} ); /* → */ $( 'div' ).on( 'load', function () {} );
-$div.load(); /* → */ $div.trigger( 'load' );
+$div.load();                       /* → */ $div.trigger( 'load' );
 ```
