@@ -11,19 +11,23 @@ ruleTester.run( 'no-size', rule, {
 	invalid: [
 		{
 			code: '$("div").size()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").length'
 		},
 		{
 			code: '$div.size()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$div.length'
 		},
 		{
 			code: '$("div").first().size()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").first().length'
 		},
 		{
 			code: '$("div").append($("input").size())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").append($("input").length)'
 		}
 	]
 } );
