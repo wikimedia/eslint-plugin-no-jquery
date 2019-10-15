@@ -10,12 +10,14 @@ ruleTester.run( 'no-error-shorthand', rule, {
 	valid: [ 'error()', '[].error()', 'div.error()', 'div.error', '$.error()' ],
 	invalid: [
 		{
-			code: '$("div").error()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$("div").error(handler)',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").on("error", handler)'
 		},
 		{
 			code: '$div.error()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$div.trigger("error")'
 		},
 		{
 			code: '$("div").first().error()',
