@@ -8,7 +8,7 @@ const nonCollectionReturningAccessors = [ 'val', 'text', 'html', 'innerHeight', 
 const nonCollectionReturningValueAccessors = [ 'attr', 'css', 'data', 'prop' ];
 
 // Object.keys( $.fn ).filter( ( k ) => typeof $.fn[k] === 'function' ).sort()
-const allKnownMethods = [ 'add', 'addBack', 'addClass', 'after', 'ajaxComplete', 'ajaxError', 'ajaxSend', 'ajaxStart', 'ajaxStop', 'ajaxSuccess', 'animate', 'append', 'appendTo', 'attr', 'before', 'bind', 'blur', 'change', 'children', 'clearQueue', 'click', 'clone', 'closest', 'constructor', 'contents', 'contextmenu', 'css', 'data', 'dblclick', 'delay', 'delegate', 'dequeue', 'detach', 'each', 'empty', 'end', 'eq', 'extend', 'fadeIn', 'fadeOut', 'fadeTo', 'fadeToggle', 'filter', 'find', 'finish', 'first', 'focus', 'focusin', 'focusout', 'get', 'has', 'hasClass', 'height', 'hide', 'hover', 'html', 'index', 'init', 'innerHeight', 'innerWidth', 'insertAfter', 'insertBefore', 'is', 'keydown', 'keypress', 'keyup', 'last', 'load', 'map', 'mousedown', 'mouseenter', 'mouseleave', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'next', 'nextAll', 'nextUntil', 'not', 'off', 'offset', 'offsetParent', 'on', 'one', 'outerHeight', 'outerWidth', 'parent', 'parents', 'parentsUntil', 'position', 'prepend', 'prependTo', 'prev', 'prevAll', 'prevUntil', 'promise', 'prop', 'push', 'pushStack', 'queue', 'ready', 'remove', 'removeAttr', 'removeClass', 'removeData', 'removeProp', 'replaceAll', 'replaceWith', 'resize', 'scroll', 'scrollLeft', 'scrollTop', 'select', 'serialize', 'serializeArray', 'show', 'siblings', 'slice', 'slideDown', 'slideToggle', 'slideUp', 'sort', 'splice', 'stop', 'submit', 'text', 'toArray', 'toggle', 'toggleClass', 'trigger', 'triggerHandler', 'unbind', 'undelegate', 'unwrap', 'val', 'width', 'wrap', 'wrapAll', 'wrapInner' ];
+const allKnownMethods = [ 'add', 'addBack', 'addClass', 'after', 'ajaxComplete', 'ajaxError', 'ajaxSend', 'ajaxStart', 'ajaxStop', 'ajaxSuccess', 'animate', 'append', 'appendTo', 'attr', 'before', 'bind', 'blur', 'change', 'children', 'clearQueue', 'click', 'clone', 'closest', 'constructor', 'contents', 'contextmenu', 'css', 'data', 'dblclick', 'delay', 'delegate', 'dequeue', 'detach', 'each', 'empty', 'end', 'eq', 'extend', 'fadeIn', 'fadeOut', 'fadeTo', 'fadeToggle', 'filter', 'find', 'finish', 'first', 'focus', 'focusin', 'focusout', 'get', 'has', 'hasClass', 'height', 'hide', 'hover', 'html', 'index', 'init', 'innerHeight', 'innerWidth', 'insertAfter', 'insertBefore', 'is', 'keydown', 'keypress', 'keyup', 'last', 'load', 'map', 'mousedown', 'mouseenter', 'mouseleave', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'next', 'nextAll', 'nextUntil', 'not', 'off', 'offset', 'offsetParent', 'on', 'one', 'outerHeight', 'outerWidth', 'parent', 'parents', 'parentsUntil', 'position', 'prepend', 'prependTo', 'prev', 'prevAll', 'prevUntil', 'promise', 'prop', 'pushStack', 'queue', 'ready', 'remove', 'removeAttr', 'removeClass', 'removeData', 'removeProp', 'replaceAll', 'replaceWith', 'resize', 'scroll', 'scrollLeft', 'scrollTop', 'select', 'serialize', 'serializeArray', 'show', 'siblings', 'slice', 'slideDown', 'slideToggle', 'slideUp', 'stop', 'submit', 'text', 'toArray', 'toggle', 'toggleClass', 'trigger', 'triggerHandler', 'unbind', 'undelegate', 'unwrap', 'val', 'width', 'wrap', 'wrapAll', 'wrapInner' ];
 
 function isFunction( node ) {
 	return node.type === 'FunctionExpression' || node.type === 'ArrowFunctionExpression';
@@ -70,6 +70,22 @@ function traverse( node, variableTest, constructorTest ) {
 							return false;
 						}
 
+						if (
+							name === 'queue' && (
+								node.arguments.length === 0 || (
+									node.arguments.length === 1 &&
+									node.arguments[ 0 ].type === 'Literal' &&
+									typeof node.arguments[ 0 ].value === 'string'
+								)
+							)
+						) {
+							// .queue may not return a collection if
+							//  - no arguments are passed, e.g. $foo.queue()
+							//  - one argument is passed which is a string,
+							//    e.g. $foo.queue('fx')
+							return false;
+						}
+
 						if ( allKnownMethods.indexOf( name ) === -1 ) {
 							// The method is not core jQuery, so we don't know if it returns
 							// a collection or not. Assume it doesn't so we don't get false
@@ -86,6 +102,10 @@ function traverse( node, variableTest, constructorTest ) {
 			case 'MemberExpression':
 				if ( node.property && node.parent.type !== 'CallExpression' ) {
 					if ( node.property.type === 'Identifier' ) {
+						if ( node.computed ) {
+							// e.g. foo[bar] can't be determined, returns false
+							return false;
+						}
 						// e.g. $foo in this.$foo.bar(), returns true
 						// or foo in $this.foo.bar(), returns false
 						return variableTest( node.property );
@@ -268,7 +288,7 @@ function createUtilMethodRule( methods, message, fixable, fix ) {
 	}, description, fixable );
 }
 
-function createUtilPropertyRule( property, message ) {
+function createUtilPropertyRule( property, message, fixable, fix ) {
 	let description = 'Disallows the $.' + property + ' property.';
 
 	if ( typeof message === 'string' ) {
@@ -290,11 +310,12 @@ function createUtilPropertyRule( property, message ) {
 					node: node,
 					message: typeof message === 'function' ?
 						message( node ) :
-						message || '$.' + name + ' is not allowed'
+						message || '$.' + name + ' is not allowed',
+					fix: fix && fix.bind( this, node )
 				} );
 			}
 		};
-	}, description );
+	}, description, fixable );
 }
 
 function createCollectionOrUtilMethodRule( methods, message ) {
@@ -333,6 +354,21 @@ function createCollectionOrUtilMethodRule( methods, message ) {
 	}, description );
 }
 
+function eventShorthandFixer( node, fixer ) {
+	const name = node.callee.property.name;
+	if ( node.callee.parent.arguments.length ) {
+		return [
+			fixer.replaceText( node.callee.property, 'on' ),
+			fixer.insertTextBefore( node.callee.parent.arguments[ 0 ], JSON.stringify( name ) + ', ' )
+		];
+	} else {
+		return [
+			fixer.replaceText( node.callee.property, 'trigger' ),
+			fixer.insertTextBeforeRange( [ node.end - 1 ], JSON.stringify( name ) )
+		];
+	}
+}
+
 module.exports = {
 	isjQuery: isjQuery,
 	isjQueryConstructor: isjQueryConstructor,
@@ -341,5 +377,6 @@ module.exports = {
 	createCollectionPropertyRule: createCollectionPropertyRule,
 	createUtilMethodRule: createUtilMethodRule,
 	createUtilPropertyRule: createUtilPropertyRule,
-	createCollectionOrUtilMethodRule: createCollectionOrUtilMethodRule
+	createCollectionOrUtilMethodRule: createCollectionOrUtilMethodRule,
+	eventShorthandFixer: eventShorthandFixer
 };

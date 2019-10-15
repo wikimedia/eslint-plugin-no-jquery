@@ -4,5 +4,7 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
 	'error',
-	'Prefer $.on or $.trigger to $.error'
+	'Prefer $.on or $.trigger to $.error',
+	'code',
+	utils.eventShorthandFixer
 );
