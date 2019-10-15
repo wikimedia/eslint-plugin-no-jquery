@@ -26,5 +26,5 @@ $.unload();
 🔧 The `--fix` option can be used to fix problems reported by this rule:
 ```js
 $( 'div' ).unload( handler ); /* → */ $( 'div' ).on( 'unload', handler );
-$div.unload(); /* → */ $div.trigger( 'unload' );
+$div.unload();                /* → */ $div.trigger( 'unload' );
 ```

@@ -26,5 +26,5 @@ $.error();
 🔧 The `--fix` option can be used to fix problems reported by this rule:
 ```js
 $( 'div' ).error( handler ); /* → */ $( 'div' ).on( 'error', handler );
-$div.error(); /* → */ $div.trigger( 'error' );
+$div.error();                /* → */ $div.trigger( 'error' );
 ```

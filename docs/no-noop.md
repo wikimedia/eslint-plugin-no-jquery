@@ -19,6 +19,6 @@ foo.noop( bar );
 
 🔧 The `--fix` option can be used to fix problems reported by this rule:
 ```js
-$.noop; /* → */ ( function () {} );
+$.noop;   /* → */ ( function () {} );
 $.noop(); /* → */ ( function () {}() );
 ```

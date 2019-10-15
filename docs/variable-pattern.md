@@ -15,6 +15,9 @@ div = $div.data( { foo: 'bar' } );
 div = $div.outerWidth( 30 );
 div = $div.outerWidth( function () {} );
 div = $div.outerWidth( number, true );
+div = $div.queue( 'fx', newQueueOrCallBack );
+div = $div.queue( newQueueOrCallBack );
+div = $div.queue( [] );
 ```
 
 ✔️ The following patterns are not considered errors:
@@ -37,6 +40,8 @@ list = $.map( [], fn );
 width = $div.outerWidth();
 width = $div.outerWidth( true );
 width = $div.outerWidth( numberOrBool );
+n = $div.queue();
+n = $div.queue( 'fx' );
 $foo.text = $( '<div>' ).text();
 var foo = $.extend( {}, {} );
 foo.bar = $.extend( {}, {} );
