@@ -353,6 +353,21 @@ function createCollectionOrUtilMethodRule( methods, message ) {
 	}, description );
 }
 
+function eventShorthandFixer( node, fixer ) {
+	const name = node.callee.property.name;
+	if ( node.callee.parent.arguments.length ) {
+		return [
+			fixer.replaceText( node.callee.property, 'on' ),
+			fixer.insertTextBefore( node.callee.parent.arguments[ 0 ], JSON.stringify( name ) + ', ' )
+		];
+	} else {
+		return [
+			fixer.replaceText( node.callee.property, 'trigger' ),
+			fixer.insertTextBeforeRange( [ node.end - 1 ], JSON.stringify( name ) )
+		];
+	}
+}
+
 module.exports = {
 	isjQuery: isjQuery,
 	isjQueryConstructor: isjQueryConstructor,
@@ -361,5 +376,6 @@ module.exports = {
 	createCollectionPropertyRule: createCollectionPropertyRule,
 	createUtilMethodRule: createUtilMethodRule,
 	createUtilPropertyRule: createUtilPropertyRule,
-	createCollectionOrUtilMethodRule: createCollectionOrUtilMethodRule
+	createCollectionOrUtilMethodRule: createCollectionOrUtilMethodRule,
+	eventShorthandFixer: eventShorthandFixer
 };
