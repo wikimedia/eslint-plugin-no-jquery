@@ -30,6 +30,8 @@ ruleTester.run( 'variable-pattern', rule, {
 		'width = $div.outerWidth()',
 		'width = $div.outerWidth(true)',
 		'width = $div.outerWidth(numberOrBool)',
+		'n = $div.queue()',
+		'n = $div.queue("fx")',
 		'$foo.text = $("<div>").text()',
 		'var foo = $.extend( {}, {} )',
 		'foo.bar = $.extend( {}, {} )',
@@ -73,6 +75,18 @@ ruleTester.run( 'variable-pattern', rule, {
 		},
 		{
 			code: 'div = $div.outerWidth(number, true)',
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
+		},
+		{
+			code: 'div = $div.queue("fx", newQueueOrCallBack)',
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
+		},
+		{
+			code: 'div = $div.queue(newQueueOrCallBack)',
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
+		},
+		{
+			code: 'div = $div.queue([])',
 			errors: [ { message: error, type: 'AssignmentExpression' } ]
 		}
 	]
