@@ -56,24 +56,29 @@ forbidden.forEach( function ( rule ) {
 	);
 	invalid = invalid.concat(
 		{
-			code: '$("div").' + rule + '()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$("div").' + rule + '(handler)',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").on("' + rule + '", handler)'
 		},
 		{
 			code: '$div.' + rule + '()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$div.trigger("' + rule + '")'
 		},
 		{
-			code: 'this.prop.$div.' + rule + '()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: 'this.prop.$div.' + rule + '(handler)',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: 'this.prop.$div.on("' + rule + '", handler)'
 		},
 		{
 			code: '$("div").first().' + rule + '()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").first().trigger("' + rule + '")'
 		},
 		{
 			code: '$("div").append($("input").' + rule + '())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").append($("input").trigger("' + rule + '"))'
 		}
 	);
 } );

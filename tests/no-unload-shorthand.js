@@ -16,12 +16,14 @@ ruleTester.run( 'no-unload-shorthand', rule, {
 	],
 	invalid: [
 		{
-			code: '$("div").unload()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$("div").unload(handler)',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").on("unload", handler)'
 		},
 		{
 			code: '$div.unload()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$div.trigger("unload")'
 		},
 		{
 			code: '$("div").first().unload()',
