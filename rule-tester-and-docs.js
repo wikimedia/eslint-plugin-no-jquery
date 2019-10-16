@@ -101,6 +101,16 @@ class RuleTesterAndDocs extends RuleTester {
 				console.warn( 'Rule ' + name + ' has no description.' );
 			}
 
+			if ( rule.meta.docs.deprecated ) {
+				output += '⚠️ This rule is deprecated.';
+				if ( rule.meta.docs.replacedBy ) {
+					output += ' Use ' +
+						rule.meta.docs.replacedBy.map( ( name ) => '[' + name + '](' + name + '.md)' ).join( ', ' ) +
+						' instead.';
+				}
+				output += '\n\n';
+			}
+
 			if ( name in rulesData ) {
 				const data = rulesData[ name ];
 				output += 'This rule is enabled in `plugin:no-jquery/' + data.ruleset + '`';
