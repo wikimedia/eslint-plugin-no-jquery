@@ -135,7 +135,7 @@ $x.focusout();
 $x.has();
 // eslint-disable-next-line rulesdir/no-class, rulesdir/no-class-state
 $x.hasClass();
-// eslint-disable-next-line rulesdir/no-hide
+// eslint-disable-next-line rulesdir/no-hide, rulesdir/no-visibility
 $x.hide();
 // eslint-disable-next-line rulesdir/no-event-shorthand
 $x.hover();
@@ -193,7 +193,7 @@ $x.select();
 $x.serialize();
 // eslint-disable-next-line rulesdir/no-serialize
 $x.serializeArray();
-// eslint-disable-next-line rulesdir/no-show
+// eslint-disable-next-line rulesdir/no-show, rulesdir/no-visibility
 $x.show();
 // eslint-disable-next-line rulesdir/no-slide
 $x.slideDown();
@@ -205,7 +205,7 @@ $x.slideUp();
 $x.submit();
 // eslint-disable-next-line rulesdir/no-text
 $x.text();
-// eslint-disable-next-line rulesdir/no-toggle
+// eslint-disable-next-line rulesdir/no-toggle, rulesdir/no-visibility
 $x.toggle();
 // eslint-disable-next-line rulesdir/no-class
 $x.toggleClass();
