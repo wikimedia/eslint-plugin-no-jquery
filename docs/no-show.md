@@ -2,6 +2,8 @@
 
 Disallows the .show method.
 
+⚠️ This rule is deprecated. Use [no-visibility](no-visibility.md) instead.
+
 ## Rule details
 
 ❌ The following patterns are considered errors:

@@ -97,7 +97,6 @@ The following global settings can be used under the "no-jquery" property to conf
 * [no-jquery/no-global-eval](docs/no-global-eval.md)
 * [no-jquery/no-grep](docs/no-grep.md)
 * [no-jquery/no-has](docs/no-has.md)
-* [no-jquery/no-hide](docs/no-hide.md)
 * [no-jquery/no-hold-ready](docs/no-hold-ready.md)
 * [no-jquery/no-html](docs/no-html.md)
 * [no-jquery/no-in-array](docs/no-in-array.md)
@@ -132,7 +131,6 @@ The following global settings can be used under the "no-jquery" property to conf
 * [no-jquery/no-global-selector](docs/no-global-selector.md)
 * [no-jquery/no-selector-prop](docs/no-selector-prop.md)
 * [no-jquery/no-serialize](docs/no-serialize.md)
-* [no-jquery/no-show](docs/no-show.md)
 * [no-jquery/no-size](docs/no-size.md)
 * [no-jquery/no-sizzle](docs/no-sizzle.md)
 * [no-jquery/no-slide](docs/no-slide.md)
@@ -140,7 +138,6 @@ The following global settings can be used under the "no-jquery" property to conf
 * [no-jquery/no-submit](docs/no-submit.md)
 * [no-jquery/no-support](docs/no-support.md)
 * [no-jquery/no-text](docs/no-text.md)
-* [no-jquery/no-toggle](docs/no-toggle.md)
 * [no-jquery/no-trigger](docs/no-trigger.md)
 * [no-jquery/no-trim](docs/no-trim.md)
 * [no-jquery/no-type](docs/no-type.md)
@@ -149,8 +146,14 @@ The following global settings can be used under the "no-jquery" property to conf
 * [no-jquery/no-unique](docs/no-unique.md)
 * [no-jquery/no-unload-shorthand](docs/no-unload-shorthand.md)
 * [no-jquery/no-val](docs/no-val.md)
+* [no-jquery/no-visibility](docs/no-visibility.md)
 * [no-jquery/no-when](docs/no-when.md)
 * [no-jquery/no-wrap](docs/no-wrap.md)
+
+### Deprecated
+* [no-jquery/no-hide](docs/no-hide.md)
+* [no-jquery/no-show](docs/no-show.md)
+* [no-jquery/no-toggle](docs/no-toggle.md)
 
 ## Development
 

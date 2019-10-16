@@ -2,4 +2,9 @@
 
 const utils = require( './utils.js' );
 
-module.exports = utils.createCollectionMethodRule( 'toggle' );
+const rule = utils.createCollectionMethodRule( 'toggle' );
+
+rule.meta.docs.deprecated = true;
+rule.meta.docs.replacedBy = [ 'no-visibility' ];
+
+module.exports = rule;

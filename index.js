@@ -91,6 +91,7 @@ module.exports = {
 		'no-unique': require( './rules/no-unique' ),
 		'no-unload-shorthand': require( './rules/no-unload-shorthand' ),
 		'no-val': require( './rules/no-val' ),
+		'no-visibility': require( './rules/no-visibility' ),
 		'no-when': require( './rules/no-when' ),
 		'no-wrap': require( './rules/no-wrap' )
 	},
