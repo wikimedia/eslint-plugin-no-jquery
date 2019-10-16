@@ -1,42 +1,42 @@
 {
-  "name": "eslint-plugin-no-jquery",
-  "version": "2.2.1",
-  "description": "Disallow jQuery functions with native equivalents.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wikimedia/eslint-plugin-no-jquery.git"
-  },
-  "license": "MIT",
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin"
-  ],
-  "main": "index.js",
-  "scripts": {
-    "pretest": "eslint .",
-    "test": "mocha --reporter dot tests/",
-    "testpath": "mocha",
-    "doc": "rm docs/* && mocha --reporter min tests/ --doc"
-  },
-  "files": [
-    "index.js",
-    "rules/*"
-  ],
-  "peerDependencies": {
-    "eslint": ">=2.3.0"
-  },
-  "devDependencies": {
-    "eslint": "^6.4.0",
-    "eslint-config-wikimedia": "^0.14.3",
-    "mocha": "^6.2.0"
-  },
-  "bugs": {
-    "url": "https://github.com/wikimedia/eslint-plugin-no-jquery/issues"
-  },
-  "homepage": "https://github.com/wikimedia/eslint-plugin-no-jquery#readme",
-  "directories": {
-    "test": "tests"
-  },
-  "dependencies": {}
+	"name": "eslint-plugin-no-jquery",
+	"version": "2.2.1",
+	"description": "Disallow jQuery functions with native equivalents.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wikimedia/eslint-plugin-no-jquery.git"
+	},
+	"license": "MIT",
+	"keywords": [
+		"eslint",
+		"eslintplugin",
+		"eslint-plugin"
+	],
+	"main": "index.js",
+	"scripts": {
+		"pretest": "eslint --report-unused-disable-directives .",
+		"test": "mocha --reporter dot tests/",
+		"testpath": "mocha",
+		"doc": "rm docs/* && mocha --reporter min tests/ --doc"
+	},
+	"files": [
+		"index.js",
+		"rules/*"
+	],
+	"peerDependencies": {
+		"eslint": ">=2.3.0"
+	},
+	"devDependencies": {
+		"eslint": "^6.4.0",
+		"eslint-config-wikimedia": "^0.14.3",
+		"mocha": "^6.2.0"
+	},
+	"bugs": {
+		"url": "https://github.com/wikimedia/eslint-plugin-no-jquery/issues"
+	},
+	"homepage": "https://github.com/wikimedia/eslint-plugin-no-jquery#readme",
+	"directories": {
+		"test": "tests"
+	},
+	"dependencies": {}
 }
