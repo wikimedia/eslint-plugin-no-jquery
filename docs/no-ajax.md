@@ -2,6 +2,8 @@
 
 Disallows the $.ajax/get/getJSON/getScript/post utilies.
 
+This rule is enabled in `plugin:no-jquery/slim`.
+
 ## Rule details
 
 ❌ The following patterns are considered errors:
