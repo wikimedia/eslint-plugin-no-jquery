@@ -124,6 +124,7 @@ The following global settings can be used under the "no-jquery" property to conf
 * [no-jquery/no-parse-html](docs/no-parse-html.md)
 * [no-jquery/no-parse-html-literal](docs/no-parse-html-literal.md)
 * [no-jquery/no-parse-json](docs/no-parse-json.md)
+* [no-jquery/no-parse-xml](docs/no-parse-xml.md)
 * [no-jquery/no-prop](docs/no-prop.md)
 * [no-jquery/no-proxy](docs/no-proxy.md)
 * [no-jquery/no-ready](docs/no-ready.md)
