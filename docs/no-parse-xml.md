@@ -2,6 +2,8 @@
 
 Disallows the $.parseXML utility. Prefer DOMParser#parseFromString to $.parseXML.
 
+This rule is enabled in `plugin:no-jquery/slim`.
+
 ## Rule details
 
 ❌ The following patterns are considered errors:
