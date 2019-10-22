@@ -1,5 +1,41 @@
 # eslint-plugin-no-jquery release history
 
+## v2.3.0
+* New rule: `variable-pattern` (Ed Sanders)
+* New rule: `no-parse-xml` (Ed Sanders)
+* New rule: `no-visibility` as a group alias for `no-show`, `no-hide`, & `no-toggle` (Ed Sanders)
+
+* New config: `slim` as a profile for users of the jQuery slim build (Ed Sanders)
+
+* Deprecated rule: `no-show` (Ed Sanders)
+* Deprecated rule: `no-hide` (Ed Sanders)
+* Deprecated rule: `no-toggle` (Ed Sanders)
+
+* Rule fix: Add `allowDeep` options to `no-extend` (Ed Sanders)
+* Rule fix: Add `hasData` method to `no-data` rule (Ed Sanders)
+* Rule fix: Enforce single tag style in `no-parse-html-literal` (Ed Sanders)
+
+* New fixer: Add fixer for `no-event-shorthand` and similar (Ed Sanders)
+* New fixer: Add fixer for `no-noop` (Ed Sanders)
+* New fixer: Add fixer for `no-now` (Ed Sanders)
+* New fixer: Add fixer for `no-size` (Ed Sanders)
+
+* Docs: Link to each rule's definition (Ed Sanders)
+* Docs: Switch `constructorAliases`/`variablePattern` in README (Ed Sanders)
+* Docs: Pad fixer examples so they align (Ed Sanders)
+* Docs: Output example fixes in documentation (Ed Sanders)
+
+* Release: Update LICENSE authors (Ed Sanders)
+
+* Code: Add `npm run testpath` for running a single test (Ed Sanders)
+* Code: Add a test that automatically captures all rules (Ed Sanders)
+* Code: Avoid `key in object` lookup (Ed Sanders)
+* Code: Improvements to collection return detection (Ed Sanders)
+* Code: More fixes to jQuery method return types (Ed Sanders)
+* Code: Rename .eslintrc to .eslintrc.json (Ed Sanders)
+* Code: Update eslint-config-wikimedia (Ed Sanders)
+
+
 ## v2.2.1
 * Release: Update index.js and README with missing rules (Ed Sanders)
 
