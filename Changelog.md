@@ -1,6 +1,6 @@
 # eslint-plugin-no-jquery release history
 
-## v2.2.2
+## v2.3.0
 * New rule: `variable-pattern` (Ed Sanders)
 * New rule: `no-parse-xml` (Ed Sanders)
 * New rule: `no-visibility` as a group alias for `no-show`, `no-hide`, & `no-toggle` (Ed Sanders)
