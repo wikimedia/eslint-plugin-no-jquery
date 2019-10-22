@@ -2,7 +2,10 @@
 
 ## v2.2.2
 * New rule: `variable-pattern` (Ed Sanders)
+* New rule: `no-parse-xml` (Ed Sanders)
 * New rule: `no-visibility` as a group alias for `no-show`, `no-hide`, & `no-toggle` (Ed Sanders)
+
+* New config: `slim` as a profile for users of the jQuery slim build (Ed Sanders)
 
 * Deprecated rule: `no-show` (Ed Sanders)
 * Deprecated rule: `no-hide` (Ed Sanders)
