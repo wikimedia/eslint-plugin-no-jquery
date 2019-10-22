@@ -28,7 +28,6 @@ $.htmlPrefilter();
 $.isXMLDoc();
 $.makeArray();
 $.noConflict();
-$.parseXML();
 $.queue();
 $.ready();
 $.readyException();
@@ -108,6 +107,8 @@ $.param();
 $.parseHTML();
 // eslint-disable-next-line rulesdir/no-parse-json
 $.parseJSON();
+// eslint-disable-next-line rulesdir/no-parse-xml
+$.parseXML();
 // eslint-disable-next-line rulesdir/no-ajax
 $.post();
 // eslint-disable-next-line rulesdir/no-prop
