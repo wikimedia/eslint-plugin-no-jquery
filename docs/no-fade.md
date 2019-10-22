@@ -2,6 +2,8 @@
 
 Disallows the .fadeIn/fadeOut/fadeTo/fadeToggle methods.
 
+This rule is enabled in `plugin:no-jquery/slim`.
+
 ## Rule details
 
 ❌ The following patterns are considered errors:

@@ -2,6 +2,8 @@
 
 Disallows the .load method. Prefer fetch to $.load.
 
+This rule is enabled in `plugin:no-jquery/slim`.
+
 ## Rule details
 
 ❌ The following patterns are considered errors:
