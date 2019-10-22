@@ -67,6 +67,7 @@ module.exports = {
 		'no-parse-html': require( './rules/no-parse-html' ),
 		'no-parse-html-literal': require( './rules/no-parse-html-literal' ),
 		'no-parse-json': require( './rules/no-parse-json' ),
+		'no-parse-xml': require( './rules/no-parse-xml' ),
 		'no-prop': require( './rules/no-prop' ),
 		'no-proxy': require( './rules/no-proxy' ),
 		'no-ready': require( './rules/no-ready' ),
@@ -96,6 +97,21 @@ module.exports = {
 		'no-wrap': require( './rules/no-wrap' )
 	},
 	configs: {
+		// Use this profile if you are using jQuery slim build
+		slim: {
+			rules: {
+				// Effects
+				'no-jquery/no-animate': 'error',
+				'no-jquery/no-animate-toggle': 'error',
+				'no-jquery/no-fade': 'error',
+				'no-jquery/no-slide': 'error',
+				// Ajax
+				'no-jquery/no-ajax': 'error',
+				'no-jquery/no-ajax-events': 'error',
+				'no-jquery/no-load': 'error',
+				'no-jquery/no-parse-xml': 'error'
+			}
+		},
 		// Use this profile if you want to avoid all known deprecated jQuery tools.
 		deprecated: {
 			extends: 'plugin:no-jquery/deprecated-3.4'

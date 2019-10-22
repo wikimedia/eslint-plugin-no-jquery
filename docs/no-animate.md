@@ -2,6 +2,8 @@
 
 Disallows the .animate method. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.
 
+This rule is enabled in `plugin:no-jquery/slim`.
+
 ## Rule details
 
 ❌ The following patterns are considered errors:
