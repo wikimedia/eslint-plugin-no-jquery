@@ -1,6 +1,6 @@
 # no-event-shorthand
 
-Disallows the .error/load/resize/scroll/unload/blur/change/focus/focusin/focusout/select/submit/keydown/keypress/keyup/click/contextmenu/dblclick/hover/mousedown/mouseenter/mouseleave/mousemove/mouseout/mouseover/mouseup/ajaxStart/ajaxStop/ajaxComplete/ajaxError/ajaxSuccess/ajaxSend methods.
+Disallows the .error/resize/scroll/unload/blur/change/focus/focusin/focusout/select/submit/keydown/keypress/keyup/click/contextmenu/dblclick/hover/mousedown/mouseenter/mouseleave/mousemove/mouseout/mouseover/mouseup/ajaxStart/ajaxStop/ajaxComplete/ajaxError/ajaxSuccess/ajaxSend methods.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 
@@ -23,6 +23,11 @@ $div.scroll();
 this.prop.$div.scroll( handler );
 $( 'div' ).first().scroll();
 $( 'div' ).append( $( 'input' ).scroll() );
+$( 'div' ).unload( handler );
+$div.unload();
+this.prop.$div.unload( handler );
+$( 'div' ).first().unload();
+$( 'div' ).append( $( 'input' ).unload() );
 $( 'div' ).blur( handler );
 $div.blur();
 this.prop.$div.blur( handler );
@@ -180,6 +185,12 @@ $.scroll();
 div.scroll();
 $method( x ).scroll();
 div.scroll;
+unload();
+$.unload();
+[].unload();
+div.unload();
+$method( x ).unload();
+div.unload;
 blur();
 $.blur();
 [].blur();
@@ -342,6 +353,7 @@ $.ajaxSend();
 div.ajaxSend();
 $method( x ).ajaxSend();
 div.ajaxSend;
+$div.load( 'url', handler );
 ```
 
 🔧 The `--fix` option can be used to fix problems reported by this rule:
@@ -361,6 +373,11 @@ $div.scroll();                                    /* → */ $div.trigger( 'scrol
 this.prop.$div.scroll( handler );                 /* → */ this.prop.$div.on( 'scroll', handler );
 $( 'div' ).first().scroll();                      /* → */ $( 'div' ).first().trigger( 'scroll' );
 $( 'div' ).append( $( 'input' ).scroll() );       /* → */ $( 'div' ).append( $( 'input' ).trigger( 'scroll' ) );
+$( 'div' ).unload( handler );                     /* → */ $( 'div' ).on( 'unload', handler );
+$div.unload();                                    /* → */ $div.trigger( 'unload' );
+this.prop.$div.unload( handler );                 /* → */ this.prop.$div.on( 'unload', handler );
+$( 'div' ).first().unload();                      /* → */ $( 'div' ).first().trigger( 'unload' );
+$( 'div' ).append( $( 'input' ).unload() );       /* → */ $( 'div' ).append( $( 'input' ).trigger( 'unload' ) );
 $( 'div' ).blur( handler );                       /* → */ $( 'div' ).on( 'blur', handler );
 $div.blur();                                      /* → */ $div.trigger( 'blur' );
 this.prop.$div.blur( handler );                   /* → */ this.prop.$div.on( 'blur', handler );
