@@ -149,7 +149,7 @@ $x.keydown();
 $x.keypress();
 // eslint-disable-next-line rulesdir/no-event-shorthand
 $x.keyup();
-// eslint-disable-next-line rulesdir/no-load, rulesdir/no-event-shorthand, rulesdir/no-load-shorthand
+// eslint-disable-next-line rulesdir/no-load, rulesdir/no-load-shorthand
 $x.load();
 // eslint-disable-next-line rulesdir/no-map, rulesdir/no-map-collection
 $x.map();

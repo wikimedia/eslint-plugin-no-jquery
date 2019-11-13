@@ -9,6 +9,7 @@ const forbidden = [
 	'error',
 	'resize',
 	'scroll',
+	'unload',
 	// Form
 	'blur',
 	'change',
@@ -83,6 +84,9 @@ forbidden.forEach( function ( rule ) {
 	);
 } );
 ruleTester.run( 'no-event-shorthand', rule, {
-	valid: valid,
+	valid: valid.concat( [
+		// Don't conflict with Ajax load
+		'$div.load( "url", handler )'
+	] ),
 	invalid: invalid
 } );

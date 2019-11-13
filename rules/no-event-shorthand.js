@@ -6,7 +6,9 @@ module.exports = utils.createCollectionMethodRule(
 	[
 		// Browser
 		'error',
-		'load',
+		// Can't disallow 'load' as it conflicts with Ajax load.
+		// Use no-load-shorthand rule instead.
+		// TODO: Share the logic of no-load-shorthand with this rule.
 		'resize',
 		'scroll',
 		'unload',
