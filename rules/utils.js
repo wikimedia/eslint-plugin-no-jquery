@@ -1,9 +1,9 @@
 'use strict';
 
 // Methods which always return something else than a jQuery collection
-const nonCollectionReturningMethods = [ 'toArray', 'get', 'hasClass', 'position', 'promise', 'serializeArray', 'serialize', 'index', 'is' ];
+const nonCollectionReturningMethods = [ 'get', 'hasClass', 'index', 'is', 'position', 'promise', 'serialize', 'serializeArray', 'toArray', 'triggerHandler' ];
 // Methods that return something else than a jQuery collection when called without arguments
-const nonCollectionReturningAccessors = [ 'val', 'text', 'html', 'innerHeight', 'innerWidth', 'height', 'width', 'offset', 'scrollLeft', 'scrollTop' ];
+const nonCollectionReturningAccessors = [ 'height', 'html', 'innerHeight', 'innerWidth', 'offset', 'scrollLeft', 'scrollTop', 'text', 'val', 'width' ];
 // Methods that return something else than a jQuery collection when called with a single argument
 const nonCollectionReturningValueAccessors = [ 'attr', 'css', 'data', 'prop' ];
 
