@@ -18,13 +18,21 @@ for ( const name in rulesets ) {
 	}
 }
 
+// Restrict config used by verifyAndFix to fixable formatting rules
+const formattingRuleNames = [ 'array-bracket-spacing', 'block-spacing', 'brace-style', 'comma-dangle', 'comma-spacing', 'comma-style', 'computed-property-spacing', 'curly', 'dot-location', 'dot-notation', 'func-call-spacing', 'indent', 'key-spacing', 'keyword-spacing', 'linebreak-style', 'no-extra-semi', 'no-irregular-whitespace', 'no-mixed-spaces-and-tabs', 'no-multi-spaces', 'no-regex-spaces', 'no-tabs', 'no-trailing-spaces', 'no-whitespace-before-property', 'object-curly-spacing', 'operator-linebreak', 'quote-props', 'quotes', 'semi', 'semi-spacing', 'semi-style', 'space-before-blocks', 'space-before-function-paren', 'space-in-parens', 'space-infix-ops', 'space-unary-ops', 'spaced-comment', 'switch-colon-spacing', 'template-curly-spacing', 'wrap-iife' ];
+const formattingRules = {};
+formattingRuleNames.forEach( function ( ruleName ) {
+	formattingRules[ ruleName ] = config.rules[ ruleName ];
+} );
+config.rules = formattingRules;
+
 function buildRuleDetails( tests, icon, showFixes ) {
 	let output = '';
 	const testsByOptions = {};
 	let maxCodeLength;
 
 	function lintFix( code ) {
-		return linter.verifyAndFix( code, config ).output;
+		return linter.verifyAndFix( code, config ).output.trim();
 	}
 
 	if ( showFixes ) {
@@ -47,8 +55,7 @@ function buildRuleDetails( tests, icon, showFixes ) {
 			testsByOptions[ options ].push(
 				code + ' '.repeat( Math.max( 0, maxCodeLength - code.length ) ) +
 				' /* → */ ' +
-				lintFix( test.output ).trim() +
-				'\n'
+				lintFix( test.output )
 			);
 		} else {
 			testsByOptions[ options ].push(
@@ -73,8 +80,8 @@ function buildRuleDetails( tests, icon, showFixes ) {
 			output += ':\n';
 		}
 		output += '```js\n';
-		output += testsByOptions[ options ].join( '' );
-		output += '```\n';
+		output += testsByOptions[ options ].join( '\n' );
+		output += '\n```\n';
 	}
 
 	return output;
