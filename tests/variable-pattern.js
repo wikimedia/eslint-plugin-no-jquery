@@ -25,7 +25,6 @@ ruleTester.run( 'variable-pattern', rule, {
 		'foo[3] = $("<div>")',
 
 		// Utils
-		// TODO: $.queue can return a collection
 		'deferred = $.Deferred()',
 		'var foo = $.extend( {}, {} )',
 		'foo.bar = $.extend( {}, {} )',
