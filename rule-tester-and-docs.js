@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 const eslint = require( 'eslint' );
 const RuleTester = eslint.RuleTester;
 const linter = new eslint.Linter();
@@ -5,6 +6,9 @@ const cli = new eslint.CLIEngine();
 const config = cli.getConfigForFile( 'index.js' );
 const fs = require( 'fs' );
 const rulesets = require( './index' ).configs;
+const allRules = require( './index' ).rules;
+const readme = fs.readFileSync( 'README.md', { encoding: 'UTF8' } );
+const assert = require( 'assert' );
 
 const rulesData = {};
 
@@ -93,8 +97,9 @@ function buildRuleDetails( tests, icon, showFixes ) {
  */
 class RuleTesterAndDocs extends RuleTester {
 	run( name, rule, tests ) {
+		const isRule = name !== 'settings';
 		if ( process.argv.includes( '--doc' ) ) {
-			if ( name === 'settings' ) {
+			if ( !isRule ) {
 				return;
 			}
 
@@ -151,6 +156,13 @@ class RuleTesterAndDocs extends RuleTester {
 				output
 			);
 		} else {
+			if ( isRule ) {
+				it( 'Rule appears in README.md & index.js', function () {
+					assert( !!allRules[ name ], '`' + name + '` listed in index.js' );
+					assert( readme.indexOf( '* [no-jquery/' + name + '](' ) !== -1, '`' + name + '` linked to in README.md' );
+				} );
+			}
+
 			return super.run.apply( this, arguments );
 		}
 	}
