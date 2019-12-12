@@ -5,7 +5,7 @@ const utils = require( './utils.js' );
 module.exports = {
 	meta: {
 		docs: {
-			description: 'Disallows passing attributes to the jQuery constructor. Prefer $.attr.'
+			description: 'Disallows passing attributes to the jQuery constructor. Prefer `$.attr`.'
 		},
 		schema: []
 	},

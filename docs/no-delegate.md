@@ -1,6 +1,6 @@
 # no-delegate
 
-Disallows the .delegate method. Prefer $.on/EventTarget#addEventListener to $.delegate.
+Disallows the `.delegate` method. Prefer `$.on`/`EventTarget#addEventListener` to `$.delegate`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 

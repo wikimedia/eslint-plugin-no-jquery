@@ -1,6 +1,6 @@
 # no-show
 
-Disallows the .show method.
+Disallows the `.show` method.
 
 ⚠️ This rule is deprecated. Use [no-visibility](no-visibility.md) instead.
 

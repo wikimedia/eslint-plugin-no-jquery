@@ -1,6 +1,6 @@
 # no-closest
 
-Disallows the .closest method. Prefer Element#closest to $.closest.
+Disallows the `.closest` method. Prefer `Element#closest` to `$.closest`.
 
 ## Rule details
 

@@ -1,6 +1,6 @@
 # no-extend
 
-Disallows the $.extend utility. Prefer Object.assign or the spread operator.
+Disallows the `$.extend` utility. Prefer `Object.assign` or the spread operator.
 
 ## Rule details
 

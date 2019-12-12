@@ -1,6 +1,6 @@
 # no-when
 
-Disallows the $.when utility. Prefer Promise.all to $.when.
+Disallows the `$.when` utility. Prefer `Promise.all` to `$.when`.
 
 ## Rule details
 

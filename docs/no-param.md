@@ -1,6 +1,6 @@
 # no-param
 
-Disallows the $.param utility. Prefer FormData or URLSearchParams to $.param.
+Disallows the `$.param` utility. Prefer `FormData` or `URLSearchParams` to `$.param`.
 
 ## Rule details
 

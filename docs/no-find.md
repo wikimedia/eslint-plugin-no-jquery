@@ -1,6 +1,6 @@
 # no-find
 
-Disallows the .find method and $.find utility. Prefer Document#querySelectorAll to $.find.
+Disallows the `.find` method and `$.find` utility. Prefer `Document#querySelectorAll` to `$.find`.
 
 ## Rule details
 

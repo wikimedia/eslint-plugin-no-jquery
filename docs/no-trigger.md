@@ -1,6 +1,6 @@
 # no-trigger
 
-Disallows the .trigger method. Prefer EventTarget#dispatchEvent to $.trigger.
+Disallows the `.trigger` method. Prefer `EventTarget#dispatchEvent` to `$.trigger`.
 
 ## Rule details
 

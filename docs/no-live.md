@@ -1,6 +1,6 @@
 # no-live
 
-Disallows the .live method. Prefer $.on/EventTarget#addEventListener to $.live.
+Disallows the `.live` method. Prefer `$.on`/`EventTarget#addEventListener` to `$.live`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
 

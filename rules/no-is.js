@@ -4,5 +4,5 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
 	'is',
-	'Prefer Element#matches to $.is'
+	'Prefer `Element#matches` to `$.is`'
 );

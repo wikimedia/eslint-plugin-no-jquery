@@ -1,6 +1,6 @@
 # no-has
 
-Disallows the .has method.
+Disallows the `.has` method.
 
 ## Rule details
 

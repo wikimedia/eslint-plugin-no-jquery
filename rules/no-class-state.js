@@ -5,7 +5,7 @@ const utils = require( './utils.js' );
 module.exports = {
 	meta: {
 		docs: {
-			description: 'Disallows .hasClass and .toggleClass to discourage querying the DOM for state information. .toggleClass may be used with a boolean argument as then in behave like .addClass/.removeClass.'
+			description: 'Disallows `.hasClass` and `.toggleClass` to discourage querying the DOM for state information. `.toggleClass` may be used with a boolean argument as then in behave like `.addClass`/`.removeClass`.'
 		},
 		schema: []
 	},

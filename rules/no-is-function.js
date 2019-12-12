@@ -4,5 +4,5 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createUtilMethodRule(
 	'isFunction',
-	'Prefer typeof to $.isFunction'
+	'Prefer `typeof` to `$.isFunction`'
 );

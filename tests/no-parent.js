@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-parent' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer node#parentElement to $.parent';
+const error = 'Prefer Node#parentElement to $.parent';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-parent', rule, {

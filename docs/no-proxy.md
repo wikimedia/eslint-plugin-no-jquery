@@ -1,6 +1,6 @@
 # no-proxy
 
-Disallows the $.proxy utility. Prefer Function#bind to $.proxy.
+Disallows the `$.proxy` utility. Prefer `Function#bind` to `$.proxy`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 

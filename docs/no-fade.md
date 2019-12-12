@@ -1,6 +1,6 @@
 # no-fade
 
-Disallows the .fadeIn/fadeOut/fadeTo/fadeToggle methods.
+Disallows the `.fadeIn`/`.fadeOut`/`.fadeTo`/`.fadeToggle` methods.
 
 This rule is enabled in `plugin:no-jquery/slim`.
 

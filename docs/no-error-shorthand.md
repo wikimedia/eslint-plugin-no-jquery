@@ -1,6 +1,6 @@
 # no-error-shorthand
 
-Disallows the .error method. Prefer $.on or $.trigger to $.error.
+Disallows the `.error` method. Prefer `$.on` or `$.trigger` to `$.error`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 

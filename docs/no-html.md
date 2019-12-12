@@ -1,6 +1,6 @@
 # no-html
 
-Disallows the .html method. Prefer Element#innerHTML to $.html.
+Disallows the `.html` method. Prefer `Element#innerHTML` to `$.html`.
 
 ## Rule details
 

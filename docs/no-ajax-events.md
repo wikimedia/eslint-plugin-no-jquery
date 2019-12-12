@@ -1,6 +1,6 @@
 # no-ajax-events
 
-Disallows global ajax events handlers: ajaxStart/ajaxSend/ajaxSuccess/ajaxError/ajaxComplete/ajaxStop. Prefer local events.
+Disallows global ajax events handlers: `ajaxStart`/`ajaxSend`/`ajaxSuccess`/`ajaxError`/`ajaxComplete`/`ajaxStop`. Prefer local events.
 
 This rule is enabled in `plugin:no-jquery/slim`.
 

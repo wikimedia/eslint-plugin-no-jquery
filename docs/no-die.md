@@ -1,6 +1,6 @@
 # no-die
 
-Disallows the .die method. Prefer $.off/EventTarget#removeEventListener to $.die.
+Disallows the `.die` method. Prefer `$.off`/`EventTarget#removeEventListener` to `$.die`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
 

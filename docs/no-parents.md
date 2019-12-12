@@ -1,6 +1,6 @@
 # no-parents
 
-Disallows the .parents method. Prefer Element#closest to $.parents.
+Disallows the `.parents` method. Prefer `Element#closest` to `$.parents`.
 
 ## Rule details
 

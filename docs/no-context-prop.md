@@ -1,6 +1,6 @@
 # no-context-prop
 
-Disallows the $.context property.
+Disallows the `$.context` property.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.10`.
 

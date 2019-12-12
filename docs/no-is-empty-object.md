@@ -1,6 +1,6 @@
 # no-is-empty-object
 
-Disallows the $.isEmptyObject utility.
+Disallows the `$.isEmptyObject` utility.
 
 ## Rule details
 

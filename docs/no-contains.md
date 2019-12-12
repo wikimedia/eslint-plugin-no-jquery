@@ -1,6 +1,6 @@
 # no-contains
 
-Disallows the $.contains utility. Prefer Node#contains to $.contains.
+Disallows the `$.contains` utility. Prefer `Node#contains` to `$.contains`.
 
 ## Rule details
 
