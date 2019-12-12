@@ -1,6 +1,6 @@
 # no-hold-ready
 
-Disallows the $.holdReady utility.
+Disallows the `$.holdReady` utility.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
 

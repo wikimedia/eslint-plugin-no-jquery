@@ -6,8 +6,8 @@ module.exports = utils.createCollectionOrUtilMethodRule(
 	[ 'attr', 'removeAttr' ],
 	( node ) => 'Prefer Element#' +
 		(
-			node.callee.property.name === 'removeAttr' ? 'remove' :
-				node.arguments.length === 2 ? 'set' : 'get'
+			node.callee.property.name === 'removeAttr' ? 'removeAttribute' :
+				node.arguments.length === 2 ? 'setAttribute' : 'getAttribute'
 		) +
-		'Attribute to ' + node.callee.property.name
+		' to ' + node.callee.property.name
 );

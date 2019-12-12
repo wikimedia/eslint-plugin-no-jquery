@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-size' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer length to $.size';
+const error = 'Prefer $.length to $.size';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-size', rule, {

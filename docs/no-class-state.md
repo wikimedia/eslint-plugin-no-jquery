@@ -1,6 +1,6 @@
 # no-class-state
 
-Disallows .hasClass and .toggleClass to discourage querying the DOM for state information. .toggleClass may be used with a boolean argument as then in behave like .addClass/.removeClass.
+Disallows `.hasClass` and `.toggleClass` to discourage querying the DOM for state information. `.toggleClass` may be used with a boolean argument as then in behave like `.addClass`/`.removeClass`.
 
 ## Rule details
 

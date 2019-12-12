@@ -1,6 +1,6 @@
 # no-slide
 
-Disallows the .slideDown/slideToggle/slideUp methods.
+Disallows the `.slideDown`/`.slideToggle`/`.slideUp` methods.
 
 This rule is enabled in `plugin:no-jquery/slim`.
 

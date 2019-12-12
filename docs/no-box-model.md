@@ -1,6 +1,6 @@
 # no-box-model
 
-Disallows the $.boxModel property.
+Disallows the `$.boxModel` property.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.3`.
 

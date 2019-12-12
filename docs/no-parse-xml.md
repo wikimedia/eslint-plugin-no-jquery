@@ -1,6 +1,6 @@
 # no-parse-xml
 
-Disallows the $.parseXML utility. Prefer DOMParser#parseFromString to $.parseXML.
+Disallows the `$.parseXML` utility. Prefer `DOMParser#parseFromString` to `$.parseXML`.
 
 This rule is enabled in `plugin:no-jquery/slim`.
 

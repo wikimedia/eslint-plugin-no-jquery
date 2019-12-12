@@ -1,6 +1,6 @@
 # no-grep
 
-Disallows the $.grep utility. Prefer Array#filter to $.grep.
+Disallows the `$.grep` utility. Prefer `Array#filter` to `$.grep`.
 
 ## Rule details
 

@@ -4,5 +4,5 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createUtilMethodRule(
 	'error',
-	'Prefer throw to $.error'
+	'Prefer `throw` to `$.error`'
 );

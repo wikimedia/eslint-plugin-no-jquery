@@ -1,6 +1,6 @@
 # no-error
 
-Disallows the $.error utility. Prefer throw to $.error.
+Disallows the `$.error` utility. Prefer `throw` to `$.error`.
 
 ## Rule details
 

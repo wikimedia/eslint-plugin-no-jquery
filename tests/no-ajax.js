@@ -3,11 +3,11 @@
 const rule = require( '../rules/no-ajax' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const ajaxError = 'Prefer fetch to $.ajax';
-const getError = 'Prefer fetch to $.get';
-const jsonError = 'Prefer fetch to $.getJSON';
-const scriptError = 'Prefer fetch to $.getScript';
-const postError = 'Prefer fetch to $.post';
+const ajaxError = 'Prefer Window.fetch to $.ajax';
+const getError = 'Prefer Window.fetch to $.get';
+const jsonError = 'Prefer Window.fetch to $.getJSON';
+const scriptError = 'Prefer Window.fetch to $.getScript';
+const postError = 'Prefer Window.fetch to $.post';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-ajax', rule, {

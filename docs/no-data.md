@@ -1,6 +1,6 @@
 # no-data
 
-Disallows the .data/removeData/hasData methods and $.data/removeData/hasData utilies.
+Disallows the `.data`/`.removeData`/`.hasData` methods and `$.data`/`$.removeData`/`$.hasData` utilies.
 
 ## Rule details
 

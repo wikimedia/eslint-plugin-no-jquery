@@ -1,6 +1,6 @@
 # no-unbind
 
-Disallows the .unbind method. Prefer $.off/EventTarget#removeEventListener to $.unbind.
+Disallows the `.unbind` method. Prefer `$.off`/`EventTarget#removeEventListener` to `$.unbind`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 

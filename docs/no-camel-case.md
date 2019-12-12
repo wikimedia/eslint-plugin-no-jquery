@@ -1,6 +1,6 @@
 # no-camel-case
 
-Disallows the $.camelCase utility.
+Disallows the `$.camelCase` utility.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 

@@ -1,6 +1,6 @@
 # no-each-collection
 
-Disallows the .each method. Prefer Array#forEach to $.each.
+Disallows the `.each` method. Prefer `Array#forEach` to `$.each`.
 
 ## Rule details
 

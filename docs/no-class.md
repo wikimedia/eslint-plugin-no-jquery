@@ -1,6 +1,6 @@
 # no-class
 
-Disallows the .addClass/hasClass/removeClass/toggleClass methods.
+Disallows the `.addClass`/`.hasClass`/`.removeClass`/`.toggleClass` methods.
 
 ## Rule details
 

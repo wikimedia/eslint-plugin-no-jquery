@@ -1,6 +1,6 @@
 # no-hide
 
-Disallows the .hide method.
+Disallows the `.hide` method.
 
 ⚠️ This rule is deprecated. Use [no-visibility](no-visibility.md) instead.
 

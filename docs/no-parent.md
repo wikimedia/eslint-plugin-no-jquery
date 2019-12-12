@@ -1,6 +1,6 @@
 # no-parent
 
-Disallows the .parent method. Prefer node#parentElement to $.parent.
+Disallows the `.parent` method. Prefer `Node#parentElement` to `$.parent`.
 
 ## Rule details
 

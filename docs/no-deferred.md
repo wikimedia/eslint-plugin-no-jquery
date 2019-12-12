@@ -1,6 +1,6 @@
 # no-deferred
 
-Disallows $.Deferred constructor. Prefer Promise.
+Disallows `$.Deferred` constructor. Prefer `Promise`.
 
 ## Rule details
 

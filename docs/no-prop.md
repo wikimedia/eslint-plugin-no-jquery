@@ -1,6 +1,6 @@
 # no-prop
 
-Disallows the .prop/removeProp methods and $.prop/removeProp utilies.
+Disallows the `.prop`/`.removeProp` methods and `$.prop`/`$.removeProp` utilies.
 
 ## Rule details
 

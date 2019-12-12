@@ -1,6 +1,6 @@
 # no-submit
 
-Disallows the .submit method. Prefer EventTarget#dispatchEvent + form.submit() to $.submit.
+Disallows the `.submit` method. Prefer `EventTarget#dispatchEvent` + `HTMLFormElement#submit` to `$.submit`.
 
 ## Rule details
 

@@ -5,7 +5,7 @@ const utils = require( './utils.js' );
 module.exports = {
 	meta: {
 		docs: {
-			description: 'Disallows $.fx.interval.'
+			description: 'Disallows `$.fx.interval`.'
 		},
 		schema: []
 	},

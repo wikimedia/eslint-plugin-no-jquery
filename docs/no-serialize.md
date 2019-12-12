@@ -1,6 +1,6 @@
 # no-serialize
 
-Disallows the .serialize/serializeArray methods.
+Disallows the `.serialize`/`.serializeArray` methods.
 
 ## Rule details
 

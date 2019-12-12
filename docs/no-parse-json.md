@@ -1,6 +1,6 @@
 # no-parse-json
 
-Disallows the $.parseJSON utility. Prefer JSON.parse to $.parseJSON.
+Disallows the `$.parseJSON` utility. Prefer `JSON.parse` to `$.parseJSON`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 

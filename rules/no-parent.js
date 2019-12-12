@@ -4,5 +4,5 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
 	'parent',
-	'Prefer node#parentElement to $.parent'
+	'Prefer `Node#parentElement` to `$.parent`'
 );

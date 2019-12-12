@@ -187,11 +187,12 @@ function createRule( create, description, fixable ) {
 function createCollectionMethodRule( methods, message, fixable, fix ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
-	let description = 'Disallows the .' + methods.join( '/' ) + ' ' +
+	let description = 'Disallows the `.' + methods.join( '`/`.' ) + '` ' +
 			( methods.length > 1 ? 'methods' : 'method' ) + '.';
 
 	if ( typeof message === 'string' ) {
 		description += ' ' + message + '.';
+		message = message.replace( /`/g, '' );
 	}
 
 	return createRule( function ( context ) {
@@ -223,10 +224,11 @@ function createCollectionMethodRule( methods, message, fixable, fix ) {
 }
 
 function createCollectionPropertyRule( property, message ) {
-	let description = 'Disallows the $.' + property + ' property.';
+	let description = 'Disallows the `$.' + property + '` property.';
 
 	if ( typeof message === 'string' ) {
 		description += ' ' + message + '.';
+		message = message.replace( /`/g, '' );
 	}
 
 	return createRule( function ( context ) {
@@ -255,11 +257,12 @@ function createCollectionPropertyRule( property, message ) {
 function createUtilMethodRule( methods, message, fixable, fix ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
-	let description = 'Disallows the $.' + methods.join( '/' ) + ' ' +
+	let description = 'Disallows the `$.' + methods.join( '`/`$.' ) + '` ' +
 			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
 
 	if ( typeof message === 'string' ) {
 		description += ' ' + message + '.';
+		message = message.replace( /`/g, '' );
 	}
 
 	return createRule( function ( context ) {
@@ -289,10 +292,11 @@ function createUtilMethodRule( methods, message, fixable, fix ) {
 }
 
 function createUtilPropertyRule( property, message, fixable, fix ) {
-	let description = 'Disallows the $.' + property + ' property.';
+	let description = 'Disallows the `$.' + property + '` property.';
 
 	if ( typeof message === 'string' ) {
 		description += ' ' + message + '.';
+		message = message.replace( /`/g, '' );
 	}
 
 	return createRule( function ( context ) {
@@ -321,14 +325,15 @@ function createUtilPropertyRule( property, message, fixable, fix ) {
 function createCollectionOrUtilMethodRule( methods, message ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
-	let description = 'Disallows the .' + methods.join( '/' ) + ' ' +
+	let description = 'Disallows the `.' + methods.join( '`/`.' ) + '` ' +
 			( methods.length > 1 ? 'methods' : 'method' );
 
-	description += ' and $.' + methods.join( '/' ) + ' ' +
+	description += ' and `$.' + methods.join( '`/`$.' ) + '` ' +
 			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
 
 	if ( typeof message === 'string' ) {
 		description += ' ' + message + '.';
+		message = message.replace( /`/g, '' );
 	}
 
 	return createRule( function ( context ) {

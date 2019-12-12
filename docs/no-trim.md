@@ -1,6 +1,6 @@
 # no-trim
 
-Disallows the $.trim utility. Prefer String#trim to $.trim.
+Disallows the `$.trim` utility. Prefer `String#trim` to `$.trim`.
 
 ## Rule details
 

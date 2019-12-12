@@ -1,6 +1,6 @@
 # no-is-array
 
-Disallows the $.isArray utility. Prefer Array.isArray to $.isArray.
+Disallows the `$.isArray` utility. Prefer `Array.isArray` to `$.isArray`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
 

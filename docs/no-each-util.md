@@ -1,6 +1,6 @@
 # no-each-util
 
-Disallows the $.each utility. Prefer Array#forEach to $.each.
+Disallows the `$.each` utility. Prefer `Array#forEach` to `$.each`.
 
 ## Rule details
 

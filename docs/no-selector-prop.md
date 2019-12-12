@@ -1,6 +1,6 @@
 # no-selector-prop
 
-Disallows the $.selector property.
+Disallows the `$.selector` property.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
 

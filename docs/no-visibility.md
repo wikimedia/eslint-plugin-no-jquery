@@ -1,6 +1,6 @@
 # no-visibility
 
-Disallows the .show/hide/toggle methods.
+Disallows the `.show`/`.hide`/`.toggle` methods.
 
 ## Rule details
 

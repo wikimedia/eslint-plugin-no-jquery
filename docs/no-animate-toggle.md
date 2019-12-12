@@ -1,6 +1,6 @@
 # no-animate-toggle
 
-Disallows the duration argument when using the .show, .hide & .toggle methods. Prefer CSS transitions.
+Disallows the duration argument when using the `.show`, `.hide` & `.toggle` methods. Prefer CSS transitions.
 
 This rule is enabled in `plugin:no-jquery/slim`.
 

@@ -1,6 +1,6 @@
 # no-wrap
 
-Disallows the .wrap/wrapAll/wrapInner/unwrap methods.
+Disallows the `.wrap`/`.wrapAll`/`.wrapInner`/`.unwrap` methods.
 
 ## Rule details
 

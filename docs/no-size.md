@@ -1,6 +1,6 @@
 # no-size
 
-Disallows the .size method. Prefer length to $.size.
+Disallows the `.size` method. Prefer `$.length` to `$.size`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 

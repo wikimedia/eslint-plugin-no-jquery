@@ -1,6 +1,6 @@
 # no-ajax
 
-Disallows the $.ajax/get/getJSON/getScript/post utilies.
+Disallows the `$.ajax`/`$.get`/`$.getJSON`/`$.getScript`/`$.post` utilies.
 
 This rule is enabled in `plugin:no-jquery/slim`.
 

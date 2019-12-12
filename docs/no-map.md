@@ -1,6 +1,6 @@
 # no-map
 
-Disallows the .map method and $.map utility. Prefer Array#map to $.map.
+Disallows the `.map` method and `$.map` utility. Prefer `Array#map` to `$.map`.
 
 ## Rule details
 

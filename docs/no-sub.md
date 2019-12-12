@@ -1,6 +1,6 @@
 # no-sub
 
-Disallows the $.sub utility.
+Disallows the `$.sub` utility.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
 
