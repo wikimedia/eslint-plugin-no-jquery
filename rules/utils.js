@@ -206,10 +206,20 @@ function messageSuffix( message ) {
 	return messageString ? ' ' + messageString + '.' : '';
 }
 
-function messageToPlainString( message, node ) {
-	return ( typeof message === 'function' ?
+function messageToPlainString( message, node, name, options ) {
+	let messageString = ( typeof message === 'function' ?
 		message( node ) :
-		message || '' ).replace( /`/g, '' );
+		message || '' ).replace( /`/g, '' ) || '$.' + name + ' is not allowed';
+
+	if ( options.deprecated ) {
+		messageString += '. This rule is deprecated';
+		if ( Array.isArray( options.deprecated ) ) {
+			messageString += ', use ' + options.deprecated.join( ', ' );
+		}
+		messageString += '.';
+	}
+
+	return messageString;
 }
 
 /**
@@ -252,7 +262,7 @@ function createCollectionMethodRule( methods, message, options ) {
 				if ( isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
-						message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
+						message: messageToPlainString( message, node, name, options ),
 						fix: options.fix && options.fix.bind( this, node )
 					} );
 				}
@@ -289,7 +299,7 @@ function createCollectionPropertyRule( property, message, options ) {
 				if ( isjQuery( context, node.object ) ) {
 					context.report( {
 						node: node,
-						message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
+						message: messageToPlainString( message, node, name, options ),
 						fix: options.fix && options.fix.bind( this, node )
 					} );
 				}
@@ -332,7 +342,7 @@ function createUtilMethodRule( methods, message, options ) {
 
 				context.report( {
 					node: node,
-					message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
+					message: messageToPlainString( message, node, name, options ),
 					fix: options.fix && options.fix.bind( this, node )
 				} );
 			}
@@ -368,7 +378,7 @@ function createUtilPropertyRule( property, message, options ) {
 
 				context.report( {
 					node: node,
-					message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
+					message: messageToPlainString( message, node, name, options ),
 					fix: options.fix && options.fix.bind( this, node )
 				} );
 			}
@@ -410,7 +420,7 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 				if ( isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
-						message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
+						message: messageToPlainString( message, node, name, options ),
 						fix: options.fix && options.fix.bind( this, node )
 					} );
 				}

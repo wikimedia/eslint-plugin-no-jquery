@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-toggle' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = '$.toggle is not allowed';
+const error = '$.toggle is not allowed. This rule is deprecated, use no-visibility.';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-toggle', rule, {
