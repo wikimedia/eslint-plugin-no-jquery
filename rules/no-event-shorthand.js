@@ -44,7 +44,9 @@ module.exports = utils.createCollectionMethodRule(
 		'ajaxSuccess',
 		'ajaxSend'
 	],
-	( node ) => `Prefer $.on or $.trigger to $.${node.callee.property.name}`,
+	( node ) => node === true ?
+		'Prefer `$.on` or `$.trigger`' :
+		`Prefer $.on or $.trigger to $.${node.callee.property.name}`,
 	'code',
 	utils.eventShorthandFixer
 );

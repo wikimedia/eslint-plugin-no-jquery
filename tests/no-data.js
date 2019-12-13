@@ -3,9 +3,9 @@
 const rule = require( '../rules/no-data' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer WeakMap to data';
-const removeError = 'Prefer WeakMap to removeData';
-const hasError = 'Prefer WeakMap to hasData';
+const error = 'Prefer WeakMap to $.data';
+const removeError = 'Prefer WeakMap to $.removeData';
+const hasError = 'Prefer WeakMap to $.hasData';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-data', rule, {
