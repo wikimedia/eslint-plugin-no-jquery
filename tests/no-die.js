@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-die' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.off/EventTarget#removeEventListener to $.die';
+const error = 'Prefer $.off/EventTarget#removeEventListener to $.die. This rule is deprecated, use no-live.';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-die', rule, {

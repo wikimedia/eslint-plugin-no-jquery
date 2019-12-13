@@ -151,9 +151,7 @@ module.exports = {
 			extends: 'plugin:no-jquery/deprecated-1.10',
 			rules: {
 				'no-jquery/no-bind': 'error',
-				'no-jquery/no-unbind': 'error',
 				'no-jquery/no-delegate': 'error',
-				'no-jquery/no-undelegate': 'error',
 				'no-jquery/no-fx-interval': 'error',
 				'no-jquery/no-parse-json': 'error',
 				'no-jquery/no-ready-shorthand': 'error',
@@ -193,7 +191,6 @@ module.exports = {
 			extends: 'plugin:no-jquery/deprecated-1.3',
 			rules: {
 				// FIXME: `deferred.isRejected()/isResolved()`
-				'no-jquery/no-die': 'error',
 				'no-jquery/no-live': 'error',
 				'no-jquery/no-sub': 'error',
 				'no-jquery/no-selector-prop': 'error'
