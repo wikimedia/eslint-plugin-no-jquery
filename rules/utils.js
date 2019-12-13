@@ -171,11 +171,23 @@ function isjQuery( context, node ) {
 	);
 }
 
-function createRule( create, description, fixable ) {
+/**
+ * Create an linting rule
+ *
+ * @param {Function} create Create function
+ * @param {string} description Description
+ * @param {string} [fixable] Fixable mode, e.g. 'code'
+ * @param {string[]|boolean} [deprecated] Rule is deprecated.
+ *  If a string list, the replacedBy rules.
+ * @return {Object} Rule
+ */
+function createRule( create, description, fixable, deprecated ) {
 	return {
 		meta: {
 			docs: {
-				description: description
+				description: description,
+				deprecated: !!deprecated,
+				replacedBy: Array.isArray( deprecated ) ? deprecated : undefined
 			},
 			fixable: fixable,
 			schema: []
@@ -204,13 +216,18 @@ function messageToPlainString( message, node ) {
  * Create a rule for collection methods
  *
  * @param {string|string[]} methods Method or list of method names
- * @param {string|Function} message Message to report. String or function that is passed
+ * @param {string|Function} [message] Message to report. String or function that is passed
  *  the target node, or true to generate context-agnostic message (for documentation).
- * @param {string} [fixable] Fixable mode, e.g. 'code'
- * @param {Function} [fix] Fixing function. First argument is `node`.
+ * @param {Object} [options] Options
+ * @param {string} [options.fixable] Fixable mode, e.g. 'code'
+ * @param {Function} [options.fix] Fixing function. First argument is `node`.
+ * @param {string[]|boolean} [options.deprecated] Rule is deprecated.
+ *  If a string list, the replacedBy rules.
  * @return {Object} Rule
  */
-function createCollectionMethodRule( methods, message, fixable, fix ) {
+function createCollectionMethodRule( methods, message, options ) {
+	options = options || {};
+
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the `.' + methods.join( '`/`.' ) + '` ' +
@@ -236,24 +253,25 @@ function createCollectionMethodRule( methods, message, fixable, fix ) {
 					context.report( {
 						node: node,
 						message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
-						fix: fix && fix.bind( this, node )
+						fix: options.fix && options.fix.bind( this, node )
 					} );
 				}
 			}
 		};
-	}, description, fixable );
+	}, description, options.fixable, options.deprecated );
 }
 
 /**
  * Create a rule for collection property
  *
  * @param {string} property Property name
- * @param {string|Function} message Message to report. See createCollectionMethodRule.
- * @param {string} [fixable] Fixable mode, e.g. 'code'
- * @param {Function} [fix] Fixing function. First argument is `node`.
+ * @param {string|Function} [message] Message to report. See createCollectionMethodRule.
+ * @param {Object} [options] Options. See createCollectionMethodRule.
  * @return {Object} Rule
  */
-function createCollectionPropertyRule( property, message, fixable, fix ) {
+function createCollectionPropertyRule( property, message, options ) {
+	options = options || {};
+
 	let description = 'Disallows the `$.' + property + '` property.';
 
 	description += messageSuffix( message );
@@ -272,24 +290,25 @@ function createCollectionPropertyRule( property, message, fixable, fix ) {
 					context.report( {
 						node: node,
 						message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
-						fix: fix && fix.bind( this, node )
+						fix: options.fix && options.fix.bind( this, node )
 					} );
 				}
 			}
 		};
-	}, description, fixable );
+	}, description, options.fixable, options.deprecated );
 }
 
 /**
  * Create a rule for util methods
  *
  * @param {string|string[]} methods Method or list of method names
- * @param {string|Function} message Message to report. See createCollectionMethodRule.
- * @param {string} [fixable] Fixable mode, e.g. 'code'
- * @param {Function} [fix] Fixing function. First argument is `node`.
+ * @param {string|Function} [message] Message to report. See createCollectionMethodRule.
+ * @param {Object} [options] Options. See createCollectionMethodRule.
  * @return {Object} Rule
  */
-function createUtilMethodRule( methods, message, fixable, fix ) {
+function createUtilMethodRule( methods, message, options ) {
+	options = options || {};
+
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the `$.' + methods.join( '`/`$.' ) + '` ' +
@@ -314,23 +333,24 @@ function createUtilMethodRule( methods, message, fixable, fix ) {
 				context.report( {
 					node: node,
 					message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
-					fix: fix && fix.bind( this, node )
+					fix: options.fix && options.fix.bind( this, node )
 				} );
 			}
 		};
-	}, description, fixable );
+	}, description, options.fixable, options.deprecated );
 }
 
 /**
  * Create a rule for util methods
  *
  * @param {string} property Property name
- * @param {string|Function} message Message to report. See createCollectionMethodRule.
- * @param {string} [fixable] Fixable mode, e.g. 'code'
- * @param {Function} [fix] Fixing function. First argument is `node`.
+ * @param {string|Function} [message] Message to report. See createCollectionMethodRule.
+ * @param {Object} [options] Options. See createCollectionMethodRule.
  * @return {Object} Rule
  */
-function createUtilPropertyRule( property, message, fixable, fix ) {
+function createUtilPropertyRule( property, message, options ) {
+	options = options || {};
+
 	let description = 'Disallows the `$.' + property + '` property.';
 
 	description += messageSuffix( message );
@@ -349,23 +369,24 @@ function createUtilPropertyRule( property, message, fixable, fix ) {
 				context.report( {
 					node: node,
 					message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
-					fix: fix && fix.bind( this, node )
+					fix: options.fix && options.fix.bind( this, node )
 				} );
 			}
 		};
-	}, description, fixable );
+	}, description, options.fixable, options.deprecated );
 }
 
 /**
  * Create a rule for methods with the same name in a util and collection
  *
  * @param {string|string[]} methods Method or list of method names
- * @param {string|Function} message Message to report. See createCollectionMethodRule.
- * @param {string} [fixable] Fixable mode, e.g. 'code'
- * @param {Function} [fix] Fixing function. First argument is `node`.
+ * @param {string|Function} [message] Message to report. See createCollectionMethodRule.
+ * @param {Object} [options] Options. See createCollectionMethodRule.
  * @return {Object} Rule
  */
-function createCollectionOrUtilMethodRule( methods, message, fixable, fix ) {
+function createCollectionOrUtilMethodRule( methods, message, options ) {
+	options = options || {};
+
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the `.' + methods.join( '`/`.' ) + '` ' +
@@ -390,12 +411,12 @@ function createCollectionOrUtilMethodRule( methods, message, fixable, fix ) {
 					context.report( {
 						node: node,
 						message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
-						fix: fix && fix.bind( this, node )
+						fix: options.fix && options.fix.bind( this, node )
 					} );
 				}
 			}
 		};
-	}, description, fixable );
+	}, description, options.fixable, options.deprecated );
 }
 
 function eventShorthandFixer( node, fixer ) {
