@@ -4,5 +4,7 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionOrUtilMethodRule(
 	[ 'prop', 'removeProp' ],
-	( node ) => 'Prefer direct property access to $.' + node.callee.property.name
+	( node ) => node === true ?
+		'Prefer direct property access' :
+		`Prefer direct property access to $.${node.callee.property.name}`
 );

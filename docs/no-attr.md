@@ -1,6 +1,6 @@
 # no-attr
 
-Disallows the `.attr`/`.removeAttr` methods and `$.attr`/`$.removeAttr` utilies.
+Disallows the `.attr`/`.removeAttr` methods and `$.attr`/`$.removeAttr` utilies. Prefer `Element#getAttribute`/`setAttribute`/`removeAttribute`.
 
 ## Rule details
 

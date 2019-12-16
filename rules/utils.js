@@ -184,16 +184,39 @@ function createRule( create, description, fixable ) {
 	};
 }
 
+function messageSuffix( message ) {
+	let messageString;
+	if ( typeof message === 'string' ) {
+		messageString = message;
+	} else if ( typeof message === 'function' ) {
+		messageString = message( true );
+	}
+	return messageString ? ' ' + messageString + '.' : '';
+}
+
+function messageToPlainString( message, node ) {
+	return ( typeof message === 'function' ?
+		message( node ) :
+		message || '' ).replace( /`/g, '' );
+}
+
+/**
+ * Create a rule for collection methods
+ *
+ * @param {string|string[]} methods Method or list of method names
+ * @param {string|Function} message Message to report. String or function that is passed
+ *  the target node, or true to generate context-agnostic message (for documentation).
+ * @param {string} [fixable] Fixable mode, e.g. 'code'
+ * @param {Function} [fix] Fixing function. First argument is `node`.
+ * @return {Object} Rule
+ */
 function createCollectionMethodRule( methods, message, fixable, fix ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the `.' + methods.join( '`/`.' ) + '` ' +
 			( methods.length > 1 ? 'methods' : 'method' ) + '.';
 
-	if ( typeof message === 'string' ) {
-		description += ' ' + message + '.';
-		message = message.replace( /`/g, '' );
-	}
+	description += messageSuffix( message );
 
 	return createRule( function ( context ) {
 		return {
@@ -212,9 +235,7 @@ function createCollectionMethodRule( methods, message, fixable, fix ) {
 				if ( isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
-						message: typeof message === 'function' ?
-							message( node ) :
-							message || '$.' + name + ' is not allowed',
+						message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
 						fix: fix && fix.bind( this, node )
 					} );
 				}
@@ -223,13 +244,19 @@ function createCollectionMethodRule( methods, message, fixable, fix ) {
 	}, description, fixable );
 }
 
-function createCollectionPropertyRule( property, message ) {
+/**
+ * Create a rule for collection property
+ *
+ * @param {string} property Property name
+ * @param {string|Function} message Message to report. See createCollectionMethodRule.
+ * @param {string} [fixable] Fixable mode, e.g. 'code'
+ * @param {Function} [fix] Fixing function. First argument is `node`.
+ * @return {Object} Rule
+ */
+function createCollectionPropertyRule( property, message, fixable, fix ) {
 	let description = 'Disallows the `$.' + property + '` property.';
 
-	if ( typeof message === 'string' ) {
-		description += ' ' + message + '.';
-		message = message.replace( /`/g, '' );
-	}
+	description += messageSuffix( message );
 
 	return createRule( function ( context ) {
 		return {
@@ -244,26 +271,31 @@ function createCollectionPropertyRule( property, message ) {
 				if ( isjQuery( context, node.object ) ) {
 					context.report( {
 						node: node,
-						message: typeof message === 'function' ?
-							message( node ) :
-							message || '$.' + name + ' is not allowed'
+						message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
+						fix: fix && fix.bind( this, node )
 					} );
 				}
 			}
 		};
-	}, description );
+	}, description, fixable );
 }
 
+/**
+ * Create a rule for util methods
+ *
+ * @param {string|string[]} methods Method or list of method names
+ * @param {string|Function} message Message to report. See createCollectionMethodRule.
+ * @param {string} [fixable] Fixable mode, e.g. 'code'
+ * @param {Function} [fix] Fixing function. First argument is `node`.
+ * @return {Object} Rule
+ */
 function createUtilMethodRule( methods, message, fixable, fix ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the `$.' + methods.join( '`/`$.' ) + '` ' +
 			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
 
-	if ( typeof message === 'string' ) {
-		description += ' ' + message + '.';
-		message = message.replace( /`/g, '' );
-	}
+	description += messageSuffix( message );
 
 	return createRule( function ( context ) {
 		return {
@@ -281,9 +313,7 @@ function createUtilMethodRule( methods, message, fixable, fix ) {
 
 				context.report( {
 					node: node,
-					message: typeof message === 'function' ?
-						message( node ) :
-						message || '$.' + name + ' is not allowed',
+					message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
 					fix: fix && fix.bind( this, node )
 				} );
 			}
@@ -291,13 +321,19 @@ function createUtilMethodRule( methods, message, fixable, fix ) {
 	}, description, fixable );
 }
 
+/**
+ * Create a rule for util methods
+ *
+ * @param {string} property Property name
+ * @param {string|Function} message Message to report. See createCollectionMethodRule.
+ * @param {string} [fixable] Fixable mode, e.g. 'code'
+ * @param {Function} [fix] Fixing function. First argument is `node`.
+ * @return {Object} Rule
+ */
 function createUtilPropertyRule( property, message, fixable, fix ) {
 	let description = 'Disallows the `$.' + property + '` property.';
 
-	if ( typeof message === 'string' ) {
-		description += ' ' + message + '.';
-		message = message.replace( /`/g, '' );
-	}
+	description += messageSuffix( message );
 
 	return createRule( function ( context ) {
 		return {
@@ -312,9 +348,7 @@ function createUtilPropertyRule( property, message, fixable, fix ) {
 
 				context.report( {
 					node: node,
-					message: typeof message === 'function' ?
-						message( node ) :
-						message || '$.' + name + ' is not allowed',
+					message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
 					fix: fix && fix.bind( this, node )
 				} );
 			}
@@ -322,7 +356,16 @@ function createUtilPropertyRule( property, message, fixable, fix ) {
 	}, description, fixable );
 }
 
-function createCollectionOrUtilMethodRule( methods, message ) {
+/**
+ * Create a rule for methods with the same name in a util and collection
+ *
+ * @param {string|string[]} methods Method or list of method names
+ * @param {string|Function} message Message to report. See createCollectionMethodRule.
+ * @param {string} [fixable] Fixable mode, e.g. 'code'
+ * @param {Function} [fix] Fixing function. First argument is `node`.
+ * @return {Object} Rule
+ */
+function createCollectionOrUtilMethodRule( methods, message, fixable, fix ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the `.' + methods.join( '`/`.' ) + '` ' +
@@ -331,10 +374,7 @@ function createCollectionOrUtilMethodRule( methods, message ) {
 	description += ' and `$.' + methods.join( '`/`$.' ) + '` ' +
 			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
 
-	if ( typeof message === 'string' ) {
-		description += ' ' + message + '.';
-		message = message.replace( /`/g, '' );
-	}
+	description += messageSuffix( message );
 
 	return createRule( function ( context ) {
 		return {
@@ -349,14 +389,13 @@ function createCollectionOrUtilMethodRule( methods, message ) {
 				if ( isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
-						message: typeof message === 'function' ?
-							message( node ) :
-							message || '$.' + name + ' is not allowed'
+						message: messageToPlainString( message, node ) || '$.' + name + ' is not allowed',
+						fix: fix && fix.bind( this, node )
 					} );
 				}
 			}
 		};
-	}, description );
+	}, description, fixable );
 }
 
 function eventShorthandFixer( node, fixer ) {

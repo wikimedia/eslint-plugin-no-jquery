@@ -1,6 +1,6 @@
 # no-event-shorthand
 
-Disallows the `.error`/`.resize`/`.scroll`/`.unload`/`.blur`/`.change`/`.focus`/`.focusin`/`.focusout`/`.select`/`.submit`/`.keydown`/`.keypress`/`.keyup`/`.click`/`.contextmenu`/`.dblclick`/`.hover`/`.mousedown`/`.mouseenter`/`.mouseleave`/`.mousemove`/`.mouseout`/`.mouseover`/`.mouseup`/`.ajaxStart`/`.ajaxStop`/`.ajaxComplete`/`.ajaxError`/`.ajaxSuccess`/`.ajaxSend` methods.
+Disallows the `.error`/`.resize`/`.scroll`/`.unload`/`.blur`/`.change`/`.focus`/`.focusin`/`.focusout`/`.select`/`.submit`/`.keydown`/`.keypress`/`.keyup`/`.click`/`.contextmenu`/`.dblclick`/`.hover`/`.mousedown`/`.mouseenter`/`.mouseleave`/`.mousemove`/`.mouseout`/`.mouseover`/`.mouseup`/`.ajaxStart`/`.ajaxStop`/`.ajaxComplete`/`.ajaxError`/`.ajaxSuccess`/`.ajaxSend` methods. Prefer `$.on` or `$.trigger`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 

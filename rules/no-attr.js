@@ -4,7 +4,9 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionOrUtilMethodRule(
 	[ 'attr', 'removeAttr' ],
-	( node ) => 'Prefer Element#' +
+	( node ) => node === true ?
+		'Prefer `Element#getAttribute`/`setAttribute`/`removeAttribute`' :
+		'Prefer Element#' +
 		(
 			node.callee.property.name === 'removeAttr' ? 'removeAttribute' :
 				node.arguments.length === 2 ? 'setAttribute' : 'getAttribute'
