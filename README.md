@@ -4,7 +4,7 @@ Disallow jQuery functions, with suggestions for native equivalents where possibl
 
 Originally a fork of [eslint-plugin-jquery](https://github.com/dgraham/eslint-plugin-jquery/).
 
-## Installation
+## ⬇️ Installation
 
 You'll first need to install [ESLint](http://eslint.org):
 
@@ -20,7 +20,7 @@ npm install eslint-plugin-no-jquery --save-dev
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-no-jquery` globally.
 
-## Usage
+## 🛠️ Usage
 
 Add `no-jquery` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
@@ -37,7 +37,7 @@ The pre-set profile `plugin:no-jquery/deprecated` includes all known deprecated 
 
 Alternatively, you can pick out rules individually (see below).
 
-## Settings
+## ⚙️ Settings
 
 The following global settings can be used under the "no-jquery" property to configure the linter:
 
@@ -58,7 +58,7 @@ The following global settings can be used under the "no-jquery" property to conf
 }
 ```
 
-## Rules
+## 📖 Rules
 
 * [no-jquery/variable-pattern](docs/variable-pattern.md)
 * [no-jquery/no-ajax](docs/no-ajax.md)
@@ -151,12 +151,12 @@ The following global settings can be used under the "no-jquery" property to conf
 * [no-jquery/no-when](docs/no-when.md)
 * [no-jquery/no-wrap](docs/no-wrap.md)
 
-### Deprecated
+### ⚠️ Deprecated
 * [no-jquery/no-hide](docs/no-hide.md)
 * [no-jquery/no-show](docs/no-show.md)
 * [no-jquery/no-toggle](docs/no-toggle.md)
 
-## Development
+## 🤖 Development
 
 ```sh
 npm install
@@ -175,6 +175,6 @@ To run a specific test or tests:
 npm run testpath tests/no-ajax
 ```
 
-## License
+## ⚖️ License
 
 Distributed under the MIT license. See LICENSE for details.
