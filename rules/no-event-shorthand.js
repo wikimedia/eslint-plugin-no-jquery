@@ -47,6 +47,8 @@ module.exports = utils.createCollectionMethodRule(
 	( node ) => node === true ?
 		'Prefer `$.on` or `$.trigger`' :
 		`Prefer $.on or $.trigger to $.${node.callee.property.name}`,
-	'code',
-	utils.eventShorthandFixer
+	{
+		fixable: 'code',
+		fix: utils.eventShorthandFixer
+	}
 );
