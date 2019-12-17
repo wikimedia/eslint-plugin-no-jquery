@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-hide' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = '$.hide is not allowed';
+const error = '$.hide is not allowed. This rule is deprecated, use no-visibility.';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-hide', rule, {
