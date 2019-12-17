@@ -211,7 +211,7 @@ $x.toggle();
 $x.toggleClass();
 // eslint-disable-next-line rulesdir/no-trigger
 $x.trigger();
-// eslint-disable-next-line rulesdir/no-unbind
+// eslint-disable-next-line rulesdir/no-bind, rulesdir/no-unbind
 $x.unbind();
 // eslint-disable-next-line rulesdir/no-undelegate
 $x.undelegate();

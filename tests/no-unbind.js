@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-unbind' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.off/EventTarget#removeEventListener to $.unbind';
+const error = 'Prefer $.off/EventTarget#removeEventListener to $.unbind. This rule is deprecated, use no-bind.';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-unbind', rule, {

@@ -2,7 +2,7 @@
 
 Disallows the `.die` method. Prefer `$.off`/`EventTarget#removeEventListener` to `$.die`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
+⚠️ This rule is deprecated. Use [no-live](no-live.md) instead.
 
 ## Rule details
 
