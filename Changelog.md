@@ -1,5 +1,34 @@
 # eslint-plugin-no-jquery release history
 
+## v2.3.1
+* New feature: Show deprecation message in linting errors (Ed Sanders)
+
+—
+* Deprecated rule: `no-die`; use `no-live` (Ed Sanders)
+* Deprecated rule: `no-unbind`; use `no-bind` (Ed Sanders)
+* Deprecated rule: `no-undelegate`; use `no-delegate` (Ed Sanders)
+
+—
+* Rule fix: Remove `load` from `no-event-shorthand` (Ed Sanders)
+
+—
+* Docs: Build generic "Prefer" messages for docs when node===true (Ed Sanders)
+* Docs: Escape all code snippets (Ed Sanders)
+* Docs: Monospace rule names (Ed Sanders)
+
+—
+* Release: Add icons to readme section headings (Ed Sanders)
+* Release: Fix Changelog markdown list spacing (Ed Sanders)
+* Release: Use a limited ruleset for lint-fixing documentation snippets (Ed Sanders)
+
+—
+* Code: Add `triggerHandler` to `nonCollectionReturningMethods` (Ed Sanders)
+* Code: Check documentation in CI (Ed Sanders)
+* Code: Check rules are listed in README.md & index.js (Ed Sanders)
+* Code: Migrate from Travis to GitHub Actions (James D. Forrester)
+* Code: Remove incorrect TODO comment (Ed Sanders)
+
+
 ## v2.3.0
 * New rule: `variable-pattern` (Ed Sanders)
 * New rule: `no-parse-xml` (Ed Sanders)
