@@ -2,7 +2,7 @@
 
 Disallows the `.unbind` method. Prefer `$.off`/`EventTarget#removeEventListener` to `$.unbind`.
 
-⚠️ This rule is deprecated. Use [no-bind](no-bind.md) instead.
+⚠️ This rule is deprecated. Use [`no-bind`](no-bind.md) instead.
 
 ## Rule details
 
