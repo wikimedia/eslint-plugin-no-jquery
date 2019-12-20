@@ -2,7 +2,7 @@
 
 Disallows the `.undelegate` method. Prefer `$.off`/`EventTarget#removeEventListener` to `$.undelegate`.
 
-⚠️ This rule is deprecated. Use [no-delegate](no-delegate.md) instead.
+⚠️ This rule is deprecated. Use [`no-delegate`](no-delegate.md) instead.
 
 ## Rule details
 

@@ -2,7 +2,7 @@
 
 Disallows the `.hide` method.
 
-⚠️ This rule is deprecated. Use [no-visibility](no-visibility.md) instead.
+⚠️ This rule is deprecated. Use [`no-visibility`](no-visibility.md) instead.
 
 ## Rule details
 

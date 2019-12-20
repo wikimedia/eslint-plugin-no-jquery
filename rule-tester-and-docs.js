@@ -117,7 +117,7 @@ class RuleTesterAndDocs extends RuleTester {
 				output += '⚠️ This rule is deprecated.';
 				if ( rule.meta.docs.replacedBy ) {
 					output += ' Use ' +
-						rule.meta.docs.replacedBy.map( ( name ) => '[' + name + '](' + name + '.md)' ).join( ', ' ) +
+						rule.meta.docs.replacedBy.map( ( name ) => '[`' + name + '`](' + name + '.md)' ).join( ', ' ) +
 						' instead.';
 				}
 				output += '\n\n';
@@ -159,7 +159,7 @@ class RuleTesterAndDocs extends RuleTester {
 			if ( isRule ) {
 				it( 'Rule appears in README.md & index.js', function () {
 					assert( !!allRules[ name ], '`' + name + '` listed in index.js' );
-					assert( readme.indexOf( '* [no-jquery/' + name + '](' ) !== -1, '`' + name + '` linked to in README.md' );
+					assert( readme.indexOf( '* [`no-jquery/' + name + '`](' ) !== -1, '`' + name + '` linked to in README.md' );
 				} );
 			}
 
