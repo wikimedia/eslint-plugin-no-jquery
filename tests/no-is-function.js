@@ -10,8 +10,14 @@ ruleTester.run( 'no-is-function', rule, {
 	valid: [ 'isFunction()', 'myClass.isFunction()', '$div.isFunction()' ],
 	invalid: [
 		{
-			code: '$.isFunction()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			code: '$.isFunction(expression(arg))',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: 'typeof expression(arg) === "function"'
+		},
+		{
+			code: 'if($.isFunction(fn)){g();}',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: 'if(typeof fn === "function"){g();}'
 		}
 	]
 } );
