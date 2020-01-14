@@ -31,7 +31,7 @@ module.exports = {
 				if ( utils.isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
-						message: 'Don\'t query the DOM for state information'
+						message: 'Where possible, maintain application state in JS and avoid slow DOM queries'
 					} );
 				}
 			}
