@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-global-selector' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Global selectors are not allowed';
+const error = 'Avoid expensive queries which result in slow searches of the entire DOM';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-global-selector', rule, {
