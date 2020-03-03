@@ -62,7 +62,7 @@ module.exports = {
 
 				context.report( {
 					node: node,
-					message: 'Global selectors are not allowed'
+					message: 'Avoid expensive queries which result in slow searches of the entire DOM'
 				} );
 			}
 		};
