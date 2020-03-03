@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-class-state' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Where possible, maintain application state in JS and avoid slow DOM queries';
+const error = 'Where possible, maintain application state in JS to avoid slower DOM queries';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-class-state', rule, {
