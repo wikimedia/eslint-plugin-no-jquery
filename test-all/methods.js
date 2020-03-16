@@ -49,7 +49,6 @@ $x.one();
 $x.outerHeight();
 $x.outerWidth();
 $x.parentsUntil();
-$x.parse();
 $x.position();
 $x.prepend();
 $x.prependTo();
