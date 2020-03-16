@@ -1,5 +1,21 @@
 # eslint-plugin-no-jquery release history
 
+## v2.3.2
+
+* Rule fix: Add fixer for `no-is-function` (Ed Sanders)
+* Rule fix: Follow-up #186: Actually merge `no-undelegate` into `no-delegate` (Ed Sanders)
+
+—
+* Docs: Soften and make clearer the language for `no-class-state` (James D. Forrester)
+* Docs: Explain `no-global-selector` restriction more clearly (James D. Forrester)
+
+—
+* Release: Update devDependencies (Ed Sanders)
+
+—
+* Code: Remove non-existent $.fn.parse from tests (Ed Sanders)
+
+
 ## v2.3.1
 * New feature: Show deprecation message in linting errors (Ed Sanders)
 
