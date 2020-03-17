@@ -43,6 +43,22 @@ div = $div.outerHeight( function () { return 30; } );
 list = $div.queue( newQueueOrCallBack );
 list = $div.queue( [] );
 div = $div.queue( 'fx', newQueueOrCallBack );
+div = $div.stop();
+div = $div.stop( true );
+div = $div.stop( true, true );
+```
+❌ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"always"}}}` settings:
+```js
+div = $( '<div>' ).datePicker();
+div = $( '<div>' ).datePicker( options );
+```
+❌ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"accessor"}}}` settings:
+```js
+div = $( '<div>' ).datePicker( options );
+```
+❌ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"valueAccessor"}}}` settings:
+```js
+div = $( '<div>' ).datePicker( 'name', newPicker );
 ```
 
 ✔️ The following patterns are not considered errors:
@@ -94,6 +110,7 @@ string = $div.css( 'name' );
 string = $div.css( possibleName );
 string = $div.data( 'name' );
 string = $div.data( possibleName );
+obj = $div.data();
 string = $div.prop( 'name' );
 string = $div.prop( possibleName );
 number = $div.outerWidth();
@@ -104,10 +121,25 @@ number = $div.outerHeight( true );
 number = $div.outerHeight( possibleBool );
 list = $div.queue();
 list = $div.queue( 'fx' );
+val = $div.unknownPlugin();
+val = $div.unknownPlugin( arg1 );
+val = $div.unknownPlugin( arg1, arg2 );
 ```
 ✔️ With `{"no-jquery":{"variablePattern":"^\\$.|^element$"}}` settings:
 ```js
 this.element = $( '<div>' );
+```
+✔️ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"accessor"}}}` settings:
+```js
+obj = $( '<div>' ).datePicker();
+```
+✔️ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"valueAccessor"}}}` settings:
+```js
+obj = $( '<div>' ).datePicker( 'name' );
+```
+✔️ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"never"}}}` settings:
+```js
+obj = $( '<div>' ).datePicker( 'name', options );
 ```
 ## Rule source
 

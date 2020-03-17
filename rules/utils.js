@@ -14,7 +14,8 @@ function isFunction( node ) {
 	return node.type === 'FunctionExpression' || node.type === 'ArrowFunctionExpression';
 }
 
-function traverse( node, variableTest, constructorTest ) {
+function traverse( context, node, variableTest, constructorTest ) {
+	const collectionReturningPlugins = context.settings && context.settings[ 'no-jquery' ] && context.settings[ 'no-jquery' ].collectionReturningPlugins || {};
 	while ( node ) {
 		switch ( node.type ) {
 			case 'CallExpression':
@@ -25,13 +26,19 @@ function traverse( node, variableTest, constructorTest ) {
 						// Utilities never return collections
 						return false;
 					} else {
-						if ( nonCollectionReturningMethods.indexOf( name ) !== -1 ) {
+						if (
+							nonCollectionReturningMethods.indexOf( name ) !== -1 ||
+							collectionReturningPlugins[ name ] === 'never'
+						) {
 							// e.g. $foo.toArray()
 							return false;
 						}
 
 						if (
-							nonCollectionReturningAccessors.indexOf( name ) !== -1 &&
+							(
+								nonCollectionReturningAccessors.indexOf( name ) !== -1 ||
+								collectionReturningPlugins[ name ] === 'accessor'
+							) &&
 							node.arguments.length === 0
 						) {
 							// e.g. $foo.val()
@@ -39,7 +46,11 @@ function traverse( node, variableTest, constructorTest ) {
 						}
 
 						if (
-							nonCollectionReturningValueAccessors.indexOf( name ) !== -1 && (
+							(
+								nonCollectionReturningValueAccessors.indexOf( name ) !== -1 ||
+								collectionReturningPlugins[ name ] === 'valueAccessor'
+							) &&
+							(
 								node.arguments.length === 0 || (
 									node.arguments.length === 1 &&
 									node.arguments[ 0 ].type !== 'ObjectExpression'
@@ -86,7 +97,10 @@ function traverse( node, variableTest, constructorTest ) {
 							return false;
 						}
 
-						if ( allKnownMethods.indexOf( name ) === -1 ) {
+						if (
+							allKnownMethods.indexOf( name ) === -1 &&
+							!( name in collectionReturningPlugins )
+						) {
 							// The method is not core jQuery, so we don't know if it returns
 							// a collection or not. Assume it doesn't so we don't get false
 							// positives
@@ -163,6 +177,7 @@ function isjQuery( context, node ) {
 		'^\\$.'
 	);
 	return traverse(
+		context,
 		node,
 		// variableTest
 		( id ) => !!id && variablePattern.test( id.name ),
