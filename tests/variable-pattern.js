@@ -68,6 +68,7 @@ ruleTester.run( 'variable-pattern', rule, {
 		'string = $div.css(possibleName)',
 		'string = $div.data("name")',
 		'string = $div.data(possibleName)',
+		'obj = $div.data()',
 		'string = $div.prop("name")',
 		'string = $div.prop(possibleName)',
 
@@ -87,12 +88,50 @@ ruleTester.run( 'variable-pattern', rule, {
 		{
 			code: 'this.element = $("<div>")',
 			settings: { 'no-jquery': { variablePattern: extendedPattern } }
+		},
+		// Plugins
+		'val = $div.unknownPlugin()',
+		'val = $div.unknownPlugin(arg1)',
+		'val = $div.unknownPlugin(arg1, arg2)',
+
+		{
+			code: 'obj = $("<div>").datePicker()',
+			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'accessor' } } }
+		},
+		{
+			code: 'obj = $("<div>").datePicker("name")',
+			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'valueAccessor' } } }
+		},
+		{
+			code: 'obj = $("<div>").datePicker("name", options)',
+			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'never' } } }
 		}
 	],
 	invalid: [
 		{
 			code: 'var div = $("<div>")',
 			errors: [ { message: error, type: 'VariableDeclarator' } ]
+		},
+		// Plugins
+		{
+			code: 'div = $("<div>").datePicker()',
+			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'always' } } },
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
+		},
+		{
+			code: 'div = $("<div>").datePicker(options)',
+			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'always' } } },
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
+		},
+		{
+			code: 'div = $("<div>").datePicker(options)',
+			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'accessor' } } },
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
+		},
+		{
+			code: 'div = $("<div>").datePicker("name", newPicker)',
+			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'valueAccessor' } } },
+			errors: [ { message: error, type: 'AssignmentExpression' } ]
 		}
 	].concat(
 		[
@@ -139,7 +178,12 @@ ruleTester.run( 'variable-pattern', rule, {
 			// queue
 			'list = $div.queue(newQueueOrCallBack)',
 			'list = $div.queue([])',
-			'div = $div.queue("fx", newQueueOrCallBack)'
+			'div = $div.queue("fx", newQueueOrCallBack)',
+
+			// other known methods (always return collections)
+			'div = $div.stop()',
+			'div = $div.stop(true)',
+			'div = $div.stop(true, true)'
 		].map(
 			( code ) => ( {
 				code: code,

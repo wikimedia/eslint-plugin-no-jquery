@@ -43,13 +43,25 @@ The following global settings can be used under the `no-jquery` property to conf
 
 * `constructorAliases` - An array of aliases for the jQuery constructor. Defaults to `[ "$", "jQuery" ]`.
 * `variablePattern` - Regular expression pattern for matching jQuery variables. Defaults to `"^\\$."`. This pattern can be enforced with the [`no-jquery/variable-pattern`](docs/variable-pattern.md) rule.
+* `collectionReturningPlugins` - An object describing the return types of jQuery plugins. Keys are plugin method names, and values can be one of:
+  * `'always'` a plugin which always returns a jQuery collection.
+    * e.g. `$bar = $foo.stop()`
+  * `'accessor'` a plugin which only returns a jQuery collection when an argument is given.
+    * e.g. `w = $foo.width()`, `$bar = $foo.width( 200 )`
+  * `'valueAccessor'` a plugin which only returns a jQuery collection when more than one argument is given.
+    * e.g. `w = $foo.css( 'width' )`, `$bar = $foo.css( 'width', '1em' )`
+  * `'never'` (default) a plugin which never returns a jQuery collection.
+    * e.g. `arr = $foo.toArray()`
 
 ```json
 {
   "settings": {
     "no-jquery": {
         "constructorAliases": [ "$", "jQuery" ],
-        "variablePattern": "^\\$.|^element$"
+        "variablePattern": "^\\$.|^element$",
+        "collectionReturningPlugins": {
+          "datePicker": "always"
+        }
     }
   },
   "plugins": [
