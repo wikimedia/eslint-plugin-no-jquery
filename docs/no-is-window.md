@@ -1,6 +1,6 @@
 # no-is-window
 
-Disallows the `$.isWindow` utility.
+Disallows the [`$.isWindow`](https://api.jquery.com/jQuery.isWindow/) utility.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 

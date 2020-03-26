@@ -1,6 +1,6 @@
 # no-browser
 
-Disallows the `$.browser` property.
+Disallows the [`$.browser`](https://api.jquery.com/jQuery.browser/) property.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.3`.
 

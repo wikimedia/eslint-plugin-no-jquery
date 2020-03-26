@@ -1,6 +1,6 @@
 # no-wrap
 
-Disallows the `.wrap`/`.wrapAll`/`.wrapInner`/`.unwrap` methods.
+Disallows the [`.wrap`](https://api.jquery.com/wrap/)/[`.wrapAll`](https://api.jquery.com/wrapAll/)/[`.wrapInner`](https://api.jquery.com/wrapInner/)/[`.unwrap`](https://api.jquery.com/unwrap/) methods.
 
 ## Rule details
 

@@ -1,6 +1,6 @@
 # no-parse-html
 
-Disallows the `$.parseHTML` utility. Prefer `DOMImplementation#createHTMLDocument` to `$.parseHTML`.
+Disallows the [`$.parseHTML`](https://api.jquery.com/jQuery.parseHTML/) utility. Prefer `DOMImplementation#createHTMLDocument` to `$.parseHTML`.
 
 ## Rule details
 

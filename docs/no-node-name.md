@@ -1,6 +1,6 @@
 # no-node-name
 
-Disallows the `$.nodeName` utility.
+Disallows the [`$.nodeName`](https://api.jquery.com/jQuery.nodeName/) utility.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
 

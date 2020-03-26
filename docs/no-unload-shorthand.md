@@ -1,6 +1,6 @@
 # no-unload-shorthand
 
-Disallows the `.unload` method. Prefer `$.on` or `$.trigger` to `$.unload`.
+Disallows the [`.unload`](https://api.jquery.com/unload/) method. Prefer `$.on` or `$.trigger` to `$.unload`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 

@@ -1,6 +1,6 @@
 # no-and-self
 
-Disallows the `.andSelf` method. Prefer `$.addBack` to `$.andSelf`.
+Disallows the [`.andSelf`](https://api.jquery.com/andSelf/) method. Prefer `$.addBack` to `$.andSelf`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 

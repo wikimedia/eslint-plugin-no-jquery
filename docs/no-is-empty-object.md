@@ -1,6 +1,6 @@
 # no-is-empty-object
 
-Disallows the `$.isEmptyObject` utility.
+Disallows the [`$.isEmptyObject`](https://api.jquery.com/jQuery.isEmptyObject/) utility.
 
 ## Rule details
 

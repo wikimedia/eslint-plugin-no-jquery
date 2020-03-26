@@ -1,6 +1,6 @@
 # no-support
 
-Disallows the `$.support` property.
+Disallows the [`$.support`](https://api.jquery.com/jQuery.support/) property.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.9`.
 

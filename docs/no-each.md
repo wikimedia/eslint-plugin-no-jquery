@@ -1,6 +1,6 @@
 # no-each
 
-Disallows the `.each` method and `$.each` utility. Prefer `Array#forEach` to `$.each`.
+Disallows the [`.each`](https://api.jquery.com/each/) method and [`$.each`](https://api.jquery.com/jQuery.each/) utility. Prefer `Array#forEach` to `$.each`.
 
 ## Rule details
 

@@ -17,7 +17,7 @@ const Literal = 'Literal';
 module.exports = {
 	meta: {
 		docs: {
-			description: 'Disallows global ajax events handlers: `ajaxStart`/`ajaxSend`/`ajaxSuccess`/`ajaxError`/`ajaxComplete`/`ajaxStop`. Prefer local events.'
+			description: 'Disallows global ajax events handlers: ' + disallowedEvents.map( utils.jQueryCollectionLink ).join( '/' ) + '. Prefer local events.'
 		},
 		schema: []
 	},

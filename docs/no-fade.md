@@ -1,6 +1,6 @@
 # no-fade
 
-Disallows the `.fadeIn`/`.fadeOut`/`.fadeTo`/`.fadeToggle` methods. Prefer CSS transitions.
+Disallows the [`.fadeIn`](https://api.jquery.com/fadeIn/)/[`.fadeOut`](https://api.jquery.com/fadeOut/)/[`.fadeTo`](https://api.jquery.com/fadeTo/)/[`.fadeToggle`](https://api.jquery.com/fadeToggle/) methods. Prefer CSS transitions.
 
 This rule is enabled in `plugin:no-jquery/slim`.
 

@@ -1,6 +1,6 @@
 # no-ajax
 
-Disallows the `$.ajax`/`$.get`/`$.getJSON`/`$.getScript`/`$.post` utilies. Prefer `Window.fetch`.
+Disallows the [`$.ajax`](https://api.jquery.com/jQuery.ajax/)/[`$.get`](https://api.jquery.com/jQuery.get/)/[`$.getJSON`](https://api.jquery.com/jQuery.getJSON/)/[`$.getScript`](https://api.jquery.com/jQuery.getScript/)/[`$.post`](https://api.jquery.com/jQuery.post/) utilies. Prefer `Window.fetch`.
 
 This rule is enabled in `plugin:no-jquery/slim`.
 

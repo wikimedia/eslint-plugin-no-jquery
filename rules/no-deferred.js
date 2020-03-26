@@ -5,7 +5,7 @@ const utils = require( './utils.js' );
 module.exports = {
 	meta: {
 		docs: {
-			description: 'Disallows `$.Deferred` constructor. Prefer `Promise`.'
+			description: 'Disallows ' + utils.jQueryGlobalLink( 'Deferred' ) + ' constructor. Prefer `Promise`.'
 		},
 		schema: []
 	},

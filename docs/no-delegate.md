@@ -1,6 +1,6 @@
 # no-delegate
 
-Disallows the `.delegate`/`.undelegate` methods. Prefer `$.on`/`$.off` or `EventTarget#addEventListener`/`removeEventListener`.
+Disallows the [`.delegate`](https://api.jquery.com/delegate/)/[`.undelegate`](https://api.jquery.com/undelegate/) methods. Prefer `$.on`/`$.off` or `EventTarget#addEventListener`/`removeEventListener`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 

@@ -1,6 +1,6 @@
 # no-closest
 
-Disallows the `.closest` method. Prefer `Element#closest` to `$.closest`.
+Disallows the [`.closest`](https://api.jquery.com/closest/) method. Prefer `Element#closest` to `$.closest`.
 
 ## Rule details
 

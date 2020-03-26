@@ -1,6 +1,6 @@
 # no-toggle
 
-Disallows the `.toggle` method.
+Disallows the [`.toggle`](https://api.jquery.com/toggle/) method.
 
 ⚠️ This rule is deprecated. Use [`no-visibility`](no-visibility.md) instead.
 

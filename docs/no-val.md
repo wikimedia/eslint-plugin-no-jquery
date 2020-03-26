@@ -1,6 +1,6 @@
 # no-val
 
-Disallows the `.val` method. Prefer `HTMLInputElement#value` to `$.val`.
+Disallows the [`.val`](https://api.jquery.com/val/) method. Prefer `HTMLInputElement#value` to `$.val`.
 
 ## Rule details
 

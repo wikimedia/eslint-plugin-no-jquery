@@ -1,6 +1,6 @@
 # no-in-array
 
-Disallows the `$.inArray` utility. Prefer `Array#indexOf` to `$.inArray`.
+Disallows the [`$.inArray`](https://api.jquery.com/jQuery.inArray/) utility. Prefer `Array#indexOf` to `$.inArray`.
 
 ## Rule details
 

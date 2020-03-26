@@ -1,6 +1,6 @@
 # no-data
 
-Disallows the `.data`/`.removeData`/`.hasData` methods and `$.data`/`$.removeData`/`$.hasData` utilies. Prefer `WeakMap`.
+Disallows the [`.data`](https://api.jquery.com/data/)/[`.removeData`](https://api.jquery.com/removeData/)/`.hasData` methods and [`$.data`](https://api.jquery.com/jQuery.data/)/[`$.removeData`](https://api.jquery.com/jQuery.removeData/)/[`$.hasData`](https://api.jquery.com/jQuery.hasData/) utilies. Prefer `WeakMap`.
 
 ## Rule details
 

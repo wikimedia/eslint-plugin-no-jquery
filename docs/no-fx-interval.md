@@ -1,6 +1,6 @@
 # no-fx-interval
 
-Disallows `$.fx.interval`.
+Disallows [`$.fx.interval`](https://api.jquery.com/jQuery.fx.interval/).
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 

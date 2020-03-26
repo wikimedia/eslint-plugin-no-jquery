@@ -1,6 +1,6 @@
 # no-is
 
-Disallows the `.is` method. Prefer `Element#matches` to `$.is`.
+Disallows the [`.is`](https://api.jquery.com/is/) method. Prefer `Element#matches` to `$.is`.
 
 ## Rule details
 

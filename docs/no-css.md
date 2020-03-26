@@ -1,6 +1,6 @@
 # no-css
 
-Disallows the `.css` method and `$.css` utility. Prefer `Window#getComputedStyle` to `$.css`.
+Disallows the [`.css`](https://api.jquery.com/css/) method and `$.css` utility. Prefer `Window#getComputedStyle` to `$.css`.
 
 ## Rule details
 

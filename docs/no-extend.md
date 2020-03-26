@@ -1,6 +1,6 @@
 # no-extend
 
-Disallows the `$.extend` utility. Prefer `Object.assign` or the spread operator.
+Disallows the [`$.extend`](https://api.jquery.com/jQuery.extend/) utility. Prefer `Object.assign` or the spread operator.
 
 ## Rule details
 

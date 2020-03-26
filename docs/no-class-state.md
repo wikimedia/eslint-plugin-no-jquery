@@ -1,6 +1,6 @@
 # no-class-state
 
-Disallows `.hasClass` and `.toggleClass` to discourage querying the DOM for state information. `.toggleClass` may be used with a boolean argument as then in behave like `.addClass`/`.removeClass`.
+Disallows [`.hasClass`](https://api.jquery.com/hasClass/) and [`.toggleClass`](https://api.jquery.com/toggleClass/) to discourage querying the DOM for state information. [`.toggleClass`](https://api.jquery.com/toggleClass/) may be used with a boolean argument as then it behaves like [`.addClass`](https://api.jquery.com/addClass/)/[`.removeClass`](https://api.jquery.com/removeClass/).
 
 ## Rule details
 

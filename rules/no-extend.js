@@ -5,7 +5,7 @@ const utils = require( './utils.js' );
 module.exports = {
 	meta: {
 		docs: {
-			description: 'Disallows the `$.extend` utility. Prefer `Object.assign` or the spread operator.'
+			description: 'Disallows the ' + utils.jQueryGlobalLink( 'extend' ) + ' utility. Prefer `Object.assign` or the spread operator.'
 		},
 		schema: [
 			{

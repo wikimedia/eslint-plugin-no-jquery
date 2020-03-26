@@ -1,6 +1,6 @@
 # no-load-shorthand
 
-Disallows the `.load` method when used as a shorthand for `.on( 'load', function )` or `.trigger( 'load' )`. Prefer `$.on` or `$.trigger`.
+Disallows the [`.load`](https://api.jquery.com/load-event/) method when used as a shorthand for `.on( 'load', function )` or `.trigger( 'load' )`. Prefer `$.on` or `$.trigger`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 

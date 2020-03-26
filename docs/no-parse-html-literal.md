@@ -1,6 +1,6 @@
 # no-parse-html-literal
 
-Disallows parsing of HTML literal strings using either the jQuery method `$()` or `$.parseHTML`. Single tags are still allowed for creating new nodes as these don't tirgger the HTML parser. DOM build and manipulation methods should be used instead.
+Disallows parsing of HTML literal strings using either the jQuery method [`$()`](https://api.jquery.com/jquery/) or [`$.parseHTML`](https://api.jquery.com/jQuery.parseHTML/). Single tags are still allowed for creating new nodes as these don't tirgger the HTML parser. DOM build and manipulation methods should be used instead.
 
 The format of single tags can be specified using the `singleTagStyle` option:
 * `"minimal"` (default) no whitespace or self-closing i.e. `<div>`
