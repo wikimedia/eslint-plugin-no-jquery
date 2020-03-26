@@ -1,6 +1,6 @@
 # no-die
 
-Disallows the `.die` method. Prefer `$.off`/`EventTarget#removeEventListener` to `$.die`.
+Disallows the [`.die`](https://api.jquery.com/die/) method. Prefer `$.off`/`EventTarget#removeEventListener` to `$.die`.
 
 ⚠️ This rule is deprecated. Use [`no-live`](no-live.md) instead.
 

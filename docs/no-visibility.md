@@ -1,6 +1,6 @@
 # no-visibility
 
-Disallows the `.show`/`.hide`/`.toggle` methods.
+Disallows the [`.show`](https://api.jquery.com/show/)/[`.hide`](https://api.jquery.com/hide/)/[`.toggle`](https://api.jquery.com/toggle/) methods.
 
 ## Rule details
 

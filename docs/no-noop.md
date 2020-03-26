@@ -1,6 +1,6 @@
 # no-noop
 
-Disallows the `$.noop` property. Prefer `function(){}` to `$.noop`.
+Disallows the [`$.noop`](https://api.jquery.com/jQuery.noop/) property. Prefer `function(){}` to `$.noop`.
 
 ## Rule details
 

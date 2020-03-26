@@ -1,6 +1,6 @@
 # no-load
 
-Disallows the `.load` method. Prefer `fetch` to `$.load`.
+Disallows the [`.load`](https://api.jquery.com/load/) method. Prefer `fetch` to `$.load`.
 
 This rule is enabled in `plugin:no-jquery/slim`.
 

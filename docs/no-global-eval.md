@@ -1,6 +1,6 @@
 # no-global-eval
 
-Disallows the `$.globalEval` utility.
+Disallows the [`$.globalEval`](https://api.jquery.com/jQuery.globalEval/) utility.
 
 ## Rule details
 

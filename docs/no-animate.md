@@ -1,6 +1,6 @@
 # no-animate
 
-Disallows the `.animate` method. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.
+Disallows the [`.animate`](https://api.jquery.com/animate/) method. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.
 
 This rule is enabled in `plugin:no-jquery/slim`.
 

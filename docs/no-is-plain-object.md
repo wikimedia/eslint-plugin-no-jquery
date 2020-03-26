@@ -1,6 +1,6 @@
 # no-is-plain-object
 
-Disallows the `$.isPlainObject` utility.
+Disallows the [`$.isPlainObject`](https://api.jquery.com/jQuery.isPlainObject/) utility.
 
 ## Rule details
 

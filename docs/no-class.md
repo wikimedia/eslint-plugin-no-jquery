@@ -1,6 +1,6 @@
 # no-class
 
-Disallows the `.addClass`/`.hasClass`/`.removeClass`/`.toggleClass` methods. Prefer `Element#classList`.
+Disallows the [`.addClass`](https://api.jquery.com/addClass/)/[`.hasClass`](https://api.jquery.com/hasClass/)/[`.removeClass`](https://api.jquery.com/removeClass/)/[`.toggleClass`](https://api.jquery.com/toggleClass/) methods. Prefer `Element#classList`.
 
 ## Rule details
 

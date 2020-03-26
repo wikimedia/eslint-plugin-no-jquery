@@ -1,6 +1,6 @@
 # no-map-collection
 
-Disallows the `.map` method. Prefer `Array#map` to `$.map`.
+Disallows the [`.map`](https://api.jquery.com/map/) method. Prefer `Array#map` to `$.map`.
 
 ## Rule details
 

@@ -237,6 +237,33 @@ function messageToPlainString( message, node, name, options ) {
 	return messageString;
 }
 
+function jQueryCollectionLink( name ) {
+	switch ( name ) {
+		case 'hasData':
+			// See tests/no-data.js
+			return '`.' + name + '`';
+		default:
+			return '[`.' + name + '`](https://api.jquery.com/' + name + '/)';
+	}
+}
+
+function jQueryGlobalLink( name ) {
+	switch ( name ) {
+		case 'attr':
+		case 'camelCase':
+		case 'clone':
+		case 'css':
+		case 'filter':
+		case 'find':
+		case 'prop':
+		case 'text':
+			// Undocumented methods
+			return '`$.' + name + '`';
+		default:
+			return '[`$.' + name + '`](https://api.jquery.com/jQuery.' + name + '/)';
+	}
+}
+
 /**
  * Create a rule for collection methods
  *
@@ -255,7 +282,7 @@ function createCollectionMethodRule( methods, message, options ) {
 
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
-	let description = 'Disallows the `.' + methods.join( '`/`.' ) + '` ' +
+	let description = 'Disallows the ' + methods.map( jQueryCollectionLink ).join( '/' ) + ' ' +
 			( methods.length > 1 ? 'methods' : 'method' ) + '.';
 
 	description += messageSuffix( message );
@@ -297,7 +324,7 @@ function createCollectionMethodRule( methods, message, options ) {
 function createCollectionPropertyRule( property, message, options ) {
 	options = options || {};
 
-	let description = 'Disallows the `$.' + property + '` property.';
+	let description = 'Disallows the ' + jQueryCollectionLink( property ) + ' property.';
 
 	description += messageSuffix( message );
 
@@ -336,7 +363,7 @@ function createUtilMethodRule( methods, message, options ) {
 
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
-	let description = 'Disallows the `$.' + methods.join( '`/`$.' ) + '` ' +
+	let description = 'Disallows the ' + methods.map( jQueryGlobalLink ).join( '/' ) + ' ' +
 			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
 
 	description += messageSuffix( message );
@@ -376,7 +403,7 @@ function createUtilMethodRule( methods, message, options ) {
 function createUtilPropertyRule( property, message, options ) {
 	options = options || {};
 
-	let description = 'Disallows the `$.' + property + '` property.';
+	let description = 'Disallows the ' + jQueryGlobalLink( property ) + ' property.';
 
 	description += messageSuffix( message );
 
@@ -414,10 +441,10 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
-	let description = 'Disallows the `.' + methods.join( '`/`.' ) + '` ' +
+	let description = 'Disallows the ' + methods.map( jQueryCollectionLink ).join( '/' ) + ' ' +
 			( methods.length > 1 ? 'methods' : 'method' );
 
-	description += ' and `$.' + methods.join( '`/`$.' ) + '` ' +
+	description += ' and ' + methods.map( jQueryGlobalLink ).join( '/' ) + ' ' +
 			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
 
 	description += messageSuffix( message );
@@ -468,5 +495,7 @@ module.exports = {
 	createUtilMethodRule: createUtilMethodRule,
 	createUtilPropertyRule: createUtilPropertyRule,
 	createCollectionOrUtilMethodRule: createCollectionOrUtilMethodRule,
-	eventShorthandFixer: eventShorthandFixer
+	eventShorthandFixer: eventShorthandFixer,
+	jQueryCollectionLink: jQueryCollectionLink,
+	jQueryGlobalLink: jQueryGlobalLink
 };

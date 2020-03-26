@@ -1,6 +1,6 @@
 # no-merge
 
-Disallows the `$.merge` utility. Prefer `Array#concat` to `$.merge`.
+Disallows the [`$.merge`](https://api.jquery.com/jQuery.merge/) utility. Prefer `Array#concat` to `$.merge`.
 
 ## Rule details
 

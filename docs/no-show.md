@@ -1,6 +1,6 @@
 # no-show
 
-Disallows the `.show` method.
+Disallows the [`.show`](https://api.jquery.com/show/) method.
 
 ⚠️ This rule is deprecated. Use [`no-visibility`](no-visibility.md) instead.
 

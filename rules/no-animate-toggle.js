@@ -5,7 +5,10 @@ const utils = require( './utils.js' );
 module.exports = {
 	meta: {
 		docs: {
-			description: 'Disallows the duration argument when using the `.show`, `.hide` & `.toggle` methods. Prefer CSS transitions.'
+			description:
+				'Disallows the duration argument when using the ' + utils.jQueryCollectionLink( 'show' ) +
+				', ' + utils.jQueryCollectionLink( 'hide' ) + ' & ' + utils.jQueryCollectionLink( 'toggle' ) +
+				' methods. Prefer CSS transitions.'
 		},
 		schema: []
 	},

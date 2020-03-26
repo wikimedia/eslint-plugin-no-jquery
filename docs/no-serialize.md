@@ -1,6 +1,6 @@
 # no-serialize
 
-Disallows the `.serialize`/`.serializeArray` methods. Prefer `FormData` or `URLSearchParams`.
+Disallows the [`.serialize`](https://api.jquery.com/serialize/)/[`.serializeArray`](https://api.jquery.com/serializeArray/) methods. Prefer `FormData` or `URLSearchParams`.
 
 ## Rule details
 

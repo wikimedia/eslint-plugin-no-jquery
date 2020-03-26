@@ -5,7 +5,9 @@ const utils = require( './utils.js' );
 module.exports = {
 	meta: {
 		docs: {
-			description: 'Disallows the `.animate` method. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.'
+			description:
+				'Disallows the ' + utils.jQueryCollectionLink( 'animate' ) +
+				' method. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.'
 		},
 		schema: [
 			{
