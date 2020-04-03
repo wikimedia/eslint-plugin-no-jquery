@@ -16,7 +16,7 @@ function getRules( deprecated ) {
 					) +
 					(
 						rulesData[ rule ] ?
-							' ' + rulesData[ rule ].map( ( data ) => '`' + data.ruleset + '`' ).join( ', ' ) :
+							' ' + rulesData[ rule ].map( ( data ) => '`' + data.ruleset.replace( 'deprecated-', '' ) + '`' ).join( ', ' ) :
 							''
 					);
 			}
