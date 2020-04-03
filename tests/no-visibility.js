@@ -3,9 +3,9 @@
 const rule = require( '../rules/no-visibility' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const errorShow = '$.show is not allowed';
-const errorHide = '$.hide is not allowed';
-const errorToggle = '$.toggle is not allowed';
+const errorShow = '.show is not allowed';
+const errorHide = '.hide is not allowed';
+const errorToggle = '.toggle is not allowed';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-visibility', rule, {

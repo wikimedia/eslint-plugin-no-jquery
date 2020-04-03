@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-unload-shorthand' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.on or $.trigger to $.unload';
+const error = 'Prefer .on or .trigger to .unload';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-unload-shorthand', rule, {

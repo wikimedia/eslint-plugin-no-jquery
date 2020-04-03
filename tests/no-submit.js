@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-submit' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer EventTarget#dispatchEvent + HTMLFormElement#submit to $.submit';
+const error = 'Prefer EventTarget#dispatchEvent + HTMLFormElement#submit to .submit';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-submit', rule, {

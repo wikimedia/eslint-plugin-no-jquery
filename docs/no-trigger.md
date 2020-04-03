@@ -1,6 +1,6 @@
 # no-trigger
 
-Disallows the [`.trigger`](https://api.jquery.com/trigger/) method. Prefer `EventTarget#dispatchEvent` to `$.trigger`.
+Disallows the [`.trigger`](https://api.jquery.com/trigger/) method. Prefer `EventTarget#dispatchEvent` to `.trigger`.
 
 ## Rule details
 

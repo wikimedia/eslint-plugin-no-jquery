@@ -1,6 +1,6 @@
 # no-filter
 
-Disallows the [`.filter`](https://api.jquery.com/filter/) method and `$.filter` utility. Prefer `Array#filter` to `$.filter`.
+Disallows the [`.filter`](https://api.jquery.com/filter/) method and `$.filter` utility. Prefer `Array#filter` to `.filter`/`$.filter`.
 
 ## Rule details
 

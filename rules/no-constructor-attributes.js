@@ -5,7 +5,7 @@ const utils = require( './utils.js' );
 module.exports = {
 	meta: {
 		docs: {
-			description: 'Disallows passing attributes to the jQuery constructor. Prefer `$.attr`.'
+			description: 'Disallows passing attributes to the jQuery constructor. Prefer `.attr`.'
 		},
 		schema: []
 	},
@@ -36,7 +36,7 @@ module.exports = {
 
 				context.report( {
 					node: node,
-					message: 'Prefer $.attr to constructor attributes'
+					message: 'Prefer .attr to constructor attributes'
 				} );
 			}
 		};

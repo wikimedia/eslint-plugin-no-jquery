@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-closest' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer Element#closest to $.closest';
+const error = 'Prefer Element#closest to .closest';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-closest', rule, {

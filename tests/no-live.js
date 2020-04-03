@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-live' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.on/EventTarget#addEventListener to $.live';
+const error = 'Prefer .on/EventTarget#addEventListener to .live';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-live', rule, {

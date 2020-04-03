@@ -3,8 +3,8 @@
 const rule = require( '../rules/no-prop' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer direct property access to $.prop';
-const errorRemove = 'Prefer direct property access to $.removeProp';
+const error = 'Prefer direct property access to .prop/$.prop';
+const errorRemove = 'Prefer direct property access to .removeProp/$.removeProp';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-prop', rule, {
