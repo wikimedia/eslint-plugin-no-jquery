@@ -23,6 +23,6 @@ jobs:
         npm run build --if-present
         npm test
         npm run doc
-        git diff --exit-code docs/
+        git diff --exit-code docs/ README.md
       env:
         CI: true
