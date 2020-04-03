@@ -73,88 +73,89 @@ The following global settings can be used under the `no-jquery` property to conf
 
 ## 📖 Rules
 
-* [`no-jquery/no-ajax`](docs/no-ajax.md)
-* [`no-jquery/no-ajax-events`](docs/no-ajax-events.md)
-* [`no-jquery/no-and-self`](docs/no-and-self.md)
-* [`no-jquery/no-animate`](docs/no-animate.md)
-* [`no-jquery/no-animate-toggle`](docs/no-animate-toggle.md)
+Where rules are included in the pre-set profiles `slim` or `deprecated-X.X` it is indicated below.
+* [`no-jquery/no-ajax`](docs/no-ajax.md) `slim`
+* [`no-jquery/no-ajax-events`](docs/no-ajax-events.md) `slim`
+* [`no-jquery/no-and-self`](docs/no-and-self.md) `1.8`
+* [`no-jquery/no-animate`](docs/no-animate.md) `slim`
+* [`no-jquery/no-animate-toggle`](docs/no-animate-toggle.md) `slim`
 * [`no-jquery/no-attr`](docs/no-attr.md)
-* [`no-jquery/no-bind`](docs/no-bind.md)
-* [`no-jquery/no-box-model`](docs/no-box-model.md)
-* [`no-jquery/no-browser`](docs/no-browser.md)
-* [`no-jquery/no-camel-case`](docs/no-camel-case.md)
+* [`no-jquery/no-bind`](docs/no-bind.md) `3.0`
+* [`no-jquery/no-box-model`](docs/no-box-model.md) `1.3`
+* [`no-jquery/no-browser`](docs/no-browser.md) `1.3`
+* [`no-jquery/no-camel-case`](docs/no-camel-case.md) `3.3`
 * [`no-jquery/no-class`](docs/no-class.md)
 * [`no-jquery/no-class-state`](docs/no-class-state.md)
 * [`no-jquery/no-clone`](docs/no-clone.md)
 * [`no-jquery/no-closest`](docs/no-closest.md)
 * [`no-jquery/no-constructor-attributes`](docs/no-constructor-attributes.md)
 * [`no-jquery/no-contains`](docs/no-contains.md)
-* [`no-jquery/no-context-prop`](docs/no-context-prop.md)
+* [`no-jquery/no-context-prop`](docs/no-context-prop.md) `1.10`
 * [`no-jquery/no-css`](docs/no-css.md)
 * [`no-jquery/no-data`](docs/no-data.md)
 * [`no-jquery/no-deferred`](docs/no-deferred.md)
-* [`no-jquery/no-delegate`](docs/no-delegate.md)
+* [`no-jquery/no-delegate`](docs/no-delegate.md) `3.0`
 * [`no-jquery/no-each`](docs/no-each.md)
 * [`no-jquery/no-each-collection`](docs/no-each-collection.md)
 * [`no-jquery/no-each-util`](docs/no-each-util.md)
 * [`no-jquery/no-error`](docs/no-error.md)
-* [`no-jquery/no-error-shorthand`](docs/no-error-shorthand.md)
-* [`no-jquery/no-event-shorthand`](docs/no-event-shorthand.md)
+* [`no-jquery/no-error-shorthand`](docs/no-error-shorthand.md) `1.8`
+* [`no-jquery/no-event-shorthand`](docs/no-event-shorthand.md) `3.3`
 * [`no-jquery/no-extend`](docs/no-extend.md)
-* [`no-jquery/no-fade`](docs/no-fade.md)
+* [`no-jquery/no-fade`](docs/no-fade.md) `slim`
 * [`no-jquery/no-filter`](docs/no-filter.md)
 * [`no-jquery/no-find`](docs/no-find.md)
-* [`no-jquery/no-fx-interval`](docs/no-fx-interval.md)
+* [`no-jquery/no-fx-interval`](docs/no-fx-interval.md) `3.0`
 * [`no-jquery/no-global-eval`](docs/no-global-eval.md)
 * [`no-jquery/no-global-selector`](docs/no-global-selector.md)
 * [`no-jquery/no-grep`](docs/no-grep.md)
 * [`no-jquery/no-has`](docs/no-has.md)
-* [`no-jquery/no-hold-ready`](docs/no-hold-ready.md)
+* [`no-jquery/no-hold-ready`](docs/no-hold-ready.md) `3.2`
 * [`no-jquery/no-html`](docs/no-html.md)
 * [`no-jquery/no-in-array`](docs/no-in-array.md)
 * [`no-jquery/no-is`](docs/no-is.md)
-* [`no-jquery/no-is-array`](docs/no-is-array.md)
+* [`no-jquery/no-is-array`](docs/no-is-array.md) `3.2`
 * [`no-jquery/no-is-empty-object`](docs/no-is-empty-object.md)
-* [`no-jquery/no-is-function`](docs/no-is-function.md)
-* [`no-jquery/no-is-numeric`](docs/no-is-numeric.md)
+* [`no-jquery/no-is-function`](docs/no-is-function.md) `3.3`
+* [`no-jquery/no-is-numeric`](docs/no-is-numeric.md) `3.3`
 * [`no-jquery/no-is-plain-object`](docs/no-is-plain-object.md)
-* [`no-jquery/no-is-window`](docs/no-is-window.md)
-* [`no-jquery/no-live`](docs/no-live.md)
-* [`no-jquery/no-load`](docs/no-load.md)
-* [`no-jquery/no-load-shorthand`](docs/no-load-shorthand.md)
+* [`no-jquery/no-is-window`](docs/no-is-window.md) `3.3`
+* [`no-jquery/no-live`](docs/no-live.md) `1.7`
+* [`no-jquery/no-load`](docs/no-load.md) `slim`
+* [`no-jquery/no-load-shorthand`](docs/no-load-shorthand.md) `1.8`
 * [`no-jquery/no-map`](docs/no-map.md)
 * [`no-jquery/no-map-collection`](docs/no-map-collection.md)
 * [`no-jquery/no-map-util`](docs/no-map-util.md)
 * [`no-jquery/no-merge`](docs/no-merge.md)
-* [`no-jquery/no-node-name`](docs/no-node-name.md)
+* [`no-jquery/no-node-name`](docs/no-node-name.md) `3.2`
 * [`no-jquery/no-noop`](docs/no-noop.md)
-* [`no-jquery/no-now`](docs/no-now.md)
-* [`no-jquery/no-on-ready`](docs/no-on-ready.md)
+* [`no-jquery/no-now`](docs/no-now.md) `3.3`
+* [`no-jquery/no-on-ready`](docs/no-on-ready.md) `1.8`
 * [`no-jquery/no-param`](docs/no-param.md)
 * [`no-jquery/no-parent`](docs/no-parent.md)
 * [`no-jquery/no-parents`](docs/no-parents.md)
 * [`no-jquery/no-parse-html`](docs/no-parse-html.md)
 * [`no-jquery/no-parse-html-literal`](docs/no-parse-html-literal.md)
-* [`no-jquery/no-parse-json`](docs/no-parse-json.md)
-* [`no-jquery/no-parse-xml`](docs/no-parse-xml.md)
+* [`no-jquery/no-parse-json`](docs/no-parse-json.md) `3.0`
+* [`no-jquery/no-parse-xml`](docs/no-parse-xml.md) `slim`
 * [`no-jquery/no-prop`](docs/no-prop.md)
-* [`no-jquery/no-proxy`](docs/no-proxy.md)
+* [`no-jquery/no-proxy`](docs/no-proxy.md) `3.3`
 * [`no-jquery/no-ready`](docs/no-ready.md)
-* [`no-jquery/no-ready-shorthand`](docs/no-ready-shorthand.md)
-* [`no-jquery/no-selector-prop`](docs/no-selector-prop.md)
+* [`no-jquery/no-ready-shorthand`](docs/no-ready-shorthand.md) `3.0`
+* [`no-jquery/no-selector-prop`](docs/no-selector-prop.md) `1.7`
 * [`no-jquery/no-serialize`](docs/no-serialize.md)
-* [`no-jquery/no-size`](docs/no-size.md)
-* [`no-jquery/no-sizzle`](docs/no-sizzle.md)
-* [`no-jquery/no-slide`](docs/no-slide.md)
-* [`no-jquery/no-sub`](docs/no-sub.md)
+* [`no-jquery/no-size`](docs/no-size.md) `1.8`
+* [`no-jquery/no-sizzle`](docs/no-sizzle.md) `3.4`
+* [`no-jquery/no-slide`](docs/no-slide.md) `slim`
+* [`no-jquery/no-sub`](docs/no-sub.md) `1.7`
 * [`no-jquery/no-submit`](docs/no-submit.md)
-* [`no-jquery/no-support`](docs/no-support.md)
+* [`no-jquery/no-support`](docs/no-support.md) `1.9`
 * [`no-jquery/no-text`](docs/no-text.md)
 * [`no-jquery/no-trigger`](docs/no-trigger.md)
 * [`no-jquery/no-trim`](docs/no-trim.md)
-* [`no-jquery/no-type`](docs/no-type.md)
-* [`no-jquery/no-unique`](docs/no-unique.md)
-* [`no-jquery/no-unload-shorthand`](docs/no-unload-shorthand.md)
+* [`no-jquery/no-type`](docs/no-type.md) `3.3`
+* [`no-jquery/no-unique`](docs/no-unique.md) `3.0`
+* [`no-jquery/no-unload-shorthand`](docs/no-unload-shorthand.md) `1.8`
 * [`no-jquery/no-val`](docs/no-val.md)
 * [`no-jquery/no-visibility`](docs/no-visibility.md)
 * [`no-jquery/no-when`](docs/no-when.md)
