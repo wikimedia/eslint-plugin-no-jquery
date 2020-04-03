@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-delegate' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.on/EventTarget#addEventListener to $.delegate';
+const error = 'Prefer .on/EventTarget#addEventListener to .delegate';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-delegate', rule, {

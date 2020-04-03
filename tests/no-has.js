@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-has' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = '$.has is not allowed';
+const error = '.has is not allowed';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-has', rule, {

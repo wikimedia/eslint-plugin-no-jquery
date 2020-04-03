@@ -50,8 +50,8 @@ module.exports = {
 					context.report( {
 						node: node,
 						message: allowScroll ?
-							'Prefer CSS transitions to $.animate' :
-							'Prefer CSS transitions or CSS scroll-behaviour to $.animate'
+							'Prefer CSS transitions to .animate' :
+							'Prefer CSS transitions or CSS scroll-behaviour to .animate'
 					} );
 				}
 			}

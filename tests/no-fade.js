@@ -3,10 +3,10 @@
 const rule = require( '../rules/no-fade' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const inError = 'Prefer CSS transitions to $.fadeIn';
-const outError = 'Prefer CSS transitions to $.fadeOut';
-const toError = 'Prefer CSS transitions to $.fadeTo';
-const toggleError = 'Prefer CSS transitions to $.fadeToggle';
+const inError = 'Prefer CSS transitions to .fadeIn';
+const outError = 'Prefer CSS transitions to .fadeOut';
+const toError = 'Prefer CSS transitions to .fadeTo';
+const toggleError = 'Prefer CSS transitions to .fadeToggle';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-fade', rule, {

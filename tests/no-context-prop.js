@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-context-prop' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = '$.context is not allowed';
+const error = '.context is not allowed';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-context-prop', rule, {

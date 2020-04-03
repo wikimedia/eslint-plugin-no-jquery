@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-is' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer Element#matches to $.is';
+const error = 'Prefer Element#matches to .is';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-is', rule, {

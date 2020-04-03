@@ -4,5 +4,5 @@ const utils = require( './utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
 	'submit',
-	'Prefer `EventTarget#dispatchEvent` + `HTMLFormElement#submit` to `$.submit`'
+	'Prefer `EventTarget#dispatchEvent` + `HTMLFormElement#submit` to `.submit`'
 );

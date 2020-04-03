@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-text' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer Node#textContent to $.text';
+const error = 'Prefer Node#textContent to .text/$.text';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-text', rule, {

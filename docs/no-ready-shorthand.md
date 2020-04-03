@@ -1,6 +1,6 @@
 # no-ready-shorthand
 
-Disallows the [`.ready`](https://api.jquery.com/ready/) method. Prefer `$` to `$.ready`.
+Disallows the [`.ready`](https://api.jquery.com/ready/) method. Prefer `$()` to `.ready`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 

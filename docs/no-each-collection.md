@@ -1,6 +1,6 @@
 # no-each-collection
 
-Disallows the [`.each`](https://api.jquery.com/each/) method. Prefer `Array#forEach` to `$.each`.
+Disallows the [`.each`](https://api.jquery.com/each/) method. Prefer `Array#forEach` to `.each`.
 
 ## Rule details
 

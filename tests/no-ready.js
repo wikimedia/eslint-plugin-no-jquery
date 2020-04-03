@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-ready' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = '$.ready is not allowed';
+const error = '.ready is not allowed';
 
 const ruleTester = new RuleTesterAndDocs( {
 	parserOptions: { ecmaVersion: 2015 }

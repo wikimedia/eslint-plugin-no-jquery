@@ -46,7 +46,7 @@ let valid = [];
 let invalid = [];
 
 forbidden.forEach( function ( rule ) {
-	const error = 'Prefer $.on or $.trigger to $.' + rule;
+	const error = 'Prefer .on or .trigger to .' + rule;
 	valid = valid.concat(
 		rule + '()',
 		'$.' + rule + '()',

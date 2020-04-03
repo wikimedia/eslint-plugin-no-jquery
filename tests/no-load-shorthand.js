@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-load-shorthand' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.on or $.trigger to $.load';
+const error = 'Prefer .on or .trigger to .load';
 
 const ruleTester = new RuleTesterAndDocs( {
 	parserOptions: { ecmaVersion: 2015 }

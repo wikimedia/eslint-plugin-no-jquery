@@ -11,5 +11,5 @@ module.exports = utils.createCollectionOrUtilMethodRule(
 			node.callee.property.name === 'removeAttr' ? 'removeAttribute' :
 				node.arguments.length === 2 ? 'setAttribute' : 'getAttribute'
 		) +
-		' to ' + node.callee.property.name
+		' to .' + node.callee.property.name + '/$.' + node.callee.property.name
 );

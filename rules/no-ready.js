@@ -35,7 +35,7 @@ module.exports = {
 				if ( isDirect( context, node ) || isChained( context, node ) ) {
 					context.report( {
 						node: node,
-						message: '$.ready is not allowed'
+						message: '.ready is not allowed'
 					} );
 				}
 			}

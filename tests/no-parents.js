@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-parents' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer Element#closest to $.parents';
+const error = 'Prefer Element#closest to .parents';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-parents', rule, {
