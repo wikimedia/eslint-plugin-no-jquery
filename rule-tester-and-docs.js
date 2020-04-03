@@ -6,9 +6,6 @@ const cli = new eslint.CLIEngine();
 const config = cli.getConfigForFile( 'index.js' );
 const fs = require( 'fs' );
 const rulesets = require( './index' ).configs;
-const allRules = require( './index' ).rules;
-const readme = fs.readFileSync( 'README.md', { encoding: 'UTF8' } );
-const assert = require( 'assert' );
 
 const rulesData = {};
 
@@ -156,13 +153,6 @@ class RuleTesterAndDocs extends RuleTester {
 				output
 			);
 		} else {
-			if ( isRule ) {
-				it( 'Rule appears in README.md & index.js', function () {
-					assert( !!allRules[ name ], '`' + name + '` listed in index.js' );
-					assert( readme.indexOf( '* [`no-jquery/' + name + '`](' ) !== -1, '`' + name + '` linked to in README.md' );
-				} );
-			}
-
 			return super.run.apply( this, arguments );
 		}
 	}

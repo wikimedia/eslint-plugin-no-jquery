@@ -1,3 +1,4 @@
+<!-- This file is built by build-readme.js. Do not edit it directly; edit README.md.template instead. -->
 # eslint-plugin-no-jquery
 
 Disallow jQuery functions, with suggestions for native equivalents where possible.
@@ -72,7 +73,6 @@ The following global settings can be used under the `no-jquery` property to conf
 
 ## 📖 Rules
 
-* [`no-jquery/variable-pattern`](docs/variable-pattern.md)
 * [`no-jquery/no-ajax`](docs/no-ajax.md)
 * [`no-jquery/no-ajax-events`](docs/no-ajax-events.md)
 * [`no-jquery/no-and-self`](docs/no-and-self.md)
@@ -94,7 +94,6 @@ The following global settings can be used under the `no-jquery` property to conf
 * [`no-jquery/no-data`](docs/no-data.md)
 * [`no-jquery/no-deferred`](docs/no-deferred.md)
 * [`no-jquery/no-delegate`](docs/no-delegate.md)
-* [`no-jquery/no-die`](docs/no-die.md)
 * [`no-jquery/no-each`](docs/no-each.md)
 * [`no-jquery/no-each-collection`](docs/no-each-collection.md)
 * [`no-jquery/no-each-util`](docs/no-each-util.md)
@@ -107,18 +106,19 @@ The following global settings can be used under the `no-jquery` property to conf
 * [`no-jquery/no-find`](docs/no-find.md)
 * [`no-jquery/no-fx-interval`](docs/no-fx-interval.md)
 * [`no-jquery/no-global-eval`](docs/no-global-eval.md)
+* [`no-jquery/no-global-selector`](docs/no-global-selector.md)
 * [`no-jquery/no-grep`](docs/no-grep.md)
 * [`no-jquery/no-has`](docs/no-has.md)
 * [`no-jquery/no-hold-ready`](docs/no-hold-ready.md)
 * [`no-jquery/no-html`](docs/no-html.md)
 * [`no-jquery/no-in-array`](docs/no-in-array.md)
+* [`no-jquery/no-is`](docs/no-is.md)
 * [`no-jquery/no-is-array`](docs/no-is-array.md)
 * [`no-jquery/no-is-empty-object`](docs/no-is-empty-object.md)
-* [`no-jquery/no-is-plain-object`](docs/no-is-plain-object.md)
 * [`no-jquery/no-is-function`](docs/no-is-function.md)
 * [`no-jquery/no-is-numeric`](docs/no-is-numeric.md)
+* [`no-jquery/no-is-plain-object`](docs/no-is-plain-object.md)
 * [`no-jquery/no-is-window`](docs/no-is-window.md)
-* [`no-jquery/no-is`](docs/no-is.md)
 * [`no-jquery/no-live`](docs/no-live.md)
 * [`no-jquery/no-load`](docs/no-load.md)
 * [`no-jquery/no-load-shorthand`](docs/no-load-shorthand.md)
@@ -141,7 +141,6 @@ The following global settings can be used under the `no-jquery` property to conf
 * [`no-jquery/no-proxy`](docs/no-proxy.md)
 * [`no-jquery/no-ready`](docs/no-ready.md)
 * [`no-jquery/no-ready-shorthand`](docs/no-ready-shorthand.md)
-* [`no-jquery/no-global-selector`](docs/no-global-selector.md)
 * [`no-jquery/no-selector-prop`](docs/no-selector-prop.md)
 * [`no-jquery/no-serialize`](docs/no-serialize.md)
 * [`no-jquery/no-size`](docs/no-size.md)
@@ -154,19 +153,22 @@ The following global settings can be used under the `no-jquery` property to conf
 * [`no-jquery/no-trigger`](docs/no-trigger.md)
 * [`no-jquery/no-trim`](docs/no-trim.md)
 * [`no-jquery/no-type`](docs/no-type.md)
-* [`no-jquery/no-unbind`](docs/no-unbind.md)
-* [`no-jquery/no-undelegate`](docs/no-undelegate.md)
 * [`no-jquery/no-unique`](docs/no-unique.md)
 * [`no-jquery/no-unload-shorthand`](docs/no-unload-shorthand.md)
 * [`no-jquery/no-val`](docs/no-val.md)
 * [`no-jquery/no-visibility`](docs/no-visibility.md)
 * [`no-jquery/no-when`](docs/no-when.md)
 * [`no-jquery/no-wrap`](docs/no-wrap.md)
+* [`no-jquery/variable-pattern`](docs/variable-pattern.md)
 
 ### ⚠️ Deprecated
-* [`no-jquery/no-hide`](docs/no-hide.md)
-* [`no-jquery/no-show`](docs/no-show.md)
-* [`no-jquery/no-toggle`](docs/no-toggle.md)
+
+* [`no-jquery/no-die`](docs/no-die.md) (use [`no-jquery/no-live`](docs/no-live.md))
+* [`no-jquery/no-hide`](docs/no-hide.md) (use [`no-jquery/no-visibility`](docs/no-visibility.md))
+* [`no-jquery/no-show`](docs/no-show.md) (use [`no-jquery/no-visibility`](docs/no-visibility.md))
+* [`no-jquery/no-toggle`](docs/no-toggle.md) (use [`no-jquery/no-visibility`](docs/no-visibility.md))
+* [`no-jquery/no-unbind`](docs/no-unbind.md) (use [`no-jquery/no-bind`](docs/no-bind.md))
+* [`no-jquery/no-undelegate`](docs/no-undelegate.md) (use [`no-jquery/no-delegate`](docs/no-delegate.md))
 
 ## 🤖 Development
 
