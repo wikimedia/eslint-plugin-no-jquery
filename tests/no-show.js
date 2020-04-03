@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-show' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = '$.show is not allowed. This rule is deprecated, use no-visibility.';
+const error = '.show is not allowed. This rule is deprecated, use no-visibility.';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-show', rule, {

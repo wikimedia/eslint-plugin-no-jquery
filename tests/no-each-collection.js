@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-each-collection' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer Array#forEach to $.each';
+const error = 'Prefer Array#forEach to .each';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-each-collection', rule, {

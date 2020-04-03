@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-html' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer Element#innerHTML to $.html';
+const error = 'Prefer Element#innerHTML to .html';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-html', rule, {

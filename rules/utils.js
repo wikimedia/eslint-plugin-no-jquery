@@ -222,9 +222,25 @@ function messageSuffix( message ) {
 }
 
 function messageToPlainString( message, node, name, options ) {
-	let messageString = ( typeof message === 'function' ?
-		message( node ) :
-		message || '' ).replace( /`/g, '' ) || '$.' + name + ' is not allowed';
+	let messageString = (
+		typeof message === 'function' ?
+			message( node ) :
+			message || ''
+	).replace( /`/g, '' );
+
+	if ( !messageString ) {
+		switch ( options.mode ) {
+			case 'collection':
+				messageString = '.' + name + ' is not allowed';
+				break;
+			case 'util':
+				messageString = '$.' + name + ' is not allowed';
+				break;
+			case 'collection-util':
+				messageString = '.' + name + '/$.' + name + ' is not allowed';
+				break;
+		}
+	}
 
 	if ( options.deprecated ) {
 		messageString += '. This rule is deprecated';
@@ -280,6 +296,8 @@ function jQueryGlobalLink( name ) {
 function createCollectionMethodRule( methods, message, options ) {
 	options = options || {};
 
+	options.mode = 'collection';
+
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the ' + methods.map( jQueryCollectionLink ).join( '/' ) + ' ' +
@@ -324,6 +342,8 @@ function createCollectionMethodRule( methods, message, options ) {
 function createCollectionPropertyRule( property, message, options ) {
 	options = options || {};
 
+	options.mode = 'collection';
+
 	let description = 'Disallows the ' + jQueryCollectionLink( property ) + ' property.';
 
 	description += messageSuffix( message );
@@ -360,6 +380,8 @@ function createCollectionPropertyRule( property, message, options ) {
  */
 function createUtilMethodRule( methods, message, options ) {
 	options = options || {};
+
+	options.mode = 'util';
 
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
@@ -403,6 +425,8 @@ function createUtilMethodRule( methods, message, options ) {
 function createUtilPropertyRule( property, message, options ) {
 	options = options || {};
 
+	options.mode = 'util';
+
 	let description = 'Disallows the ' + jQueryGlobalLink( property ) + ' property.';
 
 	description += messageSuffix( message );
@@ -438,6 +462,8 @@ function createUtilPropertyRule( property, message, options ) {
  */
 function createCollectionOrUtilMethodRule( methods, message, options ) {
 	options = options || {};
+
+	options.mode = 'collection-util';
 
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 

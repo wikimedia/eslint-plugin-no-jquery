@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-constructor-attributes' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.attr to constructor attributes';
+const error = 'Prefer .attr to constructor attributes';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-constructor-attributes', rule, {

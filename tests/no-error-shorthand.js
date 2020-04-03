@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-error-shorthand' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.on or $.trigger to $.error';
+const error = 'Prefer .on or .trigger to .error';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-error-shorthand', rule, {

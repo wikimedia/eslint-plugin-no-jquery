@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-and-self' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.addBack to $.andSelf';
+const error = 'Prefer .addBack to .andSelf';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-and-self', rule, {

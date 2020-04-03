@@ -1,6 +1,6 @@
 # no-parents
 
-Disallows the [`.parents`](https://api.jquery.com/parents/) method. Prefer `Element#closest` to `$.parents`.
+Disallows the [`.parents`](https://api.jquery.com/parents/) method. Prefer `Element#closest` to `.parents`.
 
 ## Rule details
 

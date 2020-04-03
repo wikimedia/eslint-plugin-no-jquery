@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-undelegate' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer $.off/EventTarget#removeEventListener to $.undelegate. This rule is deprecated, use no-delegate.';
+const error = 'Prefer .off/EventTarget#removeEventListener to .undelegate. This rule is deprecated, use no-delegate.';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-undelegate', rule, {

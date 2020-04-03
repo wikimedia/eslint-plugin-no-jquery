@@ -5,7 +5,7 @@ const utils = require( './utils.js' );
 module.exports = {
 	meta: {
 		docs: {
-			description: 'Disallows the [`.load`](https://api.jquery.com/load-event/) method when used as a shorthand for `.on( \'load\', function )` or `.trigger( \'load\' )`. Prefer `$.on` or `$.trigger`.'
+			description: 'Disallows the [`.load`](https://api.jquery.com/load-event/) method when used as a shorthand for `.on( \'load\', function )` or `.trigger( \'load\' )`. Prefer `.on` or `.trigger`.'
 		},
 		fixable: 'code',
 		schema: []
@@ -28,7 +28,7 @@ module.exports = {
 				if ( utils.isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
-						message: 'Prefer $.on or $.trigger to $.load',
+						message: 'Prefer .on or .trigger to .load',
 						fix: utils.eventShorthandFixer.bind( this, node )
 					} );
 				}

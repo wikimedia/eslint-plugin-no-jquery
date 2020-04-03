@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-each' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer Array#forEach to $.each';
+const error = 'Prefer Array#forEach to .each/$.each';
 
 const extendedPattern = '^\\$.|^element$';
 

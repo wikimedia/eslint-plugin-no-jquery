@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-load' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer fetch to $.load';
+const error = 'Prefer fetch to .load';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-load', rule, {

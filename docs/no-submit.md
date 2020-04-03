@@ -1,6 +1,6 @@
 # no-submit
 
-Disallows the [`.submit`](https://api.jquery.com/submit/) method. Prefer `EventTarget#dispatchEvent` + `HTMLFormElement#submit` to `$.submit`.
+Disallows the [`.submit`](https://api.jquery.com/submit/) method. Prefer `EventTarget#dispatchEvent` + `HTMLFormElement#submit` to `.submit`.
 
 ## Rule details
 

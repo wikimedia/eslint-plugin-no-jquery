@@ -45,7 +45,7 @@ module.exports = {
 				if ( utils.isjQuery( context, node ) ) {
 					context.report( {
 						node: node,
-						message: 'Prefer CSS transitions to $.' + node.callee.property.name
+						message: 'Prefer CSS transitions to .' + node.callee.property.name
 					} );
 				}
 			}

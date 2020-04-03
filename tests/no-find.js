@@ -3,7 +3,7 @@
 const rule = require( '../rules/no-find' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
-const error = 'Prefer Document#querySelectorAll to $.find';
+const error = 'Prefer Document#querySelectorAll to .find/$.find';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-find', rule, {

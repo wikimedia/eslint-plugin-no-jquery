@@ -1,6 +1,6 @@
 # no-constructor-attributes
 
-Disallows passing attributes to the jQuery constructor. Prefer `$.attr`.
+Disallows passing attributes to the jQuery constructor. Prefer `.attr`.
 
 ## Rule details
 
