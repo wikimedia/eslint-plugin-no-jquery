@@ -1,6 +1,6 @@
 # no-param
 
-Disallows the [`$.param`](https://api.jquery.com/jQuery.param/) utility. Prefer `FormData` or `URLSearchParams` to `$.param`.
+Disallows the [`$.param`](https://api.jquery.com/jQuery.param/) utility. Prefer `FormData` or `URLSearchParams`.
 
 ## Rule details
 

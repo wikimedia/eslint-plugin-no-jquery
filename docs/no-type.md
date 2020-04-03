@@ -1,6 +1,6 @@
 # no-type
 
-Disallows the [`$.type`](https://api.jquery.com/jQuery.type/) utility. Prefer `typeof`/`instanceof` to `$.type`.
+Disallows the [`$.type`](https://api.jquery.com/jQuery.type/) utility. Prefer `typeof`/`instanceof`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 

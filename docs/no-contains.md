@@ -1,6 +1,6 @@
 # no-contains
 
-Disallows the [`$.contains`](https://api.jquery.com/jQuery.contains/) utility. Prefer `Node#contains` to `$.contains`.
+Disallows the [`$.contains`](https://api.jquery.com/jQuery.contains/) utility. Prefer `Node#contains`.
 
 ## Rule details
 

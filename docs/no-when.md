@@ -1,6 +1,6 @@
 # no-when
 
-Disallows the [`$.when`](https://api.jquery.com/jQuery.when/) utility. Prefer `Promise.all` to `$.when`.
+Disallows the [`$.when`](https://api.jquery.com/jQuery.when/) utility. Prefer `Promise.all`.
 
 ## Rule details
 

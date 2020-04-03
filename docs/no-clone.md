@@ -1,6 +1,6 @@
 # no-clone
 
-Disallows the [`.clone`](https://api.jquery.com/clone/) method and `$.clone` utility. Prefer `Node#cloneNode` to `.clone`/`$.clone`.
+Disallows the [`.clone`](https://api.jquery.com/clone/) method and `$.clone` utility. Prefer `Node#cloneNode`.
 
 ## Rule details
 

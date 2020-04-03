@@ -1,6 +1,6 @@
 # no-error
 
-Disallows the [`$.error`](https://api.jquery.com/jQuery.error/) utility. Prefer `throw` to `$.error`.
+Disallows the [`$.error`](https://api.jquery.com/jQuery.error/) utility. Prefer `throw`.
 
 ## Rule details
 

@@ -1,6 +1,6 @@
 # no-is-function
 
-Disallows the [`$.isFunction`](https://api.jquery.com/jQuery.isFunction/) utility. Prefer `typeof` to `$.isFunction`.
+Disallows the [`$.isFunction`](https://api.jquery.com/jQuery.isFunction/) utility. Prefer `typeof`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 

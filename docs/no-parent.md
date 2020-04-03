@@ -1,6 +1,6 @@
 # no-parent
 
-Disallows the [`.parent`](https://api.jquery.com/parent/) method. Prefer `Node#parentElement` to `.parent`.
+Disallows the [`.parent`](https://api.jquery.com/parent/) method. Prefer `Node#parentElement`.
 
 ## Rule details
 
