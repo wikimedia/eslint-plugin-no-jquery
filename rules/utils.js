@@ -218,7 +218,10 @@ function messageSuffix( message ) {
 	} else if ( typeof message === 'function' ) {
 		messageString = message( true );
 	}
-	return messageString ? ' ' + messageString + '.' : '';
+	// The rule name should already exist in the first half of the description
+	// so avoid repeating it. It is required in the message as that is shown
+	// on its own in error reports.
+	return messageString ? ' ' + messageString.replace( /(Prefer .*) to .*$/, '$1' ) + '.' : '';
 }
 
 function messageToPlainString( message, node, name, options ) {

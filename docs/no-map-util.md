@@ -1,6 +1,6 @@
 # no-map-util
 
-Disallows the [`$.map`](https://api.jquery.com/jQuery.map/) utility. Prefer `Array#map` to `$.map`.
+Disallows the [`$.map`](https://api.jquery.com/jQuery.map/) utility. Prefer `Array#map`.
 
 ## Rule details
 

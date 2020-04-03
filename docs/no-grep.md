@@ -1,6 +1,6 @@
 # no-grep
 
-Disallows the [`$.grep`](https://api.jquery.com/jQuery.grep/) utility. Prefer `Array#filter` to `$.grep`.
+Disallows the [`$.grep`](https://api.jquery.com/jQuery.grep/) utility. Prefer `Array#filter`.
 
 ## Rule details
 

@@ -1,6 +1,6 @@
 # no-undelegate
 
-Disallows the [`.undelegate`](https://api.jquery.com/undelegate/) method. Prefer `.off`/`EventTarget#removeEventListener` to `.undelegate`.
+Disallows the [`.undelegate`](https://api.jquery.com/undelegate/) method. Prefer `.off`/`EventTarget#removeEventListener`.
 
 ⚠️ This rule is deprecated. Use [`no-delegate`](no-delegate.md) instead.
 

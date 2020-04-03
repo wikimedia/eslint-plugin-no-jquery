@@ -1,6 +1,6 @@
 # no-unbind
 
-Disallows the [`.unbind`](https://api.jquery.com/unbind/) method. Prefer `.off`/`EventTarget#removeEventListener` to `.unbind`.
+Disallows the [`.unbind`](https://api.jquery.com/unbind/) method. Prefer `.off`/`EventTarget#removeEventListener`.
 
 ⚠️ This rule is deprecated. Use [`no-bind`](no-bind.md) instead.
 

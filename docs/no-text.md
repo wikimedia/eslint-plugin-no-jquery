@@ -1,6 +1,6 @@
 # no-text
 
-Disallows the [`.text`](https://api.jquery.com/text/) method and `$.text` utility. Prefer `Node#textContent` to `.text`/`$.text`.
+Disallows the [`.text`](https://api.jquery.com/text/) method and `$.text` utility. Prefer `Node#textContent`.
 
 ## Rule details
 

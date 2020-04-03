@@ -1,6 +1,6 @@
 # no-is-numeric
 
-Disallows the [`$.isNumeric`](https://api.jquery.com/jQuery.isNumeric/) utility. Prefer `typeof` to `$.isNumeric`.
+Disallows the [`$.isNumeric`](https://api.jquery.com/jQuery.isNumeric/) utility. Prefer `typeof`.
 
 This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 
