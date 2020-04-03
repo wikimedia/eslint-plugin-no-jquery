@@ -5,19 +5,7 @@ const linter = new eslint.Linter();
 const cli = new eslint.CLIEngine();
 const config = cli.getConfigForFile( 'index.js' );
 const fs = require( 'fs' );
-const rulesets = require( './index' ).configs;
-
-const rulesData = {};
-
-for ( const name in rulesets ) {
-	const rules = rulesets[ name ].rules || {};
-	for ( const rule in rules ) {
-		rulesData[ rule.slice( 10 ) ] = {
-			ruleset: name,
-			options: Array.isArray( rules[ rule ] ) ? rules[ rule ].slice( 1 ) : null
-		};
-	}
-}
+const rulesData = require( './rules-data' );
 
 // Restrict config used by verifyAndFix to fixable formatting rules
 const formattingRuleNames = [ 'array-bracket-spacing', 'block-spacing', 'brace-style', 'comma-dangle', 'comma-spacing', 'comma-style', 'computed-property-spacing', 'curly', 'dot-location', 'dot-notation', 'func-call-spacing', 'indent', 'key-spacing', 'keyword-spacing', 'linebreak-style', 'no-extra-semi', 'no-irregular-whitespace', 'no-mixed-spaces-and-tabs', 'no-multi-spaces', 'no-regex-spaces', 'no-tabs', 'no-trailing-spaces', 'no-whitespace-before-property', 'object-curly-spacing', 'operator-linebreak', 'quote-props', 'quotes', 'semi', 'semi-spacing', 'semi-style', 'space-before-blocks', 'space-before-function-paren', 'space-in-parens', 'space-infix-ops', 'space-unary-ops', 'spaced-comment', 'switch-colon-spacing', 'template-curly-spacing', 'wrap-iife' ];
@@ -121,12 +109,14 @@ class RuleTesterAndDocs extends RuleTester {
 			}
 
 			if ( name in rulesData ) {
-				const data = rulesData[ name ];
-				output += 'This rule is enabled in `plugin:no-jquery/' + data.ruleset + '`';
-				if ( data.options ) {
-					output += ' with `' + JSON.stringify( data.options ) + '` options';
-				}
-				output += '.\n\n';
+				rulesData[ name ].forEach( ( data ) => {
+					output += 'This rule is enabled in `plugin:no-jquery/' + data.ruleset + '`';
+					if ( data.options ) {
+						output += ' with `' + JSON.stringify( data.options ) + '` options';
+					}
+					output += '.\n';
+				} );
+				output += '\n';
 			}
 
 			output += '## Rule details\n\n';
