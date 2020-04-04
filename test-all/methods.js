@@ -122,7 +122,7 @@ $x.fadeTo();
 $x.fadeToggle();
 // eslint-disable-next-line rulesdir/no-filter
 $x.filter();
-// eslint-disable-next-line rulesdir/no-find
+// eslint-disable-next-line rulesdir/no-find, rulesdir/no-find-collection
 $x.find();
 // eslint-disable-next-line rulesdir/no-event-shorthand
 $x.focus();
