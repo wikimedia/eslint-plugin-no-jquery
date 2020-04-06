@@ -61,7 +61,7 @@ $.error();
 $.extend();
 // eslint-disable-next-line rulesdir/no-filter
 $.filter();
-// eslint-disable-next-line rulesdir/no-find
+// eslint-disable-next-line rulesdir/no-find, rulesdir/no-find-util
 $.find();
 // eslint-disable-next-line rulesdir/no-ajax
 $.get();

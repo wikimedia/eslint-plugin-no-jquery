@@ -105,6 +105,8 @@ Where rules are included in the pre-set profiles `slim` or `deprecated-X.X` it i
 * [`no-jquery/no-fade`](docs/no-fade.md) `slim`
 * [`no-jquery/no-filter`](docs/no-filter.md)
 * [`no-jquery/no-find`](docs/no-find.md)
+* [`no-jquery/no-find-collection`](docs/no-find-collection.md)
+* [`no-jquery/no-find-util`](docs/no-find-util.md)
 * [`no-jquery/no-fx-interval`](docs/no-fx-interval.md) `3.0`
 * [`no-jquery/no-global-eval`](docs/no-global-eval.md)
 * [`no-jquery/no-global-selector`](docs/no-global-selector.md)

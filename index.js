@@ -35,6 +35,8 @@ module.exports = {
 		'no-fade': require( './rules/no-fade' ),
 		'no-filter': require( './rules/no-filter' ),
 		'no-find': require( './rules/no-find' ),
+		'no-find-collection': require( './rules/no-find-collection' ),
+		'no-find-util': require( './rules/no-find-util' ),
 		'no-fx-interval': require( './rules/no-fx-interval' ),
 		'no-global-eval': require( './rules/no-global-eval' ),
 		'no-grep': require( './rules/no-grep' ),
