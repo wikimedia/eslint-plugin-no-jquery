@@ -4,6 +4,14 @@ const rule = require( '../rules/no-event-shorthand' );
 const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
 
 const ruleTester = new RuleTesterAndDocs();
+const ajaxEvents = [
+	'ajaxStart',
+	'ajaxStop',
+	'ajaxComplete',
+	'ajaxError',
+	'ajaxSuccess',
+	'ajaxSend'
+];
 const forbidden = [
 	// Browser
 	'error',
@@ -33,15 +41,8 @@ const forbidden = [
 	'mousemove',
 	'mouseout',
 	'mouseover',
-	'mouseup',
-	// AJAX
-	'ajaxStart',
-	'ajaxStop',
-	'ajaxComplete',
-	'ajaxError',
-	'ajaxSuccess',
-	'ajaxSend'
-];
+	'mouseup'
+].concat( ajaxEvents );
 let valid = [];
 let invalid = [];
 
@@ -87,6 +88,11 @@ ruleTester.run( 'no-event-shorthand', rule, {
 	valid: valid.concat( [
 		// Don't conflict with Ajax load
 		'$div.load( "url", handler )'
-	] ),
+	] ).concat(
+		ajaxEvents.map( ( eventName ) => ( {
+			code: '$div.' + eventName + '()',
+			options: [ { allowAjaxEvents: true } ]
+		} ) )
+	),
 	invalid: invalid
 } );
