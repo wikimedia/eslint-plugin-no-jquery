@@ -116,7 +116,14 @@ module.exports = {
 		},
 		// Use this profile if you want to avoid all known deprecated jQuery tools.
 		deprecated: {
-			extends: 'plugin:no-jquery/deprecated-3.4'
+			extends: 'plugin:no-jquery/deprecated-3.5'
+		},
+		// Use this profile if you're writing code targetting jQuery 3.5.x environments.
+		'deprecated-3.5': {
+			extends: 'plugin:no-jquery/deprecated-3.4',
+			rules: {
+				'no-jquery/no-trim': 'error'
+			}
 		},
 		// Use this profile if you're writing code targetting jQuery 3.4.x environments.
 		'deprecated-3.4': {
