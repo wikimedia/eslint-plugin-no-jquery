@@ -15,9 +15,10 @@
 	"main": "index.js",
 	"scripts": {
 		"pretest": "eslint --report-unused-disable-directives .",
-		"test": "mocha --reporter dot tests/",
+		"test": "mocha --reporter dot tests/ && git diff --exit-code docs/ README.md",
 		"testpath": "mocha",
-		"doc": "rm -f docs/* && mocha --reporter dot tests/ --doc && node build-readme.js"
+		"doc": "rm -f docs/* && mocha --reporter dot tests/ --doc && node build-readme.js",
+		"build": "npm run doc"
 	},
 	"files": [
 		"index.js",
