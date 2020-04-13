@@ -1,8 +1,8 @@
 # no-event-shorthand
 
-Disallows the [`.error`](https://api.jquery.com/error/)/[`.resize`](https://api.jquery.com/resize/)/[`.scroll`](https://api.jquery.com/scroll/)/[`.unload`](https://api.jquery.com/unload/)/[`.blur`](https://api.jquery.com/blur/)/[`.change`](https://api.jquery.com/change/)/[`.focus`](https://api.jquery.com/focus/)/[`.focusin`](https://api.jquery.com/focusin/)/[`.focusout`](https://api.jquery.com/focusout/)/[`.select`](https://api.jquery.com/select/)/[`.submit`](https://api.jquery.com/submit/)/[`.keydown`](https://api.jquery.com/keydown/)/[`.keypress`](https://api.jquery.com/keypress/)/[`.keyup`](https://api.jquery.com/keyup/)/[`.click`](https://api.jquery.com/click/)/[`.contextmenu`](https://api.jquery.com/contextmenu/)/[`.dblclick`](https://api.jquery.com/dblclick/)/[`.hover`](https://api.jquery.com/hover/)/[`.mousedown`](https://api.jquery.com/mousedown/)/[`.mouseenter`](https://api.jquery.com/mouseenter/)/[`.mouseleave`](https://api.jquery.com/mouseleave/)/[`.mousemove`](https://api.jquery.com/mousemove/)/[`.mouseout`](https://api.jquery.com/mouseout/)/[`.mouseover`](https://api.jquery.com/mouseover/)/[`.mouseup`](https://api.jquery.com/mouseup/)/[`.ajaxStart`](https://api.jquery.com/ajaxStart/)/[`.ajaxStop`](https://api.jquery.com/ajaxStop/)/[`.ajaxComplete`](https://api.jquery.com/ajaxComplete/)/[`.ajaxError`](https://api.jquery.com/ajaxError/)/[`.ajaxSuccess`](https://api.jquery.com/ajaxSuccess/)/[`.ajaxSend`](https://api.jquery.com/ajaxSend/) methods. Prefer `.on` or `.trigger`.
+Disallows the [`.error`](https://api.jquery.com/error/)/[`.resize`](https://api.jquery.com/resize/)/[`.scroll`](https://api.jquery.com/scroll/)/[`.unload`](https://api.jquery.com/unload/)/[`.blur`](https://api.jquery.com/blur/)/[`.change`](https://api.jquery.com/change/)/[`.focus`](https://api.jquery.com/focus/)/[`.focusin`](https://api.jquery.com/focusin/)/[`.focusout`](https://api.jquery.com/focusout/)/[`.select`](https://api.jquery.com/select/)/[`.submit`](https://api.jquery.com/submit/)/[`.keydown`](https://api.jquery.com/keydown/)/[`.keypress`](https://api.jquery.com/keypress/)/[`.keyup`](https://api.jquery.com/keyup/)/[`.click`](https://api.jquery.com/click/)/[`.contextmenu`](https://api.jquery.com/contextmenu/)/[`.dblclick`](https://api.jquery.com/dblclick/)/[`.hover`](https://api.jquery.com/hover/)/[`.mousedown`](https://api.jquery.com/mousedown/)/[`.mouseenter`](https://api.jquery.com/mouseenter/)/[`.mouseleave`](https://api.jquery.com/mouseleave/)/[`.mousemove`](https://api.jquery.com/mousemove/)/[`.mouseout`](https://api.jquery.com/mouseout/)/[`.mouseover`](https://api.jquery.com/mouseover/)/[`.mouseup`](https://api.jquery.com/mouseup/)/[`.ajaxStart`](https://api.jquery.com/ajaxStart/)/[`.ajaxStop`](https://api.jquery.com/ajaxStop/)/[`.ajaxComplete`](https://api.jquery.com/ajaxComplete/)/[`.ajaxError`](https://api.jquery.com/ajaxError/)/[`.ajaxSuccess`](https://api.jquery.com/ajaxSuccess/)/[`.ajaxSend`](https://api.jquery.com/ajaxSend/) methods. Use the `allowAjaxEvents` option to allow `ajax*` methods. Prefer `.on` or `.trigger`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
+This rule is enabled in `plugin:no-jquery/deprecated-3.3` with `[{"allowAjaxEvents":true}]` options.
 
 ## Rule details
 
@@ -354,6 +354,15 @@ div.ajaxSend();
 $method( x ).ajaxSend();
 div.ajaxSend;
 $div.load( 'url', handler );
+```
+✔️ With `[{"allowAjaxEvents":true}]` options:
+```js
+$div.ajaxStart();
+$div.ajaxStop();
+$div.ajaxComplete();
+$div.ajaxError();
+$div.ajaxSuccess();
+$div.ajaxSend();
 ```
 
 🔧 The `--fix` option can be used to fix problems reported by this rule:

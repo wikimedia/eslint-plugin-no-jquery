@@ -137,7 +137,7 @@ module.exports = {
 			extends: 'plugin:no-jquery/deprecated-3.2',
 			rules: {
 				'no-jquery/no-camel-case': 'error',
-				'no-jquery/no-event-shorthand': 'error',
+				'no-jquery/no-event-shorthand': [ 'error', { allowAjaxEvents: true } ],
 				'no-jquery/no-is-function': 'error',
 				'no-jquery/no-is-numeric': 'error',
 				'no-jquery/no-is-window': 'error',
