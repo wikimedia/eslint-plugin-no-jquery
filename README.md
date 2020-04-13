@@ -34,7 +34,7 @@ Add `no-jquery` to the plugins section of your `.eslintrc` configuration file. Y
 }
 ```
 
-The pre-set profile `plugin:no-jquery/deprecated` includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use profiles targetting specific versions of jQuery if you know the environment in which your code will operate. There are profiles for jQuery 3.4.x+ environments (`deprecated-3.4`), 3.0.x+ (`deprecated-3.0`), and several others for completeness. Deprecation profiles are cumulative, so include all the rules for jQuery versions below them.
+The pre-set profile `plugin:no-jquery/deprecated` includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use profiles targetting specific versions of jQuery if you know the environment in which your code will operate. There is a profile for jQuery 3.5.x+ environments (`deprecated-3.5`), and profiles for other minor releases that include deprecations (`deprecated-3.4`, `deprecated-1.10` etc.). Deprecation profiles are cumulative, so they include all the rules for jQuery versions below them.
 
 Alternatively, you can pick out rules individually (see below).
 
@@ -154,7 +154,7 @@ Where rules are included in the pre-set profiles `slim` or `deprecated-X.X` it i
 * [`no-jquery/no-support`](docs/no-support.md) `1.9`
 * [`no-jquery/no-text`](docs/no-text.md)
 * [`no-jquery/no-trigger`](docs/no-trigger.md)
-* [`no-jquery/no-trim`](docs/no-trim.md)
+* [`no-jquery/no-trim`](docs/no-trim.md) `3.5`
 * [`no-jquery/no-type`](docs/no-type.md) `3.3`
 * [`no-jquery/no-unique`](docs/no-unique.md) `3.0`
 * [`no-jquery/no-unload-shorthand`](docs/no-unload-shorthand.md) `1.8`
