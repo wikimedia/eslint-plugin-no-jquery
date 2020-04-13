@@ -73,7 +73,7 @@ The following global settings can be used under the `no-jquery` property to conf
 
 ## 📖 Rules
 
-Where rules are included in the pre-set profiles `slim` or `deprecated-X.X` it is indicated below.
+Where rules are included in the pre-set profiles `slim` or `deprecated-X.X` it is indicated below. Where rules are included with options this is indicated with a `†`.
 * [`no-jquery/no-ajax`](docs/no-ajax.md) `slim`
 * [`no-jquery/no-ajax-events`](docs/no-ajax-events.md) `slim`
 * [`no-jquery/no-and-self`](docs/no-and-self.md) `1.8`
@@ -100,7 +100,7 @@ Where rules are included in the pre-set profiles `slim` or `deprecated-X.X` it i
 * [`no-jquery/no-each-util`](docs/no-each-util.md)
 * [`no-jquery/no-error`](docs/no-error.md)
 * [`no-jquery/no-error-shorthand`](docs/no-error-shorthand.md) `1.8`
-* [`no-jquery/no-event-shorthand`](docs/no-event-shorthand.md) `3.3`
+* [`no-jquery/no-event-shorthand`](docs/no-event-shorthand.md) `3.5`, `3.3†`
 * [`no-jquery/no-extend`](docs/no-extend.md)
 * [`no-jquery/no-fade`](docs/no-fade.md) `slim`
 * [`no-jquery/no-filter`](docs/no-filter.md)
@@ -147,7 +147,7 @@ Where rules are included in the pre-set profiles `slim` or `deprecated-X.X` it i
 * [`no-jquery/no-selector-prop`](docs/no-selector-prop.md) `1.7`
 * [`no-jquery/no-serialize`](docs/no-serialize.md)
 * [`no-jquery/no-size`](docs/no-size.md) `1.8`
-* [`no-jquery/no-sizzle`](docs/no-sizzle.md) `3.4`
+* [`no-jquery/no-sizzle`](docs/no-sizzle.md) `3.4†`
 * [`no-jquery/no-slide`](docs/no-slide.md) `slim`
 * [`no-jquery/no-sub`](docs/no-sub.md) `1.7`
 * [`no-jquery/no-submit`](docs/no-submit.md)

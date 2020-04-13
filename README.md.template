@@ -72,7 +72,7 @@ The following global settings can be used under the `no-jquery` property to conf
 
 ## 📖 Rules
 
-Where rules are included in the pre-set profiles `slim` or `deprecated-X.X` it is indicated below.
+Where rules are included in the pre-set profiles `slim` or `deprecated-X.X` it is indicated below. Where rules are included with options this is indicated with a `†`.
 <!-- rules -->
 
 ### ⚠️ Deprecated
