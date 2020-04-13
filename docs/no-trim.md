@@ -2,6 +2,8 @@
 
 Disallows the [`$.trim`](https://api.jquery.com/jQuery.trim/) utility. Prefer `String#trim`.
 
+This rule is enabled in `plugin:no-jquery/deprecated-3.5`.
+
 ## Rule details
 
 ❌ The following patterns are considered errors:
