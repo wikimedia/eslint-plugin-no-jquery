@@ -4,6 +4,7 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
+		type: 'suggestion',
 		docs: {
 			description: 'Disallows variable names which don\'t match `variablePattern` in settings (by default a `$`-prefix).'
 		},

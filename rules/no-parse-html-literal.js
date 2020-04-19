@@ -29,6 +29,7 @@ function joinLiterals( node ) {
 
 module.exports = {
 	meta: {
+		type: 'suggestion',
 		docs: {
 			description: 'Disallows parsing of HTML literal strings using either the jQuery method [`$()`](https://api.jquery.com/jquery/) or ' +
 				utils.jQueryGlobalLink( 'parseHTML' ) + '. ' +

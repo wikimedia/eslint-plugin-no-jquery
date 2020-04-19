@@ -4,6 +4,7 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
+		type: 'suggestion',
 		docs: {
 			description: 'Disallows ' + utils.jQueryCollectionLink( 'hasClass' ) +
 			' and ' + utils.jQueryCollectionLink( 'toggleClass' ) +

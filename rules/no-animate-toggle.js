@@ -4,6 +4,7 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
+		type: 'suggestion',
 		docs: {
 			description:
 				'Disallows the duration argument when using the ' + utils.jQueryCollectionLink( 'show' ) +
