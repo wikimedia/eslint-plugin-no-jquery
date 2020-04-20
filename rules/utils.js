@@ -198,6 +198,7 @@ function isjQuery( context, node ) {
 function createRule( create, description, fixable, deprecated ) {
 	return {
 		meta: {
+			type: 'suggestion',
 			docs: {
 				description: description,
 				deprecated: !!deprecated,

@@ -4,6 +4,7 @@ const utils = require( './utils.js' );
 
 module.exports = {
 	meta: {
+		type: 'suggestion',
 		docs: {
 			description: 'Disallows the [`.load`](https://api.jquery.com/load-event/) method when used as a shorthand for `.on( \'load\', function )` or `.trigger( \'load\' )`. Prefer `.on` or `.trigger`.'
 		},

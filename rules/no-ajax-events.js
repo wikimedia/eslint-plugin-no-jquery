@@ -16,6 +16,7 @@ const Literal = 'Literal';
 
 module.exports = {
 	meta: {
+		type: 'suggestion',
 		docs: {
 			description: 'Disallows global ajax events handlers: ' + disallowedEvents.map( utils.jQueryCollectionLink ).join( '/' ) + '. Prefer local events.'
 		},

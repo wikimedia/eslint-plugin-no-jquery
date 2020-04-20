@@ -23,6 +23,7 @@ function isChained( context, node ) {
 
 module.exports = {
 	meta: {
+		type: 'suggestion',
 		docs: {
 			description: 'Disallows the document ready event, either `$( function() {} )` or `$( document ).ready()`.'
 		},
