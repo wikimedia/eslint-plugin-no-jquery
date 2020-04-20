@@ -1,12 +1,12 @@
 # no-global-selector
 
-Disallows global selectors which search the whole document. Encourages users to keep references to DOM nodes in memory, instead of selecting them from the DOM each time.
+Disallows global selectors which search the whole document. Encourages users to keep references to DOM nodes in memory, instead of selecting them from the DOM each time. Use the `allowIds` option to allow single ID selectors.
 
 ## Rule details
 
 ❌ The following patterns are considered errors:
 ```js
-$( '.div' );
+$( 'div' );
 $( '#id' );
 $( '.selector' );
 $( '.selector > .child' );
@@ -15,6 +15,12 @@ $( '.selector', '' );
 $( '.selector', null );
 $( '.selector', undefined );
 $( '.selector', $( '.context' ) );
+```
+❌ With `[{"allowIds":true}]` options:
+```js
+$( '#id>div' );
+$( '#id~div' );
+$( '#id div' );
 ```
 
 ✔️ The following patterns are not considered errors:
@@ -36,6 +42,11 @@ $( null );
 $( undefined );
 $( false );
 $( '#' );
+```
+✔️ With `[{"allowIds":true}]` options:
+```js
+$( '#id' );
+$( '#id-foo_bar1' );
 ```
 ## Rule source
 
