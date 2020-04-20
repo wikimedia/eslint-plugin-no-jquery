@@ -24,4 +24,4 @@ $div.myPlugin( 'foo' ).find();
 ```
 ## Rule source
 
-* [rules/no-find.js](../rules/no-find.js)
+* [rules/no-find.js](../src/rules/no-find.js)

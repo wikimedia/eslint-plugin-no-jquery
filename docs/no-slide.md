@@ -39,4 +39,4 @@ div.slideUp;
 ```
 ## Rule source
 
-* [rules/no-slide.js](../rules/no-slide.js)
+* [rules/no-slide.js](../src/rules/no-slide.js)

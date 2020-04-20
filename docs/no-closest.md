@@ -21,4 +21,4 @@ div.closest;
 ```
 ## Rule source
 
-* [rules/no-closest.js](../rules/no-closest.js)
+* [rules/no-closest.js](../src/rules/no-closest.js)

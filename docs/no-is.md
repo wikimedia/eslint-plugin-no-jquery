@@ -21,4 +21,4 @@ div.is;
 ```
 ## Rule source
 
-* [rules/no-is.js](../rules/no-is.js)
+* [rules/no-is.js](../src/rules/no-is.js)

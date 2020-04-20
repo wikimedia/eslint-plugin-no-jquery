@@ -39,4 +39,4 @@ $( '#' );
 ```
 ## Rule source
 
-* [rules/no-global-selector.js](../rules/no-global-selector.js)
+* [rules/no-global-selector.js](../src/rules/no-global-selector.js)

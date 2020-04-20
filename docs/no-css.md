@@ -22,4 +22,4 @@ div.css;
 ```
 ## Rule source
 
-* [rules/no-css.js](../rules/no-css.js)
+* [rules/no-css.js](../src/rules/no-css.js)

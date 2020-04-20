@@ -45,4 +45,4 @@ div.toggleClass;
 ```
 ## Rule source
 
-* [rules/no-class.js](../rules/no-class.js)
+* [rules/no-class.js](../src/rules/no-class.js)

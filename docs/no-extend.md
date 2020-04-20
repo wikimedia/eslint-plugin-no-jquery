@@ -26,4 +26,4 @@ $.extend( true, {}, foo );
 ```
 ## Rule source
 
-* [rules/no-extend.js](../rules/no-extend.js)
+* [rules/no-extend.js](../src/rules/no-extend.js)

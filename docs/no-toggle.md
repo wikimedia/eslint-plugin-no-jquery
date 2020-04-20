@@ -23,4 +23,4 @@ div.toggle;
 ```
 ## Rule source
 
-* [rules/no-toggle.js](../rules/no-toggle.js)
+* [rules/no-toggle.js](../src/rules/no-toggle.js)

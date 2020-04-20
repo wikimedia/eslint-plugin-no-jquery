@@ -21,4 +21,4 @@ div.parent;
 ```
 ## Rule source
 
-* [rules/no-parent.js](../rules/no-parent.js)
+* [rules/no-parent.js](../src/rules/no-parent.js)

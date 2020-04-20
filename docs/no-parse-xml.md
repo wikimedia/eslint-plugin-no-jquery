@@ -19,4 +19,4 @@ parseXML();
 ```
 ## Rule source
 
-* [rules/no-parse-xml.js](../rules/no-parse-xml.js)
+* [rules/no-parse-xml.js](../src/rules/no-parse-xml.js)

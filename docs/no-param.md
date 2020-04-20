@@ -17,4 +17,4 @@ param();
 ```
 ## Rule source
 
-* [rules/no-param.js](../rules/no-param.js)
+* [rules/no-param.js](../src/rules/no-param.js)

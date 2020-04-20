@@ -33,4 +33,4 @@ $div.remove.unbind( $div );
 ```
 ## Rule source
 
-* [rules/no-bind.js](../rules/no-bind.js)
+* [rules/no-bind.js](../src/rules/no-bind.js)

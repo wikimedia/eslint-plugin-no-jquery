@@ -17,4 +17,4 @@ globalEval();
 ```
 ## Rule source
 
-* [rules/no-global-eval.js](../rules/no-global-eval.js)
+* [rules/no-global-eval.js](../src/rules/no-global-eval.js)

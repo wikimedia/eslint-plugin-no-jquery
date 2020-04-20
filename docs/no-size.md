@@ -31,4 +31,4 @@ $( 'div' ).append( $( 'input' ).size() ); /* → */ $( 'div' ).append( $( 'input
 ```
 ## Rule source
 
-* [rules/no-size.js](../rules/no-size.js)
+* [rules/no-size.js](../src/rules/no-size.js)

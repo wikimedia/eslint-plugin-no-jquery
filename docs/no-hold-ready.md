@@ -19,4 +19,4 @@ holdReady();
 ```
 ## Rule source
 
-* [rules/no-hold-ready.js](../rules/no-hold-ready.js)
+* [rules/no-hold-ready.js](../src/rules/no-hold-ready.js)

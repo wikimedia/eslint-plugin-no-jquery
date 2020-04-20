@@ -23,4 +23,4 @@ div.live;
 ```
 ## Rule source
 
-* [rules/no-live.js](../rules/no-live.js)
+* [rules/no-live.js](../src/rules/no-live.js)

@@ -23,4 +23,4 @@ div.undelegate;
 ```
 ## Rule source
 
-* [rules/no-undelegate.js](../rules/no-undelegate.js)
+* [rules/no-undelegate.js](../src/rules/no-undelegate.js)

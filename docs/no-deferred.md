@@ -19,4 +19,4 @@ new Deferred();
 ```
 ## Rule source
 
-* [rules/no-deferred.js](../rules/no-deferred.js)
+* [rules/no-deferred.js](../src/rules/no-deferred.js)

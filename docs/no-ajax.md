@@ -35,4 +35,4 @@ div.post;
 ```
 ## Rule source
 
-* [rules/no-ajax.js](../rules/no-ajax.js)
+* [rules/no-ajax.js](../src/rules/no-ajax.js)
