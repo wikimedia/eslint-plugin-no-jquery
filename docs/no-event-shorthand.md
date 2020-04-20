@@ -526,4 +526,4 @@ $( 'div' ).append( $( 'input' ).ajaxSend() );     /* → */ $( 'div' ).append( $
 ```
 ## Rule source
 
-* [rules/no-event-shorthand.js](../rules/no-event-shorthand.js)
+* [rules/no-event-shorthand.js](../src/rules/no-event-shorthand.js)

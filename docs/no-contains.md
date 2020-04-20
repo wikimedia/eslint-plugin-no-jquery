@@ -17,4 +17,4 @@ $div.contains();
 ```
 ## Rule source
 
-* [rules/no-contains.js](../rules/no-contains.js)
+* [rules/no-contains.js](../src/rules/no-contains.js)

@@ -21,4 +21,4 @@ div.val;
 ```
 ## Rule source
 
-* [rules/no-val.js](../rules/no-val.js)
+* [rules/no-val.js](../src/rules/no-val.js)

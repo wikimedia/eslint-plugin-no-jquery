@@ -15,14 +15,14 @@
 	"main": "index.js",
 	"scripts": {
 		"pretest": "eslint --report-unused-disable-directives .",
-		"test": "mocha --reporter dot tests/ && git diff --exit-code docs/ rules/ README.md",
+		"test": "mocha --reporter dot tests/** && git diff --exit-code docs/ src/ README.md",
 		"testpath": "mocha",
-		"doc": "rm -f docs/* && mocha --reporter dot tests/ --doc && node build-readme.js",
-		"build": "npm run doc && node build-all-methods.js"
+		"doc": "rm -f docs/* && mocha --reporter dot tests/** --doc && node tools/build-readme.js",
+		"build": "npm run doc && node tools/build-all-methods.js"
 	},
 	"files": [
 		"index.js",
-		"rules/*"
+		"src/*"
 	],
 	"peerDependencies": {
 		"eslint": ">=2.3.0"

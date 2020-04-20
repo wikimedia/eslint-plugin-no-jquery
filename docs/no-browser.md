@@ -21,4 +21,4 @@ a.browser.foo;
 ```
 ## Rule source
 
-* [rules/no-browser.js](../rules/no-browser.js)
+* [rules/no-browser.js](../src/rules/no-browser.js)

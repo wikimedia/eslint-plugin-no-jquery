@@ -118,4 +118,4 @@ $( ':visible' );
 ```
 ## Rule source
 
-* [rules/no-sizzle.js](../rules/no-sizzle.js)
+* [rules/no-sizzle.js](../src/rules/no-sizzle.js)

@@ -21,4 +21,4 @@ div.has;
 ```
 ## Rule source
 
-* [rules/no-has.js](../rules/no-has.js)
+* [rules/no-has.js](../src/rules/no-has.js)

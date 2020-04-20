@@ -91,4 +91,4 @@ $( '<div />' );
 ```
 ## Rule source
 
-* [rules/no-parse-html-literal.js](../rules/no-parse-html-literal.js)
+* [rules/no-parse-html-literal.js](../src/rules/no-parse-html-literal.js)

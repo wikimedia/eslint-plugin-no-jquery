@@ -25,4 +25,4 @@ $( 'select' ).val().map();
 ```
 ## Rule source
 
-* [rules/no-map.js](../rules/no-map.js)
+* [rules/no-map.js](../src/rules/no-map.js)

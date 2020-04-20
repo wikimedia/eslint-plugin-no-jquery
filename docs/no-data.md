@@ -34,4 +34,4 @@ div.hasData;
 ```
 ## Rule source
 
-* [rules/no-data.js](../rules/no-data.js)
+* [rules/no-data.js](../src/rules/no-data.js)

@@ -47,4 +47,4 @@ div.fadeToggle;
 ```
 ## Rule source
 
-* [rules/no-fade.js](../rules/no-fade.js)
+* [rules/no-fade.js](../src/rules/no-fade.js)

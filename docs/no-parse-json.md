@@ -24,4 +24,4 @@ $.parseJSON( '{}' ); /* → */ JSON.parse( '{}' );
 ```
 ## Rule source
 
-* [rules/no-parse-json.js](../rules/no-parse-json.js)
+* [rules/no-parse-json.js](../src/rules/no-parse-json.js)

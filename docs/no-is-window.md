@@ -18,4 +18,4 @@ myClass.isWindow();
 ```
 ## Rule source
 
-* [rules/no-is-window.js](../rules/no-is-window.js)
+* [rules/no-is-window.js](../src/rules/no-is-window.js)

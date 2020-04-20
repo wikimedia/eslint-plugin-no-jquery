@@ -2,7 +2,7 @@ const rulesDirPlugin = require( 'eslint-plugin-rulesdir' );
 const rules = require( '../index.js' ).rules;
 
 // Relative to root
-rulesDirPlugin.RULES_DIR = './rules';
+rulesDirPlugin.RULES_DIR = './src/rules';
 
 const conf = {
 	"plugins": [

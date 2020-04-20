@@ -1,7 +1,7 @@
 'use strict';
 
-const rule = require( '../rules/no-each' );
-const RuleTesterAndDocs = require( '../rule-tester-and-docs' );
+const rule = require( '../src/rules/no-each' );
+const RuleTesterAndDocs = require( '../tools/rule-tester-and-docs' );
 
 const error = 'Prefer Array#forEach to .each/$.each';
 

@@ -30,4 +30,4 @@ $div.error();                /* → */ $div.trigger( 'error' );
 ```
 ## Rule source
 
-* [rules/no-error-shorthand.js](../rules/no-error-shorthand.js)
+* [rules/no-error-shorthand.js](../src/rules/no-error-shorthand.js)

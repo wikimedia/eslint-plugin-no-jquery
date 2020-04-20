@@ -22,4 +22,4 @@ div.text;
 ```
 ## Rule source
 
-* [rules/no-text.js](../rules/no-text.js)
+* [rules/no-text.js](../src/rules/no-text.js)

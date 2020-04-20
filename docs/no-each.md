@@ -22,4 +22,4 @@ div.each;
 ```
 ## Rule source
 
-* [rules/no-each.js](../rules/no-each.js)
+* [rules/no-each.js](../src/rules/no-each.js)

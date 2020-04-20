@@ -37,4 +37,4 @@ div.toggle;
 ```
 ## Rule source
 
-* [rules/no-visibility.js](../rules/no-visibility.js)
+* [rules/no-visibility.js](../src/rules/no-visibility.js)

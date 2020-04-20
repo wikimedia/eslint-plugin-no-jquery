@@ -21,4 +21,4 @@ a.support.foo;
 ```
 ## Rule source
 
-* [rules/no-support.js](../rules/no-support.js)
+* [rules/no-support.js](../src/rules/no-support.js)

@@ -42,4 +42,4 @@ $( 'div' ).toggle;
 ```
 ## Rule source
 
-* [rules/no-animate-toggle.js](../rules/no-animate-toggle.js)
+* [rules/no-animate-toggle.js](../src/rules/no-animate-toggle.js)

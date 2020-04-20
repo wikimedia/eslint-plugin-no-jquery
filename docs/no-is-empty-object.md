@@ -17,4 +17,4 @@ $div.isEmptyObject();
 ```
 ## Rule source
 
-* [rules/no-is-empty-object.js](../rules/no-is-empty-object.js)
+* [rules/no-is-empty-object.js](../src/rules/no-is-empty-object.js)

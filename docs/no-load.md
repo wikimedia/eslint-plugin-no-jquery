@@ -24,4 +24,4 @@ $.load();
 ```
 ## Rule source
 
-* [rules/no-load.js](../rules/no-load.js)
+* [rules/no-load.js](../src/rules/no-load.js)

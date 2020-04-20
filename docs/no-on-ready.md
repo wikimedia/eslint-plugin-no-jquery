@@ -28,4 +28,4 @@ document.on( 'ready', function () {} );
 ```
 ## Rule source
 
-* [rules/no-on-ready.js](../rules/no-on-ready.js)
+* [rules/no-on-ready.js](../src/rules/no-on-ready.js)

@@ -24,4 +24,4 @@ $.noop(); /* → */ ( function () {}() );
 ```
 ## Rule source
 
-* [rules/no-noop.js](../rules/no-noop.js)
+* [rules/no-noop.js](../src/rules/no-noop.js)

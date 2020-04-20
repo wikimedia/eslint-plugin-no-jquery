@@ -21,4 +21,4 @@ $.fx;
 ```
 ## Rule source
 
-* [rules/no-fx-interval.js](../rules/no-fx-interval.js)
+* [rules/no-fx-interval.js](../src/rules/no-fx-interval.js)

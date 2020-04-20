@@ -17,4 +17,4 @@ merge();
 ```
 ## Rule source
 
-* [rules/no-merge.js](../rules/no-merge.js)
+* [rules/no-merge.js](../src/rules/no-merge.js)

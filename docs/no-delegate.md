@@ -23,4 +23,4 @@ div.delegate;
 ```
 ## Rule source
 
-* [rules/no-delegate.js](../rules/no-delegate.js)
+* [rules/no-delegate.js](../src/rules/no-delegate.js)
