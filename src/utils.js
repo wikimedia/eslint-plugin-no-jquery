@@ -259,7 +259,7 @@ function messageToPlainString( message, node, name, options ) {
 function jQueryCollectionLink( name ) {
 	switch ( name ) {
 		case 'hasData':
-			// See tests/no-data.js
+			// See tests/rules/no-data.js
 			return '`.' + name + '`';
 		default:
 			return '[`.' + name + '`](https://api.jquery.com/' + name + '/)';

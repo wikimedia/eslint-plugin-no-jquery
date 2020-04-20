@@ -189,7 +189,7 @@ npm run doc
 To run a specific test or tests:
 
 ```sh
-npm run testpath tests/no-ajax
+npm run testpath tests/rules/no-ajax
 ```
 
 ## ⚖️ License
