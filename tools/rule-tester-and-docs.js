@@ -109,14 +109,13 @@ class RuleTesterAndDocs extends RuleTester {
 			}
 
 			if ( name in rulesData ) {
-				rulesData[ name ].forEach( ( data ) => {
-					output += 'This rule is enabled in `plugin:no-jquery/' + data.ruleset + '`';
-					if ( data.options ) {
-						output += ' with `' + JSON.stringify( data.options ) + '` options';
-					}
-					output += '.\n';
-				} );
-				output += '\n';
+				output += rulesData[ name ].map( ( data ) => {
+					return 'This rule is enabled in `plugin:no-jquery/' + data.ruleset + '`' +
+						( data.options ?
+							' with `' + JSON.stringify( data.options ) + '` options' :
+							'' ) +
+						'.\n\n';
+				} ).join( '' );
 			}
 
 			output += '## Rule details\n\n';
