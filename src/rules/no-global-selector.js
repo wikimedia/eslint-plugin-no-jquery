@@ -4,14 +4,28 @@ const utils = require( '../utils.js' );
 
 // HTML regex (modified from jQuery)
 const rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/;
+// ID patterns that return one DOM node
+const idPattern = /^#[^>~\s]+$/;
 
 module.exports = {
 	meta: {
 		type: 'suggestion',
 		docs: {
-			description: 'Disallows global selectors which search the whole document. Encourages users to keep references to DOM nodes in memory, instead of selecting them from the DOM each time.'
+			description: 'Disallows global selectors which search the whole document. ' +
+			'Encourages users to keep references to DOM nodes in memory, instead of selecting them from the DOM each time. ' +
+			'Use the `allowIds` option to allow single ID selectors.'
 		},
-		schema: []
+		schema: [
+			{
+				type: 'object',
+				properties: {
+					allowIds: {
+						type: 'boolean'
+					}
+				},
+				additionalProperties: false
+			}
+		]
 	},
 
 	create: function ( context ) {
@@ -26,10 +40,13 @@ module.exports = {
 					return;
 				}
 				const value = node.arguments[ 0 ].value;
+				const allowIds = context.options[ 0 ] && context.options[ 0 ].allowIds;
 				if (
 					typeof value !== 'string' ||
 					!value ||
-					value === '#' ) {
+					value === '#' ||
+					( allowIds && idPattern.test( value.trim() ) )
+				) {
 					return;
 				}
 

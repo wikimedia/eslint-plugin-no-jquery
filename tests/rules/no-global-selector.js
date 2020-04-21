@@ -16,6 +16,14 @@ ruleTester.run( 'no-global-selector', rule, {
 		'$(".selector", context)',
 		'$(".selector", "#")',
 		'$(".selector", [])',
+		{
+			code: '$("#id")',
+			options: [ { allowIds: true } ]
+		},
+		{
+			code: '$("#id-foo_bar1")',
+			options: [ { allowIds: true } ]
+		},
 		'$(function() {})',
 		// Variables could be a selector, but could equally be HTML or functions, so leave as valid
 		'$(variable)',
@@ -31,7 +39,7 @@ ruleTester.run( 'no-global-selector', rule, {
 	],
 	invalid: [
 		{
-			code: '$(".div")',
+			code: '$("div")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
@@ -65,6 +73,21 @@ ruleTester.run( 'no-global-selector', rule, {
 		{
 			code: '$(".selector", $(".context"))',
 			errors: [ { message: error, type: 'CallExpression' } ]
+		},
+		{
+			code: '$("#id>div")',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			options: [ { allowIds: true } ]
+		},
+		{
+			code: '$("#id~div")',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			options: [ { allowIds: true } ]
+		},
+		{
+			code: '$("#id div")',
+			errors: [ { message: error, type: 'CallExpression' } ],
+			options: [ { allowIds: true } ]
 		}
 	]
 } );
