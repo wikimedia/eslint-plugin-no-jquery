@@ -3,8 +3,5 @@
 		"wikimedia",
 		"wikimedia/node",
 		"wikimedia/language/es2016"
-	],
-	"rules": {
-		"no-catch-shadow": "error"
-	}
+	]
 }

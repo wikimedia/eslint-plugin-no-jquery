@@ -8,7 +8,8 @@
  * The rule prefix is renamed from no-jquery to rulesdir as the
  * rules are loaded directly via the rulesdir plugin.
  */
-var $x;
+
+/* global $x */
 $x.add();
 $x.addBack();
 $x.after();

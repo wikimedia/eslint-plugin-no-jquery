@@ -5,6 +5,8 @@ const rules = require( '../index.js' ).rules;
 rulesDirPlugin.RULES_DIR = './src/rules';
 
 const conf = {
+	"root": true,
+	"extends": "wikimedia/client",
 	"plugins": [
 		"rulesdir"
 	],
