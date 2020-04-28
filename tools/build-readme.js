@@ -1,6 +1,6 @@
 const fs = require( 'fs' );
 const template = fs.readFileSync( 'README.md.template', { encoding: 'UTF8' } );
-const allRules = require( '../index' ).rules;
+const allRules = require( '../src/index' ).rules;
 const rulesData = require( './rules-data' );
 
 function getRules( deprecated ) {

@@ -3,7 +3,7 @@ const eslint = require( 'eslint' );
 const RuleTester = eslint.RuleTester;
 const linter = new eslint.Linter();
 const cli = new eslint.CLIEngine();
-const config = cli.getConfigForFile( './index.js' );
+const config = cli.getConfigForFile( './src/index.js' );
 const fs = require( 'fs' );
 const rulesData = require( './rules-data' );
 

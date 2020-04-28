@@ -1,4 +1,4 @@
-const rulesets = require( '../index' ).configs;
+const rulesets = require( '../src/index' ).configs;
 const rulesData = {};
 
 for ( const name in rulesets ) {

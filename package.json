@@ -12,7 +12,7 @@
 		"eslintplugin",
 		"eslint-plugin"
 	],
-	"main": "index.js",
+	"main": "src/index.js",
 	"scripts": {
 		"pretest": "eslint --report-unused-disable-directives .",
 		"test": "mocha --reporter dot tests/** && git diff --exit-code docs/ src/ README.md",
@@ -21,8 +21,7 @@
 		"build": "npm run doc && node tools/build-all-methods.js"
 	},
 	"files": [
-		"index.js",
-		"src/*"
+		"src"
 	],
 	"peerDependencies": {
 		"eslint": ">=2.3.0"
