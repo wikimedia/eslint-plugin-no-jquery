@@ -16,6 +16,7 @@
 	"scripts": {
 		"pretest": "eslint --report-unused-disable-directives .",
 		"test": "nyc mocha --reporter dot tests/** && git diff --exit-code docs/ src/ README.md",
+		"report": "nyc report --reporter=text-lcov > coverage.lcov",
 		"testpath": "mocha",
 		"doc": "rm -f docs/* && mocha --reporter dot tests/** --doc && node tools/build-readme.js",
 		"build": "npm run doc && node tools/build-all-methods.js"
@@ -27,6 +28,7 @@
 		"eslint": ">=2.3.0"
 	},
 	"devDependencies": {
+		"codecov": "^3.6.5",
 		"eslint": "^6.4.0",
 		"eslint-config-wikimedia": "^0.15.1",
 		"eslint-plugin-rulesdir": "^0.1.0",
