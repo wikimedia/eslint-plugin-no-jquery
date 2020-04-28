@@ -18,6 +18,7 @@ browser;
 a.browser;
 browser.foo;
 a.browser.foo;
+$.browsers;
 ```
 ## Rule source
 

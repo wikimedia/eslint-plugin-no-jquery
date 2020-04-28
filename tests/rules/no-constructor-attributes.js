@@ -13,7 +13,11 @@ ruleTester.run( 'no-constructor-attributes', rule, {
 		'$(".div", context)',
 		'$("<div>", ownerDocument)',
 		'$("<div/>", ownerDocument)',
-		'$div.add("<div>", context)'
+		'$div.add("<div>", context)',
+		{
+			code: '(function(){$(".div")})()',
+			noDoc: true
+		}
 	],
 	invalid: [
 		{

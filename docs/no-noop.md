@@ -15,6 +15,7 @@ $.noop();
 foo.noop;
 foo.noop();
 foo.noop( bar );
+$.noOp;
 ```
 
 🔧 The `--fix` option can be used to fix problems reported by this rule:

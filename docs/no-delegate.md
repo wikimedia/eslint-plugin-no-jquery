@@ -12,6 +12,10 @@ $( 'div' ).delegate();
 $div.delegate();
 $( 'div' ).first().delegate();
 $( 'div' ).append( $( 'input' ).delegate() );
+$( 'div' ).undelegate();
+$div.undelegate();
+$( 'div' ).first().undelegate();
+$( 'div' ).append( $( 'input' ).undelegate() );
 ```
 
 ✔️ The following patterns are not considered errors:
@@ -20,6 +24,10 @@ delegate();
 [].delegate();
 div.delegate();
 div.delegate;
+undelegate();
+[].undelegate();
+div.undelegate();
+div.undelegate;
 ```
 ## Rule source
 

@@ -20,11 +20,13 @@ function allLiteral( node ) {
 function joinLiterals( node ) {
 	if ( node.type === 'BinaryExpression' ) {
 		return joinLiterals( node.left ) + joinLiterals( node.right );
-	} else if ( node.type === 'Literal' ) {
-		return node.value;
-	} else {
-		throw new Error( 'Non-literal node passed to joinLiteral' );
 	}
+	/* istanbul ignore else */
+	if ( node.type === 'Literal' ) {
+		return node.value;
+	}
+	/* istanbul ignore next */
+	throw new Error( 'Non-literal node passed to joinLiteral' );
 }
 
 module.exports = {
