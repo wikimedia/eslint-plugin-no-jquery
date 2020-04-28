@@ -36,6 +36,11 @@ ruleTester.run( 'no-animate', rule, {
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
+			code: '$div.animate()',
+			options: [ { allowScroll: true } ],
+			errors: [ { message: errorNoScroll, type: 'CallExpression' } ]
+		},
+		{
 			code: '$("div").first().animate()',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},

@@ -7,7 +7,7 @@ const error = 'Prefer function(){} to $.noop';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-noop', rule, {
-	valid: [ 'foo.noop', 'foo.noop()', 'foo.noop(bar)' ],
+	valid: [ 'foo.noop', 'foo.noop()', 'foo.noop(bar)', '$.noOp' ],
 	invalid: [
 		{
 			code: '$.noop',

@@ -32,6 +32,9 @@ function buildRuleDetails( tests, icon, showFixes ) {
 
 	tests.forEach( function ( test ) {
 		let options = '';
+		if ( test.noDoc ) {
+			return;
+		}
 		if ( test.options || test.settings ) {
 			options = JSON.stringify( {
 				options: test.options,
@@ -142,7 +145,14 @@ class RuleTesterAndDocs extends RuleTester {
 				output
 			);
 		} else {
-			return super.run.apply( this, arguments );
+			// Filter out invalid top level property "noDoc", used in documentation building mode
+			tests.valid.forEach( ( test ) => {
+				delete test.noDoc;
+			} );
+			tests.invalid.forEach( ( test ) => {
+				delete test.noDoc;
+			} );
+			return super.run.call( this, name, rule, tests );
 		}
 	}
 }

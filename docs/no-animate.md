@@ -17,13 +17,14 @@ $div.animate( { scrollLeft: 200 } );
 $div.animate( { scrollTop: 100, scrollLeft: 200 } );
 $div.animate( { scrollTop: 100, width: 300 } );
 ```
+❌ With `[{"allowScroll":true}]` options:
+```js
+$div.animate();
+$div.animate( { scrollTop: 100, width: 300 } );
+```
 ❌ With `[{"allowScroll":false}]` options:
 ```js
 $div.animate( { scrollTop: 100 } );
-```
-❌ With `[{"allowScroll":true}]` options:
-```js
-$div.animate( { scrollTop: 100, width: 300 } );
 ```
 
 ✔️ The following patterns are not considered errors:

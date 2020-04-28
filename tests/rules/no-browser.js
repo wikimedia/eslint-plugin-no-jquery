@@ -7,7 +7,7 @@ const error = '$.browser is not allowed';
 
 const ruleTester = new RuleTesterAndDocs();
 ruleTester.run( 'no-browser', rule, {
-	valid: [ 'browser', 'a.browser', 'browser.foo', 'a.browser.foo' ],
+	valid: [ 'browser', 'a.browser', 'browser.foo', 'a.browser.foo', '$.browsers' ],
 	invalid: [
 		{
 			code: '$.browser',

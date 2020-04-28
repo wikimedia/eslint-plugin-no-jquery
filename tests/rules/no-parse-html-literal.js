@@ -17,7 +17,7 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 		'$("#id > .class[attr]")',
 		'$(variable)',
 		'$(variable1 = variable2)',
-		'$(function() {})',
+		'$(function(){})',
 		'$("<div>")',
 		'$("<div>", {width:100})',
 		'$("<" + "div" + ">")',
@@ -58,7 +58,12 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 		'$.parseHTML(variable)',
 		'$.parseHTML(variable1 + variable2)',
 		// TODO: This passes, but maybe it shouldn't?
-		'$.parseHTML("string" + variable)'
+		'$.parseHTML("string" + variable)',
+
+		{
+			code: '(function(){$()})()',
+			noDoc: true
+		}
 	],
 	// Build test cases by joining methods with strings
 	invalid: [

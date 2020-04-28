@@ -52,7 +52,7 @@ forbidden.forEach( function ( rule ) {
 		rule + '()',
 		'$.' + rule + '()',
 		'[].' + rule + '()',
-		'div.' + rule + '()',
+		'$div.on("' + rule + '", fn)',
 		'$method(x).' + rule + '()',
 		'div.' + rule
 	);
@@ -91,6 +91,10 @@ ruleTester.run( 'no-event-shorthand', rule, {
 	] ).concat(
 		ajaxEvents.map( ( eventName ) => ( {
 			code: '$div.' + eventName + '()',
+			options: [ { allowAjaxEvents: true } ]
+		} ) ),
+		ajaxEvents.map( ( eventName ) => ( {
+			code: '$div.on("' + eventName + '", fn)',
 			options: [ { allowAjaxEvents: true } ]
 		} ) )
 	),

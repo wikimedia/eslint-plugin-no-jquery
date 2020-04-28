@@ -232,6 +232,8 @@ function messageToPlainString( message, node, name, options ) {
 	).replace( /`/g, '' );
 
 	if ( !messageString ) {
+		/* istanbul ignore next */
+		// Fallback messages, not a problem if they become unused
 		switch ( options.mode ) {
 			case 'collection':
 				messageString = '.' + name + ' is not allowed';
