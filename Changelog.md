@@ -1,5 +1,41 @@
 # eslint-plugin-no-jquery release history
 
+## v2.4.0
+
+* New feature: Add specification of plugin return types to settings (Ed Sanders)
+
+—
+* New profile: Add new `deprecated-3.5` config (Ed Sanders)
+
+—
+* New rule: `no-find-collection`, split out of `no-find` (Ed Sanders)
+* New rule: `no-find-util`, split out of `no-find` (Ed Sanders)
+
+—
+* Rule fix: Set all rules to type: `suggestion` (Ed Sanders)
+* Rule fix: `no-global-selector`; add `allowIds` option to allow global selector by ID (Adam Roses Wight)
+* Rule fix: `no-event-shorthand`; add `allowAjaxEvents` option and use in `deprecated-3.3` (Ed Sanders)
+
+
+—
+* Docs: Avoid duplicating name in "Prefer..." sentence (Ed Sanders)
+* Docs: Build lists in README.md automatically (Ed Sanders)
+* Docs: Consistently use `.methodOrProp` with collections, not `$.methodOrProp` (Ed Sanders)
+* Docs: Link to jQuery documentation for each method/util/property (Ed Sanders)
+* Docs: Show ruleset information in README (Ed Sanders)
+
+—
+* Release: State "MIT license" in LICENSE header (Ed Sanders)
+* Release: Update devDependencies (Ed Sanders)
+
+—
+* code: Add `#odd` and `#even` to all methods lists, new in jQuery 3.5 (Ed Sanders)
+* code: Add code coverage checks using Istanbul (Ed Sanders)
+* code: Move index.js to src/ (Ed Sanders)
+* code: Restructure files and folders (Ed Sanders)
+* code: Setup codecov GitHub Action integration (Ed Sanders)
+
+
 ## v2.3.2
 
 * Rule fix: Add fixer for `no-is-function` (Ed Sanders)
