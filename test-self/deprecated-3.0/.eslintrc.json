@@ -1,0 +1,3 @@
+{
+	"extends": "plugin:self/deprecated-3.0"
+}

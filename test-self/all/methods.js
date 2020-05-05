@@ -9,7 +9,6 @@
  * rules are loaded directly via the self plugin.
  */
 
-/* global $x */
 $x.add();
 $x.addBack();
 $x.after();

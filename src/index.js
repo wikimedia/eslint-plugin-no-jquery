@@ -122,7 +122,8 @@ module.exports = {
 		'deprecated-3.5': {
 			extends: 'plugin:no-jquery/deprecated-3.4',
 			rules: {
-				'no-jquery/no-event-shorthand': 'error',
+				// Pass empty options here to override options set in deprecated-3.3
+				'no-jquery/no-event-shorthand': [ 'error', {} ],
 				'no-jquery/no-trim': 'error'
 			}
 		},
