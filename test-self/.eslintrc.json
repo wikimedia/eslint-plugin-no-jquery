@@ -1,0 +1,12 @@
+{
+	"root": true,
+	"extends": "wikimedia/client",
+	"plugins": [ "self" ],
+	"globals": {
+		"$": "readonly"
+	},
+	"rules": {
+		"no-undef": "off",
+		"no-unused-expressions": "off"
+	}
+}
