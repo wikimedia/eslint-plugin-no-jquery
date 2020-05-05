@@ -18,7 +18,8 @@ function getRules( deprecated ) {
 						rulesData[ rule ] ?
 							' ' +
 							rulesData[ rule ].map(
-								( data ) => '`' + data.ruleset.replace( 'deprecated-', '' ) + ( data.options ? '†' : '' ) + '`'
+								// TODO: Create util to compare options to defaults
+								( data ) => '`' + data.ruleset.replace( 'deprecated-', '' ) + ( ( data.options && Object.keys( data.options[ 0 ] ).length ) ? '†' : '' ) + '`'
 							).join( ', ' ) :
 							''
 					);

@@ -112,13 +112,14 @@ class RuleTesterAndDocs extends RuleTester {
 			}
 
 			if ( name in rulesData ) {
-				output += rulesData[ name ].map( ( data ) => {
-					return 'This rule is enabled in `plugin:no-jquery/' + data.ruleset + '`' +
-						( data.options ?
+				output += rulesData[ name ].map( ( data ) =>
+					'This rule is enabled in `plugin:no-jquery/' + data.ruleset + '`' +
+						// TODO: Create util to compare options to defaults
+						( data.options && Object.keys( data.options[ 0 ] ).length ?
 							' with `' + JSON.stringify( data.options ) + '` options' :
 							'' ) +
-						'.\n\n';
-				} ).join( '' );
+						'.\n\n'
+				).join( '' );
 			}
 
 			output += '## Rule details\n\n';
