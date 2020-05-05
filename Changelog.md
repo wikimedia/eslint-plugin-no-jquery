@@ -1,5 +1,13 @@
 # eslint-plugin-no-jquery release history
 
+## v2.4.1
+
+* Profile fix: Fix override of `no-event-shorthand` in `deprecated-3.5` (Ed Sanders)
+
+—
+* code: Add real test coverage for index.js (Ed Sanders)
+* code: gitignore coverage.lcov (Ed Sanders)
+
 ## v2.4.0
 
 * New feature: Add specification of plugin return types to settings (Ed Sanders)
