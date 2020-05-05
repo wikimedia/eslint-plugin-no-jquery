@@ -1,15 +1,9 @@
-const rulesDirPlugin = require( 'eslint-plugin-rulesdir' );
 const rules = require( '../src/index' ).rules;
-
-// Relative to root
-rulesDirPlugin.RULES_DIR = './src/rules';
 
 const conf = {
 	"root": true,
 	"extends": "wikimedia/client",
-	"plugins": [
-		"rulesdir"
-	],
+	"plugins": [ "self" ],
 	"globals": {
 		"$": "readonly"
 	},
@@ -17,7 +11,7 @@ const conf = {
 };
 
 for ( let rule in rules ) {
-	conf.rules[ 'rulesdir/' + rule ] = 'error';
+	conf.rules[ 'self/' + rule ] = 'error';
 }
 
 module.exports = conf;
