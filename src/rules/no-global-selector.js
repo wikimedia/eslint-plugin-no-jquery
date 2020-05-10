@@ -30,7 +30,7 @@ module.exports = {
 
 	create: function ( context ) {
 		return {
-			CallExpression: function ( node ) {
+			'CallExpression:exit': function ( node ) {
 				if (
 					node.callee.type !== 'Identifier' ||
 					!utils.isjQueryConstructor( context, node.callee.name ) ||

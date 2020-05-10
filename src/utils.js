@@ -312,7 +312,7 @@ function createCollectionMethodRule( methods, message, options ) {
 
 	return createRule( function ( context ) {
 		return {
-			CallExpression: function ( node ) {
+			'CallExpression:exit': function ( node ) {
 				if ( node.callee.type !== 'MemberExpression' ) {
 					return;
 				}
@@ -355,7 +355,7 @@ function createCollectionPropertyRule( property, message, options ) {
 
 	return createRule( function ( context ) {
 		return {
-			MemberExpression: function ( node ) {
+			'MemberExpression:exit': function ( node ) {
 				const name = node.property.name;
 				if (
 					name !== property ||
@@ -397,7 +397,7 @@ function createUtilMethodRule( methods, message, options ) {
 
 	return createRule( function ( context ) {
 		return {
-			CallExpression: function ( node ) {
+			'CallExpression:exit': function ( node ) {
 				if ( node.callee.type !== 'MemberExpression' ) {
 					return;
 				}
@@ -438,7 +438,7 @@ function createUtilPropertyRule( property, message, options ) {
 
 	return createRule( function ( context ) {
 		return {
-			MemberExpression: function ( node ) {
+			'MemberExpression:exit': function ( node ) {
 				if ( !isjQueryConstructor( context, node.object.name ) ) {
 					return;
 				}
@@ -482,7 +482,7 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 
 	return createRule( function ( context ) {
 		return {
-			CallExpression: function ( node ) {
+			'CallExpression:exit': function ( node ) {
 				if ( node.callee.type !== 'MemberExpression' ) {
 					return;
 				}

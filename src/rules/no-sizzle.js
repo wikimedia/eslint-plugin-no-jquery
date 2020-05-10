@@ -63,7 +63,7 @@ module.exports = {
 		];
 
 		return {
-			CallExpression: function ( node ) {
+			'CallExpression:exit': function ( node ) {
 				if (
 					!node.arguments[ 0 ] ||
 					!utils.isjQuery( context, node.callee ) ||
