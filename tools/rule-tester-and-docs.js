@@ -161,12 +161,19 @@ class RuleTesterAndDocs extends RuleTester {
 				output
 			);
 		} else {
+			const nofix = process.argv.includes( '--nofix' );
 			// Filter out invalid top level property "noDoc", used in documentation building mode
 			tests.valid.forEach( ( test ) => {
 				delete test.noDoc;
+				if ( nofix ) {
+					delete test.output;
+				}
 			} );
 			tests.invalid.forEach( ( test ) => {
 				delete test.noDoc;
+				if ( nofix ) {
+					delete test.output;
+				}
 			} );
 			return super.run.call( this, name, rule, tests );
 		}

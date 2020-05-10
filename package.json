@@ -16,7 +16,7 @@
 	"scripts": {
 		"pretest": "eslint --report-unused-disable-directives .",
 		"test": "nyc mocha --reporter dot tests/** && git diff --exit-code docs/ src/ README.md",
-		"onlytest": "mocha --reporter dot tests/**",
+		"onlytest": "mocha --reporter dot tests/** --nofix",
 		"report": "nyc report --reporter=text-lcov > coverage.lcov",
 		"testpath": "mocha",
 		"doc": "rm -f docs/* && mocha --reporter dot tests/** --doc && node tools/build-readme.js",
