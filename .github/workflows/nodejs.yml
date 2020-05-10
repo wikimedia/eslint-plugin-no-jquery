@@ -23,6 +23,8 @@ jobs:
         npm run build --if-present
         npm test
         npm run report
+        npm i --no-save eslint@2.3.0
+        npm run onlytest
       env:
         CI: true
     - name: Upload coverage to Codecov
