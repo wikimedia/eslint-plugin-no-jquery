@@ -1,19 +1,32 @@
 /* eslint-env mocha */
 const eslint = require( 'eslint' );
 const RuleTester = eslint.RuleTester;
-const linter = new eslint.Linter();
-const cli = new eslint.CLIEngine();
-const config = cli.getConfigForFile( './src/index.js' );
 const fs = require( 'fs' );
 const rulesData = require( './rules-data' );
+let linter, config;
 
-// Restrict config used by verifyAndFix to fixable formatting rules
-const formattingRuleNames = [ 'array-bracket-spacing', 'block-spacing', 'brace-style', 'comma-dangle', 'comma-spacing', 'comma-style', 'computed-property-spacing', 'curly', 'dot-location', 'dot-notation', 'func-call-spacing', 'indent', 'key-spacing', 'keyword-spacing', 'linebreak-style', 'no-extra-semi', 'no-irregular-whitespace', 'no-mixed-spaces-and-tabs', 'no-multi-spaces', 'no-regex-spaces', 'no-tabs', 'no-trailing-spaces', 'no-whitespace-before-property', 'object-curly-spacing', 'operator-linebreak', 'quote-props', 'quotes', 'semi', 'semi-spacing', 'semi-style', 'space-before-blocks', 'space-before-function-paren', 'space-in-parens', 'space-infix-ops', 'space-unary-ops', 'spaced-comment', 'switch-colon-spacing', 'template-curly-spacing', 'wrap-iife' ];
-const formattingRules = {};
-formattingRuleNames.forEach( function ( ruleName ) {
-	formattingRules[ ruleName ] = config.rules[ ruleName ];
-} );
-config.rules = formattingRules;
+function getConfig() {
+	if ( !config ) {
+		const cli = new eslint.CLIEngine();
+		config = cli.getConfigForFile( './src/index.js' );
+
+		// Restrict config used by verifyAndFix to fixable formatting rules
+		const formattingRuleNames = [ 'array-bracket-spacing', 'block-spacing', 'brace-style', 'comma-dangle', 'comma-spacing', 'comma-style', 'computed-property-spacing', 'curly', 'dot-location', 'dot-notation', 'func-call-spacing', 'indent', 'key-spacing', 'keyword-spacing', 'linebreak-style', 'no-extra-semi', 'no-irregular-whitespace', 'no-mixed-spaces-and-tabs', 'no-multi-spaces', 'no-regex-spaces', 'no-tabs', 'no-trailing-spaces', 'no-whitespace-before-property', 'object-curly-spacing', 'operator-linebreak', 'quote-props', 'quotes', 'semi', 'semi-spacing', 'semi-style', 'space-before-blocks', 'space-before-function-paren', 'space-in-parens', 'space-infix-ops', 'space-unary-ops', 'spaced-comment', 'switch-colon-spacing', 'template-curly-spacing', 'wrap-iife' ];
+		const formattingRules = {};
+		formattingRuleNames.forEach( function ( ruleName ) {
+			formattingRules[ ruleName ] = config.rules[ ruleName ];
+		} );
+		config.rules = formattingRules;
+	}
+	return config;
+}
+
+function getLinter() {
+	if ( !linter ) {
+		linter = new eslint.Linter();
+	}
+	return linter;
+}
 
 function buildRuleDetails( tests, icon, showFixes ) {
 	let output = '';
@@ -21,6 +34,8 @@ function buildRuleDetails( tests, icon, showFixes ) {
 	let maxCodeLength;
 
 	function lintFix( code ) {
+		const linter = getLinter();
+		const config = getConfig();
 		return linter.verifyAndFix( code, config ).output.trim();
 	}
 
