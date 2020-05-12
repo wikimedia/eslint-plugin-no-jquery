@@ -57,7 +57,7 @@ module.exports = {
 
 	create: function ( context ) {
 		return {
-			CallExpression: function ( node ) {
+			'CallExpression:exit': function ( node ) {
 				let allowSingle,
 					message = 'Prefer DOM building to parsing HTML literals';
 

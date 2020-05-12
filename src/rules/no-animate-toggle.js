@@ -18,7 +18,7 @@ module.exports = {
 		const forbidden = [ 'show', 'hide', 'toggle' ];
 
 		return {
-			CallExpression: function ( node ) {
+			'CallExpression:exit': function ( node ) {
 				if (
 					node.callee.type !== 'MemberExpression' ||
 					forbidden.indexOf( node.callee.property.name ) === -1 ||
