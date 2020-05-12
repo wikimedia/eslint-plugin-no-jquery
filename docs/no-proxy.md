@@ -19,4 +19,4 @@ proxy();
 ```
 ## Rule source
 
-* [rules/no-proxy.js](../src/rules/no-proxy.js)
+* [src/rules/no-proxy.js](/src/rules/no-proxy.js)

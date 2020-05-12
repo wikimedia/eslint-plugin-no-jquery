@@ -19,4 +19,4 @@ sub();
 ```
 ## Rule source
 
-* [rules/no-sub.js](../src/rules/no-sub.js)
+* [src/rules/no-sub.js](/src/rules/no-sub.js)

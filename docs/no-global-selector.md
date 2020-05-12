@@ -50,4 +50,4 @@ $( '#id-foo_bar1' );
 ```
 ## Rule source
 
-* [rules/no-global-selector.js](../src/rules/no-global-selector.js)
+* [src/rules/no-global-selector.js](/src/rules/no-global-selector.js)

@@ -27,4 +27,4 @@ $div.selector( arg );
 ```
 ## Rule source
 
-* [rules/no-selector-prop.js](../src/rules/no-selector-prop.js)
+* [src/rules/no-selector-prop.js](/src/rules/no-selector-prop.js)

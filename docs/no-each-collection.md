@@ -22,4 +22,4 @@ $.each();
 ```
 ## Rule source
 
-* [rules/no-each-collection.js](../src/rules/no-each-collection.js)
+* [src/rules/no-each-collection.js](/src/rules/no-each-collection.js)

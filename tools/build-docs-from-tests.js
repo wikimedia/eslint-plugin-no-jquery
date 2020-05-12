@@ -1,6 +1,9 @@
 const eslint = require( 'eslint' );
 const linter = new eslint.Linter();
 const fs = require( 'fs' );
+const pluginName = 'no-jquery';
+const rulePath = 'src/rules/{name}.js';
+const docPath = 'docs/{name}.md';
 
 const rulesData = require( './rules-data' );
 const cli = new eslint.CLIEngine();
@@ -102,7 +105,7 @@ function buildDocsFromTests( name, rule, tests ) {
 
 	if ( name in rulesData ) {
 		output += rulesData[ name ].map( ( data ) =>
-			'This rule is enabled in `plugin:no-jquery/' + data.ruleset + '`' +
+			'This rule is enabled in `plugin:' + pluginName + '/' + data.ruleset + '`' +
 				// TODO: Create util to compare options to defaults
 				( data.options && Object.keys( data.options[ 0 ] ).length ?
 					' with `' + JSON.stringify( data.options ) + '` options' :
@@ -127,11 +130,13 @@ function buildDocsFromTests( name, rule, tests ) {
 		output += buildRuleDetails( tests.invalid.filter( ( test ) => !!test.output ), '🔧', true );
 	}
 
+	const path = rulePath.replace( '{name}', name );
+
 	output += '## Rule source\n\n';
-	output += '* [rules/' + name + '.js](../src/rules/' + name + '.js)\n';
+	output += '* [' + path + '](/' + path + ')\n';
 
 	fs.writeFile(
-		'docs/' + name + '.md',
+		docPath.replace( '{name}', name ),
 		output,
 		( err ) => {
 			if ( err ) {

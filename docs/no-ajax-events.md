@@ -34,4 +34,4 @@ $.ajaxSend();
 ```
 ## Rule source
 
-* [rules/no-ajax-events.js](../src/rules/no-ajax-events.js)
+* [src/rules/no-ajax-events.js](/src/rules/no-ajax-events.js)

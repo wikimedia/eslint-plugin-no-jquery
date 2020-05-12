@@ -24,4 +24,4 @@ $( 'div' ).append( $( 'input' ).find() );
 ```
 ## Rule source
 
-* [rules/no-find-util.js](../src/rules/no-find-util.js)
+* [src/rules/no-find-util.js](/src/rules/no-find-util.js)

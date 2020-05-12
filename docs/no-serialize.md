@@ -29,4 +29,4 @@ div.serializeArray;
 ```
 ## Rule source
 
-* [rules/no-serialize.js](../src/rules/no-serialize.js)
+* [src/rules/no-serialize.js](/src/rules/no-serialize.js)

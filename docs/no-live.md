@@ -31,4 +31,4 @@ div.die;
 ```
 ## Rule source
 
-* [rules/no-live.js](../src/rules/no-live.js)
+* [src/rules/no-live.js](/src/rules/no-live.js)

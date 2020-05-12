@@ -23,4 +23,4 @@ div.show;
 ```
 ## Rule source
 
-* [rules/no-show.js](../src/rules/no-show.js)
+* [src/rules/no-show.js](/src/rules/no-show.js)

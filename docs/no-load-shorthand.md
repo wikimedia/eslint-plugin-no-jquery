@@ -34,4 +34,4 @@ $div.load();                       /* → */ $div.trigger( 'load' );
 ```
 ## Rule source
 
-* [rules/no-load-shorthand.js](../src/rules/no-load-shorthand.js)
+* [src/rules/no-load-shorthand.js](/src/rules/no-load-shorthand.js)

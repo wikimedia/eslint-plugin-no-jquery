@@ -23,4 +23,4 @@ $( 'select' ).val().map();
 ```
 ## Rule source
 
-* [rules/no-map-collection.js](../src/rules/no-map-collection.js)
+* [src/rules/no-map-collection.js](/src/rules/no-map-collection.js)

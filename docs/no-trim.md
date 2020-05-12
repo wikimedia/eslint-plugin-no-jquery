@@ -21,4 +21,4 @@ $( 'input' ).data( 'foo' ).trim();
 ```
 ## Rule source
 
-* [rules/no-trim.js](../src/rules/no-trim.js)
+* [src/rules/no-trim.js](/src/rules/no-trim.js)

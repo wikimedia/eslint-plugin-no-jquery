@@ -17,4 +17,4 @@ parseHTML();
 ```
 ## Rule source
 
-* [rules/no-parse-html.js](../src/rules/no-parse-html.js)
+* [src/rules/no-parse-html.js](/src/rules/no-parse-html.js)

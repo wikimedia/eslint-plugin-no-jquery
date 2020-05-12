@@ -22,4 +22,4 @@ div.filter;
 ```
 ## Rule source
 
-* [rules/no-filter.js](../src/rules/no-filter.js)
+* [src/rules/no-filter.js](/src/rules/no-filter.js)

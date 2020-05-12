@@ -19,4 +19,4 @@ myMethod.type;
 ```
 ## Rule source
 
-* [rules/no-type.js](../src/rules/no-type.js)
+* [src/rules/no-type.js](/src/rules/no-type.js)

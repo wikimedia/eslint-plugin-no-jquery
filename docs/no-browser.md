@@ -22,4 +22,4 @@ $.browsers;
 ```
 ## Rule source
 
-* [rules/no-browser.js](../src/rules/no-browser.js)
+* [src/rules/no-browser.js](/src/rules/no-browser.js)

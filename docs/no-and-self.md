@@ -30,4 +30,4 @@ $( 'div' ).first().andSelf(); /* → */ $( 'div' ).first().addBack();
 ```
 ## Rule source
 
-* [rules/no-and-self.js](../src/rules/no-and-self.js)
+* [src/rules/no-and-self.js](/src/rules/no-and-self.js)

@@ -28,4 +28,4 @@ div.removeAttr;
 ```
 ## Rule source
 
-* [rules/no-attr.js](../src/rules/no-attr.js)
+* [src/rules/no-attr.js](/src/rules/no-attr.js)

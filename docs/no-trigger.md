@@ -21,4 +21,4 @@ div.trigger;
 ```
 ## Rule source
 
-* [rules/no-trigger.js](../src/rules/no-trigger.js)
+* [src/rules/no-trigger.js](/src/rules/no-trigger.js)

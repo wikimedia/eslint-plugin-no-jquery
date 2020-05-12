@@ -23,4 +23,4 @@ div.die;
 ```
 ## Rule source
 
-* [rules/no-die.js](../src/rules/no-die.js)
+* [src/rules/no-die.js](/src/rules/no-die.js)

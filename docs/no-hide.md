@@ -23,4 +23,4 @@ div.hide;
 ```
 ## Rule source
 
-* [rules/no-hide.js](../src/rules/no-hide.js)
+* [src/rules/no-hide.js](/src/rules/no-hide.js)

@@ -26,4 +26,4 @@ $( function () {} );
 ```
 ## Rule source
 
-* [rules/no-ready-shorthand.js](../src/rules/no-ready-shorthand.js)
+* [src/rules/no-ready-shorthand.js](/src/rules/no-ready-shorthand.js)
