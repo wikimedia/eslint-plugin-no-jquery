@@ -21,11 +21,13 @@ ruleTester.run( 'no-error-shorthand', rule, {
 		},
 		{
 			code: '$("div").first().error()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").first().trigger("error")'
 		},
 		{
 			code: '$("div").append($("input").error())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").append($("input").trigger("error"))'
 		}
 	]
 } );

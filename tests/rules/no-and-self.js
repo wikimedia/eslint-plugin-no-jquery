@@ -26,7 +26,8 @@ ruleTester.run( 'no-and-self', rule, {
 		},
 		{
 			code: '$("div").append($("input").andSelf())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").append($("input").addBack())'
 		}
 	]
 } );

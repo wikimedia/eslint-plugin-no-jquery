@@ -29,8 +29,12 @@ $div.load( couldBeUrl );
 
 🔧 Examples of code **fixed** by using  `--fix`:
 ```js
-$( 'div' ).load( function () {} ); /* → */ $( 'div' ).on( 'load', function () {} );
-$div.load();                       /* → */ $div.trigger( 'load' );
+$( 'div' ).load( function () {} );                        /* → */ $( 'div' ).on( 'load', function () {} );
+$div.load( function () {} );                              /* → */ $div.on( 'load', function () {} );
+$div.load();                                              /* → */ $div.trigger( 'load' );
+$div.load( () => {} );                                    /* → */ $div.on( 'load', () => {} );
+$( 'div' ).first().load( function () {} );                /* → */ $( 'div' ).first().on( 'load', function () {} );
+$( 'div' ).append( $( 'input' ).load( function () {} ) ); /* → */ $( 'div' ).append( $( 'input' ).on( 'load', function () {} ) );
 ```
 
 ## Resources

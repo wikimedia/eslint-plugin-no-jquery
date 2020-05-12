@@ -24,9 +24,10 @@ div.andSelf;
 
 🔧 Examples of code **fixed** by using  `--fix`:
 ```js
-$( 'div' ).andSelf( '.foo' ); /* → */ $( 'div' ).addBack( '.foo' );
-$div.andSelf( '.foo' );       /* → */ $div.addBack( '.foo' );
-$( 'div' ).first().andSelf(); /* → */ $( 'div' ).first().addBack();
+$( 'div' ).andSelf( '.foo' );                /* → */ $( 'div' ).addBack( '.foo' );
+$div.andSelf( '.foo' );                      /* → */ $div.addBack( '.foo' );
+$( 'div' ).first().andSelf();                /* → */ $( 'div' ).first().addBack();
+$( 'div' ).append( $( 'input' ).andSelf() ); /* → */ $( 'div' ).append( $( 'input' ).addBack() );
 ```
 
 ## Resources

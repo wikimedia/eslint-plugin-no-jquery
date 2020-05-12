@@ -25,8 +25,10 @@ $.error();
 
 🔧 Examples of code **fixed** by using  `--fix`:
 ```js
-$( 'div' ).error( handler ); /* → */ $( 'div' ).on( 'error', handler );
-$div.error();                /* → */ $div.trigger( 'error' );
+$( 'div' ).error( handler );               /* → */ $( 'div' ).on( 'error', handler );
+$div.error();                              /* → */ $div.trigger( 'error' );
+$( 'div' ).first().error();                /* → */ $( 'div' ).first().trigger( 'error' );
+$( 'div' ).append( $( 'input' ).error() ); /* → */ $( 'div' ).append( $( 'input' ).trigger( 'error' ) );
 ```
 
 ## Resources
