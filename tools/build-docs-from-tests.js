@@ -18,22 +18,34 @@ formattingRuleNames.forEach( function ( ruleName ) {
 config.rules = formattingRules;
 
 function buildRuleDetails( tests, icon, showFixes ) {
+
+	function lintFixList( codeList ) {
+		// Concatentate into one code block to improve performance
+		const separator = '\n/* - */\n';
+		const codeBlock = codeList.join( ';' + separator );
+		// Add an extra semicolon to avoid syntax error
+		return linter.verifyAndFix( codeBlock, config ).output
+			.split( separator ).map( ( code ) => code.trim() );
+	}
+
 	let output = '';
-	const testsByOptions = {};
 	let maxCodeLength;
+	const testsByOptions = {};
 
-	function lintFix( code ) {
-		return linter.verifyAndFix( code, config ).output.trim();
-	}
+	const fixedCode = lintFixList( tests.map( ( test ) => typeof test === 'string' ? test : test.code ) );
 
+	let fixedOutput;
 	if ( showFixes ) {
-		maxCodeLength = tests.reduce( function ( acc, test ) {
-			return Math.max( acc, lintFix( test.code ).trim().length );
+		maxCodeLength = fixedCode.reduce( function ( acc, code ) {
+			return Math.max( acc, code.length );
 		}, 0 );
+		fixedOutput = lintFixList( tests.map( ( test ) => test.output || 'null' ) );
 	}
 
-	tests.forEach( function ( test ) {
+	tests.forEach( function ( test, i ) {
 		let options = '';
+		const code = fixedCode[ i ];
+
 		if ( test.noDoc ) {
 			return;
 		}
@@ -45,16 +57,13 @@ function buildRuleDetails( tests, icon, showFixes ) {
 		}
 		testsByOptions[ options ] = testsByOptions[ options ] || [];
 		if ( showFixes && test.output ) {
-			const code = lintFix( test.code ).trim();
 			testsByOptions[ options ].push(
 				code + ' '.repeat( Math.max( 0, maxCodeLength - code.length ) ) +
 				' /* → */ ' +
-				lintFix( test.output )
+				fixedOutput[ i ]
 			);
 		} else {
-			testsByOptions[ options ].push(
-				lintFix( typeof test === 'string' ? test : test.code )
-			);
+			testsByOptions[ options ].push( code );
 		}
 	} );
 
