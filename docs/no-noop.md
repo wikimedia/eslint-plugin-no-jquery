@@ -25,4 +25,4 @@ $.noop(); /* → */ ( function () {}() );
 ```
 ## Rule source
 
-* [rules/no-noop.js](../src/rules/no-noop.js)
+* [src/rules/no-noop.js](/src/rules/no-noop.js)

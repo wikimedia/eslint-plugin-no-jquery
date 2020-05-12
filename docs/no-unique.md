@@ -24,4 +24,4 @@ $.unique( [] ); /* → */ $.uniqueSort( [] );
 ```
 ## Rule source
 
-* [rules/no-unique.js](../src/rules/no-unique.js)
+* [src/rules/no-unique.js](/src/rules/no-unique.js)

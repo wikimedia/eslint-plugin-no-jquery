@@ -19,4 +19,4 @@ $div.nodeName();
 ```
 ## Rule source
 
-* [rules/no-node-name.js](../src/rules/no-node-name.js)
+* [src/rules/no-node-name.js](/src/rules/no-node-name.js)

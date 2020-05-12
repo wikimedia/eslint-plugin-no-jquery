@@ -19,4 +19,4 @@ $when();
 ```
 ## Rule source
 
-* [rules/no-when.js](../src/rules/no-when.js)
+* [src/rules/no-when.js](/src/rules/no-when.js)

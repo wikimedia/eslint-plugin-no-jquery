@@ -19,4 +19,4 @@ $div.isNumeric();
 ```
 ## Rule source
 
-* [rules/no-is-numeric.js](../src/rules/no-is-numeric.js)
+* [src/rules/no-is-numeric.js](/src/rules/no-is-numeric.js)

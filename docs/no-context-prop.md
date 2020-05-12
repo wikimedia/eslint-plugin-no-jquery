@@ -27,4 +27,4 @@ $div.context( arg );
 ```
 ## Rule source
 
-* [rules/no-context-prop.js](../src/rules/no-context-prop.js)
+* [src/rules/no-context-prop.js](/src/rules/no-context-prop.js)

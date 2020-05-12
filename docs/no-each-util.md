@@ -22,4 +22,4 @@ $( 'div' ).append( $( 'input' ).each() );
 ```
 ## Rule source
 
-* [rules/no-each-util.js](../src/rules/no-each-util.js)
+* [src/rules/no-each-util.js](/src/rules/no-each-util.js)

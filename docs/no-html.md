@@ -21,4 +21,4 @@ div.html;
 ```
 ## Rule source
 
-* [rules/no-html.js](../src/rules/no-html.js)
+* [src/rules/no-html.js](/src/rules/no-html.js)

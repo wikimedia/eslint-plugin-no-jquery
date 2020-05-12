@@ -31,4 +31,4 @@ div.undelegate;
 ```
 ## Rule source
 
-* [rules/no-delegate.js](../src/rules/no-delegate.js)
+* [src/rules/no-delegate.js](/src/rules/no-delegate.js)

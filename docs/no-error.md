@@ -17,4 +17,4 @@ $div.nodeName();
 ```
 ## Rule source
 
-* [rules/no-error.js](../src/rules/no-error.js)
+* [src/rules/no-error.js](/src/rules/no-error.js)

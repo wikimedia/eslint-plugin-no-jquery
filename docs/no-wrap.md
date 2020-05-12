@@ -45,4 +45,4 @@ div.unwrap;
 ```
 ## Rule source
 
-* [rules/no-wrap.js](../src/rules/no-wrap.js)
+* [src/rules/no-wrap.js](/src/rules/no-wrap.js)

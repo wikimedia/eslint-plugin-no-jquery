@@ -21,4 +21,4 @@ form.submit;
 ```
 ## Rule source
 
-* [rules/no-submit.js](../src/rules/no-submit.js)
+* [src/rules/no-submit.js](/src/rules/no-submit.js)

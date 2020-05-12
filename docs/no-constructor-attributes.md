@@ -23,4 +23,4 @@ $div.add( '<div>', context );
 ```
 ## Rule source
 
-* [rules/no-constructor-attributes.js](../src/rules/no-constructor-attributes.js)
+* [src/rules/no-constructor-attributes.js](/src/rules/no-constructor-attributes.js)

@@ -31,4 +31,4 @@ $();
 ```
 ## Rule source
 
-* [rules/no-ready.js](../src/rules/no-ready.js)
+* [src/rules/no-ready.js](/src/rules/no-ready.js)

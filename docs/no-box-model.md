@@ -21,4 +21,4 @@ a.boxModel.foo;
 ```
 ## Rule source
 
-* [rules/no-box-model.js](../src/rules/no-box-model.js)
+* [src/rules/no-box-model.js](/src/rules/no-box-model.js)

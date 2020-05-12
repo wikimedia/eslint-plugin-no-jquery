@@ -55,4 +55,4 @@ ruleTester.run( 'settings', rule, {
 			errors: [ { message: error, type: 'CallExpression' } ]
 		}
 	]
-} );
+}, true );

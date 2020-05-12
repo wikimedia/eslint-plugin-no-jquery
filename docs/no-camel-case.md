@@ -19,4 +19,4 @@ $div.camelCase();
 ```
 ## Rule source
 
-* [rules/no-camel-case.js](../src/rules/no-camel-case.js)
+* [src/rules/no-camel-case.js](/src/rules/no-camel-case.js)
