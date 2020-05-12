@@ -28,7 +28,7 @@ module.exports = {
 		}
 
 		return {
-			CallExpression: enforce,
+			'CallExpression:exit': enforce,
 			NewExpression: enforce
 		};
 	}

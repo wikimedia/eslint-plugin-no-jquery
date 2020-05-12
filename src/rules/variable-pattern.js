@@ -28,10 +28,10 @@ module.exports = {
 		}
 
 		return {
-			AssignmentExpression: function ( node ) {
+			'AssignmentExpression:exit': function ( node ) {
 				test( node, node.left, node.right );
 			},
-			VariableDeclarator: function ( node ) {
+			'VariableDeclarator:exit': function ( node ) {
 				test( node, node.id, node.init );
 			}
 		};

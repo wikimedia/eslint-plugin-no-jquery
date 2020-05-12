@@ -72,7 +72,7 @@ const parentCreate = rule.create;
 rule.create = function ( context ) {
 	const rules = parentCreate( context );
 	return {
-		CallExpression: function ( node ) {
+		'CallExpression:exit': function ( node ) {
 			if (
 				node.callee.type === 'MemberExpression' &&
 				context.options[ 0 ] && context.options[ 0 ].allowAjaxEvents
@@ -82,7 +82,7 @@ rule.create = function ( context ) {
 					return;
 				}
 			}
-			return rules.CallExpression( node );
+			return rules[ 'CallExpression:exit' ]( node );
 		}
 	};
 };

@@ -32,7 +32,7 @@ module.exports = {
 
 	create: function ( context ) {
 		return {
-			CallExpression: function ( node ) {
+			'CallExpression:exit': function ( node ) {
 				if ( isDirect( context, node ) || isChained( context, node ) ) {
 					context.report( {
 						node: node,

@@ -13,7 +13,7 @@ module.exports = {
 
 	create: function ( context ) {
 		return {
-			CallExpression: function ( node ) {
+			'CallExpression:exit': function ( node ) {
 				if (
 					node.callee.type !== 'MemberExpression' ||
 					node.callee.property.name !== 'on'
