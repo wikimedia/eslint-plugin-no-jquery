@@ -17,10 +17,15 @@ const allMethods = Object.keys( $.fn )
 	)
 	.sort();
 
-fs.writeFileSync(
+fs.writeFile(
 	'src/all-methods.js',
 	'<!-- This file is built by build-all-methods.js; do not edit it directly. -->\n' +
 	'module.exports = ' +
 	JSON.stringify( allMethods, null, '\t' ).replace( /"/g, '\'' ) +
-	';\n'
+	';\n',
+	( err ) => {
+		if ( err ) {
+			throw err;
+		}
+	}
 );

@@ -28,10 +28,15 @@ function getRules( deprecated ) {
 	).filter( ( rule ) => rule ).join( '\n' );
 }
 
-fs.writeFileSync(
+fs.writeFile(
 	'README.md',
 	'<!-- This file is built by build-readme.js. Do not edit it directly; edit README.md.template instead. -->\n' +
 	template
 		.replace( '<!-- rules -->', getRules( false ) )
-		.replace( '<!-- deprecated -->', getRules( true ) )
+		.replace( '<!-- deprecated -->', getRules( true ) ),
+	( err ) => {
+		if ( err ) {
+			throw err;
+		}
+	}
 );
