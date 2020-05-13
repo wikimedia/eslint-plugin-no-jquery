@@ -26,6 +26,7 @@ $( function () {} );
 document.on( 'ready' );
 document.on( 'ready', function () {} );
 ```
+
 ## Rule source
 
 * [src/rules/no-on-ready.js](/src/rules/no-on-ready.js)

@@ -15,6 +15,7 @@ param();
 'test'.param();
 'test'.param;
 ```
+
 ## Rule source
 
 * [src/rules/no-param.js](/src/rules/no-param.js)

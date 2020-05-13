@@ -19,6 +19,7 @@ trim( ' test ' );
 $( 'input' ).text().trim();
 $( 'input' ).data( 'foo' ).trim();
 ```
+
 ## Rule source
 
 * [src/rules/no-trim.js](/src/rules/no-trim.js)

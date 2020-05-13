@@ -48,6 +48,7 @@ $( '#' );
 $( '#id' );
 $( '#id-foo_bar1' );
 ```
+
 ## Rule source
 
 * [src/rules/no-global-selector.js](/src/rules/no-global-selector.js)

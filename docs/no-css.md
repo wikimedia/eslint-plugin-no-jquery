@@ -20,6 +20,7 @@ css();
 div.css();
 div.css;
 ```
+
 ## Rule source
 
 * [src/rules/no-css.js](/src/rules/no-css.js)

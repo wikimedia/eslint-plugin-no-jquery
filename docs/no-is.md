@@ -19,6 +19,7 @@ is();
 div.is();
 div.is;
 ```
+
 ## Rule source
 
 * [src/rules/no-is.js](/src/rules/no-is.js)

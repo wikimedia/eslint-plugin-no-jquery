@@ -20,6 +20,7 @@ browser.foo;
 a.browser.foo;
 $.browsers;
 ```
+
 ## Rule source
 
 * [src/rules/no-browser.js](/src/rules/no-browser.js)

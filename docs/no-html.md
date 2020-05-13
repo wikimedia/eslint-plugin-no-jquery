@@ -19,6 +19,7 @@ html();
 div.html();
 div.html;
 ```
+
 ## Rule source
 
 * [src/rules/no-html.js](/src/rules/no-html.js)

@@ -37,6 +37,7 @@ slideUp();
 div.slideUp();
 div.slideUp;
 ```
+
 ## Rule source
 
 * [src/rules/no-slide.js](/src/rules/no-slide.js)

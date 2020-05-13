@@ -17,6 +17,7 @@ holdReady();
 'test'.holdReady();
 'test'.holdReady;
 ```
+
 ## Rule source
 
 * [src/rules/no-hold-ready.js](/src/rules/no-hold-ready.js)

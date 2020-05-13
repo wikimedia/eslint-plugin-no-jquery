@@ -20,6 +20,7 @@ $div.each();
 $( 'div' ).first().each();
 $( 'div' ).append( $( 'input' ).each() );
 ```
+
 ## Rule source
 
 * [src/rules/no-each-util.js](/src/rules/no-each-util.js)

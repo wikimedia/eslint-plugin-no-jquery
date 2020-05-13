@@ -20,6 +20,7 @@ text();
 div.text();
 div.text;
 ```
+
 ## Rule source
 
 * [src/rules/no-text.js](/src/rules/no-text.js)

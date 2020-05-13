@@ -29,6 +29,7 @@ div.toggleClass;
 $div.toggleClass( 'myClass', true );
 $div.toggleClass( 'myClass', false );
 ```
+
 ## Rule source
 
 * [src/rules/no-class-state.js](/src/rules/no-class-state.js)

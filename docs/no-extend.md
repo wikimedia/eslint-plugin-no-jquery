@@ -24,6 +24,7 @@ myMethod.extend;
 ```js
 $.extend( true, {}, foo );
 ```
+
 ## Rule source
 
 * [src/rules/no-extend.js](/src/rules/no-extend.js)
