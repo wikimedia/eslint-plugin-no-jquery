@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-parent' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Node#parentElement to .parent';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-parent', rule, {
 	valid: [ 'parent()', '[].parent()', 'div.parent()', 'div.parent' ],
 	invalid: [

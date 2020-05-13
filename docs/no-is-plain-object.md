@@ -16,6 +16,7 @@ myClass.isPlainObject();
 $div.isPlainObject();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-is-plain-object.js](/src/rules/no-is-plain-object.js)
+* [Rule source](/src/rules/no-is-plain-object.js)
+* [Test source](/src/tests/no-is-plain-object.js)

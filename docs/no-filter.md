@@ -21,6 +21,7 @@ div.filter();
 div.filter;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-filter.js](/src/rules/no-filter.js)
+* [Rule source](/src/rules/no-filter.js)
+* [Test source](/src/tests/no-filter.js)

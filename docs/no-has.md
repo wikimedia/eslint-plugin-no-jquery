@@ -20,6 +20,7 @@ div.has();
 div.has;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-has.js](/src/rules/no-has.js)
+* [Rule source](/src/rules/no-has.js)
+* [Test source](/src/tests/no-has.js)

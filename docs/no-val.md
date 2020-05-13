@@ -20,6 +20,7 @@ div.val();
 div.val;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-val.js](/src/rules/no-val.js)
+* [Rule source](/src/rules/no-val.js)
+* [Test source](/src/tests/no-val.js)

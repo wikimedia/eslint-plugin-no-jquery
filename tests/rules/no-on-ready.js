@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-on-ready' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = '.on("ready") is not allowed';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-on-ready', rule, {
 	valid: [
 		'$(document).on("click", function(){})',

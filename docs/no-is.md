@@ -20,6 +20,7 @@ div.is();
 div.is;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-is.js](/src/rules/no-is.js)
+* [Rule source](/src/rules/no-is.js)
+* [Test source](/src/tests/no-is.js)

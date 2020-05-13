@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-in-array' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Array#indexOf to $.inArray';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-in-array', rule, {
 	valid: [ 'inArray()', '"test".inArray()', '"test".inArray' ],
 	invalid: [

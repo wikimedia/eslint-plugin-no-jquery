@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-when' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Promise.all to $.when';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-when', rule, {
 	valid: [ 'When()', 'new When()', '"test".when()', '"test".when', '$when()' ],
 	invalid: [

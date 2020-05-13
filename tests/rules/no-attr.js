@@ -1,13 +1,13 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-attr' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const getError = 'Prefer Element#getAttribute to .attr/$.attr';
 const setError = 'Prefer Element#setAttribute to .attr/$.attr';
 const removeError = 'Prefer Element#removeAttribute to .removeAttr/$.removeAttr';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-attr', rule, {
 	valid: [ 'attr()', '[].attr()', 'div.attr()', 'div.attr', 'removeAttr()', 'div.removeAttr' ],
 	invalid: [

@@ -1,13 +1,13 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-parse-html-literal' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer DOM building to parsing HTML literals';
 const errorMinimal = 'Single tag must use the format: <tagname>';
 const errorSelfClosing = 'Single tag must use the format: <tagname/>';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-parse-html-literal', rule, {
 	valid: [
 		// $( html )

@@ -22,6 +22,7 @@ div.show();
 div.show;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-show.js](/src/rules/no-show.js)
+* [Rule source](/src/rules/no-show.js)
+* [Test source](/src/tests/no-show.js)

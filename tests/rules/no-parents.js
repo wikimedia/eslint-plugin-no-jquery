@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-parents' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Element#closest to .parents';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-parents', rule, {
 	valid: [ 'parents()', '[].parents()', 'div.parents()', 'div.parents' ],
 	invalid: [

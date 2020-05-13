@@ -18,6 +18,7 @@ myMethod.type();
 myMethod.type;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-type.js](/src/rules/no-type.js)
+* [Rule source](/src/rules/no-type.js)
+* [Test source](/src/tests/no-type.js)

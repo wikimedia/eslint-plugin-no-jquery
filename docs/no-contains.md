@@ -16,6 +16,7 @@ myClass.contains();
 $div.contains();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-contains.js](/src/rules/no-contains.js)
+* [Rule source](/src/rules/no-contains.js)
+* [Test source](/src/tests/no-contains.js)

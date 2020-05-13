@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-map-util' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Array#map to $.map';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-map-util', rule, {
 	valid: [
 		'map()',

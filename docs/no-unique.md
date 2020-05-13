@@ -23,6 +23,7 @@ unique();
 $.unique( [] ); /* → */ $.uniqueSort( [] );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-unique.js](/src/rules/no-unique.js)
+* [Rule source](/src/rules/no-unique.js)
+* [Test source](/src/tests/no-unique.js)

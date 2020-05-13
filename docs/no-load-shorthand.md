@@ -33,6 +33,7 @@ $( 'div' ).load( function () {} ); /* → */ $( 'div' ).on( 'load', function () 
 $div.load();                       /* → */ $div.trigger( 'load' );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-load-shorthand.js](/src/rules/no-load-shorthand.js)
+* [Rule source](/src/rules/no-load-shorthand.js)
+* [Test source](/src/tests/no-load-shorthand.js)

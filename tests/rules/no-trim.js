@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-trim' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer String#trim to $.trim';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-trim', rule, {
 	valid: [
 		'trim(" test ")',

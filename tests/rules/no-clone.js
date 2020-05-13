@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-clone' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Node#cloneNode to .clone/$.clone';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-clone', rule, {
 	valid: [
 		'clone()',

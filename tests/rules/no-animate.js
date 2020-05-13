@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-animate' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer CSS transitions or CSS scroll-behaviour to .animate';
 const errorNoScroll = 'Prefer CSS transitions to .animate';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-animate', rule, {
 	valid: [
 		'animate()',

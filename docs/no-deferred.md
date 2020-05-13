@@ -18,6 +18,7 @@ new Deferred();
 'test'.Deferred;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-deferred.js](/src/rules/no-deferred.js)
+* [Rule source](/src/rules/no-deferred.js)
+* [Test source](/src/tests/no-deferred.js)

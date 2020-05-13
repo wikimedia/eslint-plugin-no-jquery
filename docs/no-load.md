@@ -23,6 +23,7 @@ div.load;
 $.load();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-load.js](/src/rules/no-load.js)
+* [Rule source](/src/rules/no-load.js)
+* [Test source](/src/tests/no-load.js)

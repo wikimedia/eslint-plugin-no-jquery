@@ -34,6 +34,7 @@ div.post();
 div.post;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-ajax.js](/src/rules/no-ajax.js)
+* [Rule source](/src/rules/no-ajax.js)
+* [Test source](/src/tests/no-ajax.js)

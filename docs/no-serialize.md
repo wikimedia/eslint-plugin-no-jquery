@@ -28,6 +28,7 @@ div.serializeArray();
 div.serializeArray;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-serialize.js](/src/rules/no-serialize.js)
+* [Rule source](/src/rules/no-serialize.js)
+* [Test source](/src/tests/no-serialize.js)

@@ -24,6 +24,7 @@ $( 'div' ).toArray().map();
 $( 'select' ).val().map();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-map.js](/src/rules/no-map.js)
+* [Rule source](/src/rules/no-map.js)
+* [Test source](/src/tests/no-map.js)

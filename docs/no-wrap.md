@@ -44,6 +44,7 @@ div.unwrap();
 div.unwrap;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-wrap.js](/src/rules/no-wrap.js)
+* [Rule source](/src/rules/no-wrap.js)
+* [Test source](/src/tests/no-wrap.js)

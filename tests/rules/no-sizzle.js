@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-sizzle' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Selector extensions are not allowed';
 const errorPositional = 'Positional selector extensions are not allowed';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-sizzle', rule, {
 	valid: [
 		'find(":input")',

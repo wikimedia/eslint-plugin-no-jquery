@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-trigger' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer EventTarget#dispatchEvent to .trigger';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-trigger', rule, {
 	valid: [ 'trigger()', '[].trigger()', 'div.trigger()', 'div.trigger' ],
 	invalid: [

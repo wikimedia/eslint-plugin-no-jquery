@@ -20,6 +20,7 @@ div.html();
 div.html;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-html.js](/src/rules/no-html.js)
+* [Rule source](/src/rules/no-html.js)
+* [Test source](/src/tests/no-html.js)

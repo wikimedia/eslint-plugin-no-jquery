@@ -29,6 +29,7 @@ $div.andSelf( '.foo' );       /* → */ $div.addBack( '.foo' );
 $( 'div' ).first().andSelf(); /* → */ $( 'div' ).first().addBack();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-and-self.js](/src/rules/no-and-self.js)
+* [Rule source](/src/rules/no-and-self.js)
+* [Test source](/src/tests/no-and-self.js)

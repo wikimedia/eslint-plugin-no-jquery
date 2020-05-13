@@ -25,6 +25,7 @@ $.isFunction( expression( arg ) ); /* → */ typeof expression( arg ) === 'funct
 if ( $.isFunction( fn ) ) { g(); } /* → */ if ( typeof fn === 'function' ) { g(); }
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-is-function.js](/src/rules/no-is-function.js)
+* [Rule source](/src/rules/no-is-function.js)
+* [Test source](/src/tests/no-is-function.js)

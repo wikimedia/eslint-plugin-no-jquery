@@ -17,11 +17,13 @@ $div.animate( { scrollLeft: 200 } );
 $div.animate( { scrollTop: 100, scrollLeft: 200 } );
 $div.animate( { scrollTop: 100, width: 300 } );
 ```
+
 ❌ With `[{"allowScroll":true}]` options:
 ```js
 $div.animate();
 $div.animate( { scrollTop: 100, width: 300 } );
 ```
+
 ❌ With `[{"allowScroll":false}]` options:
 ```js
 $div.animate( { scrollTop: 100 } );
@@ -34,6 +36,7 @@ animate();
 div.animate();
 div.animate;
 ```
+
 ✔️ With `[{"allowScroll":true}]` options:
 ```js
 $div.animate( { scrollTop: 100 } );
@@ -41,6 +44,7 @@ $div.animate( { scrollLeft: 200 } );
 $div.animate( { scrollTop: 100, scrollLeft: 200 } );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-animate.js](/src/rules/no-animate.js)
+* [Rule source](/src/rules/no-animate.js)
+* [Test source](/src/tests/no-animate.js)

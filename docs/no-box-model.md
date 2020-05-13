@@ -20,6 +20,7 @@ boxModel.foo;
 a.boxModel.foo;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-box-model.js](/src/rules/no-box-model.js)
+* [Rule source](/src/rules/no-box-model.js)
+* [Test source](/src/tests/no-box-model.js)

@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-toggle' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = '.toggle is not allowed. This rule is deprecated, use no-visibility.';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-toggle', rule, {
 	valid: [ 'toggle()', '[].toggle()', 'div.toggle()', 'div.toggle' ],
 	invalid: [

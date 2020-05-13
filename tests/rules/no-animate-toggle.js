@@ -1,13 +1,13 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-animate-toggle' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const showError = 'Prefer CSS transitions to .show';
 const hideError = 'Prefer CSS transitions to .hide';
 const toggleError = 'Prefer CSS transitions to .toggle';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-animate-toggle', rule, {
 	valid: [
 		'$div.show()',

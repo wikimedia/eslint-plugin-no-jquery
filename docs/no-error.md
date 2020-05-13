@@ -16,6 +16,7 @@ myClass.nodeName();
 $div.nodeName();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-error.js](/src/rules/no-error.js)
+* [Rule source](/src/rules/no-error.js)
+* [Test source](/src/tests/no-error.js)

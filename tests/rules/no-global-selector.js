@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-global-selector' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Avoid queries which search the entire DOM. Keep DOM nodes in memory where possible.';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-global-selector', rule, {
 	valid: [
 		'$("<div>")',

@@ -20,6 +20,7 @@ div.closest();
 div.closest;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-closest.js](/src/rules/no-closest.js)
+* [Rule source](/src/rules/no-closest.js)
+* [Test source](/src/tests/no-closest.js)

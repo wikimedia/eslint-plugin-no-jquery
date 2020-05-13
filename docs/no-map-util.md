@@ -22,6 +22,7 @@ $( 'div' ).append( $( 'input' ).map() );
 $( 'select' ).val().map();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-map-util.js](/src/rules/no-map-util.js)
+* [Rule source](/src/rules/no-map-util.js)
+* [Test source](/src/tests/no-map-util.js)

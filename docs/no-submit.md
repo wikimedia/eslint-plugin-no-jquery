@@ -20,6 +20,7 @@ form.submit();
 form.submit;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-submit.js](/src/rules/no-submit.js)
+* [Rule source](/src/rules/no-submit.js)
+* [Test source](/src/tests/no-submit.js)

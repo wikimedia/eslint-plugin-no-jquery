@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-hide' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = '.hide is not allowed. This rule is deprecated, use no-visibility.';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-hide', rule, {
 	valid: [ 'hide()', '[].hide()', 'div.hide()', 'div.hide' ],
 	invalid: [

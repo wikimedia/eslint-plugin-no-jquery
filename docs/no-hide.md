@@ -22,6 +22,7 @@ div.hide();
 div.hide;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-hide.js](/src/rules/no-hide.js)
+* [Rule source](/src/rules/no-hide.js)
+* [Test source](/src/tests/no-hide.js)

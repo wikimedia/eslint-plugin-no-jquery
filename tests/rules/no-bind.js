@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-bind' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const bindError = 'Prefer .on/EventTarget#addEventListener to .bind';
 const unbindError = 'Prefer .off/EventTarget#removeEventListener to .unbind';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-bind', rule, {
 	valid: [
 		'bind()',

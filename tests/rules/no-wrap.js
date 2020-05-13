@@ -1,14 +1,14 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-wrap' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const wrapError = '.wrap is not allowed';
 const wrapAllError = '.wrapAll is not allowed';
 const wrapInnerError = '.wrapInner is not allowed';
 const unwrapError = '.unwrap is not allowed';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-wrap', rule, {
 	valid: [
 		'wrap()',

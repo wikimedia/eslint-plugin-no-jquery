@@ -30,6 +30,7 @@ $( document );
 $();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-ready.js](/src/rules/no-ready.js)
+* [Rule source](/src/rules/no-ready.js)
+* [Test source](/src/tests/no-ready.js)

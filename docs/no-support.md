@@ -20,6 +20,7 @@ support.foo;
 a.support.foo;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-support.js](/src/rules/no-support.js)
+* [Rule source](/src/rules/no-support.js)
+* [Test source](/src/tests/no-support.js)

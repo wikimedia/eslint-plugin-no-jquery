@@ -33,6 +33,7 @@ div.hasData();
 div.hasData;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-data.js](/src/rules/no-data.js)
+* [Rule source](/src/rules/no-data.js)
+* [Test source](/src/tests/no-data.js)

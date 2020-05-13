@@ -33,6 +33,7 @@ form.ajaxSend();
 $.ajaxSend();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-ajax-events.js](/src/rules/no-ajax-events.js)
+* [Rule source](/src/rules/no-ajax-events.js)
+* [Test source](/src/tests/no-ajax-events.js)

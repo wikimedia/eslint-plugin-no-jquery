@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-merge' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Array#concat to $.merge';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-merge', rule, {
 	valid: [ 'merge()', '"test".merge()', '"test".merge' ],
 	invalid: [

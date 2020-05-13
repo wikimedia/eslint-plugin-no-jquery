@@ -18,6 +18,7 @@ myClass.isNumeric();
 $div.isNumeric();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-is-numeric.js](/src/rules/no-is-numeric.js)
+* [Rule source](/src/rules/no-is-numeric.js)
+* [Test source](/src/tests/no-is-numeric.js)

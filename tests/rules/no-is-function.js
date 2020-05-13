@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-is-function' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer typeof to $.isFunction';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-is-function', rule, {
 	valid: [ 'isFunction()', 'myClass.isFunction()', '$div.isFunction()' ],
 	invalid: [

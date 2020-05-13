@@ -9,6 +9,7 @@ Disallows the [`$.extend`](https://api.jquery.com/jQuery.extend/) utility. Prefe
 $.extend( {}, foo );
 $.extend( true, {}, foo );
 ```
+
 ❌ With `[{"allowDeep":true}]` options:
 ```js
 $.extend( {}, foo );
@@ -20,11 +21,13 @@ extend();
 myMethod.extend();
 myMethod.extend;
 ```
+
 ✔️ With `[{"allowDeep":true}]` options:
 ```js
 $.extend( true, {}, foo );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-extend.js](/src/rules/no-extend.js)
+* [Rule source](/src/rules/no-extend.js)
+* [Test source](/src/tests/no-extend.js)

@@ -30,6 +30,7 @@ $( 'div' ).first().size();                /* → */ $( 'div' ).first().length;
 $( 'div' ).append( $( 'input' ).size() ); /* → */ $( 'div' ).append( $( 'input' ).length );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-size.js](/src/rules/no-size.js)
+* [Rule source](/src/rules/no-size.js)
+* [Test source](/src/tests/no-size.js)

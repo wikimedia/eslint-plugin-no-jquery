@@ -21,6 +21,7 @@ div.each;
 $.each();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-each-collection.js](/src/rules/no-each-collection.js)
+* [Rule source](/src/rules/no-each-collection.js)
+* [Test source](/src/tests/no-each-collection.js)

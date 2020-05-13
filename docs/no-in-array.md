@@ -16,6 +16,7 @@ inArray();
 'test'.inArray;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-in-array.js](/src/rules/no-in-array.js)
+* [Rule source](/src/rules/no-in-array.js)
+* [Test source](/src/tests/no-in-array.js)

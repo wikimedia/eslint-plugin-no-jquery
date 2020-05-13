@@ -24,6 +24,7 @@ $.noop;   /* → */ ( function () {} );
 $.noop(); /* → */ ( function () {}() );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-noop.js](/src/rules/no-noop.js)
+* [Rule source](/src/rules/no-noop.js)
+* [Test source](/src/tests/no-noop.js)
