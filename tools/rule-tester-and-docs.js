@@ -6,12 +6,8 @@ const nofixMode = process.argv.includes( '--nofix' );
  * Extends ESLint's RuleTester to also build documentation
  */
 class RuleTesterAndDocs extends RuleTester {
-	run( name, rule, tests, noDoc ) {
+	run( name, rule, tests ) {
 		if ( docMode ) {
-			if ( noDoc ) {
-				return;
-			}
-
 			const buildDocsFromTests = require( './build-docs-from-tests' );
 			buildDocsFromTests( name, rule, tests );
 		} else {
