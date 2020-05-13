@@ -1,13 +1,13 @@
 'use strict';
 
 const rule = require( '../src/rules/no-each' );
-const RuleTesterAndDocs = require( '../tools/rule-tester-and-docs' );
+const RuleTester = require( 'eslint' ).RuleTester;
 
 const error = 'Prefer Array#forEach to .each/$.each';
 
 const extendedPattern = '^\\$.|^element$';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'settings', rule, {
 	valid: [
 		'jq("div").each()',
@@ -55,4 +55,4 @@ ruleTester.run( 'settings', rule, {
 			errors: [ { message: error, type: 'CallExpression' } ]
 		}
 	]
-}, true );
+} );
