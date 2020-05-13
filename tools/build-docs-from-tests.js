@@ -139,6 +139,8 @@ function buildDocsFromTests( name, rule, tests ) {
 		output += buildRuleDetails( tests.invalid.filter( ( test ) => !!test.output ), '🔧', true );
 	}
 
+	output += '\n';
+
 	const path = rulePath.replace( '{name}', name );
 
 	output += '## Rule source\n\n';

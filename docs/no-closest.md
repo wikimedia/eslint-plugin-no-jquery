@@ -19,6 +19,7 @@ closest();
 div.closest();
 div.closest;
 ```
+
 ## Rule source
 
 * [src/rules/no-closest.js](/src/rules/no-closest.js)

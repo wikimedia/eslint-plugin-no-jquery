@@ -17,6 +17,7 @@ parseXML();
 'test'.parseXML();
 'test'.parseXML;
 ```
+
 ## Rule source
 
 * [src/rules/no-parse-xml.js](/src/rules/no-parse-xml.js)

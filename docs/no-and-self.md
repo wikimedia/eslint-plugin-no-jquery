@@ -28,6 +28,7 @@ $( 'div' ).andSelf( '.foo' ); /* → */ $( 'div' ).addBack( '.foo' );
 $div.andSelf( '.foo' );       /* → */ $div.addBack( '.foo' );
 $( 'div' ).first().andSelf(); /* → */ $( 'div' ).first().addBack();
 ```
+
 ## Rule source
 
 * [src/rules/no-and-self.js](/src/rules/no-and-self.js)

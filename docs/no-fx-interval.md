@@ -19,6 +19,7 @@ $.interval;
 a.fx.interval;
 $.fx;
 ```
+
 ## Rule source
 
 * [src/rules/no-fx-interval.js](/src/rules/no-fx-interval.js)

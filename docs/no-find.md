@@ -22,6 +22,7 @@ div.find;
 $.extend().find();
 $div.myPlugin( 'foo' ).find();
 ```
+
 ## Rule source
 
 * [src/rules/no-find.js](/src/rules/no-find.js)

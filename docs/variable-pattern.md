@@ -141,6 +141,7 @@ obj = $( '<div>' ).datePicker( 'name' );
 ```js
 obj = $( '<div>' ).datePicker( 'name', options );
 ```
+
 ## Rule source
 
 * [src/rules/variable-pattern.js](/src/rules/variable-pattern.js)

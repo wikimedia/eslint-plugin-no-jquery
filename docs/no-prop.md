@@ -23,6 +23,7 @@ div.prop;
 removeProp();
 div.removeProp();
 ```
+
 ## Rule source
 
 * [src/rules/no-prop.js](/src/rules/no-prop.js)

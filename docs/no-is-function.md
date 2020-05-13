@@ -24,6 +24,7 @@ $div.isFunction();
 $.isFunction( expression( arg ) ); /* → */ typeof expression( arg ) === 'function';
 if ( $.isFunction( fn ) ) { g(); } /* → */ if ( typeof fn === 'function' ) { g(); }
 ```
+
 ## Rule source
 
 * [src/rules/no-is-function.js](/src/rules/no-is-function.js)

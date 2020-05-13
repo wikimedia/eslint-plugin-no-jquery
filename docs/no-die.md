@@ -21,6 +21,7 @@ die();
 div.die();
 div.die;
 ```
+
 ## Rule source
 
 * [src/rules/no-die.js](/src/rules/no-die.js)

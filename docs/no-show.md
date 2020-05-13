@@ -21,6 +21,7 @@ show();
 div.show();
 div.show;
 ```
+
 ## Rule source
 
 * [src/rules/no-show.js](/src/rules/no-show.js)

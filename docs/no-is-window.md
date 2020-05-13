@@ -16,6 +16,7 @@ $.isWindow();
 isWindow();
 myClass.isWindow();
 ```
+
 ## Rule source
 
 * [src/rules/no-is-window.js](/src/rules/no-is-window.js)

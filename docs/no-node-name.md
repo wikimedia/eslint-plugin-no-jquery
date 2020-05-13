@@ -17,6 +17,7 @@ nodeName();
 myClass.nodeName();
 $div.nodeName();
 ```
+
 ## Rule source
 
 * [src/rules/no-node-name.js](/src/rules/no-node-name.js)

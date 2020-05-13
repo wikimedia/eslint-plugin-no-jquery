@@ -28,6 +28,7 @@ $.error();
 $( 'div' ).error( handler ); /* → */ $( 'div' ).on( 'error', handler );
 $div.error();                /* → */ $div.trigger( 'error' );
 ```
+
 ## Rule source
 
 * [src/rules/no-error-shorthand.js](/src/rules/no-error-shorthand.js)
