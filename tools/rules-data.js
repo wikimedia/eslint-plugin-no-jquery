@@ -1,4 +1,5 @@
-const rulesets = require( '../src/index' ).configs;
+const main = require( '../package' ).main;
+const rulesets = require( '../' + main ).configs;
 const rulesData = {};
 
 for ( const name in rulesets ) {
