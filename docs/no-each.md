@@ -20,6 +20,7 @@ each();
 div.each();
 div.each;
 ```
+
 ## Rule source
 
 * [src/rules/no-each.js](/src/rules/no-each.js)

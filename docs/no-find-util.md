@@ -22,6 +22,7 @@ $div.find();
 $( 'div' ).first().find();
 $( 'div' ).append( $( 'input' ).find() );
 ```
+
 ## Rule source
 
 * [src/rules/no-find-util.js](/src/rules/no-find-util.js)

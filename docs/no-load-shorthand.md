@@ -32,6 +32,7 @@ $div.load( couldBeUrl );
 $( 'div' ).load( function () {} ); /* → */ $( 'div' ).on( 'load', function () {} );
 $div.load();                       /* → */ $div.trigger( 'load' );
 ```
+
 ## Rule source
 
 * [src/rules/no-load-shorthand.js](/src/rules/no-load-shorthand.js)

@@ -21,6 +21,7 @@ $( '<div>', ownerDocument );
 $( '<div/>', ownerDocument );
 $div.add( '<div>', context );
 ```
+
 ## Rule source
 
 * [src/rules/no-constructor-attributes.js](/src/rules/no-constructor-attributes.js)

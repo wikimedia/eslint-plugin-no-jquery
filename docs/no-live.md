@@ -29,6 +29,7 @@ die();
 div.die();
 div.die;
 ```
+
 ## Rule source
 
 * [src/rules/no-live.js](/src/rules/no-live.js)

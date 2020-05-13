@@ -19,6 +19,7 @@ a.support;
 support.foo;
 a.support.foo;
 ```
+
 ## Rule source
 
 * [src/rules/no-support.js](/src/rules/no-support.js)

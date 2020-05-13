@@ -40,6 +40,7 @@ $div.animate( { scrollTop: 100 } );
 $div.animate( { scrollLeft: 200 } );
 $div.animate( { scrollTop: 100, scrollLeft: 200 } );
 ```
+
 ## Rule source
 
 * [src/rules/no-animate.js](/src/rules/no-animate.js)

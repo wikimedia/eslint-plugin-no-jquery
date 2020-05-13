@@ -33,6 +33,7 @@ post();
 div.post();
 div.post;
 ```
+
 ## Rule source
 
 * [src/rules/no-ajax.js](/src/rules/no-ajax.js)

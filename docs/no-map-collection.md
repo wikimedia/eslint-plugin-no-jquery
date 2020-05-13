@@ -21,6 +21,7 @@ div.map;
 $.map();
 $( 'select' ).val().map();
 ```
+
 ## Rule source
 
 * [src/rules/no-map-collection.js](/src/rules/no-map-collection.js)

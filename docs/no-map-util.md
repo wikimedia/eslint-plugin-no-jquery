@@ -21,6 +21,7 @@ $( 'div' ).first().map();
 $( 'div' ).append( $( 'input' ).map() );
 $( 'select' ).val().map();
 ```
+
 ## Rule source
 
 * [src/rules/no-map-util.js](/src/rules/no-map-util.js)

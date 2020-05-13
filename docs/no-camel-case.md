@@ -17,6 +17,7 @@ camelCase();
 myClass.camelCase();
 $div.camelCase();
 ```
+
 ## Rule source
 
 * [src/rules/no-camel-case.js](/src/rules/no-camel-case.js)

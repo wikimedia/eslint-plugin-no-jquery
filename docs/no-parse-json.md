@@ -22,6 +22,7 @@ $div.parseJSON();
 ```js
 $.parseJSON( '{}' ); /* → */ JSON.parse( '{}' );
 ```
+
 ## Rule source
 
 * [src/rules/no-parse-json.js](/src/rules/no-parse-json.js)

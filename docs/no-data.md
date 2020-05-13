@@ -32,6 +32,7 @@ hasData();
 div.hasData();
 div.hasData;
 ```
+
 ## Rule source
 
 * [src/rules/no-data.js](/src/rules/no-data.js)

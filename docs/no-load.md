@@ -22,6 +22,7 @@ div.load();
 div.load;
 $.load();
 ```
+
 ## Rule source
 
 * [src/rules/no-load.js](/src/rules/no-load.js)
