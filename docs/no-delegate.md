@@ -29,6 +29,7 @@ undelegate();
 div.undelegate();
 div.undelegate;
 ```
+
 ## Rule source
 
 * [src/rules/no-delegate.js](/src/rules/no-delegate.js)

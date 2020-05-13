@@ -29,6 +29,7 @@ $div.size();                              /* → */ $div.length;
 $( 'div' ).first().size();                /* → */ $( 'div' ).first().length;
 $( 'div' ).append( $( 'input' ).size() ); /* → */ $( 'div' ).append( $( 'input' ).length );
 ```
+
 ## Rule source
 
 * [src/rules/no-size.js](/src/rules/no-size.js)

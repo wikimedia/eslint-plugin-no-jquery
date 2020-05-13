@@ -7,7 +7,6 @@ The format of single tags can be specified using the `singleTagStyle` option:
 * `"self-closing"` no whitespace and self-closing i.e. `<div/>`
 * `"any"` no style enforced
 
-
 ## Rule details
 
 ❌ The following patterns are considered errors:
@@ -89,6 +88,7 @@ $( '<div></div>' );
 $( '<div>' + '</div>' );
 $( '<div />' );
 ```
+
 ## Rule source
 
 * [src/rules/no-parse-html-literal.js](/src/rules/no-parse-html-literal.js)

@@ -23,6 +23,7 @@ $.noOp;
 $.noop;   /* → */ ( function () {} );
 $.noop(); /* → */ ( function () {}() );
 ```
+
 ## Rule source
 
 * [src/rules/no-noop.js](/src/rules/no-noop.js)

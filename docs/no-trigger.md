@@ -19,6 +19,7 @@ trigger();
 div.trigger();
 div.trigger;
 ```
+
 ## Rule source
 
 * [src/rules/no-trigger.js](/src/rules/no-trigger.js)

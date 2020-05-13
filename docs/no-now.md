@@ -22,6 +22,7 @@ $div.now();
 ```js
 $.now(); /* → */ Date.now();
 ```
+
 ## Rule source
 
 * [src/rules/no-now.js](/src/rules/no-now.js)
