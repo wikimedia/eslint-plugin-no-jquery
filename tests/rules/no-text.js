@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-text' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Node#textContent to .text/$.text';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-text', rule, {
 	valid: [ 'text()', '[].text()', 'div.text()', 'div.text' ],
 	invalid: [

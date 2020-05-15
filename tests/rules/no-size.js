@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-size' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer .length to .size';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-size', rule, {
 	valid: [ 'size()', '[].size()', 'div.size()', 'div.size' ],
 	invalid: [

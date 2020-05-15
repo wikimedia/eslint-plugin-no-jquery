@@ -23,6 +23,7 @@ $( 'div' ).first().find();
 $( 'div' ).append( $( 'input' ).find() );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-find-util.js](/src/rules/no-find-util.js)
+* [Rule source](/src/rules/no-find-util.js)
+* [Test source](/src/tests/no-find-util.js)

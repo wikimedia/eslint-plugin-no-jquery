@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-val' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer HTMLInputElement#value to .val';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-val', rule, {
 	valid: [ 'val()', '[].val()', 'div.val()', 'div.val' ],
 	invalid: [

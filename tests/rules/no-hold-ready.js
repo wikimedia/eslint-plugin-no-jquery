@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-hold-ready' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = '$.holdReady is not allowed';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-hold-ready', rule, {
 	valid: [ 'holdReady()', '"test".holdReady()', '"test".holdReady' ],
 	invalid: [

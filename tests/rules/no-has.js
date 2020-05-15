@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-has' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = '.has is not allowed';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-has', rule, {
 	valid: [ 'has()', '[].has()', 'div.has()', 'div.has' ],
 	invalid: [

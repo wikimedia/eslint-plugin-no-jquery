@@ -16,6 +16,7 @@ merge();
 'test'.merge;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-merge.js](/src/rules/no-merge.js)
+* [Rule source](/src/rules/no-merge.js)
+* [Test source](/src/tests/no-merge.js)

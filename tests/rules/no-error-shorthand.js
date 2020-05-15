@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-error-shorthand' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer .on or .trigger to .error';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-error-shorthand', rule, {
 	valid: [ 'error()', '[].error()', 'div.error()', 'div.error', '$.error()' ],
 	invalid: [

@@ -27,6 +27,7 @@ document.on( 'ready' );
 document.on( 'ready', function () {} );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-on-ready.js](/src/rules/no-on-ready.js)
+* [Rule source](/src/rules/no-on-ready.js)
+* [Test source](/src/tests/no-on-ready.js)

@@ -44,6 +44,7 @@ div.toggleClass();
 div.toggleClass;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-class.js](/src/rules/no-class.js)
+* [Rule source](/src/rules/no-class.js)
+* [Test source](/src/tests/no-class.js)

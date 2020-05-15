@@ -27,6 +27,7 @@ removeAttr();
 div.removeAttr;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-attr.js](/src/rules/no-attr.js)
+* [Rule source](/src/rules/no-attr.js)
+* [Test source](/src/tests/no-attr.js)

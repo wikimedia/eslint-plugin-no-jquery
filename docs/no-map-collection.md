@@ -22,6 +22,7 @@ $.map();
 $( 'select' ).val().map();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-map-collection.js](/src/rules/no-map-collection.js)
+* [Rule source](/src/rules/no-map-collection.js)
+* [Test source](/src/tests/no-map-collection.js)

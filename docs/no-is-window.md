@@ -17,6 +17,7 @@ isWindow();
 myClass.isWindow();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-is-window.js](/src/rules/no-is-window.js)
+* [Rule source](/src/rules/no-is-window.js)
+* [Test source](/src/tests/no-is-window.js)

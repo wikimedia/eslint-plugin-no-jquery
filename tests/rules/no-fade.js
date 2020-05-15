@@ -1,14 +1,14 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-fade' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const inError = 'Prefer CSS transitions to .fadeIn';
 const outError = 'Prefer CSS transitions to .fadeOut';
 const toError = 'Prefer CSS transitions to .fadeTo';
 const toggleError = 'Prefer CSS transitions to .fadeToggle';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-fade', rule, {
 	valid: [
 		'fadeIn()',

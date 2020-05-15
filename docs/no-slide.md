@@ -38,6 +38,7 @@ div.slideUp();
 div.slideUp;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-slide.js](/src/rules/no-slide.js)
+* [Rule source](/src/rules/no-slide.js)
+* [Test source](/src/tests/no-slide.js)

@@ -16,6 +16,7 @@ $( '.selector', null );
 $( '.selector', undefined );
 $( '.selector', $( '.context' ) );
 ```
+
 ❌ With `[{"allowIds":true}]` options:
 ```js
 $( '#id>div' );
@@ -43,12 +44,14 @@ $( undefined );
 $( false );
 $( '#' );
 ```
+
 ✔️ With `[{"allowIds":true}]` options:
 ```js
 $( '#id' );
 $( '#id-foo_bar1' );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-global-selector.js](/src/rules/no-global-selector.js)
+* [Rule source](/src/rules/no-global-selector.js)
+* [Test source](/src/tests/no-global-selector.js)

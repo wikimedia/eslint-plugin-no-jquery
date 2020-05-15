@@ -23,6 +23,7 @@ isArray();
 $.isArray( [] ); /* → */ Array.isArray( [] );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-is-array.js](/src/rules/no-is-array.js)
+* [Rule source](/src/rules/no-is-array.js)
+* [Test source](/src/tests/no-is-array.js)

@@ -47,15 +47,18 @@ div = $div.stop();
 div = $div.stop( true );
 div = $div.stop( true, true );
 ```
+
 ❌ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"always"}}}` settings:
 ```js
 div = $( '<div>' ).datePicker();
 div = $( '<div>' ).datePicker( options );
 ```
+
 ❌ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"accessor"}}}` settings:
 ```js
 div = $( '<div>' ).datePicker( options );
 ```
+
 ❌ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"valueAccessor"}}}` settings:
 ```js
 div = $( '<div>' ).datePicker( 'name', newPicker );
@@ -125,23 +128,28 @@ val = $div.unknownPlugin();
 val = $div.unknownPlugin( arg1 );
 val = $div.unknownPlugin( arg1, arg2 );
 ```
+
 ✔️ With `{"no-jquery":{"variablePattern":"^\\$.|^element$"}}` settings:
 ```js
 this.element = $( '<div>' );
 ```
+
 ✔️ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"accessor"}}}` settings:
 ```js
 obj = $( '<div>' ).datePicker();
 ```
+
 ✔️ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"valueAccessor"}}}` settings:
 ```js
 obj = $( '<div>' ).datePicker( 'name' );
 ```
+
 ✔️ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"never"}}}` settings:
 ```js
 obj = $( '<div>' ).datePicker( 'name', options );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/variable-pattern.js](/src/rules/variable-pattern.js)
+* [Rule source](/src/rules/variable-pattern.js)
+* [Test source](/src/tests/variable-pattern.js)

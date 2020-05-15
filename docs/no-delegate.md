@@ -30,6 +30,7 @@ div.undelegate();
 div.undelegate;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-delegate.js](/src/rules/no-delegate.js)
+* [Rule source](/src/rules/no-delegate.js)
+* [Test source](/src/tests/no-delegate.js)

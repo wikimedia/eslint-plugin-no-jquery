@@ -1,13 +1,13 @@
 'use strict';
 
 const rule = require( '../../src/rules/variable-pattern' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'jQuery collection names must match the variablePattern';
 
 const extendedPattern = '^\\$.|^element$';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'variable-pattern', rule, {
 	valid: [
 		// Basic cases

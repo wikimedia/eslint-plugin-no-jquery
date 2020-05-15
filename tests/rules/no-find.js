@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-find' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Document#querySelectorAll to .find/$.find';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-find', rule, {
 	valid: [ 'find()', '[].find()', 'div.find()', 'div.find', '$.extend().find()', '$div.myPlugin("foo").find()' ],
 	invalid: [

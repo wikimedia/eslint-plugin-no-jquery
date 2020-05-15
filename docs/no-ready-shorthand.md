@@ -25,6 +25,7 @@ $( document ).on( 'ready', function () {} );
 $( function () {} );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-ready-shorthand.js](/src/rules/no-ready-shorthand.js)
+* [Rule source](/src/rules/no-ready-shorthand.js)
+* [Test source](/src/tests/no-ready-shorthand.js)

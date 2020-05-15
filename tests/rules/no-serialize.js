@@ -1,12 +1,12 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-serialize' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const serializeError = 'Prefer FormData or URLSearchParams to .serialize';
 const arrayError = 'Prefer FormData or URLSearchParams to .serializeArray';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-serialize', rule, {
 	valid: [
 		'serialize()',

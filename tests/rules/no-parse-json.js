@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-parse-json' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer JSON.parse to $.parseJSON';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-parse-json', rule, {
 	valid: [ 'parseJSON()', '$div.parseJSON()', '"test".parseJSON' ],
 	invalid: [

@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-closest' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Element#closest to .closest';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-closest', rule, {
 	valid: [ 'closest()', '[].closest()', 'div.closest()', 'div.closest' ],
 	invalid: [

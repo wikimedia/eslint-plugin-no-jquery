@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-grep' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Array#filter to $.grep';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-grep', rule, {
 	valid: [ 'grep()', '"test".grep()', '"test".grep' ],
 	invalid: [

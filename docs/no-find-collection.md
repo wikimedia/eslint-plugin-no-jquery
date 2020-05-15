@@ -23,6 +23,7 @@ $.extend().find();
 $div.myPlugin( 'foo' ).find();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-find-collection.js](/src/rules/no-find-collection.js)
+* [Rule source](/src/rules/no-find-collection.js)
+* [Test source](/src/tests/no-find-collection.js)

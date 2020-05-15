@@ -22,6 +22,7 @@ div.toggle();
 div.toggle;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-toggle.js](/src/rules/no-toggle.js)
+* [Rule source](/src/rules/no-toggle.js)
+* [Test source](/src/tests/no-toggle.js)

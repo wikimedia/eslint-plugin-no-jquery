@@ -21,6 +21,7 @@ div.text();
 div.text;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-text.js](/src/rules/no-text.js)
+* [Rule source](/src/rules/no-text.js)
+* [Test source](/src/tests/no-text.js)

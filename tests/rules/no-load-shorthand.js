@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-load-shorthand' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer .on or .trigger to .load';
 
-const ruleTester = new RuleTesterAndDocs( {
+const ruleTester = new RuleTester( {
 	parserOptions: { ecmaVersion: 2015 }
 } );
 ruleTester.run( 'no-load-shorthand', rule, {

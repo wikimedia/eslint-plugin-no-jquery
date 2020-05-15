@@ -1,13 +1,13 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-ajax-events' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 function getErrors( method ) {
 	return [ { type: 'CallExpression', message: 'Prefer local event to ' + method } ];
 }
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-ajax-events', rule, {
 	valid: [
 		'$(document).on("click", function(e){ })',

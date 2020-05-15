@@ -29,6 +29,7 @@ $( 'div' ).unload( handler ); /* → */ $( 'div' ).on( 'unload', handler );
 $div.unload();                /* → */ $div.trigger( 'unload' );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-unload-shorthand.js](/src/rules/no-unload-shorthand.js)
+* [Rule source](/src/rules/no-unload-shorthand.js)
+* [Test source](/src/tests/no-unload-shorthand.js)

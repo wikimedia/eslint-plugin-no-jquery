@@ -30,6 +30,7 @@ div.die();
 div.die;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-live.js](/src/rules/no-live.js)
+* [Rule source](/src/rules/no-live.js)
+* [Test source](/src/tests/no-live.js)

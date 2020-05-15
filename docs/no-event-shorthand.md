@@ -357,6 +357,7 @@ $method( x ).ajaxSend();
 div.ajaxSend;
 $div.load( 'url', handler );
 ```
+
 ✔️ With `[{"allowAjaxEvents":true}]` options:
 ```js
 $div.ajaxStart();
@@ -532,6 +533,7 @@ $( 'div' ).first().ajaxSend();                    /* → */ $( 'div' ).first().t
 $( 'div' ).append( $( 'input' ).ajaxSend() );     /* → */ $( 'div' ).append( $( 'input' ).trigger( 'ajaxSend' ) );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-event-shorthand.js](/src/rules/no-event-shorthand.js)
+* [Rule source](/src/rules/no-event-shorthand.js)
+* [Test source](/src/tests/no-event-shorthand.js)

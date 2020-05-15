@@ -18,6 +18,7 @@ proxy();
 'test'.proxy;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-proxy.js](/src/rules/no-proxy.js)
+* [Rule source](/src/rules/no-proxy.js)
+* [Test source](/src/tests/no-proxy.js)

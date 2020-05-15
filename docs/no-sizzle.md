@@ -59,10 +59,12 @@ $( 'div' ).find( ':visible' );
 $( 'div' ).find( 'div:animated' );
 $div.find( 'form input:checkbox' );
 ```
+
 ❌ With `[{"allowPositional":true}]` options:
 ```js
 $( ':animated' );
 ```
+
 ❌ With `[{"allowOther":true}]` options:
 ```js
 $( ':eq(2)' );
@@ -93,10 +95,12 @@ $( this ).find( function () {} );
 $( this ).find();
 $( function () {} );
 ```
+
 ✔️ With `[{"allowPositional":true}]` options:
 ```js
 $( ':checked' );
 ```
+
 ✔️ With `[{"allowOther":true}]` options:
 ```js
 $( ':animated' );
@@ -117,6 +121,7 @@ $( ':text' );
 $( ':visible' );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-sizzle.js](/src/rules/no-sizzle.js)
+* [Rule source](/src/rules/no-sizzle.js)
+* [Test source](/src/tests/no-sizzle.js)

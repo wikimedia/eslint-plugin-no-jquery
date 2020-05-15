@@ -1,14 +1,14 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-class' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const addError = 'Prefer Element#classList to .addClass';
 const hasError = 'Prefer Element#classList to .hasClass';
 const removeError = 'Prefer Element#classList to .removeClass';
 const toggleError = 'Prefer Element#classList to .toggleClass';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-class', rule, {
 	valid: [
 		'addClass()',

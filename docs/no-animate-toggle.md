@@ -41,6 +41,7 @@ $( 'div' ).toggle();
 $( 'div' ).toggle;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-animate-toggle.js](/src/rules/no-animate-toggle.js)
+* [Rule source](/src/rules/no-animate-toggle.js)
+* [Test source](/src/tests/no-animate-toggle.js)

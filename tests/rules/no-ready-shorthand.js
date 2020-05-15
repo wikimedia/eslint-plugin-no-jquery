@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-ready-shorthand' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer $() to .ready';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-ready-shorthand', rule, {
 	valid: [
 		'ready()',

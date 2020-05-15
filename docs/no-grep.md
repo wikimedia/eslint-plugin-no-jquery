@@ -16,6 +16,7 @@ grep();
 'test'.grep;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-grep.js](/src/rules/no-grep.js)
+* [Rule source](/src/rules/no-grep.js)
+* [Test source](/src/tests/no-grep.js)

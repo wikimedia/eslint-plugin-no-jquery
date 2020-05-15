@@ -20,6 +20,7 @@ div.trigger();
 div.trigger;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-trigger.js](/src/rules/no-trigger.js)
+* [Rule source](/src/rules/no-trigger.js)
+* [Test source](/src/tests/no-trigger.js)

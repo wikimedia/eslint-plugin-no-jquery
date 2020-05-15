@@ -1,13 +1,13 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-slide' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const downError = 'Prefer CSS transitions to .slideDown';
 const toggleError = 'Prefer CSS transitions to .slideToggle';
 const upError = 'Prefer CSS transitions to .slideUp';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-slide', rule, {
 	valid: [
 		'slideDown()',

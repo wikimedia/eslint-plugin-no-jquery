@@ -20,6 +20,7 @@ $( 'input' ).text().trim();
 $( 'input' ).data( 'foo' ).trim();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-trim.js](/src/rules/no-trim.js)
+* [Rule source](/src/rules/no-trim.js)
+* [Test source](/src/tests/no-trim.js)

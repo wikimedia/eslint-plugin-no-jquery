@@ -20,6 +20,7 @@ div.parent();
 div.parent;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-parent.js](/src/rules/no-parent.js)
+* [Rule source](/src/rules/no-parent.js)
+* [Test source](/src/tests/no-parent.js)

@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-each-collection' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer Array#forEach to .each';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-each-collection', rule, {
 	valid: [ 'each()', '[].each()', 'div.each()', 'div.each', '$.each()' ],
 	invalid: [

@@ -26,6 +26,7 @@ $div.selector();
 $div.selector( arg );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-selector-prop.js](/src/rules/no-selector-prop.js)
+* [Rule source](/src/rules/no-selector-prop.js)
+* [Test source](/src/tests/no-selector-prop.js)

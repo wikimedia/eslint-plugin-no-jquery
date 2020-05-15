@@ -1,13 +1,13 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-data' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer WeakMap to .data/$.data';
 const removeError = 'Prefer WeakMap to .removeData/$.removeData';
 const hasError = 'Prefer WeakMap to .hasData/$.hasData';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-data', rule, {
 	valid: [
 		'data()',

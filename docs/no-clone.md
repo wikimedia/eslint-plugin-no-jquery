@@ -25,6 +25,7 @@ $div.prop.clone();
 $div[ 0 ].clone();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-clone.js](/src/rules/no-clone.js)
+* [Rule source](/src/rules/no-clone.js)
+* [Test source](/src/tests/no-clone.js)

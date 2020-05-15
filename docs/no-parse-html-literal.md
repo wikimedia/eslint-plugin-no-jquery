@@ -35,17 +35,20 @@ $.parseHTML( '<div>' );
 $( '<div/>' );
 $( '<div></div>' );
 ```
+
 ❌ With `[{"singleTagStyle":"minimal"}]` options:
 ```js
 $( '<div/>' );
 $( '<div></div>' );
 ```
+
 ❌ With `[{"singleTagStyle":"self-closing"}]` options:
 ```js
 $( '<div>' );
 $( '<div />' );
 $( '<div></div>' );
 ```
+
 ❌ With `[{"singleTagStyle":"any"}]` options:
 ```js
 $( '<div attr=val>' );
@@ -73,14 +76,17 @@ $.parseHTML( variable );
 $.parseHTML( variable1 + variable2 );
 $.parseHTML( 'string' + variable );
 ```
+
 ✔️ With `[{"singleTagStyle":"minimal"}]` options:
 ```js
 $( '<div>' );
 ```
+
 ✔️ With `[{"singleTagStyle":"self-closing"}]` options:
 ```js
 $( '<div/>' );
 ```
+
 ✔️ With `[{"singleTagStyle":"any"}]` options:
 ```js
 $( '<div />' );
@@ -89,6 +95,7 @@ $( '<div>' + '</div>' );
 $( '<div />' );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-parse-html-literal.js](/src/rules/no-parse-html-literal.js)
+* [Rule source](/src/rules/no-parse-html-literal.js)
+* [Test source](/src/tests/no-parse-html-literal.js)

@@ -24,6 +24,7 @@ removeProp();
 div.removeProp();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-prop.js](/src/rules/no-prop.js)
+* [Rule source](/src/rules/no-prop.js)
+* [Test source](/src/tests/no-prop.js)

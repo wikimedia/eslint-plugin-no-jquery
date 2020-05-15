@@ -29,6 +29,7 @@ $( 'div' ).error( handler ); /* → */ $( 'div' ).on( 'error', handler );
 $div.error();                /* → */ $div.trigger( 'error' );
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-error-shorthand.js](/src/rules/no-error-shorthand.js)
+* [Rule source](/src/rules/no-error-shorthand.js)
+* [Test source](/src/tests/no-error-shorthand.js)

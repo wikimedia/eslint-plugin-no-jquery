@@ -1,9 +1,9 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-event-shorthand' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 const ajaxEvents = [
 	'ajaxStart',
 	'ajaxStop',

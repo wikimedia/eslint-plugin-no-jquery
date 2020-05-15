@@ -23,6 +23,7 @@ $div.now();
 $.now(); /* → */ Date.now();
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-now.js](/src/rules/no-now.js)
+* [Rule source](/src/rules/no-now.js)
+* [Test source](/src/tests/no-now.js)

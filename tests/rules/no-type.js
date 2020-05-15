@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-type' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer typeof/instanceof to $.type';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-type', rule, {
 	valid: [ 'type()', 'myMethod.type()', 'myMethod.type' ],
 	invalid: [

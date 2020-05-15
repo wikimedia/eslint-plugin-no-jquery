@@ -21,6 +21,7 @@ a.browser.foo;
 $.browsers;
 ```
 
-## Rule source
+## Resources
 
-* [src/rules/no-browser.js](/src/rules/no-browser.js)
+* [Rule source](/src/rules/no-browser.js)
+* [Test source](/src/tests/no-browser.js)

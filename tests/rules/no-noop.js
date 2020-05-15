@@ -1,11 +1,11 @@
 'use strict';
 
 const rule = require( '../../src/rules/no-noop' );
-const RuleTesterAndDocs = require( '../../tools/rule-tester-and-docs' );
+const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer function(){} to $.noop';
 
-const ruleTester = new RuleTesterAndDocs();
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-noop', rule, {
 	valid: [ 'foo.noop', 'foo.noop()', 'foo.noop(bar)', '$.noOp' ],
 	invalid: [
