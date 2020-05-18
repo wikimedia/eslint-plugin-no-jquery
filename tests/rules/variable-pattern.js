@@ -32,14 +32,32 @@ ruleTester.run( 'variable-pattern', rule, {
 		// nonCollectionReturningAccessors
 		'number = $div.height()',
 		'string = $div.html()',
-		'number = $div.innerHeight()',
-		'number = $div.innerWidth()',
 		'obj = $div.offset()',
-		'number = $div.scrollLeft()',
-		'number = $div.scrollTop()',
-		'string = $div.text()',
 		'mixed = $div.val()',
-		'number = $div.width()',
+		{
+			code: 'number = $div.innerHeight()',
+			noDoc: true
+		},
+		{
+			code: 'number = $div.innerWidth()',
+			noDoc: true
+		},
+		{
+			code: 'number = $div.scrollLeft()',
+			noDoc: true
+		},
+		{
+			code: 'number = $div.scrollTop()',
+			noDoc: true
+		},
+		{
+			code: 'string = $div.text()',
+			noDoc: true
+		},
+		{
+			code: 'number = $div.width()',
+			noDoc: true
+		},
 
 		// nonCollectionReturningMethods
 		'list = $div.get()',
@@ -64,10 +82,22 @@ ruleTester.run( 'variable-pattern', rule, {
 		// nonCollectionReturningValueAccessors
 		'string = $div.attr("name")',
 		'string = $div.attr(possibleName)',
-		'string = $div.css("name")',
-		'string = $div.css(possibleName)',
-		'string = $div.data("name")',
-		'string = $div.data(possibleName)',
+		{
+			code: 'string = $div.css("name")',
+			noDoc: true
+		},
+		{
+			code: 'string = $div.css(possibleName)',
+			noDoc: true
+		},
+		{
+			code: 'string = $div.data("name")',
+			noDoc: true
+		},
+		{
+			code: 'string = $div.data(possibleName)',
+			noDoc: true
+		},
 		'obj = $div.data()',
 		'string = $div.prop("name")',
 		'string = $div.prop(possibleName)',
@@ -76,9 +106,18 @@ ruleTester.run( 'variable-pattern', rule, {
 		'number = $div.outerWidth()',
 		'number = $div.outerWidth(true)',
 		'number = $div.outerWidth(possibleBool)',
-		'number = $div.outerHeight()',
-		'number = $div.outerHeight(true)',
-		'number = $div.outerHeight(possibleBool)',
+		{
+			code: 'number = $div.outerHeight()',
+			noDoc: true
+		},
+		{
+			code: 'number = $div.outerHeight(true)',
+			noDoc: true
+		},
+		{
+			code: 'number = $div.outerHeight(possibleBool)',
+			noDoc: true
+		},
 
 		// queue
 		'list = $div.queue()',
@@ -142,28 +181,73 @@ ruleTester.run( 'variable-pattern', rule, {
 			// nonCollectionReturningAccessors
 			'div = $div.height(value)',
 			'div = $div.html(value)',
-			'div = $div.innerHeight(value)',
-			'div = $div.innerWidth(value)',
 			'div = $div.offset(value)',
-			'div = $div.scrollLeft(value)',
-			'div = $div.scrollTop(value)',
-			'div = $div.text(value)',
 			'div = $div.val(value)',
-			'div = $div.width(value)',
+			{
+				code: 'div = $div.innerHeight(value)',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.innerWidth(value)',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.scrollLeft(value)',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.scrollTop(value)',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.text(value)',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.width(value)',
+				noDoc: true
+			},
 
 			// nonCollectionReturningValueAccessors
 			'div = $div.attr("name", "value")',
 			'div = $div.attr({name: "value"})',
 			'div = $div.attr({name: fn})',
-			'div = $div.css("name", "value")',
-			'div = $div.css({name: "value"})',
-			'div = $div.css({name: fn})',
-			'div = $div.data("name", "value")',
-			'div = $div.data({name: "value"})',
-			'div = $div.data({name: fn})',
-			'div = $div.prop("name", "value")',
-			'div = $div.prop({name: "value"})',
-			'div = $div.prop({name: fn})',
+			{
+				code: 'div = $div.css("name", "value")',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.css({name: "value"})',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.css({name: fn})',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.data("name", "value")',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.data({name: "value"})',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.data({name: fn})',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.prop("name", "value")',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.prop({name: "value"})',
+				noDoc: true
+			},
+			{
+				code: 'div = $div.prop({name: fn})',
+				noDoc: true
+			},
 
 			// outerWidth/outerHeight
 			'div = $div.outerWidth(30)',
@@ -185,10 +269,9 @@ ruleTester.run( 'variable-pattern', rule, {
 			'div = $div.stop(true)',
 			'div = $div.stop(true, true)'
 		].map(
-			( code ) => ( {
-				code: code,
+			( test ) => Object.assign( {
 				errors: [ { message: error, type: 'AssignmentExpression' } ]
-			} )
+			}, typeof test === 'string' ? { code: test } : test )
 		)
 	)
 } );
