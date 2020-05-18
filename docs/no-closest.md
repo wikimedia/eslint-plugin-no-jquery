@@ -4,7 +4,7 @@ Disallows the [`.closest`](https://api.jquery.com/closest/) method. Prefer `Elem
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).closest();
 $div.closest();
@@ -12,7 +12,7 @@ $( 'div' ).first().closest();
 $( 'div' ).append( $( 'input' ).closest() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 closest();
 [].closest();

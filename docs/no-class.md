@@ -4,7 +4,7 @@ Disallows the [`.addClass`](https://api.jquery.com/addClass/)/[`.hasClass`](http
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).addClass();
 $div.addClass();
@@ -24,7 +24,7 @@ $( 'div' ).first().toggleClass();
 $( 'div' ).append( $( 'input' ).toggleClass() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 addClass();
 [].addClass();

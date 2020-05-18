@@ -4,7 +4,7 @@ Disallows the [`.parents`](https://api.jquery.com/parents/) method. Prefer `Elem
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).parents();
 $div.parents();
@@ -12,7 +12,7 @@ $( 'div' ).first().parents();
 $( 'div' ).append( $( 'input' ).parents() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 parents();
 [].parents();

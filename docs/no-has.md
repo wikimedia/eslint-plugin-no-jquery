@@ -4,7 +4,7 @@ Disallows the [`.has`](https://api.jquery.com/has/) method.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).has();
 $div.has();
@@ -12,7 +12,7 @@ $( 'div' ).first().has();
 $( 'div' ).append( $( 'input' ).has() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 has();
 [].has();

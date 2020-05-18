@@ -6,7 +6,7 @@ Disallows the [`.undelegate`](https://api.jquery.com/undelegate/) method. Prefer
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).undelegate();
 $div.undelegate();
@@ -14,7 +14,7 @@ $( 'div' ).first().undelegate();
 $( 'div' ).append( $( 'input' ).undelegate() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 undelegate();
 [].undelegate();

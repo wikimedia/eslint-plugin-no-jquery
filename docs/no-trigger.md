@@ -4,7 +4,7 @@ Disallows the [`.trigger`](https://api.jquery.com/trigger/) method. Prefer `Even
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).trigger();
 $div.trigger();
@@ -12,7 +12,7 @@ $( 'div' ).first().trigger();
 $( 'div' ).append( $( 'input' ).trigger() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 trigger();
 [].trigger();

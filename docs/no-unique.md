@@ -2,23 +2,23 @@
 
 Disallows the [`$.unique`](https://api.jquery.com/jQuery.unique/) utility. Prefer `$.uniqueSort`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.unique( [] );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 unique();
 'test'.unique();
 'test'.unique;
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $.unique( [] ); /* → */ $.uniqueSort( [] );
 ```

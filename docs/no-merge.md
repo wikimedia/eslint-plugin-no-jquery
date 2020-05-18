@@ -4,12 +4,12 @@ Disallows the [`$.merge`](https://api.jquery.com/jQuery.merge/) utility. Prefer 
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.merge();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 merge();
 'test'.merge();

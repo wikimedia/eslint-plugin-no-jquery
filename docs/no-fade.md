@@ -2,11 +2,11 @@
 
 Disallows the [`.fadeIn`](https://api.jquery.com/fadeIn/)/[`.fadeOut`](https://api.jquery.com/fadeOut/)/[`.fadeTo`](https://api.jquery.com/fadeTo/)/[`.fadeToggle`](https://api.jquery.com/fadeToggle/) methods. Prefer CSS transitions.
 
-This rule is enabled in `plugin:no-jquery/slim`.
+⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).fadeIn();
 $div.fadeIn();
@@ -26,7 +26,7 @@ $( 'div' ).first().fadeToggle();
 $( 'div' ).append( $( 'input' ).fadeToggle() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 fadeIn();
 [].fadeIn();

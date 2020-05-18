@@ -4,7 +4,7 @@ Disallows the [`.html`](https://api.jquery.com/html/) method. Prefer `Element#in
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).html();
 $div.html();
@@ -12,7 +12,7 @@ $( 'div' ).first().html();
 $( 'div' ).append( $( 'input' ).html() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 html();
 [].html();

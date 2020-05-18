@@ -4,7 +4,7 @@ Disallows the [`.data`](https://api.jquery.com/data/)/[`.removeData`](https://ap
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.data( elem, 'foo' );
 $( 'div' ).data( 'foo', 'bar' );
@@ -17,7 +17,7 @@ $div.removeData( 'foo' );
 $.hasData( elem );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 data();
 [].data();

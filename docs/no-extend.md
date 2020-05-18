@@ -4,25 +4,25 @@ Disallows the [`$.extend`](https://api.jquery.com/jQuery.extend/) utility. Prefe
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.extend( {}, foo );
 $.extend( true, {}, foo );
 ```
 
-❌ With `[{"allowDeep":true}]` options:
+❌ Examples of **incorrect** code with `[{"allowDeep":true}]` options:
 ```js
 $.extend( {}, foo );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 extend();
 myMethod.extend();
 myMethod.extend;
 ```
 
-✔️ With `[{"allowDeep":true}]` options:
+✔️ Examples of **correct** code with `[{"allowDeep":true}]` options:
 ```js
 $.extend( true, {}, foo );
 ```

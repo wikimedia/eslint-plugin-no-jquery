@@ -4,7 +4,7 @@ Disallows the [`.attr`](https://api.jquery.com/attr/)/[`.removeAttr`](https://ap
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.attr();
 $( 'div' ).attr();
@@ -17,7 +17,7 @@ $.removeAttr();
 $( 'div' ).removeAttr( 'name' );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 attr();
 [].attr();

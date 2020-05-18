@@ -4,7 +4,7 @@ Disallows the [`.val`](https://api.jquery.com/val/) method. Prefer `HTMLInputEle
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).val();
 $div.val();
@@ -12,7 +12,7 @@ $( 'div' ).first().val();
 $( 'div' ).append( $( 'input' ).val() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 val();
 [].val();

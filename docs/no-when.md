@@ -4,12 +4,12 @@ Disallows the [`$.when`](https://api.jquery.com/jQuery.when/) utility. Prefer `P
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.when( a, b );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 When();
 new When();

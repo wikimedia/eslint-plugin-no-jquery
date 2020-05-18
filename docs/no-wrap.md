@@ -4,7 +4,7 @@ Disallows the [`.wrap`](https://api.jquery.com/wrap/)/[`.wrapAll`](https://api.j
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).wrap();
 $div.wrap();
@@ -24,7 +24,7 @@ $( 'div' ).first().unwrap();
 $( 'div' ).append( $( 'input' ).unwrap() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 wrap();
 [].wrap();

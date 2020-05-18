@@ -4,7 +4,7 @@ Disallows variable names which don't match `variablePattern` in settings (by def
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 var div = $( '<div>' );
 foo.div = $( '<div>' );
@@ -33,23 +33,23 @@ div = $div.stop( true );
 div = $div.stop( true, true );
 ```
 
-❌ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"always"}}}` settings:
+❌ Examples of **incorrect** code with `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"always"}}}` settings:
 ```js
 div = $( '<div>' ).datePicker();
 div = $( '<div>' ).datePicker( options );
 ```
 
-❌ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"accessor"}}}` settings:
+❌ Examples of **incorrect** code with `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"accessor"}}}` settings:
 ```js
 div = $( '<div>' ).datePicker( options );
 ```
 
-❌ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"valueAccessor"}}}` settings:
+❌ Examples of **incorrect** code with `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"valueAccessor"}}}` settings:
 ```js
 div = $( '<div>' ).datePicker( 'name', newPicker );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 var $div = $( '<div>' );
 $div = $( '<div>' );
@@ -101,22 +101,22 @@ val = $div.unknownPlugin( arg1 );
 val = $div.unknownPlugin( arg1, arg2 );
 ```
 
-✔️ With `{"no-jquery":{"variablePattern":"^\\$.|^element$"}}` settings:
+✔️ Examples of **correct** code with `{"no-jquery":{"variablePattern":"^\\$.|^element$"}}` settings:
 ```js
 this.element = $( '<div>' );
 ```
 
-✔️ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"accessor"}}}` settings:
+✔️ Examples of **correct** code with `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"accessor"}}}` settings:
 ```js
 obj = $( '<div>' ).datePicker();
 ```
 
-✔️ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"valueAccessor"}}}` settings:
+✔️ Examples of **correct** code with `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"valueAccessor"}}}` settings:
 ```js
 obj = $( '<div>' ).datePicker( 'name' );
 ```
 
-✔️ With `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"never"}}}` settings:
+✔️ Examples of **correct** code with `{"no-jquery":{"collectionReturningPlugins":{"datePicker":"never"}}}` settings:
 ```js
 obj = $( '<div>' ).datePicker( 'name', options );
 ```

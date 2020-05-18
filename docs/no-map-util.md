@@ -4,12 +4,12 @@ Disallows the [`$.map`](https://api.jquery.com/jQuery.map/) utility. Prefer `Arr
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.map();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 map();
 [].map();

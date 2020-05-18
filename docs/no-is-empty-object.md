@@ -4,12 +4,12 @@ Disallows the [`$.isEmptyObject`](https://api.jquery.com/jQuery.isEmptyObject/) 
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.isEmptyObject();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 isEmptyObject();
 myClass.isEmptyObject();

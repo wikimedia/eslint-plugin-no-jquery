@@ -6,7 +6,7 @@ Disallows the [`.show`](https://api.jquery.com/show/) method.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).show();
 $div.show();
@@ -14,7 +14,7 @@ $( 'div' ).first().show();
 $( 'div' ).append( $( 'input' ).show() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 show();
 [].show();

@@ -2,11 +2,11 @@
 
 Disallows the [`.slideDown`](https://api.jquery.com/slideDown/)/[`.slideToggle`](https://api.jquery.com/slideToggle/)/[`.slideUp`](https://api.jquery.com/slideUp/) methods. Prefer CSS transitions.
 
-This rule is enabled in `plugin:no-jquery/slim`.
+⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).slideDown();
 $div.slideDown();
@@ -22,7 +22,7 @@ $( 'div' ).first().slideUp();
 $( 'div' ).append( $( 'input' ).slideUp() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 slideDown();
 [].slideDown();

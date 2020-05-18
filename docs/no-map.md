@@ -4,7 +4,7 @@ Disallows the [`.map`](https://api.jquery.com/map/) method and [`$.map`](https:/
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.map();
 $( 'div' ).map();
@@ -14,7 +14,7 @@ $( 'div' ).append( $( 'input' ).map() );
 $( 'select' ).val( [] ).map();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 map();
 [].map();

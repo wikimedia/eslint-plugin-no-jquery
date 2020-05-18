@@ -4,7 +4,7 @@ Disallows the [`.find`](https://api.jquery.com/find/) method and `$.find` utilit
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.find();
 $( 'div' ).find();
@@ -13,7 +13,7 @@ $( 'div' ).first().find();
 $( 'div' ).append( $( 'input' ).find() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 find();
 [].find();

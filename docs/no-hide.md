@@ -6,7 +6,7 @@ Disallows the [`.hide`](https://api.jquery.com/hide/) method.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).hide();
 $div.hide();
@@ -14,7 +14,7 @@ $( 'div' ).first().hide();
 $( 'div' ).append( $( 'input' ).hide() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 hide();
 [].hide();

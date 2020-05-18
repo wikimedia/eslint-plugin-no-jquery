@@ -4,7 +4,7 @@ Disallows [`.hasClass`](https://api.jquery.com/hasClass/) and [`.toggleClass`](h
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).hasClass();
 $div.hasClass();
@@ -16,7 +16,7 @@ $( 'div' ).first().toggleClass( 'myClass' );
 $( 'div' ).append( $( 'input' ).toggleClass( 'myClass' ) );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 hasClass();
 [].hasClass();

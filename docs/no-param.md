@@ -4,12 +4,12 @@ Disallows the [`$.param`](https://api.jquery.com/jQuery.param/) utility. Prefer 
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.param();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 param();
 'test'.param();

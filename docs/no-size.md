@@ -2,11 +2,11 @@
 
 Disallows the [`.size`](https://api.jquery.com/size/) method. Prefer `.length`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).size();
 $div.size();
@@ -14,7 +14,7 @@ $( 'div' ).first().size();
 $( 'div' ).append( $( 'input' ).size() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 size();
 [].size();
@@ -22,7 +22,7 @@ div.size();
 div.size;
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $( 'div' ).size();                        /* → */ $( 'div' ).length;
 $div.size();                              /* → */ $div.length;

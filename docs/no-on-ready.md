@@ -2,18 +2,18 @@
 
 Disallows using the ready event on the document.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( document ).on( 'ready', function () {} );
 $document.on( 'ready', function () {} );
 $document.on( 'ready' );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 $( document ).on( 'click', function () {} );
 $( document ).on();

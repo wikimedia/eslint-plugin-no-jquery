@@ -2,11 +2,11 @@
 
 Disallows the [`.selector`](https://api.jquery.com/selector/) property.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).selector;
 $div.selector;
@@ -17,7 +17,7 @@ f( $div.selector );
 $( 'div' ).append( $( 'input' ).selector );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 selector;
 div.selector;
