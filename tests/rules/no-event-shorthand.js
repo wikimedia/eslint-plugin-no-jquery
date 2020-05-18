@@ -49,12 +49,32 @@ let invalid = [];
 forbidden.forEach( function ( rule ) {
 	const error = 'Prefer .on or .trigger to .' + rule;
 	valid = valid.concat(
-		rule + '()',
-		'$.' + rule + '()',
-		'[].' + rule + '()',
-		'$div.on("' + rule + '", fn)',
-		'$method(x).' + rule + '()',
-		'div.' + rule
+		{
+			code: rule + '()',
+			noDoc: true
+		},
+		{
+			code: '$.' + rule + '()',
+			noDoc: true
+		},
+		{
+			code: '[].' + rule + '()',
+			noDoc: true
+		},
+		{
+			code: '$div.on("' + rule + '", fn)'
+		},
+		{
+			code: '$div.trigger("' + rule + '")'
+		},
+		{
+			code: '$method(x).' + rule + '()',
+			noDoc: true
+		},
+		{
+			code: 'div.' + rule,
+			noDoc: true
+		}
 	);
 	invalid = invalid.concat(
 		{
@@ -70,17 +90,20 @@ forbidden.forEach( function ( rule ) {
 		{
 			code: 'this.prop.$div.' + rule + '(handler)',
 			errors: [ { message: error, type: 'CallExpression' } ],
-			output: 'this.prop.$div.on("' + rule + '", handler)'
+			output: 'this.prop.$div.on("' + rule + '", handler)',
+			noDoc: true
 		},
 		{
 			code: '$("div").first().' + rule + '()',
 			errors: [ { message: error, type: 'CallExpression' } ],
-			output: '$("div").first().trigger("' + rule + '")'
+			output: '$("div").first().trigger("' + rule + '")',
+			noDoc: true
 		},
 		{
 			code: '$("div").append($("input").' + rule + '())',
 			errors: [ { message: error, type: 'CallExpression' } ],
-			output: '$("div").append($("input").trigger("' + rule + '"))'
+			output: '$("div").append($("input").trigger("' + rule + '"))',
+			noDoc: true
 		}
 	);
 } );
