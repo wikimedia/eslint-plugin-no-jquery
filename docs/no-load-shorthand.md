@@ -2,11 +2,11 @@
 
 Disallows the [`.load`](https://api.jquery.com/load-event/) method when used as a shorthand for `.on( 'load', function )` or `.trigger( 'load' )`. Prefer `.on` or `.trigger`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).load( function () {} );
 $div.load( function () {} );
@@ -16,7 +16,7 @@ $( 'div' ).first().load( function () {} );
 $( 'div' ).append( $( 'input' ).load( function () {} ) );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 load();
 [].load();
@@ -27,7 +27,7 @@ $div.load( 'url' );
 $div.load( couldBeUrl );
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $( 'div' ).load( function () {} ); /* → */ $( 'div' ).on( 'load', function () {} );
 $div.load();                       /* → */ $div.trigger( 'load' );

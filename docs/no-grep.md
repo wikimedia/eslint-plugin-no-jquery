@@ -4,12 +4,12 @@ Disallows the [`$.grep`](https://api.jquery.com/jQuery.grep/) utility. Prefer `A
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.grep();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 grep();
 'test'.grep();

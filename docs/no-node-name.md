@@ -2,16 +2,16 @@
 
 Disallows the [`$.nodeName`](https://api.jquery.com/jQuery.nodeName/) utility.
 
-This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.nodeName();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 nodeName();
 myClass.nodeName();

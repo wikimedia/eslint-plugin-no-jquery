@@ -4,7 +4,7 @@ Disallows the [`.map`](https://api.jquery.com/map/) method. Prefer `Array#map`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).map();
 $div.map();
@@ -12,7 +12,7 @@ $( 'div' ).first().map();
 $( 'div' ).append( $( 'input' ).map() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 map();
 [].map();

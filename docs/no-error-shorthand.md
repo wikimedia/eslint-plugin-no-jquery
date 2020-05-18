@@ -2,11 +2,11 @@
 
 Disallows the [`.error`](https://api.jquery.com/error/) method. Prefer `.on` or `.trigger`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).error( handler );
 $div.error();
@@ -14,7 +14,7 @@ $( 'div' ).first().error();
 $( 'div' ).append( $( 'input' ).error() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 error();
 [].error();
@@ -23,7 +23,7 @@ div.error;
 $.error();
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $( 'div' ).error( handler ); /* → */ $( 'div' ).on( 'error', handler );
 $div.error();                /* → */ $div.trigger( 'error' );

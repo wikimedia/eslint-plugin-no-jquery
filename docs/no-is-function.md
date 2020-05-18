@@ -2,24 +2,24 @@
 
 Disallows the [`$.isFunction`](https://api.jquery.com/jQuery.isFunction/) utility. Prefer `typeof`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.isFunction( expression( arg ) );
 if ( $.isFunction( fn ) ) { g(); }
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 isFunction();
 myClass.isFunction();
 $div.isFunction();
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $.isFunction( expression( arg ) ); /* → */ typeof expression( arg ) === 'function';
 if ( $.isFunction( fn ) ) { g(); } /* → */ if ( typeof fn === 'function' ) { g(); }

@@ -4,7 +4,7 @@ Disallows the [`.is`](https://api.jquery.com/is/) method. Prefer `Element#matche
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).is();
 $div.is();
@@ -12,7 +12,7 @@ $( 'div' ).first().is();
 $( 'div' ).append( $( 'input' ).is() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 is();
 [].is();

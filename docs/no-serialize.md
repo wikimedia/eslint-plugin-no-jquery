@@ -4,7 +4,7 @@ Disallows the [`.serialize`](https://api.jquery.com/serialize/)/[`.serializeArra
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).serialize();
 $div.serialize();
@@ -16,7 +16,7 @@ $( 'div' ).first().serializeArray();
 $( 'div' ).append( $( 'input' ).serializeArray() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 serialize();
 [].serialize();

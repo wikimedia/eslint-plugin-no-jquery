@@ -6,7 +6,7 @@ Disallows the [`.toggle`](https://api.jquery.com/toggle/) method.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).toggle();
 $div.toggle();
@@ -14,7 +14,7 @@ $( 'div' ).first().toggle();
 $( 'div' ).append( $( 'input' ).toggle() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 toggle();
 [].toggle();

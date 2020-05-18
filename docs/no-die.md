@@ -6,7 +6,7 @@ Disallows the [`.die`](https://api.jquery.com/die/) method. Prefer `.off`/`Event
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).die();
 $div.die();
@@ -14,7 +14,7 @@ $( 'div' ).first().die();
 $( 'div' ).append( $( 'input' ).die() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 die();
 [].die();
