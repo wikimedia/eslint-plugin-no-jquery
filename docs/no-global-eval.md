@@ -4,12 +4,12 @@ Disallows the [`$.globalEval`](https://api.jquery.com/jQuery.globalEval/) utilit
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.globalEval();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 globalEval();
 'test'.globalEval();

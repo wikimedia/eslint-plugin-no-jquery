@@ -6,7 +6,7 @@ Disallows the [`.unbind`](https://api.jquery.com/unbind/) method. Prefer `.off`/
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).unbind();
 $div.unbind();
@@ -14,7 +14,7 @@ $( 'div' ).first().unbind();
 $( 'div' ).append( $( 'input' ).unbind() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 unbind();
 [].unbind();

@@ -2,17 +2,17 @@
 
 Disallows the [`$.support`](https://api.jquery.com/jQuery.support/) property.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.9`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.9`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.support;
 $.support.style;
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 support;
 a.support;

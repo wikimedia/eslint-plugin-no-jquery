@@ -4,7 +4,7 @@ Disallows the document ready event, either `$( function() {} )` or `$( document 
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( function () { } );
 $( function init() { } );
@@ -16,7 +16,7 @@ $div.ready( function () { } );
 $( 'img' ).first().ready( function () { } );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 ready( function () { } );
 ready( ()=>{} );

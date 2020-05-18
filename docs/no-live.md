@@ -2,11 +2,11 @@
 
 Disallows the [`.live`](https://api.jquery.com/live/)/[`.die`](https://api.jquery.com/die/) methods. Prefer `.on`/`.off` or `EventTarget#addEventListener`/`removeEventListener`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).live();
 $div.live();
@@ -18,7 +18,7 @@ $( 'div' ).first().die();
 $( 'div' ).append( $( 'input' ).die() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 live();
 [].live();

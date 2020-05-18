@@ -2,16 +2,16 @@
 
 Disallows the [`$.type`](https://api.jquery.com/jQuery.type/) utility. Prefer `typeof`/`instanceof`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.type();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 type();
 myMethod.type();

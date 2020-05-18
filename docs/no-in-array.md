@@ -4,12 +4,12 @@ Disallows the [`$.inArray`](https://api.jquery.com/jQuery.inArray/) utility. Pre
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.inArray();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 inArray();
 'test'.inArray();

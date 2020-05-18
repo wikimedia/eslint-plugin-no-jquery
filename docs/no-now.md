@@ -2,23 +2,23 @@
 
 Disallows the [`$.now`](https://api.jquery.com/jQuery.now/) utility. Prefer `(new Date).getTime()`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.now();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 now();
 myClass.now();
 $div.now();
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $.now(); /* → */ Date.now();
 ```

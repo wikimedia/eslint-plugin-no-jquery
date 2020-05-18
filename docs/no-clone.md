@@ -4,7 +4,7 @@ Disallows the [`.clone`](https://api.jquery.com/clone/) method and `$.clone` uti
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.clone();
 $( 'div' ).clone();
@@ -14,7 +14,7 @@ $( 'div' ).first().clone();
 $( 'div' ).append( $( 'input' ).clone() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 clone();
 [].clone();

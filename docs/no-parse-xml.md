@@ -2,16 +2,16 @@
 
 Disallows the [`$.parseXML`](https://api.jquery.com/jQuery.parseXML/) utility. Prefer `DOMParser#parseFromString`.
 
-This rule is enabled in `plugin:no-jquery/slim`.
+⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.parseXML();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 parseXML();
 'test'.parseXML();

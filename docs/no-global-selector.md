@@ -4,7 +4,7 @@ Disallows global selectors which search the whole document. Encourages users to 
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' );
 $( '#id' );
@@ -17,14 +17,14 @@ $( '.selector', undefined );
 $( '.selector', $( '.context' ) );
 ```
 
-❌ With `[{"allowIds":true}]` options:
+❌ Examples of **incorrect** code with `[{"allowIds":true}]` options:
 ```js
 $( '#id>div' );
 $( '#id~div' );
 $( '#id div' );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 $( '<div>' );
 $( '<div attr=val>' );
@@ -45,7 +45,7 @@ $( false );
 $( '#' );
 ```
 
-✔️ With `[{"allowIds":true}]` options:
+✔️ Examples of **correct** code with `[{"allowIds":true}]` options:
 ```js
 $( '#id' );
 $( '#id-foo_bar1' );

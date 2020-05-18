@@ -2,11 +2,11 @@
 
 Disallows the [`.andSelf`](https://api.jquery.com/andSelf/) method. Prefer `.addBack`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).andSelf( '.foo' );
 $div.andSelf( '.foo' );
@@ -14,7 +14,7 @@ $( 'div' ).first().andSelf();
 $( 'div' ).append( $( 'input' ).andSelf() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 andSelf();
 [].andSelf();
@@ -22,7 +22,7 @@ div.andSelf();
 div.andSelf;
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $( 'div' ).andSelf( '.foo' ); /* → */ $( 'div' ).addBack( '.foo' );
 $div.andSelf( '.foo' );       /* → */ $div.addBack( '.foo' );

@@ -2,11 +2,11 @@
 
 Disallows the [`.delegate`](https://api.jquery.com/delegate/)/[`.undelegate`](https://api.jquery.com/undelegate/) methods. Prefer `.on`/`.off` or `EventTarget#addEventListener`/`removeEventListener`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).delegate();
 $div.delegate();
@@ -18,7 +18,7 @@ $( 'div' ).first().undelegate();
 $( 'div' ).append( $( 'input' ).undelegate() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 delegate();
 [].delegate();

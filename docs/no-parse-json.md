@@ -2,23 +2,23 @@
 
 Disallows the [`$.parseJSON`](https://api.jquery.com/jQuery.parseJSON/) utility. Prefer `JSON.parse`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.parseJSON( '{}' );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 parseJSON();
 $div.parseJSON();
 'test'.parseJSON;
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $.parseJSON( '{}' ); /* → */ JSON.parse( '{}' );
 ```

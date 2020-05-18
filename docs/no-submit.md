@@ -4,7 +4,7 @@ Disallows the [`.submit`](https://api.jquery.com/submit/) method. Prefer `EventT
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'form' ).submit();
 $form.submit();
@@ -12,7 +12,7 @@ $( 'form' ).first().submit();
 $( 'form' ).append( $( 'input' ).submit() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 submit();
 [].submit();

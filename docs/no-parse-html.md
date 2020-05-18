@@ -4,12 +4,12 @@ Disallows the [`$.parseHTML`](https://api.jquery.com/jQuery.parseHTML/) utility.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.parseHTML();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 parseHTML();
 'test'.parseHTML();
