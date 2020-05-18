@@ -11,18 +11,18 @@ ruleTester.run( 'no-sizzle', rule, {
 	valid: [
 		'find(":input")',
 		'div.find(":input")',
-		'$(this).on("custom:input")',
-		'$(this).on("custom:selected")',
-		'$(this).find(".selected")',
-		'$(this).find(":checked")',
-		'$(this).find("input")',
-		'$(this).find(":first-child")',
-		'$(this).find(":first-child div")',
-		'$(this).find(":last-child")',
-		'$(this).find(":last-child div")',
-		'$(this).find($())',
-		'$(this).find(function() {})',
-		'$(this).find()',
+		'$("div").on("custom:input")',
+		'$("div").on("custom:selected")',
+		'$("div").find(".selected")',
+		'$("div").find(":checked")',
+		'$("div").find("input")',
+		'$("div").find(":first-child")',
+		'$("div").find(":first-child div")',
+		'$("div").find(":last-child")',
+		'$("div").find(":last-child div")',
+		'$("div").find($())',
+		'$("div").find(function() {})',
+		'$("div").find()',
 		'$(function() {})',
 		{
 			code: '$(":checked")',
@@ -152,7 +152,7 @@ ruleTester.run( 'no-sizzle', rule, {
 			errors: [ { message: errorPositional, type: 'CallExpression' } ]
 		},
 		{
-			code: '$(this).find(":gt(" + n + ")")',
+			code: '$("div").find(":gt(" + n + ")")',
 			errors: [ { message: errorPositional, type: 'CallExpression' } ]
 		},
 		{
