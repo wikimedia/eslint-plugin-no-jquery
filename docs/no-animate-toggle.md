@@ -2,11 +2,11 @@
 
 Disallows the duration argument when using the [`.show`](https://api.jquery.com/show/), [`.hide`](https://api.jquery.com/hide/) & [`.toggle`](https://api.jquery.com/toggle/) methods. Prefer CSS transitions.
 
-This rule is enabled in `plugin:no-jquery/slim`.
+⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).show( 'fast' );
 $div.show( 500 );
@@ -22,7 +22,7 @@ $( 'div' ).first().toggle( { duration: 'slow' } );
 $( 'div' ).append( $( 'input' ).toggle( { duration: 'slow' } ) );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 $div.show();
 $( 'div' ).show();

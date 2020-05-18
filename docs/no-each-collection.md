@@ -4,7 +4,7 @@ Disallows the [`.each`](https://api.jquery.com/each/) method. Prefer `Array#forE
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).each();
 $div.each();
@@ -12,7 +12,7 @@ $( 'div' ).first().each();
 $( 'div' ).append( $( 'input' ).each() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 each();
 [].each();

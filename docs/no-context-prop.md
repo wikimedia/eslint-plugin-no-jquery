@@ -2,11 +2,11 @@
 
 Disallows the [`.context`](https://api.jquery.com/context/) property.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.10`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.10`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).context;
 $div.context;
@@ -17,7 +17,7 @@ f( $div.context );
 $( 'div' ).append( $( 'input' ).context );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 context;
 div.context;

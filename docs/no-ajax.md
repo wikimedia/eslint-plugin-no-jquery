@@ -2,11 +2,11 @@
 
 Disallows the [`$.ajax`](https://api.jquery.com/jQuery.ajax/)/[`$.get`](https://api.jquery.com/jQuery.get/)/[`$.getJSON`](https://api.jquery.com/jQuery.getJSON/)/[`$.getScript`](https://api.jquery.com/jQuery.getScript/)/[`$.post`](https://api.jquery.com/jQuery.post/) utilies. Prefer `Window.fetch`.
 
-This rule is enabled in `plugin:no-jquery/slim`.
+⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.ajax();
 $.get();
@@ -15,7 +15,7 @@ $.getScript();
 $.post();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 ajax();
 div.ajax();

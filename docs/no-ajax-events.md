@@ -2,11 +2,11 @@
 
 Disallows global ajax events handlers: [`.ajaxStart`](https://api.jquery.com/ajaxStart/)/[`.ajaxSend`](https://api.jquery.com/ajaxSend/)/[`.ajaxSuccess`](https://api.jquery.com/ajaxSuccess/)/[`.ajaxError`](https://api.jquery.com/ajaxError/)/[`.ajaxComplete`](https://api.jquery.com/ajaxComplete/)/[`.ajaxStop`](https://api.jquery.com/ajaxStop/). Prefer local events.
 
-This rule is enabled in `plugin:no-jquery/slim`.
+⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( document ).on( 'ajaxSend', function ( e ) { } );
 $( document ).on( 'ajaxSuccess', function ( e ) { } );
@@ -22,7 +22,7 @@ $form.ajaxStart( function ( e ) { } );
 $form.ajaxStop( function ( e ) { } );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 $( document ).on( 'click', function ( e ) { } );
 $form.on( 'submit', function ( e ) { } );

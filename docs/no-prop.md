@@ -4,7 +4,7 @@ Disallows the [`.prop`](https://api.jquery.com/prop/)/[`.removeProp`](https://ap
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.prop();
 $( 'div' ).prop();
@@ -14,7 +14,7 @@ $( 'div' ).append( $( 'input' ).prop() );
 $( 'div' ).removeProp();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 prop();
 [].prop();

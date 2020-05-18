@@ -4,12 +4,12 @@ Disallows the [`$.each`](https://api.jquery.com/jQuery.each/) utility. Prefer `A
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.each();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 each();
 [].each();

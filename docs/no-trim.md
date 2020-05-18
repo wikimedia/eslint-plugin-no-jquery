@@ -2,16 +2,16 @@
 
 Disallows the [`$.trim`](https://api.jquery.com/jQuery.trim/) utility. Prefer `String#trim`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-3.5`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.5`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.trim( ' test ' );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 trim( ' test ' );
 ' test '.trim();

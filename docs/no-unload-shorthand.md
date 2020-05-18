@@ -2,11 +2,11 @@
 
 Disallows the [`.unload`](https://api.jquery.com/unload/) method. Prefer `.on` or `.trigger`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).unload( handler );
 $div.unload();
@@ -14,7 +14,7 @@ $( 'div' ).first().unload();
 $( 'div' ).append( $( 'input' ).unload() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 unload();
 [].unload();
@@ -23,7 +23,7 @@ div.unload;
 $.unload();
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $( 'div' ).unload( handler ); /* → */ $( 'div' ).on( 'unload', handler );
 $div.unload();                /* → */ $div.trigger( 'unload' );

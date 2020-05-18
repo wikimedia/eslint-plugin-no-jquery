@@ -4,7 +4,7 @@ Disallows the [`.filter`](https://api.jquery.com/filter/) method and `$.filter` 
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.filter();
 $( 'div' ).filter();
@@ -13,7 +13,7 @@ $( 'div' ).first().filter();
 $( 'div' ).append( $( 'input' ).filter() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 filter();
 [].filter();

@@ -4,12 +4,12 @@ Disallows the [`$.error`](https://api.jquery.com/jQuery.error/) utility. Prefer 
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.error();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 nodeName();
 myClass.nodeName();

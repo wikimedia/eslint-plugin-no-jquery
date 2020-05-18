@@ -2,11 +2,11 @@
 
 Disallows the [`.load`](https://api.jquery.com/load/) method. Prefer `fetch`.
 
-This rule is enabled in `plugin:no-jquery/slim`.
+⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).load();
 $div.load();
@@ -14,7 +14,7 @@ $( 'div' ).first().load();
 $( 'div' ).append( $( 'input' ).load() );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 load();
 [].load();

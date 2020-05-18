@@ -4,13 +4,13 @@ Disallows the [`$.noop`](https://api.jquery.com/jQuery.noop/) property. Prefer `
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.noop;
 $.noop();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 foo.noop;
 foo.noop();
@@ -18,7 +18,7 @@ foo.noop( bar );
 $.noOp;
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $.noop;   /* → */ ( function () {} );
 $.noop(); /* → */ ( function () {}() );

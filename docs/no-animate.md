@@ -2,11 +2,11 @@
 
 Disallows the [`.animate`](https://api.jquery.com/animate/) method. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.
 
-This rule is enabled in `plugin:no-jquery/slim`.
+⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).animate();
 $div.animate();
@@ -18,18 +18,18 @@ $div.animate( { scrollTop: 100, scrollLeft: 200 } );
 $div.animate( { scrollTop: 100, width: 300 } );
 ```
 
-❌ With `[{"allowScroll":true}]` options:
+❌ Examples of **incorrect** code with `[{"allowScroll":true}]` options:
 ```js
 $div.animate();
 $div.animate( { scrollTop: 100, width: 300 } );
 ```
 
-❌ With `[{"allowScroll":false}]` options:
+❌ Examples of **incorrect** code with `[{"allowScroll":false}]` options:
 ```js
 $div.animate( { scrollTop: 100 } );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 animate();
 [].animate();
@@ -37,7 +37,7 @@ div.animate();
 div.animate;
 ```
 
-✔️ With `[{"allowScroll":true}]` options:
+✔️ Examples of **correct** code with `[{"allowScroll":true}]` options:
 ```js
 $div.animate( { scrollTop: 100 } );
 $div.animate( { scrollLeft: 200 } );

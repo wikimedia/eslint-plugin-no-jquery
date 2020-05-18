@@ -4,12 +4,12 @@ Disallows the [`$.isPlainObject`](https://api.jquery.com/jQuery.isPlainObject/) 
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.isPlainObject();
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 isPlainObject();
 myClass.isPlainObject();

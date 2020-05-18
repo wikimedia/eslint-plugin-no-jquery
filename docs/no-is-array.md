@@ -2,23 +2,23 @@
 
 Disallows the [`$.isArray`](https://api.jquery.com/jQuery.isArray/) utility. Prefer `Array.isArray`.
 
-This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
+⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $.isArray( [] );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 isArray();
 'test'.isArray();
 'test'.isArray;
 ```
 
-🔧 The `--fix` option can be used to fix problems reported by this rule:
+🔧 Examples of code **fixed** by using  `--fix`:
 ```js
 $.isArray( [] ); /* → */ Array.isArray( [] );
 ```

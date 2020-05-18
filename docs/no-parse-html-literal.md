@@ -9,7 +9,7 @@ The format of single tags can be specified using the `singleTagStyle` option:
 
 ## Rule details
 
-❌ The following patterns are considered errors:
+❌ Examples of **incorrect** code:
 ```js
 $( '<div>contents</div>' );
 $( '<div attr=val>' );
@@ -36,26 +36,26 @@ $( '<div/>' );
 $( '<div></div>' );
 ```
 
-❌ With `[{"singleTagStyle":"minimal"}]` options:
+❌ Examples of **incorrect** code with `[{"singleTagStyle":"minimal"}]` options:
 ```js
 $( '<div/>' );
 $( '<div></div>' );
 ```
 
-❌ With `[{"singleTagStyle":"self-closing"}]` options:
+❌ Examples of **incorrect** code with `[{"singleTagStyle":"self-closing"}]` options:
 ```js
 $( '<div>' );
 $( '<div />' );
 $( '<div></div>' );
 ```
 
-❌ With `[{"singleTagStyle":"any"}]` options:
+❌ Examples of **incorrect** code with `[{"singleTagStyle":"any"}]` options:
 ```js
 $( '<div attr=val>' );
 $( '<div><div>' );
 ```
 
-✔️ The following patterns are not considered errors:
+✔️ Examples of **correct** code:
 ```js
 $();
 $( '' );
@@ -77,17 +77,17 @@ $.parseHTML( variable1 + variable2 );
 $.parseHTML( 'string' + variable );
 ```
 
-✔️ With `[{"singleTagStyle":"minimal"}]` options:
+✔️ Examples of **correct** code with `[{"singleTagStyle":"minimal"}]` options:
 ```js
 $( '<div>' );
 ```
 
-✔️ With `[{"singleTagStyle":"self-closing"}]` options:
+✔️ Examples of **correct** code with `[{"singleTagStyle":"self-closing"}]` options:
 ```js
 $( '<div/>' );
 ```
 
-✔️ With `[{"singleTagStyle":"any"}]` options:
+✔️ Examples of **correct** code with `[{"singleTagStyle":"any"}]` options:
 ```js
 $( '<div />' );
 $( '<div></div>' );
