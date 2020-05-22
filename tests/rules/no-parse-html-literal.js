@@ -11,16 +11,27 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-parse-html-literal', rule, {
 	valid: [
 		// $( html )
-		'$()',
 		'$("")',
-		'$([])',
 		'$("#id > .class[attr]")',
 		'$(variable)',
-		'$(variable1 = variable2)',
 		'$(function(){})',
 		'$("<div>")',
 		'$("<div>", {width:100})',
 		'$("<" + "div" + ">")',
+
+		{
+			code: '$()',
+			noDoc: true
+		},
+		{
+			code: '$([])',
+			noDoc: true
+		},
+		{
+			code: '$(variable1 = variable2)',
+			noDoc: true
+		},
+
 		{
 			code: '$("<div>")',
 			options: [ { singleTagStyle: 'minimal' } ]
@@ -77,10 +88,11 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 				'"<div attr=val>"',
 				'"<div attr=val />"',
 				'"<div>" + "content" + "</div>"'
-			].map( function ( string ) {
+			].map( function ( string, i ) {
 				return {
 					code: method + '(' + string + ')',
-					errors: [ error ]
+					errors: [ error ],
+					noDoc: !( i === 0 || method === '$' )
 				};
 			} )
 		);

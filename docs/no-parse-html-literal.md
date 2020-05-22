@@ -16,21 +16,9 @@ $( '<div attr=val>' );
 $( '<div attr=val />' );
 $( '<div>' + 'content' + '</div>' );
 $div.html( '<div>contents</div>' );
-$div.html( '<div attr=val>' );
-$div.html( '<div attr=val />' );
-$div.html( '<div>' + 'content' + '</div>' );
 $div.append( '<div>contents</div>' );
-$div.append( '<div attr=val>' );
-$div.append( '<div attr=val />' );
-$div.append( '<div>' + 'content' + '</div>' );
 $div.add( '<div>contents</div>' );
-$div.add( '<div attr=val>' );
-$div.add( '<div attr=val />' );
-$div.add( '<div>' + 'content' + '</div>' );
 $.parseHTML( '<div>contents</div>' );
-$.parseHTML( '<div attr=val>' );
-$.parseHTML( '<div attr=val />' );
-$.parseHTML( '<div>' + 'content' + '</div>' );
 $.parseHTML( '<div>' );
 $( '<div/>' );
 $( '<div></div>' );
@@ -57,12 +45,9 @@ $( '<div><div>' );
 
 ✔️ Examples of **correct** code:
 ```js
-$();
 $( '' );
-$( [] );
 $( '#id > .class[attr]' );
 $( variable );
-$( variable1 = variable2 );
 $( function () {} );
 $( '<div>' );
 $( '<div>', { width: 100 } );
