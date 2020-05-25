@@ -1,3 +1,5 @@
+'use strict';
+
 const main = require( '../package' ).main;
 const rulesets = require( '../' + main ).configs;
 const rulesData = {};

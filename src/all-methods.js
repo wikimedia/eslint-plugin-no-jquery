@@ -1,3 +1,5 @@
+'use strict';
+
 <!-- This file is built by build-all-methods.js; do not edit it directly. -->
 module.exports = [
 	'add',

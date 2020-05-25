@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require( 'fs' );
 const template = fs.readFileSync( 'README.md.template', { encoding: 'UTF8' } );
 const allRules = require( '../src/index' ).rules;
@@ -29,6 +31,7 @@ function getRules( deprecated ) {
 							''
 					);
 			}
+			return null;
 		}
 	).filter( ( rule ) => rule ).join( '\n' );
 }
