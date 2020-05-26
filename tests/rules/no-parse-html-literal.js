@@ -41,10 +41,6 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 			code: '$("<div>" + "</div>")',
 			options: [ { singleTagStyle: 'any' } ]
 		},
-		{
-			code: '$("<div />")',
-			options: [ { singleTagStyle: 'any' } ]
-		},
 		// $.html
 		'$div.html()',
 		'$div.html(variable)',

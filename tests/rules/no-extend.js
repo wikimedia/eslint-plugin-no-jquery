@@ -27,8 +27,8 @@ ruleTester.run( 'no-extend', rule, {
 		},
 		{
 			code: '$.extend({}, foo)',
-			errors: [ { message: error, type: 'CallExpression' } ],
-			options: [ { allowDeep: true } ]
+			options: [ { allowDeep: true } ],
+			errors: [ { message: error, type: 'CallExpression' } ]
 		}
 	]
 } );

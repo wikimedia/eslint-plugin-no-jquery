@@ -55,7 +55,6 @@ $( 'div' ).siblings( ':visible' );
 $( 'div:visible' );
 $( 'div:visible' ).find( 'p' );
 $( 'div' ).find( 'p:visible' ).addClass( 'test' ).find( 'p' );
-$( 'div' ).find( ':visible' );
 $( 'div' ).find( 'div:animated' );
 $div.find( 'form input:checkbox' );
 ```

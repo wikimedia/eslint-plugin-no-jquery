@@ -328,10 +328,6 @@ ruleTester.run( 'no-sizzle', rule, {
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
-			code: '$("div").find(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
-		},
-		{
 			code: '$("div").find("div:animated")',
 			errors: [ { message: error, type: 'CallExpression' } ]
 		},

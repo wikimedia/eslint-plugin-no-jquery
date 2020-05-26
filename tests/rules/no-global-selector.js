@@ -31,7 +31,6 @@ ruleTester.run( 'no-global-selector', rule, {
 		'$([])',
 		'$("")',
 		'$(null)',
-		'$(null)',
 		'$(undefined)',
 		'$(false)',
 		// Pre-jQuery 3 syntax for empty set
@@ -76,18 +75,18 @@ ruleTester.run( 'no-global-selector', rule, {
 		},
 		{
 			code: '$("#id>div")',
-			errors: [ { message: error, type: 'CallExpression' } ],
-			options: [ { allowIds: true } ]
+			options: [ { allowIds: true } ],
+			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
 			code: '$("#id~div")',
-			errors: [ { message: error, type: 'CallExpression' } ],
-			options: [ { allowIds: true } ]
+			options: [ { allowIds: true } ],
+			errors: [ { message: error, type: 'CallExpression' } ]
 		},
 		{
 			code: '$("#id div")',
-			errors: [ { message: error, type: 'CallExpression' } ],
-			options: [ { allowIds: true } ]
+			options: [ { allowIds: true } ],
+			errors: [ { message: error, type: 'CallExpression' } ]
 		}
 	]
 } );

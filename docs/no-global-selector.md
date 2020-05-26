@@ -39,7 +39,6 @@ $( variable );
 $( [] );
 $( '' );
 $( null );
-$( null );
 $( undefined );
 $( false );
 $( '#' );
