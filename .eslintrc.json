@@ -3,9 +3,17 @@
 		"wikimedia",
 		"wikimedia/node",
 		"wikimedia/language/es2016",
-		"plugin:eslint-plugin/recommended"
+		"plugin:eslint-plugin/all"
 	],
 	"plugins": [
 		"eslint-plugin"
-	]
+	],
+	"rules": {
+		"eslint-plugin/consistent-output": "off",
+		"eslint-plugin/require-meta-docs-description": "off",
+		"eslint-plugin/require-meta-docs-url": "off",
+		"eslint-plugin/test-case-property-ordering": [ "error",
+			[ "code", "options", "parserOptions", "settings", "errors", "output" ]
+		]
+	}
 }
