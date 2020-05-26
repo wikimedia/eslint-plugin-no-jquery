@@ -13,39 +13,39 @@ ruleTester.run( 'no-attr', rule, {
 	invalid: [
 		{
 			code: '$.attr()',
-			errors: [ { message: getError, type: 'CallExpression' } ]
+			errors: [ getError ]
 		},
 		{
 			code: '$("div").attr()',
-			errors: [ { message: getError, type: 'CallExpression' } ]
+			errors: [ getError ]
 		},
 		{
 			code: '$div.attr()',
-			errors: [ { message: getError, type: 'CallExpression' } ]
+			errors: [ getError ]
 		},
 		{
 			code: '$("div").first().attr()',
-			errors: [ { message: getError, type: 'CallExpression' } ]
+			errors: [ getError ]
 		},
 		{
 			code: '$("div").append($("input").attr())',
-			errors: [ { message: getError, type: 'CallExpression' } ]
+			errors: [ getError ]
 		},
 		{
 			code: '$("div").attr("name")',
-			errors: [ { message: getError, type: 'CallExpression' } ]
+			errors: [ getError ]
 		},
 		{
 			code: '$("div").attr("name", "random")',
-			errors: [ { message: setError, type: 'CallExpression' } ]
+			errors: [ setError ]
 		},
 		{
 			code: '$.removeAttr()',
-			errors: [ { message: removeError, type: 'CallExpression' } ]
+			errors: [ removeError ]
 		},
 		{
 			code: '$("div").removeAttr("name")',
-			errors: [ { message: removeError, type: 'CallExpression' } ]
+			errors: [ removeError ]
 		}
 	]
 } );

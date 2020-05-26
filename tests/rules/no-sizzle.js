@@ -96,244 +96,244 @@ ruleTester.run( 'no-sizzle', rule, {
 	invalid: [
 		{
 			code: '$(":animated")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":animated")',
 			options: [ { allowPositional: true } ],
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":button")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":checkbox")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":eq(2)")',
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":eq(2)")',
 			options: [ { allowOther: true } ],
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":even")',
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":even")',
 			options: [ { allowOther: true } ],
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":file")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":first")',
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":first")',
 			options: [ { allowOther: true } ],
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":gt(2)")',
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":gt(2)")',
 			options: [ { allowOther: true } ],
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$("div").find(":gt(" + n + ")")',
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":has(.foo)")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":header")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":hidden")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("." + className + ":hidden")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":image")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":input")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":last")',
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":last")',
 			options: [ { allowOther: true } ],
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":lt(2)")',
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":lt(2)")',
 			options: [ { allowOther: true } ],
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":nth(2)")',
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":nth(2)")',
 			options: [ { allowOther: true } ],
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":odd")',
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":odd")',
 			options: [ { allowOther: true } ],
-			errors: [ { message: errorPositional, type: 'CallExpression' } ]
+			errors: [ errorPositional ]
 		},
 		{
 			code: '$(":parent")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":password")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":radio")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":reset")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":selected")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":submit")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":text")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").children(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").closest(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").filter(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").find(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").has(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").is(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").next(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").nextAll(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").nextUntil(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").not(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").parent(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").parents(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").parentsUntil(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").prev(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").prevAll(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").prevUntil(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").siblings(":visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div:visible")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div:visible").find("p")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").find("p:visible").addClass("test").find("p")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").find("div:animated")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.find("form input:checkbox")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

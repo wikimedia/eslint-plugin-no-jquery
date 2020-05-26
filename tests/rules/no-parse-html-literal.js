@@ -80,7 +80,7 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 			].map( function ( string ) {
 				return {
 					code: method + '(' + string + ')',
-					errors: [ { message: error, type: 'CallExpression' } ]
+					errors: [ error ]
 				};
 			} )
 		);
@@ -88,51 +88,51 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 		// In addition, don't even use $.parseHTML for single tags
 		{
 			code: '$.parseHTML("<div>")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		// singleTagStyle
 		{
 			code: '$("<div/>")',
-			errors: [ { message: errorMinimal, type: 'CallExpression' } ]
+			errors: [ errorMinimal ]
 		},
 		{
 			code: '$("<div></div>")',
-			errors: [ { message: errorMinimal, type: 'CallExpression' } ]
+			errors: [ errorMinimal ]
 		},
 		{
 			code: '$("<div/>")',
 			options: [ { singleTagStyle: 'minimal' } ],
-			errors: [ { message: errorMinimal, type: 'CallExpression' } ]
+			errors: [ errorMinimal ]
 		},
 		{
 			code: '$("<div></div>")',
 			options: [ { singleTagStyle: 'minimal' } ],
-			errors: [ { message: errorMinimal, type: 'CallExpression' } ]
+			errors: [ errorMinimal ]
 		},
 		{
 			code: '$("<div>")',
 			options: [ { singleTagStyle: 'self-closing' } ],
-			errors: [ { message: errorSelfClosing, type: 'CallExpression' } ]
+			errors: [ errorSelfClosing ]
 		},
 		{
 			code: '$("<div />")',
 			options: [ { singleTagStyle: 'self-closing' } ],
-			errors: [ { message: errorSelfClosing, type: 'CallExpression' } ]
+			errors: [ errorSelfClosing ]
 		},
 		{
 			code: '$("<div></div>")',
 			options: [ { singleTagStyle: 'self-closing' } ],
-			errors: [ { message: errorSelfClosing, type: 'CallExpression' } ]
+			errors: [ errorSelfClosing ]
 		},
 		{
 			code: '$("<div attr=val>")',
 			options: [ { singleTagStyle: 'any' } ],
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("<div><div>")',
 			options: [ { singleTagStyle: 'any' } ],
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	] )
 } );

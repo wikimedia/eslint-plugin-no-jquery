@@ -17,7 +17,7 @@ ruleTester.run( 'no-trim', rule, {
 	invalid: [
 		{
 			code: '$.trim(" test ")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

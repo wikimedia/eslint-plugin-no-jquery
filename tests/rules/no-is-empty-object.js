@@ -11,7 +11,7 @@ ruleTester.run( 'no-is-empty-object', rule, {
 	invalid: [
 		{
 			code: '$.isEmptyObject()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

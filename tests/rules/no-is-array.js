@@ -11,7 +11,7 @@ ruleTester.run( 'no-is-array', rule, {
 	invalid: [
 		{
 			code: '$.isArray( [] )',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: 'Array.isArray( [] )'
 		}
 	]

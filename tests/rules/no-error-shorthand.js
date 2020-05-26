@@ -11,22 +11,22 @@ ruleTester.run( 'no-error-shorthand', rule, {
 	invalid: [
 		{
 			code: '$("div").error(handler)',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").on("error", handler)'
 		},
 		{
 			code: '$div.error()',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$div.trigger("error")'
 		},
 		{
 			code: '$("div").first().error()',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").first().trigger("error")'
 		},
 		{
 			code: '$("div").append($("input").error())',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").append($("input").trigger("error"))'
 		}
 	]

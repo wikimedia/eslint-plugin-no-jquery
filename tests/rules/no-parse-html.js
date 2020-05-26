@@ -11,7 +11,7 @@ ruleTester.run( 'no-parse-html', rule, {
 	invalid: [
 		{
 			code: '$.parseHTML()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

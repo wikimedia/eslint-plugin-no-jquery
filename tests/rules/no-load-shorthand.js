@@ -21,32 +21,32 @@ ruleTester.run( 'no-load-shorthand', rule, {
 	invalid: [
 		{
 			code: '$("div").load(function(){})',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").on("load", function(){})'
 		},
 		{
 			code: '$div.load(function(){})',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$div.on("load", function(){})'
 		},
 		{
 			code: '$div.load()',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$div.trigger("load")'
 		},
 		{
 			code: '$div.load(() => {})',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$div.on("load", () => {})'
 		},
 		{
 			code: '$("div").first().load(function(){})',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").first().on("load", function(){})'
 		},
 		{
 			code: '$("div").append($("input").load(function(){}))',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").append($("input").on("load", function(){}))'
 		}
 	]

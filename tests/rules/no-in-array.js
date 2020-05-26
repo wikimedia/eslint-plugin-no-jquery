@@ -11,7 +11,7 @@ ruleTester.run( 'no-in-array', rule, {
 	invalid: [
 		{
 			code: '$.inArray()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

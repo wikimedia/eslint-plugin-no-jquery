@@ -11,11 +11,11 @@ ruleTester.run( 'no-browser', rule, {
 	invalid: [
 		{
 			code: '$.browser',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$.browser.style',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

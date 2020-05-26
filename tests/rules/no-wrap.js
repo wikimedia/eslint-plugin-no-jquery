@@ -34,67 +34,67 @@ ruleTester.run( 'no-wrap', rule, {
 	invalid: [
 		{
 			code: '$("div").wrap()',
-			errors: [ { message: wrapError, type: 'CallExpression' } ]
+			errors: [ wrapError ]
 		},
 		{
 			code: '$div.wrap()',
-			errors: [ { message: wrapError, type: 'CallExpression' } ]
+			errors: [ wrapError ]
 		},
 		{
 			code: '$("div").first().wrap()',
-			errors: [ { message: wrapError, type: 'CallExpression' } ]
+			errors: [ wrapError ]
 		},
 		{
 			code: '$("div").append($("input").wrap())',
-			errors: [ { message: wrapError, type: 'CallExpression' } ]
+			errors: [ wrapError ]
 		},
 		{
 			code: '$("div").wrapAll()',
-			errors: [ { message: wrapAllError, type: 'CallExpression' } ]
+			errors: [ wrapAllError ]
 		},
 		{
 			code: '$div.wrapAll()',
-			errors: [ { message: wrapAllError, type: 'CallExpression' } ]
+			errors: [ wrapAllError ]
 		},
 		{
 			code: '$("div").first().wrapAll()',
-			errors: [ { message: wrapAllError, type: 'CallExpression' } ]
+			errors: [ wrapAllError ]
 		},
 		{
 			code: '$("div").append($("input").wrapAll())',
-			errors: [ { message: wrapAllError, type: 'CallExpression' } ]
+			errors: [ wrapAllError ]
 		},
 		{
 			code: '$("div").wrapInner()',
-			errors: [ { message: wrapInnerError, type: 'CallExpression' } ]
+			errors: [ wrapInnerError ]
 		},
 		{
 			code: '$div.wrapInner()',
-			errors: [ { message: wrapInnerError, type: 'CallExpression' } ]
+			errors: [ wrapInnerError ]
 		},
 		{
 			code: '$("div").first().wrapInner()',
-			errors: [ { message: wrapInnerError, type: 'CallExpression' } ]
+			errors: [ wrapInnerError ]
 		},
 		{
 			code: '$("div").append($("input").wrapInner())',
-			errors: [ { message: wrapInnerError, type: 'CallExpression' } ]
+			errors: [ wrapInnerError ]
 		},
 		{
 			code: '$("div").unwrap()',
-			errors: [ { message: unwrapError, type: 'CallExpression' } ]
+			errors: [ unwrapError ]
 		},
 		{
 			code: '$div.unwrap()',
-			errors: [ { message: unwrapError, type: 'CallExpression' } ]
+			errors: [ unwrapError ]
 		},
 		{
 			code: '$("div").first().unwrap()',
-			errors: [ { message: unwrapError, type: 'CallExpression' } ]
+			errors: [ unwrapError ]
 		},
 		{
 			code: '$("div").append($("input").unwrap())',
-			errors: [ { message: unwrapError, type: 'CallExpression' } ]
+			errors: [ unwrapError ]
 		}
 	]
 } );

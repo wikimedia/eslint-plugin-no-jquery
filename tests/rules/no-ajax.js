@@ -35,23 +35,23 @@ ruleTester.run( 'no-ajax', rule, {
 	invalid: [
 		{
 			code: '$.ajax()',
-			errors: [ { message: ajaxError, type: 'CallExpression' } ]
+			errors: [ ajaxError ]
 		},
 		{
 			code: '$.get()',
-			errors: [ { message: getError, type: 'CallExpression' } ]
+			errors: [ getError ]
 		},
 		{
 			code: '$.getJSON()',
-			errors: [ { message: jsonError, type: 'CallExpression' } ]
+			errors: [ jsonError ]
 		},
 		{
 			code: '$.getScript()',
-			errors: [ { message: scriptError, type: 'CallExpression' } ]
+			errors: [ scriptError ]
 		},
 		{
 			code: '$.post()',
-			errors: [ { message: postError, type: 'CallExpression' } ]
+			errors: [ postError ]
 		}
 	]
 } );

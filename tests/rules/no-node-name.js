@@ -11,7 +11,7 @@ ruleTester.run( 'no-node-name', rule, {
 	invalid: [
 		{
 			code: '$.nodeName()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

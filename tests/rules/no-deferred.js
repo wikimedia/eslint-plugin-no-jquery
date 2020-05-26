@@ -16,11 +16,11 @@ ruleTester.run( 'no-deferred', rule, {
 	invalid: [
 		{
 			code: '$.Deferred()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: 'new $.Deferred()',
-			errors: [ { message: error, type: 'NewExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

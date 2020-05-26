@@ -11,7 +11,7 @@ ruleTester.run( 'no-param', rule, {
 	invalid: [
 		{
 			code: '$.param()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

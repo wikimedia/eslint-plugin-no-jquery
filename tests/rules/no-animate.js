@@ -29,50 +29,50 @@ ruleTester.run( 'no-animate', rule, {
 	invalid: [
 		{
 			code: '$("div").animate()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.animate()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.animate()',
 			options: [ { allowScroll: true } ],
-			errors: [ { message: errorNoScroll, type: 'CallExpression' } ]
+			errors: [ errorNoScroll ]
 		},
 		{
 			code: '$("div").first().animate()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").append($("input").animate())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.animate({scrollTop: 100})',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.animate({scrollTop: 100})',
 			options: [ { allowScroll: false } ],
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.animate({scrollLeft: 200})',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.animate({scrollTop: 100, scrollLeft: 200})',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.animate({scrollTop: 100, width: 300})',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.animate({scrollTop: 100, width: 300})',
 			options: [ { allowScroll: true } ],
-			errors: [ { message: errorNoScroll, type: 'CallExpression' } ]
+			errors: [ errorNoScroll ]
 		}
 	]
 } );

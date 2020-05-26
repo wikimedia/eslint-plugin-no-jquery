@@ -11,7 +11,7 @@ ruleTester.run( 'no-sub', rule, {
 	invalid: [
 		{
 			code: '$.sub()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

@@ -17,31 +17,31 @@ ruleTester.run( 'no-context-prop', rule, {
 	invalid: [
 		{
 			code: '$("div").context',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.context',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.context.prop',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.context.method()',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").first().context',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: 'f($div.context)',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").append($("input").context)',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

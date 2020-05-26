@@ -12,29 +12,29 @@ ruleTester.run( 'no-prop', rule, {
 	invalid: [
 		{
 			code: '$.prop()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").prop()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.prop()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").first().prop()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").append($("input").prop())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		// $.removeProp util is disallowed too as the rule is shared
 		// with $.prop, but $.removeProp doesn't exist
 		{
 			code: '$("div").removeProp()',
-			errors: [ { message: errorRemove, type: 'CallExpression' } ]
+			errors: [ errorRemove ]
 		}
 	]
 } );

@@ -149,28 +149,28 @@ ruleTester.run( 'variable-pattern', rule, {
 	invalid: [
 		{
 			code: 'var div = $("<div>")',
-			errors: [ { message: error, type: 'VariableDeclarator' } ]
+			errors: [ error ]
 		},
 		// Plugins
 		{
 			code: 'div = $("<div>").datePicker()',
 			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'always' } } },
-			errors: [ { message: error, type: 'AssignmentExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: 'div = $("<div>").datePicker(options)',
 			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'always' } } },
-			errors: [ { message: error, type: 'AssignmentExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: 'div = $("<div>").datePicker(options)',
 			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'accessor' } } },
-			errors: [ { message: error, type: 'AssignmentExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: 'div = $("<div>").datePicker("name", newPicker)',
 			settings: { 'no-jquery': { collectionReturningPlugins: { datePicker: 'valueAccessor' } } },
-			errors: [ { message: error, type: 'AssignmentExpression' } ]
+			errors: [ error ]
 		}
 	].concat(
 		[
@@ -270,7 +270,7 @@ ruleTester.run( 'variable-pattern', rule, {
 			'div = $div.stop(true, true)'
 		].map(
 			( test ) => Object.assign( {
-				errors: [ { message: error, type: 'AssignmentExpression' } ]
+				errors: [ error ]
 			}, typeof test === 'string' ? { code: test } : test )
 		)
 	)

@@ -11,7 +11,7 @@ ruleTester.run( 'no-parse-json', rule, {
 	invalid: [
 		{
 			code: '$.parseJSON("{}")',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: 'JSON.parse("{}")'
 		}
 	]

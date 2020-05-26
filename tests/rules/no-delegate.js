@@ -22,36 +22,36 @@ ruleTester.run( 'no-delegate', rule, {
 	invalid: [
 		{
 			code: '$("div").delegate()',
-			errors: [ { message: delegateError, type: 'CallExpression' } ]
+			errors: [ delegateError ]
 		},
 		{
 			code: '$div.delegate()',
-			errors: [ { message: delegateError, type: 'CallExpression' } ]
+			errors: [ delegateError ]
 		},
 		{
 			code: '$("div").first().delegate()',
-			errors: [ { message: delegateError, type: 'CallExpression' } ]
+			errors: [ delegateError ]
 		},
 		{
 			code: '$("div").append($("input").delegate())',
-			errors: [ { message: delegateError, type: 'CallExpression' } ]
+			errors: [ delegateError ]
 		},
 
 		{
 			code: '$("div").undelegate()',
-			errors: [ { message: undelegateError, type: 'CallExpression' } ]
+			errors: [ undelegateError ]
 		},
 		{
 			code: '$div.undelegate()',
-			errors: [ { message: undelegateError, type: 'CallExpression' } ]
+			errors: [ undelegateError ]
 		},
 		{
 			code: '$("div").first().undelegate()',
-			errors: [ { message: undelegateError, type: 'CallExpression' } ]
+			errors: [ undelegateError ]
 		},
 		{
 			code: '$("div").append($("input").undelegate())',
-			errors: [ { message: undelegateError, type: 'CallExpression' } ]
+			errors: [ undelegateError ]
 		}
 	]
 } );

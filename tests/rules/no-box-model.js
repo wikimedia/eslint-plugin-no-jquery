@@ -11,11 +11,11 @@ ruleTester.run( 'no-box-model', rule, {
 	invalid: [
 		{
 			code: '$.boxModel',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$.boxModel.style',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

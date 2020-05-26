@@ -37,22 +37,22 @@ ruleTester.run( 'settings', rule, {
 		{
 			code: 'jQuery("div").each()',
 			settings: { 'no-jquery': { constructorAliases: [ '$', 'jQuery' ] } },
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: 'jQuery.each()',
 			settings: { 'no-jquery': { constructorAliases: [ 'jQuery' ] } },
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: 'this.element.each()',
 			settings: { 'no-jquery': { variablePattern: extendedPattern } },
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: 'element.each()',
 			settings: { 'no-jquery': { variablePattern: extendedPattern } },
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

@@ -31,39 +31,39 @@ ruleTester.run( 'no-data', rule, {
 	invalid: [
 		{
 			code: '$.data(elem, "foo")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").data("foo", "bar")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.data("foo")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").first().data("foo", "bar")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").append($("input").data("foo"))',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$.removeData(elem, "foo")',
-			errors: [ { message: removeError, type: 'CallExpression' } ]
+			errors: [ removeError ]
 		},
 		{
 			code: '$("div").removeData("foo")',
-			errors: [ { message: removeError, type: 'CallExpression' } ]
+			errors: [ removeError ]
 		},
 		{
 			code: '$div.removeData("foo")',
-			errors: [ { message: removeError, type: 'CallExpression' } ]
+			errors: [ removeError ]
 		},
 		{
 			code: '$.hasData(elem)',
-			errors: [ { message: hasError, type: 'CallExpression' } ]
+			errors: [ hasError ]
 		}
 	]
 } );

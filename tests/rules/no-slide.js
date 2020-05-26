@@ -28,53 +28,53 @@ ruleTester.run( 'no-slide', rule, {
 	invalid: [
 		{
 			code: '$("div").slideDown()',
-			errors: [ { message: downError, type: 'CallExpression' } ]
+			errors: [ downError ]
 		},
 		{
 			code: '$div.slideDown()',
-			errors: [ { message: downError, type: 'CallExpression' } ]
+			errors: [ downError ]
 		},
 		{
 			code: '$("div").first().slideDown()',
-			errors: [ { message: downError, type: 'CallExpression' } ]
+			errors: [ downError ]
 		},
 		{
 			code: '$("div").append($("input").slideDown())',
-			errors: [ { message: downError, type: 'CallExpression' } ]
+			errors: [ downError ]
 		},
 
 		{
 			code: '$("div").slideToggle()',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$div.slideToggle()',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$("div").first().slideToggle()',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$("div").append($("input").slideToggle())',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 
 		{
 			code: '$("div").slideUp()',
-			errors: [ { message: upError, type: 'CallExpression' } ]
+			errors: [ upError ]
 		},
 		{
 			code: '$div.slideUp()',
-			errors: [ { message: upError, type: 'CallExpression' } ]
+			errors: [ upError ]
 		},
 		{
 			code: '$("div").first().slideUp()',
-			errors: [ { message: upError, type: 'CallExpression' } ]
+			errors: [ upError ]
 		},
 		{
 			code: '$("div").append($("input").slideUp())',
-			errors: [ { message: upError, type: 'CallExpression' } ]
+			errors: [ upError ]
 		}
 	]
 } );

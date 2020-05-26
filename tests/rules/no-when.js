@@ -11,7 +11,7 @@ ruleTester.run( 'no-when', rule, {
 	invalid: [
 		{
 			code: '$.when(a,b)',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

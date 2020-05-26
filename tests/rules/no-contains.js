@@ -11,7 +11,7 @@ ruleTester.run( 'no-contains', rule, {
 	invalid: [
 		{
 			code: '$.contains()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );
