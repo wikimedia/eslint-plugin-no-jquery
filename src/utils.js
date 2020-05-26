@@ -512,7 +512,7 @@ function eventShorthandFixer( node, fixer ) {
 	} else {
 		return [
 			fixer.replaceText( node.callee.property, 'trigger' ),
-			fixer.insertTextBeforeRange( [ node.end - 1 ], JSON.stringify( name ) )
+			fixer.insertTextBeforeRange( [ node.range[ 1 ] - 1 ], JSON.stringify( name ) )
 		];
 	}
 }

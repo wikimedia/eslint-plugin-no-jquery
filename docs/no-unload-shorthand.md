@@ -25,8 +25,10 @@ $.unload();
 
 🔧 Examples of code **fixed** by using  `--fix`:
 ```js
-$( 'div' ).unload( handler ); /* → */ $( 'div' ).on( 'unload', handler );
-$div.unload();                /* → */ $div.trigger( 'unload' );
+$( 'div' ).unload( handler );               /* → */ $( 'div' ).on( 'unload', handler );
+$div.unload();                              /* → */ $div.trigger( 'unload' );
+$( 'div' ).first().unload();                /* → */ $( 'div' ).first().trigger( 'unload' );
+$( 'div' ).append( $( 'input' ).unload() ); /* → */ $( 'div' ).append( $( 'input' ).trigger( 'unload' ) );
 ```
 
 ## Resources

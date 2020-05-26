@@ -27,11 +27,13 @@ ruleTester.run( 'no-unload-shorthand', rule, {
 		},
 		{
 			code: '$("div").first().unload()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").first().trigger("unload")'
 		},
 		{
 			code: '$("div").append($("input").unload())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").append($("input").trigger("unload"))'
 		}
 	]
 } );
