@@ -31,14 +31,11 @@ $.show( 'fast' );
 $div.toggle();
 $( 'div' ).toggle();
 $( 'div' ).toggle;
-$div.toggle();
 $div.toggle( false );
 $div.toggle( true );
 $div.toggle( variableCouldBeBoolean );
 $div.toggle( !!'0' );
 $div.toggle( getBoolean() );
-$( 'div' ).toggle();
-$( 'div' ).toggle;
 ```
 
 ## Resources

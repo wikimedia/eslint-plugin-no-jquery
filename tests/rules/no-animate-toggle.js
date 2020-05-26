@@ -19,14 +19,11 @@ ruleTester.run( 'no-animate-toggle', rule, {
 		'$("div").toggle()',
 		'$("div").toggle',
 
-		'$div.toggle()',
 		'$div.toggle(false)',
 		'$div.toggle(true)',
 		'$div.toggle(variableCouldBeBoolean)',
 		'$div.toggle(!!"0")',
-		'$div.toggle(getBoolean())',
-		'$("div").toggle()',
-		'$("div").toggle'
+		'$div.toggle(getBoolean())'
 	],
 	invalid: [
 		{

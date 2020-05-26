@@ -2,6 +2,10 @@
 	"extends": [
 		"wikimedia",
 		"wikimedia/node",
-		"wikimedia/language/es2016"
+		"wikimedia/language/es2016",
+		"plugin:eslint-plugin/recommended"
+	],
+	"plugins": [
+		"eslint-plugin"
 	]
 }

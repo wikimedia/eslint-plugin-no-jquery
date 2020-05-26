@@ -31,7 +31,6 @@ ruleTester.run( 'no-global-selector', rule, {
 		'$([])',
 		'$("")',
 		'$(null)',
-		'$(null)',
 		'$(undefined)',
 		'$(false)',
 		// Pre-jQuery 3 syntax for empty set
