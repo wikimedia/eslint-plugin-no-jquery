@@ -26,7 +26,8 @@ ruleTester.run( 'no-load-shorthand', rule, {
 		},
 		{
 			code: '$div.load(function(){})',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$div.on("load", function(){})'
 		},
 		{
 			code: '$div.load()',
@@ -35,15 +36,18 @@ ruleTester.run( 'no-load-shorthand', rule, {
 		},
 		{
 			code: '$div.load(() => {})',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$div.on("load", () => {})'
 		},
 		{
 			code: '$("div").first().load(function(){})',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").first().on("load", function(){})'
 		},
 		{
 			code: '$("div").append($("input").load(function(){}))',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ { message: error, type: 'CallExpression' } ],
+			output: '$("div").append($("input").on("load", function(){}))'
 		}
 	]
 } );

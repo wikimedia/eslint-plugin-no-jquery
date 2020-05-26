@@ -8,7 +8,7 @@ module.exports = utils.createCollectionMethodRule(
 	{
 		fixable: 'code',
 		fix: function ( node, fixer ) {
-			return fixer.replaceTextRange( [ node.callee.property.start, node.end ], 'length' );
+			return fixer.replaceTextRange( [ node.callee.property.range[ 0 ], node.range[ 1 ] ], 'length' );
 		}
 	}
 );
