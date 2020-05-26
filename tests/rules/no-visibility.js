@@ -28,51 +28,51 @@ ruleTester.run( 'no-visibility', rule, {
 	invalid: [
 		{
 			code: '$("div").show()',
-			errors: [ { message: errorShow, type: 'CallExpression' } ]
+			errors: [ errorShow ]
 		},
 		{
 			code: '$div.show()',
-			errors: [ { message: errorShow, type: 'CallExpression' } ]
+			errors: [ errorShow ]
 		},
 		{
 			code: '$("div").first().show()',
-			errors: [ { message: errorShow, type: 'CallExpression' } ]
+			errors: [ errorShow ]
 		},
 		{
 			code: '$("div").append($("input").show())',
-			errors: [ { message: errorShow, type: 'CallExpression' } ]
+			errors: [ errorShow ]
 		},
 		{
 			code: '$("div").hide()',
-			errors: [ { message: errorHide, type: 'CallExpression' } ]
+			errors: [ errorHide ]
 		},
 		{
 			code: '$div.hide()',
-			errors: [ { message: errorHide, type: 'CallExpression' } ]
+			errors: [ errorHide ]
 		},
 		{
 			code: '$("div").first().hide()',
-			errors: [ { message: errorHide, type: 'CallExpression' } ]
+			errors: [ errorHide ]
 		},
 		{
 			code: '$("div").append($("input").hide())',
-			errors: [ { message: errorHide, type: 'CallExpression' } ]
+			errors: [ errorHide ]
 		},
 		{
 			code: '$("div").toggle()',
-			errors: [ { message: errorToggle, type: 'CallExpression' } ]
+			errors: [ errorToggle ]
 		},
 		{
 			code: '$div.toggle()',
-			errors: [ { message: errorToggle, type: 'CallExpression' } ]
+			errors: [ errorToggle ]
 		},
 		{
 			code: '$("div").first().toggle()',
-			errors: [ { message: errorToggle, type: 'CallExpression' } ]
+			errors: [ errorToggle ]
 		},
 		{
 			code: '$("div").append($("input").toggle())',
-			errors: [ { message: errorToggle, type: 'CallExpression' } ]
+			errors: [ errorToggle ]
 		}
 	]
 } );

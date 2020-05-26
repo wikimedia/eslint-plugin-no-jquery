@@ -11,19 +11,19 @@ ruleTester.run( 'no-html', rule, {
 	invalid: [
 		{
 			code: '$("div").html()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.html()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").first().html()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").append($("input").html())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

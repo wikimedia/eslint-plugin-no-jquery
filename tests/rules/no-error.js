@@ -11,7 +11,7 @@ ruleTester.run( 'no-error', rule, {
 	invalid: [
 		{
 			code: '$.error()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

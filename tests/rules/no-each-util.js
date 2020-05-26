@@ -20,7 +20,7 @@ ruleTester.run( 'no-each-util', rule, {
 	invalid: [
 		{
 			code: '$.each()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

@@ -11,7 +11,7 @@ ruleTester.run( 'no-grep', rule, {
 	invalid: [
 		{
 			code: '$.grep()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

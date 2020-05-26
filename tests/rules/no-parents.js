@@ -11,19 +11,19 @@ ruleTester.run( 'no-parents', rule, {
 	invalid: [
 		{
 			code: '$("div").parents()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.parents()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").first().parents()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").append($("input").parents())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

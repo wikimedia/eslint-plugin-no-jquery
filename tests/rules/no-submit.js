@@ -11,19 +11,19 @@ ruleTester.run( 'no-submit', rule, {
 	invalid: [
 		{
 			code: '$("form").submit()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$form.submit()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("form").first().submit()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("form").append($("input").submit())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

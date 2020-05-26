@@ -22,7 +22,7 @@ ruleTester.run( 'no-find-util', rule, {
 	invalid: [
 		{
 			code: '$.find()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

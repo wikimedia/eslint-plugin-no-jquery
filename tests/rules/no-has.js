@@ -11,19 +11,19 @@ ruleTester.run( 'no-has', rule, {
 	invalid: [
 		{
 			code: '$("div").has()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.has()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").first().has()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").append($("input").has())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

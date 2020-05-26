@@ -11,7 +11,7 @@ ruleTester.run( 'no-global-eval', rule, {
 	invalid: [
 		{
 			code: '$.globalEval()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

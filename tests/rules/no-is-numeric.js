@@ -11,7 +11,7 @@ ruleTester.run( 'no-is-numeric', rule, {
 	invalid: [
 		{
 			code: '$.isNumeric()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

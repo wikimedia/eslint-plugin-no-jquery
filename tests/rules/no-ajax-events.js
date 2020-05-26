@@ -4,7 +4,7 @@ const rule = require( '../../src/rules/no-ajax-events' );
 const RuleTester = require( '../../tools/rule-tester' );
 
 function getErrors( method ) {
-	return [ { type: 'CallExpression', message: 'Prefer local event to ' + method } ];
+	return [ 'Prefer local event to ' + method ];
 }
 
 const ruleTester = new RuleTester();

@@ -19,16 +19,16 @@ ruleTester.run( 'no-extend', rule, {
 	invalid: [
 		{
 			code: '$.extend({}, foo)',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$.extend(true, {}, foo)',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$.extend({}, foo)',
 			options: [ { allowDeep: true } ],
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

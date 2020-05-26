@@ -19,19 +19,19 @@ ruleTester.run( 'no-ready-shorthand', rule, {
 	invalid: [
 		{
 			code: '$(document).ready()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.ready()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").first().ready()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").append($("input").ready())',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

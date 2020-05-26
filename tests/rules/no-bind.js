@@ -33,6 +33,6 @@ ruleTester.run( 'no-bind', rule, {
 		[ '$("div").append($("input").unbind())', unbindError ]
 	].map( ( codeError ) => ( {
 		code: codeError[ 0 ],
-		errors: [ { message: codeError[ 1 ], type: 'CallExpression' } ]
+		errors: [ codeError[ 1 ] ]
 	} ) )
 } );

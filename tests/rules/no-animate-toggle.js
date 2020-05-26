@@ -28,53 +28,53 @@ ruleTester.run( 'no-animate-toggle', rule, {
 	invalid: [
 		{
 			code: '$("div").show("fast")',
-			errors: [ { message: showError, type: 'CallExpression' } ]
+			errors: [ showError ]
 		},
 		{
 			code: '$div.show(500)',
-			errors: [ { message: showError, type: 'CallExpression' } ]
+			errors: [ showError ]
 		},
 		{
 			code: '$("div").first().show({duration:"slow"})',
-			errors: [ { message: showError, type: 'CallExpression' } ]
+			errors: [ showError ]
 		},
 		{
 			code: '$("div").append($("input").show({duration:"slow"}))',
-			errors: [ { message: showError, type: 'CallExpression' } ]
+			errors: [ showError ]
 		},
 
 		{
 			code: '$("div").hide("fast")',
-			errors: [ { message: hideError, type: 'CallExpression' } ]
+			errors: [ hideError ]
 		},
 		{
 			code: '$div.hide(500)',
-			errors: [ { message: hideError, type: 'CallExpression' } ]
+			errors: [ hideError ]
 		},
 		{
 			code: '$("div").first().hide({duration:"slow"})',
-			errors: [ { message: hideError, type: 'CallExpression' } ]
+			errors: [ hideError ]
 		},
 		{
 			code: '$("div").append($("input").hide({duration:"slow"}))',
-			errors: [ { message: hideError, type: 'CallExpression' } ]
+			errors: [ hideError ]
 		},
 
 		{
 			code: '$("div").toggle("fast")',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$div.toggle(500)',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$("div").first().toggle({duration:"slow"})',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$("div").append($("input").toggle({duration:"slow"}))',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		}
 	]
 } );

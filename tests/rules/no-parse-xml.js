@@ -11,7 +11,7 @@ ruleTester.run( 'no-parse-xml', rule, {
 	invalid: [
 		{
 			code: '$.parseXML()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

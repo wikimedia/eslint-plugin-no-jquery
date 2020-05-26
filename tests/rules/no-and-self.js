@@ -11,22 +11,22 @@ ruleTester.run( 'no-and-self', rule, {
 	invalid: [
 		{
 			code: '$("div").andSelf(".foo")',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").addBack(".foo")'
 		},
 		{
 			code: '$div.andSelf(".foo")',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$div.addBack(".foo")'
 		},
 		{
 			code: '$("div").first().andSelf()',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").first().addBack()'
 		},
 		{
 			code: '$("div").append($("input").andSelf())',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").append($("input").addBack())'
 		}
 	]

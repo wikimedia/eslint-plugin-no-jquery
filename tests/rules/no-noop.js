@@ -11,12 +11,12 @@ ruleTester.run( 'no-noop', rule, {
 	invalid: [
 		{
 			code: '$.noop',
-			errors: [ { message: error, type: 'MemberExpression' } ],
+			errors: [ error ],
 			output: '(function(){})'
 		},
 		{
 			code: '$.noop()',
-			errors: [ { message: error, type: 'MemberExpression' } ],
+			errors: [ error ],
 			output: '(function(){})()'
 		}
 	]

@@ -11,7 +11,7 @@ ruleTester.run( 'no-proxy', rule, {
 	invalid: [
 		{
 			code: '$.proxy()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

@@ -22,36 +22,36 @@ ruleTester.run( 'no-live', rule, {
 	invalid: [
 		{
 			code: '$("div").live()',
-			errors: [ { message: liveError, type: 'CallExpression' } ]
+			errors: [ liveError ]
 		},
 		{
 			code: '$div.live()',
-			errors: [ { message: liveError, type: 'CallExpression' } ]
+			errors: [ liveError ]
 		},
 		{
 			code: '$("div").first().live()',
-			errors: [ { message: liveError, type: 'CallExpression' } ]
+			errors: [ liveError ]
 		},
 		{
 			code: '$("div").append($("input").live())',
-			errors: [ { message: liveError, type: 'CallExpression' } ]
+			errors: [ liveError ]
 		},
 
 		{
 			code: '$("div").die()',
-			errors: [ { message: dieError, type: 'CallExpression' } ]
+			errors: [ dieError ]
 		},
 		{
 			code: '$div.die()',
-			errors: [ { message: dieError, type: 'CallExpression' } ]
+			errors: [ dieError ]
 		},
 		{
 			code: '$("div").first().die()',
-			errors: [ { message: dieError, type: 'CallExpression' } ]
+			errors: [ dieError ]
 		},
 		{
 			code: '$("div").append($("input").die())',
-			errors: [ { message: dieError, type: 'CallExpression' } ]
+			errors: [ dieError ]
 		}
 	]
 } );

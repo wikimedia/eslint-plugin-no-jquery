@@ -34,67 +34,67 @@ ruleTester.run( 'no-class', rule, {
 	invalid: [
 		{
 			code: '$("div").addClass()',
-			errors: [ { message: addError, type: 'CallExpression' } ]
+			errors: [ addError ]
 		},
 		{
 			code: '$div.addClass()',
-			errors: [ { message: addError, type: 'CallExpression' } ]
+			errors: [ addError ]
 		},
 		{
 			code: '$("div").first().addClass()',
-			errors: [ { message: addError, type: 'CallExpression' } ]
+			errors: [ addError ]
 		},
 		{
 			code: '$("div").append($("input").addClass())',
-			errors: [ { message: addError, type: 'CallExpression' } ]
+			errors: [ addError ]
 		},
 		{
 			code: '$("div").hasClass()',
-			errors: [ { message: hasError, type: 'CallExpression' } ]
+			errors: [ hasError ]
 		},
 		{
 			code: '$div.hasClass()',
-			errors: [ { message: hasError, type: 'CallExpression' } ]
+			errors: [ hasError ]
 		},
 		{
 			code: '$("div").first().hasClass()',
-			errors: [ { message: hasError, type: 'CallExpression' } ]
+			errors: [ hasError ]
 		},
 		{
 			code: '$("div").append($("input").hasClass())',
-			errors: [ { message: hasError, type: 'CallExpression' } ]
+			errors: [ hasError ]
 		},
 		{
 			code: '$("div").removeClass()',
-			errors: [ { message: removeError, type: 'CallExpression' } ]
+			errors: [ removeError ]
 		},
 		{
 			code: '$div.removeClass()',
-			errors: [ { message: removeError, type: 'CallExpression' } ]
+			errors: [ removeError ]
 		},
 		{
 			code: '$("div").first().removeClass()',
-			errors: [ { message: removeError, type: 'CallExpression' } ]
+			errors: [ removeError ]
 		},
 		{
 			code: '$("div").append($("input").removeClass())',
-			errors: [ { message: removeError, type: 'CallExpression' } ]
+			errors: [ removeError ]
 		},
 		{
 			code: '$("div").toggleClass()',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$div.toggleClass()',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$("div").first().toggleClass()',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$("div").append($("input").toggleClass())',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		}
 	]
 } );

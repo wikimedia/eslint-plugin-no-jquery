@@ -17,22 +17,22 @@ ruleTester.run( 'no-unload-shorthand', rule, {
 	invalid: [
 		{
 			code: '$("div").unload(handler)',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").on("unload", handler)'
 		},
 		{
 			code: '$div.unload()',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$div.trigger("unload")'
 		},
 		{
 			code: '$("div").first().unload()',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").first().trigger("unload")'
 		},
 		{
 			code: '$("div").append($("input").unload())',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$("div").append($("input").trigger("unload"))'
 		}
 	]

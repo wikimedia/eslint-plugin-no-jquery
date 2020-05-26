@@ -21,7 +21,7 @@ ruleTester.run( 'no-map-util', rule, {
 	invalid: [
 		{
 			code: '$.map()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

@@ -34,70 +34,70 @@ ruleTester.run( 'no-fade', rule, {
 	invalid: [
 		{
 			code: '$("div").fadeIn()',
-			errors: [ { message: inError, type: 'CallExpression' } ]
+			errors: [ inError ]
 		},
 		{
 			code: '$div.fadeIn()',
-			errors: [ { message: inError, type: 'CallExpression' } ]
+			errors: [ inError ]
 		},
 		{
 			code: '$("div").first().fadeIn()',
-			errors: [ { message: inError, type: 'CallExpression' } ]
+			errors: [ inError ]
 		},
 		{
 			code: '$("div").append($("input").fadeIn())',
-			errors: [ { message: inError, type: 'CallExpression' } ]
+			errors: [ inError ]
 		},
 
 		{
 			code: '$("div").fadeOut()',
-			errors: [ { message: outError, type: 'CallExpression' } ]
+			errors: [ outError ]
 		},
 		{
 			code: '$div.fadeOut()',
-			errors: [ { message: outError, type: 'CallExpression' } ]
+			errors: [ outError ]
 		},
 		{
 			code: '$("div").first().fadeOut()',
-			errors: [ { message: outError, type: 'CallExpression' } ]
+			errors: [ outError ]
 		},
 		{
 			code: '$("div").append($("input").fadeOut())',
-			errors: [ { message: outError, type: 'CallExpression' } ]
+			errors: [ outError ]
 		},
 
 		{
 			code: '$("div").fadeTo()',
-			errors: [ { message: toError, type: 'CallExpression' } ]
+			errors: [ toError ]
 		},
 		{
 			code: '$div.fadeTo()',
-			errors: [ { message: toError, type: 'CallExpression' } ]
+			errors: [ toError ]
 		},
 		{
 			code: '$("div").first().fadeTo()',
-			errors: [ { message: toError, type: 'CallExpression' } ]
+			errors: [ toError ]
 		},
 		{
 			code: '$("div").append($("input").fadeTo())',
-			errors: [ { message: toError, type: 'CallExpression' } ]
+			errors: [ toError ]
 		},
 
 		{
 			code: '$("div").fadeToggle()',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$div.fadeToggle()',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$("div").first().fadeToggle()',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		},
 		{
 			code: '$("div").append($("input").fadeToggle())',
-			errors: [ { message: toggleError, type: 'CallExpression' } ]
+			errors: [ toggleError ]
 		}
 	]
 } );

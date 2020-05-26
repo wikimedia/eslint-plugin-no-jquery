@@ -11,7 +11,7 @@ ruleTester.run( 'no-is-window', rule, {
 	invalid: [
 		{
 			code: '$.isWindow()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

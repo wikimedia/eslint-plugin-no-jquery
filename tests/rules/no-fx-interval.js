@@ -11,7 +11,7 @@ ruleTester.run( 'no-fx-interval', rule, {
 	invalid: [
 		{
 			code: '$.fx.interval',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

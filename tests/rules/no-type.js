@@ -11,7 +11,7 @@ ruleTester.run( 'no-type', rule, {
 	invalid: [
 		{
 			code: '$.type()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

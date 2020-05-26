@@ -22,35 +22,35 @@ ruleTester.run( 'no-serialize', rule, {
 	invalid: [
 		{
 			code: '$("div").serialize()',
-			errors: [ { message: serializeError, type: 'CallExpression' } ]
+			errors: [ serializeError ]
 		},
 		{
 			code: '$div.serialize()',
-			errors: [ { message: serializeError, type: 'CallExpression' } ]
+			errors: [ serializeError ]
 		},
 		{
 			code: '$("div").first().serialize()',
-			errors: [ { message: serializeError, type: 'CallExpression' } ]
+			errors: [ serializeError ]
 		},
 		{
 			code: '$("div").append($("input").serialize())',
-			errors: [ { message: serializeError, type: 'CallExpression' } ]
+			errors: [ serializeError ]
 		},
 		{
 			code: '$("div").serializeArray()',
-			errors: [ { message: arrayError, type: 'CallExpression' } ]
+			errors: [ arrayError ]
 		},
 		{
 			code: '$div.serializeArray()',
-			errors: [ { message: arrayError, type: 'CallExpression' } ]
+			errors: [ arrayError ]
 		},
 		{
 			code: '$("div").first().serializeArray()',
-			errors: [ { message: arrayError, type: 'CallExpression' } ]
+			errors: [ arrayError ]
 		},
 		{
 			code: '$("div").append($("input").serializeArray())',
-			errors: [ { message: arrayError, type: 'CallExpression' } ]
+			errors: [ arrayError ]
 		}
 	]
 } );

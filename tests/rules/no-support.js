@@ -11,11 +11,11 @@ ruleTester.run( 'no-support', rule, {
 	invalid: [
 		{
 			code: '$.support',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$.support.style',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

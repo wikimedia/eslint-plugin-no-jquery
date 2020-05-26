@@ -11,7 +11,7 @@ ruleTester.run( 'no-unique', rule, {
 	invalid: [
 		{
 			code: '$.unique( [] )',
-			errors: [ { message: error, type: 'CallExpression' } ],
+			errors: [ error ],
 			output: '$.uniqueSort( [] )'
 		}
 	]

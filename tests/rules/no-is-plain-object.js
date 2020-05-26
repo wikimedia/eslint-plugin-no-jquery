@@ -11,7 +11,7 @@ ruleTester.run( 'no-is-plain-object', rule, {
 	invalid: [
 		{
 			code: '$.isPlainObject()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

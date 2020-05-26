@@ -22,15 +22,15 @@ ruleTester.run( 'no-on-ready', rule, {
 	invalid: [
 		{
 			code: '$(document).on("ready", function(){})',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$document.on("ready", function(){})',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$document.on("ready")',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

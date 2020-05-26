@@ -11,7 +11,7 @@ ruleTester.run( 'no-camel-case', rule, {
 	invalid: [
 		{
 			code: '$.camelCase()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

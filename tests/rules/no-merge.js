@@ -11,7 +11,7 @@ ruleTester.run( 'no-merge', rule, {
 	invalid: [
 		{
 			code: '$.merge()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

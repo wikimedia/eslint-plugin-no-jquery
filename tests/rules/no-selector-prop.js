@@ -17,31 +17,31 @@ ruleTester.run( 'no-selector-prop', rule, {
 	invalid: [
 		{
 			code: '$("div").selector',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.selector',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.selector.prop',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$div.selector.method()',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").first().selector',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: 'f($div.selector)',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		},
 		{
 			code: '$("div").append($("input").selector)',
-			errors: [ { message: error, type: 'MemberExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );

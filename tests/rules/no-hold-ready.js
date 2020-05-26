@@ -11,7 +11,7 @@ ruleTester.run( 'no-hold-ready', rule, {
 	invalid: [
 		{
 			code: '$.holdReady()',
-			errors: [ { message: error, type: 'CallExpression' } ]
+			errors: [ error ]
 		}
 	]
 } );
