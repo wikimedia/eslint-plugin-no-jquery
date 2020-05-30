@@ -21,7 +21,6 @@ clone();
 div.clone();
 div.clone;
 $div.prop.clone();
-$div.prop.clone();
 $div[ 0 ].clone();
 ```
 
