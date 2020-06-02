@@ -2,7 +2,6 @@
 
 module.exports = {
 	rules: {
-		'variable-pattern': require( './rules/variable-pattern' ),
 		'no-ajax': require( './rules/no-ajax' ),
 		'no-ajax-events': require( './rules/no-ajax-events' ),
 		'no-and-self': require( './rules/no-and-self' ),
@@ -39,19 +38,20 @@ module.exports = {
 		'no-find-util': require( './rules/no-find-util' ),
 		'no-fx-interval': require( './rules/no-fx-interval' ),
 		'no-global-eval': require( './rules/no-global-eval' ),
+		'no-global-selector': require( './rules/no-global-selector' ),
 		'no-grep': require( './rules/no-grep' ),
 		'no-has': require( './rules/no-has' ),
 		'no-hide': require( './rules/no-hide' ),
 		'no-hold-ready': require( './rules/no-hold-ready' ),
 		'no-html': require( './rules/no-html' ),
 		'no-in-array': require( './rules/no-in-array' ),
+		'no-is': require( './rules/no-is' ),
 		'no-is-array': require( './rules/no-is-array' ),
 		'no-is-empty-object': require( './rules/no-is-empty-object' ),
-		'no-is-plain-object': require( './rules/no-is-plain-object' ),
 		'no-is-function': require( './rules/no-is-function' ),
 		'no-is-numeric': require( './rules/no-is-numeric' ),
+		'no-is-plain-object': require( './rules/no-is-plain-object' ),
 		'no-is-window': require( './rules/no-is-window' ),
-		'no-is': require( './rules/no-is' ),
 		'no-live': require( './rules/no-live' ),
 		'no-load': require( './rules/no-load' ),
 		'no-load-shorthand': require( './rules/no-load-shorthand' ),
@@ -76,7 +76,6 @@ module.exports = {
 		'no-ready-shorthand': require( './rules/no-ready-shorthand' ),
 		'no-selector-prop': require( './rules/no-selector-prop' ),
 		'no-serialize': require( './rules/no-serialize' ),
-		'no-global-selector': require( './rules/no-global-selector' ),
 		'no-show': require( './rules/no-show' ),
 		'no-size': require( './rules/no-size' ),
 		'no-sizzle': require( './rules/no-sizzle' ),
@@ -96,7 +95,8 @@ module.exports = {
 		'no-val': require( './rules/no-val' ),
 		'no-visibility': require( './rules/no-visibility' ),
 		'no-when': require( './rules/no-when' ),
-		'no-wrap': require( './rules/no-wrap' )
+		'no-wrap': require( './rules/no-wrap' ),
+		'variable-pattern': require( './rules/variable-pattern' )
 	},
 	configs: {
 		// Use this profile if you are using jQuery slim build
