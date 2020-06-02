@@ -19,7 +19,7 @@ $( 'img' ).first().ready( function () { } );
 ✔️ Examples of **correct** code:
 ```js
 ready( function () { } );
-ready( ()=>{} );
+ready( () => {} );
 ready();
 [].ready();
 div.ready();

@@ -6,7 +6,7 @@ Disallows variable names which don't match `variablePattern` in settings (by def
 
 ❌ Examples of **incorrect** code:
 ```js
-var div = $( '<div>' );
+let div = $( '<div>' );
 foo.div = $( '<div>' );
 $foo.div = $( '<div>' );
 $foo.$div.bar = $( '<div>' );
@@ -51,7 +51,7 @@ div = $( '<div>' ).datePicker( 'name', newPicker );
 
 ✔️ Examples of **correct** code:
 ```js
-var $div = $( '<div>' );
+let $div = $( '<div>' );
 $div = $( '<div>' );
 foo.$div = $( '<div>' );
 foo.bar.$div = $( '<div>' );

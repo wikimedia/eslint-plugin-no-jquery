@@ -29,16 +29,16 @@
 		"eslint": ">=2.3.0"
 	},
 	"devDependencies": {
-		"codecov": "^3.6.5",
+		"codecov": "^3.7.0",
 		"eslint": "^7.1.0",
-		"eslint-config-wikimedia": "^0.15.3",
+		"eslint-config-wikimedia": "^0.16.0",
 		"eslint-docgen": "^0.3.1",
 		"eslint-plugin-eslint-plugin": "^2.2.1",
-		"eslint-plugin-self": "^1.2.0",
+		"eslint-plugin-self": "^1.2.1",
 		"jquery": "3.5.1",
 		"jsdom": "^16.2.2",
-		"mocha": "^7.1.2",
-		"nyc": "^15.0.1"
+		"mocha": "^7.2.0",
+		"nyc": "^15.1.0"
 	},
 	"bugs": {
 		"url": "https://github.com/wikimedia/eslint-plugin-no-jquery/issues"

@@ -1,3 +1,5 @@
+'use strict';
+
 const DocGenRuleTester = require( 'eslint-docgen' ).RuleTester;
 const noFix = process.argv.includes( '--nofix' );
 
