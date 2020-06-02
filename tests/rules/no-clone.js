@@ -13,7 +13,10 @@ ruleTester.run( 'no-clone', rule, {
 		'div.clone()',
 		'div.clone',
 		'$div.prop.clone()',
-		'$div["prop"].clone()',
+		{
+			code: '$div["prop"].clone()',
+			noDoc: true
+		},
 		'$div[0].clone()'
 	],
 	invalid: [
