@@ -10,16 +10,16 @@ $.extend( {}, foo );
 $.extend( true, {}, foo );
 ```
 
-❌ Examples of **incorrect** code with `[{"allowDeep":true}]` options:
-```js
-$.extend( {}, foo );
-```
-
 ✔️ Examples of **correct** code:
 ```js
 extend();
 myMethod.extend();
 myMethod.extend;
+```
+
+❌ Examples of **incorrect** code with `[{"allowDeep":true}]` options:
+```js
+$.extend( {}, foo );
 ```
 
 ✔️ Examples of **correct** code with `[{"allowDeep":true}]` options:

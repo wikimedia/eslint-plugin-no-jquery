@@ -24,25 +24,6 @@ $( '<div/>' );
 $( '<div></div>' );
 ```
 
-❌ Examples of **incorrect** code with `[{"singleTagStyle":"minimal"}]` options:
-```js
-$( '<div/>' );
-$( '<div></div>' );
-```
-
-❌ Examples of **incorrect** code with `[{"singleTagStyle":"self-closing"}]` options:
-```js
-$( '<div>' );
-$( '<div />' );
-$( '<div></div>' );
-```
-
-❌ Examples of **incorrect** code with `[{"singleTagStyle":"any"}]` options:
-```js
-$( '<div attr=val>' );
-$( '<div><div>' );
-```
-
 ✔️ Examples of **correct** code:
 ```js
 $( '' );
@@ -62,14 +43,10 @@ $.parseHTML( variable1 + variable2 );
 $.parseHTML( 'string' + variable );
 ```
 
-✔️ Examples of **correct** code with `[{"singleTagStyle":"minimal"}]` options:
+❌ Examples of **incorrect** code with `[{"singleTagStyle":"any"}]` options:
 ```js
-$( '<div>' );
-```
-
-✔️ Examples of **correct** code with `[{"singleTagStyle":"self-closing"}]` options:
-```js
-$( '<div/>' );
+$( '<div attr=val>' );
+$( '<div><div>' );
 ```
 
 ✔️ Examples of **correct** code with `[{"singleTagStyle":"any"}]` options:
@@ -77,6 +54,29 @@ $( '<div/>' );
 $( '<div />' );
 $( '<div></div>' );
 $( '<div>' + '</div>' );
+```
+
+❌ Examples of **incorrect** code with `[{"singleTagStyle":"minimal"}]` options:
+```js
+$( '<div/>' );
+$( '<div></div>' );
+```
+
+✔️ Examples of **correct** code with `[{"singleTagStyle":"minimal"}]` options:
+```js
+$( '<div>' );
+```
+
+❌ Examples of **incorrect** code with `[{"singleTagStyle":"self-closing"}]` options:
+```js
+$( '<div>' );
+$( '<div />' );
+$( '<div></div>' );
+```
+
+✔️ Examples of **correct** code with `[{"singleTagStyle":"self-closing"}]` options:
+```js
+$( '<div/>' );
 ```
 
 ## Resources

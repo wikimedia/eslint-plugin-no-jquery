@@ -4,6 +4,8 @@ Disallows the [`.andSelf`](https://api.jquery.com/andSelf/) method. Prefer `.add
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
@@ -22,7 +24,7 @@ div.andSelf();
 div.andSelf;
 ```
 
-🔧 Examples of code **fixed** by using  `--fix`:
+🔧 Examples of code **fixed** by this rule:
 ```js
 $( 'div' ).andSelf( '.foo' );                /* → */ $( 'div' ).addBack( '.foo' );
 $div.andSelf( '.foo' );                      /* → */ $div.addBack( '.foo' );

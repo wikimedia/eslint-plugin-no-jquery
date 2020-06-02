@@ -4,6 +4,8 @@ Disallows the [`.load`](https://api.jquery.com/load-event/) method when used as 
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
@@ -27,7 +29,7 @@ $div.load( 'url' );
 $div.load( couldBeUrl );
 ```
 
-🔧 Examples of code **fixed** by using  `--fix`:
+🔧 Examples of code **fixed** by this rule:
 ```js
 $( 'div' ).load( function () {} );                        /* → */ $( 'div' ).on( 'load', function () {} );
 $div.load( function () {} );                              /* → */ $div.on( 'load', function () {} );
