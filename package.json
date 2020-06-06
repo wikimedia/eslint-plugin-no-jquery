@@ -19,7 +19,7 @@
 		"onlytest": "mocha --reporter dot tests/** --nofix",
 		"report": "nyc report --reporter=text-lcov > coverage.lcov",
 		"testpath": "mocha",
-		"doc": "rm -f docs/* && mocha --reporter dot tests/** --doc && node tools/build-readme.js",
+		"doc": "rm -f docs/rules/* && mocha --reporter dot tests/** --doc && node tools/build-readme.js",
 		"build": "npm run doc && node tools/build-all-methods.js"
 	},
 	"files": [
