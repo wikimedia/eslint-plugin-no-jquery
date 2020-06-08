@@ -42,7 +42,7 @@ Alternatively, you can pick out rules individually (see below).
 The following global settings can be used under the `no-jquery` property to configure the linter:
 
 * `constructorAliases` - An array of aliases for the jQuery constructor. Defaults to `[ "$", "jQuery" ]`.
-* `variablePattern` - Regular expression pattern for matching jQuery variables. Defaults to `"^\\$."`. This pattern can be enforced with the [`no-jquery/variable-pattern`](docs/variable-pattern.md) rule.
+* `variablePattern` - Regular expression pattern for matching jQuery variables. Defaults to `"^\\$."`. This pattern can be enforced with the [`no-jquery/variable-pattern`](docs/rules/variable-pattern.md) rule.
 * `collectionReturningPlugins` - An object describing the return types of jQuery plugins. Keys are plugin method names, and values can be one of:
   * `'always'` a plugin which always returns a jQuery collection.
     * e.g. `$bar = $foo.stop()`

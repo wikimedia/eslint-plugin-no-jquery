@@ -5,7 +5,7 @@ const template = fs.readFileSync( 'README.md.template', { encoding: 'UTF8' } );
 const allRules = require( '../src/index' ).rules;
 const rulesData = require( './rules-data' );
 const pluginName = 'no-jquery';
-const docPath = 'docs/{name}.md';
+const docPath = 'docs/rules/{name}.md';
 const rulesetRename = function ( ruleset ) {
 	return ruleset.replace( 'deprecated-', '' );
 };
