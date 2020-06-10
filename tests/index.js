@@ -1,7 +1,5 @@
 'use strict';
 
-/* eslint-env mocha */
-
 const index = require( '../src/index' );
 const assert = require( 'assert' );
 const fs = require( 'fs' );
