@@ -59,23 +59,6 @@ $( 'div' ).find( 'div:animated' );
 $div.find( 'form input:checkbox' );
 ```
 
-❌ Examples of **incorrect** code with `[{"allowPositional":true}]` options:
-```js
-$( ':animated' );
-```
-
-❌ Examples of **incorrect** code with `[{"allowOther":true}]` options:
-```js
-$( ':eq(2)' );
-$( ':even' );
-$( ':first' );
-$( ':gt(2)' );
-$( ':last' );
-$( ':lt(2)' );
-$( ':nth(2)' );
-$( ':odd' );
-```
-
 ✔️ Examples of **correct** code:
 ```js
 find( ':input' );
@@ -95,9 +78,16 @@ $( 'div' ).find();
 $( function () {} );
 ```
 
-✔️ Examples of **correct** code with `[{"allowPositional":true}]` options:
+❌ Examples of **incorrect** code with `[{"allowOther":true}]` options:
 ```js
-$( ':checked' );
+$( ':eq(2)' );
+$( ':even' );
+$( ':first' );
+$( ':gt(2)' );
+$( ':last' );
+$( ':lt(2)' );
+$( ':nth(2)' );
+$( ':odd' );
 ```
 
 ✔️ Examples of **correct** code with `[{"allowOther":true}]` options:
@@ -118,6 +108,16 @@ $( ':reset' );
 $( ':submit' );
 $( ':text' );
 $( ':visible' );
+```
+
+❌ Examples of **incorrect** code with `[{"allowPositional":true}]` options:
+```js
+$( ':animated' );
+```
+
+✔️ Examples of **correct** code with `[{"allowPositional":true}]` options:
+```js
+$( ':checked' );
 ```
 
 ## Resources

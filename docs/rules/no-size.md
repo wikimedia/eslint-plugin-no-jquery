@@ -4,6 +4,8 @@ Disallows the [`.size`](https://api.jquery.com/size/) method. Prefer `.length`.
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
@@ -22,7 +24,7 @@ div.size();
 div.size;
 ```
 
-🔧 Examples of code **fixed** by using  `--fix`:
+🔧 Examples of code **fixed** by this rule:
 ```js
 $( 'div' ).size();                        /* → */ $( 'div' ).length;
 $div.size();                              /* → */ $div.length;

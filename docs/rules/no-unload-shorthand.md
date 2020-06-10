@@ -4,6 +4,8 @@ Disallows the [`.unload`](https://api.jquery.com/unload/) method. Prefer `.on` o
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
@@ -23,7 +25,7 @@ div.unload;
 $.unload();
 ```
 
-🔧 Examples of code **fixed** by using  `--fix`:
+🔧 Examples of code **fixed** by this rule:
 ```js
 $( 'div' ).unload( handler );               /* → */ $( 'div' ).on( 'unload', handler );
 $div.unload();                              /* → */ $div.trigger( 'unload' );

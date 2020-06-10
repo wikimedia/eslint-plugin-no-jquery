@@ -17,13 +17,6 @@ $( '.selector', undefined );
 $( '.selector', $( '.context' ) );
 ```
 
-❌ Examples of **incorrect** code with `[{"allowIds":true}]` options:
-```js
-$( '#id>div' );
-$( '#id~div' );
-$( '#id div' );
-```
-
 ✔️ Examples of **correct** code:
 ```js
 $( '<div>' );
@@ -42,6 +35,13 @@ $( null );
 $( undefined );
 $( false );
 $( '#' );
+```
+
+❌ Examples of **incorrect** code with `[{"allowIds":true}]` options:
+```js
+$( '#id>div' );
+$( '#id~div' );
+$( '#id div' );
 ```
 
 ✔️ Examples of **correct** code with `[{"allowIds":true}]` options:

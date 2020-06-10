@@ -18,10 +18,12 @@ $div.animate( { scrollTop: 100, scrollLeft: 200 } );
 $div.animate( { scrollTop: 100, width: 300 } );
 ```
 
-❌ Examples of **incorrect** code with `[{"allowScroll":true}]` options:
+✔️ Examples of **correct** code:
 ```js
-$div.animate();
-$div.animate( { scrollTop: 100, width: 300 } );
+animate();
+[].animate();
+div.animate();
+div.animate;
 ```
 
 ❌ Examples of **incorrect** code with `[{"allowScroll":false}]` options:
@@ -29,12 +31,10 @@ $div.animate( { scrollTop: 100, width: 300 } );
 $div.animate( { scrollTop: 100 } );
 ```
 
-✔️ Examples of **correct** code:
+❌ Examples of **incorrect** code with `[{"allowScroll":true}]` options:
 ```js
-animate();
-[].animate();
-div.animate();
-div.animate;
+$div.animate();
+$div.animate( { scrollTop: 100, width: 300 } );
 ```
 
 ✔️ Examples of **correct** code with `[{"allowScroll":true}]` options:

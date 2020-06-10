@@ -4,6 +4,8 @@ Disallows the [`.error`](https://api.jquery.com/error/) method. Prefer `.on` or 
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.8`.
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
@@ -23,7 +25,7 @@ div.error;
 $.error();
 ```
 
-🔧 Examples of code **fixed** by using  `--fix`:
+🔧 Examples of code **fixed** by this rule:
 ```js
 $( 'div' ).error( handler );               /* → */ $( 'div' ).on( 'error', handler );
 $div.error();                              /* → */ $div.trigger( 'error' );

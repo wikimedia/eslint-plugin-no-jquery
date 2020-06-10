@@ -4,6 +4,8 @@ Disallows the [`$.parseJSON`](https://api.jquery.com/jQuery.parseJSON/) utility.
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
@@ -18,7 +20,7 @@ $div.parseJSON();
 'test'.parseJSON;
 ```
 
-🔧 Examples of code **fixed** by using  `--fix`:
+🔧 Examples of code **fixed** by this rule:
 ```js
 $.parseJSON( '{}' ); /* → */ JSON.parse( '{}' );
 ```

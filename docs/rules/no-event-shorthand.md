@@ -6,6 +6,8 @@ Disallows the [`.error`](https://api.jquery.com/error/)/[`.resize`](https://api.
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.3` with `[{"allowAjaxEvents":true}]` options.
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
@@ -157,7 +159,7 @@ $div.on( 'ajaxSuccess', fn );
 $div.on( 'ajaxSend', fn );
 ```
 
-🔧 Examples of code **fixed** by using  `--fix`:
+🔧 Examples of code **fixed** by this rule:
 ```js
 $( 'div' ).error( handler );                      /* → */ $( 'div' ).on( 'error', handler );
 $div.error();                                     /* → */ $div.trigger( 'error' );
