@@ -15,7 +15,7 @@ ruleTester.run( 'no-clone', rule, {
 		'$div.prop.clone()',
 		{
 			code: '$div["prop"].clone()',
-			noDoc: true
+			docgen: false
 		},
 		'$div[0].clone()'
 	],

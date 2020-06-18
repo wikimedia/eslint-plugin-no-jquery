@@ -16,7 +16,7 @@ ruleTester.run( 'no-constructor-attributes', rule, {
 		'$div.add("<div>", context)',
 		{
 			code: '(function(){$(".div")})()',
-			noDoc: true
+			docgen: false
 		}
 	],
 	invalid: [

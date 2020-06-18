@@ -51,15 +51,15 @@ forbidden.forEach( function ( rule ) {
 	valid = valid.concat(
 		{
 			code: rule + '()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: '$.' + rule + '()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: '[].' + rule + '()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: '$div.on("' + rule + '", fn)'
@@ -69,11 +69,11 @@ forbidden.forEach( function ( rule ) {
 		},
 		{
 			code: '$method(x).' + rule + '()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'div.' + rule,
-			noDoc: true
+			docgen: false
 		}
 	);
 	invalid = invalid.concat(
@@ -91,19 +91,19 @@ forbidden.forEach( function ( rule ) {
 			code: 'this.prop.$div.' + rule + '(handler)',
 			errors: [ error ],
 			output: 'this.prop.$div.on("' + rule + '", handler)',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: '$("div").first().' + rule + '()',
 			errors: [ error ],
 			output: '$("div").first().trigger("' + rule + '")',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: '$("div").append($("input").' + rule + '())',
 			errors: [ error ],
 			output: '$("div").append($("input").trigger("' + rule + '"))',
-			noDoc: true
+			docgen: false
 		}
 	);
 } );
