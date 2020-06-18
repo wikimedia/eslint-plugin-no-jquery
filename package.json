@@ -19,7 +19,7 @@
 		"onlytest": "mocha --reporter dot tests/** --nofix",
 		"report": "nyc report --reporter=text-lcov > coverage.lcov",
 		"testpath": "mocha",
-		"doc": "rm -f docs/rules/* && mocha --reporter dot tests/** --doc && node tools/build-readme.js",
+		"doc": "rm -f docs/rules/* && env DOCGEN=1 mocha --reporter dot tests/** && node tools/build-readme.js",
 		"build": "npm run doc && node tools/build-all-methods.js"
 	},
 	"files": [
@@ -31,7 +31,7 @@
 	"devDependencies": {
 		"codecov": "^3.7.0",
 		"eslint-config-wikimedia": "^0.16.1",
-		"eslint-docgen": "^0.4.0",
+		"eslint-docgen": "^0.4.3",
 		"eslint-plugin-eslint-plugin": "^2.2.2",
 		"eslint-plugin-self": "^1.2.1",
 		"jquery": "3.5.1",

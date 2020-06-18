@@ -21,15 +21,15 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 
 		{
 			code: '$()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: '$([])',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: '$(variable1 = variable2)',
-			noDoc: true
+			docgen: false
 		},
 
 		{
@@ -69,7 +69,7 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 
 		{
 			code: '(function(){$()})()',
-			noDoc: true
+			docgen: false
 		}
 	],
 	// Build test cases by joining methods with strings
@@ -92,7 +92,7 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 				return {
 					code: method + '(' + string + ')',
 					errors: [ error ],
-					noDoc: !( i === 0 || method === '$' )
+					docgen: i === 0 || method === '$'
 				};
 			} )
 		);

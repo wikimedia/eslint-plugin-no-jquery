@@ -36,27 +36,27 @@ ruleTester.run( 'variable-pattern', rule, {
 		'mixed = $div.val()',
 		{
 			code: 'number = $div.innerHeight()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'number = $div.innerWidth()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'number = $div.scrollLeft()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'number = $div.scrollTop()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'string = $div.text()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'number = $div.width()',
-			noDoc: true
+			docgen: false
 		},
 
 		// nonCollectionReturningMethods
@@ -84,19 +84,19 @@ ruleTester.run( 'variable-pattern', rule, {
 		'string = $div.attr(possibleName)',
 		{
 			code: 'string = $div.css("name")',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'string = $div.css(possibleName)',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'string = $div.data("name")',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'string = $div.data(possibleName)',
-			noDoc: true
+			docgen: false
 		},
 		'obj = $div.data()',
 		'string = $div.prop("name")',
@@ -108,15 +108,15 @@ ruleTester.run( 'variable-pattern', rule, {
 		'number = $div.outerWidth(possibleBool)',
 		{
 			code: 'number = $div.outerHeight()',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'number = $div.outerHeight(true)',
-			noDoc: true
+			docgen: false
 		},
 		{
 			code: 'number = $div.outerHeight(possibleBool)',
-			noDoc: true
+			docgen: false
 		},
 
 		// queue
@@ -185,27 +185,27 @@ ruleTester.run( 'variable-pattern', rule, {
 			'div = $div.val(value)',
 			{
 				code: 'div = $div.innerHeight(value)',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.innerWidth(value)',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.scrollLeft(value)',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.scrollTop(value)',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.text(value)',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.width(value)',
-				noDoc: true
+				docgen: false
 			},
 
 			// nonCollectionReturningValueAccessors
@@ -214,39 +214,39 @@ ruleTester.run( 'variable-pattern', rule, {
 			'div = $div.attr({name: fn})',
 			{
 				code: 'div = $div.css("name", "value")',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.css({name: "value"})',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.css({name: fn})',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.data("name", "value")',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.data({name: "value"})',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.data({name: fn})',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.prop("name", "value")',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.prop({name: "value"})',
-				noDoc: true
+				docgen: false
 			},
 			{
 				code: 'div = $div.prop({name: fn})',
-				noDoc: true
+				docgen: false
 			},
 
 			// outerWidth/outerHeight
