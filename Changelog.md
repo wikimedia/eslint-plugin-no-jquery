@@ -1,12 +1,35 @@
 # eslint-plugin-no-jquery release history
 
+## Next
+
+* Code: Only assert error message strings (Ed Sanders)
+* Code: Introduce eslint-plugin-eslint-plugin (Ed Sanders)
+* Code: Add ESLint 7.0.0 support (Ed Sanders)
+* Code: Prefer $("div") in test cases (Ed Sanders)
+* Code: Fix ESLint 2.3.0 support (Ed Sanders)
+
+—
+* Docs: Move docs to docs/rules (Ed Sanders)
+* Docs: Suppress more examples with noDoc (no-parse-html-literal) (Ed Sanders)
+* Docs: Update to eslint-docgen 0.3.1 (Ed Sanders)
+* Docs: Suppress some examples with noDoc in long documentation files (Ed Sanders)
+* Docs: Use eslint-docgen (Ed Sanders)
+* Docs: Remove noDoc arg from RuleTesterAndDocs, just use RuleTester (Ed Sanders)
+* Docs: Fetch 'main' path from package.json (Ed Sanders)
+* Docs: Remove extra linebreak from no-parse-html-literal.md (Ed Sanders)
+* Docs: Add missing linebreak before rule source section (Ed Sanders)
+* Docs: Improvements to doc builder (Ed Sanders)
+
+—
+* Release: Update devDependencies (Ed Sanders)
+
 ## v2.4.1
 
 * Profile fix: Fix override of `no-event-shorthand` in `deprecated-3.5` (Ed Sanders)
 
 —
-* code: Add real test coverage for index.js (Ed Sanders)
-* code: gitignore coverage.lcov (Ed Sanders)
+* Code: Add real test coverage for index.js (Ed Sanders)
+* Code: gitignore coverage.lcov (Ed Sanders)
 
 ## v2.4.0
 
@@ -37,11 +60,11 @@
 * Release: Update devDependencies (Ed Sanders)
 
 —
-* code: Add `#odd` and `#even` to all methods lists, new in jQuery 3.5 (Ed Sanders)
-* code: Add code coverage checks using Istanbul (Ed Sanders)
-* code: Move index.js to src/ (Ed Sanders)
-* code: Restructure files and folders (Ed Sanders)
-* code: Setup codecov GitHub Action integration (Ed Sanders)
+* Code: Add `#odd` and `#even` to all methods lists, new in jQuery 3.5 (Ed Sanders)
+* Code: Add code coverage checks using Istanbul (Ed Sanders)
+* Code: Move index.js to src/ (Ed Sanders)
+* Code: Restructure files and folders (Ed Sanders)
+* Code: Setup codecov GitHub Action integration (Ed Sanders)
 
 
 ## v2.3.2
