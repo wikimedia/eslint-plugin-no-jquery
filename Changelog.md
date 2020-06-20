@@ -25,7 +25,7 @@
 
 ## v2.4.1
 
-* Profile fix: Fix override of `no-event-shorthand` in `deprecated-3.5` (Ed Sanders)
+* Config fix: Fix override of `no-event-shorthand` in `deprecated-3.5` (Ed Sanders)
 
 —
 * Code: Add real test coverage for index.js (Ed Sanders)
@@ -36,7 +36,7 @@
 * New feature: Add specification of plugin return types to settings (Ed Sanders)
 
 —
-* New profile: Add new `deprecated-3.5` config (Ed Sanders)
+* New config: Add new `deprecated-3.5` config (Ed Sanders)
 
 —
 * New rule: `no-find-collection`, split out of `no-find` (Ed Sanders)
@@ -118,7 +118,7 @@
 * New rule: `no-visibility` as a group alias for `no-show`, `no-hide`, & `no-toggle` (Ed Sanders)
 
 —
-* New config: `slim` as a profile for users of the jQuery slim build (Ed Sanders)
+* New config: `slim` as a config for users of the jQuery slim build (Ed Sanders)
 
 —
 * Deprecated rule: `no-show` (Ed Sanders)
@@ -263,7 +263,7 @@
 
 
 ## v1.3.2-wmf.4
-* Fix typo in profile listing (Ed Sanders)
+* Fix typo in config listing (Ed Sanders)
 
 
 ## v1.3.2-wmf.3
@@ -271,8 +271,8 @@
 
 
 ## v1.3.2-wmf.2
-* Provide version-specific deprecation profiles (James D. Forrester)
-* Move 'deprecated' profile as a pointer to latest, remove old 'slim' profile (Ed Sanders)
+* Provide version-specific deprecation configs (James D. Forrester)
+* Move 'deprecated' config as a pointer to latest, remove old 'slim' config (Ed Sanders)
 
 —
 * New rule: `no-and-self` (Ed Sanders)

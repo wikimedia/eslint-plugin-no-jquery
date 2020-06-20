@@ -34,7 +34,7 @@ Add `no-jquery` to the plugins section of your `.eslintrc` configuration file. Y
 }
 ```
 
-The pre-set profile `plugin:no-jquery/deprecated` includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use profiles targetting specific versions of jQuery if you know the environment in which your code will operate. There is a profile for jQuery 3.5.x+ environments (`deprecated-3.5`), and profiles for other minor releases that include deprecations (`deprecated-3.4`, `deprecated-1.10` etc.). Deprecation profiles are cumulative, so they include all the rules for jQuery versions below them.
+The config `plugin:no-jquery/deprecated` includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use configs targeting specific versions of jQuery if you know the environment in which your code will operate. There is a config for jQuery 3.5.x+ environments (`deprecated-3.5`), and configs for other minor releases that include deprecations (`deprecated-3.4`, `deprecated-1.10` etc.). Deprecation configs are cumulative, so they include all the rules for jQuery versions below them.
 
 Alternatively, you can pick out rules individually (see below).
 
@@ -73,7 +73,7 @@ The following global settings can be used under the `no-jquery` property to conf
 
 ## 📖 Rules
 
-Where rules are included in the pre-set profiles `slim` or `deprecated-X.X` it is indicated below. Where rules are included with options this is indicated with a `†`.
+Where rules are included in the configs `slim`, `all` or `deprecated-X.X` it is indicated below. Where rules are included with options this is indicated with a `†`.
 * [`no-jquery/no-ajax`](docs/rules/no-ajax.md) `slim`, `all`
 * [`no-jquery/no-ajax-events`](docs/rules/no-ajax-events.md) `slim`
 * [`no-jquery/no-and-self`](docs/rules/no-and-self.md) `1.8`

@@ -101,7 +101,7 @@ module.exports = {
 		'variable-pattern': require( './rules/variable-pattern' )
 	},
 	configs: {
-		// Use this profile if you are using jQuery slim build
+		// Use this config if you are using jQuery slim build
 		slim: {
 			rules: {
 				// Effects
@@ -116,11 +116,11 @@ module.exports = {
 				'no-jquery/no-parse-xml': 'error'
 			}
 		},
-		// Use this profile if you want to avoid all known deprecated jQuery tools.
+		// Use this config if you want to avoid all known deprecated jQuery tools.
 		deprecated: {
 			extends: 'plugin:no-jquery/deprecated-3.5'
 		},
-		// Use this profile if you're writing code targetting jQuery 3.5.x environments.
+		// Use this config if you're writing code targetting jQuery 3.5.x environments.
 		'deprecated-3.5': {
 			extends: 'plugin:no-jquery/deprecated-3.4',
 			rules: {
@@ -129,14 +129,14 @@ module.exports = {
 				'no-jquery/no-trim': 'error'
 			}
 		},
-		// Use this profile if you're writing code targetting jQuery 3.4.x environments.
+		// Use this config if you're writing code targetting jQuery 3.4.x environments.
 		'deprecated-3.4': {
 			extends: 'plugin:no-jquery/deprecated-3.3',
 			rules: {
 				'no-jquery/no-sizzle': [ 'error', { allowPositional: false, allowOther: true } ]
 			}
 		},
-		// Use this profile if you're writing code targetting jQuery 3.3.x environments.
+		// Use this config if you're writing code targetting jQuery 3.3.x environments.
 		'deprecated-3.3': {
 			extends: 'plugin:no-jquery/deprecated-3.2',
 			rules: {
@@ -150,7 +150,7 @@ module.exports = {
 				'no-jquery/no-type': 'error'
 			}
 		},
-		// Use this profile if you're writing code targetting jQuery 3.3.x environments.
+		// Use this config if you're writing code targetting jQuery 3.3.x environments.
 		'deprecated-3.2': {
 			extends: 'plugin:no-jquery/deprecated-3.0',
 			rules: {
@@ -159,7 +159,7 @@ module.exports = {
 				'no-jquery/no-node-name': 'error'
 			}
 		},
-		// Use this profile if you're writing code targetting jQuery 3.0.x environments.
+		// Use this config if you're writing code targetting jQuery 3.0.x environments.
 		'deprecated-3.0': {
 			extends: 'plugin:no-jquery/deprecated-1.10',
 			rules: {
@@ -171,21 +171,21 @@ module.exports = {
 				'no-jquery/no-unique': 'error'
 			}
 		},
-		// Use this profile if you're writing code targetting jQuery 1.10.x environments.
+		// Use this config if you're writing code targetting jQuery 1.10.x environments.
 		'deprecated-1.10': {
 			extends: 'plugin:no-jquery/deprecated-1.9',
 			rules: {
 				'no-jquery/no-context-prop': 'error'
 			}
 		},
-		// Use this profile if you're writing code targetting jQuery 1.9.x environments.
+		// Use this config if you're writing code targetting jQuery 1.9.x environments.
 		'deprecated-1.9': {
 			extends: 'plugin:no-jquery/deprecated-1.8',
 			rules: {
 				'no-jquery/no-support': 'error'
 			}
 		},
-		// Use this profile if you're writing code targetting jQuery 1.8.x environments.
+		// Use this config if you're writing code targetting jQuery 1.8.x environments.
 		'deprecated-1.8': {
 			extends: 'plugin:no-jquery/deprecated-1.7',
 			rules: {
@@ -199,7 +199,7 @@ module.exports = {
 				'no-jquery/no-unload-shorthand': 'error'
 			}
 		},
-		// Use this profile if you're writing code targetting jQuery 1.7.x environments.
+		// Use this config if you're writing code targetting jQuery 1.7.x environments.
 		'deprecated-1.7': {
 			extends: 'plugin:no-jquery/deprecated-1.3',
 			rules: {
@@ -209,14 +209,14 @@ module.exports = {
 				'no-jquery/no-selector-prop': 'error'
 			}
 		},
-		// Use this profile if you're writing code targetting jQuery 1.3.x environments.
+		// Use this config if you're writing code targetting jQuery 1.3.x environments.
 		'deprecated-1.3': {
 			rules: {
 				'no-jquery/no-box-model': 'error',
 				'no-jquery/no-browser': 'error'
 			}
 		},
-		// Use this profile to disallow all usage of jQuery
+		// Use this config to disallow all usage of jQuery
 		all: {
 			rules: {
 				'no-jquery/no-other-methods': 'error',
