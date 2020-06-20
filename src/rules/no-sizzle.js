@@ -69,7 +69,7 @@ module.exports = {
 					!utils.isjQuery( context, node.callee ) ||
 					(
 						node.callee.type === 'MemberExpression' &&
-						traversals.indexOf( node.callee.property.name ) === -1
+						!traversals.includes( node.callee.property.name )
 					)
 				) {
 					return;

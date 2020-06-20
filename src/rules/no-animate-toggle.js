@@ -21,7 +21,7 @@ module.exports = {
 			'CallExpression:exit': function ( node ) {
 				if (
 					node.callee.type !== 'MemberExpression' ||
-					forbidden.indexOf( node.callee.property.name ) === -1 ||
+					!forbidden.includes( node.callee.property.name ) ||
 					node.arguments.length === 0
 				) {
 					return;

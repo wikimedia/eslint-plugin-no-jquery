@@ -78,7 +78,7 @@ rule.create = function ( context ) {
 				context.options[ 0 ] && context.options[ 0 ].allowAjaxEvents
 			) {
 				const name = node.callee.property.name;
-				if ( ajaxEvents.indexOf( name ) !== -1 ) {
+				if ( ajaxEvents.includes( name ) ) {
 					return;
 				}
 			}

@@ -80,7 +80,7 @@ module.exports = {
 					) {
 						allowSingle = false;
 					} else if (
-						[ 'html', 'append', 'add' ].indexOf( node.callee.property.name ) !== -1 &&
+						[ 'html', 'append', 'add' ].includes( node.callee.property.name ) &&
 						utils.isjQuery( context, node )
 					) {
 						allowSingle = true;
