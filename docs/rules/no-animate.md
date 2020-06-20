@@ -4,6 +4,8 @@ Disallows the [`.animate`](https://api.jquery.com/animate/) method. Use the `all
 
 ⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

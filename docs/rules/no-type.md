@@ -4,6 +4,8 @@ Disallows the [`$.type`](https://api.jquery.com/jQuery.type/) utility. Prefer `t
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

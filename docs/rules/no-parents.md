@@ -2,6 +2,8 @@
 
 Disallows the [`.parents`](https://api.jquery.com/parents/) method. Prefer `Element#closest`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

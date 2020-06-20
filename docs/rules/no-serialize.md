@@ -2,6 +2,8 @@
 
 Disallows the [`.serialize`](https://api.jquery.com/serialize/)/[`.serializeArray`](https://api.jquery.com/serializeArray/) methods. Prefer `FormData` or `URLSearchParams`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

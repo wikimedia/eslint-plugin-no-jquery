@@ -4,6 +4,8 @@ Disallows the [`.bind`](https://api.jquery.com/bind/)/[`.unbind`](https://api.jq
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

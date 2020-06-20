@@ -63,6 +63,8 @@ module.exports = {
 		'no-noop': require( './rules/no-noop' ),
 		'no-now': require( './rules/no-now' ),
 		'no-on-ready': require( './rules/no-on-ready' ),
+		'no-other-methods': require( './rules/no-other-methods' ),
+		'no-other-utils': require( './rules/no-other-utils' ),
 		'no-param': require( './rules/no-param' ),
 		'no-parent': require( './rules/no-parent' ),
 		'no-parents': require( './rules/no-parents' ),
@@ -212,6 +214,85 @@ module.exports = {
 			rules: {
 				'no-jquery/no-box-model': 'error',
 				'no-jquery/no-browser': 'error'
+			}
+		},
+		// Use this profile to disallow all usage of jQuery
+		all: {
+			rules: {
+				'no-jquery/no-other-methods': 'error',
+				'no-jquery/no-other-utils': 'error',
+
+				// methods
+				'no-jquery/no-animate': 'error',
+				'no-jquery/no-bind': 'error',
+				'no-jquery/no-class': 'error',
+				'no-jquery/no-closest': 'error',
+				'no-jquery/no-delegate': 'error',
+				'no-jquery/no-each-collection': 'error',
+				'no-jquery/no-event-shorthand': 'error',
+				'no-jquery/no-fade': 'error',
+				'no-jquery/no-find-collection': 'error',
+				'no-jquery/no-has': 'error',
+				'no-jquery/no-html': 'error',
+				'no-jquery/no-is': 'error',
+				'no-jquery/no-live': 'error',
+				'no-jquery/no-load': 'error',
+				'no-jquery/no-map-collection': 'error',
+				'no-jquery/no-parent': 'error',
+				'no-jquery/no-parents': 'error',
+				'no-jquery/no-ready': 'error',
+				'no-jquery/no-serialize': 'error',
+				'no-jquery/no-size': 'error',
+				'no-jquery/no-slide': 'error',
+				'no-jquery/no-trigger': 'error',
+				'no-jquery/no-val': 'error',
+				'no-jquery/no-visibility': 'error',
+				'no-jquery/no-wrap': 'error',
+
+				// Utils
+				'no-jquery/no-ajax': 'error',
+				'no-jquery/no-camel-case': 'error',
+				'no-jquery/no-contains': 'error',
+				'no-jquery/no-deferred': 'error',
+				'no-jquery/no-each-util': 'error',
+				'no-jquery/no-error': 'error',
+				'no-jquery/no-extend': 'error',
+				'no-jquery/no-find-util': 'error',
+				'no-jquery/no-global-eval': 'error',
+				'no-jquery/no-grep': 'error',
+				'no-jquery/no-hold-ready': 'error',
+				'no-jquery/no-in-array': 'error',
+				'no-jquery/no-is-array': 'error',
+				'no-jquery/no-is-empty-object': 'error',
+				'no-jquery/no-is-function': 'error',
+				'no-jquery/no-is-numeric': 'error',
+				'no-jquery/no-is-plain-object': 'error',
+				'no-jquery/no-is-window': 'error',
+				'no-jquery/no-map-util': 'error',
+				'no-jquery/no-merge': 'error',
+				'no-jquery/no-node-name': 'error',
+				'no-jquery/no-noop': 'error',
+				'no-jquery/no-now': 'error',
+				'no-jquery/no-param': 'error',
+				'no-jquery/no-parse-html': 'error',
+				'no-jquery/no-parse-json': 'error',
+				'no-jquery/no-parse-xml': 'error',
+				'no-jquery/no-proxy': 'error',
+				'no-jquery/no-trim': 'error',
+				'no-jquery/no-type': 'error',
+				'no-jquery/no-unique': 'error',
+				'no-jquery/no-when': 'error',
+
+				// Method+utils
+				'no-jquery/no-attr': 'error',
+				'no-jquery/no-clone': 'error',
+				'no-jquery/no-css': 'error',
+				'no-jquery/no-data': 'error',
+				'no-jquery/no-filter': 'error',
+				'no-jquery/no-prop': 'error',
+				'no-jquery/no-sub': 'error',
+				'no-jquery/no-text': 'error'
+
 			}
 		}
 	}

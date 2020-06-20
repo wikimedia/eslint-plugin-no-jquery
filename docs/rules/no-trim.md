@@ -4,6 +4,8 @@ Disallows the [`$.trim`](https://api.jquery.com/jQuery.trim/) utility. Prefer `S
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.5`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

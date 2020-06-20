@@ -2,6 +2,8 @@
 
 Disallows the [`.css`](https://api.jquery.com/css/) method and `$.css` utility. Prefer `Window#getComputedStyle`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

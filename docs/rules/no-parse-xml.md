@@ -4,6 +4,8 @@ Disallows the [`$.parseXML`](https://api.jquery.com/jQuery.parseXML/) utility. P
 
 ⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

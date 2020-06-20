@@ -4,6 +4,8 @@ Disallows the [`.load`](https://api.jquery.com/load/) method. Prefer `fetch`.
 
 ⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

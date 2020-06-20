@@ -2,6 +2,8 @@
 
 Disallows the [`.find`](https://api.jquery.com/find/) method. Prefer `Document#querySelectorAll`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

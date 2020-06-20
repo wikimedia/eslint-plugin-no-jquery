@@ -2,6 +2,8 @@
 
 Disallows the [`$.globalEval`](https://api.jquery.com/jQuery.globalEval/) utility.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

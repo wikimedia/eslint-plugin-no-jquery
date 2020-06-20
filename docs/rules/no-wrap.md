@@ -2,6 +2,8 @@
 
 Disallows the [`.wrap`](https://api.jquery.com/wrap/)/[`.wrapAll`](https://api.jquery.com/wrapAll/)/[`.wrapInner`](https://api.jquery.com/wrapInner/)/[`.unwrap`](https://api.jquery.com/unwrap/) methods.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

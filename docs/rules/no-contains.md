@@ -2,6 +2,8 @@
 
 Disallows the [`$.contains`](https://api.jquery.com/jQuery.contains/) utility. Prefer `Node#contains`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

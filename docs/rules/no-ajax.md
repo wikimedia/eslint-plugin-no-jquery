@@ -4,6 +4,8 @@ Disallows the [`$.ajax`](https://api.jquery.com/jQuery.ajax/)/[`$.get`](https://
 
 ⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

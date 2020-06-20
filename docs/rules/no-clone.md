@@ -2,6 +2,8 @@
 
 Disallows the [`.clone`](https://api.jquery.com/clone/) method and `$.clone` utility. Prefer `Node#cloneNode`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

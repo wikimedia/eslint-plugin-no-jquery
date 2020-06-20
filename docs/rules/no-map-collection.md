@@ -2,6 +2,8 @@
 
 Disallows the [`.map`](https://api.jquery.com/map/) method. Prefer `Array#map`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
