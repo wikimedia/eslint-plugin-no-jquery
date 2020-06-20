@@ -36,6 +36,8 @@ Add `no-jquery` to the plugins section of your `.eslintrc` configuration file. Y
 
 The config `plugin:no-jquery/deprecated` includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use configs targeting specific versions of jQuery if you know the environment in which your code will operate. There is a config for jQuery 3.5.x+ environments (`deprecated-3.5`), and configs for other minor releases that include deprecations (`deprecated-3.4`, `deprecated-1.10` etc.). Deprecation configs are cumulative, so they include all the rules for jQuery versions below them.
 
+The config `plugin:no-jquery/all` includes all methods and utilies and should be used when you are aiming to remove all jQuery usage from your code.
+
 Alternatively, you can pick out rules individually (see below).
 
 ## ⚙️ Settings
