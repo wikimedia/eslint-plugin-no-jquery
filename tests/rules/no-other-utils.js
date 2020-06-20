@@ -16,19 +16,19 @@ ruleTester.run( 'no-other-utils', rule, {
 	invalid: [
 		{
 			code: '$.dequeue()',
-			errors: [ { messageId: 'notAllowed' } ]
+			errors: [ '$.dequeue is not allowed' ]
 		},
 		{
 			code: '$.noConflict()',
-			errors: [ { messageId: 'notAllowed' } ]
+			errors: [ '$.noConflict is not allowed' ]
 		},
 		{
 			code: '$.uniqueSort()',
-			errors: [ { messageId: 'notAllowed' } ]
+			errors: [ '$.uniqueSort is not allowed' ]
 		},
 		{
 			code: '$.otherUtil()',
-			errors: [ { messageId: 'notAllowed' } ]
+			errors: [ '$.otherUtil is not allowed' ]
 		}
 	]
 } );

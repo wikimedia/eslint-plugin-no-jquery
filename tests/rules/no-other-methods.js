@@ -17,19 +17,19 @@ ruleTester.run( 'no-other-methods', rule, {
 	invalid: [
 		{
 			code: '$div.add()',
-			errors: [ { messageId: 'notAllowed' } ]
+			errors: [ '.add is not allowed' ]
 		},
 		{
 			code: '$div.height()',
-			errors: [ { messageId: 'notAllowed' } ]
+			errors: [ '.height is not allowed' ]
 		},
 		{
 			code: '$div.prepend()',
-			errors: [ { messageId: 'notAllowed' } ]
+			errors: [ '.prepend is not allowed' ]
 		},
 		{
 			code: '$div.otherMethod()',
-			errors: [ { messageId: 'notAllowed' } ]
+			errors: [ '.otherMethod is not allowed' ]
 		}
 	]
 } );

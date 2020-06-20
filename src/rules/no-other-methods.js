@@ -91,10 +91,7 @@ module.exports = {
 		docs: {
 			description: 'Disallows all methods not covered by more specific rules.'
 		},
-		schema: [],
-		messages: {
-			notAllowed: '.{{name}} is not allowed'
-		}
+		schema: []
 	},
 
 	create: function ( context ) {
@@ -114,7 +111,7 @@ module.exports = {
 				if ( utils.isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
-						messageId: 'notAllowed',
+						message: '.{{name}} is not allowed',
 						data: { name: name }
 					} );
 				}
