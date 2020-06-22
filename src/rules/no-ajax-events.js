@@ -11,9 +11,6 @@ const disallowedEvents = [
 	'ajaxStop'
 ];
 
-const MemberExpression = 'MemberExpression';
-const Literal = 'Literal';
-
 module.exports = {
 	meta: {
 		type: 'suggestion',
@@ -26,7 +23,7 @@ module.exports = {
 	create: function ( context ) {
 		return {
 			'CallExpression:exit': function ( node ) {
-				if ( node.callee.type !== MemberExpression ) {
+				if ( node.callee.type !== 'MemberExpression' ) {
 					return;
 				}
 				let usedMethod;
@@ -36,7 +33,7 @@ module.exports = {
 				) {
 					const arg = node.arguments[ 0 ];
 					if (
-						arg.type === Literal &&
+						arg.type === 'Literal' &&
 						disallowedEvents.includes( arg.value )
 					) {
 						usedMethod = arg.value;
