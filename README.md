@@ -34,9 +34,13 @@ Add `no-jquery` to the plugins section of your `.eslintrc` configuration file. Y
 }
 ```
 
-The config `plugin:no-jquery/deprecated` includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use configs targeting specific versions of jQuery if you know the environment in which your code will operate. There is a config for jQuery 3.5.x+ environments (`deprecated-3.5`), and configs for other minor releases that include deprecations (`deprecated-3.4`, `deprecated-1.10` etc.). Deprecation configs are cumulative, so they include all the rules for jQuery versions below them.
+## 📋 Configs
 
-The config `plugin:no-jquery/all` includes all methods and utilies and should be used when you are aiming to remove all jQuery usage from your code.
+The config **`plugin:no-jquery/recommended`** includes the recommended rule [`no-jquery/variable-pattern`](docs/rules/variable-pattern.md) which is required for method rules to work correctly.
+
+The config **`plugin:no-jquery/deprecated`** includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use configs targeting specific versions of jQuery if you know the environment in which your code will operate. There is a config for jQuery 3.5.x+ environments (`deprecated-3.5`), and configs for other minor releases that include deprecations (`deprecated-3.4`, `deprecated-1.10` etc.). Deprecation configs are cumulative, so they include all the rules for jQuery versions below them.
+
+The config **`plugin:no-jquery/all`** includes all methods and utilies and should be used when you are aiming to remove all jQuery usage from your code.
 
 Alternatively, you can pick out rules individually (see below).
 
@@ -75,7 +79,7 @@ The following global settings can be used under the `no-jquery` property to conf
 
 ## 📖 Rules
 
-Where rules are included in the configs `slim`, `all` or `deprecated-X.X` it is indicated below. Where rules are included with options this is indicated with a `†`.
+Where rules are included in the configs `recommended`, `slim`, `all` or `deprecated-X.X` it is indicated below. Where rules are included with options this is indicated with a `†`.
 * [`no-jquery/no-ajax`](docs/rules/no-ajax.md) `slim`, `all`
 * [`no-jquery/no-ajax-events`](docs/rules/no-ajax-events.md) `slim`
 * [`no-jquery/no-and-self`](docs/rules/no-and-self.md) `1.8`
@@ -166,7 +170,7 @@ Where rules are included in the configs `slim`, `all` or `deprecated-X.X` it is 
 * [`no-jquery/no-visibility`](docs/rules/no-visibility.md) `all`
 * [`no-jquery/no-when`](docs/rules/no-when.md) `all`
 * [`no-jquery/no-wrap`](docs/rules/no-wrap.md) `all`
-* [`no-jquery/variable-pattern`](docs/rules/variable-pattern.md)
+* [`no-jquery/variable-pattern`](docs/rules/variable-pattern.md) `recommended`
 
 ### ⚠️ Deprecated
 
