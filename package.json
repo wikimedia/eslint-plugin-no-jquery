@@ -18,6 +18,7 @@
 		"test": "nyc mocha --reporter dot tests/** && git diff --exit-code docs/ src/ README.md",
 		"onlytest": "mocha --reporter dot tests/** --nofix",
 		"report": "nyc report --reporter=text-lcov > coverage.lcov",
+		"reporthtml": "nyc report --reporter=html",
 		"testpath": "mocha",
 		"doc": "rm -f docs/rules/* && env DOCGEN=1 mocha --reporter dot tests/** && node tools/build-readme.js",
 		"build": "npm run doc && node tools/build-all-methods.js"
