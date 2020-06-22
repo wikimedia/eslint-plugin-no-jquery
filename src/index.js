@@ -101,6 +101,11 @@ module.exports = {
 		'variable-pattern': require( './rules/variable-pattern' )
 	},
 	configs: {
+		recommended: {
+			rules: {
+				'no-jquery/variable-pattern': 'error'
+			}
+		},
 		// Use this config if you are using jQuery slim build
 		slim: {
 			rules: {

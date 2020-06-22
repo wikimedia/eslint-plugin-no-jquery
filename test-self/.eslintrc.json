@@ -6,7 +6,10 @@
 		"$": "readonly"
 	},
 	"rules": {
+		"no-implicit-globals": "off",
 		"no-undef": "off",
-		"no-unused-expressions": "off"
+		"no-underscore-dangle": "off",
+		"no-unused-expressions": "off",
+		"no-unused-vars": "off"
 	}
 }
