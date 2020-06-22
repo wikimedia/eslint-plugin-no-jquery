@@ -131,35 +131,35 @@ module.exports = {
 			extends: 'plugin:no-jquery/deprecated-3.4',
 			rules: {
 				// Pass empty options here to override options set in deprecated-3.3
-				'no-jquery/no-event-shorthand': [ 'error', {} ],
-				'no-jquery/no-trim': 'error'
+				'no-jquery/no-event-shorthand': [ 'warn', {} ],
+				'no-jquery/no-trim': 'warn'
 			}
 		},
 		'deprecated-3.4': {
 			extends: 'plugin:no-jquery/deprecated-3.3',
 			rules: {
-				'no-jquery/no-sizzle': [ 'error', { allowPositional: false, allowOther: true } ]
+				'no-jquery/no-sizzle': [ 'warn', { allowPositional: false, allowOther: true } ]
 			}
 		},
 		'deprecated-3.3': {
 			extends: 'plugin:no-jquery/deprecated-3.2',
 			rules: {
-				'no-jquery/no-camel-case': 'error',
-				'no-jquery/no-event-shorthand': [ 'error', { allowAjaxEvents: true } ],
-				'no-jquery/no-is-function': 'error',
-				'no-jquery/no-is-numeric': 'error',
-				'no-jquery/no-is-window': 'error',
-				'no-jquery/no-now': 'error',
-				'no-jquery/no-proxy': 'error',
-				'no-jquery/no-type': 'error'
+				'no-jquery/no-camel-case': 'warn',
+				'no-jquery/no-event-shorthand': [ 'warn', { allowAjaxEvents: true } ],
+				'no-jquery/no-is-function': 'warn',
+				'no-jquery/no-is-numeric': 'warn',
+				'no-jquery/no-is-window': 'warn',
+				'no-jquery/no-now': 'warn',
+				'no-jquery/no-proxy': 'warn',
+				'no-jquery/no-type': 'warn'
 			}
 		},
 		'deprecated-3.2': {
 			extends: 'plugin:no-jquery/deprecated-3.1',
 			rules: {
-				'no-jquery/no-hold-ready': 'error',
-				'no-jquery/no-is-array': 'error',
-				'no-jquery/no-node-name': 'error'
+				'no-jquery/no-hold-ready': 'warn',
+				'no-jquery/no-is-array': 'warn',
+				'no-jquery/no-node-name': 'warn'
 			}
 		},
 		'deprecated-3.1': {
@@ -168,12 +168,12 @@ module.exports = {
 		'deprecated-3.0': {
 			extends: 'plugin:no-jquery/deprecated-2.2',
 			rules: {
-				'no-jquery/no-bind': 'error',
-				'no-jquery/no-delegate': 'error',
-				'no-jquery/no-fx-interval': 'error',
-				'no-jquery/no-parse-json': 'error',
-				'no-jquery/no-ready-shorthand': 'error',
-				'no-jquery/no-unique': 'error'
+				'no-jquery/no-bind': 'warn',
+				'no-jquery/no-delegate': 'warn',
+				'no-jquery/no-fx-interval': 'warn',
+				'no-jquery/no-parse-json': 'warn',
+				'no-jquery/no-ready-shorthand': 'warn',
+				'no-jquery/no-unique': 'warn'
 			}
 		},
 		'deprecated-2.2': {
@@ -194,35 +194,35 @@ module.exports = {
 		'deprecated-1.10': {
 			extends: 'plugin:no-jquery/deprecated-1.9',
 			rules: {
-				'no-jquery/no-context-prop': 'error'
+				'no-jquery/no-context-prop': 'warn'
 			}
 		},
 		'deprecated-1.9': {
 			extends: 'plugin:no-jquery/deprecated-1.8',
 			rules: {
-				'no-jquery/no-support': 'error'
+				'no-jquery/no-support': 'warn'
 			}
 		},
 		'deprecated-1.8': {
 			extends: 'plugin:no-jquery/deprecated-1.7',
 			rules: {
-				'no-jquery/no-and-self': 'error',
+				'no-jquery/no-and-self': 'warn',
 				// FIXME: `deferred.pipe()`
-				'no-jquery/no-error-shorthand': 'error',
-				'no-jquery/no-load-shorthand': 'error',
-				'no-jquery/no-on-ready': 'error',
-				'no-jquery/no-size': 'error',
+				'no-jquery/no-error-shorthand': 'warn',
+				'no-jquery/no-load-shorthand': 'warn',
+				'no-jquery/no-on-ready': 'warn',
+				'no-jquery/no-size': 'warn',
 				// FIXME: `$(...).toggle(fn,fn) (excluding https://api.jquery.com/toggle/)
-				'no-jquery/no-unload-shorthand': 'error'
+				'no-jquery/no-unload-shorthand': 'warn'
 			}
 		},
 		'deprecated-1.7': {
 			extends: 'plugin:no-jquery/deprecated-1.6',
 			rules: {
 				// FIXME: `deferred.isRejected()/isResolved()`
-				'no-jquery/no-live': 'error',
-				'no-jquery/no-sub': 'error',
-				'no-jquery/no-selector-prop': 'error'
+				'no-jquery/no-live': 'warn',
+				'no-jquery/no-sub': 'warn',
+				'no-jquery/no-selector-prop': 'warn'
 			}
 		},
 		'deprecated-1.6': {
@@ -237,8 +237,8 @@ module.exports = {
 		'deprecated-1.3': {
 			extends: 'plugin:no-jquery/deprecated-1.2',
 			rules: {
-				'no-jquery/no-box-model': 'error',
-				'no-jquery/no-browser': 'error'
+				'no-jquery/no-box-model': 'warn',
+				'no-jquery/no-browser': 'warn'
 			}
 		},
 		'deprecated-1.2': {
@@ -251,80 +251,80 @@ module.exports = {
 		// Use this config to disallow all usage of jQuery
 		all: {
 			rules: {
-				'no-jquery/no-other-methods': 'error',
-				'no-jquery/no-other-utils': 'error',
-				'no-jquery/no-jquery-constructor': 'error',
+				'no-jquery/no-other-methods': 'warn',
+				'no-jquery/no-other-utils': 'warn',
+				'no-jquery/no-jquery-constructor': 'warn',
 
 				// methods
-				'no-jquery/no-animate': 'error',
-				'no-jquery/no-bind': 'error',
-				'no-jquery/no-class': 'error',
-				'no-jquery/no-closest': 'error',
-				'no-jquery/no-delegate': 'error',
-				'no-jquery/no-each-collection': 'error',
-				'no-jquery/no-event-shorthand': 'error',
-				'no-jquery/no-fade': 'error',
-				'no-jquery/no-find-collection': 'error',
-				'no-jquery/no-has': 'error',
-				'no-jquery/no-html': 'error',
-				'no-jquery/no-is': 'error',
-				'no-jquery/no-live': 'error',
-				'no-jquery/no-load': 'error',
-				'no-jquery/no-map-collection': 'error',
-				'no-jquery/no-parent': 'error',
-				'no-jquery/no-parents': 'error',
-				'no-jquery/no-ready-shorthand': 'error',
-				'no-jquery/no-serialize': 'error',
-				'no-jquery/no-size': 'error',
-				'no-jquery/no-slide': 'error',
-				'no-jquery/no-trigger': 'error',
-				'no-jquery/no-val': 'error',
-				'no-jquery/no-visibility': 'error',
-				'no-jquery/no-wrap': 'error',
+				'no-jquery/no-animate': 'warn',
+				'no-jquery/no-bind': 'warn',
+				'no-jquery/no-class': 'warn',
+				'no-jquery/no-closest': 'warn',
+				'no-jquery/no-delegate': 'warn',
+				'no-jquery/no-each-collection': 'warn',
+				'no-jquery/no-event-shorthand': 'warn',
+				'no-jquery/no-fade': 'warn',
+				'no-jquery/no-find-collection': 'warn',
+				'no-jquery/no-has': 'warn',
+				'no-jquery/no-html': 'warn',
+				'no-jquery/no-is': 'warn',
+				'no-jquery/no-live': 'warn',
+				'no-jquery/no-load': 'warn',
+				'no-jquery/no-map-collection': 'warn',
+				'no-jquery/no-parent': 'warn',
+				'no-jquery/no-parents': 'warn',
+				'no-jquery/no-ready-shorthand': 'warn',
+				'no-jquery/no-serialize': 'warn',
+				'no-jquery/no-size': 'warn',
+				'no-jquery/no-slide': 'warn',
+				'no-jquery/no-trigger': 'warn',
+				'no-jquery/no-val': 'warn',
+				'no-jquery/no-visibility': 'warn',
+				'no-jquery/no-wrap': 'warn',
 
 				// Utils
-				'no-jquery/no-ajax': 'error',
-				'no-jquery/no-camel-case': 'error',
-				'no-jquery/no-contains': 'error',
-				'no-jquery/no-deferred': 'error',
-				'no-jquery/no-each-util': 'error',
-				'no-jquery/no-error': 'error',
-				'no-jquery/no-extend': 'error',
-				'no-jquery/no-find-util': 'error',
-				'no-jquery/no-global-eval': 'error',
-				'no-jquery/no-grep': 'error',
-				'no-jquery/no-hold-ready': 'error',
-				'no-jquery/no-in-array': 'error',
-				'no-jquery/no-is-array': 'error',
-				'no-jquery/no-is-empty-object': 'error',
-				'no-jquery/no-is-function': 'error',
-				'no-jquery/no-is-numeric': 'error',
-				'no-jquery/no-is-plain-object': 'error',
-				'no-jquery/no-is-window': 'error',
-				'no-jquery/no-map-util': 'error',
-				'no-jquery/no-merge': 'error',
-				'no-jquery/no-node-name': 'error',
-				'no-jquery/no-noop': 'error',
-				'no-jquery/no-now': 'error',
-				'no-jquery/no-param': 'error',
-				'no-jquery/no-parse-html': 'error',
-				'no-jquery/no-parse-json': 'error',
-				'no-jquery/no-parse-xml': 'error',
-				'no-jquery/no-proxy': 'error',
-				'no-jquery/no-trim': 'error',
-				'no-jquery/no-type': 'error',
-				'no-jquery/no-unique': 'error',
-				'no-jquery/no-when': 'error',
+				'no-jquery/no-ajax': 'warn',
+				'no-jquery/no-camel-case': 'warn',
+				'no-jquery/no-contains': 'warn',
+				'no-jquery/no-deferred': 'warn',
+				'no-jquery/no-each-util': 'warn',
+				'no-jquery/no-error': 'warn',
+				'no-jquery/no-extend': 'warn',
+				'no-jquery/no-find-util': 'warn',
+				'no-jquery/no-global-eval': 'warn',
+				'no-jquery/no-grep': 'warn',
+				'no-jquery/no-hold-ready': 'warn',
+				'no-jquery/no-in-array': 'warn',
+				'no-jquery/no-is-array': 'warn',
+				'no-jquery/no-is-empty-object': 'warn',
+				'no-jquery/no-is-function': 'warn',
+				'no-jquery/no-is-numeric': 'warn',
+				'no-jquery/no-is-plain-object': 'warn',
+				'no-jquery/no-is-window': 'warn',
+				'no-jquery/no-map-util': 'warn',
+				'no-jquery/no-merge': 'warn',
+				'no-jquery/no-node-name': 'warn',
+				'no-jquery/no-noop': 'warn',
+				'no-jquery/no-now': 'warn',
+				'no-jquery/no-param': 'warn',
+				'no-jquery/no-parse-html': 'warn',
+				'no-jquery/no-parse-json': 'warn',
+				'no-jquery/no-parse-xml': 'warn',
+				'no-jquery/no-proxy': 'warn',
+				'no-jquery/no-trim': 'warn',
+				'no-jquery/no-type': 'warn',
+				'no-jquery/no-unique': 'warn',
+				'no-jquery/no-when': 'warn',
 
 				// Method+utils
-				'no-jquery/no-attr': 'error',
-				'no-jquery/no-clone': 'error',
-				'no-jquery/no-css': 'error',
-				'no-jquery/no-data': 'error',
-				'no-jquery/no-filter': 'error',
-				'no-jquery/no-prop': 'error',
-				'no-jquery/no-sub': 'error',
-				'no-jquery/no-text': 'error'
+				'no-jquery/no-attr': 'warn',
+				'no-jquery/no-clone': 'warn',
+				'no-jquery/no-css': 'warn',
+				'no-jquery/no-data': 'warn',
+				'no-jquery/no-filter': 'warn',
+				'no-jquery/no-prop': 'warn',
+				'no-jquery/no-sub': 'warn',
+				'no-jquery/no-text': 'warn'
 
 			}
 		}

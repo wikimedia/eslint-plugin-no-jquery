@@ -5,6 +5,7 @@
 * New config: `recommended` just includes `variable-pattern` rule (Ed Sanders)
 * New config: `all` covers all usages of jQuery methods and utils (Ed Sanders)
 * New config: Create a `deprecated-X.X` config for every minor release (Ed Sanders)
+* Configs: Use 'warn' instead of 'error' in `deprecated-X` and `all` configs (Ed Sanders)
 * New rule: `no-jquery-constructor` (Ed Sanders)
 
 —
@@ -56,7 +57,6 @@
 * Rule fix: Set all rules to type: `suggestion` (Ed Sanders)
 * Rule fix: `no-global-selector`; add `allowIds` option to allow global selector by ID (Adam Roses Wight)
 * Rule fix: `no-event-shorthand`; add `allowAjaxEvents` option and use in `deprecated-3.3` (Ed Sanders)
-
 
 —
 * Docs: Avoid duplicating name in "Prefer..." sentence (Ed Sanders)
