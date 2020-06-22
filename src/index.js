@@ -134,14 +134,12 @@ module.exports = {
 				'no-jquery/no-trim': 'error'
 			}
 		},
-		// Use this config if you're writing code targetting jQuery 3.4.x environments.
 		'deprecated-3.4': {
 			extends: 'plugin:no-jquery/deprecated-3.3',
 			rules: {
 				'no-jquery/no-sizzle': [ 'error', { allowPositional: false, allowOther: true } ]
 			}
 		},
-		// Use this config if you're writing code targetting jQuery 3.3.x environments.
 		'deprecated-3.3': {
 			extends: 'plugin:no-jquery/deprecated-3.2',
 			rules: {
@@ -155,18 +153,19 @@ module.exports = {
 				'no-jquery/no-type': 'error'
 			}
 		},
-		// Use this config if you're writing code targetting jQuery 3.3.x environments.
 		'deprecated-3.2': {
-			extends: 'plugin:no-jquery/deprecated-3.0',
+			extends: 'plugin:no-jquery/deprecated-3.1',
 			rules: {
 				'no-jquery/no-hold-ready': 'error',
 				'no-jquery/no-is-array': 'error',
 				'no-jquery/no-node-name': 'error'
 			}
 		},
-		// Use this config if you're writing code targetting jQuery 3.0.x environments.
+		'deprecated-3.1': {
+			extends: 'plugin:no-jquery/deprecated-3.0'
+		},
 		'deprecated-3.0': {
-			extends: 'plugin:no-jquery/deprecated-1.10',
+			extends: 'plugin:no-jquery/deprecated-2.2',
 			rules: {
 				'no-jquery/no-bind': 'error',
 				'no-jquery/no-delegate': 'error',
@@ -176,21 +175,33 @@ module.exports = {
 				'no-jquery/no-unique': 'error'
 			}
 		},
-		// Use this config if you're writing code targetting jQuery 1.10.x environments.
+		'deprecated-2.2': {
+			extends: 'plugin:no-jquery/deprecated-2.1'
+		},
+		'deprecated-2.1': {
+			extends: 'plugin:no-jquery/deprecated-2.0'
+		},
+		'deprecated-2.0': {
+			extends: 'plugin:no-jquery/deprecated-1.12'
+		},
+		'deprecated-1.12': {
+			extends: 'plugin:no-jquery/deprecated-1.11'
+		},
+		'deprecated-1.11': {
+			extends: 'plugin:no-jquery/deprecated-1.10'
+		},
 		'deprecated-1.10': {
 			extends: 'plugin:no-jquery/deprecated-1.9',
 			rules: {
 				'no-jquery/no-context-prop': 'error'
 			}
 		},
-		// Use this config if you're writing code targetting jQuery 1.9.x environments.
 		'deprecated-1.9': {
 			extends: 'plugin:no-jquery/deprecated-1.8',
 			rules: {
 				'no-jquery/no-support': 'error'
 			}
 		},
-		// Use this config if you're writing code targetting jQuery 1.8.x environments.
 		'deprecated-1.8': {
 			extends: 'plugin:no-jquery/deprecated-1.7',
 			rules: {
@@ -204,9 +215,8 @@ module.exports = {
 				'no-jquery/no-unload-shorthand': 'error'
 			}
 		},
-		// Use this config if you're writing code targetting jQuery 1.7.x environments.
 		'deprecated-1.7': {
-			extends: 'plugin:no-jquery/deprecated-1.3',
+			extends: 'plugin:no-jquery/deprecated-1.6',
 			rules: {
 				// FIXME: `deferred.isRejected()/isResolved()`
 				'no-jquery/no-live': 'error',
@@ -214,13 +224,29 @@ module.exports = {
 				'no-jquery/no-selector-prop': 'error'
 			}
 		},
-		// Use this config if you're writing code targetting jQuery 1.3.x environments.
+		'deprecated-1.6': {
+			extends: 'plugin:no-jquery/deprecated-1.5'
+		},
+		'deprecated-1.5': {
+			extends: 'plugin:no-jquery/deprecated-1.4'
+		},
+		'deprecated-1.4': {
+			extends: 'plugin:no-jquery/deprecated-1.3'
+		},
 		'deprecated-1.3': {
+			extends: 'plugin:no-jquery/deprecated-1.2',
 			rules: {
 				'no-jquery/no-box-model': 'error',
 				'no-jquery/no-browser': 'error'
 			}
 		},
+		'deprecated-1.2': {
+			extends: 'plugin:no-jquery/deprecated-1.1'
+		},
+		'deprecated-1.1': {
+			extends: 'plugin:no-jquery/deprecated-1.0'
+		},
+		'deprecated-1.0': {},
 		// Use this config to disallow all usage of jQuery
 		all: {
 			rules: {

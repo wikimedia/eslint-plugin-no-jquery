@@ -38,7 +38,7 @@ Add `no-jquery` to the plugins section of your `.eslintrc` configuration file. Y
 
 The config **`plugin:no-jquery/recommended`** includes the recommended rule [`no-jquery/variable-pattern`](docs/rules/variable-pattern.md) which is required for method rules to work correctly.
 
-The config **`plugin:no-jquery/deprecated`** includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use configs targeting specific versions of jQuery if you know the environment in which your code will operate. There is a config for jQuery 3.5.x+ environments (`deprecated-3.5`), and configs for other minor releases that include deprecations (`deprecated-3.4`, `deprecated-1.10` etc.). Deprecation configs are cumulative, so they include all the rules for jQuery versions below them.
+The config **`plugin:no-jquery/deprecated`** includes all known deprecated and removed code, and is updated as new releases of jQuery come out. You can instead use configs targeting specific versions of jQuery if you know the environment in which your code will operate. There is a config for all minor versions from 1.0 to 3.5 (`deprecated-1.0`, ..., `deprecated-3.5`). Deprecation configs are cumulative, so they include all the rules for jQuery versions below them.
 
 The config **`plugin:no-jquery/slim`** includes all features excluded from the official "slim" build of jQuery, specifically the [ajax](https://api.jquery.com/category/ajax/) and [effects](https://api.jquery.com/category/effects/) modules.
 
