@@ -52,6 +52,7 @@ module.exports = {
 		'no-is-numeric': require( './rules/no-is-numeric' ),
 		'no-is-plain-object': require( './rules/no-is-plain-object' ),
 		'no-is-window': require( './rules/no-is-window' ),
+		'no-jquery-constructor': require( './rules/no-jquery-constructor' ),
 		'no-live': require( './rules/no-live' ),
 		'no-load': require( './rules/no-load' ),
 		'no-load-shorthand': require( './rules/no-load-shorthand' ),
@@ -252,6 +253,7 @@ module.exports = {
 			rules: {
 				'no-jquery/no-other-methods': 'error',
 				'no-jquery/no-other-utils': 'error',
+				'no-jquery/no-jquery-constructor': 'error',
 
 				// methods
 				'no-jquery/no-animate': 'error',
@@ -271,7 +273,7 @@ module.exports = {
 				'no-jquery/no-map-collection': 'error',
 				'no-jquery/no-parent': 'error',
 				'no-jquery/no-parents': 'error',
-				'no-jquery/no-ready': 'error',
+				'no-jquery/no-ready-shorthand': 'error',
 				'no-jquery/no-serialize': 'error',
 				'no-jquery/no-size': 'error',
 				'no-jquery/no-slide': 'error',

@@ -2,8 +2,6 @@
 
 Disallows the document ready event, either `$( function() {} )` or `$( document ).ready()`.
 
-⚙️ This rule is enabled in `plugin:no-jquery/all`.
-
 ## Rule details
 
 ❌ Examples of **incorrect** code:

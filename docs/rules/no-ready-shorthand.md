@@ -4,6 +4,8 @@ Disallows the [`.ready`](https://api.jquery.com/ready/) method. Prefer `$()`.
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
