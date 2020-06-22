@@ -2,6 +2,8 @@
 
 Disallows the [`$.grep`](https://api.jquery.com/jQuery.grep/) utility. Prefer `Array#filter`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

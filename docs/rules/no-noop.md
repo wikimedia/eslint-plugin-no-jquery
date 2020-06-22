@@ -2,6 +2,8 @@
 
 Disallows the [`$.noop`](https://api.jquery.com/jQuery.noop/) property. Prefer `function(){}`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 
 ## Rule details

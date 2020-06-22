@@ -2,6 +2,8 @@
 
 Disallows the [`.html`](https://api.jquery.com/html/) method. Prefer `Element#innerHTML`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

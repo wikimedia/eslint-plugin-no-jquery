@@ -2,6 +2,8 @@
 
 Disallows the [`$.merge`](https://api.jquery.com/jQuery.merge/) utility. Prefer `Array#concat`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

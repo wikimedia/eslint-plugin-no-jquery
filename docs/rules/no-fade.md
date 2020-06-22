@@ -4,6 +4,8 @@ Disallows the [`.fadeIn`](https://api.jquery.com/fadeIn/)/[`.fadeOut`](https://a
 
 ⚙️ This rule is enabled in `plugin:no-jquery/slim`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

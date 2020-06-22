@@ -2,6 +2,8 @@
 
 Disallows the [`$.error`](https://api.jquery.com/jQuery.error/) utility. Prefer `throw`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

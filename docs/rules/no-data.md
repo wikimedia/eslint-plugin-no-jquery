@@ -2,6 +2,8 @@
 
 Disallows the [`.data`](https://api.jquery.com/data/)/[`.removeData`](https://api.jquery.com/removeData/)/`.hasData` methods and [`$.data`](https://api.jquery.com/jQuery.data/)/[`$.removeData`](https://api.jquery.com/jQuery.removeData/)/[`$.hasData`](https://api.jquery.com/jQuery.hasData/) utilies. Prefer `WeakMap`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

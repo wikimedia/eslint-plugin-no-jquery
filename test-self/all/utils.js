@@ -5,11 +5,13 @@
  * with a "next-line" directive, and moved to the bottom half of
  * the file.
  *
+ * It should also be removed from the no-other-utils rule.
+ *
  * The rule prefix is renamed from no-jquery to self as the
  * rules are loaded directly via the self plugin.
  */
 
-/* eslint-disable no-underscore-dangle */
+/* eslint-disable self/no-other-utils */
 $._data();
 $._evalUrl();
 $._queueHooks();
@@ -36,6 +38,8 @@ $.speed();
 $.style();
 $.Tween();
 $.uniqueSort();
+$.myPlugin();
+/* eslint-enable self/no-other-utils */
 
 // eslint-disable-next-line self/no-ajax
 $.ajax();
@@ -53,7 +57,7 @@ $.css();
 $.data();
 // eslint-disable-next-line self/no-deferred
 $.Deferred();
-// eslint-disable-next-line self/no-each, self/no-each-util
+// eslint-disable-next-line self/no-each-util
 $.each();
 // eslint-disable-next-line self/no-error
 $.error();
@@ -61,7 +65,7 @@ $.error();
 $.extend();
 // eslint-disable-next-line self/no-filter
 $.filter();
-// eslint-disable-next-line self/no-find, self/no-find-util
+// eslint-disable-next-line self/no-find-util
 $.find();
 // eslint-disable-next-line self/no-ajax
 $.get();
@@ -91,7 +95,7 @@ $.isNumeric();
 $.isPlainObject();
 // eslint-disable-next-line self/no-is-window
 $.isWindow();
-// eslint-disable-next-line self/no-map, self/no-map-util
+// eslint-disable-next-line self/no-map-util
 $.map();
 // eslint-disable-next-line self/no-merge
 $.merge();
@@ -119,6 +123,8 @@ $.proxy();
 $.removeAttr();
 // eslint-disable-next-line self/no-data
 $.removeData();
+// eslint-disable-next-line self/no-sub
+$.sub();
 // eslint-disable-next-line self/no-text
 $.text();
 // eslint-disable-next-line self/no-trim

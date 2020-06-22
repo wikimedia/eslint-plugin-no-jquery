@@ -1,0 +1,6 @@
+{
+	"extends": "plugin:self/all",
+	"rules": {
+		"no-underscore-dangle": "off"
+	}
+}

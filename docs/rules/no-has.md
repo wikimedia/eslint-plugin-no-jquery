@@ -2,6 +2,8 @@
 
 Disallows the [`.has`](https://api.jquery.com/has/) method.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

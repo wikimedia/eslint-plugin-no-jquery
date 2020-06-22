@@ -2,6 +2,8 @@
 
 Disallows the [`$.param`](https://api.jquery.com/jQuery.param/) utility. Prefer `FormData` or `URLSearchParams`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

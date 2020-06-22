@@ -2,6 +2,8 @@
 
 Disallows the [`.is`](https://api.jquery.com/is/) method. Prefer `Element#matches`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

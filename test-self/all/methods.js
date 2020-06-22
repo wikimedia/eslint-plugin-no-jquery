@@ -5,10 +5,13 @@
  * with a "next-line" directive, and moved to the bottom half of
  * the file.
  *
+ * It should also be removed from the no-other-methods rule.
+ *
  * The rule prefix is renamed from no-jquery to self as the
  * rules are loaded directly via the self plugin.
  */
 
+/* eslint-disable self/no-other-methods */
 $x.add();
 $x.addBack();
 $x.after();
@@ -71,20 +74,22 @@ $x.stop();
 $x.toArray();
 $x.triggerHandler();
 $x.width();
+$x.myPlugin();
+/* eslint-enable self/no-other-methods */
 
 // eslint-disable-next-line self/no-class
 $x.addClass();
-// eslint-disable-next-line self/no-event-shorthand, self/no-ajax-events
+// eslint-disable-next-line self/no-event-shorthand
 $x.ajaxComplete();
-// eslint-disable-next-line self/no-event-shorthand, self/no-ajax-events
+// eslint-disable-next-line self/no-event-shorthand
 $x.ajaxError();
-// eslint-disable-next-line self/no-event-shorthand, self/no-ajax-events
+// eslint-disable-next-line self/no-event-shorthand
 $x.ajaxSend();
-// eslint-disable-next-line self/no-event-shorthand, self/no-ajax-events
+// eslint-disable-next-line self/no-event-shorthand
 $x.ajaxStart();
-// eslint-disable-next-line self/no-event-shorthand, self/no-ajax-events
+// eslint-disable-next-line self/no-event-shorthand
 $x.ajaxStop();
-// eslint-disable-next-line self/no-event-shorthand, self/no-ajax-events
+// eslint-disable-next-line self/no-event-shorthand
 $x.ajaxSuccess();
 // eslint-disable-next-line self/no-animate
 $x.animate();
@@ -112,7 +117,9 @@ $x.data();
 $x.dblclick();
 // eslint-disable-next-line self/no-delegate
 $x.delegate();
-// eslint-disable-next-line self/no-each, self/no-each-collection
+// eslint-disable-next-line self/no-live
+$x.die();
+// eslint-disable-next-line self/no-each-collection
 $x.each();
 // eslint-disable-next-line self/no-fade
 $x.fadeIn();
@@ -124,7 +131,7 @@ $x.fadeTo();
 $x.fadeToggle();
 // eslint-disable-next-line self/no-filter
 $x.filter();
-// eslint-disable-next-line self/no-find, self/no-find-collection
+// eslint-disable-next-line self/no-find-collection
 $x.find();
 // eslint-disable-next-line self/no-event-shorthand
 $x.focus();
@@ -134,9 +141,9 @@ $x.focusin();
 $x.focusout();
 // eslint-disable-next-line self/no-has
 $x.has();
-// eslint-disable-next-line self/no-class, self/no-class-state
+// eslint-disable-next-line self/no-class
 $x.hasClass();
-// eslint-disable-next-line self/no-hide, self/no-visibility
+// eslint-disable-next-line self/no-visibility
 $x.hide();
 // eslint-disable-next-line self/no-event-shorthand
 $x.hover();
@@ -150,9 +157,11 @@ $x.keydown();
 $x.keypress();
 // eslint-disable-next-line self/no-event-shorthand
 $x.keyup();
-// eslint-disable-next-line self/no-load, self/no-load-shorthand
+// eslint-disable-next-line self/no-live
+$x.live();
+// eslint-disable-next-line self/no-load
 $x.load();
-// eslint-disable-next-line self/no-map, self/no-map-collection
+// eslint-disable-next-line self/no-map-collection
 $x.map();
 // eslint-disable-next-line self/no-event-shorthand
 $x.mousedown();
@@ -174,7 +183,7 @@ $x.parent();
 $x.parents();
 // eslint-disable-next-line self/no-prop
 $x.prop();
-// eslint-disable-next-line self/no-ready, self/no-ready-shorthand
+// eslint-disable-next-line self/no-ready
 $x.ready();
 // eslint-disable-next-line self/no-attr
 $x.removeAttr();
@@ -194,27 +203,29 @@ $x.select();
 $x.serialize();
 // eslint-disable-next-line self/no-serialize
 $x.serializeArray();
-// eslint-disable-next-line self/no-show, self/no-visibility
+// eslint-disable-next-line self/no-visibility
 $x.show();
+// eslint-disable-next-line self/no-size
+$x.size();
 // eslint-disable-next-line self/no-slide
 $x.slideDown();
 // eslint-disable-next-line self/no-slide
 $x.slideToggle();
 // eslint-disable-next-line self/no-slide
 $x.slideUp();
-// eslint-disable-next-line self/no-event-shorthand, self/no-submit
+// eslint-disable-next-line self/no-event-shorthand
 $x.submit();
 // eslint-disable-next-line self/no-text
 $x.text();
-// eslint-disable-next-line self/no-toggle, self/no-visibility
+// eslint-disable-next-line self/no-visibility
 $x.toggle();
 // eslint-disable-next-line self/no-class
 $x.toggleClass();
 // eslint-disable-next-line self/no-trigger
 $x.trigger();
-// eslint-disable-next-line self/no-bind, self/no-unbind
+// eslint-disable-next-line self/no-bind
 $x.unbind();
-// eslint-disable-next-line self/no-delegate, self/no-undelegate
+// eslint-disable-next-line self/no-delegate
 $x.undelegate();
 // eslint-disable-next-line self/no-wrap
 $x.unwrap();

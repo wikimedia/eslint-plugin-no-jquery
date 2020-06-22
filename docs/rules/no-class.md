@@ -2,6 +2,8 @@
 
 Disallows the [`.addClass`](https://api.jquery.com/addClass/)/[`.hasClass`](https://api.jquery.com/hasClass/)/[`.removeClass`](https://api.jquery.com/removeClass/)/[`.toggleClass`](https://api.jquery.com/toggleClass/) methods. Prefer `Element#classList`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

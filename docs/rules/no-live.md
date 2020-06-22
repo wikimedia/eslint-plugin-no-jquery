@@ -4,6 +4,8 @@ Disallows the [`.live`](https://api.jquery.com/live/)/[`.die`](https://api.jquer
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

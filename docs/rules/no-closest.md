@@ -2,6 +2,8 @@
 
 Disallows the [`.closest`](https://api.jquery.com/closest/) method. Prefer `Element#closest`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

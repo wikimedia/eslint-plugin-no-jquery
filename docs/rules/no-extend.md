@@ -2,6 +2,8 @@
 
 Disallows the [`$.extend`](https://api.jquery.com/jQuery.extend/) utility. Prefer `Object.assign` or the spread operator.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

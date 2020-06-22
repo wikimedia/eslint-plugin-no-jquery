@@ -2,6 +2,8 @@
 
 Disallows the [`.prop`](https://api.jquery.com/prop/)/[`.removeProp`](https://api.jquery.com/removeProp/) methods and `$.prop`/[`$.removeProp`](https://api.jquery.com/jQuery.removeProp/) utilies. Prefer direct property access.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

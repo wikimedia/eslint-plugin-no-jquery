@@ -2,6 +2,8 @@
 
 Disallows the [`.each`](https://api.jquery.com/each/) method. Prefer `Array#forEach`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

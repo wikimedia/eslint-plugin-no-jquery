@@ -2,6 +2,8 @@
 
 Disallows the [`$.when`](https://api.jquery.com/jQuery.when/) utility. Prefer `Promise.all`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

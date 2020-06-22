@@ -2,6 +2,8 @@
 
 Disallows [`$.Deferred`](https://api.jquery.com/jQuery.Deferred/) constructor. Prefer `Promise`.
 
+⚙️ This rule is enabled in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
