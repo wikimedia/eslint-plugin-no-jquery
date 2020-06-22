@@ -26,7 +26,7 @@ function traverse( context, node, variableTest, constructorTest ) {
 						return false;
 					} else {
 						if (
-							nonCollectionReturningMethods.indexOf( name ) !== -1 ||
+							nonCollectionReturningMethods.includes( name ) ||
 							collectionReturningPlugins[ name ] === 'never'
 						) {
 							// e.g. $foo.toArray()
@@ -35,7 +35,7 @@ function traverse( context, node, variableTest, constructorTest ) {
 
 						if (
 							(
-								nonCollectionReturningAccessors.indexOf( name ) !== -1 ||
+								nonCollectionReturningAccessors.includes( name ) ||
 								collectionReturningPlugins[ name ] === 'accessor'
 							) &&
 							node.arguments.length === 0
@@ -46,7 +46,7 @@ function traverse( context, node, variableTest, constructorTest ) {
 
 						if (
 							(
-								nonCollectionReturningValueAccessors.indexOf( name ) !== -1 ||
+								nonCollectionReturningValueAccessors.includes( name ) ||
 								collectionReturningPlugins[ name ] === 'valueAccessor'
 							) &&
 							(
@@ -97,7 +97,7 @@ function traverse( context, node, variableTest, constructorTest ) {
 						}
 
 						if (
-							allKnownMethods.indexOf( name ) === -1 &&
+							!allKnownMethods.includes( name ) &&
 							!( name in collectionReturningPlugins )
 						) {
 							// The method is not core jQuery, so we don't know if it returns
@@ -147,7 +147,7 @@ function isjQueryConstructor( context, name ) {
 	const constructorAliases =
 		( context.settings && context.settings[ 'no-jquery' ] && context.settings[ 'no-jquery' ].constructorAliases ) ||
 		[ '$', 'jQuery' ];
-	return constructorAliases.indexOf( name ) !== -1;
+	return constructorAliases.includes( name );
 }
 
 // Traverses from a node up to its root parent to determine if it
@@ -318,7 +318,7 @@ function createCollectionMethodRule( methods, message, options ) {
 				}
 				const name = node.callee.property.name;
 				if (
-					methods.indexOf( name ) === -1 ||
+					!methods.includes( name ) ||
 					isjQueryConstructor( context, node.callee.object.name )
 				) {
 					return;
@@ -403,7 +403,7 @@ function createUtilMethodRule( methods, message, options ) {
 				}
 				const name = node.callee.property.name;
 				if (
-					methods.indexOf( name ) === -1 ||
+					!methods.includes( name ) ||
 					!isjQueryConstructor( context, node.callee.object.name )
 				) {
 					return;
@@ -487,7 +487,7 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 					return;
 				}
 				const name = node.callee.property.name;
-				if ( methods.indexOf( name ) === -1 ) {
+				if ( !methods.includes( name ) ) {
 					return;
 				}
 				if ( isjQuery( context, node.callee ) ) {
