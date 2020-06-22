@@ -2,13 +2,21 @@
 
 ## Next
 
+* New config: `recommended` just includes `variable-pattern` rule (Ed Sanders)
+* New config: `all` covers all usages of jQuery methods and utils (Ed Sanders)
+
+—
+* Code: Add `reporthtml` coverage script (Ed Sanders)
+* Code: Remove unnecessary constants (Ed Sanders)
+* Code: Replace `Array#indexOf` with `Array#includes` (Ed Sanders)
 * Code: Only assert error message strings (Ed Sanders)
 * Code: Introduce eslint-plugin-eslint-plugin (Ed Sanders)
 * Code: Add ESLint 7.0.0 support (Ed Sanders)
-* Code: Prefer $("div") in test cases (Ed Sanders)
+* Code: Prefer `$("div")` in test cases (Ed Sanders)
 * Code: Fix ESLint 2.3.0 support (Ed Sanders)
 
 —
+* Docs: Document and test the `slim` config (Ed Sanders)
 * Docs: Move docs to docs/rules (Ed Sanders)
 * Docs: Suppress more examples with noDoc (no-parse-html-literal) (Ed Sanders)
 * Docs: Update to eslint-docgen 0.3.1 (Ed Sanders)
