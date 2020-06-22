@@ -4,6 +4,7 @@
 
 * New config: `recommended` just includes `variable-pattern` rule (Ed Sanders)
 * New config: `all` covers all usages of jQuery methods and utils (Ed Sanders)
+* New config: Create a `deprecated-X.X` config for every minor release (Ed Sanders)
 
 —
 * Code: Add `reporthtml` coverage script (Ed Sanders)
