@@ -130,6 +130,7 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-is-numeric`](docs/rules/no-is-numeric.md) `3.3`, `all`
 * [`no-jquery/no-is-plain-object`](docs/rules/no-is-plain-object.md) `all`
 * [`no-jquery/no-is-window`](docs/rules/no-is-window.md) `3.3`, `all`
+* [`no-jquery/no-jquery-constructor`](docs/rules/no-jquery-constructor.md) `all`
 * [`no-jquery/no-live`](docs/rules/no-live.md) `1.7`, `all`
 * [`no-jquery/no-load`](docs/rules/no-load.md) `slim`, `all`
 * [`no-jquery/no-load-shorthand`](docs/rules/no-load-shorthand.md) `1.8`
@@ -152,8 +153,8 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-parse-xml`](docs/rules/no-parse-xml.md) `slim`, `all`
 * [`no-jquery/no-prop`](docs/rules/no-prop.md) `all`
 * [`no-jquery/no-proxy`](docs/rules/no-proxy.md) `3.3`, `all`
-* [`no-jquery/no-ready`](docs/rules/no-ready.md) `all`
-* [`no-jquery/no-ready-shorthand`](docs/rules/no-ready-shorthand.md) `3.0`
+* [`no-jquery/no-ready`](docs/rules/no-ready.md)
+* [`no-jquery/no-ready-shorthand`](docs/rules/no-ready-shorthand.md) `3.0`, `all`
 * [`no-jquery/no-selector-prop`](docs/rules/no-selector-prop.md) `1.7`
 * [`no-jquery/no-serialize`](docs/rules/no-serialize.md) `all`
 * [`no-jquery/no-size`](docs/rules/no-size.md) `1.8`, `all`

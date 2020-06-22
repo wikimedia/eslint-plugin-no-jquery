@@ -183,7 +183,7 @@ $x.parent();
 $x.parents();
 // eslint-disable-next-line self/no-prop
 $x.prop();
-// eslint-disable-next-line self/no-ready
+// eslint-disable-next-line self/no-ready-shorthand
 $x.ready();
 // eslint-disable-next-line self/no-attr
 $x.removeAttr();
