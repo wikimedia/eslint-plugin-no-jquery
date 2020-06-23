@@ -4,8 +4,8 @@ const rule = require( '../../src/rules/no-parse-html-literal' );
 const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer DOM building to parsing HTML literals';
-const errorMinimal = 'Single tag must use the format: <tagname>';
-const errorSelfClosing = 'Single tag must use the format: <tagname/>';
+const errorMinimal = 'Single tag must use the format: <div>';
+const errorSelfClosing = 'Single tag must use the format: <div/>';
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-parse-html-literal', rule, {
@@ -105,36 +105,45 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 		// singleTagStyle
 		{
 			code: '$("<div/>")',
-			errors: [ errorMinimal ]
+			errors: [ errorMinimal ],
+			output: '$("<div>")'
 		},
 		{
 			code: '$("<div></div>")',
-			errors: [ errorMinimal ]
+			errors: [ errorMinimal ],
+			output: '$("<div>")'
 		},
 		{
 			code: '$("<div/>")',
 			options: [ { singleTagStyle: 'minimal' } ],
-			errors: [ errorMinimal ]
+			errors: [ errorMinimal ],
+			output: '$("<div>")',
+			docgen: false
 		},
 		{
 			code: '$("<div></div>")',
 			options: [ { singleTagStyle: 'minimal' } ],
-			errors: [ errorMinimal ]
+			errors: [ errorMinimal ],
+			output: '$("<div>")',
+			docgen: false
 		},
 		{
 			code: '$("<div>")',
 			options: [ { singleTagStyle: 'self-closing' } ],
-			errors: [ errorSelfClosing ]
+			errors: [ errorSelfClosing ],
+			output: '$("<div/>")'
 		},
 		{
 			code: '$("<div />")',
 			options: [ { singleTagStyle: 'self-closing' } ],
-			errors: [ errorSelfClosing ]
+			errors: [ errorSelfClosing ],
+			output: '$("<div/>")'
 		},
 		{
 			code: '$("<div></div>")',
 			options: [ { singleTagStyle: 'self-closing' } ],
-			errors: [ errorSelfClosing ]
+			errors: [ errorSelfClosing ],
+			output: '$("<div/>")'
 		},
 		{
 			code: '$("<div attr=val>")',

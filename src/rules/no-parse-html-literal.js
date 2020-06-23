@@ -42,6 +42,7 @@ module.exports = {
 				'* `"self-closing"` no whitespace and self-closing i.e. `<div/>`\n' +
 				'* `"any"` no style enforced'
 		},
+		fixable: 'code',
 		schema: [
 			{
 				type: 'object',
@@ -91,6 +92,7 @@ module.exports = {
 					return;
 				}
 
+				let expectedTag;
 				const arg = node.arguments[ 0 ];
 				if ( allowSingle ) {
 					const value = arg && allLiteral( arg ) && joinLiterals( arg );
@@ -98,18 +100,21 @@ module.exports = {
 						// Empty or non-string, or non-HTML
 						return;
 					}
-					if ( rsingleTag.exec( value ) ) {
+					let match;
+					if ( ( match = rsingleTag.exec( value ) ) ) {
 						// Single tag
 						const singleTagStyle = ( context.options[ 0 ] && context.options[ 0 ].singleTagStyle ) || 'minimal';
 						if ( singleTagStyle === 'minimal' ) {
 							if ( !rsingleTagMinimal.exec( value ) ) {
-								message = 'Single tag must use the format: <tagname>';
+								expectedTag = '<' + match[ 1 ] + '>';
+								message = 'Single tag must use the format: ' + expectedTag;
 							} else {
 								return;
 							}
 						} else if ( singleTagStyle === 'self-closing' ) {
 							if ( !rsingleTagSelfClosing.exec( value ) ) {
-								message = 'Single tag must use the format: <tagname/>';
+								expectedTag = '<' + match[ 1 ] + '/>';
+								message = 'Single tag must use the format: ' + expectedTag;
 							} else {
 								return;
 							}
@@ -125,7 +130,13 @@ module.exports = {
 
 				context.report( {
 					node: node,
-					message: message
+					message: message,
+					fix: function ( fixer ) {
+						if ( expectedTag ) {
+							return fixer.replaceText( arg, '"' + expectedTag + '"' );
+						}
+						return null;
+					}
 				} );
 			}
 		};
