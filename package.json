@@ -1,6 +1,6 @@
 {
 	"name": "eslint-plugin-no-jquery",
-	"version": "2.4.1",
+	"version": "2.5.0",
 	"description": "Disallow jQuery functions with native equivalents.",
 	"repository": {
 		"type": "git",
@@ -31,13 +31,13 @@
 	},
 	"devDependencies": {
 		"codecov": "^3.7.0",
-		"eslint-config-wikimedia": "^0.16.1",
+		"eslint-config-wikimedia": "^0.16.2",
 		"eslint-docgen": "^0.4.3",
-		"eslint-plugin-eslint-plugin": "^2.2.2",
+		"eslint-plugin-eslint-plugin": "^2.3.0",
 		"eslint-plugin-self": "^1.2.1",
 		"jquery": "3.5.1",
 		"jsdom": "^16.2.2",
-		"mocha": "^7.2.0",
+		"mocha": "^8.0.1",
 		"nyc": "^15.1.0"
 	},
 	"bugs": {

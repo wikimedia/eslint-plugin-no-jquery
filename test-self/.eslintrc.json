@@ -7,6 +7,7 @@
 	},
 	"rules": {
 		"no-implicit-globals": "off",
+		"no-restricted-properties": "off",
 		"no-undef": "off",
 		"no-underscore-dangle": "off",
 		"no-unused-expressions": "off",

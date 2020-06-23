@@ -1,6 +1,6 @@
 # eslint-plugin-no-jquery release history
 
-## Next
+## v2.5.0
 
 * New config: `recommended` just includes `variable-pattern` rule (Ed Sanders)
 * New config: `all` covers all usages of jQuery methods and utils (Ed Sanders)
