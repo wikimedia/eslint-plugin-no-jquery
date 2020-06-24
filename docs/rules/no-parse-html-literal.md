@@ -7,6 +7,8 @@ The format of single tags can be specified using the `singleTagStyle` option:
 * `"self-closing"` no whitespace and self-closing i.e. `<div/>`
 * `"any"` no style enforced
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
@@ -56,12 +58,6 @@ $( '<div></div>' );
 $( '<div>' + '</div>' );
 ```
 
-❌ Examples of **incorrect** code with `[{"singleTagStyle":"minimal"}]` options:
-```js
-$( '<div/>' );
-$( '<div></div>' );
-```
-
 ✔️ Examples of **correct** code with `[{"singleTagStyle":"minimal"}]` options:
 ```js
 $( '<div>' );
@@ -77,6 +73,19 @@ $( '<div></div>' );
 ✔️ Examples of **correct** code with `[{"singleTagStyle":"self-closing"}]` options:
 ```js
 $( '<div/>' );
+```
+
+🔧 Examples of code **fixed** by this rule:
+```js
+$( '<div/>' );      /* → */ $( '<div>' );
+$( '<div></div>' ); /* → */ $( '<div>' );
+```
+
+🔧 Examples of code **fixed** by this rule with `[{"singleTagStyle":"self-closing"}]` options:
+```js
+$( '<div>' );       /* → */ $( '<div/>' );
+$( '<div />' );     /* → */ $( '<div/>' );
+$( '<div></div>' ); /* → */ $( '<div/>' );
 ```
 
 ## Resources
