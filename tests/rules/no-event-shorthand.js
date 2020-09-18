@@ -46,63 +46,63 @@ const forbidden = [
 let valid = [];
 let invalid = [];
 
-forbidden.forEach( function ( rule ) {
-	const error = 'Prefer .on or .trigger to .' + rule;
+forbidden.forEach( function ( method ) {
+	const error = 'Prefer .on or .trigger to .' + method;
 	valid = valid.concat(
 		{
-			code: rule + '()',
+			code: method + '()',
 			docgen: false
 		},
 		{
-			code: '$.' + rule + '()',
+			code: '$.' + method + '()',
 			docgen: false
 		},
 		{
-			code: '[].' + rule + '()',
+			code: '[].' + method + '()',
 			docgen: false
 		},
 		{
-			code: '$div.on("' + rule + '", fn)'
+			code: '$div.on("' + method + '", fn)'
 		},
 		{
-			code: '$div.trigger("' + rule + '")'
+			code: '$div.trigger("' + method + '")'
 		},
 		{
-			code: '$method(x).' + rule + '()',
+			code: '$method(x).' + method + '()',
 			docgen: false
 		},
 		{
-			code: 'div.' + rule,
+			code: 'div.' + method,
 			docgen: false
 		}
 	);
 	invalid = invalid.concat(
 		{
-			code: '$("div").' + rule + '(handler)',
+			code: '$("div").' + method + '(handler)',
 			errors: [ error ],
-			output: '$("div").on("' + rule + '", handler)'
+			output: '$("div").on("' + method + '", handler)'
 		},
 		{
-			code: '$div.' + rule + '()',
+			code: '$div.' + method + '()',
 			errors: [ error ],
-			output: '$div.trigger("' + rule + '")'
+			output: '$div.trigger("' + method + '")'
 		},
 		{
-			code: 'this.prop.$div.' + rule + '(handler)',
+			code: 'this.prop.$div.' + method + '(handler)',
 			errors: [ error ],
-			output: 'this.prop.$div.on("' + rule + '", handler)',
+			output: 'this.prop.$div.on("' + method + '", handler)',
 			docgen: false
 		},
 		{
-			code: '$("div").first().' + rule + '()',
+			code: '$("div").first().' + method + '()',
 			errors: [ error ],
-			output: '$("div").first().trigger("' + rule + '")',
+			output: '$("div").first().trigger("' + method + '")',
 			docgen: false
 		},
 		{
-			code: '$("div").append($("input").' + rule + '())',
+			code: '$("div").append($("input").' + method + '())',
 			errors: [ error ],
-			output: '$("div").append($("input").trigger("' + rule + '"))',
+			output: '$("div").append($("input").trigger("' + method + '"))',
 			docgen: false
 		}
 	);
