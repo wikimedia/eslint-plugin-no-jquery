@@ -13,6 +13,7 @@ const utilsWithRules = [
 	'Deferred',
 	'each',
 	'error',
+	'escapeSelector',
 	'extend',
 	'filter',
 	'find',
