@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-now' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer (new Date).getTime() to $.now';
+const error = 'Prefer Date.now to $.now';
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-now', rule, {
