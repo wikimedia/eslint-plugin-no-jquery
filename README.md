@@ -108,6 +108,7 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-each-util`](docs/rules/no-each-util.md) `all`
 * [`no-jquery/no-error`](docs/rules/no-error.md) `all`
 * [`no-jquery/no-error-shorthand`](docs/rules/no-error-shorthand.md) `1.8`
+* [`no-jquery/no-escape-selector`](docs/rules/no-escape-selector.md) `all`
 * [`no-jquery/no-event-shorthand`](docs/rules/no-event-shorthand.md) `3.5`, `3.3†`, `all`
 * [`no-jquery/no-extend`](docs/rules/no-extend.md) `all`
 * [`no-jquery/no-fade`](docs/rules/no-fade.md) `slim`, `all`

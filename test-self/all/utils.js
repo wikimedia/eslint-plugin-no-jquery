@@ -23,7 +23,6 @@ $.Animation();
 $.Callbacks();
 $.cleanData();
 $.dequeue();
-$.escapeSelector();
 $.Event();
 $.fx();
 $.htmlPrefilter();
@@ -61,6 +60,8 @@ $.Deferred();
 $.each();
 // eslint-disable-next-line self/no-error
 $.error();
+// eslint-disable-next-line self/no-escape-selector
+$.escapeSelector();
 // eslint-disable-next-line self/no-extend
 $.extend();
 // eslint-disable-next-line self/no-filter
