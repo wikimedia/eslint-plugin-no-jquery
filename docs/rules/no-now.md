@@ -1,6 +1,6 @@
 # no-now
 
-Disallows the [`$.now`](https://api.jquery.com/jQuery.now/) utility. Prefer `(new Date).getTime()`.
+Disallows the [`$.now`](https://api.jquery.com/jQuery.now/) utility. Prefer `Date.now`.
 
 ⚙️ This rule is enabled in `plugin:no-jquery/deprecated-3.3`.
 

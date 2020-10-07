@@ -4,7 +4,7 @@ const utils = require( '../utils.js' );
 
 module.exports = utils.createUtilMethodRule(
 	'now',
-	'Prefer `(new Date).getTime()` to `$.now`',
+	'Prefer `Date.now` to `$.now`',
 	{
 		fixable: 'code',
 		fix: function ( node, fixer ) {
