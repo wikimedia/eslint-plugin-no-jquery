@@ -7,11 +7,18 @@ const error = 'Prefer DOMParser#parseFromString to $.parseXML';
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-parse-xml', rule, {
-	valid: [ 'parseXML()', '"test".parseXML()', '"test".parseXML' ],
+	valid: [ 'parseXML("<b>test</b>")', '"test".parseXML("<b>test</b>")', '"<b>test</b>".parseXML' ],
 	invalid: [
 		{
+			code: '$.parseXML("<b>test</b>")',
+			errors: [ error ],
+			output: '( new window.DOMParser() ).parseFromString("<b>test</b>", "text/xml")'
+		},
+		// Can't fix if no arguments are passed
+		{
 			code: '$.parseXML()',
-			errors: [ error ]
+			errors: [ error ],
+			docgen: false
 		}
 	]
 } );

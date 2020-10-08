@@ -7,11 +7,12 @@ const error = 'Prefer throw to $.error';
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-error', rule, {
-	valid: [ 'nodeName()', 'myClass.nodeName()', '$div.nodeName()' ],
+	valid: [ 'error(msg)', 'myClass.error(msg)', '$div.error(msg)' ],
 	invalid: [
 		{
-			code: '$.error()',
-			errors: [ error ]
+			code: '$.error(msg)',
+			errors: [ error ],
+			output: 'throw new Error(msg)'
 		}
 	]
 } );
