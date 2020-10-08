@@ -22,15 +22,18 @@ ruleTester.run( 'no-on-ready', rule, {
 	invalid: [
 		{
 			code: '$(document).on("ready", function(){})',
-			errors: [ error ]
+			errors: [ error ],
+			output: '$(document).ready(function(){})'
 		},
 		{
 			code: '$document.on("ready", function(){})',
-			errors: [ error ]
+			errors: [ error ],
+			output: '$document.ready(function(){})'
 		},
 		{
 			code: '$document.on("ready")',
-			errors: [ error ]
+			errors: [ error ],
+			docgen: false
 		}
 	]
 } );
