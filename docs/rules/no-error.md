@@ -4,18 +4,25 @@ Disallows the [`$.error`](https://api.jquery.com/jQuery.error/) utility. Prefer 
 
 ⚙️ This rule is enabled in `plugin:no-jquery/all`.
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
 ```js
-$.error();
+$.error( msg );
 ```
 
 ✔️ Examples of **correct** code:
 ```js
-nodeName();
-myClass.nodeName();
-$div.nodeName();
+error( msg );
+myClass.error( msg );
+$div.error( msg );
+```
+
+🔧 Examples of code **fixed** by this rule:
+```js
+$.error( msg ); /* → */ throw new Error( msg );
 ```
 
 ## Resources

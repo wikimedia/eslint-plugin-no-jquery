@@ -8,14 +8,14 @@ Disallows the [`$.parseHTML`](https://api.jquery.com/jQuery.parseHTML/) utility.
 
 ❌ Examples of **incorrect** code:
 ```js
-$.parseHTML();
+$.parseHTML( '<b>test</b>' );
 ```
 
 ✔️ Examples of **correct** code:
 ```js
-parseHTML();
-'test'.parseHTML();
-'test'.parseHTML;
+parseHTML( '<b>test</b>' );
+'test'.parseHTML( '<b>test</b>' );
+'<b>test</b>'.parseHTML;
 ```
 
 ## Resources
