@@ -7,10 +7,10 @@ const error = 'Prefer DOMImplementation#createHTMLDocument to $.parseHTML';
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-parse-html', rule, {
-	valid: [ 'parseHTML()', '"test".parseHTML()', '"test".parseHTML' ],
+	valid: [ 'parseHTML("<b>test</b>")', '"test".parseHTML("<b>test</b>")', '"<b>test</b>".parseHTML' ],
 	invalid: [
 		{
-			code: '$.parseHTML()',
+			code: '$.parseHTML("<b>test</b>")',
 			errors: [ error ]
 		}
 	]
