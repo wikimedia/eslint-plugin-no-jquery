@@ -8,29 +8,37 @@ const error = 'Prefer $() to .ready';
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-ready-shorthand', rule, {
 	valid: [
-		'ready()',
-		'[].ready()',
-		'div.ready()',
+		'ready(fn)',
+		'[].ready(fn)',
+		'div.ready(fn)',
 		'div.ready',
-		'$.ready()',
-		'$(document).on("ready", function(){})',
-		'$(function(){})'
+		'$.ready(fn)',
+		'$(document).on("ready", fn)',
+		'$(fn)'
 	],
 	invalid: [
 		{
-			code: '$(document).ready()',
+			code: '$(document).ready(fn)',
+			errors: [ error ],
+			output: '$(fn)'
+		},
+		{
+			code: '$div.ready(fn)',
+			errors: [ error ],
+			output: '$(fn)'
+		},
+		{
+			code: '$("div").first().ready(fn)',
+			errors: [ error ],
+			output: '$(fn)'
+		},
+		// Can't fix if the result might be used
+		{
+			code: '$("div").append($("input").ready(fn))',
 			errors: [ error ]
 		},
 		{
-			code: '$div.ready()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().ready()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").ready())',
+			code: '$div = $("div").ready(fn)',
 			errors: [ error ]
 		}
 	]
