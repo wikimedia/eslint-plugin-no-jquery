@@ -6,25 +6,35 @@ Disallows the [`.ready`](https://api.jquery.com/ready/) method. Prefer `$()`.
 
 ⚙️ This rule is enabled in `plugin:no-jquery/all`.
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
 ```js
-$( document ).ready();
-$div.ready();
-$( 'div' ).first().ready();
-$( 'div' ).append( $( 'input' ).ready() );
+$( document ).ready( fn );
+$div.ready( fn );
+$( 'div' ).first().ready( fn );
+$( 'div' ).append( $( 'input' ).ready( fn ) );
+$div = $( 'div' ).ready( fn );
 ```
 
 ✔️ Examples of **correct** code:
 ```js
-ready();
-[].ready();
-div.ready();
+ready( fn );
+[].ready( fn );
+div.ready( fn );
 div.ready;
-$.ready();
-$( document ).on( 'ready', function () {} );
-$( function () {} );
+$.ready( fn );
+$( document ).on( 'ready', fn );
+$( fn );
+```
+
+🔧 Examples of code **fixed** by this rule:
+```js
+$( document ).ready( fn );      /* → */ $( fn );
+$div.ready( fn );               /* → */ $( fn );
+$( 'div' ).first().ready( fn ); /* → */ $( fn );
 ```
 
 ## Resources
