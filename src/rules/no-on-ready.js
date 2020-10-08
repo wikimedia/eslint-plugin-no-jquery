@@ -8,6 +8,7 @@ module.exports = {
 		docs: {
 			description: 'Disallows using the ready event on the document.'
 		},
+		fixable: 'code',
 		schema: []
 	},
 
@@ -28,7 +29,21 @@ module.exports = {
 				if ( utils.isjQuery( context, node.callee ) ) {
 					context.report( {
 						node: node,
-						message: '.on("ready") is not allowed'
+						message: '.on("ready") is not allowed',
+						fix: function ( fixer ) {
+							if ( node.arguments.length > 1 ) {
+								return [
+									fixer.replaceText( node.callee.property, 'ready' ),
+									fixer.replaceTextRange(
+										[
+											node.arguments[ 0 ].range[ 0 ],
+											node.arguments[ 1 ].range[ 0 ]
+										],
+										''
+									)
+								];
+							}
+						}
 					} );
 				}
 			}
