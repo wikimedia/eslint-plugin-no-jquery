@@ -7,7 +7,7 @@ module.exports = utils.createUtilMethodRule(
 	'Prefer `JSON.parse` to `$.parseJSON`',
 	{
 		fixable: 'code',
-		fix: function ( node, fixer ) {
+		fix: function ( node, context, fixer ) {
 			return fixer.replaceText( node.callee, 'JSON.parse' );
 		}
 	}

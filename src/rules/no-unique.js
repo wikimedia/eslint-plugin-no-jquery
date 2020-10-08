@@ -7,7 +7,7 @@ module.exports = utils.createUtilMethodRule(
 	'Prefer `$.uniqueSort` to `$.unique`',
 	{
 		fixable: 'code',
-		fix: function ( node, fixer ) {
+		fix: function ( node, context, fixer ) {
 			return fixer.replaceText( node.callee.property, 'uniqueSort' );
 		}
 	}

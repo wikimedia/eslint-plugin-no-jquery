@@ -7,7 +7,7 @@ module.exports = utils.createUtilMethodRule(
 	'Prefer `typeof` to `$.isFunction`',
 	{
 		fixable: 'code',
-		fix: function ( node, fixer ) {
+		fix: function ( node, context, fixer ) {
 			const calleeRange = node.callee.range;
 			return [
 				fixer.replaceTextRange( [ calleeRange[ 0 ], calleeRange[ 1 ] + 1 ], 'typeof ' ),

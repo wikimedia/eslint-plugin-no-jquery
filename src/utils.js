@@ -328,7 +328,7 @@ function createCollectionMethodRule( methods, message, options ) {
 					context.report( {
 						node: node,
 						message: messageToPlainString( message, node, name, options ),
-						fix: options.fix && options.fix.bind( this, node )
+						fix: options.fix && options.fix.bind( this, node, context )
 					} );
 				}
 			}
@@ -367,7 +367,7 @@ function createCollectionPropertyRule( property, message, options ) {
 					context.report( {
 						node: node,
 						message: messageToPlainString( message, node, name, options ),
-						fix: options.fix && options.fix.bind( this, node )
+						fix: options.fix && options.fix.bind( this, node, context )
 					} );
 				}
 			}
@@ -412,7 +412,7 @@ function createUtilMethodRule( methods, message, options ) {
 				context.report( {
 					node: node,
 					message: messageToPlainString( message, node, name, options ),
-					fix: options.fix && options.fix.bind( this, node )
+					fix: options.fix && options.fix.bind( this, node, context )
 				} );
 			}
 		};
@@ -450,7 +450,7 @@ function createUtilPropertyRule( property, message, options ) {
 				context.report( {
 					node: node,
 					message: messageToPlainString( message, node, name, options ),
-					fix: options.fix && options.fix.bind( this, node )
+					fix: options.fix && options.fix.bind( this, node, context )
 				} );
 			}
 		};
@@ -494,7 +494,7 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 					context.report( {
 						node: node,
 						message: messageToPlainString( message, node, name, options ),
-						fix: options.fix && options.fix.bind( this, node )
+						fix: options.fix && options.fix.bind( this, node, context )
 					} );
 				}
 			}
@@ -502,7 +502,7 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 	}, description, options.fixable, options.deprecated );
 }
 
-function eventShorthandFixer( node, fixer ) {
+function eventShorthandFixer( node, context, fixer ) {
 	const name = node.callee.property.name;
 	if ( node.callee.parent.arguments.length ) {
 		return [

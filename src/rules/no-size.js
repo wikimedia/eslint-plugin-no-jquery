@@ -7,7 +7,7 @@ module.exports = utils.createCollectionMethodRule(
 	'Prefer `.length` to `.size`',
 	{
 		fixable: 'code',
-		fix: function ( node, fixer ) {
+		fix: function ( node, context, fixer ) {
 			return fixer.replaceTextRange( [ node.callee.property.range[ 0 ], node.range[ 1 ] ], 'length' );
 		}
 	}

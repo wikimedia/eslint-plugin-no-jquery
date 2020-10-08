@@ -30,7 +30,7 @@ module.exports = {
 					context.report( {
 						node: node,
 						message: 'Prefer .on or .trigger to .load',
-						fix: utils.eventShorthandFixer.bind( this, node )
+						fix: utils.eventShorthandFixer.bind( this, node, context )
 					} );
 				}
 			}
