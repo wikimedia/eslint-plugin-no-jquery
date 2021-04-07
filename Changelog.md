@@ -1,5 +1,23 @@
 # eslint-plugin-no-jquery release history
 
+## v2.6.0
+* New rule: `no-escape-selector` for `$.escapeSelector` util (Ed Sanders)
+* New config: `deprecated-3.6` for new jQuery release (Ed Sanders)
+
+—
+* Rule fix: Add fixer for `no-on-ready` (Ed Sanders)
+* Rule fix: Add fixer for `no-ready-shorthand` (Ed Sanders)
+* Rule fix: Add fixer for `no-error` (Ed Sanders)
+* Rule fix: Add fixer for `no-parse-xml` (Ed Sanders)
+* Rule fix: Add fixer for `no-parse-html-literal` tag style (Ed Sanders)
+* Rule fix: `no-now`; recommend `Date.now` rather than `(new Date).getTime()` (Ed Sanders)
+
+—
+* Code: Add real arguments to `no-parse-html` tests (Ed Sanders)
+* Code: codecov.yaml: Remove extra linebreak (Ed Sanders)
+* Release: Update devDependencies (#266) (Ed Sanders)
+
+
 ## v2.5.0
 
 * New config: `recommended` just includes `variable-pattern` rule (Ed Sanders)
