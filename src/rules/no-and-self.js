@@ -7,7 +7,7 @@ module.exports = utils.createCollectionMethodRule(
 	'Prefer `.addBack` to `.andSelf`',
 	{
 		fixable: 'code',
-		fix: function ( node, fixer ) {
+		fix: function ( node, context, fixer ) {
 			return fixer.replaceText( node.callee.property, 'addBack' );
 		}
 	}

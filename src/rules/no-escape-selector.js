@@ -7,7 +7,7 @@ module.exports = utils.createUtilMethodRule(
 	'Prefer `CSS.escape` to `$.escapeSelector`',
 	{
 		fixable: 'code',
-		fix: function ( node, fixer ) {
+		fix: function ( node, context, fixer ) {
 			return fixer.replaceText( node.callee, 'CSS.escape' );
 		}
 	}
