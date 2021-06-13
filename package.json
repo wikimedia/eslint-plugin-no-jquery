@@ -30,14 +30,14 @@
 		"eslint": ">=2.3.0"
 	},
 	"devDependencies": {
-		"codecov": "^3.8.1",
-		"eslint-config-wikimedia": "^0.19.0",
+		"codecov": "^3.8.2",
+		"eslint-config-wikimedia": "^0.20.0",
 		"eslint-docgen": "^0.4.5",
-		"eslint-plugin-eslint-plugin": "^2.3.0",
+		"eslint-plugin-eslint-plugin": "^3.0.3",
 		"eslint-plugin-self": "^1.2.1",
 		"jquery": "3.6.0",
-		"jsdom": "^16.5.2",
-		"mocha": "^8.3.2",
+		"jsdom": "^16.6.0",
+		"mocha": "^8.4.0",
 		"nyc": "^15.1.0"
 	},
 	"bugs": {
