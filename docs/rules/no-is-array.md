@@ -30,4 +30,4 @@ $.isArray( [] ); /* → */ Array.isArray( [] );
 ## Resources
 
 * [Rule source](/src/rules/no-is-array.js)
-* [Test source](/src/tests/no-is-array.js)
+* [Test source](/tests/rules/no-is-array.js)

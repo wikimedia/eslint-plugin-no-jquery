@@ -35,4 +35,4 @@ $( 'div' ).append( $( 'input' ).andSelf() ); /* → */ $( 'div' ).append( $( 'in
 ## Resources
 
 * [Rule source](/src/rules/no-and-self.js)
-* [Test source](/src/tests/no-and-self.js)
+* [Test source](/tests/rules/no-and-self.js)

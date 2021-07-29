@@ -23,4 +23,4 @@ form.submit;
 ## Resources
 
 * [Rule source](/src/rules/no-submit.js)
-* [Test source](/src/tests/no-submit.js)
+* [Test source](/tests/rules/no-submit.js)

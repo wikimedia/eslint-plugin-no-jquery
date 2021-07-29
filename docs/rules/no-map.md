@@ -27,4 +27,4 @@ $( 'select' ).val().map();
 ## Resources
 
 * [Rule source](/src/rules/no-map.js)
-* [Test source](/src/tests/no-map.js)
+* [Test source](/tests/rules/no-map.js)

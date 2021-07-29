@@ -25,4 +25,4 @@ $div.add( '<div>', context );
 ## Resources
 
 * [Rule source](/src/rules/no-constructor-attributes.js)
-* [Test source](/src/tests/no-constructor-attributes.js)
+* [Test source](/tests/rules/no-constructor-attributes.js)

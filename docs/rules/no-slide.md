@@ -43,4 +43,4 @@ div.slideUp;
 ## Resources
 
 * [Rule source](/src/rules/no-slide.js)
-* [Test source](/src/tests/no-slide.js)
+* [Test source](/tests/rules/no-slide.js)

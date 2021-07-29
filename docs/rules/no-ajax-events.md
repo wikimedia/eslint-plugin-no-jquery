@@ -36,4 +36,4 @@ $.ajaxSend();
 ## Resources
 
 * [Rule source](/src/rules/no-ajax-events.js)
-* [Test source](/src/tests/no-ajax-events.js)
+* [Test source](/tests/rules/no-ajax-events.js)

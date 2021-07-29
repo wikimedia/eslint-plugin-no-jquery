@@ -1,5 +1,5 @@
 {
 	"docPath": "docs/rules/{name}.md",
 	"rulePath": "src/rules/{name}.js",
-	"testPath": "src/tests/{name}.js"
+	"testPath": "tests/rules/{name}.js"
 }

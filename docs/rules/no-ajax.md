@@ -39,4 +39,4 @@ div.post;
 ## Resources
 
 * [Rule source](/src/rules/no-ajax.js)
-* [Test source](/src/tests/no-ajax.js)
+* [Test source](/tests/rules/no-ajax.js)

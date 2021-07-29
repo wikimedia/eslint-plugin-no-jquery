@@ -35,4 +35,4 @@ div.die;
 ## Resources
 
 * [Rule source](/src/rules/no-live.js)
-* [Test source](/src/tests/no-live.js)
+* [Test source](/tests/rules/no-live.js)

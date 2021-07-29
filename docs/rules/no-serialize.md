@@ -33,4 +33,4 @@ div.serializeArray;
 ## Resources
 
 * [Rule source](/src/rules/no-serialize.js)
-* [Test source](/src/tests/no-serialize.js)
+* [Test source](/tests/rules/no-serialize.js)

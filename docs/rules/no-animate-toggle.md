@@ -41,4 +41,4 @@ $div.toggle( getBoolean() );
 ## Resources
 
 * [Rule source](/src/rules/no-animate-toggle.js)
-* [Test source](/src/tests/no-animate-toggle.js)
+* [Test source](/tests/rules/no-animate-toggle.js)

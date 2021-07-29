@@ -23,4 +23,4 @@ $.fx;
 ## Resources
 
 * [Rule source](/src/rules/no-fx-interval.js)
-* [Test source](/src/tests/no-fx-interval.js)
+* [Test source](/tests/rules/no-fx-interval.js)

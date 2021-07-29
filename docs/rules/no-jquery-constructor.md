@@ -32,4 +32,4 @@ jQuery;
 ## Resources
 
 * [Rule source](/src/rules/no-jquery-constructor.js)
-* [Test source](/src/tests/no-jquery-constructor.js)
+* [Test source](/tests/rules/no-jquery-constructor.js)

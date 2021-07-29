@@ -25,4 +25,4 @@ div.val;
 ## Resources
 
 * [Rule source](/src/rules/no-val.js)
-* [Test source](/src/tests/no-val.js)
+* [Test source](/tests/rules/no-val.js)

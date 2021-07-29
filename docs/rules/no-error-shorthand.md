@@ -36,4 +36,4 @@ $( 'div' ).append( $( 'input' ).error() ); /* → */ $( 'div' ).append( $( 'inpu
 ## Resources
 
 * [Rule source](/src/rules/no-error-shorthand.js)
-* [Test source](/src/tests/no-error-shorthand.js)
+* [Test source](/tests/rules/no-error-shorthand.js)

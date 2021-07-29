@@ -29,4 +29,4 @@ $div.context( arg );
 ## Resources
 
 * [Rule source](/src/rules/no-context-prop.js)
-* [Test source](/src/tests/no-context-prop.js)
+* [Test source](/tests/rules/no-context-prop.js)

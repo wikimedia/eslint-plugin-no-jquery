@@ -32,4 +32,4 @@ if ( $.isFunction( fn ) ) { g(); } /* → */ if ( typeof fn === 'function' ) { g
 ## Resources
 
 * [Rule source](/src/rules/no-is-function.js)
-* [Test source](/src/tests/no-is-function.js)
+* [Test source](/tests/rules/no-is-function.js)

@@ -38,4 +38,4 @@ div.hasData;
 ## Resources
 
 * [Rule source](/src/rules/no-data.js)
-* [Test source](/src/tests/no-data.js)
+* [Test source](/tests/rules/no-data.js)

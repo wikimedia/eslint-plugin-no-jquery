@@ -28,4 +28,4 @@ $.error( msg ); /* → */ throw new Error( msg );
 ## Resources
 
 * [Rule source](/src/rules/no-error.js)
-* [Test source](/src/tests/no-error.js)
+* [Test source](/tests/rules/no-error.js)

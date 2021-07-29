@@ -30,4 +30,4 @@ $.parseJSON( '{}' ); /* → */ JSON.parse( '{}' );
 ## Resources
 
 * [Rule source](/src/rules/no-parse-json.js)
-* [Test source](/src/tests/no-parse-json.js)
+* [Test source](/tests/rules/no-parse-json.js)

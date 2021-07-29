@@ -23,4 +23,4 @@ a.support.foo;
 ## Resources
 
 * [Rule source](/src/rules/no-support.js)
-* [Test source](/src/tests/no-support.js)
+* [Test source](/tests/rules/no-support.js)

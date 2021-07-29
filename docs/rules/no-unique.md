@@ -30,4 +30,4 @@ $.unique( [] ); /* → */ $.uniqueSort( [] );
 ## Resources
 
 * [Rule source](/src/rules/no-unique.js)
-* [Test source](/src/tests/no-unique.js)
+* [Test source](/tests/rules/no-unique.js)

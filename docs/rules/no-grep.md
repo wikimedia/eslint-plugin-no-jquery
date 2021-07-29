@@ -21,4 +21,4 @@ grep();
 ## Resources
 
 * [Rule source](/src/rules/no-grep.js)
-* [Test source](/src/tests/no-grep.js)
+* [Test source](/tests/rules/no-grep.js)

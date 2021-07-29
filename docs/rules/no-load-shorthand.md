@@ -42,4 +42,4 @@ $( 'div' ).append( $( 'input' ).load( function () {} ) ); /* → */ $( 'div' ).a
 ## Resources
 
 * [Rule source](/src/rules/no-load-shorthand.js)
-* [Test source](/src/tests/no-load-shorthand.js)
+* [Test source](/tests/rules/no-load-shorthand.js)
