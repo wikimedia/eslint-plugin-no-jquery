@@ -30,10 +30,10 @@
 		"eslint": ">=2.3.0"
 	},
 	"devDependencies": {
-		"codecov": "^3.8.2",
+		"codecov": "^3.8.3",
 		"eslint-config-wikimedia": "^0.20.0",
 		"eslint-docgen": "^0.4.5",
-		"eslint-plugin-eslint-plugin": "^3.0.3",
+		"eslint-plugin-eslint-plugin": "^3.5.2",
 		"eslint-plugin-self": "^1.2.1",
 		"jquery": "3.6.0",
 		"jsdom": "^16.6.0",
