@@ -23,4 +23,4 @@ sub();
 ## Resources
 
 * [Rule source](/src/rules/no-sub.js)
-* [Test source](/src/tests/no-sub.js)
+* [Test source](/tests/rules/no-sub.js)

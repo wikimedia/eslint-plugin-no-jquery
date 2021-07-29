@@ -25,4 +25,4 @@ div.die;
 ## Resources
 
 * [Rule source](/src/rules/no-die.js)
-* [Test source](/src/tests/no-die.js)
+* [Test source](/tests/rules/no-die.js)

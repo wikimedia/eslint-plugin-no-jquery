@@ -49,4 +49,4 @@ div.unwrap;
 ## Resources
 
 * [Rule source](/src/rules/no-wrap.js)
-* [Test source](/src/tests/no-wrap.js)
+* [Test source](/tests/rules/no-wrap.js)

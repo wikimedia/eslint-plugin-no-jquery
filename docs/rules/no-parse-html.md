@@ -21,4 +21,4 @@ parseHTML( '<b>test</b>' );
 ## Resources
 
 * [Rule source](/src/rules/no-parse-html.js)
-* [Test source](/src/tests/no-parse-html.js)
+* [Test source](/tests/rules/no-parse-html.js)

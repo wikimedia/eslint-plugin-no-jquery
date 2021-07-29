@@ -27,4 +27,4 @@ method();
 ## Resources
 
 * [Rule source](/src/rules/no-other-utils.js)
-* [Test source](/src/tests/no-other-utils.js)
+* [Test source](/tests/rules/no-other-utils.js)

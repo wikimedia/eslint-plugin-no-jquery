@@ -28,4 +28,4 @@ $.escapeSelector( '.foo>' ); /* → */ CSS.escape( '.foo>' );
 ## Resources
 
 * [Rule source](/src/rules/no-escape-selector.js)
-* [Test source](/src/tests/no-escape-selector.js)
+* [Test source](/tests/rules/no-escape-selector.js)

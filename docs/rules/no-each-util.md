@@ -26,4 +26,4 @@ $( 'div' ).append( $( 'input' ).each() );
 ## Resources
 
 * [Rule source](/src/rules/no-each-util.js)
-* [Test source](/src/tests/no-each-util.js)
+* [Test source](/tests/rules/no-each-util.js)

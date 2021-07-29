@@ -28,4 +28,4 @@ $.load();
 ## Resources
 
 * [Rule source](/src/rules/no-load.js)
-* [Test source](/src/tests/no-load.js)
+* [Test source](/tests/rules/no-load.js)

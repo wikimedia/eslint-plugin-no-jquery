@@ -28,4 +28,4 @@ method();
 ## Resources
 
 * [Rule source](/src/rules/no-other-methods.js)
-* [Test source](/src/tests/no-other-methods.js)
+* [Test source](/tests/rules/no-other-methods.js)

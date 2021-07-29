@@ -21,4 +21,4 @@ merge();
 ## Resources
 
 * [Rule source](/src/rules/no-merge.js)
-* [Test source](/src/tests/no-merge.js)
+* [Test source](/tests/rules/no-merge.js)

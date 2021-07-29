@@ -53,4 +53,4 @@ $( '#id-foo_bar1' );
 ## Resources
 
 * [Rule source](/src/rules/no-global-selector.js)
-* [Test source](/src/tests/no-global-selector.js)
+* [Test source](/tests/rules/no-global-selector.js)

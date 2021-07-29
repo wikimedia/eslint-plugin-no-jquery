@@ -21,4 +21,4 @@ inArray();
 ## Resources
 
 * [Rule source](/src/rules/no-in-array.js)
-* [Test source](/src/tests/no-in-array.js)
+* [Test source](/tests/rules/no-in-array.js)

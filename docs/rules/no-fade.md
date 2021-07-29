@@ -51,4 +51,4 @@ div.fadeToggle;
 ## Resources
 
 * [Rule source](/src/rules/no-fade.js)
-* [Test source](/src/tests/no-fade.js)
+* [Test source](/tests/rules/no-fade.js)

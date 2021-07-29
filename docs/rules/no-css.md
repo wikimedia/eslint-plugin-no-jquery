@@ -26,4 +26,4 @@ div.css;
 ## Resources
 
 * [Rule source](/src/rules/no-css.js)
-* [Test source](/src/tests/no-css.js)
+* [Test source](/tests/rules/no-css.js)

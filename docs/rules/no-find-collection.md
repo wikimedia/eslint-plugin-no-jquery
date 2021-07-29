@@ -28,4 +28,4 @@ $div.myPlugin( 'foo' ).find();
 ## Resources
 
 * [Rule source](/src/rules/no-find-collection.js)
-* [Test source](/src/tests/no-find-collection.js)
+* [Test source](/tests/rules/no-find-collection.js)

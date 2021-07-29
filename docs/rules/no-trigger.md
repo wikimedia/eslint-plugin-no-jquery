@@ -25,4 +25,4 @@ div.trigger;
 ## Resources
 
 * [Rule source](/src/rules/no-trigger.js)
-* [Test source](/src/tests/no-trigger.js)
+* [Test source](/tests/rules/no-trigger.js)

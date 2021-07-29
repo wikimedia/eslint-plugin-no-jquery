@@ -34,4 +34,4 @@ $.proxy( fn, context, arg1, arg2 ); /* → */ fn.bind( context, arg1, arg2 );
 ## Resources
 
 * [Rule source](/src/rules/no-proxy.js)
-* [Test source](/src/tests/no-proxy.js)
+* [Test source](/tests/rules/no-proxy.js)

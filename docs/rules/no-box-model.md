@@ -23,4 +23,4 @@ a.boxModel.foo;
 ## Resources
 
 * [Rule source](/src/rules/no-box-model.js)
-* [Test source](/src/tests/no-box-model.js)
+* [Test source](/tests/rules/no-box-model.js)

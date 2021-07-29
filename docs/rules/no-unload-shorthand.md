@@ -36,4 +36,4 @@ $( 'div' ).append( $( 'input' ).unload() ); /* → */ $( 'div' ).append( $( 'inp
 ## Resources
 
 * [Rule source](/src/rules/no-unload-shorthand.js)
-* [Test source](/src/tests/no-unload-shorthand.js)
+* [Test source](/tests/rules/no-unload-shorthand.js)

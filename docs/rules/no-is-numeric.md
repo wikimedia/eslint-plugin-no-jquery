@@ -23,4 +23,4 @@ $div.isNumeric();
 ## Resources
 
 * [Rule source](/src/rules/no-is-numeric.js)
-* [Test source](/src/tests/no-is-numeric.js)
+* [Test source](/tests/rules/no-is-numeric.js)

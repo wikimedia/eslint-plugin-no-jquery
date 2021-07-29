@@ -21,4 +21,4 @@ param();
 ## Resources
 
 * [Rule source](/src/rules/no-param.js)
-* [Test source](/src/tests/no-param.js)
+* [Test source](/tests/rules/no-param.js)

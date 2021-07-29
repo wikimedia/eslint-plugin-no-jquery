@@ -35,4 +35,4 @@ div.undelegate;
 ## Resources
 
 * [Rule source](/src/rules/no-delegate.js)
-* [Test source](/src/tests/no-delegate.js)
+* [Test source](/tests/rules/no-delegate.js)

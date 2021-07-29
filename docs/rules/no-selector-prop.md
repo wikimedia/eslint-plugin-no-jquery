@@ -29,4 +29,4 @@ $div.selector( arg );
 ## Resources
 
 * [Rule source](/src/rules/no-selector-prop.js)
-* [Test source](/src/tests/no-selector-prop.js)
+* [Test source](/tests/rules/no-selector-prop.js)

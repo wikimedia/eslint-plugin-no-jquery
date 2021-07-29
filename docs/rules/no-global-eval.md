@@ -21,4 +21,4 @@ globalEval();
 ## Resources
 
 * [Rule source](/src/rules/no-global-eval.js)
-* [Test source](/src/tests/no-global-eval.js)
+* [Test source](/tests/rules/no-global-eval.js)

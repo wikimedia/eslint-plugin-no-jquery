@@ -25,4 +25,4 @@ div.html;
 ## Resources
 
 * [Rule source](/src/rules/no-html.js)
-* [Test source](/src/tests/no-html.js)
+* [Test source](/tests/rules/no-html.js)

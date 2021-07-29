@@ -24,4 +24,4 @@ div.each;
 ## Resources
 
 * [Rule source](/src/rules/no-each.js)
-* [Test source](/src/tests/no-each.js)
+* [Test source](/tests/rules/no-each.js)
