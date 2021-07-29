@@ -11,6 +11,7 @@
 	"rules": {
 		"eslint-plugin/consistent-output": "off",
 		"eslint-plugin/fixer-return": "off",
+		"eslint-plugin/prefer-message-ids": "off",
 		"eslint-plugin/require-meta-docs-description": "off",
 		"eslint-plugin/require-meta-docs-url": "off",
 		"eslint-plugin/test-case-property-ordering": [ "error",
