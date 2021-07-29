@@ -23,4 +23,4 @@ $when();
 ## Resources
 
 * [Rule source](/src/rules/no-when.js)
-* [Test source](/src/tests/no-when.js)
+* [Test source](/tests/rules/no-when.js)

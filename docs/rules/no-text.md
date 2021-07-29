@@ -26,4 +26,4 @@ div.text;
 ## Resources
 
 * [Rule source](/src/rules/no-text.js)
-* [Test source](/src/tests/no-text.js)
+* [Test source](/tests/rules/no-text.js)

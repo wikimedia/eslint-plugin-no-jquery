@@ -23,4 +23,4 @@ $div.nodeName();
 ## Resources
 
 * [Rule source](/src/rules/no-node-name.js)
-* [Test source](/src/tests/no-node-name.js)
+* [Test source](/tests/rules/no-node-name.js)

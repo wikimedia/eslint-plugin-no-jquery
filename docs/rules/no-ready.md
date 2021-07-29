@@ -33,4 +33,4 @@ $();
 ## Resources
 
 * [Rule source](/src/rules/no-ready.js)
-* [Test source](/src/tests/no-ready.js)
+* [Test source](/tests/rules/no-ready.js)

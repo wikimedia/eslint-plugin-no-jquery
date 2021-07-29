@@ -21,4 +21,4 @@ $div.contains();
 ## Resources
 
 * [Rule source](/src/rules/no-contains.js)
-* [Test source](/src/tests/no-contains.js)
+* [Test source](/tests/rules/no-contains.js)

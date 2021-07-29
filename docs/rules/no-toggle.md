@@ -25,4 +25,4 @@ div.toggle;
 ## Resources
 
 * [Rule source](/src/rules/no-toggle.js)
-* [Test source](/src/tests/no-toggle.js)
+* [Test source](/tests/rules/no-toggle.js)

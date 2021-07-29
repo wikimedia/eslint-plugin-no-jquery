@@ -24,4 +24,4 @@ $.browsers;
 ## Resources
 
 * [Rule source](/src/rules/no-browser.js)
-* [Test source](/src/tests/no-browser.js)
+* [Test source](/tests/rules/no-browser.js)

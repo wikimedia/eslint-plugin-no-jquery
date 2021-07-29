@@ -25,4 +25,4 @@ div.unbind;
 ## Resources
 
 * [Rule source](/src/rules/no-unbind.js)
-* [Test source](/src/tests/no-unbind.js)
+* [Test source](/tests/rules/no-unbind.js)

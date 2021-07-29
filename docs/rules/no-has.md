@@ -25,4 +25,4 @@ div.has;
 ## Resources
 
 * [Rule source](/src/rules/no-has.js)
-* [Test source](/src/tests/no-has.js)
+* [Test source](/tests/rules/no-has.js)

@@ -25,4 +25,4 @@ div.undelegate;
 ## Resources
 
 * [Rule source](/src/rules/no-undelegate.js)
-* [Test source](/src/tests/no-undelegate.js)
+* [Test source](/tests/rules/no-undelegate.js)

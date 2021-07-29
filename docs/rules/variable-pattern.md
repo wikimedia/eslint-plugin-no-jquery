@@ -126,4 +126,4 @@ this.element = $( '<div>' );
 ## Resources
 
 * [Rule source](/src/rules/variable-pattern.js)
-* [Test source](/src/tests/variable-pattern.js)
+* [Test source](/tests/rules/variable-pattern.js)

@@ -41,4 +41,4 @@ div.toggle;
 ## Resources
 
 * [Rule source](/src/rules/no-visibility.js)
-* [Test source](/src/tests/no-visibility.js)
+* [Test source](/tests/rules/no-visibility.js)

@@ -230,4 +230,4 @@ $div.ajaxSend();                                  /* → */ $div.trigger( 'ajaxS
 ## Resources
 
 * [Rule source](/src/rules/no-event-shorthand.js)
-* [Test source](/src/tests/no-event-shorthand.js)
+* [Test source](/tests/rules/no-event-shorthand.js)

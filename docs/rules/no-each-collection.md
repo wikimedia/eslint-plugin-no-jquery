@@ -26,4 +26,4 @@ $.each();
 ## Resources
 
 * [Rule source](/src/rules/no-each-collection.js)
-* [Test source](/src/tests/no-each-collection.js)
+* [Test source](/tests/rules/no-each-collection.js)

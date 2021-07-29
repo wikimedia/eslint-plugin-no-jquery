@@ -32,4 +32,4 @@ div.removeAttr;
 ## Resources
 
 * [Rule source](/src/rules/no-attr.js)
-* [Test source](/src/tests/no-attr.js)
+* [Test source](/tests/rules/no-attr.js)

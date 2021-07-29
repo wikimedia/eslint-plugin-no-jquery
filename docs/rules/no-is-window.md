@@ -22,4 +22,4 @@ myClass.isWindow();
 ## Resources
 
 * [Rule source](/src/rules/no-is-window.js)
-* [Test source](/src/tests/no-is-window.js)
+* [Test source](/tests/rules/no-is-window.js)

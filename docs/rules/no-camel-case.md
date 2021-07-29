@@ -23,4 +23,4 @@ $div.camelCase();
 ## Resources
 
 * [Rule source](/src/rules/no-camel-case.js)
-* [Test source](/src/tests/no-camel-case.js)
+* [Test source](/tests/rules/no-camel-case.js)

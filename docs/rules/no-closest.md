@@ -25,4 +25,4 @@ div.closest;
 ## Resources
 
 * [Rule source](/src/rules/no-closest.js)
-* [Test source](/src/tests/no-closest.js)
+* [Test source](/tests/rules/no-closest.js)

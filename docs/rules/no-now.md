@@ -30,4 +30,4 @@ $.now(); /* → */ Date.now();
 ## Resources
 
 * [Rule source](/src/rules/no-now.js)
-* [Test source](/src/tests/no-now.js)
+* [Test source](/tests/rules/no-now.js)

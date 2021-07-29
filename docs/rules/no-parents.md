@@ -25,4 +25,4 @@ div.parents;
 ## Resources
 
 * [Rule source](/src/rules/no-parents.js)
-* [Test source](/src/tests/no-parents.js)
+* [Test source](/tests/rules/no-parents.js)

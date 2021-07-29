@@ -40,4 +40,4 @@ $( 'div' ).first().ready( fn ); /* → */ $( fn );
 ## Resources
 
 * [Rule source](/src/rules/no-ready-shorthand.js)
-* [Test source](/src/tests/no-ready-shorthand.js)
+* [Test source](/tests/rules/no-ready-shorthand.js)

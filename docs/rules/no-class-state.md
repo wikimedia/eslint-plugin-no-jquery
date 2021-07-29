@@ -33,4 +33,4 @@ $div.toggleClass( 'myClass', false );
 ## Resources
 
 * [Rule source](/src/rules/no-class-state.js)
-* [Test source](/src/tests/no-class-state.js)
+* [Test source](/tests/rules/no-class-state.js)

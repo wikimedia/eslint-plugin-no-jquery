@@ -25,4 +25,4 @@ div.hide;
 ## Resources
 
 * [Rule source](/src/rules/no-hide.js)
-* [Test source](/src/tests/no-hide.js)
+* [Test source](/tests/rules/no-hide.js)

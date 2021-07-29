@@ -123,4 +123,4 @@ $( ':checked' );
 ## Resources
 
 * [Rule source](/src/rules/no-sizzle.js)
-* [Test source](/src/tests/no-sizzle.js)
+* [Test source](/tests/rules/no-sizzle.js)

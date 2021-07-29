@@ -23,4 +23,4 @@ holdReady();
 ## Resources
 
 * [Rule source](/src/rules/no-hold-ready.js)
-* [Test source](/src/tests/no-hold-ready.js)
+* [Test source](/tests/rules/no-hold-ready.js)

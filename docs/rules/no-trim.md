@@ -25,4 +25,4 @@ $( 'input' ).data( 'foo' ).trim();
 ## Resources
 
 * [Rule source](/src/rules/no-trim.js)
-* [Test source](/src/tests/no-trim.js)
+* [Test source](/tests/rules/no-trim.js)

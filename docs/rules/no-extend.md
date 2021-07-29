@@ -32,4 +32,4 @@ $.extend( true, {}, foo );
 ## Resources
 
 * [Rule source](/src/rules/no-extend.js)
-* [Test source](/src/tests/no-extend.js)
+* [Test source](/tests/rules/no-extend.js)

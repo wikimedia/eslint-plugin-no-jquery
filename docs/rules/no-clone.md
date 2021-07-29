@@ -29,4 +29,4 @@ $div[ 0 ].clone();
 ## Resources
 
 * [Rule source](/src/rules/no-clone.js)
-* [Test source](/src/tests/no-clone.js)
+* [Test source](/tests/rules/no-clone.js)

@@ -26,4 +26,4 @@ div.filter;
 ## Resources
 
 * [Rule source](/src/rules/no-filter.js)
-* [Test source](/src/tests/no-filter.js)
+* [Test source](/tests/rules/no-filter.js)

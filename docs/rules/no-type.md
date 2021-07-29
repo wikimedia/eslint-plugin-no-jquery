@@ -23,4 +23,4 @@ myMethod.type;
 ## Resources
 
 * [Rule source](/src/rules/no-type.js)
-* [Test source](/src/tests/no-type.js)
+* [Test source](/tests/rules/no-type.js)

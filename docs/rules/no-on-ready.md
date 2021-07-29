@@ -37,4 +37,4 @@ $document.on( 'ready', function () {} );     /* → */ $document.ready( function
 ## Resources
 
 * [Rule source](/src/rules/no-on-ready.js)
-* [Test source](/src/tests/no-on-ready.js)
+* [Test source](/tests/rules/no-on-ready.js)

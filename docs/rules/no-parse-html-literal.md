@@ -91,4 +91,4 @@ $( '<div></div>' ); /* → */ $( '<div/>' );
 ## Resources
 
 * [Rule source](/src/rules/no-parse-html-literal.js)
-* [Test source](/src/tests/no-parse-html-literal.js)
+* [Test source](/tests/rules/no-parse-html-literal.js)

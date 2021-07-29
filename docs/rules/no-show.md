@@ -25,4 +25,4 @@ div.show;
 ## Resources
 
 * [Rule source](/src/rules/no-show.js)
-* [Test source](/src/tests/no-show.js)
+* [Test source](/tests/rules/no-show.js)

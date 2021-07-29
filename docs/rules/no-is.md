@@ -25,4 +25,4 @@ div.is;
 ## Resources
 
 * [Rule source](/src/rules/no-is.js)
-* [Test source](/src/tests/no-is.js)
+* [Test source](/tests/rules/no-is.js)

@@ -23,4 +23,4 @@ new Deferred();
 ## Resources
 
 * [Rule source](/src/rules/no-deferred.js)
-* [Test source](/src/tests/no-deferred.js)
+* [Test source](/tests/rules/no-deferred.js)

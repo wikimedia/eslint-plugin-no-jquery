@@ -31,4 +31,4 @@ $.noop(); /* → */ ( function () {}() );
 ## Resources
 
 * [Rule source](/src/rules/no-noop.js)
-* [Test source](/src/tests/no-noop.js)
+* [Test source](/tests/rules/no-noop.js)

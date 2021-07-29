@@ -21,4 +21,4 @@ $div.isEmptyObject();
 ## Resources
 
 * [Rule source](/src/rules/no-is-empty-object.js)
-* [Test source](/src/tests/no-is-empty-object.js)
+* [Test source](/tests/rules/no-is-empty-object.js)

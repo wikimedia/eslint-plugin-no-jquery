@@ -30,4 +30,4 @@ $.parseXML( '<b>test</b>' ); /* → */ ( new window.DOMParser() ).parseFromStrin
 ## Resources
 
 * [Rule source](/src/rules/no-parse-xml.js)
-* [Test source](/src/tests/no-parse-xml.js)
+* [Test source](/tests/rules/no-parse-xml.js)

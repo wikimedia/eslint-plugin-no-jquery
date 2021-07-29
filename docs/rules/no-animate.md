@@ -49,4 +49,4 @@ $div.animate( { scrollTop: 100, scrollLeft: 200 } );
 ## Resources
 
 * [Rule source](/src/rules/no-animate.js)
-* [Test source](/src/tests/no-animate.js)
+* [Test source](/tests/rules/no-animate.js)
