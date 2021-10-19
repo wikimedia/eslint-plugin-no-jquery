@@ -8,7 +8,8 @@ Disallows variable names which don't match `variablePattern` in settings (by def
 
 ❌ Examples of **incorrect** code:
 ```js
-let div = $( '<div>' );
+var div = $( '<div>' );
+var div = $div;
 foo.div = $( '<div>' );
 $foo.div = $( '<div>' );
 $foo.$div.bar = $( '<div>' );
@@ -46,6 +47,7 @@ foo[ $unknownName ] = $( '<div>' );
 $foo[ unknownName ] = $( '<div>' );
 $foo[ $unknownName ] = $( '<div>' );
 $foo.text = $( '<div>' ).text();
+var $foo = $div;
 foo[ 3 ] = $( '<div>' );
 deferred = $.Deferred();
 var foo = $.extend( {}, {} );
