@@ -113,7 +113,7 @@ function traverse( context, node, variableTest, constructorTest ) {
 
 				break;
 			case 'MemberExpression':
-				if ( node.property && node.parent.type !== 'CallExpression' ) {
+				if ( node.property && !( node.parent.type === 'CallExpression' && node.parent.callee === node ) ) {
 					if ( node.property.type === 'Identifier' ) {
 						if ( node.computed ) {
 							// e.g. foo[bar] can't be determined, returns false
@@ -132,7 +132,7 @@ function traverse( context, node, variableTest, constructorTest ) {
 				node = node.object;
 				break;
 			case 'Identifier':
-				if ( node.parent && node.parent.type === 'CallExpression' ) {
+				if ( node.parent && node.parent.type === 'CallExpression' && node.parent.callee === node ) {
 					return constructorTest( node );
 				} else {
 					return variableTest( node ) || constructorTest( node );
@@ -141,6 +141,8 @@ function traverse( context, node, variableTest, constructorTest ) {
 				return false;
 		}
 	}
+	/* istanbul ignore next */
+	throw new Error( 'Invalid node' );
 }
 
 function isjQueryConstructor( context, name ) {

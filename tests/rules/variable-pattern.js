@@ -12,6 +12,20 @@ ruleTester.run( 'variable-pattern', rule, {
 	valid: [
 		// Basic cases
 		'var $div = $("<div>")',
+		{
+			code: 'let $letDiv = $("<div>")',
+			parserOptions: { ecmaVersion: 2015 },
+			docgen: false
+		},
+		{
+			code: 'const $constDiv = $("<div>")',
+			parserOptions: { ecmaVersion: 2015 },
+			docgen: false
+		},
+		{
+			code: 'var div',
+			docgen: false
+		},
 		'$div = $("<div>")',
 		'foo.$div = $("<div>")',
 		'foo.bar.$div = $("<div>")',
@@ -20,6 +34,7 @@ ruleTester.run( 'variable-pattern', rule, {
 		'$foo[unknownName] = $("<div>")',
 		'$foo[$unknownName] = $("<div>")',
 		'$foo.text = $("<div>").text()',
+		'var $foo = $div',
 		// It is not possible for the linter to detect that this is a jQuery collection,
 		// but it is also the only way to store a plain array of jQuery collections.
 		'foo[3] = $("<div>")',
@@ -149,6 +164,22 @@ ruleTester.run( 'variable-pattern', rule, {
 	invalid: [
 		{
 			code: 'var div = $("<div>")',
+			errors: [ error ]
+		},
+		{
+			code: 'let letDiv = $("<div>")',
+			parserOptions: { ecmaVersion: 2015 },
+			docgen: false,
+			errors: [ error ]
+		},
+		{
+			code: 'const constDiv = $("<div>")',
+			parserOptions: { ecmaVersion: 2015 },
+			docgen: false,
+			errors: [ error ]
+		},
+		{
+			code: 'var div = $div',
 			errors: [ error ]
 		},
 		// Plugins
