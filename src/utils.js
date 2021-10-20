@@ -195,9 +195,10 @@ function isjQuery( context, node ) {
  * @param {string} [fixable] Fixable mode, e.g. 'code'
  * @param {string[]|boolean} [deprecated] Rule is deprecated.
  *  If a string list, the replacedBy rules.
+ * @param {Array} schema Schema
  * @return {Object} Rule
  */
-function createRule( create, description, fixable, deprecated ) {
+function createRule( create, description, fixable, deprecated, schema ) {
 	return {
 		meta: {
 			type: 'suggestion',
@@ -207,7 +208,7 @@ function createRule( create, description, fixable, deprecated ) {
 				replacedBy: Array.isArray( deprecated ) ? deprecated : undefined
 			},
 			fixable: fixable,
-			schema: []
+			schema: schema || []
 		},
 		create: create
 	};
@@ -298,6 +299,8 @@ function jQueryGlobalLink( name ) {
  * @param {Function} [options.fix] Fixing function. First argument is `node`.
  * @param {string[]|boolean} [options.deprecated] Rule is deprecated.
  *  If a string list, the replacedBy rules.
+ * @param {boolean} [options.getAndSetOptions] Create options to enabled getting and setting
+ *  separately.
  * @return {Object} Rule
  */
 function createCollectionMethodRule( methods, message, options ) {
@@ -312,6 +315,27 @@ function createCollectionMethodRule( methods, message, options ) {
 
 	description += messageSuffix( message );
 
+	let schema = [];
+	if ( options.getAndSetOptions ) {
+		schema = [
+			{
+				type: 'object',
+				properties: {
+					allowGetOrSet: {
+						enum: [ 'none', 'get', 'set' ]
+					}
+				},
+				additionalProperties: false
+			}
+		];
+
+		// TODO: nonCollectionReturningValueAccessors have 1 argument in getter mode
+		description += '\n\nUsing this method only as a getter or a setter can be allowed using the `allowGetOrSet` option:\n' +
+			'* `"none"` (default) the method can\'t be used at all\n' +
+			'* `"get"` the method can only be used as a getter i.e. with no arguments\n' +
+			'* `"set"` the method can only be used as a setter i.e. with arguments';
+	}
+
 	return createRule( function ( context ) {
 		return {
 			'CallExpression:exit': function ( node ) {
@@ -325,6 +349,14 @@ function createCollectionMethodRule( methods, message, options ) {
 				) {
 					return;
 				}
+				const allowGetOrSet = ( context.options[ 0 ] && context.options[ 0 ].allowGetOrSet ) || 'none';
+				// TODO: nonCollectionReturningValueAccessors have 1 argument in getter mode
+				if (
+					( allowGetOrSet === 'get' && !node.arguments.length ) ||
+					( allowGetOrSet === 'set' && node.arguments.length )
+				) {
+					return;
+				}
 
 				if ( isjQuery( context, node.callee ) ) {
 					context.report( {
@@ -335,7 +367,7 @@ function createCollectionMethodRule( methods, message, options ) {
 				}
 			}
 		};
-	}, description, options.fixable, options.deprecated );
+	}, description, options.fixable, options.deprecated, schema );
 }
 
 /**
