@@ -3,12 +3,12 @@
 const utils = require( '../utils.js' );
 
 const disallowedEvents = [
-	'ajaxStart',
-	'ajaxSend',
-	'ajaxSuccess',
-	'ajaxError',
 	'ajaxComplete',
-	'ajaxStop'
+	'ajaxError',
+	'ajaxSend',
+	'ajaxStart',
+	'ajaxStop',
+	'ajaxSuccess'
 ];
 
 module.exports = {

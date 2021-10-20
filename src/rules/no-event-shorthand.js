@@ -3,12 +3,12 @@
 const utils = require( '../utils.js' );
 
 const ajaxEvents = [
-	'ajaxStart',
-	'ajaxStop',
 	'ajaxComplete',
 	'ajaxError',
-	'ajaxSuccess',
-	'ajaxSend'
+	'ajaxSend',
+	'ajaxStart',
+	'ajaxStop',
+	'ajaxSuccess'
 ];
 
 const rule = utils.createCollectionMethodRule(
