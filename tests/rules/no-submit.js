@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-submit' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer EventTarget#dispatchEvent + HTMLFormElement#submit to .submit';
+const error = 'Prefer EventTarget#dispatchEvent + HTMLFormElement#submit to .submit. This rule is deprecated, use no-event-shorthand.';
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-submit', rule, {

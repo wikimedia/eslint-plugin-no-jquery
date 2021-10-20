@@ -2,6 +2,8 @@
 
 Disallows the [`.submit`](https://api.jquery.com/submit/) method. Prefer `EventTarget#dispatchEvent` + `HTMLFormElement#submit`.
 
+⚠️ This rule is deprecated. Use [`no-event-shorthand`](no-event-shorthand.md) instead.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

@@ -162,7 +162,6 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-sizzle`](docs/rules/no-sizzle.md) `3.4†`
 * [`no-jquery/no-slide`](docs/rules/no-slide.md) `slim`, `all`
 * [`no-jquery/no-sub`](docs/rules/no-sub.md) `1.7`, `all`
-* [`no-jquery/no-submit`](docs/rules/no-submit.md)
 * [`no-jquery/no-support`](docs/rules/no-support.md) `1.9`
 * [`no-jquery/no-text`](docs/rules/no-text.md) `all`
 * [`no-jquery/no-trigger`](docs/rules/no-trigger.md) `all`
@@ -181,6 +180,7 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-die`](docs/rules/no-die.md) (use [`no-jquery/no-live`](docs/rules/no-live.md))
 * [`no-jquery/no-hide`](docs/rules/no-hide.md) (use [`no-jquery/no-visibility`](docs/rules/no-visibility.md))
 * [`no-jquery/no-show`](docs/rules/no-show.md) (use [`no-jquery/no-visibility`](docs/rules/no-visibility.md))
+* [`no-jquery/no-submit`](docs/rules/no-submit.md) (use [`no-jquery/no-event-shorthand`](docs/rules/no-event-shorthand.md))
 * [`no-jquery/no-toggle`](docs/rules/no-toggle.md) (use [`no-jquery/no-visibility`](docs/rules/no-visibility.md))
 * [`no-jquery/no-unbind`](docs/rules/no-unbind.md) (use [`no-jquery/no-bind`](docs/rules/no-bind.md))
 * [`no-jquery/no-undelegate`](docs/rules/no-undelegate.md) (use [`no-jquery/no-delegate`](docs/rules/no-delegate.md))
