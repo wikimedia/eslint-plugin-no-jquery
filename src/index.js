@@ -7,6 +7,7 @@ module.exports = {
 		'no-and-self': require( './rules/no-and-self' ),
 		'no-animate': require( './rules/no-animate' ),
 		'no-animate-toggle': require( './rules/no-animate-toggle' ),
+		'no-append-html': require( './rules/no-append-html' ),
 		'no-attr': require( './rules/no-attr' ),
 		'no-bind': require( './rules/no-bind' ),
 		'no-box-model': require( './rules/no-box-model' ),

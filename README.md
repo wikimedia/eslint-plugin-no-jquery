@@ -87,6 +87,7 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-and-self`](docs/rules/no-and-self.md) `1.8`
 * [`no-jquery/no-animate`](docs/rules/no-animate.md) `slim`, `all`
 * [`no-jquery/no-animate-toggle`](docs/rules/no-animate-toggle.md) `slim`
+* [`no-jquery/no-append-html`](docs/rules/no-append-html.md)
 * [`no-jquery/no-attr`](docs/rules/no-attr.md) `all`
 * [`no-jquery/no-bind`](docs/rules/no-bind.md) `3.0`, `all`
 * [`no-jquery/no-box-model`](docs/rules/no-box-model.md) `1.3`
