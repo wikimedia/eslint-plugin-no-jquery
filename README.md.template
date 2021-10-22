@@ -80,7 +80,10 @@ The following global settings can be used under the `no-jquery` property to conf
 
 ## 📖 Rules
 
-Where rules are included in the configs `recommended`, `slim`, `all` or `deprecated-X.X` it is indicated below. Where rules are included with options this is indicated with a `†`.
+Rules with options are indicated with ⚙️. Rules which are fixable are indicated with 🔧.
+
+Where rules are included in the configs `recommended`, `slim`, `all` or `deprecated-X.X` it is indicated below. Where rules are included in a config with non-default options this is indicated with a `†`.
+
 <!-- rules -->
 
 ### ⚠️ Deprecated

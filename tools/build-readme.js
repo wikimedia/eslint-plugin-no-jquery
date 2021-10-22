@@ -17,6 +17,16 @@ function getRules( deprecated ) {
 		if ( !!docs.deprecated === deprecated ) {
 			return '* [`' + fullRule + '`](' + docPath.replace( '{name}', rule ) + ')' +
 				(
+					ruleData.meta.schema.length ?
+						' ⚙️' :
+						''
+				) +
+				(
+					ruleData.meta.fixable ?
+						' 🔧' :
+						''
+				) +
+				(
 					docs.replacedBy ?
 						' (use [`' + pluginName + '/' + docs.replacedBy + '`](' + docPath.replace( '{name}', docs.replacedBy ) + '))' :
 						''
