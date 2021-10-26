@@ -1,5 +1,22 @@
 # eslint-plugin-no-jquery release history
 
+## v2.7.0
+* New rule: `no-append-html` (#284) (Ed Sanders)
+* New config: Allow rules to disable get/set separately, starting with no-html (Ed Sanders)
+* Deprecated rule: `no-submit`; use `no-event-shorthand` (Ed Sanders)
+
+—
+* Code: Sort ajax events consistently and alphabetically. (Ed Sanders)
+* Code: utils.isjQuery: Improve `Identifier` detection (#283) (Ed Sanders)
+
+—
+* Docs: Update eslint-docgen to 0.5.1 (#290) (Ed Sanders)
+* Docs: Show which rules have options, and which are fixable in README (#289) (Ed Sanders)
+* Docs: Fix test links (#280) (Ed Sanders)
+
+—
+* Release: Update devDependencies (#278) (Ed Sanders)
+
 ## v2.6.0
 * New rule: `no-escape-selector` for `$.escapeSelector` util (Ed Sanders)
 * New config: `deprecated-3.6` for new jQuery release (Ed Sanders)
