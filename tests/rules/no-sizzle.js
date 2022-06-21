@@ -20,6 +20,8 @@ ruleTester.run( 'no-sizzle', rule, {
 		'$("div").find(":first-child div")',
 		'$("div").find(":last-child")',
 		'$("div").find(":last-child div")',
+		'$("div").find(":nth-child(2)")',
+		'$("div").find(":nth-child(2) div")',
 		'$("div").find($())',
 		'$("div").find(function() {})',
 		'$("div").find()',
