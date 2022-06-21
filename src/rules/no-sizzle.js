@@ -40,7 +40,7 @@ module.exports = {
 	},
 
 	create: function ( context ) {
-		const forbiddenPositional = /:eq|:even|:first([^-]|$)|:gt|:last([^-]|$)|:lt|:nth|:odd/;
+		const forbiddenPositional = /:eq|:even|:first([^-]|$)|:gt|:last([^-]|$)|:lt|:nth([^-]|$)|:odd/;
 		const forbiddenOther = /:animated|:button|:checkbox|:file|:has|:header|:hidden|:image|:input|:parent|:password|:radio|:reset|:selected|:submit|:text|:visible/;
 		const traversals = [
 			'children',
