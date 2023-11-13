@@ -26,6 +26,9 @@
 	"files": [
 		"src"
 	],
+	"engine": {
+		"node": ">=16"
+	},
 	"peerDependencies": {
 		"eslint": ">=6.0.0"
 	},
