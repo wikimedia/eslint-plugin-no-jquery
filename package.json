@@ -27,7 +27,7 @@
 		"src"
 	],
 	"peerDependencies": {
-		"eslint": ">=2.3.0"
+		"eslint": ">=6.0.0"
 	},
 	"devDependencies": {
 		"codecov": "^3.8.3",
