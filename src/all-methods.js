@@ -135,6 +135,7 @@ module.exports = [
 	'triggerHandler',
 	'unbind',
 	'undelegate',
+	'uniqueSort',
 	'unwrap',
 	'val',
 	'width',

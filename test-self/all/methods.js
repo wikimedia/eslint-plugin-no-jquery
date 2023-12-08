@@ -64,6 +64,7 @@ $x.promise();
 $x.pushStack();
 $x.queue();
 $x.remove();
+// eslint-disable-next-line es-x/no-string-prototype-replaceall
 $x.replaceAll();
 $x.replaceWith();
 $x.scrollLeft();
@@ -73,6 +74,7 @@ $x.slice();
 $x.stop();
 $x.toArray();
 $x.triggerHandler();
+$x.uniqueSort();
 $x.width();
 $x.myPlugin();
 /* eslint-enable self/no-other-methods */
