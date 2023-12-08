@@ -23,7 +23,7 @@ jobs:
         npm run build --if-present
         npm test
         npm run report
-        npm i --no-save eslint@6.0.0
+        npm i --no-save eslint@8.0.0
         npm run onlytest
       env:
         CI: true
