@@ -64,6 +64,7 @@ $x.promise();
 $x.pushStack();
 $x.queue();
 $x.remove();
+// eslint-disable-next-line es-x/no-string-prototype-replaceall
 $x.replaceAll();
 $x.replaceWith();
 $x.scrollLeft();
@@ -193,7 +194,7 @@ $x.removeClass();
 $x.removeData();
 // eslint-disable-next-line self/no-prop
 $x.removeProp();
-// eslint-disable-next-line self/no-event-shorthand
+// eslint-disable-next-line self/no-event-shorthand, es-x/no-resizable-and-growable-arraybuffers
 $x.resize();
 // eslint-disable-next-line self/no-event-shorthand
 $x.scroll();
