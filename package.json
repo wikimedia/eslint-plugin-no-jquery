@@ -33,7 +33,7 @@
 		"codecov": "3.8.3",
 		"eslint-config-wikimedia": "0.22.1",
 		"eslint-docgen": "0.7.1",
-		"eslint-plugin-eslint-plugin": "4.1.0",
+		"eslint-plugin-eslint-plugin": "5.1.1",
 		"eslint-plugin-self": "1.2.1",
 		"jquery": "3.7.1",
 		"jsdom": "19.0.0",
