@@ -2,7 +2,7 @@
 
 # no-append-html
 
-Disallows using [`.append`](https://api.jquery.com/append/)/[`.prepend`](https://api.jquery.com/prepend/)/[`.before`](https://api.jquery.com/before/)/[`.after`](https://api.jquery.com/after/)/[`.replaceWith`](https://api.jquery.com/replaceWith/) to inject HTML, in order to prevent possible XSS bugs.
+Disallows using [`.append`](https://api.jquery.com/append/)/[`.prepend`](https://api.jquery.com/prepend/)/[`.before`](https://api.jquery.com/before/)/[`.after`](https://api.jquery.com/after/)/[`.replaceWith`](https://api.jquery.com/replaceWith/)/[`.add`](https://api.jquery.com/add/) to inject HTML, in order to prevent possible XSS bugs.
 
 ## Rule details
 
@@ -13,6 +13,7 @@ $div.prepend( '<xss>' );
 $div.before( '<xss>' );
 $div.after( '<xss>' );
 $div.replaceWith( '<xss>' );
+$els.add( '<xss>' );
 $div.append( code + '<xss>' );
 $div.append( test ? $el : '<xss>' );
 $div.append( $el, '<xss>' );
@@ -28,6 +29,7 @@ $div.prepend( $el );
 $div.before( $el );
 $div.after( $el );
 $div.replaceWith( $el );
+$els.add( $el );
 $div.append( this.$el );
 $div.append( this.foo.$el );
 $div.append( $el1, $el2 );
