@@ -13,6 +13,7 @@ ruleTester.run( 'no-append-html', rule, {
 		'$div.before($el)',
 		'$div.after($el)',
 		'$div.replaceWith($el)',
+		'$els.add($el)',
 		'$div.append(this.$el)',
 		'$div.append(this.foo.$el)',
 		'$div.append($el1, $el2)',
@@ -48,6 +49,10 @@ ruleTester.run( 'no-append-html', rule, {
 		},
 		{
 			code: '$div.replaceWith("<xss>")',
+			errors: [ error ]
+		},
+		{
+			code: '$els.add("<xss>")',
 			errors: [ error ]
 		},
 		{
