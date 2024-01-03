@@ -1,7 +1,7 @@
 'use strict';
 
 const utils = require( '../utils.js' );
-const methods = [ 'append', 'prepend', 'before', 'after', 'replaceWith', 'add' ];
+const methods = [ 'append', 'prepend', 'before', 'after', 'replaceWith', 'add', 'appendTo', 'prependTo' ];
 
 function alljQueryOrEmpty( context, node ) {
 	if ( node.type === 'ConditionalExpression' ) {
