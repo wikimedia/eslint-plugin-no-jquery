@@ -173,6 +173,7 @@ function isjQueryConstructor( context, name ) {
 //
 // Returns true if the function call node is attached to a jQuery element set.
 function isjQuery( context, node ) {
+	// eslint-disable-next-line security/detect-non-literal-regexp
 	const variablePattern = new RegExp(
 		( context.settings && context.settings[ 'no-jquery' ] && context.settings[ 'no-jquery' ].variablePattern ) ||
 		'^\\$.'

@@ -195,7 +195,7 @@ $x.removeClass();
 $x.removeData();
 // eslint-disable-next-line self/no-prop
 $x.removeProp();
-// eslint-disable-next-line self/no-event-shorthand
+// eslint-disable-next-line self/no-event-shorthand, es-x/no-resizable-and-growable-arraybuffers
 $x.resize();
 // eslint-disable-next-line self/no-event-shorthand
 $x.scroll();

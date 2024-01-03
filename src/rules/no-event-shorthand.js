@@ -48,7 +48,7 @@ const rule = utils.createCollectionMethodRule(
 	].concat( ajaxEvents ),
 	( node ) => node === true ?
 		'Use the `allowAjaxEvents` option to allow `ajax*` methods. Prefer `.on` or `.trigger`' :
-		`Prefer .on or .trigger to .${node.callee.property.name}`,
+		`Prefer .on or .trigger to .${ node.callee.property.name }`,
 	{
 		fixable: 'code',
 		fix: utils.eventShorthandFixer
