@@ -6,6 +6,8 @@ Disallows the [`$.extend`](https://api.jquery.com/jQuery.extend/) utility. Prefe
 
 📋 This rule is enabled in `plugin:no-jquery/all`.
 
+🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
@@ -29,6 +31,16 @@ $.extend( {}, foo );
 ✔️ Examples of **correct** code with `[{"allowDeep":true}]` options:
 ```js
 $.extend( true, {}, foo );
+```
+
+🔧 Examples of code **fixed** by this rule:
+```js
+$.extend( {}, foo ); /* → */ Object.assign( {}, foo );
+```
+
+🔧 Examples of code **fixed** by this rule with `[{"allowDeep":true}]` options:
+```js
+$.extend( {}, foo ); /* → */ Object.assign( {}, foo );
 ```
 
 ## Resources
