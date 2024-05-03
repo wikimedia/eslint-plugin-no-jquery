@@ -27,7 +27,7 @@ module.exports = {
 
 			if ( utils.isjQuery( context, node.callee ) ) {
 				context.report( {
-					node: node,
+					node,
 					message: '.on("ready") is not allowed',
 					fix: ( fixer ) => ( node.arguments.length > 1 ) ?
 						[

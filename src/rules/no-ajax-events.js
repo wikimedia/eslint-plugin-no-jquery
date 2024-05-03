@@ -43,7 +43,7 @@ module.exports = {
 			}
 			if ( usedMethod && utils.isjQuery( context, node ) ) {
 				context.report( {
-					node: node,
+					node,
 					message: 'Prefer local event to {{method}}',
 					data: { method: usedMethod }
 				} );

@@ -48,7 +48,7 @@ module.exports = {
 
 			if ( utils.isjQuery( context, node ) ) {
 				context.report( {
-					node: node,
+					node,
 					message: allowScroll ?
 						'Prefer CSS transitions to .animate' :
 						'Prefer CSS transitions or CSS scroll-behaviour to .animate'

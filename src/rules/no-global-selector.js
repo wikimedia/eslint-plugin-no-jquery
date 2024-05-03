@@ -78,7 +78,7 @@ module.exports = {
 			}
 
 			context.report( {
-				node: node,
+				node,
 				message: 'Avoid queries which search the entire DOM. Keep DOM nodes in memory where possible.'
 			} );
 		}

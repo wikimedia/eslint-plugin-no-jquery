@@ -128,8 +128,8 @@ module.exports = {
 			}
 
 			context.report( {
-				node: node,
-				message: message,
+				node,
+				message,
 				fix: ( fixer ) => expectedTag ? fixer.replaceText( arg, '"' + expectedTag + '"' ) : null
 			} );
 		}

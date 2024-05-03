@@ -42,7 +42,7 @@ module.exports = {
 
 			if ( utils.isjQuery( context, node.callee ) ) {
 				context.report( {
-					node: node,
+					node,
 					message: 'Avoid injection of possibly unescaped HTML. Create DOM elements instead, or use .text.'
 				} );
 			}

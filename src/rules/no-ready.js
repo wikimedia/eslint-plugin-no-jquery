@@ -34,7 +34,7 @@ module.exports = {
 		'CallExpression:exit': ( node ) => {
 			if ( isDirect( context, node ) || isChained( context, node ) ) {
 				context.report( {
-					node: node,
+					node,
 					message: '.ready is not allowed'
 				} );
 			}

@@ -23,7 +23,7 @@ module.exports = {
 			}
 
 			context.report( {
-				node: node,
+				node,
 				message: '$.fx.interval is not allowed'
 			} );
 		}
