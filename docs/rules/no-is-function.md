@@ -15,7 +15,10 @@ Disallows the [`$.isFunction`](https://api.jquery.com/jQuery.isFunction/) utilit
 ❌ Examples of **incorrect** code:
 ```js
 $.isFunction( expression( arg ) );
-if ( $.isFunction( fn ) ) { g(); }
+
+if ( $.isFunction( fn ) ) {
+    g();
+}
 ```
 
 ✔️ Examples of **correct** code:
@@ -28,7 +31,10 @@ $div.isFunction();
 🔧 Examples of code **fixed** by this rule:
 ```js
 $.isFunction( expression( arg ) ); /* → */ typeof expression( arg ) === 'function';
-if ( $.isFunction( fn ) ) { g(); } /* → */ if ( typeof fn === 'function' ) { g(); }
+
+if ( $.isFunction( fn ) ) {        /* → */ if ( typeof fn === 'function' ) {
+    g();                           /* → */     g();
+}                                  /* → */ }
 ```
 
 ## Resources

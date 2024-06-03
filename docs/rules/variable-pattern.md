@@ -25,11 +25,19 @@ div = $div.attr( { name: fn } );
 div = $div.outerWidth( 30 );
 number = $div.outerWidth( 30, true );
 number = $div.outerWidth( mustBeNumber, true );
-div = $div.outerWidth( function () { return 30; } );
+
+div = $div.outerWidth( function () {
+    return 30;
+} );
+
 div = $div.outerHeight( 30 );
 number = $div.outerHeight( 30, true );
 number = $div.outerHeight( mustBeNumber, true );
-div = $div.outerHeight( function () { return 30; } );
+
+div = $div.outerHeight( function () {
+    return 30;
+} );
+
 list = $div.queue( newQueueOrCallBack );
 list = $div.queue( [] );
 div = $div.queue( 'fx', newQueueOrCallBack );

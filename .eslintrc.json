@@ -9,6 +9,7 @@
 		"eslint-plugin"
 	],
 	"rules": {
+		"prefer-arrow-callback": "off",
 		"eslint-plugin/consistent-output": "off",
 		"eslint-plugin/fixer-return": "off",
 		"eslint-plugin/prefer-message-ids": "off",
