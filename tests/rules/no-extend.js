@@ -19,7 +19,8 @@ ruleTester.run( 'no-extend', rule, {
 	invalid: [
 		{
 			code: '$.extend({}, foo)',
-			errors: [ error ]
+			errors: [ error ],
+			output: 'Object.assign({}, foo)'
 		},
 		{
 			code: '$.extend(true, {}, foo)',
@@ -28,7 +29,8 @@ ruleTester.run( 'no-extend', rule, {
 		{
 			code: '$.extend({}, foo)',
 			options: [ { allowDeep: true } ],
-			errors: [ error ]
+			errors: [ error ],
+			output: 'Object.assign({}, foo)'
 		}
 	]
 } );
