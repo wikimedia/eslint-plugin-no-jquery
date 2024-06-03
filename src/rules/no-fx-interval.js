@@ -6,7 +6,8 @@ module.exports = {
 	meta: {
 		type: 'suggestion',
 		docs: {
-			description: 'Disallows ' + utils.jQueryGlobalLink( 'fx.interval' ) + '.'
+			description: 'Disallows ' + utils.jQueryGlobalLink( 'fx.interval' ) + '.',
+			recommended: true
 		},
 		schema: []
 	},

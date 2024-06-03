@@ -23,7 +23,8 @@ module.exports = {
 		type: 'suggestion',
 		docs: {
 			description: 'Disallows using ' + methods.map( utils.jQueryCollectionLink ).join( '/' ) +
-			' to inject HTML, in order to prevent possible XSS bugs.'
+				' to inject HTML, in order to prevent possible XSS bugs.',
+			recommended: false
 		},
 		schema: []
 	},

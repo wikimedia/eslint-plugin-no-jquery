@@ -6,7 +6,8 @@ module.exports = {
 	meta: {
 		type: 'suggestion',
 		docs: {
-			description: 'Disallows passing attributes to the jQuery constructor. Prefer `.attr`.'
+			description: 'Disallows passing attributes to the jQuery constructor. Prefer `.attr`.',
+			recommended: true
 		},
 		schema: []
 	},

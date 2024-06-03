@@ -89,7 +89,8 @@ module.exports = {
 	meta: {
 		type: 'suggestion',
 		docs: {
-			description: 'Disallows all methods not covered by more specific rules.'
+			description: 'Disallows all methods not covered by more specific rules.',
+			recommended: false
 		},
 		schema: []
 	},

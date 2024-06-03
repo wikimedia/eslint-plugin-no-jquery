@@ -10,7 +10,8 @@ module.exports = {
 			' and ' + utils.jQueryCollectionLink( 'toggleClass' ) +
 			' to discourage querying the DOM for state information. ' +
 			utils.jQueryCollectionLink( 'toggleClass' ) + ' may be used with a boolean argument as then it behaves like ' +
-			utils.jQueryCollectionLink( 'addClass' ) + '/' + utils.jQueryCollectionLink( 'removeClass' ) + '.'
+				utils.jQueryCollectionLink( 'addClass' ) + '/' + utils.jQueryCollectionLink( 'removeClass' ) + '.',
+			recommended: true
 		},
 		schema: []
 	},

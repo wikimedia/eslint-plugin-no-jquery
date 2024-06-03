@@ -9,7 +9,8 @@ module.exports = {
 			description:
 				'Disallows the duration argument when using the ' + utils.jQueryCollectionLink( 'show' ) +
 				', ' + utils.jQueryCollectionLink( 'hide' ) + ' & ' + utils.jQueryCollectionLink( 'toggle' ) +
-				' methods. Prefer CSS transitions.'
+				' methods. Prefer CSS transitions.',
+			recommended: true
 		},
 		schema: []
 	},

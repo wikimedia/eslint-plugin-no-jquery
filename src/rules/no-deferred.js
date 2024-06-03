@@ -6,7 +6,8 @@ module.exports = {
 	meta: {
 		type: 'suggestion',
 		docs: {
-			description: 'Disallows ' + utils.jQueryGlobalLink( 'Deferred' ) + ' constructor. Prefer `Promise`.'
+			description: 'Disallows ' + utils.jQueryGlobalLink( 'Deferred' ) + ' constructor. Prefer `Promise`.',
+			recommended: true
 		},
 		schema: []
 	},
