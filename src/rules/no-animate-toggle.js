@@ -14,11 +14,11 @@ module.exports = {
 		schema: []
 	},
 
-	create: function ( context ) {
+	create: ( context ) => {
 		const forbidden = [ 'show', 'hide', 'toggle' ];
 
 		return {
-			'CallExpression:exit': function ( node ) {
+			'CallExpression:exit': ( node ) => {
 				if (
 					node.callee.type !== 'MemberExpression' ||
 					!forbidden.includes( node.callee.property.name ) ||

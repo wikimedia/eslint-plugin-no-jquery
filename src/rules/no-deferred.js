@@ -11,7 +11,7 @@ module.exports = {
 		schema: []
 	},
 
-	create: function ( context ) {
+	create: ( context ) => {
 		function enforce( node ) {
 			if (
 				node.callee.type !== 'MemberExpression' ||

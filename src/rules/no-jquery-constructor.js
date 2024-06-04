@@ -11,21 +11,19 @@ module.exports = {
 		schema: []
 	},
 
-	create: function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if (
-					node.callee.type !== 'Identifier' ||
+	create: ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if (
+				node.callee.type !== 'Identifier' ||
 					!utils.isjQueryConstructor( context, node.callee.name )
-				) {
-					return;
-				}
-
-				context.report( {
-					node: node,
-					message: 'The jQuery constructor is not allowed'
-				} );
+			) {
+				return;
 			}
-		};
-	}
+
+			context.report( {
+				node: node,
+				message: 'The jQuery constructor is not allowed'
+			} );
+		}
+	} )
 };

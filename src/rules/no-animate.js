@@ -23,39 +23,37 @@ module.exports = {
 		]
 	},
 
-	create: function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if (
-					node.callee.type !== 'MemberExpression' ||
+	create: ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if (
+				node.callee.type !== 'MemberExpression' ||
 					node.callee.property.name !== 'animate'
-				) {
-					return;
-				}
-				const allowScroll = context.options[ 0 ] && context.options[ 0 ].allowScroll;
-				if ( allowScroll ) {
-					const arg = node.arguments[ 0 ];
-					// Check properties list has more than just scrollTop/scrollLeft
-					if ( arg && arg.type === 'ObjectExpression' ) {
-						if (
-							arg.properties.every(
-								( prop ) => prop.key.name === 'scrollTop' || prop.key.name === 'scrollLeft'
-							)
-						) {
-							return;
-						}
+			) {
+				return;
+			}
+			const allowScroll = context.options[ 0 ] && context.options[ 0 ].allowScroll;
+			if ( allowScroll ) {
+				const arg = node.arguments[ 0 ];
+				// Check properties list has more than just scrollTop/scrollLeft
+				if ( arg && arg.type === 'ObjectExpression' ) {
+					if (
+						arg.properties.every(
+							( prop ) => prop.key.name === 'scrollTop' || prop.key.name === 'scrollLeft'
+						)
+					) {
+						return;
 					}
 				}
-
-				if ( utils.isjQuery( context, node ) ) {
-					context.report( {
-						node: node,
-						message: allowScroll ?
-							'Prefer CSS transitions to .animate' :
-							'Prefer CSS transitions or CSS scroll-behaviour to .animate'
-					} );
-				}
 			}
-		};
-	}
+
+			if ( utils.isjQuery( context, node ) ) {
+				context.report( {
+					node: node,
+					message: allowScroll ?
+						'Prefer CSS transitions to .animate' :
+						'Prefer CSS transitions or CSS scroll-behaviour to .animate'
+				} );
+			}
+		}
+	} )
 };

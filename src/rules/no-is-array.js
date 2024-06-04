@@ -7,8 +7,6 @@ module.exports = utils.createUtilMethodRule(
 	'Prefer `Array.isArray` to `$.isArray`',
 	{
 		fixable: 'code',
-		fix: function ( node, context, fixer ) {
-			return fixer.replaceText( node.callee, 'Array.isArray' );
-		}
+		fix: ( node, context, fixer ) => fixer.replaceText( node.callee, 'Array.isArray' )
 	}
 );

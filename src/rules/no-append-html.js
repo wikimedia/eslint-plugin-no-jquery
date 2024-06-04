@@ -28,26 +28,24 @@ module.exports = {
 		schema: []
 	},
 
-	create: function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if ( !(
-					node.callee.type === 'MemberExpression' &&
+	create: ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if ( !(
+				node.callee.type === 'MemberExpression' &&
 					methods.includes( node.callee.property.name )
-				) ) {
-					return;
-				}
-				if ( node.arguments.every( ( arg ) => alljQueryOrEmpty( context, arg ) ) ) {
-					return;
-				}
-
-				if ( utils.isjQuery( context, node.callee ) ) {
-					context.report( {
-						node: node,
-						message: 'Avoid injection of possibly unescaped HTML. Create DOM elements instead, or use .text.'
-					} );
-				}
+			) ) {
+				return;
 			}
-		};
-	}
+			if ( node.arguments.every( ( arg ) => alljQueryOrEmpty( context, arg ) ) ) {
+				return;
+			}
+
+			if ( utils.isjQuery( context, node.callee ) ) {
+				context.report( {
+					node: node,
+					message: 'Avoid injection of possibly unescaped HTML. Create DOM elements instead, or use .text.'
+				} );
+			}
+		}
+	} )
 };

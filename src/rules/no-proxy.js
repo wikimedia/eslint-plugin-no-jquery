@@ -7,7 +7,7 @@ module.exports = utils.createUtilMethodRule(
 	'Prefer `Function#bind` to `$.proxy`',
 	{
 		fixable: 'code',
-		fix: function ( node, context, fixer ) {
+		fix: ( node, context, fixer ) => {
 			if (
 				node.arguments.length >= 2 &&
 				node.arguments[ 1 ].type !== 'Literal'

@@ -10,26 +10,26 @@ Disallows global ajax events handlers: [`.ajaxComplete`](https://api.jquery.com/
 
 ❌ Examples of **incorrect** code:
 ```js
-$( document ).on( 'ajaxSend', function ( e ) { } );
-$( document ).on( 'ajaxSuccess', function ( e ) { } );
-$form.on( 'ajaxError', function ( e ) { } );
-$form.on( 'ajaxComplete', function ( e ) { } );
-$form.on( 'ajaxStart', function ( e ) { } );
-$form.on( 'ajaxStop', function ( e ) { } );
-$( document ).ajaxSend( function ( e ) { } );
-$( document ).ajaxSuccess( function ( e ) { } );
-$form.ajaxError( function ( e ) { } );
-$form.ajaxComplete( function ( e ) { } );
-$form.ajaxStart( function ( e ) { } );
-$form.ajaxStop( function ( e ) { } );
+$( document ).on( 'ajaxSend', fn );
+$( document ).on( 'ajaxSuccess', fn );
+$form.on( 'ajaxError', fn );
+$form.on( 'ajaxComplete', fn );
+$form.on( 'ajaxStart', fn );
+$form.on( 'ajaxStop', fn );
+$( document ).ajaxSend( fn );
+$( document ).ajaxSuccess( fn );
+$form.ajaxError( fn );
+$form.ajaxComplete( fn );
+$form.ajaxStart( fn );
+$form.ajaxStop( fn );
 ```
 
 ✔️ Examples of **correct** code:
 ```js
-$( document ).on( 'click', function ( e ) { } );
-$form.on( 'submit', function ( e ) { } );
+$( document ).on( 'click', fn );
+$form.on( 'submit', fn );
 $form.on();
-on( 'ajaxSuccess', '.js-select-menu', function ( e ) { } );
+on( 'ajaxSuccess', '.js-select-menu', fn );
 form.on( 'ajaxSend' );
 form.ajaxSend();
 $.ajaxSend();

@@ -7,7 +7,7 @@ module.exports = utils.createCollectionMethodRule(
 	'Prefer `$()` to `.ready`',
 	{
 		fixable: 'code',
-		fix: function ( node, context, fixer ) {
+		fix: ( node, context, fixer ) => {
 			if ( node.parent.type === 'ExpressionStatement' ) {
 				return fixer.replaceText( node.callee, '$' );
 			}

@@ -46,7 +46,7 @@ const forbidden = [
 let valid = [];
 let invalid = [];
 
-forbidden.forEach( function ( method ) {
+forbidden.forEach( ( method ) => {
 	const error = 'Prefer .on or .trigger to .' + method;
 	valid = valid.concat(
 		{

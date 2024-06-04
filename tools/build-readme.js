@@ -5,9 +5,7 @@ const template = fs.readFileSync( 'README.md.template', { encoding: 'UTF8' } );
 const rulesWithConfig = require( 'eslint-docgen' ).rulesWithConfig;
 const pluginName = 'no-jquery';
 const docPath = 'docs/rules/{name}.md';
-const configRename = function ( config ) {
-	return config.replace( 'deprecated-', '' );
-};
+const configRename = ( config ) => config.replace( 'deprecated-', '' );
 
 function getRules( deprecated ) {
 	return Array.from( rulesWithConfig.keys() ).map( ( rule ) => {

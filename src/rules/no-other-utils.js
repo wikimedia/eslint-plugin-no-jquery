@@ -62,27 +62,25 @@ module.exports = {
 		schema: []
 	},
 
-	create: function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if ( node.callee.type !== 'MemberExpression' ) {
-					return;
-				}
-				const name = node.callee.property.name;
-				if (
-					!name ||
+	create: ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if ( node.callee.type !== 'MemberExpression' ) {
+				return;
+			}
+			const name = node.callee.property.name;
+			if (
+				!name ||
 					utilsWithRules.includes( name ) ||
 					!utils.isjQueryConstructor( context, node.callee.object.name )
-				) {
-					return;
-				}
-
-				context.report( {
-					node: node,
-					message: '$.{{name}} is not allowed',
-					data: { name: name }
-				} );
+			) {
+				return;
 			}
-		};
-	}
+
+			context.report( {
+				node: node,
+				message: '$.{{name}} is not allowed',
+				data: { name: name }
+			} );
+		}
+	} )
 };

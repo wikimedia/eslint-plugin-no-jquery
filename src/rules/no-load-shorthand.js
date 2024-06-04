@@ -12,28 +12,26 @@ module.exports = {
 		schema: []
 	},
 
-	create: function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if ( !(
-					node.callee.type === 'MemberExpression' &&
+	create: ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if ( !(
+				node.callee.type === 'MemberExpression' &&
 					!utils.isjQueryConstructor( context, node.callee.object.name ) &&
 					node.callee.property.name === 'load' && (
-						node.arguments.length === 0 ||
+					node.arguments.length === 0 ||
 						utils.isFunction( node.arguments[ 0 ] )
-					)
-				) ) {
-					return;
-				}
-
-				if ( utils.isjQuery( context, node.callee ) ) {
-					context.report( {
-						node: node,
-						message: 'Prefer .on or .trigger to .load',
-						fix: utils.eventShorthandFixer.bind( this, node, context )
-					} );
-				}
+				)
+			) ) {
+				return;
 			}
-		};
-	}
+
+			if ( utils.isjQuery( context, node.callee ) ) {
+				context.report( {
+					node: node,
+					message: 'Prefer .on or .trigger to .load',
+					fix: utils.eventShorthandFixer.bind( this, node, context )
+				} );
+			}
+		}
+	} )
 };

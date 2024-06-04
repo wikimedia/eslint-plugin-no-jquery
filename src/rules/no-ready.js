@@ -30,16 +30,14 @@ module.exports = {
 		schema: []
 	},
 
-	create: function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if ( isDirect( context, node ) || isChained( context, node ) ) {
-					context.report( {
-						node: node,
-						message: '.ready is not allowed'
-					} );
-				}
+	create: ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if ( isDirect( context, node ) || isChained( context, node ) ) {
+				context.report( {
+					node: node,
+					message: '.ready is not allowed'
+				} );
 			}
-		};
-	}
+		}
+	} )
 };
