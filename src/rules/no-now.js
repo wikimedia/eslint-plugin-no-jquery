@@ -7,8 +7,6 @@ module.exports = utils.createUtilMethodRule(
 	'Prefer `Date.now` to `$.now`',
 	{
 		fixable: 'code',
-		fix: function ( node, context, fixer ) {
-			return fixer.replaceText( node.callee, 'Date.now' );
-		}
+		fix: ( node, context, fixer ) => fixer.replaceText( node.callee, 'Date.now' )
 	}
 );

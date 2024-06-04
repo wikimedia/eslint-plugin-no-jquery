@@ -11,35 +11,33 @@ module.exports = {
 		schema: []
 	},
 
-	create: function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if ( node.callee.type === 'MemberExpression' ) {
-					if ( !(
-						node.callee.property.name === 'add' &&
+	create: ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if ( node.callee.type === 'MemberExpression' ) {
+				if ( !(
+					node.callee.property.name === 'add' &&
 						utils.isjQuery( context, node.callee ) &&
 						node.arguments[ 1 ] &&
 						node.arguments[ 1 ].type === 'ObjectExpression'
-					) ) {
-						return;
-					}
-				} else if ( node.callee.type === 'Identifier' ) {
-					if ( !(
-						utils.isjQueryConstructor( context, node.callee.name ) &&
-						node.arguments[ 1 ] &&
-						node.arguments[ 1 ].type === 'ObjectExpression'
-					) ) {
-						return;
-					}
-				} else {
+				) ) {
 					return;
 				}
-
-				context.report( {
-					node: node,
-					message: 'Prefer .attr to constructor attributes'
-				} );
+			} else if ( node.callee.type === 'Identifier' ) {
+				if ( !(
+					utils.isjQueryConstructor( context, node.callee.name ) &&
+						node.arguments[ 1 ] &&
+						node.arguments[ 1 ].type === 'ObjectExpression'
+				) ) {
+					return;
+				}
+			} else {
+				return;
 			}
-		};
-	}
+
+			context.report( {
+				node: node,
+				message: 'Prefer .attr to constructor attributes'
+			} );
+		}
+	} )
 };

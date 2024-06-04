@@ -56,89 +56,82 @@ module.exports = {
 		]
 	},
 
-	create: function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				let allowSingle,
-					message = 'Prefer DOM building to parsing HTML literals';
+	create: ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			let allowSingle,
+				message = 'Prefer DOM building to parsing HTML literals';
 
-				if ( node.callee.type === 'Identifier' ) {
-					if ( !(
-						utils.isjQueryConstructor( context, node.callee.name ) &&
+			if ( node.callee.type === 'Identifier' ) {
+				if ( !(
+					utils.isjQueryConstructor( context, node.callee.name ) &&
 						node.arguments[ 0 ] &&
 						(
 							node.arguments[ 0 ].type === 'Literal' ||
 							node.arguments[ 0 ].type === 'BinaryExpression'
 						)
-					) ) {
-						return;
-					}
-					allowSingle = true;
-				} else if ( node.callee.type === 'MemberExpression' ) {
-					if (
-						utils.isjQueryConstructor( context, node.callee.object.name ) &&
+				) ) {
+					return;
+				}
+				allowSingle = true;
+			} else if ( node.callee.type === 'MemberExpression' ) {
+				if (
+					utils.isjQueryConstructor( context, node.callee.object.name ) &&
 						node.callee.property.name === 'parseHTML'
-					) {
-						allowSingle = false;
-					} else if (
-						[ 'html', 'append', 'add' ].includes( node.callee.property.name ) &&
+				) {
+					allowSingle = false;
+				} else if (
+					[ 'html', 'append', 'add' ].includes( node.callee.property.name ) &&
 						utils.isjQuery( context, node )
-					) {
-						allowSingle = true;
-					} else {
-						return;
-					}
+				) {
+					allowSingle = true;
 				} else {
 					return;
 				}
+			} else {
+				return;
+			}
 
-				let expectedTag;
-				const arg = node.arguments[ 0 ];
-				if ( allowSingle ) {
-					const value = arg && allLiteral( arg ) && joinLiterals( arg );
-					if ( !( typeof value === 'string' && value ) || !rquickExpr.exec( value ) ) {
-						// Empty or non-string, or non-HTML
-						return;
-					}
-					let match;
-					if ( ( match = rsingleTag.exec( value ) ) ) {
-						// Single tag
-						const singleTagStyle = ( context.options[ 0 ] && context.options[ 0 ].singleTagStyle ) || 'minimal';
-						if ( singleTagStyle === 'minimal' ) {
-							if ( !rsingleTagMinimal.exec( value ) ) {
-								expectedTag = '<' + match[ 1 ] + '>';
-								message = 'Single tag must use the format: ' + expectedTag;
-							} else {
-								return;
-							}
-						} else if ( singleTagStyle === 'self-closing' ) {
-							if ( !rsingleTagSelfClosing.exec( value ) ) {
-								expectedTag = '<' + match[ 1 ] + '/>';
-								message = 'Single tag must use the format: ' + expectedTag;
-							} else {
-								return;
-							}
-						} else {
-							// singleTagStyle === 'any'
-							return;
-						}
-					}
-				} else if ( !( arg && allLiteral( arg ) ) ) {
-					// Non literals passed to $.parseHTML
+			let expectedTag;
+			const arg = node.arguments[ 0 ];
+			if ( allowSingle ) {
+				const value = arg && allLiteral( arg ) && joinLiterals( arg );
+				if ( !( typeof value === 'string' && value ) || !rquickExpr.exec( value ) ) {
+					// Empty or non-string, or non-HTML
 					return;
 				}
-
-				context.report( {
-					node: node,
-					message: message,
-					fix: function ( fixer ) {
-						if ( expectedTag ) {
-							return fixer.replaceText( arg, '"' + expectedTag + '"' );
+				let match;
+				if ( ( match = rsingleTag.exec( value ) ) ) {
+					// Single tag
+					const singleTagStyle = ( context.options[ 0 ] && context.options[ 0 ].singleTagStyle ) || 'minimal';
+					if ( singleTagStyle === 'minimal' ) {
+						if ( !rsingleTagMinimal.exec( value ) ) {
+							expectedTag = '<' + match[ 1 ] + '>';
+							message = 'Single tag must use the format: ' + expectedTag;
+						} else {
+							return;
 						}
-						return null;
+					} else if ( singleTagStyle === 'self-closing' ) {
+						if ( !rsingleTagSelfClosing.exec( value ) ) {
+							expectedTag = '<' + match[ 1 ] + '/>';
+							message = 'Single tag must use the format: ' + expectedTag;
+						} else {
+							return;
+						}
+					} else {
+						// singleTagStyle === 'any'
+						return;
 					}
-				} );
+				}
+			} else if ( !( arg && allLiteral( arg ) ) ) {
+				// Non literals passed to $.parseHTML
+				return;
 			}
-		};
-	}
+
+			context.report( {
+				node: node,
+				message: message,
+				fix: ( fixer ) => expectedTag ? fixer.replaceText( arg, '"' + expectedTag + '"' ) : null
+			} );
+		}
+	} )
 };

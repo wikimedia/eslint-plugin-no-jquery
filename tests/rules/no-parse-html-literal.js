@@ -80,23 +80,19 @@ ruleTester.run( 'no-parse-html-literal', rule, {
 		'$div.append',
 		'$div.add',
 		'$.parseHTML'
-	].reduce( function ( acc, method ) {
-		return acc.concat(
-			[
-				// Strings
-				'"<div>contents</div>"',
-				'"<div attr=val>"',
-				'"<div attr=val />"',
-				'"<div>" + "content" + "</div>"'
-			].map( function ( string, i ) {
-				return {
-					code: method + '(' + string + ')',
-					errors: [ error ],
-					docgen: i === 0 || method === '$'
-				};
-			} )
-		);
-	}, [] ).concat( [
+	].reduce( ( acc, method ) => acc.concat(
+		[
+			// Strings
+			'"<div>contents</div>"',
+			'"<div attr=val>"',
+			'"<div attr=val />"',
+			'"<div>" + "content" + "</div>"'
+		].map( ( string, i ) => ( {
+			code: method + '(' + string + ')',
+			errors: [ error ],
+			docgen: i === 0 || method === '$'
+		} ) )
+	), [] ).concat( [
 		// In addition, don't even use $.parseHTML for single tags
 		{
 			code: '$.parseHTML("<div>")',

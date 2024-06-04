@@ -336,38 +336,36 @@ function createCollectionMethodRule( methods, message, options ) {
 			'* `"set"` the method can only be used as a setter i.e. with arguments';
 	}
 
-	return createRule( function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if ( node.callee.type !== 'MemberExpression' ) {
-					return;
-				}
-				const name = node.callee.property.name;
-				if (
-					!methods.includes( name ) ||
-					isjQueryConstructor( context, node.callee.object.name )
-				) {
-					return;
-				}
-				const allowGetOrSet = ( context.options[ 0 ] && context.options[ 0 ].allowGetOrSet ) || 'none';
-				// TODO: nonCollectionReturningValueAccessors have 1 argument in getter mode
-				if (
-					( allowGetOrSet === 'get' && !node.arguments.length ) ||
-					( allowGetOrSet === 'set' && node.arguments.length )
-				) {
-					return;
-				}
-
-				if ( isjQuery( context, node.callee ) ) {
-					context.report( {
-						node: node,
-						message: messageToPlainString( message, node, name, options ),
-						fix: options.fix && options.fix.bind( this, node, context )
-					} );
-				}
+	return createRule( ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if ( node.callee.type !== 'MemberExpression' ) {
+				return;
 			}
-		};
-	}, description, options.fixable, options.deprecated, schema );
+			const name = node.callee.property.name;
+			if (
+				!methods.includes( name ) ||
+					isjQueryConstructor( context, node.callee.object.name )
+			) {
+				return;
+			}
+			const allowGetOrSet = ( context.options[ 0 ] && context.options[ 0 ].allowGetOrSet ) || 'none';
+			// TODO: nonCollectionReturningValueAccessors have 1 argument in getter mode
+			if (
+				( allowGetOrSet === 'get' && !node.arguments.length ) ||
+					( allowGetOrSet === 'set' && node.arguments.length )
+			) {
+				return;
+			}
+
+			if ( isjQuery( context, node.callee ) ) {
+				context.report( {
+					node: node,
+					message: messageToPlainString( message, node, name, options ),
+					fix: options.fix && options.fix.bind( this, node, context )
+				} );
+			}
+		}
+	} ), description, options.fixable, options.deprecated, schema );
 }
 
 /**
@@ -387,26 +385,24 @@ function createCollectionPropertyRule( property, message, options ) {
 
 	description += messageSuffix( message );
 
-	return createRule( function ( context ) {
-		return {
-			'MemberExpression:exit': function ( node ) {
-				const name = node.property.name;
-				if (
-					name !== property ||
+	return createRule( ( context ) => ( {
+		'MemberExpression:exit': ( node ) => {
+			const name = node.property.name;
+			if (
+				name !== property ||
 					node.parent.callee === node
-				) {
-					return;
-				}
-				if ( isjQuery( context, node.object ) ) {
-					context.report( {
-						node: node,
-						message: messageToPlainString( message, node, name, options ),
-						fix: options.fix && options.fix.bind( this, node, context )
-					} );
-				}
+			) {
+				return;
 			}
-		};
-	}, description, options.fixable, options.deprecated );
+			if ( isjQuery( context, node.object ) ) {
+				context.report( {
+					node: node,
+					message: messageToPlainString( message, node, name, options ),
+					fix: options.fix && options.fix.bind( this, node, context )
+				} );
+			}
+		}
+	} ), description, options.fixable, options.deprecated );
 }
 
 /**
@@ -429,28 +425,26 @@ function createUtilMethodRule( methods, message, options ) {
 
 	description += messageSuffix( message );
 
-	return createRule( function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if ( node.callee.type !== 'MemberExpression' ) {
-					return;
-				}
-				const name = node.callee.property.name;
-				if (
-					!methods.includes( name ) ||
-					!isjQueryConstructor( context, node.callee.object.name )
-				) {
-					return;
-				}
-
-				context.report( {
-					node: node,
-					message: messageToPlainString( message, node, name, options ),
-					fix: options.fix && options.fix.bind( this, node, context )
-				} );
+	return createRule( ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if ( node.callee.type !== 'MemberExpression' ) {
+				return;
 			}
-		};
-	}, description, options.fixable, options.deprecated );
+			const name = node.callee.property.name;
+			if (
+				!methods.includes( name ) ||
+					!isjQueryConstructor( context, node.callee.object.name )
+			) {
+				return;
+			}
+
+			context.report( {
+				node: node,
+				message: messageToPlainString( message, node, name, options ),
+				fix: options.fix && options.fix.bind( this, node, context )
+			} );
+		}
+	} ), description, options.fixable, options.deprecated );
 }
 
 /**
@@ -470,25 +464,23 @@ function createUtilPropertyRule( property, message, options ) {
 
 	description += messageSuffix( message );
 
-	return createRule( function ( context ) {
-		return {
-			'MemberExpression:exit': function ( node ) {
-				if ( !isjQueryConstructor( context, node.object.name ) ) {
-					return;
-				}
-				const name = node.property.name;
-				if ( name !== property ) {
-					return;
-				}
-
-				context.report( {
-					node: node,
-					message: messageToPlainString( message, node, name, options ),
-					fix: options.fix && options.fix.bind( this, node, context )
-				} );
+	return createRule( ( context ) => ( {
+		'MemberExpression:exit': ( node ) => {
+			if ( !isjQueryConstructor( context, node.object.name ) ) {
+				return;
 			}
-		};
-	}, description, options.fixable, options.deprecated );
+			const name = node.property.name;
+			if ( name !== property ) {
+				return;
+			}
+
+			context.report( {
+				node: node,
+				message: messageToPlainString( message, node, name, options ),
+				fix: options.fix && options.fix.bind( this, node, context )
+			} );
+		}
+	} ), description, options.fixable, options.deprecated );
 }
 
 /**
@@ -514,26 +506,24 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 
 	description += messageSuffix( message );
 
-	return createRule( function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if ( node.callee.type !== 'MemberExpression' ) {
-					return;
-				}
-				const name = node.callee.property.name;
-				if ( !methods.includes( name ) ) {
-					return;
-				}
-				if ( isjQuery( context, node.callee ) ) {
-					context.report( {
-						node: node,
-						message: messageToPlainString( message, node, name, options ),
-						fix: options.fix && options.fix.bind( this, node, context )
-					} );
-				}
+	return createRule( ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if ( node.callee.type !== 'MemberExpression' ) {
+				return;
 			}
-		};
-	}, description, options.fixable, options.deprecated );
+			const name = node.callee.property.name;
+			if ( !methods.includes( name ) ) {
+				return;
+			}
+			if ( isjQuery( context, node.callee ) ) {
+				context.report( {
+					node: node,
+					message: messageToPlainString( message, node, name, options ),
+					fix: options.fix && options.fix.bind( this, node, context )
+				} );
+			}
+		}
+	} ), description, options.fixable, options.deprecated );
 }
 
 function eventShorthandFixer( node, context, fixer ) {

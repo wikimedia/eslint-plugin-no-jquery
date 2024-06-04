@@ -7,7 +7,7 @@ module.exports = utils.createUtilMethodRule(
 	'Prefer `DOMParser#parseFromString` to `$.parseXML`',
 	{
 		fixable: 'code',
-		fix: function ( node, context, fixer ) {
+		fix: ( node, context, fixer ) => {
 			if ( node.arguments.length ) {
 				return [
 					fixer.replaceText( node.callee, '( new window.DOMParser() ).parseFromString' ),

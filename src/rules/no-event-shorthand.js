@@ -48,7 +48,7 @@ const rule = utils.createCollectionMethodRule(
 	].concat( ajaxEvents ),
 	( node ) => node === true ?
 		'Use the `allowAjaxEvents` option to allow `ajax*` methods. Prefer `.on` or `.trigger`' :
-		`Prefer .on or .trigger to .${node.callee.property.name}`,
+		`Prefer .on or .trigger to .${ node.callee.property.name }`,
 	{
 		fixable: 'code',
 		fix: utils.eventShorthandFixer
@@ -69,10 +69,10 @@ rule.meta.schema = [
 
 const parentCreate = rule.create;
 
-rule.create = function ( context ) {
+rule.create = ( context ) => {
 	const rules = parentCreate( context );
 	return {
-		'CallExpression:exit': function ( node ) {
+		'CallExpression:exit': ( node ) => {
 			if (
 				node.callee.type === 'MemberExpression' &&
 				context.options[ 0 ] && context.options[ 0 ].allowAjaxEvents

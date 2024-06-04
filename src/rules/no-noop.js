@@ -7,8 +7,6 @@ module.exports = utils.createUtilPropertyRule(
 	'Prefer `function(){}` to `$.noop`',
 	{
 		fixable: 'code',
-		fix: function ( node, context, fixer ) {
-			return fixer.replaceText( node, '(function(){})' );
-		}
+		fix: ( node, context, fixer ) => fixer.replaceText( node, '(function(){})' )
 	}
 );

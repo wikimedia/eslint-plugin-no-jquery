@@ -39,7 +39,7 @@ module.exports = {
 		]
 	},
 
-	create: function ( context ) {
+	create: ( context ) => {
 		const forbiddenPositional = /:eq|:even|:first([^-]|$)|:gt|:last([^-]|$)|:lt|:nth([^-]|$)|:odd/;
 		const forbiddenOther = /:animated|:button|:checkbox|:file|:has|:header|:hidden|:image|:input|:parent|:password|:radio|:reset|:selected|:submit|:text|:visible/;
 		const traversals = [
@@ -63,7 +63,7 @@ module.exports = {
 		];
 
 		return {
-			'CallExpression:exit': function ( node ) {
+			'CallExpression:exit': ( node ) => {
 				if (
 					!node.arguments[ 0 ] ||
 					!utils.isjQuery( context, node.callee ) ||

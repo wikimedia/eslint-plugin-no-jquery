@@ -7,8 +7,6 @@ module.exports = utils.createUtilMethodRule(
 	'Prefer `throw` to `$.error`',
 	{
 		fixable: 'code',
-		fix: function ( node, context, fixer ) {
-			return fixer.replaceText( node.callee, 'throw new Error' );
-		}
+		fix: ( node, context, fixer ) => fixer.replaceText( node.callee, 'throw new Error' )
 	}
 );

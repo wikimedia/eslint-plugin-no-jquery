@@ -10,61 +10,61 @@ function getErrors( method ) {
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-ajax-events', rule, {
 	valid: [
-		'$(document).on("click", function(e){ })',
-		'$form.on("submit", function(e){ })',
+		'$(document).on("click", fn)',
+		'$form.on("submit", fn)',
 		'$form.on()',
-		'on("ajaxSuccess", ".js-select-menu", function(e){ })',
+		'on("ajaxSuccess", ".js-select-menu", fn)',
 		'form.on("ajaxSend")',
 		'form.ajaxSend()',
 		'$.ajaxSend()'
 	],
 	invalid: [
 		{
-			code: '$(document).on("ajaxSend", function(e){ })',
+			code: '$(document).on("ajaxSend", fn)',
 			errors: getErrors( 'ajaxSend' )
 		},
 		{
-			code: '$(document).on("ajaxSuccess", function(e){ })',
+			code: '$(document).on("ajaxSuccess", fn)',
 			errors: getErrors( 'ajaxSuccess' )
 		},
 		{
-			code: '$form.on("ajaxError", function(e){ })',
+			code: '$form.on("ajaxError", fn)',
 			errors: getErrors( 'ajaxError' )
 		},
 		{
-			code: '$form.on("ajaxComplete", function(e){ })',
+			code: '$form.on("ajaxComplete", fn)',
 			errors: getErrors( 'ajaxComplete' )
 		},
 		{
-			code: '$form.on("ajaxStart", function(e){ })',
+			code: '$form.on("ajaxStart", fn)',
 			errors: getErrors( 'ajaxStart' )
 		},
 		{
-			code: '$form.on("ajaxStop", function(e){ })',
+			code: '$form.on("ajaxStop", fn)',
 			errors: getErrors( 'ajaxStop' )
 		},
 		{
-			code: '$(document).ajaxSend(function(e){ })',
+			code: '$(document).ajaxSend(fn)',
 			errors: getErrors( 'ajaxSend' )
 		},
 		{
-			code: '$(document).ajaxSuccess(function(e){ })',
+			code: '$(document).ajaxSuccess(fn)',
 			errors: getErrors( 'ajaxSuccess' )
 		},
 		{
-			code: '$form.ajaxError(function(e){ })',
+			code: '$form.ajaxError(fn)',
 			errors: getErrors( 'ajaxError' )
 		},
 		{
-			code: '$form.ajaxComplete(function(e){ })',
+			code: '$form.ajaxComplete(fn)',
 			errors: getErrors( 'ajaxComplete' )
 		},
 		{
-			code: '$form.ajaxStart(function(e){ })',
+			code: '$form.ajaxStart(fn)',
 			errors: getErrors( 'ajaxStart' )
 		},
 		{
-			code: '$form.ajaxStop(function(e){ })',
+			code: '$form.ajaxStop(fn)',
 			errors: getErrors( 'ajaxStop' )
 		}
 	]

@@ -11,7 +11,7 @@ module.exports = {
 		schema: []
 	},
 
-	create: function ( context ) {
+	create: ( context ) => {
 		function test( node, left, right ) {
 			if (
 				!utils.isjQuery( context, left ) &&
@@ -29,10 +29,10 @@ module.exports = {
 		}
 
 		return {
-			'AssignmentExpression:exit': function ( node ) {
+			'AssignmentExpression:exit': ( node ) => {
 				test( node, node.left, node.right );
 			},
-			'VariableDeclarator:exit': function ( node ) {
+			'VariableDeclarator:exit': ( node ) => {
 				test( node, node.id, node.init );
 			}
 		};

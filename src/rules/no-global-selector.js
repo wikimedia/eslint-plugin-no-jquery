@@ -28,61 +28,59 @@ module.exports = {
 		]
 	},
 
-	create: function ( context ) {
-		return {
-			'CallExpression:exit': function ( node ) {
-				if (
-					node.callee.type !== 'Identifier' ||
+	create: ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if (
+				node.callee.type !== 'Identifier' ||
 					!utils.isjQueryConstructor( context, node.callee.name ) ||
 					!node.arguments[ 0 ] ||
 					node.arguments[ 0 ].type !== 'Literal'
-				) {
-					return;
-				}
-				const value = node.arguments[ 0 ].value;
-				const allowIds = context.options[ 0 ] && context.options[ 0 ].allowIds;
-				if (
-					typeof value !== 'string' ||
+			) {
+				return;
+			}
+			const value = node.arguments[ 0 ].value;
+			const allowIds = context.options[ 0 ] && context.options[ 0 ].allowIds;
+			if (
+				typeof value !== 'string' ||
 					!value ||
 					value === '#' ||
 					( allowIds && idPattern.test( value.trim() ) )
-				) {
-					return;
-				}
+			) {
+				return;
+			}
 
-				// Simple HTML check (copied from jQuery)
-				if (
-					value[ 0 ] === '<' &&
+			// Simple HTML check (copied from jQuery)
+			if (
+				value[ 0 ] === '<' &&
 					value[ value.length - 1 ] === '>' &&
 					value.length >= 3
-				) {
-					return;
-				}
-				if ( rquickExpr.exec( value ) ) {
-					return;
-				}
+			) {
+				return;
+			}
+			if ( rquickExpr.exec( value ) ) {
+				return;
+			}
 
-				const selectorContext = node.arguments[ 1 ];
-				if ( selectorContext ) {
-					if (
-						selectorContext.type !== 'Literal' &&
+			const selectorContext = node.arguments[ 1 ];
+			if ( selectorContext ) {
+				if (
+					selectorContext.type !== 'Literal' &&
 						!(
 							selectorContext.type === 'Identifier' &&
 							selectorContext.name === 'undefined'
 						)
-					) {
-						return;
-					}
-					if ( selectorContext.value === '#' ) {
-						return;
-					}
+				) {
+					return;
 				}
-
-				context.report( {
-					node: node,
-					message: 'Avoid queries which search the entire DOM. Keep DOM nodes in memory where possible.'
-				} );
+				if ( selectorContext.value === '#' ) {
+					return;
+				}
 			}
-		};
-	}
+
+			context.report( {
+				node: node,
+				message: 'Avoid queries which search the entire DOM. Keep DOM nodes in memory where possible.'
+			} );
+		}
+	} )
 };
