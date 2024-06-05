@@ -77,9 +77,9 @@ module.exports = {
 			}
 
 			context.report( {
-				node: node,
+				node,
 				message: '$.{{name}} is not allowed',
-				data: { name: name }
+				data: { name }
 			} );
 		}
 	} )

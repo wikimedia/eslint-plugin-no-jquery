@@ -22,7 +22,7 @@ module.exports = {
 			}
 
 			context.report( {
-				node: node,
+				node,
 				message: 'Prefer Promise to $.Deferred'
 			} );
 		}

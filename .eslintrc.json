@@ -17,6 +17,7 @@
 		"eslint-plugin/require-meta-docs-url": "off",
 		"eslint-plugin/test-case-property-ordering": [ "error",
 			[ "code", "options", "parserOptions", "settings", "errors", "output" ]
-		]
+		],
+		"object-shorthand": [ "error", "properties" ]
 	}
 }

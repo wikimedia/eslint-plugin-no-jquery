@@ -203,14 +203,14 @@ function createRule( create, description, fixable, deprecated, schema ) {
 		meta: {
 			type: 'suggestion',
 			docs: {
-				description: description,
+				description,
 				deprecated: !!deprecated,
 				replacedBy: Array.isArray( deprecated ) ? deprecated : undefined
 			},
-			fixable: fixable,
+			fixable,
 			schema: schema || []
 		},
-		create: create
+		create
 	};
 }
 
@@ -359,7 +359,7 @@ function createCollectionMethodRule( methods, message, options ) {
 
 			if ( isjQuery( context, node.callee ) ) {
 				context.report( {
-					node: node,
+					node,
 					message: messageToPlainString( message, node, name, options ),
 					fix: options.fix && options.fix.bind( this, node, context )
 				} );
@@ -396,7 +396,7 @@ function createCollectionPropertyRule( property, message, options ) {
 			}
 			if ( isjQuery( context, node.object ) ) {
 				context.report( {
-					node: node,
+					node,
 					message: messageToPlainString( message, node, name, options ),
 					fix: options.fix && options.fix.bind( this, node, context )
 				} );
@@ -439,7 +439,7 @@ function createUtilMethodRule( methods, message, options ) {
 			}
 
 			context.report( {
-				node: node,
+				node,
 				message: messageToPlainString( message, node, name, options ),
 				fix: options.fix && options.fix.bind( this, node, context )
 			} );
@@ -475,7 +475,7 @@ function createUtilPropertyRule( property, message, options ) {
 			}
 
 			context.report( {
-				node: node,
+				node,
 				message: messageToPlainString( message, node, name, options ),
 				fix: options.fix && options.fix.bind( this, node, context )
 			} );
@@ -517,7 +517,7 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 			}
 			if ( isjQuery( context, node.callee ) ) {
 				context.report( {
-					node: node,
+					node,
 					message: messageToPlainString( message, node, name, options ),
 					fix: options.fix && options.fix.bind( this, node, context )
 				} );
@@ -542,15 +542,15 @@ function eventShorthandFixer( node, context, fixer ) {
 }
 
 module.exports = {
-	isjQuery: isjQuery,
-	isjQueryConstructor: isjQueryConstructor,
-	isFunction: isFunction,
-	createCollectionMethodRule: createCollectionMethodRule,
-	createCollectionPropertyRule: createCollectionPropertyRule,
-	createUtilMethodRule: createUtilMethodRule,
-	createUtilPropertyRule: createUtilPropertyRule,
-	createCollectionOrUtilMethodRule: createCollectionOrUtilMethodRule,
-	eventShorthandFixer: eventShorthandFixer,
-	jQueryCollectionLink: jQueryCollectionLink,
-	jQueryGlobalLink: jQueryGlobalLink
+	isjQuery,
+	isjQueryConstructor,
+	isFunction,
+	createCollectionMethodRule,
+	createCollectionPropertyRule,
+	createUtilMethodRule,
+	createUtilPropertyRule,
+	createCollectionOrUtilMethodRule,
+	eventShorthandFixer,
+	jQueryCollectionLink,
+	jQueryGlobalLink
 };

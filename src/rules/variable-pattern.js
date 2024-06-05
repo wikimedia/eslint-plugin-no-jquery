@@ -22,7 +22,7 @@ module.exports = {
 				right && utils.isjQuery( context, right )
 			) {
 				context.report( {
-					node: node,
+					node,
 					message: 'jQuery collection names must match the variablePattern'
 				} );
 			}

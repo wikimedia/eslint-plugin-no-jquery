@@ -27,7 +27,7 @@ module.exports = {
 
 			if ( utils.isjQuery( context, node.callee ) ) {
 				context.report( {
-					node: node,
+					node,
 					message: 'Prefer .on or .trigger to .load',
 					fix: utils.eventShorthandFixer.bind( this, node, context )
 				} );

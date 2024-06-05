@@ -41,7 +41,7 @@ module.exports = {
 			}
 
 			context.report( {
-				node: node,
+				node,
 				message: 'Prefer Object.assign or the spread operator to $.extend',
 				fix: function ( fixer ) {
 					if ( !isDeep ) {

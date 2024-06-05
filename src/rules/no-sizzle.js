@@ -83,12 +83,12 @@ module.exports = {
 
 				if ( !allowPositional && forbiddenPositional.test( value ) ) {
 					context.report( {
-						node: node,
+						node,
 						message: 'Positional selector extensions are not allowed'
 					} );
 				} else if ( !allowOther && forbiddenOther.test( value ) ) {
 					context.report( {
-						node: node,
+						node,
 						message: 'Selector extensions are not allowed'
 					} );
 				}

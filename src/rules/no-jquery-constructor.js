@@ -21,7 +21,7 @@ module.exports = {
 			}
 
 			context.report( {
-				node: node,
+				node,
 				message: 'The jQuery constructor is not allowed'
 			} );
 		}

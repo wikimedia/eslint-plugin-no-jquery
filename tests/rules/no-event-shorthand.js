@@ -121,5 +121,5 @@ ruleTester.run( 'no-event-shorthand', rule, {
 			options: [ { allowAjaxEvents: true } ]
 		} ) )
 	),
-	invalid: invalid
+	invalid
 } );
