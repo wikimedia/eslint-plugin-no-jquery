@@ -18,9 +18,6 @@
 		"eslint-plugin/test-case-property-ordering": [ "error",
 			[ "code", "options", "parserOptions", "settings", "errors", "output" ]
 		],
-		"prefer-arrow-callback": "error",
-		"implicit-arrow-linebreak": "error",
-		"arrow-body-style": "error",
 		"object-shorthand": [ "error", "properties" ]
 	}
 }
