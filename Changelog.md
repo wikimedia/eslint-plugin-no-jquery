@@ -1,21 +1,39 @@
 # eslint-plugin-no-jquery release history
 
+## v3.0.0
+* [BREAKING CHANGE] Drop Node 10, 12, 14, & 16 support (Ed Sanders, James D. Forrester)
+* [BREAKING CHANGE] Raise eslint requirement to 8+ (James D. Forrester)
+
+—
+* New config: `deprecated-3.7` for new jQuery release (Ed Sanders)
+
+—
+* Rule fix: `no-append-html`; check appendTo/prependTo (Ed Sanders)
+* Rule fix: `no-append-html`; catch .add(html) (Anders Kaseorg)
+* Rule fix: `no-sizzle`; allow 'nth-child' selector (Ed Sanders)
+* Rule fix: Add fixer for `no-extend` (Ed Sanders)
+
+—
+* Code: Use object shorthand for properties (Ed Sanders)
+* Code: Fix comment syntax in build-all-methods.js (Ed Sanders)
+* Release: Update devDependencies (Ed Sanders, James D. Forrester)
+
 ## v2.7.0
-* New rule: `no-append-html` (#284) (Ed Sanders)
+* New rule: `no-append-html` (Ed Sanders)
 * New config: Allow rules to disable get/set separately, starting with no-html (Ed Sanders)
 * Deprecated rule: `no-submit`; use `no-event-shorthand` (Ed Sanders)
 
 —
 * Code: Sort ajax events consistently and alphabetically. (Ed Sanders)
-* Code: utils.isjQuery: Improve `Identifier` detection (#283) (Ed Sanders)
+* Code: utils.isjQuery: Improve `Identifier` detection (Ed Sanders)
 
 —
-* Docs: Update eslint-docgen to 0.5.1 (#290) (Ed Sanders)
-* Docs: Show which rules have options, and which are fixable in README (#289) (Ed Sanders)
-* Docs: Fix test links (#280) (Ed Sanders)
+* Docs: Update eslint-docgen to 0.5.1 (Ed Sanders)
+* Docs: Show which rules have options, and which are fixable in README (Ed Sanders)
+* Docs: Fix test links (Ed Sanders)
 
 —
-* Release: Update devDependencies (#278) (Ed Sanders)
+* Release: Update devDependencies (Ed Sanders)
 
 ## v2.6.0
 * New rule: `no-escape-selector` for `$.escapeSelector` util (Ed Sanders)
@@ -32,7 +50,7 @@
 —
 * Code: Add real arguments to `no-parse-html` tests (Ed Sanders)
 * Code: codecov.yaml: Remove extra linebreak (Ed Sanders)
-* Release: Update devDependencies (#266) (Ed Sanders)
+* Release: Update devDependencies (Ed Sanders)
 
 
 ## v2.5.0
