@@ -1,5 +1,21 @@
 # eslint-plugin-no-jquery release history
 
+## v3.0.0
+* New config: `deprecated-3.7` for new jQuery release (#300) (Ed Sanders)
+
+—
+* Rule fix: `no-append-html`; check appendTo/prependTo (#310) (Ed Sanders)
+* Rule fix: `no-append-html`; catch .add(html) (Anders Kaseorg)
+* Rule fix: `no-sizzle`; allow 'nth-child' selector (#297) (Ed Sanders)
+* Rule fix: Add fixer for `no-extend` (#313) (Ed Sanders)
+
+—
+* Code: Use object shorthand for properties (#315) (Ed Sanders)
+* Code: Raise eslint requirement to 8+ (James D. Forrester)
+* Code: Drop Node 10, 12, 14 & 16 support (Ed Sanders, James D. Forrester)
+* Code: Fix comment syntax in build-all-methods.js (#304)(Ed Sanders)
+* Release: Update devDependencies (Ed Sanders, James D. Forrester)
+
 ## v2.7.0
 * New rule: `no-append-html` (#284) (Ed Sanders)
 * New config: Allow rules to disable get/set separately, starting with no-html (Ed Sanders)
