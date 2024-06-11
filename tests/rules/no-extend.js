@@ -14,7 +14,8 @@ ruleTester.run( 'no-extend', rule, {
 		{
 			code: '$.extend(true, {}, foo)',
 			options: [ { allowDeep: true } ]
-		}
+		},
+		'$.extend({myUtil:fn})'
 	],
 	invalid: [
 		{

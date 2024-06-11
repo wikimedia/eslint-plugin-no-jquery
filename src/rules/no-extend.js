@@ -30,8 +30,12 @@ module.exports = {
 			const name = node.callee.property.name;
 			if (
 				name !== 'extend' ||
-					!utils.isjQueryConstructor( context, node.callee.object.name )
+				!utils.isjQueryConstructor( context, node.callee.object.name )
 			) {
+				return;
+			}
+			if ( node.arguments.length === 1 ) {
+				// $.extend with one argument merges the object onto the jQuery namespace
 				return;
 			}
 			const allowDeep = context.options[ 0 ] && context.options[ 0 ].allowDeep;

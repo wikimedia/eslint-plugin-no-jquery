@@ -21,6 +21,7 @@ $.extend( true, {}, foo );
 extend();
 myMethod.extend();
 myMethod.extend;
+$.extend( { myUtil: fn } );
 ```
 
 ❌ Examples of **incorrect** code with `[{"allowDeep":true}]` options:
