@@ -57,7 +57,8 @@ module.exports = {
 	meta: {
 		type: 'suggestion',
 		docs: {
-			description: 'Disallows all utilities not covered by more specific rules.'
+			description: 'Disallows all utilities not covered by more specific rules.',
+			recommended: false
 		},
 		schema: []
 	},

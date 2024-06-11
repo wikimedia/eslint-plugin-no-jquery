@@ -8,7 +8,8 @@ module.exports = {
 		docs: {
 			description:
 				'Disallows the ' + utils.jQueryCollectionLink( 'animate' ) +
-				' method. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.'
+				' method. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.',
+			recommended: true
 		},
 		schema: [
 			{

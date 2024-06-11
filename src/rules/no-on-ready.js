@@ -6,7 +6,8 @@ module.exports = {
 	meta: {
 		type: 'suggestion',
 		docs: {
-			description: 'Disallows using the ready event on the document.'
+			description: 'Disallows using the ready event on the document.',
+			recommended: true
 		},
 		fixable: 'code',
 		schema: []

@@ -40,7 +40,8 @@ module.exports = {
 				'The format of single tags can be specified using the `singleTagStyle` option:\n' +
 				'* `"minimal"` (default) no whitespace or self-closing i.e. `<div>`\n' +
 				'* `"self-closing"` no whitespace and self-closing i.e. `<div/>`\n' +
-				'* `"any"` no style enforced'
+				'* `"any"` no style enforced',
+			recommended: true
 		},
 		fixable: 'code',
 		schema: [
