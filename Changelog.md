@@ -1,5 +1,8 @@
 # eslint-plugin-no-jquery release history
 
+## v3.0.1
+* Rule fix: Fix fixer for `no-extend` to ignore single argument mode (Ed Sanders)
+
 ## v3.0.0
 * [BREAKING CHANGE] Drop Node 10, 12, 14, & 16 support (Ed Sanders, James D. Forrester)
 * [BREAKING CHANGE] Raise eslint requirement to 8+ (James D. Forrester)
