@@ -541,6 +541,27 @@ function eventShorthandFixer( node, context, fixer ) {
 	}
 }
 
+function allLiteral( node ) {
+	if ( node.type === 'BinaryExpression' ) {
+		return allLiteral( node.left ) && allLiteral( node.right );
+	} else {
+		return node.type === 'Literal';
+	}
+}
+
+function joinLiterals( node ) {
+	if ( node.type === 'BinaryExpression' ) {
+		return joinLiterals( node.left ) + joinLiterals( node.right );
+	} else if ( node.type === 'Literal' ) {
+		return node.value;
+	} else if ( node.type === 'Identifier' ) {
+		// Dummy value for regex matching
+		return 'A0';
+	} else {
+		return '';
+	}
+}
+
 module.exports = {
 	isjQuery,
 	isjQueryConstructor,
@@ -552,5 +573,7 @@ module.exports = {
 	createCollectionOrUtilMethodRule,
 	eventShorthandFixer,
 	jQueryCollectionLink,
-	jQueryGlobalLink
+	jQueryGlobalLink,
+	allLiteral,
+	joinLiterals
 };

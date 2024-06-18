@@ -2,19 +2,6 @@
 
 const utils = require( '../utils.js' );
 
-function collectLiterals( node ) {
-	if ( node.type === 'BinaryExpression' ) {
-		return collectLiterals( node.left ) + collectLiterals( node.right );
-	} else if ( node.type === 'Literal' ) {
-		return node.value;
-	} else if ( node.type === 'Identifier' ) {
-		// Dummy value for regex matching
-		return 'A0';
-	} else {
-		return '';
-	}
-}
-
 module.exports = {
 	meta: {
 		type: 'suggestion',
@@ -79,7 +66,7 @@ module.exports = {
 					context.options[ 0 ].allowPositional;
 				const allowOther = context.options[ 0 ] &&
 					context.options[ 0 ].allowOther;
-				const value = collectLiterals( node.arguments[ 0 ] );
+				const value = utils.joinLiterals( node.arguments[ 0 ] );
 
 				if ( !allowPositional && forbiddenPositional.test( value ) ) {
 					context.report( {
