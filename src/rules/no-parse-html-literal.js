@@ -9,26 +9,6 @@ const rsingleTag = /^<([a-z][^/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)
 const rsingleTagMinimal = /^<([a-z][^/\0>:\x20\t\r\n\f]*)>$/i;
 const rsingleTagSelfClosing = /^<([a-z][^/\0>:\x20\t\r\n\f]*)\/>$/i;
 
-function allLiteral( node ) {
-	if ( node.type === 'BinaryExpression' ) {
-		return allLiteral( node.left ) && allLiteral( node.right );
-	} else {
-		return node.type === 'Literal';
-	}
-}
-
-function joinLiterals( node ) {
-	if ( node.type === 'BinaryExpression' ) {
-		return joinLiterals( node.left ) + joinLiterals( node.right );
-	}
-	/* istanbul ignore else */
-	if ( node.type === 'Literal' ) {
-		return node.value;
-	}
-	/* istanbul ignore next */
-	throw new Error( 'Non-literal node passed to joinLiteral' );
-}
-
 module.exports = {
 	meta: {
 		type: 'suggestion',
@@ -94,7 +74,7 @@ module.exports = {
 			let expectedTag;
 			const arg = node.arguments[ 0 ];
 			if ( allowSingle ) {
-				const value = arg && allLiteral( arg ) && joinLiterals( arg );
+				const value = arg && utils.allLiteral( arg ) && utils.joinLiterals( arg );
 				if ( !( typeof value === 'string' && value ) || !rquickExpr.exec( value ) ) {
 					// Empty or non-string, or non-HTML
 					return;
@@ -122,7 +102,7 @@ module.exports = {
 						return;
 					}
 				}
-			} else if ( !( arg && allLiteral( arg ) ) ) {
+			} else if ( !( arg && utils.allLiteral( arg ) ) ) {
 				// Non literals passed to $.parseHTML
 				return;
 			}
