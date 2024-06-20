@@ -1,7 +1,11 @@
 'use strict';
 
 const utils = require( '../utils.js' );
-const methods = [ 'append', 'prepend', 'before', 'after', 'replaceWith', 'add', 'appendTo', 'prependTo' ];
+// htmlStrings or jQuery collections
+const htmlOrCollectionMethods = [ 'append', 'prepend', 'before', 'after', 'replaceWith' ];
+// htmlStrings, selectors or jQuery collections
+const htmlOrSelectorOrCollectionMethods = [ 'add', 'appendTo', 'prependTo', 'insertBefore', 'insertAfter' ];
+const allMethods = htmlOrCollectionMethods.concat( htmlOrSelectorOrCollectionMethods );
 
 function alljQueryOrEmpty( context, node ) {
 	if ( node.type === 'ConditionalExpression' ) {
@@ -22,7 +26,7 @@ module.exports = {
 	meta: {
 		type: 'suggestion',
 		docs: {
-			description: 'Disallows using ' + methods.map( utils.jQueryCollectionLink ).join( '/' ) +
+			description: 'Disallows using ' + allMethods.map( utils.jQueryCollectionLink ).join( '/' ) +
 			' to inject HTML, in order to prevent possible XSS bugs.'
 		},
 		schema: []
@@ -32,12 +36,17 @@ module.exports = {
 		'CallExpression:exit': ( node ) => {
 			if ( !(
 				node.callee.type === 'MemberExpression' &&
-					methods.includes( node.callee.property.name )
+				allMethods.includes( node.callee.property.name )
 			) ) {
 				return;
 			}
 			if ( node.arguments.every( ( arg ) => alljQueryOrEmpty( context, arg ) ) ) {
 				return;
+			}
+			if ( htmlOrSelectorOrCollectionMethods.includes( node.callee.property.name ) ) {
+				if ( node.arguments.every( ( arg ) => !utils.isHtmlString( arg ) ) ) {
+					return;
+				}
 			}
 
 			if ( utils.isjQuery( context, node.callee ) ) {

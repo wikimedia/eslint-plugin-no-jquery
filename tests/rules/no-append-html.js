@@ -27,6 +27,11 @@ ruleTester.run( 'no-append-html', rule, {
 		'$div.append(test ? $el1 : undefined)',
 		'$div.append(test ? $el1 : "")',
 		'$el=getSomething();\n$div.append($el);',
+		'$div.add(".foo")',
+		'$div.appendTo(".foo")',
+		'$div.prependTo(".foo")',
+		'$div.insertBefore(".foo")',
+		'$div.insertAfter(".foo")',
 		{
 			code: 'div.append("<xss>")',
 			docgen: false
@@ -35,6 +40,10 @@ ruleTester.run( 'no-append-html', rule, {
 	invalid: [
 		{
 			code: '$div.append("<xss>")',
+			errors: [ error ]
+		},
+		{
+			code: '$div.append("unescaped html")',
 			errors: [ error ]
 		},
 		{
