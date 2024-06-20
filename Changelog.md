@@ -1,5 +1,13 @@
 # eslint-plugin-no-jquery release history
 
+
+## v3.0.2
+* Rule fix: `no-append-html`: Allow passing selectors to some methods (Ed Sanders)
+
+—
+* code: Move joinLiterals to utils and share between two rules (Ed Sanders)
+* code: Make isHtmlString a util (Ed Sanders)
+
 ## v3.0.1
 * Rule fix: Fix fixer for `no-extend` to ignore single argument mode (Ed Sanders)
 
