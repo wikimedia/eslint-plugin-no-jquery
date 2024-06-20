@@ -2,13 +2,14 @@
 
 # no-append-html
 
-Disallows using [`.append`](https://api.jquery.com/append/)/[`.prepend`](https://api.jquery.com/prepend/)/[`.before`](https://api.jquery.com/before/)/[`.after`](https://api.jquery.com/after/)/[`.replaceWith`](https://api.jquery.com/replaceWith/)/[`.add`](https://api.jquery.com/add/)/[`.appendTo`](https://api.jquery.com/appendTo/)/[`.prependTo`](https://api.jquery.com/prependTo/) to inject HTML, in order to prevent possible XSS bugs.
+Disallows using [`.append`](https://api.jquery.com/append/)/[`.prepend`](https://api.jquery.com/prepend/)/[`.before`](https://api.jquery.com/before/)/[`.after`](https://api.jquery.com/after/)/[`.replaceWith`](https://api.jquery.com/replaceWith/)/[`.add`](https://api.jquery.com/add/)/[`.appendTo`](https://api.jquery.com/appendTo/)/[`.prependTo`](https://api.jquery.com/prependTo/)/[`.insertBefore`](https://api.jquery.com/insertBefore/)/[`.insertAfter`](https://api.jquery.com/insertAfter/) to inject HTML, in order to prevent possible XSS bugs.
 
 ## Rule details
 
 ❌ Examples of **incorrect** code:
 ```js
 $div.append( '<xss>' );
+$div.append( 'unescaped html' );
 $div.prepend( '<xss>' );
 $div.before( '<xss>' );
 $div.after( '<xss>' );
@@ -47,6 +48,12 @@ $div.append( test ? $el1 : '' );
 
 $el = getSomething();
 $div.append( $el );
+
+$div.add( '.foo' );
+$div.appendTo( '.foo' );
+$div.prependTo( '.foo' );
+$div.insertBefore( '.foo' );
+$div.insertAfter( '.foo' );
 ```
 
 ## Resources
