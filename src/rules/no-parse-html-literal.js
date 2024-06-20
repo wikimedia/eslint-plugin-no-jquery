@@ -2,8 +2,6 @@
 
 const utils = require( '../utils.js' );
 
-// HTML regex (modified from jQuery)
-const rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/;
 // Single tag regex (from jQuery)
 const rsingleTag = /^<([a-z][^/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i;
 const rsingleTagMinimal = /^<([a-z][^/\0>:\x20\t\r\n\f]*)>$/i;
@@ -74,11 +72,10 @@ module.exports = {
 			let expectedTag;
 			const arg = node.arguments[ 0 ];
 			if ( allowSingle ) {
-				const value = arg && utils.allLiteral( arg ) && utils.joinLiterals( arg );
-				if ( !( typeof value === 'string' && value ) || !rquickExpr.exec( value ) ) {
-					// Empty or non-string, or non-HTML
+				if ( !utils.isHtmlString( arg ) ) {
 					return;
 				}
+				const value = utils.joinLiterals( arg );
 				let match;
 				if ( ( match = rsingleTag.exec( value ) ) ) {
 					// Single tag

@@ -562,6 +562,14 @@ function joinLiterals( node ) {
 	}
 }
 
+// HTML regex (modified from jQuery)
+const rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/;
+
+function isHtmlString( arg ) {
+	const value = arg && allLiteral( arg ) && joinLiterals( arg );
+	return typeof value === 'string' && value && rquickExpr.exec( value );
+}
+
 module.exports = {
 	isjQuery,
 	isjQueryConstructor,
@@ -575,5 +583,6 @@ module.exports = {
 	jQueryCollectionLink,
 	jQueryGlobalLink,
 	allLiteral,
-	joinLiterals
+	joinLiterals,
+	isHtmlString
 };
