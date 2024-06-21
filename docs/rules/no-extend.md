@@ -27,6 +27,7 @@ $.extend( { myUtil: fn } );
 ❌ Examples of **incorrect** code with `[{"allowDeep":true}]` options:
 ```js
 $.extend( {}, foo );
+$.extend( fooCouldBeNull, doesNotAutofix );
 ```
 
 ✔️ Examples of **correct** code with `[{"allowDeep":true}]` options:

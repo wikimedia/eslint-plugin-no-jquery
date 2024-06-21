@@ -32,6 +32,11 @@ ruleTester.run( 'no-extend', rule, {
 			options: [ { allowDeep: true } ],
 			errors: [ error ],
 			output: 'Object.assign({}, foo)'
+		},
+		{
+			code: '$.extend(fooCouldBeNull, doesNotAutofix)',
+			options: [ { allowDeep: true } ],
+			errors: [ error ]
 		}
 	]
 } );

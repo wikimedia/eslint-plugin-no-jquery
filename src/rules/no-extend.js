@@ -48,7 +48,9 @@ module.exports = {
 				node,
 				message: 'Prefer Object.assign or the spread operator to $.extend',
 				fix: function ( fixer ) {
-					if ( !isDeep ) {
+					// Only auto-fix if we are sure the first argument is an object.
+					// If it is undefined or null variable, then Object.assign will throw.
+					if ( !isDeep && node.arguments[ 0 ] && node.arguments[ 0 ].type === 'ObjectExpression' ) {
 						return fixer.replaceText( node.callee, 'Object.assign' );
 					}
 				}
