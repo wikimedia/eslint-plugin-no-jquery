@@ -370,7 +370,7 @@ function createCollectionMethodRule( methods, message, options ) {
 }
 
 /**
- * Create a rule for collection property
+ * Create a rule for collection properties
  *
  * @param {string} property Property name
  * @param {string|Function} [message] Message to report. See createCollectionMethodRule.
@@ -449,7 +449,7 @@ function createUtilMethodRule( methods, message, options ) {
 }
 
 /**
- * Create a rule for util methods
+ * Create a rule for util properties
  *
  * @param {string} property Property name
  * @param {string|Function} [message] Message to report. See createCollectionMethodRule.
