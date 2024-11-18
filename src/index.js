@@ -25,6 +25,7 @@ module.exports = {
 		'no-deferred': require( './rules/no-deferred' ),
 		'no-delegate': require( './rules/no-delegate' ),
 		'no-die': require( './rules/no-die' ),
+		'no-done-fail': require( './rules/no-done-fail' ),
 		'no-each': require( './rules/no-each' ),
 		'no-each-collection': require( './rules/no-each-collection' ),
 		'no-each-util': require( './rules/no-each-util' ),
@@ -333,8 +334,10 @@ module.exports = {
 				'no-jquery/no-filter': 'warn',
 				'no-jquery/no-prop': 'warn',
 				'no-jquery/no-sub': 'warn',
-				'no-jquery/no-text': 'warn'
+				'no-jquery/no-text': 'warn',
 
+				// Other methods
+				'no-jquery/no-done-fail': 'warn'
 			}
 		}
 	}
