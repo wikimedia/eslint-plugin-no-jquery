@@ -5,9 +5,7 @@ const RuleTester = require( '../../tools/rule-tester' );
 
 const error = 'Prefer .on or .trigger to .load';
 
-const ruleTester = new RuleTester( {
-	parserOptions: { ecmaVersion: 2015 }
-} );
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-load-shorthand', rule, {
 	valid: [
 		'load()',

@@ -5,9 +5,7 @@ const RuleTester = require( '../../tools/rule-tester' );
 
 const error = '.ready is not allowed';
 
-const ruleTester = new RuleTester( {
-	parserOptions: { ecmaVersion: 2015 }
-} );
+const ruleTester = new RuleTester();
 ruleTester.run( 'no-ready', rule, {
 	valid: [
 		'ready(function() { })',

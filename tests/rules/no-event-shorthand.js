@@ -41,14 +41,15 @@ const forbidden = [
 	'mousemove',
 	'mouseout',
 	'mouseover',
-	'mouseup'
-].concat( ajaxEvents );
-let valid = [];
-let invalid = [];
+	'mouseup',
+	...ajaxEvents
+];
+const valid = [];
+const invalid = [];
 
 forbidden.forEach( ( method ) => {
 	const error = 'Prefer .on or .trigger to .' + method;
-	valid = valid.concat(
+	valid.push(
 		{
 			code: method + '()',
 			docgen: false
@@ -76,7 +77,7 @@ forbidden.forEach( ( method ) => {
 			docgen: false
 		}
 	);
-	invalid = invalid.concat(
+	invalid.push(
 		{
 			code: '$("div").' + method + '(handler)',
 			errors: [ error ],
@@ -107,19 +108,19 @@ forbidden.forEach( ( method ) => {
 		}
 	);
 } );
+valid.push(
+	// Don't conflict with Ajax load
+	'$div.load( "url", handler )',
+	...ajaxEvents.map( ( eventName ) => ( {
+		code: '$div.' + eventName + '()',
+		options: [ { allowAjaxEvents: true } ]
+	} ) ),
+	...ajaxEvents.map( ( eventName ) => ( {
+		code: '$div.on("' + eventName + '", fn)',
+		options: [ { allowAjaxEvents: true } ]
+	} ) )
+);
 ruleTester.run( 'no-event-shorthand', rule, {
-	valid: valid.concat( [
-		// Don't conflict with Ajax load
-		'$div.load( "url", handler )'
-	] ).concat(
-		ajaxEvents.map( ( eventName ) => ( {
-			code: '$div.' + eventName + '()',
-			options: [ { allowAjaxEvents: true } ]
-		} ) ),
-		ajaxEvents.map( ( eventName ) => ( {
-			code: '$div.on("' + eventName + '", fn)',
-			options: [ { allowAjaxEvents: true } ]
-		} ) )
-	),
+	valid,
 	invalid
 } );

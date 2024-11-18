@@ -1,4 +1,9 @@
 'use strict';
 
-// TODO: This no longer overrides RuleTester so can be deleted and replaced
-module.exports = require( 'eslint-docgen' ).RuleTester;
+const RuleTester = require( 'eslint-docgen' ).RuleTester;
+
+RuleTester.setDefaultConfig( {
+	parserOptions: { ecmaVersion: 2015 }
+} );
+
+module.exports = RuleTester;
