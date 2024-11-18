@@ -14,12 +14,10 @@ ruleTester.run( 'variable-pattern', rule, {
 		'var $div = $("<div>")',
 		{
 			code: 'let $letDiv = $("<div>")',
-			parserOptions: { ecmaVersion: 2015 },
 			docgen: false
 		},
 		{
 			code: 'const $constDiv = $("<div>")',
-			parserOptions: { ecmaVersion: 2015 },
 			docgen: false
 		},
 		{
@@ -168,13 +166,11 @@ ruleTester.run( 'variable-pattern', rule, {
 		},
 		{
 			code: 'let letDiv = $("<div>")',
-			parserOptions: { ecmaVersion: 2015 },
 			docgen: false,
 			errors: [ error ]
 		},
 		{
 			code: 'const constDiv = $("<div>")',
-			parserOptions: { ecmaVersion: 2015 },
 			docgen: false,
 			errors: [ error ]
 		},
