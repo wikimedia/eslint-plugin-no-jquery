@@ -239,3 +239,9 @@ $x.wrap();
 $x.wrapAll();
 // eslint-disable-next-line self/no-wrap
 $x.wrapInner();
+
+// Other methods
+// eslint-disable-next-line self/no-done-fail
+promise.done();
+// eslint-disable-next-line self/no-done-fail
+promise.fail();
