@@ -2,13 +2,15 @@
 
 const utils = require( '../utils.js' );
 
+const methods = [ 'animate', 'stop', 'finish' ];
+
 module.exports = {
 	meta: {
 		type: 'suggestion',
 		docs: {
 			description:
-				'Disallows the ' + utils.jQueryCollectionLink( 'animate' ) +
-				' method. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.'
+				'Disallows the ' + methods.map( utils.jQueryCollectionLink ).join( '/' ) +
+				' methods. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.'
 		},
 		schema: [
 			{
@@ -27,12 +29,12 @@ module.exports = {
 		'CallExpression:exit': ( node ) => {
 			if (
 				node.callee.type !== 'MemberExpression' ||
-					node.callee.property.name !== 'animate'
+					!methods.includes( node.callee.property.name )
 			) {
 				return;
 			}
 			const allowScroll = context.options[ 0 ] && context.options[ 0 ].allowScroll;
-			if ( allowScroll ) {
+			if ( node.callee.property.name === 'animate' && allowScroll ) {
 				const arg = node.arguments[ 0 ];
 				// Check properties list has more than just scrollTop/scrollLeft
 				if ( arg && arg.type === 'ObjectExpression' ) {

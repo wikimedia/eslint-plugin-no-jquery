@@ -2,7 +2,7 @@
 
 # no-animate
 
-Disallows the [`.animate`](https://api.jquery.com/animate/) method. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.
+Disallows the [`.animate`](https://api.jquery.com/animate/)/[`.stop`](https://api.jquery.com/stop/)/[`.finish`](https://api.jquery.com/finish/) methods. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.
 
 📋 This rule is enabled in `plugin:no-jquery/slim`.
 
@@ -13,6 +13,8 @@ Disallows the [`.animate`](https://api.jquery.com/animate/) method. Use the `all
 ❌ Examples of **incorrect** code:
 ```js
 $( 'div' ).animate();
+$( 'div' ).stop();
+$( 'div' ).finish();
 $div.animate();
 $( 'div' ).first().animate();
 $( 'div' ).append( $( 'input' ).animate() );
@@ -28,6 +30,14 @@ animate();
 [].animate();
 div.animate();
 div.animate;
+stop();
+[].stop();
+div.stop();
+div.stop;
+finish();
+[].finish();
+div.finish();
+div.finish;
 ```
 
 ❌ Examples of **incorrect** code with `[{"allowScroll":false}]` options:
@@ -39,6 +49,8 @@ $div.animate( { scrollTop: 100 } );
 ```js
 $div.animate();
 $div.animate( { scrollTop: 100, width: 300 } );
+$( 'div' ).stop( { scrollTop: 100, scrollLeft: 200 } );
+$( 'div' ).finish( { scrollTop: 100, scrollLeft: 200 } );
 ```
 
 ✔️ Examples of **correct** code with `[{"allowScroll":true}]` options:
