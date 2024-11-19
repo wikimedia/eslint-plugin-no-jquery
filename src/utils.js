@@ -312,7 +312,7 @@ function createCollectionMethodRule( methods, message, options ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the ' + methods.map( jQueryCollectionLink ).join( '/' ) + ' ' +
-			( methods.length > 1 ? 'methods' : 'method' ) + '.';
+		( methods.length > 1 ? 'methods' : 'method' ) + '.';
 
 	description += messageSuffix( message );
 
@@ -422,7 +422,7 @@ function createUtilMethodRule( methods, message, options ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the ' + methods.map( jQueryGlobalLink ).join( '/' ) + ' ' +
-			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
+		( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
 
 	description += messageSuffix( message );
 
@@ -500,7 +500,7 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 	methods = Array.isArray( methods ) ? methods : [ methods ];
 
 	let description = 'Disallows the ' + methods.map( jQueryCollectionLink ).join( '/' ) + ' ' +
-			( methods.length > 1 ? 'methods' : 'method' );
+		( methods.length > 1 ? 'methods' : 'method' );
 
 	description += ' and ' + methods.map( jQueryGlobalLink ).join( '/' ) + ' ' +
 			( methods.length > 1 ? 'utilies' : 'utility' ) + '.';
