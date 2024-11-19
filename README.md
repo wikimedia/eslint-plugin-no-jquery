@@ -121,6 +121,7 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-find`](docs/rules/no-find.md)
 * [`no-jquery/no-find-collection`](docs/rules/no-find-collection.md) `all`
 * [`no-jquery/no-find-util`](docs/rules/no-find-util.md) `all`
+* [`no-jquery/no-fx`](docs/rules/no-fx.md) `slim`
 * [`no-jquery/no-fx-interval`](docs/rules/no-fx-interval.md) `3.0`
 * [`no-jquery/no-global-eval`](docs/rules/no-global-eval.md) `all`
 * [`no-jquery/no-global-selector`](docs/rules/no-global-selector.md) ⚙️
