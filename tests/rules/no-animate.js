@@ -13,6 +13,14 @@ ruleTester.run( 'no-animate', rule, {
 		'[].animate()',
 		'div.animate()',
 		'div.animate',
+		'stop()',
+		'[].stop()',
+		'div.stop()',
+		'div.stop',
+		'finish()',
+		'[].finish()',
+		'div.finish()',
+		'div.finish',
 		{
 			code: '$div.animate({scrollTop: 100})',
 			options: [ { allowScroll: true } ]
@@ -29,6 +37,14 @@ ruleTester.run( 'no-animate', rule, {
 	invalid: [
 		{
 			code: '$("div").animate()',
+			errors: [ error ]
+		},
+		{
+			code: '$("div").stop()',
+			errors: [ error ]
+		},
+		{
+			code: '$("div").finish()',
 			errors: [ error ]
 		},
 		{
@@ -71,6 +87,16 @@ ruleTester.run( 'no-animate', rule, {
 		},
 		{
 			code: '$div.animate({scrollTop: 100, width: 300})',
+			options: [ { allowScroll: true } ],
+			errors: [ errorNoScroll ]
+		},
+		{
+			code: '$("div").stop({scrollTop: 100, scrollLeft: 200})',
+			options: [ { allowScroll: true } ],
+			errors: [ errorNoScroll ]
+		},
+		{
+			code: '$("div").finish({scrollTop: 100, scrollLeft: 200})',
 			options: [ { allowScroll: true } ],
 			errors: [ errorNoScroll ]
 		}
