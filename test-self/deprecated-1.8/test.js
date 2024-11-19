@@ -27,16 +27,16 @@ $x.andSelf();
 $x.error( fn );
 
 // eslint-disable-next-line self/no-load-shorthand
-$x.load( function () {} );
+$x.load( () => {} );
 
 // eslint-disable-next-line self/no-on-ready
-$( document ).on( 'ready', function () {} );
+$( document ).on( 'ready', () => {} );
 
 // eslint-disable-next-line self/no-size
 $x.size();
 
 // eslint-disable-next-line self/no-unload-shorthand
-$x.unload( function () {} );
+$x.unload( () => {} );
 
 /* 1.7 */
 // eslint-disable-next-line self/no-live

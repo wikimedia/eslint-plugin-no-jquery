@@ -12,7 +12,7 @@ $x.slideDown();
 // eslint-disable-next-line self/no-ajax
 $.get( 'url' );
 // eslint-disable-next-line self/no-ajax-events
-$x.on( 'ajaxComplete', function () {} );
+$x.on( 'ajaxComplete', () => {} );
 // eslint-disable-next-line self/no-load
 $x.load();
 // eslint-disable-next-line self/no-parse-xml

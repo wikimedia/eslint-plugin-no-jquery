@@ -25,6 +25,7 @@ module.exports = {
 		'no-deferred': require( './rules/no-deferred' ),
 		'no-delegate': require( './rules/no-delegate' ),
 		'no-die': require( './rules/no-die' ),
+		'no-done-fail': require( './rules/no-done-fail' ),
 		'no-each': require( './rules/no-each' ),
 		'no-each-collection': require( './rules/no-each-collection' ),
 		'no-each-util': require( './rules/no-each-util' ),
@@ -38,6 +39,7 @@ module.exports = {
 		'no-find': require( './rules/no-find' ),
 		'no-find-collection': require( './rules/no-find-collection' ),
 		'no-find-util': require( './rules/no-find-util' ),
+		'no-fx': require( './rules/no-fx' ),
 		'no-fx-interval': require( './rules/no-fx-interval' ),
 		'no-global-eval': require( './rules/no-global-eval' ),
 		'no-global-selector': require( './rules/no-global-selector' ),
@@ -117,6 +119,7 @@ module.exports = {
 				'no-jquery/no-animate-toggle': 'error',
 				'no-jquery/no-fade': 'error',
 				'no-jquery/no-slide': 'error',
+				'no-jquery/no-fx': 'error',
 				// Ajax
 				'no-jquery/no-ajax': 'error',
 				'no-jquery/no-ajax-events': 'error',
@@ -333,8 +336,10 @@ module.exports = {
 				'no-jquery/no-filter': 'warn',
 				'no-jquery/no-prop': 'warn',
 				'no-jquery/no-sub': 'warn',
-				'no-jquery/no-text': 'warn'
+				'no-jquery/no-text': 'warn',
 
+				// Other methods
+				'no-jquery/no-done-fail': 'warn'
 			}
 		}
 	}

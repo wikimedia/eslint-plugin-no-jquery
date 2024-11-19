@@ -44,8 +44,9 @@ const rule = utils.createCollectionMethodRule(
 		'mousemove',
 		'mouseout',
 		'mouseover',
-		'mouseup'
-	].concat( ajaxEvents ),
+		'mouseup',
+		...ajaxEvents
+	],
 	( node ) => node === true ?
 		'Use the `allowAjaxEvents` option to allow `ajax*` methods. Prefer `.on` or `.trigger`' :
 		`Prefer .on or .trigger to .${ node.callee.property.name }`,

@@ -107,6 +107,7 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-data`](docs/rules/no-data.md) `all`
 * [`no-jquery/no-deferred`](docs/rules/no-deferred.md) `all`
 * [`no-jquery/no-delegate`](docs/rules/no-delegate.md) `3.0`, `all`
+* [`no-jquery/no-done-fail`](docs/rules/no-done-fail.md) `all`
 * [`no-jquery/no-each`](docs/rules/no-each.md)
 * [`no-jquery/no-each-collection`](docs/rules/no-each-collection.md) `all`
 * [`no-jquery/no-each-util`](docs/rules/no-each-util.md) `all`
@@ -120,6 +121,7 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-find`](docs/rules/no-find.md)
 * [`no-jquery/no-find-collection`](docs/rules/no-find-collection.md) `all`
 * [`no-jquery/no-find-util`](docs/rules/no-find-util.md) `all`
+* [`no-jquery/no-fx`](docs/rules/no-fx.md) `slim`
 * [`no-jquery/no-fx-interval`](docs/rules/no-fx-interval.md) `3.0`
 * [`no-jquery/no-global-eval`](docs/rules/no-global-eval.md) `all`
 * [`no-jquery/no-global-selector`](docs/rules/no-global-selector.md) ⚙️

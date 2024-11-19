@@ -527,6 +527,47 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 	} ), description, options.fixable, options.deprecated );
 }
 
+/**
+ * Create a rule for a method on any object
+ *
+ * @param {string|string[]} methods Method or list of method names
+ * @param {string|Function} message Message to report. See createCollectionMethodRule.
+ * @param {Function} linkGenerator Function to generate a markdown link
+ * @param {Object} [options] Options. See createCollectionMethodRule.
+ *  for a given function name.
+ * @return {Object} Rule
+ */
+function createUniversalMethodRule( methods, message, linkGenerator, options ) {
+	options = options || {};
+
+	options.mode = 'util';
+
+	methods = Array.isArray( methods ) ? methods : [ methods ];
+
+	let description = 'Disallows the ' + methods.map( linkGenerator ).join( '/' ) + ' ' +
+		( methods.length > 1 ? 'methods' : 'method' ) + '.';
+
+	description += messageSuffix( message );
+
+	return createRule( ( context ) => ( {
+		'CallExpression:exit': ( node ) => {
+			if ( node.callee.type !== 'MemberExpression' ) {
+				return;
+			}
+			const name = node.callee.property.name;
+			if ( !methods.includes( name ) ) {
+				return;
+			}
+
+			context.report( {
+				node,
+				message: messageToPlainString( message, node, name, options ),
+				fix: options.fix && options.fix.bind( this, node, context )
+			} );
+		}
+	} ), description, options.fixable, options.deprecated );
+}
+
 function eventShorthandFixer( node, context, fixer ) {
 	const name = node.callee.property.name;
 	if ( node.callee.parent.arguments.length ) {
@@ -580,6 +621,7 @@ module.exports = {
 	createUtilMethodRule,
 	createUtilPropertyRule,
 	createCollectionOrUtilMethodRule,
+	createUniversalMethodRule,
 	eventShorthandFixer,
 	jQueryCollectionLink,
 	jQueryGlobalLink,
