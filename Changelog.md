@@ -1,5 +1,18 @@
 # eslint-plugin-no-jquery release history
 
+## v3.1.0
+* New rule: `no-fx` (Ed Sanders)
+* New rule: `no-done-fail` (Ed Sanders)
+* Rule fix: Add `stop` and `finish` methods to `no-animate` (Ed Sanders)
+* Rule fix: `no-extend`: Only fix if first arg is object literal (Ed Sanders)
+
+—
+* Code: Fix some indentation in utils (Ed Sanders)
+* Code: Migrate GitHub Actions from v1 to v4 to avoid warnings (James D. Forrester)
+* Code: Code cleanup in tests (Ed Sanders)
+* Code: Fix typos in utils documentation (Ed Sanders)
+* Code: Upgrade eslint-config-wikimedia from 0.28.0 to 0.28.2 (James D. Forrester)
+* Release: Provide a .mailmap for consistency in git logs (James D. Forrester)
 
 ## v3.0.2
 * Rule fix: `no-append-html`: Allow passing selectors to some methods (Ed Sanders)
