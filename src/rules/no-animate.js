@@ -34,16 +34,23 @@ module.exports = {
 				return;
 			}
 			const allowScroll = context.options[ 0 ] && context.options[ 0 ].allowScroll;
-			if ( node.callee.property.name === 'animate' && allowScroll ) {
-				const arg = node.arguments[ 0 ];
-				// Check properties list has more than just scrollTop/scrollLeft
-				if ( arg && arg.type === 'ObjectExpression' ) {
-					if (
-						arg.properties.every(
-							( prop ) => prop.key.name === 'scrollTop' || prop.key.name === 'scrollLeft'
-						)
-					) {
-						return;
+			const name = node.callee.property.name;
+			if ( allowScroll ) {
+				if ( name === 'stop' || name === 'finish' ) {
+					// We can't tell what animation we are stopping, so assume
+					// it is an allowed scroll
+					return;
+				} else if ( name === 'animate' ) {
+					const arg = node.arguments[ 0 ];
+					// Check properties list has more than just scrollTop/scrollLeft
+					if ( arg && arg.type === 'ObjectExpression' ) {
+						if (
+							arg.properties.every(
+								( prop ) => prop.key.name === 'scrollTop' || prop.key.name === 'scrollLeft'
+							)
+						) {
+							return;
+						}
 					}
 				}
 			}
