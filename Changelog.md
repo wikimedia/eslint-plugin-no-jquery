@@ -1,5 +1,8 @@
 # eslint-plugin-no-jquery release history
 
+## v3.1.1
+* Rule fix: In `no-animate`, allow `stop` and `finish` when `allowScroll` (Ed Sanders)
+
 ## v3.1.0
 * New rule: `no-fx` (Ed Sanders)
 * New rule: `no-done-fail` (Ed Sanders)
