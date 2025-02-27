@@ -49,8 +49,6 @@ $div.animate( { scrollTop: 100 } );
 ```js
 $div.animate();
 $div.animate( { scrollTop: 100, width: 300 } );
-$( 'div' ).stop( { scrollTop: 100, scrollLeft: 200 } );
-$( 'div' ).finish( { scrollTop: 100, scrollLeft: 200 } );
 ```
 
 ✔️ Examples of **correct** code with `[{"allowScroll":true}]` options:
@@ -58,6 +56,8 @@ $( 'div' ).finish( { scrollTop: 100, scrollLeft: 200 } );
 $div.animate( { scrollTop: 100 } );
 $div.animate( { scrollLeft: 200 } );
 $div.animate( { scrollTop: 100, scrollLeft: 200 } );
+$div.animate( { scrollTop: 100 } ).stop();
+$div.animate( { scrollTop: 100 } ).finish();
 ```
 
 ## Resources
