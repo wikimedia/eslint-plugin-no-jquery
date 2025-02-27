@@ -41,7 +41,7 @@
 		"jquery": "3.7.1",
 		"jsdom": "^22.1.0",
 		"mocha": "^11.1.0",
-		"nyc": "^15.1.0"
+		"nyc": "^17.1.0"
 	},
 	"bugs": {
 		"url": "https://github.com/wikimedia/eslint-plugin-no-jquery/issues"
