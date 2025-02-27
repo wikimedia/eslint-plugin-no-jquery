@@ -40,7 +40,7 @@
 		"eslint-plugin-self": "^1.2.1",
 		"jquery": "3.7.1",
 		"jsdom": "^22.1.0",
-		"mocha": "^10.2.0",
+		"mocha": "^11.1.0",
 		"nyc": "^15.1.0"
 	},
 	"bugs": {
