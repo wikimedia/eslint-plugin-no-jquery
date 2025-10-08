@@ -6,7 +6,9 @@ module.exports = {
 	meta: {
 		type: 'suggestion',
 		docs: {
-			description: 'Disallows the ' + utils.jQueryGlobalLink( 'extend' ) + ' utility. Prefer `Object.assign` or the spread operator.'
+			description:
+				'Disallows the ' + utils.jQueryGlobalLink( 'extend' ) + ' utility. Prefer `Object.assign` or the spread operator. ' +
+				'Use the `allowDeep` option to allow using the method with the `deep` argument.'
 		},
 		fixable: 'code',
 		schema: [
@@ -14,11 +16,15 @@ module.exports = {
 				type: 'object',
 				properties: {
 					allowDeep: {
-						type: 'boolean'
+						type: 'boolean',
+						description: 'Allow when used with the `deep` argument'
 					}
 				},
 				additionalProperties: false
 			}
+		],
+		defaultOptions: [
+			{ allowDeep: false }
 		]
 	},
 

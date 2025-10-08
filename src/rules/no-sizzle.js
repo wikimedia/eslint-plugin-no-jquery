@@ -15,14 +15,20 @@ module.exports = {
 				type: 'object',
 				properties: {
 					allowPositional: {
-						type: 'boolean'
+						type: 'boolean',
+						description: 'Allow positional selectors'
 					},
 					allowOther: {
-						type: 'boolean'
+						type: 'boolean',
+						description: 'Allow all other selectors'
 					}
 				},
 				additionalProperties: false
 			}
+		],
+		defaultOptions: [
+			{ allowPositional: false },
+			{ allowOther: false }
 		]
 	},
 

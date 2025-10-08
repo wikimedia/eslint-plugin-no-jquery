@@ -26,11 +26,15 @@ module.exports = {
 				type: 'object',
 				properties: {
 					singleTagStyle: {
-						enum: [ 'minimal', 'self-closing', 'any' ]
+						enum: [ 'minimal', 'self-closing', 'any' ],
+						description: 'Format of single tags'
 					}
 				},
 				additionalProperties: false
 			}
+		],
+		defaultOptions: [
+			{ singleTagStyle: 'minimal' }
 		]
 	},
 
