@@ -30,7 +30,6 @@ $x.end();
 $x.eq();
 $x.even();
 $x.extend();
-$x.finish();
 $x.first();
 $x.get();
 $x.height();
@@ -71,7 +70,6 @@ $x.scrollLeft();
 $x.scrollTop();
 $x.siblings();
 $x.slice();
-$x.stop();
 $x.toArray();
 $x.triggerHandler();
 $x.uniqueSort();
@@ -135,6 +133,8 @@ $x.fadeToggle();
 $x.filter();
 // eslint-disable-next-line self/no-find-collection
 $x.find();
+// eslint-disable-next-line self/no-animate
+$x.finish();
 // eslint-disable-next-line self/no-event-shorthand
 $x.focus();
 // eslint-disable-next-line self/no-event-shorthand
@@ -215,6 +215,8 @@ $x.slideDown();
 $x.slideToggle();
 // eslint-disable-next-line self/no-slide
 $x.slideUp();
+// eslint-disable-next-line self/no-animate
+$x.stop();
 // eslint-disable-next-line self/no-event-shorthand
 $x.submit();
 // eslint-disable-next-line self/no-text
