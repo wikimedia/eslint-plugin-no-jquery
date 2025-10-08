@@ -20,11 +20,15 @@ module.exports = {
 				type: 'object',
 				properties: {
 					allowIds: {
-						type: 'boolean'
+						type: 'boolean',
+						description: 'Allow single ID selectors'
 					}
 				},
 				additionalProperties: false
 			}
+		],
+		defaultOptions: [
+			{ allowIds: false }
 		]
 	},
 

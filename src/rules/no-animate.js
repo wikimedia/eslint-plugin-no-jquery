@@ -17,11 +17,15 @@ module.exports = {
 				type: 'object',
 				properties: {
 					allowScroll: {
-						type: 'boolean'
+						type: 'boolean',
+						description: 'Allow animations which are just used for scrolling'
 					}
 				},
 				additionalProperties: false
 			}
+		],
+		defaultOptions: [
+			{ allowScroll: false }
 		]
 	},
 

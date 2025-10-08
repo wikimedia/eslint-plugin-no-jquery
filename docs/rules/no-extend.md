@@ -2,7 +2,7 @@
 
 # no-extend
 
-Disallows the [`$.extend`](https://api.jquery.com/jQuery.extend/) utility. Prefer `Object.assign` or the spread operator.
+Disallows the [`$.extend`](https://api.jquery.com/jQuery.extend/) utility. Prefer `Object.assign` or the spread operator. Use the `allowDeep` option to allow using the method with the `deep` argument.
 
 📋 This rule is enabled in `plugin:no-jquery/all`.
 
