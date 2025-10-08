@@ -2,7 +2,9 @@
 
 # no-class
 
-Disallows the [`.addClass`](https://api.jquery.com/addClass/)/[`.hasClass`](https://api.jquery.com/hasClass/)/[`.removeClass`](https://api.jquery.com/removeClass/)/[`.toggleClass`](https://api.jquery.com/toggleClass/) methods. Prefer `Element#classList`.
+Disallows the [`.addClass`](https://api.jquery.com/addClass/)/[`.hasClass`](https://api.jquery.com/hasClass/)/[`.removeClass`](https://api.jquery.com/removeClass/)/[`.toggleClass`](https://api.jquery.com/toggleClass/) methods. User the `onlyDeprecated` option to only report deprecated usages. Prefer `Element#classList`.
+
+📋 This rule is enabled in `plugin:no-jquery/deprecated-3.0` with `[{"onlyDeprecated":true}]` options.
 
 📋 This rule is enabled in `plugin:no-jquery/all`.
 
@@ -46,6 +48,26 @@ toggleClass();
 [].toggleClass();
 div.toggleClass();
 div.toggleClass;
+```
+
+❌ Examples of **incorrect** code with `[{"onlyDeprecated":true}]` options:
+```js
+$div.toggleClass();
+$div.toggleClass( false );
+$div.toggleClass( true );
+$div.toggleClass( undefined );
+```
+
+✔️ Examples of **correct** code with `[{"onlyDeprecated":true}]` options:
+```js
+$div.attr( 'class', '' );
+$div.removeClass( 'myClass' );
+toggleClass( false );
+obj.toggleClass( false );
+$div.toggleClass( 'myClass', true );
+$div.toggleClass( 'myClass', false );
+$div.toggleClass( 'myClass' );
+$div.toggleClass( 'myClass', undefined );
 ```
 
 ## Resources

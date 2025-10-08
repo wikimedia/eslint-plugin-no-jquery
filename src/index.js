@@ -180,6 +180,7 @@ module.exports = {
 			extends: 'plugin:no-jquery/deprecated-2.2',
 			rules: {
 				'no-jquery/no-bind': 'warn',
+				'no-jquery/no-class': [ 'warn', { onlyDeprecated: true } ],
 				'no-jquery/no-delegate': 'warn',
 				'no-jquery/no-fx-interval': 'warn',
 				'no-jquery/no-parse-json': 'warn',

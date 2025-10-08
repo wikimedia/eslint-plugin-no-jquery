@@ -29,6 +29,9 @@ $x.ready();
 // eslint-disable-next-line self/no-unique
 $.unique();
 
+// eslint-disable-next-line self/no-class
+$x.toggleClass( false );
+
 /* 1.10 */
 // eslint-disable-next-line self/no-context-prop
 $x.context;
