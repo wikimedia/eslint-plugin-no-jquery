@@ -27,7 +27,7 @@
 		"src"
 	],
 	"engine": {
-		"node": ">=16"
+		"node": ">=20"
 	},
 	"peerDependencies": {
 		"eslint": ">=8.0.0"
