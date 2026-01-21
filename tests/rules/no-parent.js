@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-parent', rule, {
 	valid: [ 'parent()', '[].parent()', 'div.parent()', 'div.parent' ],
 	invalid: [
-		{
-			code: '$("div").parent()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.parent()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().parent()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").parent())',
-			errors: [ error ]
-		}
-	]
+		'$("div").parent()',
+		'$div.parent()',
+		'$("div").first().parent()',
+		'$("div").append($("input").parent())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

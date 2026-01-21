@@ -23,30 +23,24 @@ ruleTester.run( 'no-html', rule, {
 	],
 	invalid: [
 		{
-			code: '$("div").html()',
-			errors: [ error ]
+			code: '$("div").html()'
+		},
+		{
+			code: '$div.html()'
 		},
 		{
 			code: '$div.html()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.html()',
-			options: [ { allowGetOrSet: 'set' } ],
-			errors: [ error ]
+			options: [ { allowGetOrSet: 'set' } ]
 		},
 		{
 			code: '$div.html("<br>")',
-			options: [ { allowGetOrSet: 'get' } ],
-			errors: [ error ]
+			options: [ { allowGetOrSet: 'get' } ]
 		},
 		{
-			code: '$("div").first().html()',
-			errors: [ error ]
+			code: '$("div").first().html()'
 		},
 		{
-			code: '$("div").append($("input").html())',
-			errors: [ error ]
+			code: '$("div").append($("input").html())'
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

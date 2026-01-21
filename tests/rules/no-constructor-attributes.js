@@ -20,23 +20,11 @@ ruleTester.run( 'no-constructor-attributes', rule, {
 		}
 	],
 	invalid: [
-		{
-			code: '$("<div>", {width:100, class:"foo"})',
-			errors: [ error ]
-		},
-		{
-			code: '$("<div>", {on: {click:function(){}}})',
-			errors: [ error ]
-		},
-		{
-			code: '$("<div/>", {data:{foo:"bar"}})',
-			errors: [ error ]
-		},
+		'$("<div>", {width:100, class:"foo"})',
+		'$("<div>", {on: {click:function(){}}})',
+		'$("<div/>", {data:{foo:"bar"}})',
 		// This isn't a documented signature of $.add, but due to the
 		// way it is implemented it does work
-		{
-			code: '$div.add("<div>", {width:100, class:"foo"})',
-			errors: [ error ]
-		}
-	]
+		'$div.add("<div>", {width:100, class:"foo"})'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

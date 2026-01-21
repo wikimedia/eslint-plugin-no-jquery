@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-map-collection', rule, {
 	valid: [ 'map()', '[].map()', 'div.map()', 'div.map', '$.map()', '$("select").val().map()' ],
 	invalid: [
-		{
-			code: '$("div").map()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.map()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().map()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").map())',
-			errors: [ error ]
-		}
-	]
+		'$("div").map()',
+		'$div.map()',
+		'$("div").first().map()',
+		'$("div").append($("input").map())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

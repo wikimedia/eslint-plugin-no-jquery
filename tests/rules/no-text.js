@@ -9,25 +9,10 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-text', rule, {
 	valid: [ 'text()', '[].text()', 'div.text()', 'div.text' ],
 	invalid: [
-		{
-			code: '$.text()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").text()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.text()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().text()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").text())',
-			errors: [ error ]
-		}
-	]
+		'$.text()',
+		'$("div").text()',
+		'$div.text()',
+		'$("div").first().text()',
+		'$("div").append($("input").text())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

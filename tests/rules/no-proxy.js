@@ -11,26 +11,21 @@ ruleTester.run( 'no-proxy', rule, {
 	invalid: [
 		{
 			code: '$.proxy(this.fn, context)',
-			errors: [ error ],
 			output: 'this.fn.bind(context)'
 		},
 		{
 			code: '$.proxy(fn, context, arg1, arg2)',
-			errors: [ error ],
 			output: 'fn.bind(context, arg1, arg2)'
 		},
 		{
-			code: '$.proxy(context, "fnName")',
-			errors: [ error ]
+			code: '$.proxy(context, "fnName")'
 		},
 		{
-			code: '$.proxy(context, "fnName", arg1, arg2)',
-			errors: [ error ]
+			code: '$.proxy(context, "fnName", arg1, arg2)'
 		},
 		{
 			code: '$.proxy()',
-			errors: [ error ],
 			docgen: false
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

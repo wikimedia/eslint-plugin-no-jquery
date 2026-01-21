@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-find-collection', rule, {
 	valid: [ '$.find()', 'find()', '[].find()', 'div.find()', 'div.find', '$.extend().find()', '$div.myPlugin("foo").find()' ],
 	invalid: [
-		{
-			code: '$("div").find()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.find()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().find()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").find())',
-			errors: [ error ]
-		}
-	]
+		'$("div").find()',
+		'$div.find()',
+		'$("div").first().find()',
+		'$("div").append($("input").find())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

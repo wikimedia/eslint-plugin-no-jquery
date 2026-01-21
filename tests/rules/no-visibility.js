@@ -26,53 +26,23 @@ ruleTester.run( 'no-visibility', rule, {
 		'div.toggle'
 	],
 	invalid: [
-		{
-			code: '$("div").show()',
-			errors: [ errorShow ]
-		},
-		{
-			code: '$div.show()',
-			errors: [ errorShow ]
-		},
-		{
-			code: '$("div").first().show()',
-			errors: [ errorShow ]
-		},
-		{
-			code: '$("div").append($("input").show())',
-			errors: [ errorShow ]
-		},
-		{
-			code: '$("div").hide()',
-			errors: [ errorHide ]
-		},
-		{
-			code: '$div.hide()',
-			errors: [ errorHide ]
-		},
-		{
-			code: '$("div").first().hide()',
-			errors: [ errorHide ]
-		},
-		{
-			code: '$("div").append($("input").hide())',
-			errors: [ errorHide ]
-		},
-		{
-			code: '$("div").toggle()',
-			errors: [ errorToggle ]
-		},
-		{
-			code: '$div.toggle()',
-			errors: [ errorToggle ]
-		},
-		{
-			code: '$("div").first().toggle()',
-			errors: [ errorToggle ]
-		},
-		{
-			code: '$("div").append($("input").toggle())',
-			errors: [ errorToggle ]
-		}
+		...[
+			'$("div").show()',
+			'$div.show()',
+			'$("div").first().show()',
+			'$("div").append($("input").show())'
+		].map( ( code ) => ( { code, errors: [ errorShow ] } ) ),
+		...[
+			'$("div").hide()',
+			'$div.hide()',
+			'$("div").first().hide()',
+			'$("div").append($("input").hide())'
+		].map( ( code ) => ( { code, errors: [ errorHide ] } ) ),
+		...[
+			'$("div").toggle()',
+			'$div.toggle()',
+			'$("div").first().toggle()',
+			'$("div").append($("input").toggle())'
+		].map( ( code ) => ( { code, errors: [ errorToggle ] } ) )
 	]
 } );

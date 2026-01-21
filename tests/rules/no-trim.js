@@ -15,9 +15,6 @@ ruleTester.run( 'no-trim', rule, {
 		'$("input").data("foo").trim()'
 	],
 	invalid: [
-		{
-			code: '$.trim(" test ")',
-			errors: [ error ]
-		}
-	]
+		'$.trim(" test ")'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

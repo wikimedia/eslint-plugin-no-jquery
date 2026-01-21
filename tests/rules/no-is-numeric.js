@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-is-numeric', rule, {
 	valid: [ 'isNumeric()', 'myClass.isNumeric()', '$div.isNumeric()' ],
 	invalid: [
-		{
-			code: '$.isNumeric()',
-			errors: [ error ]
-		}
-	]
+		'$.isNumeric()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

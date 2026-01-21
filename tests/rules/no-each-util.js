@@ -18,9 +18,6 @@ ruleTester.run( 'no-each-util', rule, {
 		'$("div").append($("input").each())'
 	],
 	invalid: [
-		{
-			code: '$.each()',
-			errors: [ error ]
-		}
-	]
+		'$.each()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

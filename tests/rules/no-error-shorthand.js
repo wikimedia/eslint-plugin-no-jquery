@@ -11,23 +11,19 @@ ruleTester.run( 'no-error-shorthand', rule, {
 	invalid: [
 		{
 			code: '$("div").error(handler)',
-			errors: [ error ],
 			output: '$("div").on("error", handler)'
 		},
 		{
 			code: '$div.error()',
-			errors: [ error ],
 			output: '$div.trigger("error")'
 		},
 		{
 			code: '$("div").first().error()',
-			errors: [ error ],
 			output: '$("div").first().trigger("error")'
 		},
 		{
 			code: '$("div").append($("input").error())',
-			errors: [ error ],
 			output: '$("div").append($("input").trigger("error"))'
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

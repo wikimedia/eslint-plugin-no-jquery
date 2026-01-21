@@ -19,27 +19,22 @@ ruleTester.run( 'no-ready-shorthand', rule, {
 	invalid: [
 		{
 			code: '$(document).ready(fn)',
-			errors: [ error ],
 			output: '$(fn)'
 		},
 		{
 			code: '$div.ready(fn)',
-			errors: [ error ],
 			output: '$(fn)'
 		},
 		{
 			code: '$("div").first().ready(fn)',
-			errors: [ error ],
 			output: '$(fn)'
 		},
 		// Can't fix if the result might be used
 		{
-			code: '$("div").append($("input").ready(fn))',
-			errors: [ error ]
+			code: '$("div").append($("input").ready(fn))'
 		},
 		{
-			code: '$div = $("div").ready(fn)',
-			errors: [ error ]
+			code: '$div = $("div").ready(fn)'
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

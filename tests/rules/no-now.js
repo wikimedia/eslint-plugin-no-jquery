@@ -11,8 +11,7 @@ ruleTester.run( 'no-now', rule, {
 	invalid: [
 		{
 			code: '$.now()',
-			errors: [ error ],
 			output: 'Date.now()'
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

@@ -9,25 +9,10 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-fx', rule, {
 	valid: [ 'fx', 'fx.interval', 'a.fx' ],
 	invalid: [
-		{
-			code: '$.fx',
-			errors: [ error ]
-		},
-		{
-			code: '$.fx.interval',
-			errors: [ error ]
-		},
-		{
-			code: '$.fx.off',
-			errors: [ error ]
-		},
-		{
-			code: '$.fx.speeds.slow',
-			errors: [ error ]
-		},
-		{
-			code: '$.fx.start()',
-			errors: [ error ]
-		}
-	]
+		'$.fx',
+		'$.fx.interval',
+		'$.fx.off',
+		'$.fx.speeds.slow',
+		'$.fx.start()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

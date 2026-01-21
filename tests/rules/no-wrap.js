@@ -32,69 +32,29 @@ ruleTester.run( 'no-wrap', rule, {
 		'div.unwrap'
 	],
 	invalid: [
-		{
-			code: '$("div").wrap()',
-			errors: [ wrapError ]
-		},
-		{
-			code: '$div.wrap()',
-			errors: [ wrapError ]
-		},
-		{
-			code: '$("div").first().wrap()',
-			errors: [ wrapError ]
-		},
-		{
-			code: '$("div").append($("input").wrap())',
-			errors: [ wrapError ]
-		},
-		{
-			code: '$("div").wrapAll()',
-			errors: [ wrapAllError ]
-		},
-		{
-			code: '$div.wrapAll()',
-			errors: [ wrapAllError ]
-		},
-		{
-			code: '$("div").first().wrapAll()',
-			errors: [ wrapAllError ]
-		},
-		{
-			code: '$("div").append($("input").wrapAll())',
-			errors: [ wrapAllError ]
-		},
-		{
-			code: '$("div").wrapInner()',
-			errors: [ wrapInnerError ]
-		},
-		{
-			code: '$div.wrapInner()',
-			errors: [ wrapInnerError ]
-		},
-		{
-			code: '$("div").first().wrapInner()',
-			errors: [ wrapInnerError ]
-		},
-		{
-			code: '$("div").append($("input").wrapInner())',
-			errors: [ wrapInnerError ]
-		},
-		{
-			code: '$("div").unwrap()',
-			errors: [ unwrapError ]
-		},
-		{
-			code: '$div.unwrap()',
-			errors: [ unwrapError ]
-		},
-		{
-			code: '$("div").first().unwrap()',
-			errors: [ unwrapError ]
-		},
-		{
-			code: '$("div").append($("input").unwrap())',
-			errors: [ unwrapError ]
-		}
+		...[
+			'$("div").wrap()',
+			'$div.wrap()',
+			'$("div").first().wrap()',
+			'$("div").append($("input").wrap())'
+		].map( ( code ) => ( { code, errors: [ wrapError ] } ) ),
+		...[
+			'$("div").wrapAll()',
+			'$div.wrapAll()',
+			'$("div").first().wrapAll()',
+			'$("div").append($("input").wrapAll())'
+		].map( ( code ) => ( { code, errors: [ wrapAllError ] } ) ),
+		...[
+			'$("div").wrapInner()',
+			'$div.wrapInner()',
+			'$("div").first().wrapInner()',
+			'$("div").append($("input").wrapInner())'
+		].map( ( code ) => ( { code, errors: [ wrapInnerError ] } ) ),
+		...[
+			'$("div").unwrap()',
+			'$div.unwrap()',
+			'$("div").first().unwrap()',
+			'$("div").append($("input").unwrap())'
+		].map( ( code ) => ( { code, errors: [ unwrapError ] } ) )
 	]
 } );

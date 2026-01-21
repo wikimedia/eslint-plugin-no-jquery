@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-param', rule, {
 	valid: [ 'param()', '"test".param()', '"test".param' ],
 	invalid: [
-		{
-			code: '$.param()',
-			errors: [ error ]
-		}
-	]
+		'$.param()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

@@ -32,72 +32,29 @@ ruleTester.run( 'no-fade', rule, {
 		'div.fadeToggle'
 	],
 	invalid: [
-		{
-			code: '$("div").fadeIn()',
-			errors: [ inError ]
-		},
-		{
-			code: '$div.fadeIn()',
-			errors: [ inError ]
-		},
-		{
-			code: '$("div").first().fadeIn()',
-			errors: [ inError ]
-		},
-		{
-			code: '$("div").append($("input").fadeIn())',
-			errors: [ inError ]
-		},
-
-		{
-			code: '$("div").fadeOut()',
-			errors: [ outError ]
-		},
-		{
-			code: '$div.fadeOut()',
-			errors: [ outError ]
-		},
-		{
-			code: '$("div").first().fadeOut()',
-			errors: [ outError ]
-		},
-		{
-			code: '$("div").append($("input").fadeOut())',
-			errors: [ outError ]
-		},
-
-		{
-			code: '$("div").fadeTo()',
-			errors: [ toError ]
-		},
-		{
-			code: '$div.fadeTo()',
-			errors: [ toError ]
-		},
-		{
-			code: '$("div").first().fadeTo()',
-			errors: [ toError ]
-		},
-		{
-			code: '$("div").append($("input").fadeTo())',
-			errors: [ toError ]
-		},
-
-		{
-			code: '$("div").fadeToggle()',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$div.fadeToggle()',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$("div").first().fadeToggle()',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$("div").append($("input").fadeToggle())',
-			errors: [ toggleError ]
-		}
+		...[
+			'$("div").fadeIn()',
+			'$div.fadeIn()',
+			'$("div").first().fadeIn()',
+			'$("div").append($("input").fadeIn())'
+		].map( ( code ) => ( { code, errors: [ inError ] } ) ),
+		...[
+			'$("div").fadeOut()',
+			'$div.fadeOut()',
+			'$("div").first().fadeOut()',
+			'$("div").append($("input").fadeOut())'
+		].map( ( code ) => ( { code, errors: [ outError ] } ) ),
+		...[
+			'$("div").fadeTo()',
+			'$div.fadeTo()',
+			'$("div").first().fadeTo()',
+			'$("div").append($("input").fadeTo())'
+		].map( ( code ) => ( { code, errors: [ toError ] } ) ),
+		...[
+			'$("div").fadeToggle()',
+			'$div.fadeToggle()',
+			'$("div").first().fadeToggle()',
+			'$("div").append($("input").fadeToggle())'
+		].map( ( code ) => ( { code, errors: [ toggleError ] } ) )
 	]
 } );

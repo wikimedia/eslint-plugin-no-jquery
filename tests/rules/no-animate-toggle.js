@@ -26,55 +26,24 @@ ruleTester.run( 'no-animate-toggle', rule, {
 		'$div.toggle(getBoolean())'
 	],
 	invalid: [
-		{
-			code: '$("div").show("fast")',
-			errors: [ showError ]
-		},
-		{
-			code: '$div.show(500)',
-			errors: [ showError ]
-		},
-		{
-			code: '$("div").first().show({duration:"slow"})',
-			errors: [ showError ]
-		},
-		{
-			code: '$("div").append($("input").show({duration:"slow"}))',
-			errors: [ showError ]
-		},
+		...[
+			'$("div").show("fast")',
+			'$div.show(500)',
+			'$("div").first().show({duration:"slow"})',
+			'$("div").append($("input").show({duration:"slow"}))'
+		].map( ( code ) => ( { code, errors: [ showError ] } ) ),
+		...[
+			'$("div").hide("fast")',
+			'$div.hide(500)',
+			'$("div").first().hide({duration:"slow"})',
+			'$("div").append($("input").hide({duration:"slow"}))'
+		].map( ( code ) => ( { code, errors: [ hideError ] } ) ),
 
-		{
-			code: '$("div").hide("fast")',
-			errors: [ hideError ]
-		},
-		{
-			code: '$div.hide(500)',
-			errors: [ hideError ]
-		},
-		{
-			code: '$("div").first().hide({duration:"slow"})',
-			errors: [ hideError ]
-		},
-		{
-			code: '$("div").append($("input").hide({duration:"slow"}))',
-			errors: [ hideError ]
-		},
-
-		{
-			code: '$("div").toggle("fast")',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$div.toggle(500)',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$("div").first().toggle({duration:"slow"})',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$("div").append($("input").toggle({duration:"slow"}))',
-			errors: [ toggleError ]
-		}
+		...[
+			'$("div").toggle("fast")',
+			'$div.toggle(500)',
+			'$("div").first().toggle({duration:"slow"})',
+			'$("div").append($("input").toggle({duration:"slow"}))'
+		].map( ( code ) => ( { code, errors: [ toggleError ] } ) )
 	]
 } );

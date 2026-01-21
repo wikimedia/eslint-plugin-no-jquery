@@ -9,13 +9,7 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-box-model', rule, {
 	valid: [ 'boxModel', 'a.boxModel', 'boxModel.foo', 'a.boxModel.foo' ],
 	invalid: [
-		{
-			code: '$.boxModel',
-			errors: [ error ]
-		},
-		{
-			code: '$.boxModel.style',
-			errors: [ error ]
-		}
-	]
+		'$.boxModel',
+		'$.boxModel.style'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

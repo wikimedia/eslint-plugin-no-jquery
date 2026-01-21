@@ -19,9 +19,6 @@ ruleTester.run( 'no-map-util', rule, {
 		'$("select").val().map()'
 	],
 	invalid: [
-		{
-			code: '$.map()',
-			errors: [ error ]
-		}
-	]
+		'$.map()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

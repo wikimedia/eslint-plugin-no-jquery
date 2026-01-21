@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-global-eval', rule, {
 	valid: [ 'globalEval()', '"test".globalEval()', '"test".globalEval' ],
 	invalid: [
-		{
-			code: '$.globalEval()',
-			errors: [ error ]
-		}
-	]
+		'$.globalEval()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

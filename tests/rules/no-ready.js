@@ -20,37 +20,13 @@ ruleTester.run( 'no-ready', rule, {
 		'$()'
 	],
 	invalid: [
-		{
-			code: '$(function() { })',
-			errors: [ error ]
-		},
-		{
-			code: '$(function init() { })',
-			errors: [ error ]
-		},
-		{
-			code: '$(() => {})',
-			errors: [ error ]
-		},
-		{
-			code: '$(document).ready(function() { })',
-			errors: [ error ]
-		},
-		{
-			code: '$().ready(function() { })',
-			errors: [ error ]
-		},
-		{
-			code: '$("img").ready(function() { })',
-			errors: [ error ]
-		},
-		{
-			code: '$div.ready(function() { })',
-			errors: [ error ]
-		},
-		{
-			code: '$("img").first().ready(function() { })',
-			errors: [ error ]
-		}
-	]
+		'$(function() { })',
+		'$(function init() { })',
+		'$(() => {})',
+		'$(document).ready(function() { })',
+		'$().ready(function() { })',
+		'$("img").ready(function() { })',
+		'$div.ready(function() { })',
+		'$("img").first().ready(function() { })'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

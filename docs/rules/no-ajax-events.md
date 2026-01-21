@@ -11,17 +11,17 @@ Disallows global ajax events handlers: [`.ajaxComplete`](https://api.jquery.com/
 ❌ Examples of **incorrect** code:
 ```js
 $( document ).on( 'ajaxSend', fn );
-$( document ).on( 'ajaxSuccess', fn );
-$form.on( 'ajaxError', fn );
-$form.on( 'ajaxComplete', fn );
-$form.on( 'ajaxStart', fn );
-$form.on( 'ajaxStop', fn );
 $( document ).ajaxSend( fn );
+$( document ).on( 'ajaxSuccess', fn );
 $( document ).ajaxSuccess( fn );
-$form.ajaxError( fn );
-$form.ajaxComplete( fn );
-$form.ajaxStart( fn );
-$form.ajaxStop( fn );
+$( document ).on( 'ajaxError', fn );
+$( document ).ajaxError( fn );
+$( document ).on( 'ajaxComplete', fn );
+$( document ).ajaxComplete( fn );
+$( document ).on( 'ajaxStart', fn );
+$( document ).ajaxStart( fn );
+$( document ).on( 'ajaxStop', fn );
+$( document ).ajaxStop( fn );
 ```
 
 ✔️ Examples of **correct** code:

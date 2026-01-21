@@ -20,38 +20,17 @@ ruleTester.run( 'no-delegate', rule, {
 		'div.undelegate'
 	],
 	invalid: [
-		{
-			code: '$("div").delegate()',
-			errors: [ delegateError ]
-		},
-		{
-			code: '$div.delegate()',
-			errors: [ delegateError ]
-		},
-		{
-			code: '$("div").first().delegate()',
-			errors: [ delegateError ]
-		},
-		{
-			code: '$("div").append($("input").delegate())',
-			errors: [ delegateError ]
-		},
-
-		{
-			code: '$("div").undelegate()',
-			errors: [ undelegateError ]
-		},
-		{
-			code: '$div.undelegate()',
-			errors: [ undelegateError ]
-		},
-		{
-			code: '$("div").first().undelegate()',
-			errors: [ undelegateError ]
-		},
-		{
-			code: '$("div").append($("input").undelegate())',
-			errors: [ undelegateError ]
-		}
+		...[
+			'$("div").delegate()',
+			'$div.delegate()',
+			'$("div").first().delegate()',
+			'$("div").append($("input").delegate())'
+		].map( ( code ) => ( { code, errors: [ delegateError ] } ) ),
+		...[
+			'$("div").undelegate()',
+			'$div.undelegate()',
+			'$("div").first().undelegate()',
+			'$("div").append($("input").undelegate())'
+		].map( ( code ) => ( { code, errors: [ undelegateError ] } ) )
 	]
 } );

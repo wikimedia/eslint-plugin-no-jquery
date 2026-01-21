@@ -15,33 +15,12 @@ ruleTester.run( 'no-selector-prop', rule, {
 		'$div.selector(arg)'
 	],
 	invalid: [
-		{
-			code: '$("div").selector',
-			errors: [ error ]
-		},
-		{
-			code: '$div.selector',
-			errors: [ error ]
-		},
-		{
-			code: '$div.selector.prop',
-			errors: [ error ]
-		},
-		{
-			code: '$div.selector.method()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().selector',
-			errors: [ error ]
-		},
-		{
-			code: 'f($div.selector)',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").selector)',
-			errors: [ error ]
-		}
-	]
+		'$("div").selector',
+		'$div.selector',
+		'$div.selector.prop',
+		'$div.selector.method()',
+		'$("div").first().selector',
+		'f($div.selector)',
+		'$("div").append($("input").selector)'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

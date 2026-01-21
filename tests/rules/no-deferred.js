@@ -14,13 +14,7 @@ ruleTester.run( 'no-deferred', rule, {
 		'"test".Deferred'
 	],
 	invalid: [
-		{
-			code: '$.Deferred()',
-			errors: [ error ]
-		},
-		{
-			code: 'new $.Deferred()',
-			errors: [ error ]
-		}
-	]
+		'$.Deferred()',
+		'new $.Deferred()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-is-empty-object', rule, {
 	valid: [ 'isEmptyObject()', 'myClass.isEmptyObject()', '$div.isEmptyObject()' ],
 	invalid: [
-		{
-			code: '$.isEmptyObject()',
-			errors: [ error ]
-		}
-	]
+		'$.isEmptyObject()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

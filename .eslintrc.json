@@ -1,8 +1,6 @@
 {
 	"extends": [
-		"wikimedia",
-		"wikimedia/node",
-		"wikimedia/language/es2016",
+		"wikimedia/server",
 		"plugin:eslint-plugin/all"
 	],
 	"plugins": [

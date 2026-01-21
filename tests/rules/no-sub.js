@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-sub', rule, {
 	valid: [ 'sub()', '"test".sub()', '"test".sub' ],
 	invalid: [
-		{
-			code: '$.sub()',
-			errors: [ error ]
-		}
-	]
+		'$.sub()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

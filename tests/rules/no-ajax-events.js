@@ -19,53 +19,20 @@ ruleTester.run( 'no-ajax-events', rule, {
 		'$.ajaxSend()'
 	],
 	invalid: [
+		'ajaxSend',
+		'ajaxSuccess',
+		'ajaxError',
+		'ajaxComplete',
+		'ajaxStart',
+		'ajaxStop'
+	].map( ( method ) => ( [
 		{
-			code: '$(document).on("ajaxSend", fn)',
-			errors: getErrors( 'ajaxSend' )
+			code: `$(document).on("${ method }", fn)`,
+			errors: getErrors( method )
 		},
 		{
-			code: '$(document).on("ajaxSuccess", fn)',
-			errors: getErrors( 'ajaxSuccess' )
-		},
-		{
-			code: '$form.on("ajaxError", fn)',
-			errors: getErrors( 'ajaxError' )
-		},
-		{
-			code: '$form.on("ajaxComplete", fn)',
-			errors: getErrors( 'ajaxComplete' )
-		},
-		{
-			code: '$form.on("ajaxStart", fn)',
-			errors: getErrors( 'ajaxStart' )
-		},
-		{
-			code: '$form.on("ajaxStop", fn)',
-			errors: getErrors( 'ajaxStop' )
-		},
-		{
-			code: '$(document).ajaxSend(fn)',
-			errors: getErrors( 'ajaxSend' )
-		},
-		{
-			code: '$(document).ajaxSuccess(fn)',
-			errors: getErrors( 'ajaxSuccess' )
-		},
-		{
-			code: '$form.ajaxError(fn)',
-			errors: getErrors( 'ajaxError' )
-		},
-		{
-			code: '$form.ajaxComplete(fn)',
-			errors: getErrors( 'ajaxComplete' )
-		},
-		{
-			code: '$form.ajaxStart(fn)',
-			errors: getErrors( 'ajaxStart' )
-		},
-		{
-			code: '$form.ajaxStop(fn)',
-			errors: getErrors( 'ajaxStop' )
+			code: `$(document).${ method }(fn)`,
+			errors: getErrors( method )
 		}
-	]
+	] ) ).flat()
 } );

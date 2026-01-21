@@ -29,41 +29,20 @@ ruleTester.run( 'no-data', rule, {
 		// the non-existant method is disallowed as well.
 	],
 	invalid: [
-		{
-			code: '$.data(elem, "foo")',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").data("foo", "bar")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.data("foo")',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().data("foo", "bar")',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").data("foo"))',
-			errors: [ error ]
-		},
-		{
-			code: '$.removeData(elem, "foo")',
-			errors: [ removeError ]
-		},
-		{
-			code: '$("div").removeData("foo")',
-			errors: [ removeError ]
-		},
-		{
-			code: '$div.removeData("foo")',
-			errors: [ removeError ]
-		},
-		{
-			code: '$.hasData(elem)',
-			errors: [ hasError ]
-		}
+		...[
+			'$.data(elem, "foo")',
+			'$("div").data("foo", "bar")',
+			'$div.data("foo")',
+			'$("div").first().data("foo", "bar")',
+			'$("div").append($("input").data("foo"))'
+		].map( ( code ) => ( { code, errors: [ error ] } ) ),
+		...[
+			'$.removeData(elem, "foo")',
+			'$("div").removeData("foo")',
+			'$div.removeData("foo")'
+		].map( ( code ) => ( { code, errors: [ removeError ] } ) ),
+		...[
+			'$.hasData(elem)'
+		].map( ( code ) => ( { code, errors: [ hasError ] } ) )
 	]
 } );

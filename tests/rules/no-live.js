@@ -20,38 +20,17 @@ ruleTester.run( 'no-live', rule, {
 		'div.die'
 	],
 	invalid: [
-		{
-			code: '$("div").live()',
-			errors: [ liveError ]
-		},
-		{
-			code: '$div.live()',
-			errors: [ liveError ]
-		},
-		{
-			code: '$("div").first().live()',
-			errors: [ liveError ]
-		},
-		{
-			code: '$("div").append($("input").live())',
-			errors: [ liveError ]
-		},
-
-		{
-			code: '$("div").die()',
-			errors: [ dieError ]
-		},
-		{
-			code: '$div.die()',
-			errors: [ dieError ]
-		},
-		{
-			code: '$("div").first().die()',
-			errors: [ dieError ]
-		},
-		{
-			code: '$("div").append($("input").die())',
-			errors: [ dieError ]
-		}
+		...[
+			'$("div").live()',
+			'$div.live()',
+			'$("div").first().live()',
+			'$("div").append($("input").live())'
+		].map( ( code ) => ( { code, errors: [ liveError ] } ) ),
+		...[
+			'$("div").die()',
+			'$div.die()',
+			'$("div").first().die()',
+			'$("div").append($("input").die())'
+		].map( ( code ) => ( { code, errors: [ dieError ] } ) )
 	]
 } );

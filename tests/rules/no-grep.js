@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-grep', rule, {
 	valid: [ 'grep()', '"test".grep()', '"test".grep' ],
 	invalid: [
-		{
-			code: '$.grep()',
-			errors: [ error ]
-		}
-	]
+		'$.grep()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

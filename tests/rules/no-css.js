@@ -9,25 +9,10 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-css', rule, {
 	valid: [ 'css()', '[].css()', 'div.css()', 'div.css' ],
 	invalid: [
-		{
-			code: '$.css()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").css()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.css()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().css()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").css())',
-			errors: [ error ]
-		}
-	]
+		'$.css()',
+		'$("div").css()',
+		'$div.css()',
+		'$("div").first().css()',
+		'$("div").append($("input").css())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

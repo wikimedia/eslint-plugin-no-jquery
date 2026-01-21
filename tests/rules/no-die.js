@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-die', rule, {
 	valid: [ 'die()', '[].die()', 'div.die()', 'div.die' ],
 	invalid: [
-		{
-			code: '$("div").die()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.die()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().die()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").die())',
-			errors: [ error ]
-		}
-	]
+		'$("div").die()',
+		'$div.die()',
+		'$("div").first().die()',
+		'$("div").append($("input").die())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

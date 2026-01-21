@@ -22,17 +22,17 @@ ruleTester.run( 'no-bind', rule, {
 		'$div.remove.unbind($div)'
 	],
 	invalid: [
-		[ '$("div").bind()', bindError ],
-		[ '$div.bind()', bindError ],
-		[ '$("div").first().bind()', bindError ],
-		[ '$("div").append($("input").bind())', bindError ],
-
-		[ '$("div").unbind()', unbindError ],
-		[ '$div.unbind()', unbindError ],
-		[ '$("div").first().unbind()', unbindError ],
-		[ '$("div").append($("input").unbind())', unbindError ]
-	].map( ( codeError ) => ( {
-		code: codeError[ 0 ],
-		errors: [ codeError[ 1 ] ]
-	} ) )
+		...[
+			'$("div").bind()',
+			'$div.bind()',
+			'$("div").first().bind()',
+			'$("div").append($("input").bind())'
+		].map( ( code ) => ( { code, errors: [ bindError ] } ) ),
+		...[
+			'$("div").unbind()',
+			'$div.unbind()',
+			'$("div").first().unbind()',
+			'$("div").append($("input").unbind())'
+		].map( ( code ) => ( { code, errors: [ unbindError ] } ) )
+	]
 } );

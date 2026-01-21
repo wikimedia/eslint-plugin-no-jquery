@@ -20,37 +20,17 @@ ruleTester.run( 'no-serialize', rule, {
 		'div.serializeArray'
 	],
 	invalid: [
-		{
-			code: '$("div").serialize()',
-			errors: [ serializeError ]
-		},
-		{
-			code: '$div.serialize()',
-			errors: [ serializeError ]
-		},
-		{
-			code: '$("div").first().serialize()',
-			errors: [ serializeError ]
-		},
-		{
-			code: '$("div").append($("input").serialize())',
-			errors: [ serializeError ]
-		},
-		{
-			code: '$("div").serializeArray()',
-			errors: [ arrayError ]
-		},
-		{
-			code: '$div.serializeArray()',
-			errors: [ arrayError ]
-		},
-		{
-			code: '$("div").first().serializeArray()',
-			errors: [ arrayError ]
-		},
-		{
-			code: '$("div").append($("input").serializeArray())',
-			errors: [ arrayError ]
-		}
+		...[
+			'$("div").serialize()',
+			'$div.serialize()',
+			'$("div").first().serialize()',
+			'$("div").append($("input").serialize())'
+		].map( ( code ) => ( { code, errors: [ serializeError ] } ) ),
+		...[
+			'$("div").serializeArray()',
+			'$div.serializeArray()',
+			'$("div").first().serializeArray()',
+			'$("div").append($("input").serializeArray())'
+		].map( ( code ) => ( { code, errors: [ arrayError ] } ) )
 	]
 } );

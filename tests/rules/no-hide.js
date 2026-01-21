@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-hide', rule, {
 	valid: [ 'hide()', '[].hide()', 'div.hide()', 'div.hide' ],
 	invalid: [
-		{
-			code: '$("div").hide()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.hide()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().hide()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").hide())',
-			errors: [ error ]
-		}
-	]
+		'$("div").hide()',
+		'$div.hide()',
+		'$("div").first().hide()',
+		'$("div").append($("input").hide())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

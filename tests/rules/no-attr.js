@@ -11,41 +11,20 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-attr', rule, {
 	valid: [ 'attr()', '[].attr()', 'div.attr()', 'div.attr', 'removeAttr()', 'div.removeAttr' ],
 	invalid: [
-		{
-			code: '$.attr()',
-			errors: [ getError ]
-		},
-		{
-			code: '$("div").attr()',
-			errors: [ getError ]
-		},
-		{
-			code: '$div.attr()',
-			errors: [ getError ]
-		},
-		{
-			code: '$("div").first().attr()',
-			errors: [ getError ]
-		},
-		{
-			code: '$("div").append($("input").attr())',
-			errors: [ getError ]
-		},
-		{
-			code: '$("div").attr("name")',
-			errors: [ getError ]
-		},
-		{
-			code: '$("div").attr("name", "random")',
-			errors: [ setError ]
-		},
-		{
-			code: '$.removeAttr()',
-			errors: [ removeError ]
-		},
-		{
-			code: '$("div").removeAttr("name")',
-			errors: [ removeError ]
-		}
+		...[
+			'$.attr()',
+			'$("div").attr()',
+			'$div.attr()',
+			'$("div").first().attr()',
+			'$("div").append($("input").attr())',
+			'$("div").attr("name")'
+		].map( ( code ) => ( { code, errors: [ getError ] } ) ),
+		...[
+			'$("div").attr("name", "random")'
+		].map( ( code ) => ( { code, errors: [ setError ] } ) ),
+		...[
+			'$.removeAttr()',
+			'$("div").removeAttr("name")'
+		].map( ( code ) => ( { code, errors: [ removeError ] } ) )
 	]
 } );

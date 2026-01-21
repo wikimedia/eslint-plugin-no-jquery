@@ -25,9 +25,5 @@ ruleTester.run( 'no-jquery-constructor', rule, {
 		'$(undefined)',
 		'$(false)',
 		'jQuery("div")'
-	].map(
-		( test ) => Object.assign( {
-			errors: [ error ]
-		}, typeof test === 'string' ? { code: test } : test )
-	)
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

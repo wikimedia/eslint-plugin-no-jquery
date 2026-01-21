@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-is', rule, {
 	valid: [ 'is()', '[].is()', 'div.is()', 'div.is' ],
 	invalid: [
-		{
-			code: '$("div").is()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.is()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().is()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").is())',
-			errors: [ error ]
-		}
-	]
+		'$("div").is()',
+		'$div.is()',
+		'$("div").first().is()',
+		'$("div").append($("input").is())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

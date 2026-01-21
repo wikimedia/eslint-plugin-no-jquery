@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-contains', rule, {
 	valid: [ 'contains()', 'myClass.contains()', '$div.contains()' ],
 	invalid: [
-		{
-			code: '$.contains()',
-			errors: [ error ]
-		}
-	]
+		'$.contains()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );
