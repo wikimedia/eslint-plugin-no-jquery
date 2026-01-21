@@ -7,6 +7,7 @@ const addError = 'Prefer Element#classList to .addClass';
 const hasError = 'Prefer Element#classList to .hasClass';
 const removeError = 'Prefer Element#classList to .removeClass';
 const toggleError = 'Prefer Element#classList to .toggleClass';
+const toggleDeprecatedError = '.toggleClass(boolean|undefined) is deprecated';
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-class', rule, {
@@ -29,72 +30,56 @@ ruleTester.run( 'no-class', rule, {
 		'toggleClass()',
 		'[].toggleClass()',
 		'div.toggleClass()',
-		'div.toggleClass'
+		'div.toggleClass',
+
+		...[
+			'$div.attr("class", "")',
+			'$div.removeClass("myClass")',
+			'toggleClass(false)',
+			'obj.toggleClass(false)',
+			'$div.toggleClass("myClass", true)',
+			'$div.toggleClass("myClass", false)',
+			'$div.toggleClass("myClass")',
+			'$div.toggleClass("myClass", undefined)'
+		].map( ( code ) => ( {
+			code,
+			options: [ { onlyDeprecated: true } ]
+		} ) )
 	],
 	invalid: [
-		{
-			code: '$("div").addClass()',
-			errors: [ addError ]
-		},
-		{
-			code: '$div.addClass()',
-			errors: [ addError ]
-		},
-		{
-			code: '$("div").first().addClass()',
-			errors: [ addError ]
-		},
-		{
-			code: '$("div").append($("input").addClass())',
-			errors: [ addError ]
-		},
-		{
-			code: '$("div").hasClass()',
-			errors: [ hasError ]
-		},
-		{
-			code: '$div.hasClass()',
-			errors: [ hasError ]
-		},
-		{
-			code: '$("div").first().hasClass()',
-			errors: [ hasError ]
-		},
-		{
-			code: '$("div").append($("input").hasClass())',
-			errors: [ hasError ]
-		},
-		{
-			code: '$("div").removeClass()',
-			errors: [ removeError ]
-		},
-		{
-			code: '$div.removeClass()',
-			errors: [ removeError ]
-		},
-		{
-			code: '$("div").first().removeClass()',
-			errors: [ removeError ]
-		},
-		{
-			code: '$("div").append($("input").removeClass())',
-			errors: [ removeError ]
-		},
-		{
-			code: '$("div").toggleClass()',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$div.toggleClass()',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$("div").first().toggleClass()',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$("div").append($("input").toggleClass())',
-			errors: [ toggleError ]
-		}
+		...[
+			'$("div").addClass()',
+			'$div.addClass()',
+			'$("div").first().addClass()',
+			'$("div").append($("input").addClass())'
+		].map( ( code ) => ( { code, errors: [ addError ] } ) ),
+		...[
+			'$("div").hasClass()',
+			'$div.hasClass()',
+			'$("div").first().hasClass()',
+			'$("div").append($("input").hasClass())'
+		].map( ( code ) => ( { code, errors: [ hasError ] } ) ),
+		...[
+			'$("div").removeClass()',
+			'$div.removeClass()',
+			'$("div").first().removeClass()',
+			'$("div").append($("input").removeClass())'
+		].map( ( code ) => ( { code, errors: [ removeError ] } ) ),
+		...[
+			'$("div").toggleClass()',
+			'$div.toggleClass()',
+			'$("div").first().toggleClass()',
+			'$("div").append($("input").toggleClass())'
+		].map( ( code ) => ( { code, errors: [ toggleError ] } ) ),
+		...[
+			'$div.toggleClass()',
+			'$div.toggleClass(false)',
+			'$div.toggleClass(true)',
+			'$div.toggleClass(undefined)'
+		].map( ( code ) => ( {
+			code,
+			errors: [ toggleDeprecatedError ],
+			options: [ { onlyDeprecated: true } ]
+		} ) )
 	]
 } );

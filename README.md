@@ -96,7 +96,7 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-box-model`](docs/rules/no-box-model.md) `1.3`
 * [`no-jquery/no-browser`](docs/rules/no-browser.md) `1.3`
 * [`no-jquery/no-camel-case`](docs/rules/no-camel-case.md) `3.3`, `all`
-* [`no-jquery/no-class`](docs/rules/no-class.md) `all`
+* [`no-jquery/no-class`](docs/rules/no-class.md) ⚙️ `3.0†`, `all`
 * [`no-jquery/no-class-state`](docs/rules/no-class-state.md)
 * [`no-jquery/no-clone`](docs/rules/no-clone.md) `all`
 * [`no-jquery/no-closest`](docs/rules/no-closest.md) `all`
