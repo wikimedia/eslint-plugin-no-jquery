@@ -26,55 +26,23 @@ ruleTester.run( 'no-slide', rule, {
 		'div.slideUp'
 	],
 	invalid: [
-		{
-			code: '$("div").slideDown()',
-			errors: [ downError ]
-		},
-		{
-			code: '$div.slideDown()',
-			errors: [ downError ]
-		},
-		{
-			code: '$("div").first().slideDown()',
-			errors: [ downError ]
-		},
-		{
-			code: '$("div").append($("input").slideDown())',
-			errors: [ downError ]
-		},
-
-		{
-			code: '$("div").slideToggle()',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$div.slideToggle()',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$("div").first().slideToggle()',
-			errors: [ toggleError ]
-		},
-		{
-			code: '$("div").append($("input").slideToggle())',
-			errors: [ toggleError ]
-		},
-
-		{
-			code: '$("div").slideUp()',
-			errors: [ upError ]
-		},
-		{
-			code: '$div.slideUp()',
-			errors: [ upError ]
-		},
-		{
-			code: '$("div").first().slideUp()',
-			errors: [ upError ]
-		},
-		{
-			code: '$("div").append($("input").slideUp())',
-			errors: [ upError ]
-		}
+		...[
+			'$("div").slideDown()',
+			'$div.slideDown()',
+			'$("div").first().slideDown()',
+			'$("div").append($("input").slideDown())'
+		].map( ( code ) => ( { code, errors: [ downError ] } ) ),
+		...[
+			'$("div").slideToggle()',
+			'$div.slideToggle()',
+			'$("div").first().slideToggle()',
+			'$("div").append($("input").slideToggle())'
+		].map( ( code ) => ( { code, errors: [ toggleError ] } ) ),
+		...[
+			'$("div").slideUp()',
+			'$div.slideUp()',
+			'$("div").first().slideUp()',
+			'$("div").append($("input").slideUp())'
+		].map( ( code ) => ( { code, errors: [ upError ] } ) )
 	]
 } );

@@ -9,13 +9,7 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-support', rule, {
 	valid: [ 'support', 'a.support', 'support.foo', 'a.support.foo' ],
 	invalid: [
-		{
-			code: '$.support',
-			errors: [ error ]
-		},
-		{
-			code: '$.support.style',
-			errors: [ error ]
-		}
-	]
+		'$.support',
+		'$.support.style'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

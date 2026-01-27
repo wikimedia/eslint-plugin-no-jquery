@@ -20,9 +20,6 @@ ruleTester.run( 'no-find-util', rule, {
 		'$("div").append($("input").find())'
 	],
 	invalid: [
-		{
-			code: '$.find()',
-			errors: [ error ]
-		}
-	]
+		'$.find()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

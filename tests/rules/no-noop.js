@@ -11,13 +11,11 @@ ruleTester.run( 'no-noop', rule, {
 	invalid: [
 		{
 			code: '$.noop',
-			errors: [ error ],
 			output: '(function(){})'
 		},
 		{
 			code: '$.noop()',
-			errors: [ error ],
 			output: '(function(){})()'
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

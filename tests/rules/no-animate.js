@@ -21,82 +21,42 @@ ruleTester.run( 'no-animate', rule, {
 		'[].finish()',
 		'div.finish()',
 		'div.finish',
-		{
-			code: '$div.animate({scrollTop: 100})',
-			options: [ { allowScroll: true } ]
-		},
-		{
-			code: '$div.animate({scrollLeft: 200})',
-			options: [ { allowScroll: true } ]
-		},
-		{
-			code: '$div.animate({scrollTop: 100, scrollLeft: 200})',
-			options: [ { allowScroll: true } ]
-		},
-		{
-			code: '$div.animate({scrollTop: 100}).stop()',
-			options: [ { allowScroll: true } ]
-		},
-		{
-			code: '$div.animate({scrollTop: 100}).finish()',
-			options: [ { allowScroll: true } ]
-		}
+		...[
+			'$div.animate({scrollTop: 100})',
+			'$div.animate({scrollLeft: 200})',
+			'$div.animate({scrollTop: 100, scrollLeft: 200})',
+			'$div.animate({scrollTop: 100}).stop()',
+			'$div.animate({scrollTop: 100}).finish()'
+		].map( ( code ) => ( { code, options: [ { allowScroll: true } ] } ) )
 	],
 	invalid: [
-		{
-			code: '$("div").animate()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").stop()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").finish()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.animate()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.animate()',
+		...[
+			'$("div").animate()',
+			'$("div").stop()',
+			'$("div").finish()',
+			'$div.animate()',
+			'$("div").first().animate()',
+			'$("div").append($("input").animate())',
+			'$div.animate({scrollTop: 100})',
+			'$div.animate({scrollLeft: 200})',
+			'$div.animate({scrollTop: 100, scrollLeft: 200})',
+			'$div.animate({scrollTop: 100, width: 300})'
+		].map( ( code ) => ( { code, errors: [ error ] } ) ),
+
+		...[
+			'$div.animate()',
+			'$div.animate({scrollTop: 100, width: 300})'
+		].map( ( code ) => ( {
+			code,
 			options: [ { allowScroll: true } ],
 			errors: [ errorNoScroll ]
-		},
-		{
-			code: '$("div").first().animate()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").animate())',
-			errors: [ error ]
-		},
-		{
-			code: '$div.animate({scrollTop: 100})',
-			errors: [ error ]
-		},
+		} ) ),
+
 		{
 			code: '$div.animate({scrollTop: 100})',
 			options: [ { allowScroll: false } ],
-			errors: [ error ]
-		},
-		{
-			code: '$div.animate({scrollLeft: 200})',
-			errors: [ error ]
-		},
-		{
-			code: '$div.animate({scrollTop: 100, scrollLeft: 200})',
-			errors: [ error ]
-		},
-		{
-			code: '$div.animate({scrollTop: 100, width: 300})',
-			errors: [ error ]
-		},
-		{
-			code: '$div.animate({scrollTop: 100, width: 300})',
-			options: [ { allowScroll: true } ],
-			errors: [ errorNoScroll ]
+			errors: [ error ],
+			docgen: false
 		}
 	]
 } );

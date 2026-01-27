@@ -20,23 +20,19 @@ ruleTester.run( 'no-extend', rule, {
 	invalid: [
 		{
 			code: '$.extend({}, foo)',
-			errors: [ error ],
 			output: 'Object.assign({}, foo)'
 		},
 		{
-			code: '$.extend(true, {}, foo)',
-			errors: [ error ]
+			code: '$.extend(true, {}, foo)'
 		},
 		{
 			code: '$.extend({}, foo)',
 			options: [ { allowDeep: true } ],
-			errors: [ error ],
 			output: 'Object.assign({}, foo)'
 		},
 		{
 			code: '$.extend(fooCouldBeNull, doesNotAutofix)',
-			options: [ { allowDeep: true } ],
-			errors: [ error ]
+			options: [ { allowDeep: true } ]
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

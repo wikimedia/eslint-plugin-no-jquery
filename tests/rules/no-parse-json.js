@@ -11,8 +11,7 @@ ruleTester.run( 'no-parse-json', rule, {
 	invalid: [
 		{
 			code: '$.parseJSON("{}")',
-			errors: [ error ],
 			output: 'JSON.parse("{}")'
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

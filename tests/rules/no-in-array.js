@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-in-array', rule, {
 	valid: [ 'inArray()', '"test".inArray()', '"test".inArray' ],
 	invalid: [
-		{
-			code: '$.inArray()',
-			errors: [ error ]
-		}
-	]
+		'$.inArray()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

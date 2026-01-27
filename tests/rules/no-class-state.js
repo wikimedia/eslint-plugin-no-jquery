@@ -24,37 +24,13 @@ ruleTester.run( 'no-class-state', rule, {
 		'$div.toggleClass("myClass", false)'
 	],
 	invalid: [
-		{
-			code: '$("div").hasClass()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.hasClass()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().hasClass()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").hasClass())',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").toggleClass("myClass")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.toggleClass("myClass")',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().toggleClass("myClass")',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").toggleClass("myClass"))',
-			errors: [ error ]
-		}
-	]
+		'$("div").hasClass()',
+		'$div.hasClass()',
+		'$("div").first().hasClass()',
+		'$("div").append($("input").hasClass())',
+		'$("div").toggleClass("myClass")',
+		'$div.toggleClass("myClass")',
+		'$("div").first().toggleClass("myClass")',
+		'$("div").append($("input").toggleClass("myClass"))'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

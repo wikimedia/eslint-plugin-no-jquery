@@ -10,31 +10,17 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-prop', rule, {
 	valid: [ 'prop()', '[].prop()', 'div.prop()', 'div.prop', 'removeProp()', 'div.removeProp()' ],
 	invalid: [
-		{
-			code: '$.prop()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").prop()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.prop()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().prop()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").prop())',
-			errors: [ error ]
-		},
+		...[
+			'$.prop()',
+			'$("div").prop()',
+			'$div.prop()',
+			'$("div").first().prop()',
+			'$("div").append($("input").prop())'
+		].map( ( code ) => ( { code, errors: [ error ] } ) ),
 		// $.removeProp util is disallowed too as the rule is shared
 		// with $.prop, but $.removeProp doesn't exist
-		{
-			code: '$("div").removeProp()',
-			errors: [ errorRemove ]
-		}
+		...[
+			'$("div").removeProp()'
+		].map( ( code ) => ( { code, errors: [ errorRemove ] } ) )
 	]
 } );

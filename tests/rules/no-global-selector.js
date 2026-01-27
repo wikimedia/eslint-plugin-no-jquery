@@ -38,55 +38,43 @@ ruleTester.run( 'no-global-selector', rule, {
 	],
 	invalid: [
 		{
-			code: '$("div")',
-			errors: [ error ]
+			code: '$("div")'
 		},
 		{
-			code: '$("#id")',
-			errors: [ error ]
+			code: '$("#id")'
 		},
 		{
-			code: '$(".selector")',
-			errors: [ error ]
+			code: '$(".selector")'
 		},
 		{
-			code: '$(".selector > .child")',
-			errors: [ error ]
+			code: '$(".selector > .child")'
 		},
 		{
-			code: '$(".selector", ".context")',
-			errors: [ error ]
+			code: '$(".selector", ".context")'
 		},
 		{
-			code: '$(".selector", "")',
-			errors: [ error ]
+			code: '$(".selector", "")'
 		},
 		{
-			code: '$(".selector", null)',
-			errors: [ error ]
+			code: '$(".selector", null)'
 		},
 		{
-			code: '$(".selector", undefined)',
-			errors: [ error ]
+			code: '$(".selector", undefined)'
 		},
 		{
-			code: '$(".selector", $(".context"))',
-			errors: [ error ]
+			code: '$(".selector", $(".context"))'
 		},
 		{
 			code: '$("#id>div")',
-			options: [ { allowIds: true } ],
-			errors: [ error ]
+			options: [ { allowIds: true } ]
 		},
 		{
 			code: '$("#id~div")',
-			options: [ { allowIds: true } ],
-			errors: [ error ]
+			options: [ { allowIds: true } ]
 		},
 		{
 			code: '$("#id div")',
-			options: [ { allowIds: true } ],
-			errors: [ error ]
+			options: [ { allowIds: true } ]
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

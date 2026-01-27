@@ -11,8 +11,7 @@ ruleTester.run( 'no-unique', rule, {
 	invalid: [
 		{
 			code: '$.unique( [] )',
-			errors: [ error ],
 			output: '$.uniqueSort( [] )'
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

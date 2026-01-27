@@ -15,33 +15,12 @@ ruleTester.run( 'no-context-prop', rule, {
 		'$div.context(arg)'
 	],
 	invalid: [
-		{
-			code: '$("div").context',
-			errors: [ error ]
-		},
-		{
-			code: '$div.context',
-			errors: [ error ]
-		},
-		{
-			code: '$div.context.prop',
-			errors: [ error ]
-		},
-		{
-			code: '$div.context.method()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().context',
-			errors: [ error ]
-		},
-		{
-			code: 'f($div.context)',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").context)',
-			errors: [ error ]
-		}
-	]
+		'$("div").context',
+		'$div.context',
+		'$div.context.prop',
+		'$div.context.method()',
+		'$("div").first().context',
+		'f($div.context)',
+		'$("div").append($("input").context)'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

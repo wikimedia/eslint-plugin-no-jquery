@@ -33,25 +33,20 @@ ruleTester.run( 'no-ajax', rule, {
 		'div.post'
 	],
 	invalid: [
-		{
-			code: '$.ajax()',
-			errors: [ ajaxError ]
-		},
-		{
-			code: '$.get()',
-			errors: [ getError ]
-		},
-		{
-			code: '$.getJSON()',
-			errors: [ jsonError ]
-		},
-		{
-			code: '$.getScript()',
-			errors: [ scriptError ]
-		},
-		{
-			code: '$.post()',
-			errors: [ postError ]
-		}
+		...[
+			'$.ajax()'
+		].map( ( code ) => ( { code, errors: [ ajaxError ] } ) ),
+		...[
+			'$.get()'
+		].map( ( code ) => ( { code, errors: [ getError ] } ) ),
+		...[
+			'$.getJSON()'
+		].map( ( code ) => ( { code, errors: [ jsonError ] } ) ),
+		...[
+			'$.getScript()'
+		].map( ( code ) => ( { code, errors: [ scriptError ] } ) ),
+		...[
+			'$.post()'
+		].map( ( code ) => ( { code, errors: [ postError ] } ) )
 	]
 } );

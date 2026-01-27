@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-when', rule, {
 	valid: [ 'When()', 'new When()', '"test".when()', '"test".when', '$when()' ],
 	invalid: [
-		{
-			code: '$.when(a,b)',
-			errors: [ error ]
-		}
-	]
+		'$.when(a,b)'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

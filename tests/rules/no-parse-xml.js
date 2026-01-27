@@ -11,14 +11,12 @@ ruleTester.run( 'no-parse-xml', rule, {
 	invalid: [
 		{
 			code: '$.parseXML("<b>test</b>")',
-			errors: [ error ],
 			output: '( new window.DOMParser() ).parseFromString("<b>test</b>", "text/xml")'
 		},
 		// Can't fix if no arguments are passed
 		{
 			code: '$.parseXML()',
-			errors: [ error ],
 			docgen: false
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

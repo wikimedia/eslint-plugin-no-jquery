@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-trigger', rule, {
 	valid: [ 'trigger()', '[].trigger()', 'div.trigger()', 'div.trigger' ],
 	invalid: [
-		{
-			code: '$("div").trigger()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.trigger()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().trigger()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").trigger())',
-			errors: [ error ]
-		}
-	]
+		'$("div").trigger()',
+		'$div.trigger()',
+		'$("div").first().trigger()',
+		'$("div").append($("input").trigger())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

@@ -20,29 +20,11 @@ ruleTester.run( 'no-clone', rule, {
 		'$div[0].clone()'
 	],
 	invalid: [
-		{
-			code: '$.clone()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").clone()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.clone()',
-			errors: [ error ]
-		},
-		{
-			code: 'this.prop.$div.clone()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().clone()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").clone())',
-			errors: [ error ]
-		}
-	]
+		'$.clone()',
+		'$("div").clone()',
+		'$div.clone()',
+		'this.prop.$div.clone()',
+		'$("div").first().clone()',
+		'$("div").append($("input").clone())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

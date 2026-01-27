@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-val', rule, {
 	valid: [ 'val()', '[].val()', 'div.val()', 'div.val' ],
 	invalid: [
-		{
-			code: '$("div").val()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.val()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().val()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").val())',
-			errors: [ error ]
-		}
-	]
+		'$("div").val()',
+		'$div.val()',
+		'$("div").first().val()',
+		'$("div").append($("input").val())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

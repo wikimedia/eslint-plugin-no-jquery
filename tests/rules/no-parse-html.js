@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-parse-html', rule, {
 	valid: [ 'parseHTML("<b>test</b>")', '"test".parseHTML("<b>test</b>")', '"<b>test</b>".parseHTML' ],
 	invalid: [
-		{
-			code: '$.parseHTML("<b>test</b>")',
-			errors: [ error ]
-		}
-	]
+		'$.parseHTML("<b>test</b>")'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

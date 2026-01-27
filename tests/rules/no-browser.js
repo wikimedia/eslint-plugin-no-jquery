@@ -9,13 +9,7 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-browser', rule, {
 	valid: [ 'browser', 'a.browser', 'browser.foo', 'a.browser.foo', '$.browsers' ],
 	invalid: [
-		{
-			code: '$.browser',
-			errors: [ error ]
-		},
-		{
-			code: '$.browser.style',
-			errors: [ error ]
-		}
-	]
+		'$.browser',
+		'$.browser.style'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

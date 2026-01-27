@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-hold-ready', rule, {
 	valid: [ 'holdReady()', '"test".holdReady()', '"test".holdReady' ],
 	invalid: [
-		{
-			code: '$.holdReady()',
-			errors: [ error ]
-		}
-	]
+		'$.holdReady()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

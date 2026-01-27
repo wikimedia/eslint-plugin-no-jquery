@@ -38,65 +38,20 @@ ruleTester.run( 'no-append-html', rule, {
 		}
 	],
 	invalid: [
-		{
-			code: '$div.append("<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.append("unescaped html")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.prepend("<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.before("<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.after("<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.replaceWith("<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$els.add("<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$els.appendTo("<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$els.prependTo("<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.append(code + "<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.append(test ? $el : "<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.append($el, "<xss>")',
-			errors: [ error ]
-		},
-		{
-			code: '$div.append(this.$el.someProp)',
-			errors: [ error ]
-		},
-		{
-			code: '$div.append(userInput)',
-			errors: [ error ]
-		},
-		{
-			code: '$div.append(getSomething())',
-			errors: [ error ]
-		}
-	]
+		'$div.append("<xss>")',
+		'$div.append("unescaped html")',
+		'$div.prepend("<xss>")',
+		'$div.before("<xss>")',
+		'$div.after("<xss>")',
+		'$div.replaceWith("<xss>")',
+		'$els.add("<xss>")',
+		'$els.appendTo("<xss>")',
+		'$els.prependTo("<xss>")',
+		'$div.append(code + "<xss>")',
+		'$div.append(test ? $el : "<xss>")',
+		'$div.append($el, "<xss>")',
+		'$div.append(this.$el.someProp)',
+		'$div.append(userInput)',
+		'$div.append(getSomething())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

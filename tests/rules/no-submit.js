@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-submit', rule, {
 	valid: [ 'submit()', '[].submit()', 'form.submit()', 'form.submit' ],
 	invalid: [
-		{
-			code: '$("form").submit()',
-			errors: [ error ]
-		},
-		{
-			code: '$form.submit()',
-			errors: [ error ]
-		},
-		{
-			code: '$("form").first().submit()',
-			errors: [ error ]
-		},
-		{
-			code: '$("form").append($("input").submit())',
-			errors: [ error ]
-		}
-	]
+		'$("form").submit()',
+		'$form.submit()',
+		'$("form").first().submit()',
+		'$("form").append($("input").submit())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

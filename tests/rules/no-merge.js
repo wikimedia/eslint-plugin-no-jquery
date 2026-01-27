@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-merge', rule, {
 	valid: [ 'merge()', '"test".merge()', '"test".merge' ],
 	invalid: [
-		{
-			code: '$.merge()',
-			errors: [ error ]
-		}
-	]
+		'$.merge()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

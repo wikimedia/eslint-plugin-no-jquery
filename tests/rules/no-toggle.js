@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-toggle', rule, {
 	valid: [ 'toggle()', '[].toggle()', 'div.toggle()', 'div.toggle' ],
 	invalid: [
-		{
-			code: '$("div").toggle()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.toggle()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().toggle()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").toggle())',
-			errors: [ error ]
-		}
-	]
+		'$("div").toggle()',
+		'$div.toggle()',
+		'$("div").first().toggle()',
+		'$("div").append($("input").toggle())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

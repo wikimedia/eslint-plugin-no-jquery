@@ -22,18 +22,15 @@ ruleTester.run( 'no-on-ready', rule, {
 	invalid: [
 		{
 			code: '$(document).on("ready", function(){})',
-			errors: [ error ],
 			output: '$(document).ready(function(){})'
 		},
 		{
 			code: '$document.on("ready", function(){})',
-			errors: [ error ],
 			output: '$document.ready(function(){})'
 		},
 		{
 			code: '$document.on("ready")',
-			errors: [ error ],
 			docgen: false
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

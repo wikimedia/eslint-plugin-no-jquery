@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-unbind', rule, {
 	valid: [ 'unbind()', '[].unbind()', 'div.unbind()', 'div.unbind' ],
 	invalid: [
-		{
-			code: '$("div").unbind()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.unbind()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().unbind()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").unbind())',
-			errors: [ error ]
-		}
-	]
+		'$("div").unbind()',
+		'$div.unbind()',
+		'$("div").first().unbind()',
+		'$("div").append($("input").unbind())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-type', rule, {
 	valid: [ 'type()', 'myMethod.type()', 'myMethod.type' ],
 	invalid: [
-		{
-			code: '$.type()',
-			errors: [ error ]
-		}
-	]
+		'$.type()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

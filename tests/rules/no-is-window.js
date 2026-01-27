@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-is-window', rule, {
 	valid: [ 'isWindow()', 'myClass.isWindow()' ],
 	invalid: [
-		{
-			code: '$.isWindow()',
-			errors: [ error ]
-		}
-	]
+		'$.isWindow()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

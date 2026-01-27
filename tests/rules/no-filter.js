@@ -9,25 +9,10 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-filter', rule, {
 	valid: [ 'filter()', '[].filter()', 'div.filter()', 'div.filter' ],
 	invalid: [
-		{
-			code: '$.filter()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").filter()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.filter()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().filter()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").filter())',
-			errors: [ error ]
-		}
-	]
+		'$.filter()',
+		'$("div").filter()',
+		'$div.filter()',
+		'$("div").first().filter()',
+		'$("div").append($("input").filter())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-node-name', rule, {
 	valid: [ 'nodeName()', 'myClass.nodeName()', '$div.nodeName()' ],
 	invalid: [
-		{
-			code: '$.nodeName()',
-			errors: [ error ]
-		}
-	]
+		'$.nodeName()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

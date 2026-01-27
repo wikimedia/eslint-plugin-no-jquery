@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-fx-interval', rule, {
 	valid: [ 'interval', 'fx.interval', '$.interval', 'a.fx.interval', '$.fx' ],
 	invalid: [
-		{
-			code: '$.fx.interval',
-			errors: [ error ]
-		}
-	]
+		'$.fx.interval'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

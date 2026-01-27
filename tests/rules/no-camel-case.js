@@ -9,9 +9,6 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-camel-case', rule, {
 	valid: [ 'camelCase()', 'myClass.camelCase()', '$div.camelCase()' ],
 	invalid: [
-		{
-			code: '$.camelCase()',
-			errors: [ error ]
-		}
-	]
+		'$.camelCase()'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

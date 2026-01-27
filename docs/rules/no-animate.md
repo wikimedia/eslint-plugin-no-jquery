@@ -40,11 +40,6 @@ div.finish();
 div.finish;
 ```
 
-❌ Examples of **incorrect** code with `[{"allowScroll":false}]` options:
-```js
-$div.animate( { scrollTop: 100 } );
-```
-
 ❌ Examples of **incorrect** code with `[{"allowScroll":true}]` options:
 ```js
 $div.animate();

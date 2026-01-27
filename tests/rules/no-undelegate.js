@@ -14,21 +14,9 @@ ruleTester.run( 'no-undelegate', rule, {
 		'div.undelegate'
 	],
 	invalid: [
-		{
-			code: '$("div").undelegate()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.undelegate()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().undelegate()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").undelegate())',
-			errors: [ error ]
-		}
-	]
+		'$("div").undelegate()',
+		'$div.undelegate()',
+		'$("div").first().undelegate()',
+		'$("div").append($("input").undelegate())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );

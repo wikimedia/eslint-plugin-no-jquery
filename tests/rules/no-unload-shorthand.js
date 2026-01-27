@@ -17,23 +17,19 @@ ruleTester.run( 'no-unload-shorthand', rule, {
 	invalid: [
 		{
 			code: '$("div").unload(handler)',
-			errors: [ error ],
 			output: '$("div").on("unload", handler)'
 		},
 		{
 			code: '$div.unload()',
-			errors: [ error ],
 			output: '$div.trigger("unload")'
 		},
 		{
 			code: '$("div").first().unload()',
-			errors: [ error ],
 			output: '$("div").first().trigger("unload")'
 		},
 		{
 			code: '$("div").append($("input").unload())',
-			errors: [ error ],
 			output: '$("div").append($("input").trigger("unload"))'
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

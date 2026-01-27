@@ -11,13 +11,11 @@ ruleTester.run( 'no-is-function', rule, {
 	invalid: [
 		{
 			code: '$.isFunction(expression(arg))',
-			errors: [ error ],
 			output: 'typeof expression(arg) === "function"'
 		},
 		{
 			code: 'if($.isFunction(fn)){g();}',
-			errors: [ error ],
 			output: 'if(typeof fn === "function"){g();}'
 		}
-	]
+	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
 } );

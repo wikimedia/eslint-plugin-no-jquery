@@ -9,21 +9,9 @@ const ruleTester = new RuleTester();
 ruleTester.run( 'no-load', rule, {
 	valid: [ 'load()', '[].load()', 'div.load()', 'div.load', '$.load()' ],
 	invalid: [
-		{
-			code: '$("div").load()',
-			errors: [ error ]
-		},
-		{
-			code: '$div.load()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").first().load()',
-			errors: [ error ]
-		},
-		{
-			code: '$("div").append($("input").load())',
-			errors: [ error ]
-		}
-	]
+		'$("div").load()',
+		'$div.load()',
+		'$("div").first().load()',
+		'$("div").append($("input").load())'
+	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );
