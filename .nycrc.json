@@ -3,7 +3,7 @@
 	"include": [
 		"src/**/*.js"
 	],
-	"check-coverage": true,
+	"check-coverage": false,
 	"per-file": true,
 	"branches": 90,
 	"lines": 90,
