@@ -27,7 +27,7 @@ $.noOp;
 🔧 Examples of code **fixed** by this rule:
 ```js
 $.noop;   /* → */ ( function () {} );
-$.noop(); /* → */ ( function () {}() );
+$.noop(); /* → */ ( function () {} )();
 ```
 
 ## Resources

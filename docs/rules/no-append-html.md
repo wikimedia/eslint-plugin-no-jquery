@@ -46,7 +46,7 @@ $div.append( test ? $el1 : null );
 $div.append( test ? $el1 : undefined );
 $div.append( test ? $el1 : '' );
 
-$el = getSomething();
+$el=getSomething();
 $div.append( $el );
 
 $div.add( '.foo' );

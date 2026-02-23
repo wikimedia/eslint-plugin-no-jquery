@@ -20,8 +20,8 @@
 		"report": "nyc report --reporter=text-lcov > coverage.lcov",
 		"reporthtml": "nyc report --reporter=html",
 		"testpath": "mocha",
-		"doc": "echo 'Documentation generation temporarily disabled pending eslint-docgen v9 update'",
-		"build": "echo 'NOTE: Doc build temporarily disabled pending eslint-docgen v9 update; otherwise proceding'; node tools/build-all-methods.js"
+               "doc": "rm -f docs/rules/* && env DOCGEN=1 mocha --reporter dot tests/** && node tools/build-readme.js",
+               "build": "npm run doc && node tools/build-all-methods.js"
 	},
 	"files": [
 		"src"
@@ -34,6 +34,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.0.0",
+		"eslint-docgen": "0.8.0",
 		"@stylistic/eslint-plugin": "^3.0.0",
 		"codecov": "^3.8.3",
 		"eslint": "^9.0.0",
