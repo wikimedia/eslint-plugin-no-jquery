@@ -20,8 +20,8 @@
 		"report": "nyc report --reporter=text-lcov > coverage.lcov",
 		"reporthtml": "nyc report --reporter=html",
 		"testpath": "mocha",
-		"doc": "rm -f docs/rules/* && env DOCGEN=1 mocha --reporter dot tests/** && node tools/build-readme.js",
-		"build": "npm run doc && node tools/build-all-methods.js"
+               "doc": "rm -f docs/rules/* && env DOCGEN=1 mocha --reporter dot tests/** && node tools/build-readme.js",
+               "build": "npm run doc && node tools/build-all-methods.js"
 	},
 	"files": [
 		"src"
@@ -30,14 +30,22 @@
 		"node": ">=20"
 	},
 	"peerDependencies": {
-		"eslint": ">=8.0.0"
+		"eslint": ">=9.0.0"
 	},
 	"devDependencies": {
+		"@eslint/js": "^9.0.0",
+		"eslint-docgen": "0.8.0",
+		"@stylistic/eslint-plugin": "^3.0.0",
 		"codecov": "^3.8.3",
-		"eslint-config-wikimedia": "^0.31.0",
+		"eslint": "^9.0.0",
 		"eslint-docgen": "^0.7.1",
 		"eslint-plugin-eslint-plugin": "^6.5.0",
+		"eslint-plugin-jsdoc": "^61.0.0",
+		"eslint-plugin-mocha": "^10.0.0",
+		"eslint-plugin-n": "^17.0.0",
+		"eslint-plugin-security": "^3.0.0",
 		"eslint-plugin-self": "^1.2.1",
+		"eslint-plugin-unicorn": "^56.0.0",
 		"jquery": "3.7.1",
 		"jsdom": "^27.0.0",
 		"mocha": "^11.7.4",

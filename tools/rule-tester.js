@@ -3,7 +3,7 @@
 const RuleTester = require( 'eslint-docgen' ).RuleTester;
 
 RuleTester.setDefaultConfig( {
-	parserOptions: { ecmaVersion: 2015 }
+	languageOptions: { ecmaVersion: 2015, sourceType: 'script' }
 } );
 
 module.exports = RuleTester;
