@@ -27,8 +27,7 @@ module.exports = {
 			}
 		],
 		defaultOptions: [
-			{ allowPositional: false },
-			{ allowOther: false }
+			{ allowPositional: false, allowOther: false }
 		]
 	},
 
