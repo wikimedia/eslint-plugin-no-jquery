@@ -25,6 +25,10 @@ jobs:
         npm run report
         npm i --no-save eslint@8.0.0 --force
         npm run onlytest
+        npm i --no-save eslint@9 --force
+        npm run onlytest
+        npm i --no-save eslint@10 --force
+        npm run onlytest
       env:
         CI: true
     - name: Upload coverage to Codecov
@@ -32,6 +36,6 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         file: ./coverage.lcov
-        flgas: unittests
+        flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: true
