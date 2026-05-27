@@ -12,7 +12,10 @@ module.exports = utils.createUtilMethodRule(
 				node.arguments.length >= 2 &&
 				node.arguments[ 1 ].type !== 'Literal'
 			) {
-				const fnText = context.sourceCode.getText( node.arguments[ 0 ] );
+				const sourceCode = context.sourceCode !== undefined
+					? context.sourceCode
+					: context.getSourceCode();
+				const fnText = sourceCode.getText(node.arguments[0]);
 				return [
 					fixer.replaceText( node.callee, fnText + '.bind' ),
 					fixer.removeRange( [
