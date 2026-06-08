@@ -12,7 +12,15 @@ module.exports = utils.createUtilMethodRule(
 				node.arguments.length >= 2 &&
 				node.arguments[ 1 ].type !== 'Literal'
 			) {
-				const fnText = context.getSourceCode().getText( node.arguments[ 0 ] );
+				// check can be removed when ESLint v8 support is dropped,
+				// as `context.sourceCode` will always be defined.
+				// `getSourceCode` is deprecated in ESLint v9, and removed in ESLint v10,
+				// so we need to support both APIs for now.
+				// istanbul ignore next
+				const sourceCode = context.sourceCode !== undefined ?
+					context.sourceCode :
+					context.getSourceCode();
+				const fnText = sourceCode.getText( node.arguments[ 0 ] );
 				return [
 					fixer.replaceText( node.callee, fnText + '.bind' ),
 					fixer.removeRange( [
