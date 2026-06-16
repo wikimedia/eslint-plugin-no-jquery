@@ -1,5 +1,17 @@
 # eslint-plugin-no-jquery release history
 
+## v5.0.0
+* [BREAKING CHANGE] Require Node 24, up from 20 (James D. Forrester)
+
+—
+* Rule fix: `no-sizzle`: Fix invalid defaultOptions syntax (Anders Kaseorg)
+
+—
+* Code: add tests for eslint9 & eslint 10 (Alexander S.)
+
+—
+* build: Test in Node 26 too (James D. Forrester)
+
 ## v4.0.0
 * [BREAKING CHANGE] Push Node requirement to 20+, update devDependencies and fix (Ed Sanders)
 
@@ -7,7 +19,8 @@
 * Rule fix: `no-class`: Add `onlyDeprecated` option; included in deprecated-3.0 (Ed Sanders)
 * Rule fix: `no-other-methods`: remove 'finish' and 'stop' (Ed Sanders)
 
-* Tests: Use map to simplify invalid test cases (Ed Sanders)
+—
+* Code: Use map to simplify invalid test cases (Ed Sanders)
 
 —
 * build: Upgrade eslint-config-wikimedia to 0.32.3 (James D. Forrester)
