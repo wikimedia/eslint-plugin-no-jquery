@@ -23,6 +23,7 @@ module.exports = {
 		'no-css': require( './rules/no-css' ),
 		'no-data': require( './rules/no-data' ),
 		'no-deferred': require( './rules/no-deferred' ),
+		'no-deferred-get-stack-hook': require( './rules/no-deferred-get-stack-hook' ),
 		'no-delegate': require( './rules/no-delegate' ),
 		'no-die': require( './rules/no-die' ),
 		'no-done-fail': require( './rules/no-done-fail' ),
@@ -133,7 +134,10 @@ module.exports = {
 		},
 		// Use this config if you're writing code targetting jQuery 3.7.x environments.
 		'deprecated-3.7': {
-			extends: 'plugin:no-jquery/deprecated-3.6'
+			extends: 'plugin:no-jquery/deprecated-3.6',
+			rules: {
+				'no-jquery/no-deferred-get-stack-hook': 'warn'
+			}
 		},
 		'deprecated-3.6': {
 			extends: 'plugin:no-jquery/deprecated-3.5'
@@ -299,6 +303,7 @@ module.exports = {
 				'no-jquery/no-camel-case': 'warn',
 				'no-jquery/no-contains': 'warn',
 				'no-jquery/no-deferred': 'warn',
+				'no-jquery/no-deferred-get-stack-hook': 'warn',
 				'no-jquery/no-each-util': 'warn',
 				'no-jquery/no-error': 'warn',
 				'no-jquery/no-escape-selector': 'warn',
