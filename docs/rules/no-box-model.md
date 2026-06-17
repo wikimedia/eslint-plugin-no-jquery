@@ -4,6 +4,8 @@
 
 Disallows the [`$.boxModel`](https://api.jquery.com/jQuery.boxModel/) property.
 
+📋 This rule is enabled as an error in `plugin:no-jquery/deprecated-1.8`.
+
 📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-1.3`.
 
 ## Rule details

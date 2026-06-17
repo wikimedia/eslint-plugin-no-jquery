@@ -145,7 +145,8 @@ module.exports = {
 		'deprecated-3.5': {
 			extends: 'plugin:no-jquery/deprecated-3.4',
 			rules: {
-				// Pass empty options here to override options set in deprecated-3.3
+				// Ajax shorthand events are deprecated in 3.5.
+				// The other shorthands were deprecated in 3.3.
 				'no-jquery/no-event-shorthand': [ 'warn', {} ],
 				'no-jquery/no-trim': 'warn'
 			}
@@ -189,7 +190,15 @@ module.exports = {
 				'no-jquery/no-fx-interval': 'warn',
 				'no-jquery/no-parse-json': 'warn',
 				'no-jquery/no-ready-shorthand': 'warn',
-				'no-jquery/no-unique': 'warn'
+				'no-jquery/no-unique': 'warn',
+				// Removed
+				'no-jquery/no-and-self': 'error',
+				'no-jquery/no-context-prop': 'error',
+				'no-jquery/no-error-shorthand': 'error',
+				'no-jquery/no-load-shorthand': 'error',
+				'no-jquery/no-selector-prop': 'error',
+				'no-jquery/no-size': 'error',
+				'no-jquery/no-unload-shorthand': 'error'
 			}
 		},
 		'deprecated-2.2': {
@@ -216,7 +225,11 @@ module.exports = {
 		'deprecated-1.9': {
 			extends: 'plugin:no-jquery/deprecated-1.8',
 			rules: {
-				'no-jquery/no-support': 'warn'
+				'no-jquery/no-support': 'warn',
+				// Removed
+				'no-jquery/no-browser': 'error',
+				'no-jquery/no-live': 'error'
+				// FIXME: `$(...).toggle(fn,fn) (excluding https://api.jquery.com/toggle/)
 			}
 		},
 		'deprecated-1.8': {
@@ -229,7 +242,10 @@ module.exports = {
 				'no-jquery/no-on-ready': 'warn',
 				'no-jquery/no-size': 'warn',
 				// FIXME: `$(...).toggle(fn,fn) (excluding https://api.jquery.com/toggle/)
-				'no-jquery/no-unload-shorthand': 'warn'
+				'no-jquery/no-unload-shorthand': 'warn',
+				// Removed
+				'no-jquery/no-box-model': 'error'
+				// FIXME: `deferred.isRejected()/isResolved()`
 			}
 		},
 		'deprecated-1.7': {

@@ -89,14 +89,14 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 
 * [`no-jquery/no-ajax`](docs/rules/no-ajax.md) **`slim`**, `all`
 * [`no-jquery/no-ajax-events`](docs/rules/no-ajax-events.md) **`slim`**
-* [`no-jquery/no-and-self`](docs/rules/no-and-self.md) 🔧 `1.8`
+* [`no-jquery/no-and-self`](docs/rules/no-and-self.md) 🔧 `1.8`, **`3.0`**
 * [`no-jquery/no-animate`](docs/rules/no-animate.md) ⚙️ **`slim`**, `all`
 * [`no-jquery/no-animate-toggle`](docs/rules/no-animate-toggle.md) **`slim`**
 * [`no-jquery/no-append-html`](docs/rules/no-append-html.md)
 * [`no-jquery/no-attr`](docs/rules/no-attr.md) `all`
 * [`no-jquery/no-bind`](docs/rules/no-bind.md) `all`, `3.0`
-* [`no-jquery/no-box-model`](docs/rules/no-box-model.md) `1.3`
-* [`no-jquery/no-browser`](docs/rules/no-browser.md) `1.3`
+* [`no-jquery/no-box-model`](docs/rules/no-box-model.md) `1.3`, **`1.8`**
+* [`no-jquery/no-browser`](docs/rules/no-browser.md) `1.3`, **`1.9`**
 * [`no-jquery/no-camel-case`](docs/rules/no-camel-case.md) `all`, `3.3`
 * [`no-jquery/no-class`](docs/rules/no-class.md) ⚙️ `all`, `3.0†`
 * [`no-jquery/no-class-state`](docs/rules/no-class-state.md)
@@ -104,7 +104,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-closest`](docs/rules/no-closest.md) `all`
 * [`no-jquery/no-constructor-attributes`](docs/rules/no-constructor-attributes.md)
 * [`no-jquery/no-contains`](docs/rules/no-contains.md) `all`
-* [`no-jquery/no-context-prop`](docs/rules/no-context-prop.md) `1.10`
+* [`no-jquery/no-context-prop`](docs/rules/no-context-prop.md) `1.10`, **`3.0`**
 * [`no-jquery/no-css`](docs/rules/no-css.md) `all`
 * [`no-jquery/no-data`](docs/rules/no-data.md) `all`
 * [`no-jquery/no-deferred`](docs/rules/no-deferred.md) `all`
@@ -115,7 +115,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-each-collection`](docs/rules/no-each-collection.md) `all`
 * [`no-jquery/no-each-util`](docs/rules/no-each-util.md) `all`
 * [`no-jquery/no-error`](docs/rules/no-error.md) 🔧 `all`
-* [`no-jquery/no-error-shorthand`](docs/rules/no-error-shorthand.md) 🔧 `1.8`
+* [`no-jquery/no-error-shorthand`](docs/rules/no-error-shorthand.md) 🔧 `1.8`, **`3.0`**
 * [`no-jquery/no-escape-selector`](docs/rules/no-escape-selector.md) 🔧 `all`
 * [`no-jquery/no-event-shorthand`](docs/rules/no-event-shorthand.md) ⚙️ 🔧 `all`, `3.3†`, `3.5`
 * [`no-jquery/no-extend`](docs/rules/no-extend.md) ⚙️ 🔧 `all`
@@ -141,9 +141,9 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-is-plain-object`](docs/rules/no-is-plain-object.md) `all`
 * [`no-jquery/no-is-window`](docs/rules/no-is-window.md) `all`, `3.3`
 * [`no-jquery/no-jquery-constructor`](docs/rules/no-jquery-constructor.md) `all`
-* [`no-jquery/no-live`](docs/rules/no-live.md) `all`, `1.7`
+* [`no-jquery/no-live`](docs/rules/no-live.md) `all`, `1.7`, **`1.9`**
 * [`no-jquery/no-load`](docs/rules/no-load.md) **`slim`**, `all`
-* [`no-jquery/no-load-shorthand`](docs/rules/no-load-shorthand.md) 🔧 `1.8`
+* [`no-jquery/no-load-shorthand`](docs/rules/no-load-shorthand.md) 🔧 `1.8`, **`3.0`**
 * [`no-jquery/no-map`](docs/rules/no-map.md)
 * [`no-jquery/no-map-collection`](docs/rules/no-map-collection.md) `all`
 * [`no-jquery/no-map-util`](docs/rules/no-map-util.md) `all`
@@ -165,9 +165,9 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-proxy`](docs/rules/no-proxy.md) 🔧 `all`, `3.3`
 * [`no-jquery/no-ready`](docs/rules/no-ready.md)
 * [`no-jquery/no-ready-shorthand`](docs/rules/no-ready-shorthand.md) 🔧 `all`, `3.0`
-* [`no-jquery/no-selector-prop`](docs/rules/no-selector-prop.md) `1.7`
+* [`no-jquery/no-selector-prop`](docs/rules/no-selector-prop.md) `1.7`, **`3.0`**
 * [`no-jquery/no-serialize`](docs/rules/no-serialize.md) `all`
-* [`no-jquery/no-size`](docs/rules/no-size.md) 🔧 `all`, `1.8`
+* [`no-jquery/no-size`](docs/rules/no-size.md) 🔧 `all`, `1.8`, **`3.0`**
 * [`no-jquery/no-sizzle`](docs/rules/no-sizzle.md) ⚙️ `3.4†`
 * [`no-jquery/no-slide`](docs/rules/no-slide.md) **`slim`**, `all`
 * [`no-jquery/no-sub`](docs/rules/no-sub.md) `all`, `1.7`
@@ -177,7 +177,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-trim`](docs/rules/no-trim.md) `all`, `3.5`
 * [`no-jquery/no-type`](docs/rules/no-type.md) `all`, `3.3`
 * [`no-jquery/no-unique`](docs/rules/no-unique.md) 🔧 `all`, `3.0`
-* [`no-jquery/no-unload-shorthand`](docs/rules/no-unload-shorthand.md) 🔧 `1.8`
+* [`no-jquery/no-unload-shorthand`](docs/rules/no-unload-shorthand.md) 🔧 `1.8`, **`3.0`**
 * [`no-jquery/no-val`](docs/rules/no-val.md) `all`
 * [`no-jquery/no-visibility`](docs/rules/no-visibility.md) `all`
 * [`no-jquery/no-when`](docs/rules/no-when.md) `all`

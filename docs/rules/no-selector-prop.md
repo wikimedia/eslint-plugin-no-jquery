@@ -4,6 +4,8 @@
 
 Disallows the [`.selector`](https://api.jquery.com/selector/) property.
 
+📋 This rule is enabled as an error in `plugin:no-jquery/deprecated-3.0`.
+
 📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-1.7`.
 
 ## Rule details

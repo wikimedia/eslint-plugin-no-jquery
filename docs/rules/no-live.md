@@ -4,6 +4,8 @@
 
 Disallows the [`.live`](https://api.jquery.com/live/)/[`.die`](https://api.jquery.com/die/) methods. Prefer `.on`/`.off` or `EventTarget#addEventListener`/`removeEventListener`.
 
+📋 This rule is enabled as an error in `plugin:no-jquery/deprecated-1.9`.
+
 📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-1.7`.
 
 📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
