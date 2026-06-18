@@ -106,6 +106,7 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-css`](docs/rules/no-css.md) `all`
 * [`no-jquery/no-data`](docs/rules/no-data.md) `all`
 * [`no-jquery/no-deferred`](docs/rules/no-deferred.md) `all`
+* [`no-jquery/no-deferred-get-stack-hook`](docs/rules/no-deferred-get-stack-hook.md) `3.7`, `all`
 * [`no-jquery/no-delegate`](docs/rules/no-delegate.md) `3.0`, `all`
 * [`no-jquery/no-done-fail`](docs/rules/no-done-fail.md) `all`
 * [`no-jquery/no-each`](docs/rules/no-each.md)
