@@ -3,11 +3,11 @@
 const rule = require( '../../src/rules/no-class' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const addError = 'Prefer Element#classList to .addClass';
-const hasError = 'Prefer Element#classList to .hasClass';
-const removeError = 'Prefer Element#classList to .removeClass';
-const toggleError = 'Prefer Element#classList to .toggleClass';
-const toggleDeprecatedError = '.toggleClass(boolean|undefined) is deprecated';
+const addError = { messageId: 'classList', data: { name: 'addClass' } };
+const hasError = { messageId: 'classList', data: { name: 'hasClass' } };
+const removeError = { messageId: 'classList', data: { name: 'removeClass' } };
+const toggleError = { messageId: 'classList', data: { name: 'toggleClass' } };
+const toggleDeprecatedError = { messageId: 'toggleDeprecated' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-class', rule, {

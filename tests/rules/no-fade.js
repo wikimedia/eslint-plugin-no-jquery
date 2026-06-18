@@ -3,10 +3,10 @@
 const rule = require( '../../src/rules/no-fade' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const inError = 'Prefer CSS transitions to .fadeIn';
-const outError = 'Prefer CSS transitions to .fadeOut';
-const toError = 'Prefer CSS transitions to .fadeTo';
-const toggleError = 'Prefer CSS transitions to .fadeToggle';
+const inError = { messageId: 'default', data: { name: 'fadeIn' } };
+const outError = { messageId: 'default', data: { name: 'fadeOut' } };
+const toError = { messageId: 'default', data: { name: 'fadeTo' } };
+const toggleError = { messageId: 'default', data: { name: 'fadeToggle' } };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-fade', rule, {

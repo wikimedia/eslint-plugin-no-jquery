@@ -9,7 +9,10 @@ module.exports = {
 			description: 'Disallows the [`.load`](https://api.jquery.com/load-event/) method when used as a shorthand for `.on( \'load\', function )` or `.trigger( \'load\' )`. Prefer `.on` or `.trigger`.'
 		},
 		fixable: 'code',
-		schema: []
+		schema: [],
+		messages: {
+			default: 'Prefer .on or .trigger to .load'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -28,7 +31,7 @@ module.exports = {
 			if ( utils.isjQuery( context, node.callee ) ) {
 				context.report( {
 					node,
-					message: 'Prefer .on or .trigger to .load',
+					messageId: 'default',
 					fix: utils.eventShorthandFixer.bind( this, node, context )
 				} );
 			}

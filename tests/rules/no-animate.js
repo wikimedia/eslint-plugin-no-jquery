@@ -3,8 +3,8 @@
 const rule = require( '../../src/rules/no-animate' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer CSS transitions or CSS scroll-behaviour to .animate';
-const errorNoScroll = 'Prefer CSS transitions to .animate';
+const error = { messageId: 'transitionsOrScroll' };
+const errorNoScroll = { messageId: 'transitions' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-animate', rule, {

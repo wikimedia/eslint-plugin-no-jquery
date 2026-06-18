@@ -4,7 +4,8 @@ const utils = require( '../utils.js' );
 
 module.exports = utils.createUtilMethodRule(
 	[ 'ajax', 'get', 'getJSON', 'getScript', 'post' ],
-	( node ) => node === true ?
-		'Prefer `Window.fetch`' :
-		`Prefer Window.fetch to $.${ node.callee.property.name }`
+	'Prefer `Window.fetch`',
+	{
+		messages: { default: 'Prefer Window.fetch to $.{{name}}' }
+	}
 );

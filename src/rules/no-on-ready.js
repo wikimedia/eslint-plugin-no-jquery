@@ -9,7 +9,10 @@ module.exports = {
 			description: 'Disallows using the ready event on the document.'
 		},
 		fixable: 'code',
-		schema: []
+		schema: [],
+		messages: {
+			default: '.on("ready") is not allowed'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -28,7 +31,7 @@ module.exports = {
 			if ( utils.isjQuery( context, node.callee ) ) {
 				context.report( {
 					node,
-					message: '.on("ready") is not allowed',
+					messageId: 'default',
 					fix: ( fixer ) => ( node.arguments.length > 1 ) ?
 						[
 							fixer.replaceText( node.callee.property, 'ready' ),

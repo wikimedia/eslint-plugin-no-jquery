@@ -8,7 +8,10 @@ module.exports = {
 		docs: {
 			description: 'Disallows the jQuery constructor `$()`.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: 'The jQuery constructor is not allowed'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -22,7 +25,7 @@ module.exports = {
 
 			context.report( {
 				node,
-				message: 'The jQuery constructor is not allowed'
+				messageId: 'default'
 			} );
 		}
 	} )

@@ -29,7 +29,10 @@ module.exports = {
 			description: 'Disallows using ' + allMethods.map( utils.jQueryCollectionLink ).join( '/' ) +
 			' to inject HTML, in order to prevent possible XSS bugs.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: 'Avoid injection of possibly unescaped HTML. Create DOM elements instead, or use .text.'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -52,7 +55,7 @@ module.exports = {
 			if ( utils.isjQuery( context, node.callee ) ) {
 				context.report( {
 					node,
-					message: 'Avoid injection of possibly unescaped HTML. Create DOM elements instead, or use .text.'
+					messageId: 'default'
 				} );
 			}
 		}

@@ -8,7 +8,10 @@ module.exports = {
 		docs: {
 			description: 'Disallows ' + utils.jQueryGlobalLink( 'Deferred' ) + ' constructor. Prefer `Promise`.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: 'Prefer Promise to $.Deferred'
+		}
 	},
 
 	create: ( context ) => {
@@ -23,7 +26,7 @@ module.exports = {
 
 			context.report( {
 				node,
-				message: 'Prefer Promise to $.Deferred'
+				messageId: 'default'
 			} );
 		}
 

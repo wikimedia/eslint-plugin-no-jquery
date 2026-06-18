@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-append-html' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Avoid injection of possibly unescaped HTML. Create DOM elements instead, or use .text.';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-append-html', rule, {

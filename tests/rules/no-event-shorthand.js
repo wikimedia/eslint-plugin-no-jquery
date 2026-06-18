@@ -48,7 +48,7 @@ const valid = [];
 const invalid = [];
 
 forbidden.forEach( ( method ) => {
-	const error = 'Prefer .on or .trigger to .' + method;
+	const error = { messageId: 'default' };
 	valid.push(
 		{
 			code: method + '()',

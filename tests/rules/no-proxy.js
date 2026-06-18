@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-proxy' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Function#bind to $.proxy';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-proxy', rule, {

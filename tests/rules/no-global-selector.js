@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-global-selector' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Avoid queries which search the entire DOM. Keep DOM nodes in memory where possible.';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-global-selector', rule, {

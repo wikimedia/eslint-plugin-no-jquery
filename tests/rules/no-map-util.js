@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-map-util' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Array#map to $.map';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-map-util', rule, {

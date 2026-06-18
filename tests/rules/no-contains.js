@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-contains' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Node#contains to $.contains';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-contains', rule, {

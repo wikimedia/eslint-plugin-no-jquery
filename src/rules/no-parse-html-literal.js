@@ -35,13 +35,16 @@ module.exports = {
 		],
 		defaultOptions: [
 			{ singleTagStyle: 'minimal' }
-		]
+		],
+		messages: {
+			default: 'Prefer DOM building to parsing HTML literals',
+			singleTagFormat: 'Single tag must use the format: {{tag}}'
+		}
 	},
 
 	create: ( context ) => ( {
 		'CallExpression:exit': ( node ) => {
-			let allowSingle,
-				message = 'Prefer DOM building to parsing HTML literals';
+			let allowSingle;
 
 			if ( node.callee.type === 'Identifier' ) {
 				if ( !(
@@ -87,14 +90,12 @@ module.exports = {
 					if ( singleTagStyle === 'minimal' ) {
 						if ( !rsingleTagMinimal.exec( value ) ) {
 							expectedTag = '<' + match[ 1 ] + '>';
-							message = 'Single tag must use the format: ' + expectedTag;
 						} else {
 							return;
 						}
 					} else if ( singleTagStyle === 'self-closing' ) {
 						if ( !rsingleTagSelfClosing.exec( value ) ) {
 							expectedTag = '<' + match[ 1 ] + '/>';
-							message = 'Single tag must use the format: ' + expectedTag;
 						} else {
 							return;
 						}
@@ -110,7 +111,8 @@ module.exports = {
 
 			context.report( {
 				node,
-				message,
+				messageId: expectedTag ? 'singleTagFormat' : 'default',
+				data: expectedTag ? { tag: expectedTag } : {},
 				fix: ( fixer ) => expectedTag ? fixer.replaceText( arg, '"' + expectedTag + '"' ) : null
 			} );
 		}

@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-escape-selector' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer CSS.escape to $.escapeSelector';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-escape-selector', rule, {

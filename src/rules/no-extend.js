@@ -25,7 +25,10 @@ module.exports = {
 		],
 		defaultOptions: [
 			{ allowDeep: false }
-		]
+		],
+		messages: {
+			default: 'Prefer Object.assign or the spread operator to $.extend'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -52,7 +55,7 @@ module.exports = {
 
 			context.report( {
 				node,
-				message: 'Prefer Object.assign or the spread operator to $.extend',
+				messageId: 'default',
 				fix: function ( fixer ) {
 					// Only auto-fix if we are sure the first argument is an object.
 					// If it is undefined or null variable, then Object.assign will throw.

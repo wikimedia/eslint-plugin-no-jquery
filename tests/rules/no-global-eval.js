@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-global-eval' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = '$.globalEval is not allowed';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-global-eval', rule, {

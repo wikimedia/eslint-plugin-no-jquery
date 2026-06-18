@@ -12,7 +12,10 @@ module.exports = {
 			utils.jQueryCollectionLink( 'toggleClass' ) + ' may be used with a boolean argument as then it behaves like ' +
 			utils.jQueryCollectionLink( 'addClass' ) + '/' + utils.jQueryCollectionLink( 'removeClass' ) + '.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: 'Where possible, maintain application state in JS to avoid slower DOM queries'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -35,7 +38,7 @@ module.exports = {
 			if ( utils.isjQuery( context, node.callee ) ) {
 				context.report( {
 					node,
-					message: 'Where possible, maintain application state in JS to avoid slower DOM queries'
+					messageId: 'default'
 				} );
 			}
 		}

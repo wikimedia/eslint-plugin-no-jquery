@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-is-function' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer typeof to $.isFunction';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-is-function', rule, {

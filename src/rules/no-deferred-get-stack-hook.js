@@ -8,7 +8,10 @@ module.exports = {
 		docs: {
 			description: 'Disallows the `$.Deferred.getStackHook` property. Use `$.Deferred.getErrorHook` instead.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: '$.Deferred.getStackHook is not allowed. Use $.Deferred.getErrorHook instead.'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -24,7 +27,7 @@ module.exports = {
 
 			context.report( {
 				node,
-				message: '$.Deferred.getStackHook is not allowed. Use $.Deferred.getErrorHook instead.'
+				messageId: 'default'
 			} );
 		}
 	} )

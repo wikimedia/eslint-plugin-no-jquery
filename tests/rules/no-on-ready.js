@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-on-ready' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = '.on("ready") is not allowed';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-on-ready', rule, {

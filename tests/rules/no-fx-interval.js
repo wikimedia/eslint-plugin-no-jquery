@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-fx-interval' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = '$.fx.interval is not allowed';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-fx-interval', rule, {

@@ -25,7 +25,11 @@ module.exports = {
 		],
 		defaultOptions: [
 			{ onlyDeprecated: false }
-		]
+		],
+		messages: {
+			classList: 'Prefer Element#classList to .{{name}}',
+			toggleDeprecated: '.toggleClass(boolean|undefined) is deprecated'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -41,12 +45,10 @@ module.exports = {
 
 			if ( !onlyDeprecated ) {
 				if ( utils.isjQuery( context, node.callee ) ) {
-					const message = node === true ?
-						'Prefer `Element#classList`' :
-						`Prefer Element#classList to .${ name }`;
 					context.report( {
 						node,
-						message
+						messageId: 'classList',
+						data: { name }
 					} );
 				}
 			} else {
@@ -75,7 +77,7 @@ module.exports = {
 				if ( utils.isjQuery( context, node.callee ) ) {
 					context.report( {
 						node,
-						message: '.toggleClass(boolean|undefined) is deprecated'
+						messageId: 'toggleDeprecated'
 					} );
 				}
 			}

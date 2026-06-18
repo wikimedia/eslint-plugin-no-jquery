@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-in-array' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Array#indexOf to $.inArray';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-in-array', rule, {

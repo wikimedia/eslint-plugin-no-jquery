@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-extend' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Object.assign or the spread operator to $.extend';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-extend', rule, {

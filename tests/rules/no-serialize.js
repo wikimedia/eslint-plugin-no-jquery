@@ -3,8 +3,8 @@
 const rule = require( '../../src/rules/no-serialize' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const serializeError = 'Prefer FormData or URLSearchParams to .serialize';
-const arrayError = 'Prefer FormData or URLSearchParams to .serializeArray';
+const serializeError = { messageId: 'default', data: { name: 'serialize' } };
+const arrayError = { messageId: 'default', data: { name: 'serializeArray' } };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-serialize', rule, {

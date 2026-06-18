@@ -3,8 +3,8 @@
 const rule = require( '../../src/rules/no-sizzle' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Selector extensions are not allowed';
-const errorPositional = 'Positional selector extensions are not allowed';
+const error = { messageId: 'other' };
+const errorPositional = { messageId: 'positional' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-sizzle', rule, {

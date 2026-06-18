@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-trim' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer String#trim to $.trim';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-trim', rule, {

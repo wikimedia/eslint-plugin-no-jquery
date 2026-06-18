@@ -3,9 +3,9 @@
 const rule = require( '../../src/rules/no-attr' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const getError = 'Prefer Element#getAttribute to .attr/$.attr';
-const setError = 'Prefer Element#setAttribute to .attr/$.attr';
-const removeError = 'Prefer Element#removeAttribute to .removeAttr/$.removeAttr';
+const getError = { messageId: 'getAttribute', data: { name: 'attr' } };
+const setError = { messageId: 'setAttribute', data: { name: 'attr' } };
+const removeError = { messageId: 'removeAttribute', data: { name: 'removeAttr' } };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-attr', rule, {

@@ -3,9 +3,9 @@
 const rule = require( '../../src/rules/no-animate-toggle' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const showError = 'Prefer CSS transitions to .show';
-const hideError = 'Prefer CSS transitions to .hide';
-const toggleError = 'Prefer CSS transitions to .toggle';
+const showError = { messageId: 'default', data: { method: 'show' } };
+const hideError = { messageId: 'default', data: { method: 'hide' } };
+const toggleError = { messageId: 'default', data: { method: 'toggle' } };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-animate-toggle', rule, {

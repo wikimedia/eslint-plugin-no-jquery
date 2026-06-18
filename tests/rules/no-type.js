@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-type' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer typeof/instanceof to $.type';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-type', rule, {

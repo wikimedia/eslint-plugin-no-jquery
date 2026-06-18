@@ -8,7 +8,10 @@ module.exports = {
 		docs: {
 			description: 'Disallows passing attributes to the jQuery constructor. Prefer `.attr`.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: 'Prefer .attr to constructor attributes'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -36,7 +39,7 @@ module.exports = {
 
 			context.report( {
 				node,
-				message: 'Prefer .attr to constructor attributes'
+				messageId: 'default'
 			} );
 		}
 	} )

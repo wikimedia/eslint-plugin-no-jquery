@@ -3,8 +3,8 @@
 const rule = require( '../../src/rules/no-live' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const liveError = 'Prefer .on/EventTarget#addEventListener to .live';
-const dieError = 'Prefer .off/EventTarget#removeEventListener to .die';
+const liveError = { messageId: 'live' };
+const dieError = { messageId: 'die' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-live', rule, {

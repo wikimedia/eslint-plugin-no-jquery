@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-each-util' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Array#forEach to $.each';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-each-util', rule, {

@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-hold-ready' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = '$.holdReady is not allowed';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-hold-ready', rule, {

@@ -197,9 +197,10 @@ function isjQuery( context, node ) {
  * @param {string[]|boolean} [deprecated] Rule is deprecated.
  *  If a string list, the replacedBy rules.
  * @param {Array} schema Schema
+ * @param {Object} messages `meta.messages` map
  * @return {Object} Rule
  */
-function createRule( create, description, fixable, deprecated, schema ) {
+function createRule( create, description, fixable, deprecated, schema, messages ) {
 	return {
 		meta: {
 			type: 'suggestion',
@@ -209,57 +210,83 @@ function createRule( create, description, fixable, deprecated, schema ) {
 				replacedBy: Array.isArray( deprecated ) ? deprecated : undefined
 			},
 			fixable,
-			schema: schema || []
+			schema: schema || [],
+			messages
 		},
 		create
 	};
 }
 
 function messageSuffix( message ) {
-	let messageString;
-	if ( typeof message === 'string' ) {
-		messageString = message;
-	} else if ( typeof message === 'function' ) {
-		messageString = message( true );
-	}
 	// The rule name should already exist in the first half of the description
 	// so avoid repeating it. It is required in the message as that is shown
 	// on its own in error reports.
-	return messageString ? ' ' + messageString.replace( /(Prefer .*) to .*$/, '$1' ) + '.' : '';
+	return message ? ' ' + message.replace( /(Prefer .*) to .*$/, '$1' ) + '.' : '';
 }
 
-function messageToPlainString( message, node, name, options ) {
-	let messageString = (
-		typeof message === 'function' ?
-			message( node ) :
-			message || ''
-	).replace( /`/g, '' );
-
-	if ( !messageString ) {
-		/* istanbul ignore next */
-		// Fallback messages, not a problem if they become unused
-		switch ( options.mode ) {
-			case 'collection':
-				messageString = '.' + name + ' is not allowed';
-				break;
-			case 'util':
-				messageString = '$.' + name + ' is not allowed';
-				break;
-			case 'collection-util':
-				messageString = '.' + name + '/$.' + name + ' is not allowed';
-				break;
-		}
+/**
+ * Build the suffix appended to messages of deprecated rules
+ *
+ * @param {string[]|boolean} [deprecated] Rule is deprecated.
+ *  If a string list, the replacedBy rules.
+ * @return {string} Message suffix, empty if the rule is not deprecated
+ */
+function deprecationSuffix( deprecated ) {
+	if ( !deprecated ) {
+		return '';
 	}
-
-	if ( options.deprecated ) {
-		messageString += '. This rule is deprecated';
-		if ( Array.isArray( options.deprecated ) ) {
-			messageString += ', use ' + options.deprecated.join( ', ' );
-		}
-		messageString += '.';
+	let suffix = '. This rule is deprecated';
+	if ( Array.isArray( deprecated ) ) {
+		suffix += ', use ' + deprecated.join( ', ' );
 	}
+	return suffix + '.';
+}
 
-	return messageString;
+/**
+ * Resolve the `meta.messages` map and a report selector for a factory rule
+ *
+ * @param {string|Function} [message] Message used to generate the description. String,
+ *  or a function passed `true` to generate a context-agnostic message (for documentation).
+ * @param {Object} options Options
+ * @param {Object} [options.messages] Explicit `meta.messages` templates. When omitted a
+ *  single `default` message is derived from `message` (or a mode-based fallback).
+ * @param {Function} [options.report] Report selector
+ *  `( node, name ) => ( { messageId, data } )`. Defaults to reporting `default`
+ *  with `{ name }` as data.
+ * @return {{ messages: Object, getReport: Function }} Messages map and report selector
+ */
+function resolveMessages( message, options ) {
+	const suffix = deprecationSuffix( options.deprecated );
+	let messages;
+	if ( options.messages ) {
+		messages = {};
+		for ( const id in options.messages ) {
+			messages[ id ] = options.messages[ id ] + suffix;
+		}
+	} else {
+		let template;
+		if ( typeof message === 'string' && message ) {
+			template = message.replace( /`/g, '' );
+		} else {
+			// Fallback messages, derived from the rule mode
+			switch ( options.mode ) {
+				case 'collection':
+					template = '.{{name}} is not allowed';
+					break;
+				case 'util':
+					template = '$.{{name}} is not allowed';
+					break;
+				/* istanbul ignore next: only reached if a collection-util rule omits its message */
+				case 'collection-util':
+					template = '.{{name}}/$.{{name}} is not allowed';
+					break;
+			}
+		}
+		messages = { default: template + suffix };
+	}
+	const getReport = options.report ||
+		( ( node, name ) => ( { messageId: 'default', data: { name } } ) );
+	return { messages, getReport };
 }
 
 function jQueryCollectionLink( name ) {
@@ -337,6 +364,8 @@ function createCollectionMethodRule( methods, message, options ) {
 			'* `"set"` the method can only be used as a setter i.e. with arguments';
 	}
 
+	const { messages, getReport } = resolveMessages( message, options );
+
 	return createRule( ( context ) => ( {
 		'CallExpression:exit': ( node ) => {
 			if ( node.callee.type !== 'MemberExpression' ) {
@@ -359,14 +388,13 @@ function createCollectionMethodRule( methods, message, options ) {
 			}
 
 			if ( isjQuery( context, node.callee ) ) {
-				context.report( {
+				context.report( Object.assign( getReport( node, name ), {
 					node,
-					message: messageToPlainString( message, node, name, options ),
 					fix: options.fix && options.fix.bind( this, node, context )
-				} );
+				} ) );
 			}
 		}
-	} ), description, options.fixable, options.deprecated, schema );
+	} ), description, options.fixable, options.deprecated, schema, messages );
 }
 
 /**
@@ -386,6 +414,8 @@ function createCollectionPropertyRule( property, message, options ) {
 
 	description += messageSuffix( message );
 
+	const { messages, getReport } = resolveMessages( message, options );
+
 	return createRule( ( context ) => ( {
 		'MemberExpression:exit': ( node ) => {
 			const name = node.property.name;
@@ -396,14 +426,13 @@ function createCollectionPropertyRule( property, message, options ) {
 				return;
 			}
 			if ( isjQuery( context, node.object ) ) {
-				context.report( {
+				context.report( Object.assign( getReport( node, name ), {
 					node,
-					message: messageToPlainString( message, node, name, options ),
 					fix: options.fix && options.fix.bind( this, node, context )
-				} );
+				} ) );
 			}
 		}
-	} ), description, options.fixable, options.deprecated );
+	} ), description, options.fixable, options.deprecated, [], messages );
 }
 
 /**
@@ -426,6 +455,8 @@ function createUtilMethodRule( methods, message, options ) {
 
 	description += messageSuffix( message );
 
+	const { messages, getReport } = resolveMessages( message, options );
+
 	return createRule( ( context ) => ( {
 		'CallExpression:exit': ( node ) => {
 			if ( node.callee.type !== 'MemberExpression' ) {
@@ -439,13 +470,12 @@ function createUtilMethodRule( methods, message, options ) {
 				return;
 			}
 
-			context.report( {
+			context.report( Object.assign( getReport( node, name ), {
 				node,
-				message: messageToPlainString( message, node, name, options ),
 				fix: options.fix && options.fix.bind( this, node, context )
-			} );
+			} ) );
 		}
-	} ), description, options.fixable, options.deprecated );
+	} ), description, options.fixable, options.deprecated, [], messages );
 }
 
 /**
@@ -465,6 +495,8 @@ function createUtilPropertyRule( property, message, options ) {
 
 	description += messageSuffix( message );
 
+	const { messages, getReport } = resolveMessages( message, options );
+
 	return createRule( ( context ) => ( {
 		'MemberExpression:exit': ( node ) => {
 			if ( !isjQueryConstructor( context, node.object.name ) ) {
@@ -475,13 +507,12 @@ function createUtilPropertyRule( property, message, options ) {
 				return;
 			}
 
-			context.report( {
+			context.report( Object.assign( getReport( node, name ), {
 				node,
-				message: messageToPlainString( message, node, name, options ),
 				fix: options.fix && options.fix.bind( this, node, context )
-			} );
+			} ) );
 		}
-	} ), description, options.fixable, options.deprecated );
+	} ), description, options.fixable, options.deprecated, [], messages );
 }
 
 /**
@@ -507,6 +538,8 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 
 	description += messageSuffix( message );
 
+	const { messages, getReport } = resolveMessages( message, options );
+
 	return createRule( ( context ) => ( {
 		'CallExpression:exit': ( node ) => {
 			if ( node.callee.type !== 'MemberExpression' ) {
@@ -517,14 +550,13 @@ function createCollectionOrUtilMethodRule( methods, message, options ) {
 				return;
 			}
 			if ( isjQuery( context, node.callee ) ) {
-				context.report( {
+				context.report( Object.assign( getReport( node, name ), {
 					node,
-					message: messageToPlainString( message, node, name, options ),
 					fix: options.fix && options.fix.bind( this, node, context )
-				} );
+				} ) );
 			}
 		}
-	} ), description, options.fixable, options.deprecated );
+	} ), description, options.fixable, options.deprecated, [], messages );
 }
 
 /**
@@ -549,6 +581,8 @@ function createUniversalMethodRule( methods, message, linkGenerator, options ) {
 
 	description += messageSuffix( message );
 
+	const { messages, getReport } = resolveMessages( message, options );
+
 	return createRule( ( context ) => ( {
 		'CallExpression:exit': ( node ) => {
 			if ( node.callee.type !== 'MemberExpression' ) {
@@ -559,13 +593,12 @@ function createUniversalMethodRule( methods, message, linkGenerator, options ) {
 				return;
 			}
 
-			context.report( {
+			context.report( Object.assign( getReport( node, name ), {
 				node,
-				message: messageToPlainString( message, node, name, options ),
 				fix: options.fix && options.fix.bind( this, node, context )
-			} );
+			} ) );
 		}
-	} ), description, options.fixable, options.deprecated );
+	} ), description, options.fixable, options.deprecated, [], messages );
 }
 
 function eventShorthandFixer( node, context, fixer ) {

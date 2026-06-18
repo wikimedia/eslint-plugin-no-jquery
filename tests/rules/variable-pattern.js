@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/variable-pattern' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'jQuery collection names must match the variablePattern';
+const error = { messageId: 'default' };
 
 const extendedPattern = '^\\$.|^element$';
 

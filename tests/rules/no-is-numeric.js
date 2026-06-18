@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-is-numeric' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer typeof to $.isNumeric';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-is-numeric', rule, {

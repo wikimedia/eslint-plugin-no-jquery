@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-done-fail' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = ( method ) => `Prefer .then to .${ method }`;
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-done-fail', rule, {
@@ -11,11 +11,11 @@ ruleTester.run( 'no-done-fail', rule, {
 	invalid: [
 		{
 			code: 'promise.done( callback )',
-			errors: [ error( 'done' ) ]
+			errors: [ error ]
 		},
 		{
 			code: 'promise.fail( callback )',
-			errors: [ error( 'fail' ) ]
+			errors: [ error ]
 		}
 	]
 } );

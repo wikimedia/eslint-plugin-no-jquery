@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-clone' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Node#cloneNode to .clone/$.clone';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-clone', rule, {
