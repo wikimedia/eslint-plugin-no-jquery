@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-browser' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = '$.browser is not allowed';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-browser', rule, {

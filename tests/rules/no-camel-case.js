@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-camel-case' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = '$.camelCase is not allowed';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-camel-case', rule, {

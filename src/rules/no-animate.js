@@ -26,7 +26,11 @@ module.exports = {
 		],
 		defaultOptions: [
 			{ allowScroll: false }
-		]
+		],
+		messages: {
+			transitions: 'Prefer CSS transitions to .animate',
+			transitionsOrScroll: 'Prefer CSS transitions or CSS scroll-behaviour to .animate'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -62,9 +66,7 @@ module.exports = {
 			if ( utils.isjQuery( context, node ) ) {
 				context.report( {
 					node,
-					message: allowScroll ?
-						'Prefer CSS transitions to .animate' :
-						'Prefer CSS transitions or CSS scroll-behaviour to .animate'
+					messageId: allowScroll ? 'transitions' : 'transitionsOrScroll'
 				} );
 			}
 		}

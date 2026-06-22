@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-filter' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Array#filter to .filter/$.filter';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-filter', rule, {

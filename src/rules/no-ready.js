@@ -27,7 +27,10 @@ module.exports = {
 		docs: {
 			description: 'Disallows the document ready event, either `$( function() {} )` or `$( document ).ready()`.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: '.ready is not allowed'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -35,7 +38,7 @@ module.exports = {
 			if ( isDirect( context, node ) || isChained( context, node ) ) {
 				context.report( {
 					node,
-					message: '.ready is not allowed'
+					messageId: 'default'
 				} );
 			}
 		}

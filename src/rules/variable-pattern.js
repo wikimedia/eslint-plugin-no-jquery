@@ -8,7 +8,10 @@ module.exports = {
 		docs: {
 			description: 'Disallows variable names which don\'t match `variablePattern` in settings (by default a `$`-prefix).'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: 'jQuery collection names must match the variablePattern'
+		}
 	},
 
 	create: ( context ) => {
@@ -23,7 +26,7 @@ module.exports = {
 			) {
 				context.report( {
 					node,
-					message: 'jQuery collection names must match the variablePattern'
+					messageId: 'default'
 				} );
 			}
 		}

@@ -3,9 +3,9 @@
 const rule = require( '../../src/rules/no-slide' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const downError = 'Prefer CSS transitions to .slideDown';
-const toggleError = 'Prefer CSS transitions to .slideToggle';
-const upError = 'Prefer CSS transitions to .slideUp';
+const downError = { messageId: 'default', data: { name: 'slideDown' } };
+const toggleError = { messageId: 'default', data: { name: 'slideToggle' } };
+const upError = { messageId: 'default', data: { name: 'slideUp' } };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-slide', rule, {

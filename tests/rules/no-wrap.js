@@ -3,10 +3,10 @@
 const rule = require( '../../src/rules/no-wrap' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const wrapError = '.wrap is not allowed';
-const wrapAllError = '.wrapAll is not allowed';
-const wrapInnerError = '.wrapInner is not allowed';
-const unwrapError = '.unwrap is not allowed';
+const wrapError = { messageId: 'default', data: { name: 'wrap' } };
+const wrapAllError = { messageId: 'default', data: { name: 'wrapAll' } };
+const wrapInnerError = { messageId: 'default', data: { name: 'wrapInner' } };
+const unwrapError = { messageId: 'default', data: { name: 'unwrap' } };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-wrap', rule, {

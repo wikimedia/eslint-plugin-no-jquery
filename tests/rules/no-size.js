@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-size' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer .length to .size';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-size', rule, {

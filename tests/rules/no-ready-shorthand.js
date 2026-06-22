@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-ready-shorthand' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer $() to .ready';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-ready-shorthand', rule, {

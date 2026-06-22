@@ -3,8 +3,8 @@
 const rule = require( '../../src/rules/no-delegate' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const delegateError = 'Prefer .on/EventTarget#addEventListener to .delegate';
-const undelegateError = 'Prefer .off/EventTarget#removeEventListener to .undelegate';
+const delegateError = { messageId: 'delegate' };
+const undelegateError = { messageId: 'undelegate' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-delegate', rule, {

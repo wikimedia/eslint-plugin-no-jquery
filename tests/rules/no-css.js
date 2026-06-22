@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-css' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Window#getComputedStyle to .css/$.css';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-css', rule, {

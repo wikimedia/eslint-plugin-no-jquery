@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-param' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer FormData or URLSearchParams to $.param';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-param', rule, {

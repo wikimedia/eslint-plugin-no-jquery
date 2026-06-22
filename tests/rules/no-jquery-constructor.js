@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-jquery-constructor' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'The jQuery constructor is not allowed';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-jquery-constructor', rule, {

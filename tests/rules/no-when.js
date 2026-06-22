@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-when' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Promise.all to $.when';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-when', rule, {

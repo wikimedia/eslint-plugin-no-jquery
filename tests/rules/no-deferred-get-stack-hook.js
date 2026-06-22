@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-deferred-get-stack-hook' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = '$.Deferred.getStackHook is not allowed. Use $.Deferred.getErrorHook instead.';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-deferred-get-stack-hook', rule, {

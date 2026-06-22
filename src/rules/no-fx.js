@@ -8,7 +8,10 @@ module.exports = {
 		docs: {
 			description: 'Disallows `$.fx`.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: '$.fx is not allowed'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -22,7 +25,7 @@ module.exports = {
 
 			context.report( {
 				node,
-				message: '$.fx is not allowed'
+				messageId: 'default'
 			} );
 		}
 	} )

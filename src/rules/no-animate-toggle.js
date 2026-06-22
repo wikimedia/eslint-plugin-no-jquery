@@ -11,7 +11,10 @@ module.exports = {
 				', ' + utils.jQueryCollectionLink( 'hide' ) + ' & ' + utils.jQueryCollectionLink( 'toggle' ) +
 				' methods. Prefer CSS transitions.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: 'Prefer CSS transitions to .{{method}}'
+		}
 	},
 
 	create: ( context ) => {
@@ -46,7 +49,7 @@ module.exports = {
 				if ( utils.isjQuery( context, node ) ) {
 					context.report( {
 						node,
-						message: 'Prefer CSS transitions to .{{method}}',
+						messageId: 'default',
 						data: { method: node.callee.property.name }
 					} );
 				}

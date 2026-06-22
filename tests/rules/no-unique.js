@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-unique' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer $.uniqueSort to $.unique';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-unique', rule, {

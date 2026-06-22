@@ -3,11 +3,11 @@
 const rule = require( '../../src/rules/no-ajax' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const ajaxError = 'Prefer Window.fetch to $.ajax';
-const getError = 'Prefer Window.fetch to $.get';
-const jsonError = 'Prefer Window.fetch to $.getJSON';
-const scriptError = 'Prefer Window.fetch to $.getScript';
-const postError = 'Prefer Window.fetch to $.post';
+const ajaxError = { messageId: 'default', data: { name: 'ajax' } };
+const getError = { messageId: 'default', data: { name: 'get' } };
+const jsonError = { messageId: 'default', data: { name: 'getJSON' } };
+const scriptError = { messageId: 'default', data: { name: 'getScript' } };
+const postError = { messageId: 'default', data: { name: 'post' } };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-ajax', rule, {

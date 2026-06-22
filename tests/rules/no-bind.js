@@ -3,8 +3,8 @@
 const rule = require( '../../src/rules/no-bind' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const bindError = 'Prefer .on/EventTarget#addEventListener to .bind';
-const unbindError = 'Prefer .off/EventTarget#removeEventListener to .unbind';
+const bindError = { messageId: 'bind' };
+const unbindError = { messageId: 'unbind' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-bind', rule, {

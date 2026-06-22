@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-selector-prop' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = '.selector is not allowed';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-selector-prop', rule, {

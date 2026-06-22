@@ -28,7 +28,11 @@ module.exports = {
 		],
 		defaultOptions: [
 			{ allowPositional: false, allowOther: false }
-		]
+		],
+		messages: {
+			positional: 'Positional selector extensions are not allowed',
+			other: 'Selector extensions are not allowed'
+		}
 	},
 
 	create: ( context ) => {
@@ -76,12 +80,12 @@ module.exports = {
 				if ( !allowPositional && forbiddenPositional.test( value ) ) {
 					context.report( {
 						node,
-						message: 'Positional selector extensions are not allowed'
+						messageId: 'positional'
 					} );
 				} else if ( !allowOther && forbiddenOther.test( value ) ) {
 					context.report( {
 						node,
-						message: 'Selector extensions are not allowed'
+						messageId: 'other'
 					} );
 				}
 			}

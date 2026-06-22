@@ -3,10 +3,6 @@
 const rule = require( '../../src/rules/no-ajax-events' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-function getErrors( method ) {
-	return [ 'Prefer local event to ' + method ];
-}
-
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-ajax-events', rule, {
 	valid: [
@@ -28,11 +24,11 @@ ruleTester.run( 'no-ajax-events', rule, {
 	].map( ( method ) => ( [
 		{
 			code: `$(document).on("${ method }", fn)`,
-			errors: getErrors( method )
+			errors: [ { messageId: 'default', data: { method } } ]
 		},
 		{
 			code: `$(document).${ method }(fn)`,
-			errors: getErrors( method )
+			errors: [ { messageId: 'default', data: { method } } ]
 		}
 	] ) ).flat()
 } );

@@ -29,7 +29,10 @@ module.exports = {
 		],
 		defaultOptions: [
 			{ allowIds: false }
-		]
+		],
+		messages: {
+			default: 'Avoid queries which search the entire DOM. Keep DOM nodes in memory where possible.'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -83,7 +86,7 @@ module.exports = {
 
 			context.report( {
 				node,
-				message: 'Avoid queries which search the entire DOM. Keep DOM nodes in memory where possible.'
+				messageId: 'default'
 			} );
 		}
 	} )

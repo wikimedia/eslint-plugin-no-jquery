@@ -3,9 +3,9 @@
 const rule = require( '../../src/rules/no-parse-html-literal' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer DOM building to parsing HTML literals';
-const errorMinimal = 'Single tag must use the format: <div>';
-const errorSelfClosing = 'Single tag must use the format: <div/>';
+const error = { messageId: 'default', data: {} };
+const errorMinimal = { messageId: 'singleTagFormat', data: { tag: '<div>' } };
+const errorSelfClosing = { messageId: 'singleTagFormat', data: { tag: '<div/>' } };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-parse-html-literal', rule, {

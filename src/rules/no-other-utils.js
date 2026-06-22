@@ -59,7 +59,10 @@ module.exports = {
 		docs: {
 			description: 'Disallows all utilities not covered by more specific rules.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: '$.{{name}} is not allowed'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -78,7 +81,7 @@ module.exports = {
 
 			context.report( {
 				node,
-				message: '$.{{name}} is not allowed',
+				messageId: 'default',
 				data: { name }
 			} );
 		}

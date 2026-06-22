@@ -4,10 +4,12 @@ const utils = require( '../utils.js' );
 
 module.exports = utils.createCollectionMethodRule(
 	[ 'delegate', 'undelegate' ],
-	( node ) => node === true ?
-		'Prefer `.on`/`.off` or `EventTarget#addEventListener`/`removeEventListener`' : (
-			node.callee.property.name === 'delegate' ?
-				'Prefer .on/EventTarget#addEventListener to .delegate' :
-				'Prefer .off/EventTarget#removeEventListener to .undelegate'
-		)
+	'Prefer `.on`/`.off` or `EventTarget#addEventListener`/`removeEventListener`',
+	{
+		messages: {
+			delegate: 'Prefer .on/EventTarget#addEventListener to .delegate',
+			undelegate: 'Prefer .off/EventTarget#removeEventListener to .undelegate'
+		},
+		report: ( node, name ) => ( { messageId: name } )
+	}
 );

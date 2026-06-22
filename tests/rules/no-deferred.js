@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-deferred' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer Promise to $.Deferred';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-deferred', rule, {

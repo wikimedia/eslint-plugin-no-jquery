@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-ready' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = '.ready is not allowed';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-ready', rule, {

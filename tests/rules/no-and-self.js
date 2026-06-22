@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-and-self' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = 'Prefer .addBack to .andSelf';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-and-self', rule, {

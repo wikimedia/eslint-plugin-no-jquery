@@ -3,7 +3,7 @@
 const rule = require( '../../src/rules/no-has' );
 const RuleTester = require( '../../tools/rule-tester' );
 
-const error = '.has is not allowed';
+const error = { messageId: 'default' };
 
 const ruleTester = new RuleTester();
 ruleTester.run( 'no-has', rule, {

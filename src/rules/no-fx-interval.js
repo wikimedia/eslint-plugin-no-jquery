@@ -8,7 +8,10 @@ module.exports = {
 		docs: {
 			description: 'Disallows ' + utils.jQueryGlobalLink( 'fx.interval' ) + '.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: '$.fx.interval is not allowed'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -24,7 +27,7 @@ module.exports = {
 
 			context.report( {
 				node,
-				message: '$.fx.interval is not allowed'
+				messageId: 'default'
 			} );
 		}
 	} )

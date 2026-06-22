@@ -17,7 +17,10 @@ module.exports = {
 		docs: {
 			description: 'Disallows global ajax events handlers: ' + disallowedEvents.map( utils.jQueryCollectionLink ).join( '/' ) + '. Prefer local events.'
 		},
-		schema: []
+		schema: [],
+		messages: {
+			default: 'Prefer local event to {{method}}'
+		}
 	},
 
 	create: ( context ) => ( {
@@ -44,7 +47,7 @@ module.exports = {
 			if ( usedMethod && utils.isjQuery( context, node ) ) {
 				context.report( {
 					node,
-					message: 'Prefer local event to {{method}}',
+					messageId: 'default',
 					data: { method: usedMethod }
 				} );
 			}
