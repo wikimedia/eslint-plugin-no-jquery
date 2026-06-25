@@ -4,6 +4,8 @@
 
 Disallows the [`.context`](https://api.jquery.com/context/) property.
 
+📋 This rule is enabled as an error in `plugin:no-jquery/deprecated-3.0`.
+
 📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-1.10`.
 
 ## Rule details
