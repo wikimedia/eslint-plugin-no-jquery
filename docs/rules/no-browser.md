@@ -4,7 +4,7 @@
 
 Disallows the [`$.browser`](https://api.jquery.com/jQuery.browser/) property.
 
-📋 This rule is enabled in `plugin:no-jquery/deprecated-1.3`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-1.3`.
 
 ## Rule details
 

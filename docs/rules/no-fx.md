@@ -4,7 +4,7 @@
 
 Disallows `$.fx`.
 
-📋 This rule is enabled in `plugin:no-jquery/slim`.
+📋 This rule is enabled as an error in `plugin:no-jquery/slim`.
 
 ## Rule details
 

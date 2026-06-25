@@ -4,7 +4,7 @@
 
 Disallows the [`.filter`](https://api.jquery.com/filter/) method and `$.filter` utility. Prefer `Array#filter`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

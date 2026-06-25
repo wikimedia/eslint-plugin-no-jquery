@@ -4,7 +4,7 @@
 
 Disallows the [`$.inArray`](https://api.jquery.com/jQuery.inArray/) utility. Prefer `Array#indexOf`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

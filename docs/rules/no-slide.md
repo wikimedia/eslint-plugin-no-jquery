@@ -4,9 +4,9 @@
 
 Disallows the [`.slideDown`](https://api.jquery.com/slideDown/)/[`.slideToggle`](https://api.jquery.com/slideToggle/)/[`.slideUp`](https://api.jquery.com/slideUp/) methods. Prefer CSS transitions.
 
-📋 This rule is enabled in `plugin:no-jquery/slim`.
+📋 This rule is enabled as an error in `plugin:no-jquery/slim`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

@@ -4,7 +4,7 @@
 
 Disallows the [`.done`](https://api.jquery.com/deferred.done/)/[`.fail`](https://api.jquery.com/deferred.fail/) methods. Prefer `.then`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

@@ -4,7 +4,7 @@
 
 Disallows the [`.show`](https://api.jquery.com/show/)/[`.hide`](https://api.jquery.com/hide/)/[`.toggle`](https://api.jquery.com/toggle/) methods.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

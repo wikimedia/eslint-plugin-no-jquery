@@ -4,9 +4,9 @@
 
 Disallows the [`.fadeIn`](https://api.jquery.com/fadeIn/)/[`.fadeOut`](https://api.jquery.com/fadeOut/)/[`.fadeTo`](https://api.jquery.com/fadeTo/)/[`.fadeToggle`](https://api.jquery.com/fadeToggle/) methods. Prefer CSS transitions.
 
-📋 This rule is enabled in `plugin:no-jquery/slim`.
+📋 This rule is enabled as an error in `plugin:no-jquery/slim`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

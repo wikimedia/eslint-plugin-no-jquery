@@ -4,9 +4,9 @@
 
 Disallows the [`$.sub`](https://api.jquery.com/jQuery.sub/) utility.
 
-📋 This rule is enabled in `plugin:no-jquery/deprecated-1.7`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-1.7`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

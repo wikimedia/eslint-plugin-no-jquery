@@ -4,7 +4,7 @@
 
 Disallows the [`.is`](https://api.jquery.com/is/) method. Prefer `Element#matches`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

@@ -4,7 +4,7 @@
 
 Disallows the [`.text`](https://api.jquery.com/text/) method and `$.text` utility. Prefer `Node#textContent`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

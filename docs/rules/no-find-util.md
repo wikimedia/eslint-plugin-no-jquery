@@ -4,7 +4,7 @@
 
 Disallows the `$.find` utility. Prefer `Document#querySelectorAll`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

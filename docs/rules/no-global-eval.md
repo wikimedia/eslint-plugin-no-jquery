@@ -4,7 +4,7 @@
 
 Disallows the [`$.globalEval`](https://api.jquery.com/jQuery.globalEval/) utility.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

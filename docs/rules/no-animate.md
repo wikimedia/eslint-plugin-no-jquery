@@ -4,9 +4,9 @@
 
 Disallows the [`.animate`](https://api.jquery.com/animate/)/[`.stop`](https://api.jquery.com/stop/)/[`.finish`](https://api.jquery.com/finish/) methods. Use the `allowScroll` option to allow animations which are just used for scrolling. Prefer CSS transitions.
 
-📋 This rule is enabled in `plugin:no-jquery/slim`.
+📋 This rule is enabled as an error in `plugin:no-jquery/slim`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 
