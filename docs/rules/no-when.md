@@ -4,7 +4,7 @@
 
 Disallows the [`$.when`](https://api.jquery.com/jQuery.when/) utility. Prefer `Promise.all`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

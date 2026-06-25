@@ -4,9 +4,9 @@
 
 Disallows the `$.Deferred.getStackHook` property. Use `$.Deferred.getErrorHook` instead.
 
-📋 This rule is enabled in `plugin:no-jquery/deprecated-3.7`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-3.7`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

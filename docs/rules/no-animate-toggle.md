@@ -4,7 +4,7 @@
 
 Disallows the duration argument when using the [`.show`](https://api.jquery.com/show/), [`.hide`](https://api.jquery.com/hide/) & [`.toggle`](https://api.jquery.com/toggle/) methods. Prefer CSS transitions.
 
-📋 This rule is enabled in `plugin:no-jquery/slim`.
+📋 This rule is enabled as an error in `plugin:no-jquery/slim`.
 
 ## Rule details
 

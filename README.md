@@ -1,4 +1,4 @@
-<!-- This file is built by build-readme.js. Do not edit it directly; edit README.md.template instead. -->
+<!-- This file is built by eslint-docgen-build-readme. Do not edit it directly; edit README.md.template instead. -->
 # eslint-plugin-no-jquery
 
 Disallow jQuery functions, with suggestions for native equivalents where possible.
@@ -83,20 +83,22 @@ The following global settings can be used under the `no-jquery` property to conf
 
 Rules with options are indicated with ⚙️. Rules which are fixable are indicated with 🔧.
 
-Where rules are included in the configs `recommended`, `slim`, `all` or `deprecated-X.X` it is indicated below. Where rules are included in a config with non-default options this is indicated with a `†`.
+Where rules are included in the configs `recommended`, `slim`, `all` or `deprecated-X.X` it is indicated below.
+Where rules are included in a config with non-default options this is indicated with a `†`.
+Configs which cause the rule to report an error are shown in **`bold`**.
 
-* [`no-jquery/no-ajax`](docs/rules/no-ajax.md) `slim`, `all`
-* [`no-jquery/no-ajax-events`](docs/rules/no-ajax-events.md) `slim`
+* [`no-jquery/no-ajax`](docs/rules/no-ajax.md) **`slim`**, `all`
+* [`no-jquery/no-ajax-events`](docs/rules/no-ajax-events.md) **`slim`**
 * [`no-jquery/no-and-self`](docs/rules/no-and-self.md) 🔧 `1.8`
-* [`no-jquery/no-animate`](docs/rules/no-animate.md) ⚙️ `slim`, `all`
-* [`no-jquery/no-animate-toggle`](docs/rules/no-animate-toggle.md) `slim`
+* [`no-jquery/no-animate`](docs/rules/no-animate.md) ⚙️ **`slim`**, `all`
+* [`no-jquery/no-animate-toggle`](docs/rules/no-animate-toggle.md) **`slim`**
 * [`no-jquery/no-append-html`](docs/rules/no-append-html.md)
 * [`no-jquery/no-attr`](docs/rules/no-attr.md) `all`
-* [`no-jquery/no-bind`](docs/rules/no-bind.md) `3.0`, `all`
+* [`no-jquery/no-bind`](docs/rules/no-bind.md) `all`, `3.0`
 * [`no-jquery/no-box-model`](docs/rules/no-box-model.md) `1.3`
 * [`no-jquery/no-browser`](docs/rules/no-browser.md) `1.3`
-* [`no-jquery/no-camel-case`](docs/rules/no-camel-case.md) `3.3`, `all`
-* [`no-jquery/no-class`](docs/rules/no-class.md) ⚙️ `3.0†`, `all`
+* [`no-jquery/no-camel-case`](docs/rules/no-camel-case.md) `all`, `3.3`
+* [`no-jquery/no-class`](docs/rules/no-class.md) ⚙️ `all`, `3.0†`
 * [`no-jquery/no-class-state`](docs/rules/no-class-state.md)
 * [`no-jquery/no-clone`](docs/rules/no-clone.md) `all`
 * [`no-jquery/no-closest`](docs/rules/no-closest.md) `all`
@@ -106,8 +108,8 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-css`](docs/rules/no-css.md) `all`
 * [`no-jquery/no-data`](docs/rules/no-data.md) `all`
 * [`no-jquery/no-deferred`](docs/rules/no-deferred.md) `all`
-* [`no-jquery/no-deferred-get-stack-hook`](docs/rules/no-deferred-get-stack-hook.md) `3.7`, `all`
-* [`no-jquery/no-delegate`](docs/rules/no-delegate.md) `3.0`, `all`
+* [`no-jquery/no-deferred-get-stack-hook`](docs/rules/no-deferred-get-stack-hook.md) `all`, `3.7`
+* [`no-jquery/no-delegate`](docs/rules/no-delegate.md) `all`, `3.0`
 * [`no-jquery/no-done-fail`](docs/rules/no-done-fail.md) `all`
 * [`no-jquery/no-each`](docs/rules/no-each.md)
 * [`no-jquery/no-each-collection`](docs/rules/no-each-collection.md) `all`
@@ -115,40 +117,40 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-error`](docs/rules/no-error.md) 🔧 `all`
 * [`no-jquery/no-error-shorthand`](docs/rules/no-error-shorthand.md) 🔧 `1.8`
 * [`no-jquery/no-escape-selector`](docs/rules/no-escape-selector.md) 🔧 `all`
-* [`no-jquery/no-event-shorthand`](docs/rules/no-event-shorthand.md) ⚙️ 🔧 `3.5`, `3.3†`, `all`
+* [`no-jquery/no-event-shorthand`](docs/rules/no-event-shorthand.md) ⚙️ 🔧 `all`, `3.3†`, `3.5`
 * [`no-jquery/no-extend`](docs/rules/no-extend.md) ⚙️ 🔧 `all`
-* [`no-jquery/no-fade`](docs/rules/no-fade.md) `slim`, `all`
+* [`no-jquery/no-fade`](docs/rules/no-fade.md) **`slim`**, `all`
 * [`no-jquery/no-filter`](docs/rules/no-filter.md) `all`
 * [`no-jquery/no-find`](docs/rules/no-find.md)
 * [`no-jquery/no-find-collection`](docs/rules/no-find-collection.md) `all`
 * [`no-jquery/no-find-util`](docs/rules/no-find-util.md) `all`
-* [`no-jquery/no-fx`](docs/rules/no-fx.md) `slim`
+* [`no-jquery/no-fx`](docs/rules/no-fx.md) **`slim`**
 * [`no-jquery/no-fx-interval`](docs/rules/no-fx-interval.md) `3.0`
 * [`no-jquery/no-global-eval`](docs/rules/no-global-eval.md) `all`
 * [`no-jquery/no-global-selector`](docs/rules/no-global-selector.md) ⚙️
 * [`no-jquery/no-grep`](docs/rules/no-grep.md) `all`
 * [`no-jquery/no-has`](docs/rules/no-has.md) `all`
-* [`no-jquery/no-hold-ready`](docs/rules/no-hold-ready.md) `3.2`, `all`
+* [`no-jquery/no-hold-ready`](docs/rules/no-hold-ready.md) `all`, `3.2`
 * [`no-jquery/no-html`](docs/rules/no-html.md) ⚙️ `all`
 * [`no-jquery/no-in-array`](docs/rules/no-in-array.md) `all`
 * [`no-jquery/no-is`](docs/rules/no-is.md) `all`
-* [`no-jquery/no-is-array`](docs/rules/no-is-array.md) 🔧 `3.2`, `all`
+* [`no-jquery/no-is-array`](docs/rules/no-is-array.md) 🔧 `all`, `3.2`
 * [`no-jquery/no-is-empty-object`](docs/rules/no-is-empty-object.md) `all`
-* [`no-jquery/no-is-function`](docs/rules/no-is-function.md) 🔧 `3.3`, `all`
-* [`no-jquery/no-is-numeric`](docs/rules/no-is-numeric.md) `3.3`, `all`
+* [`no-jquery/no-is-function`](docs/rules/no-is-function.md) 🔧 `all`, `3.3`
+* [`no-jquery/no-is-numeric`](docs/rules/no-is-numeric.md) `all`, `3.3`
 * [`no-jquery/no-is-plain-object`](docs/rules/no-is-plain-object.md) `all`
-* [`no-jquery/no-is-window`](docs/rules/no-is-window.md) `3.3`, `all`
+* [`no-jquery/no-is-window`](docs/rules/no-is-window.md) `all`, `3.3`
 * [`no-jquery/no-jquery-constructor`](docs/rules/no-jquery-constructor.md) `all`
-* [`no-jquery/no-live`](docs/rules/no-live.md) `1.7`, `all`
-* [`no-jquery/no-load`](docs/rules/no-load.md) `slim`, `all`
+* [`no-jquery/no-live`](docs/rules/no-live.md) `all`, `1.7`
+* [`no-jquery/no-load`](docs/rules/no-load.md) **`slim`**, `all`
 * [`no-jquery/no-load-shorthand`](docs/rules/no-load-shorthand.md) 🔧 `1.8`
 * [`no-jquery/no-map`](docs/rules/no-map.md)
 * [`no-jquery/no-map-collection`](docs/rules/no-map-collection.md) `all`
 * [`no-jquery/no-map-util`](docs/rules/no-map-util.md) `all`
 * [`no-jquery/no-merge`](docs/rules/no-merge.md) `all`
-* [`no-jquery/no-node-name`](docs/rules/no-node-name.md) `3.2`, `all`
+* [`no-jquery/no-node-name`](docs/rules/no-node-name.md) `all`, `3.2`
 * [`no-jquery/no-noop`](docs/rules/no-noop.md) 🔧 `all`
-* [`no-jquery/no-now`](docs/rules/no-now.md) 🔧 `3.3`, `all`
+* [`no-jquery/no-now`](docs/rules/no-now.md) 🔧 `all`, `3.3`
 * [`no-jquery/no-on-ready`](docs/rules/no-on-ready.md) 🔧 `1.8`
 * [`no-jquery/no-other-methods`](docs/rules/no-other-methods.md) `all`
 * [`no-jquery/no-other-utils`](docs/rules/no-other-utils.md) `all`
@@ -157,30 +159,30 @@ Where rules are included in the configs `recommended`, `slim`, `all` or `depreca
 * [`no-jquery/no-parents`](docs/rules/no-parents.md) `all`
 * [`no-jquery/no-parse-html`](docs/rules/no-parse-html.md) `all`
 * [`no-jquery/no-parse-html-literal`](docs/rules/no-parse-html-literal.md) ⚙️ 🔧
-* [`no-jquery/no-parse-json`](docs/rules/no-parse-json.md) 🔧 `3.0`, `all`
-* [`no-jquery/no-parse-xml`](docs/rules/no-parse-xml.md) 🔧 `slim`, `all`
+* [`no-jquery/no-parse-json`](docs/rules/no-parse-json.md) 🔧 `all`, `3.0`
+* [`no-jquery/no-parse-xml`](docs/rules/no-parse-xml.md) 🔧 **`slim`**, `all`
 * [`no-jquery/no-prop`](docs/rules/no-prop.md) `all`
-* [`no-jquery/no-proxy`](docs/rules/no-proxy.md) 🔧 `3.3`, `all`
+* [`no-jquery/no-proxy`](docs/rules/no-proxy.md) 🔧 `all`, `3.3`
 * [`no-jquery/no-ready`](docs/rules/no-ready.md)
-* [`no-jquery/no-ready-shorthand`](docs/rules/no-ready-shorthand.md) 🔧 `3.0`, `all`
+* [`no-jquery/no-ready-shorthand`](docs/rules/no-ready-shorthand.md) 🔧 `all`, `3.0`
 * [`no-jquery/no-selector-prop`](docs/rules/no-selector-prop.md) `1.7`
 * [`no-jquery/no-serialize`](docs/rules/no-serialize.md) `all`
-* [`no-jquery/no-size`](docs/rules/no-size.md) 🔧 `1.8`, `all`
+* [`no-jquery/no-size`](docs/rules/no-size.md) 🔧 `all`, `1.8`
 * [`no-jquery/no-sizzle`](docs/rules/no-sizzle.md) ⚙️ `3.4†`
-* [`no-jquery/no-slide`](docs/rules/no-slide.md) `slim`, `all`
-* [`no-jquery/no-sub`](docs/rules/no-sub.md) `1.7`, `all`
+* [`no-jquery/no-slide`](docs/rules/no-slide.md) **`slim`**, `all`
+* [`no-jquery/no-sub`](docs/rules/no-sub.md) `all`, `1.7`
 * [`no-jquery/no-support`](docs/rules/no-support.md) `1.9`
 * [`no-jquery/no-text`](docs/rules/no-text.md) `all`
 * [`no-jquery/no-trigger`](docs/rules/no-trigger.md) `all`
-* [`no-jquery/no-trim`](docs/rules/no-trim.md) `3.5`, `all`
-* [`no-jquery/no-type`](docs/rules/no-type.md) `3.3`, `all`
-* [`no-jquery/no-unique`](docs/rules/no-unique.md) 🔧 `3.0`, `all`
+* [`no-jquery/no-trim`](docs/rules/no-trim.md) `all`, `3.5`
+* [`no-jquery/no-type`](docs/rules/no-type.md) `all`, `3.3`
+* [`no-jquery/no-unique`](docs/rules/no-unique.md) 🔧 `all`, `3.0`
 * [`no-jquery/no-unload-shorthand`](docs/rules/no-unload-shorthand.md) 🔧 `1.8`
 * [`no-jquery/no-val`](docs/rules/no-val.md) `all`
 * [`no-jquery/no-visibility`](docs/rules/no-visibility.md) `all`
 * [`no-jquery/no-when`](docs/rules/no-when.md) `all`
 * [`no-jquery/no-wrap`](docs/rules/no-wrap.md) `all`
-* [`no-jquery/variable-pattern`](docs/rules/variable-pattern.md) `recommended`
+* [`no-jquery/variable-pattern`](docs/rules/variable-pattern.md) **`recommended`**
 
 ### ⚠️ Deprecated
 

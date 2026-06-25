@@ -4,9 +4,9 @@
 
 Disallows the [`.bind`](https://api.jquery.com/bind/)/[`.unbind`](https://api.jquery.com/unbind/) methods. Prefer `.on`/`.off` or `EventTarget#addEventListener`/`removeEventListener`.
 
-📋 This rule is enabled in `plugin:no-jquery/deprecated-3.0`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-3.0`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

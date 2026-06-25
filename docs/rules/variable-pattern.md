@@ -4,7 +4,7 @@
 
 Disallows variable names which don't match `variablePattern` in settings (by default a `$`-prefix).
 
-📋 This rule is enabled in `plugin:no-jquery/recommended`.
+📋 This rule is enabled as an error in `plugin:no-jquery/recommended`.
 
 ## Rule details
 

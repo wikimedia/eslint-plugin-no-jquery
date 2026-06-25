@@ -9,7 +9,7 @@ Using this method only as a getter or a setter can be allowed using the `allowGe
 * `"get"` the method can only be used as a getter i.e. with no arguments
 * `"set"` the method can only be used as a setter i.e. with arguments
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

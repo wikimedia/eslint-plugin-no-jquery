@@ -4,7 +4,7 @@
 
 Disallows the [`.trigger`](https://api.jquery.com/trigger/) method. Prefer `EventTarget#dispatchEvent`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

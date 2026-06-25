@@ -4,9 +4,9 @@
 
 Disallows the [`.addClass`](https://api.jquery.com/addClass/)/[`.hasClass`](https://api.jquery.com/hasClass/)/[`.removeClass`](https://api.jquery.com/removeClass/)/[`.toggleClass`](https://api.jquery.com/toggleClass/) methods. User the `onlyDeprecated` option to only report deprecated usages. Prefer `Element#classList`.
 
-📋 This rule is enabled in `plugin:no-jquery/deprecated-3.0` with `[{"onlyDeprecated":true}]` options.
+📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-3.0` with `[{"onlyDeprecated":true}]` options.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 

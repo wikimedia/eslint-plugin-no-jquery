@@ -4,9 +4,9 @@
 
 Disallows the [`$.isArray`](https://api.jquery.com/jQuery.isArray/) utility. Prefer `Array.isArray`.
 
-📋 This rule is enabled in `plugin:no-jquery/deprecated-3.2`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-3.2`.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 

@@ -4,7 +4,7 @@
 
 Disallows the [`$.isPlainObject`](https://api.jquery.com/jQuery.isPlainObject/) utility.
 
-📋 This rule is enabled in `plugin:no-jquery/all`.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 
