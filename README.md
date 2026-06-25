@@ -97,7 +97,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-bind`](docs/rules/no-bind.md) `all`, `3.0`
 * [`no-jquery/no-box-model`](docs/rules/no-box-model.md) `1.3`, **`1.8`**
 * [`no-jquery/no-browser`](docs/rules/no-browser.md) `1.3`, **`1.9`**
-* [`no-jquery/no-camel-case`](docs/rules/no-camel-case.md) `all`, `3.3`
+* [`no-jquery/no-camel-case`](docs/rules/no-camel-case.md) `all`, `3.3`, **`4.0`**
 * [`no-jquery/no-class`](docs/rules/no-class.md) ⚙️ `all`, `3.0†`
 * [`no-jquery/no-class-state`](docs/rules/no-class-state.md)
 * [`no-jquery/no-clone`](docs/rules/no-clone.md) `all`
@@ -125,7 +125,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-find-collection`](docs/rules/no-find-collection.md) `all`
 * [`no-jquery/no-find-util`](docs/rules/no-find-util.md) `all`
 * [`no-jquery/no-fx`](docs/rules/no-fx.md) **`slim`**
-* [`no-jquery/no-fx-interval`](docs/rules/no-fx-interval.md) `3.0`
+* [`no-jquery/no-fx-interval`](docs/rules/no-fx-interval.md) `3.0`, **`4.0`**
 * [`no-jquery/no-global-eval`](docs/rules/no-global-eval.md) `all`
 * [`no-jquery/no-global-selector`](docs/rules/no-global-selector.md) ⚙️
 * [`no-jquery/no-grep`](docs/rules/no-grep.md) `all`
@@ -134,12 +134,12 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-html`](docs/rules/no-html.md) ⚙️ `all`
 * [`no-jquery/no-in-array`](docs/rules/no-in-array.md) `all`
 * [`no-jquery/no-is`](docs/rules/no-is.md) `all`
-* [`no-jquery/no-is-array`](docs/rules/no-is-array.md) 🔧 `all`, `3.2`
+* [`no-jquery/no-is-array`](docs/rules/no-is-array.md) 🔧 `all`, `3.2`, **`4.0`**
 * [`no-jquery/no-is-empty-object`](docs/rules/no-is-empty-object.md) `all`
-* [`no-jquery/no-is-function`](docs/rules/no-is-function.md) 🔧 `all`, `3.3`
-* [`no-jquery/no-is-numeric`](docs/rules/no-is-numeric.md) `all`, `3.3`
+* [`no-jquery/no-is-function`](docs/rules/no-is-function.md) 🔧 `all`, `3.3`, **`4.0`**
+* [`no-jquery/no-is-numeric`](docs/rules/no-is-numeric.md) `all`, `3.3`, **`4.0`**
 * [`no-jquery/no-is-plain-object`](docs/rules/no-is-plain-object.md) `all`
-* [`no-jquery/no-is-window`](docs/rules/no-is-window.md) `all`, `3.3`
+* [`no-jquery/no-is-window`](docs/rules/no-is-window.md) `all`, `3.3`, **`4.0`**
 * [`no-jquery/no-jquery-constructor`](docs/rules/no-jquery-constructor.md) `all`
 * [`no-jquery/no-live`](docs/rules/no-live.md) `all`, `1.7`, **`1.9`**
 * [`no-jquery/no-load`](docs/rules/no-load.md) **`slim`**, `all`
@@ -148,9 +148,9 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-map-collection`](docs/rules/no-map-collection.md) `all`
 * [`no-jquery/no-map-util`](docs/rules/no-map-util.md) `all`
 * [`no-jquery/no-merge`](docs/rules/no-merge.md) `all`
-* [`no-jquery/no-node-name`](docs/rules/no-node-name.md) `all`, `3.2`
+* [`no-jquery/no-node-name`](docs/rules/no-node-name.md) `all`, `3.2`, **`4.0`**
 * [`no-jquery/no-noop`](docs/rules/no-noop.md) 🔧 `all`
-* [`no-jquery/no-now`](docs/rules/no-now.md) 🔧 `all`, `3.3`
+* [`no-jquery/no-now`](docs/rules/no-now.md) 🔧 `all`, `3.3`, **`4.0`**
 * [`no-jquery/no-on-ready`](docs/rules/no-on-ready.md) 🔧 `1.8`
 * [`no-jquery/no-other-methods`](docs/rules/no-other-methods.md) `all`
 * [`no-jquery/no-other-utils`](docs/rules/no-other-utils.md) `all`
@@ -159,7 +159,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-parents`](docs/rules/no-parents.md) `all`
 * [`no-jquery/no-parse-html`](docs/rules/no-parse-html.md) `all`
 * [`no-jquery/no-parse-html-literal`](docs/rules/no-parse-html-literal.md) ⚙️ 🔧
-* [`no-jquery/no-parse-json`](docs/rules/no-parse-json.md) 🔧 `all`, `3.0`
+* [`no-jquery/no-parse-json`](docs/rules/no-parse-json.md) 🔧 `all`, `3.0`, **`4.0`**
 * [`no-jquery/no-parse-xml`](docs/rules/no-parse-xml.md) 🔧 **`slim`**, `all`
 * [`no-jquery/no-prop`](docs/rules/no-prop.md) `all`
 * [`no-jquery/no-proxy`](docs/rules/no-proxy.md) 🔧 `all`, `3.3`
@@ -174,8 +174,8 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-support`](docs/rules/no-support.md) `1.9`
 * [`no-jquery/no-text`](docs/rules/no-text.md) `all`
 * [`no-jquery/no-trigger`](docs/rules/no-trigger.md) `all`
-* [`no-jquery/no-trim`](docs/rules/no-trim.md) `all`, `3.5`
-* [`no-jquery/no-type`](docs/rules/no-type.md) `all`, `3.3`
+* [`no-jquery/no-trim`](docs/rules/no-trim.md) `all`, `3.5`, **`4.0`**
+* [`no-jquery/no-type`](docs/rules/no-type.md) `all`, `3.3`, **`4.0`**
 * [`no-jquery/no-unique`](docs/rules/no-unique.md) 🔧 `all`, `3.0`
 * [`no-jquery/no-unload-shorthand`](docs/rules/no-unload-shorthand.md) 🔧 `1.8`, **`3.0`**
 * [`no-jquery/no-val`](docs/rules/no-val.md) `all`

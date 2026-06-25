@@ -4,6 +4,8 @@
 
 Disallows the [`$.now`](https://api.jquery.com/jQuery.now/) utility. Prefer `Date.now`.
 
+📋 This rule is enabled as an error in `plugin:no-jquery/deprecated-4.0`.
+
 📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-3.3`.
 
 📋 This rule is enabled as a warning in `plugin:no-jquery/all`.

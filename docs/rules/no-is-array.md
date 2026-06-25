@@ -4,6 +4,8 @@
 
 Disallows the [`$.isArray`](https://api.jquery.com/jQuery.isArray/) utility. Prefer `Array.isArray`.
 
+📋 This rule is enabled as an error in `plugin:no-jquery/deprecated-4.0`.
+
 📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-3.2`.
 
 📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
