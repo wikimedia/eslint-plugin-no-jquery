@@ -3,7 +3,7 @@
 const fs = require( 'fs' );
 const { JSDOM } = require( 'jsdom' );
 const { window } = new JSDOM( '' );
-const $ = require( 'jquery' )( window );
+const $ = require( 'jquery/factory' ).jQueryFactory( window );
 
 // Documented as "For internal use only"
 const internalMethods = [

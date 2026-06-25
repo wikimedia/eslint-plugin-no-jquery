@@ -130,7 +130,25 @@ module.exports = {
 		},
 		// Use this config if you want to avoid all known deprecated jQuery tools.
 		deprecated: {
-			extends: 'plugin:no-jquery/deprecated-3.7'
+			extends: 'plugin:no-jquery/deprecated-4.0'
+		},
+		'deprecated-4.0': {
+			extends: 'plugin:no-jquery/deprecated-3.7',
+			rules: {
+				'no-jquery/no-is-array': 'error',
+				'no-jquery/no-parse-json': 'error',
+				'no-jquery/no-trim': 'error',
+				'no-jquery/no-type': 'error',
+				'no-jquery/no-now': 'error',
+				'no-jquery/no-is-numeric': 'error',
+				'no-jquery/no-is-function': 'error',
+				'no-jquery/no-is-window': 'error',
+				'no-jquery/no-camel-case': 'error',
+				'no-jquery/no-node-name': 'error',
+				// TODO: jQuery.cssProps and jQuery.cssNumber
+				// TODO: Internal prototype methods push, sort, and splice
+				'no-jquery/no-fx-interval': 'error'
+			}
 		},
 		// Use this config if you're writing code targetting jQuery 3.7.x environments.
 		'deprecated-3.7': {
