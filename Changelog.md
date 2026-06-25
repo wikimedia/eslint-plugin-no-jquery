@@ -1,5 +1,22 @@
 # eslint-plugin-no-jquery release history
 
+## v5.1.0
+* Support jQuery 4.0
+
+—
+* New rules: `no-css-number` and `no-css-props`
+* New rule: `no-deferred-get-stack-hook`
+* New rule: `no-internal-array-methods`
+* Use messageIds when reporting rule violations
+* configs: Upgrade deprecation warnings to errors when a feature is removed
+* configs: Mark `$.Deferred.getStackHook` as removed in 4.0
+* configs: Mark `no-toggle(bool|undefined)` as removed in 4.0
+* configs: Mark `$.unique` as removed in 4.0
+
+—
+* build: Update eslint-docgen to v0.8.0
+* docs: Fix spelling mistakes
+
 ## v5.0.0
 * [BREAKING CHANGE] Require Node 24, up from 20 (James D. Forrester)
 
