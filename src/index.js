@@ -141,6 +141,7 @@ module.exports = {
 		'deprecated-4.0': {
 			extends: 'plugin:no-jquery/deprecated-3.7',
 			rules: {
+				'no-jquery/no-class': [ 'error', { onlyDeprecated: true } ],
 				'no-jquery/no-is-array': 'error',
 				'no-jquery/no-parse-json': 'error',
 				'no-jquery/no-trim': 'error',
