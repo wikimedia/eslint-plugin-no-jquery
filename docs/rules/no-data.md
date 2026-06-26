@@ -2,7 +2,7 @@
 
 # no-data
 
-Disallows the [`.data`](https://api.jquery.com/data/)/[`.removeData`](https://api.jquery.com/removeData/)/`.hasData` methods and [`$.data`](https://api.jquery.com/jQuery.data/)/[`$.removeData`](https://api.jquery.com/jQuery.removeData/)/[`$.hasData`](https://api.jquery.com/jQuery.hasData/) utilies. Prefer `WeakMap`.
+Disallows the [`.data`](https://api.jquery.com/data/)/[`.removeData`](https://api.jquery.com/removeData/)/`.hasData` methods and [`$.data`](https://api.jquery.com/jQuery.data/)/[`$.removeData`](https://api.jquery.com/jQuery.removeData/)/[`$.hasData`](https://api.jquery.com/jQuery.hasData/) utilities. Prefer `WeakMap`.
 
 📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 

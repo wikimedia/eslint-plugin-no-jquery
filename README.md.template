@@ -41,7 +41,7 @@ The config **`plugin:no-jquery/deprecated`** includes all known deprecated and r
 
 The config **`plugin:no-jquery/slim`** includes all features excluded from the official "slim" build of jQuery, specifically the [ajax](https://api.jquery.com/category/ajax/) and [effects](https://api.jquery.com/category/effects/) modules.
 
-The config **`plugin:no-jquery/all`** includes all methods and utilies and should be used when you are aiming to remove all jQuery usage from your code.
+The config **`plugin:no-jquery/all`** includes all methods and utilities and should be used when you are aiming to remove all jQuery usage from your code.
 
 Alternatively, you can pick out rules individually (see below).
 
