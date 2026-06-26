@@ -310,6 +310,7 @@ function jQueryGlobalLink( name ) {
 		case 'camelCase':
 		case 'clone':
 		case 'css':
+		case 'cssProps':
 		case 'filter':
 		case 'find':
 		case 'prop':
