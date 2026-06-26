@@ -50,6 +50,7 @@ module.exports = {
 		'no-hold-ready': require( './rules/no-hold-ready' ),
 		'no-html': require( './rules/no-html' ),
 		'no-in-array': require( './rules/no-in-array' ),
+		'no-internal-array-methods': require( './rules/no-internal-array-methods' ),
 		'no-is': require( './rules/no-is' ),
 		'no-is-array': require( './rules/no-is-array' ),
 		'no-is-empty-object': require( './rules/no-is-empty-object' ),
@@ -109,7 +110,10 @@ module.exports = {
 	configs: {
 		recommended: {
 			rules: {
-				'no-jquery/variable-pattern': 'error'
+				'no-jquery/variable-pattern': 'error',
+				// These methods are internal and eventually removed in 4.0,
+				// so warn against usage in all versions.
+				'no-jquery/no-internal-array-methods': 'warn'
 			}
 		},
 		// Use this config if you are using jQuery slim build
@@ -146,7 +150,7 @@ module.exports = {
 				'no-jquery/no-camel-case': 'error',
 				'no-jquery/no-node-name': 'error',
 				// TODO: jQuery.cssProps and jQuery.cssNumber
-				// TODO: Internal prototype methods push, sort, and splice
+				'no-jquery/no-internal-array-methods': 'error',
 				'no-jquery/no-fx-interval': 'error'
 			}
 		},

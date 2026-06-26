@@ -294,6 +294,11 @@ function jQueryCollectionLink( name ) {
 		case 'hasData':
 			// See tests/rules/no-data.js
 			return '`.' + name + '`';
+		case 'push':
+		case 'sort':
+		case 'splice':
+			// Undocumented internal Array.prototype methods
+			return '`.' + name + '`';
 		default:
 			return '[`.' + name + '`](https://api.jquery.com/' + name + '/)';
 	}

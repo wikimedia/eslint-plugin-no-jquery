@@ -133,6 +133,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-hold-ready`](docs/rules/no-hold-ready.md) `all`, `3.2`
 * [`no-jquery/no-html`](docs/rules/no-html.md) ⚙️ `all`
 * [`no-jquery/no-in-array`](docs/rules/no-in-array.md) `all`
+* [`no-jquery/no-internal-array-methods`](docs/rules/no-internal-array-methods.md) `recommended`, **`4.0`**
 * [`no-jquery/no-is`](docs/rules/no-is.md) `all`
 * [`no-jquery/no-is-array`](docs/rules/no-is-array.md) 🔧 `all`, `3.2`, **`4.0`**
 * [`no-jquery/no-is-empty-object`](docs/rules/no-is-empty-object.md) `all`
