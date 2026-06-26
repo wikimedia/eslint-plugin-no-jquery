@@ -108,7 +108,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-css`](docs/rules/no-css.md) `all`
 * [`no-jquery/no-data`](docs/rules/no-data.md) `all`
 * [`no-jquery/no-deferred`](docs/rules/no-deferred.md) `all`
-* [`no-jquery/no-deferred-get-stack-hook`](docs/rules/no-deferred-get-stack-hook.md) `all`, `3.7`
+* [`no-jquery/no-deferred-get-stack-hook`](docs/rules/no-deferred-get-stack-hook.md) `all`, `3.7`, **`4.0`**
 * [`no-jquery/no-delegate`](docs/rules/no-delegate.md) `all`, `3.0`
 * [`no-jquery/no-done-fail`](docs/rules/no-done-fail.md) `all`
 * [`no-jquery/no-each`](docs/rules/no-each.md)

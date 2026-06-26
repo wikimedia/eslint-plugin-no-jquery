@@ -147,6 +147,7 @@ module.exports = {
 				'no-jquery/no-is-numeric': 'error',
 				'no-jquery/no-is-function': 'error',
 				'no-jquery/no-is-window': 'error',
+				'no-jquery/no-deferred-get-stack-hook': 'error',
 				'no-jquery/no-camel-case': 'error',
 				'no-jquery/no-node-name': 'error',
 				// TODO: jQuery.cssProps and jQuery.cssNumber
