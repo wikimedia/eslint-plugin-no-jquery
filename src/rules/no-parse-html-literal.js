@@ -13,7 +13,7 @@ module.exports = {
 		docs: {
 			description: 'Disallows parsing of HTML literal strings using either the jQuery method [`$()`](https://api.jquery.com/jquery/) or ' +
 				utils.jQueryGlobalLink( 'parseHTML' ) + '. ' +
-				'Single tags are still allowed for creating new nodes as these don\'t tirgger the HTML parser. ' +
+				'Single tags are still allowed for creating new nodes as these don\'t trigger the HTML parser. ' +
 				'DOM build and manipulation methods should be used instead.\n\n' +
 				'The format of single tags can be specified using the `singleTagStyle` option:\n' +
 				'* `"minimal"` (default) no whitespace or self-closing i.e. `<div>`\n' +

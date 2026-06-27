@@ -2,7 +2,7 @@
 
 # no-attr
 
-Disallows the [`.attr`](https://api.jquery.com/attr/)/[`.removeAttr`](https://api.jquery.com/removeAttr/) methods and `$.attr`/[`$.removeAttr`](https://api.jquery.com/jQuery.removeAttr/) utilies. Prefer `Element#getAttribute`/`setAttribute`/`removeAttribute`.
+Disallows the [`.attr`](https://api.jquery.com/attr/)/[`.removeAttr`](https://api.jquery.com/removeAttr/) methods and `$.attr`/[`$.removeAttr`](https://api.jquery.com/jQuery.removeAttr/) utilities. Prefer `Element#getAttribute`/`setAttribute`/`removeAttribute`.
 
 📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
