@@ -147,6 +147,7 @@ module.exports = {
 				'no-jquery/no-trim': 'error',
 				'no-jquery/no-type': 'error',
 				'no-jquery/no-now': 'error',
+				'no-jquery/no-unique': 'error',
 				'no-jquery/no-is-numeric': 'error',
 				'no-jquery/no-is-function': 'error',
 				'no-jquery/no-is-window': 'error',

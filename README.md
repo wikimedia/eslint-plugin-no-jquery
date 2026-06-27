@@ -179,7 +179,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-trigger`](docs/rules/no-trigger.md) `all`
 * [`no-jquery/no-trim`](docs/rules/no-trim.md) `all`, `3.5`, **`4.0`**
 * [`no-jquery/no-type`](docs/rules/no-type.md) `all`, `3.3`, **`4.0`**
-* [`no-jquery/no-unique`](docs/rules/no-unique.md) 🔧 `all`, `3.0`
+* [`no-jquery/no-unique`](docs/rules/no-unique.md) 🔧 `all`, `3.0`, **`4.0`**
 * [`no-jquery/no-unload-shorthand`](docs/rules/no-unload-shorthand.md) 🔧 `1.8`, **`3.0`**
 * [`no-jquery/no-val`](docs/rules/no-val.md) `all`
 * [`no-jquery/no-visibility`](docs/rules/no-visibility.md) `all`
