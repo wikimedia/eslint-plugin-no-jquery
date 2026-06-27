@@ -98,7 +98,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-box-model`](docs/rules/no-box-model.md) `1.3`, **`1.8`**
 * [`no-jquery/no-browser`](docs/rules/no-browser.md) `1.3`, **`1.9`**
 * [`no-jquery/no-camel-case`](docs/rules/no-camel-case.md) `all`, `3.3`, **`4.0`**
-* [`no-jquery/no-class`](docs/rules/no-class.md) ⚙️ `all`, `3.0†`
+* [`no-jquery/no-class`](docs/rules/no-class.md) ⚙️ `all`, `3.0†`, **`4.0†`**
 * [`no-jquery/no-class-state`](docs/rules/no-class-state.md)
 * [`no-jquery/no-clone`](docs/rules/no-clone.md) `all`
 * [`no-jquery/no-closest`](docs/rules/no-closest.md) `all`
