@@ -106,6 +106,8 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-contains`](docs/rules/no-contains.md) `all`
 * [`no-jquery/no-context-prop`](docs/rules/no-context-prop.md) `1.10`, **`3.0`**
 * [`no-jquery/no-css`](docs/rules/no-css.md) `all`
+* [`no-jquery/no-css-number`](docs/rules/no-css-number.md) `3.7`, **`4.0`**
+* [`no-jquery/no-css-props`](docs/rules/no-css-props.md) `3.7`, **`4.0`**
 * [`no-jquery/no-data`](docs/rules/no-data.md) `all`
 * [`no-jquery/no-deferred`](docs/rules/no-deferred.md) `all`
 * [`no-jquery/no-deferred-get-stack-hook`](docs/rules/no-deferred-get-stack-hook.md) `all`, `3.7`, **`4.0`**

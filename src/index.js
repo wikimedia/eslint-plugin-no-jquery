@@ -21,6 +21,8 @@ module.exports = {
 		'no-contains': require( './rules/no-contains' ),
 		'no-context-prop': require( './rules/no-context-prop' ),
 		'no-css': require( './rules/no-css' ),
+		'no-css-number': require( './rules/no-css-number' ),
+		'no-css-props': require( './rules/no-css-props' ),
 		'no-data': require( './rules/no-data' ),
 		'no-deferred': require( './rules/no-deferred' ),
 		'no-deferred-get-stack-hook': require( './rules/no-deferred-get-stack-hook' ),
@@ -150,7 +152,8 @@ module.exports = {
 				'no-jquery/no-deferred-get-stack-hook': 'error',
 				'no-jquery/no-camel-case': 'error',
 				'no-jquery/no-node-name': 'error',
-				// TODO: jQuery.cssProps and jQuery.cssNumber
+				'no-jquery/no-css-number': 'error',
+				'no-jquery/no-css-props': 'error',
 				'no-jquery/no-internal-array-methods': 'error',
 				'no-jquery/no-fx-interval': 'error'
 			}
@@ -159,7 +162,10 @@ module.exports = {
 		'deprecated-3.7': {
 			extends: 'plugin:no-jquery/deprecated-3.6',
 			rules: {
-				'no-jquery/no-deferred-get-stack-hook': 'warn'
+				'no-jquery/no-deferred-get-stack-hook': 'warn',
+				// Not officially deprecated, but removed in 4.0.
+				'no-jquery/no-css-number': 'warn',
+				'no-jquery/no-css-props': 'warn'
 			}
 		},
 		'deprecated-3.6': {
