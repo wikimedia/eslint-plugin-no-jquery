@@ -61,6 +61,7 @@ module.exports = {
 		'no-is-plain-object': require( './rules/no-is-plain-object' ),
 		'no-is-window': require( './rules/no-is-window' ),
 		'no-jquery-constructor': require( './rules/no-jquery-constructor' ),
+		'no-jquery-ui': require( './rules/no-jquery-ui' ),
 		'no-live': require( './rules/no-live' ),
 		'no-load': require( './rules/no-load' ),
 		'no-load-shorthand': require( './rules/no-load-shorthand' ),
