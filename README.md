@@ -144,6 +144,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-is-plain-object`](docs/rules/no-is-plain-object.md) `all`
 * [`no-jquery/no-is-window`](docs/rules/no-is-window.md) `all`, `3.3`, **`4.0`**
 * [`no-jquery/no-jquery-constructor`](docs/rules/no-jquery-constructor.md) `all`
+* [`no-jquery/no-jquery-ui`](docs/rules/no-jquery-ui.md)
 * [`no-jquery/no-live`](docs/rules/no-live.md) `all`, `1.7`, **`1.9`**
 * [`no-jquery/no-load`](docs/rules/no-load.md) **`slim`**, `all`
 * [`no-jquery/no-load-shorthand`](docs/rules/no-load-shorthand.md) 🔧 `1.8`, **`3.0`**
