@@ -8,6 +8,8 @@ Disallows the [`$.cssNumber`](https://api.jquery.com/jQuery.cssNumber/) property
 
 📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-3.7`.
 
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

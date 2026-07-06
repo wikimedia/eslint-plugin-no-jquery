@@ -17,6 +17,7 @@ const utilsWithRules = [
 	'extend',
 	'filter',
 	'find',
+	'fx',
 	'get',
 	'getJSON',
 	'getScript',

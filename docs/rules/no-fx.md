@@ -6,6 +6,8 @@ Disallows `$.fx`.
 
 📋 This rule is enabled as an error in `plugin:no-jquery/slim`.
 
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:

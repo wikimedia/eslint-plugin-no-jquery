@@ -95,8 +95,8 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-append-html`](docs/rules/no-append-html.md)
 * [`no-jquery/no-attr`](docs/rules/no-attr.md) `all`
 * [`no-jquery/no-bind`](docs/rules/no-bind.md) `all`, `3.0`
-* [`no-jquery/no-box-model`](docs/rules/no-box-model.md) `1.3`, **`1.8`**
-* [`no-jquery/no-browser`](docs/rules/no-browser.md) `1.3`, **`1.9`**
+* [`no-jquery/no-box-model`](docs/rules/no-box-model.md) `all`, `1.3`, **`1.8`**
+* [`no-jquery/no-browser`](docs/rules/no-browser.md) `all`, `1.3`, **`1.9`**
 * [`no-jquery/no-camel-case`](docs/rules/no-camel-case.md) `all`, `3.3`, **`4.0`**
 * [`no-jquery/no-class`](docs/rules/no-class.md) ⚙️ `all`, `3.0†`, **`4.0†`**
 * [`no-jquery/no-class-state`](docs/rules/no-class-state.md)
@@ -104,10 +104,10 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-closest`](docs/rules/no-closest.md) `all`
 * [`no-jquery/no-constructor-attributes`](docs/rules/no-constructor-attributes.md)
 * [`no-jquery/no-contains`](docs/rules/no-contains.md) `all`
-* [`no-jquery/no-context-prop`](docs/rules/no-context-prop.md) `1.10`, **`3.0`**
+* [`no-jquery/no-context-prop`](docs/rules/no-context-prop.md) `all`, `1.10`, **`3.0`**
 * [`no-jquery/no-css`](docs/rules/no-css.md) `all`
-* [`no-jquery/no-css-number`](docs/rules/no-css-number.md) `3.7`, **`4.0`**
-* [`no-jquery/no-css-props`](docs/rules/no-css-props.md) `3.7`, **`4.0`**
+* [`no-jquery/no-css-number`](docs/rules/no-css-number.md) `all`, `3.7`, **`4.0`**
+* [`no-jquery/no-css-props`](docs/rules/no-css-props.md) `all`, `3.7`, **`4.0`**
 * [`no-jquery/no-data`](docs/rules/no-data.md) `all`
 * [`no-jquery/no-deferred`](docs/rules/no-deferred.md) `all`
 * [`no-jquery/no-deferred-get-stack-hook`](docs/rules/no-deferred-get-stack-hook.md) `all`, `3.7`, **`4.0`**
@@ -126,7 +126,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-find`](docs/rules/no-find.md)
 * [`no-jquery/no-find-collection`](docs/rules/no-find-collection.md) `all`
 * [`no-jquery/no-find-util`](docs/rules/no-find-util.md) `all`
-* [`no-jquery/no-fx`](docs/rules/no-fx.md) **`slim`**
+* [`no-jquery/no-fx`](docs/rules/no-fx.md) **`slim`**, `all`
 * [`no-jquery/no-fx-interval`](docs/rules/no-fx-interval.md) `3.0`, **`4.0`**
 * [`no-jquery/no-global-eval`](docs/rules/no-global-eval.md) `all`
 * [`no-jquery/no-global-selector`](docs/rules/no-global-selector.md) ⚙️
@@ -169,13 +169,13 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-proxy`](docs/rules/no-proxy.md) 🔧 `all`, `3.3`
 * [`no-jquery/no-ready`](docs/rules/no-ready.md)
 * [`no-jquery/no-ready-shorthand`](docs/rules/no-ready-shorthand.md) 🔧 `all`, `3.0`
-* [`no-jquery/no-selector-prop`](docs/rules/no-selector-prop.md) `1.7`, **`3.0`**
+* [`no-jquery/no-selector-prop`](docs/rules/no-selector-prop.md) `all`, `1.7`, **`3.0`**
 * [`no-jquery/no-serialize`](docs/rules/no-serialize.md) `all`
 * [`no-jquery/no-size`](docs/rules/no-size.md) 🔧 `all`, `1.8`, **`3.0`**
 * [`no-jquery/no-sizzle`](docs/rules/no-sizzle.md) ⚙️ `3.4†`
 * [`no-jquery/no-slide`](docs/rules/no-slide.md) **`slim`**, `all`
 * [`no-jquery/no-sub`](docs/rules/no-sub.md) `all`, `1.7`
-* [`no-jquery/no-support`](docs/rules/no-support.md) `1.9`
+* [`no-jquery/no-support`](docs/rules/no-support.md) `all`, `1.9`
 * [`no-jquery/no-text`](docs/rules/no-text.md) `all`
 * [`no-jquery/no-trigger`](docs/rules/no-trigger.md) `all`
 * [`no-jquery/no-trim`](docs/rules/no-trim.md) `all`, `3.5`, **`4.0`**
