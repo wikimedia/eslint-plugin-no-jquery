@@ -24,7 +24,6 @@ $.Callbacks();
 $.cleanData();
 $.dequeue();
 $.Event();
-$.fx();
 $.htmlPrefilter();
 $.isXMLDoc();
 $.makeArray();
@@ -68,6 +67,8 @@ $.extend();
 $.filter();
 // eslint-disable-next-line self/no-find-util
 $.find();
+// eslint-disable-next-line self/no-fx
+$.fx();
 // eslint-disable-next-line self/no-ajax
 $.get();
 // eslint-disable-next-line self/no-ajax

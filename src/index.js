@@ -312,89 +312,65 @@ module.exports = {
 			extends: 'plugin:no-jquery/deprecated-1.0'
 		},
 		'deprecated-1.0': {},
-		// Use this config to disallow all usage of jQuery
+		// Use this config to disallow all usage of jQuery. It is auto-generated
+		// below from every rule except those listed in `notInAllConfig`.
 		all: {
-			rules: {
-				'no-jquery/no-other-methods': 'warn',
-				'no-jquery/no-other-utils': 'warn',
-				'no-jquery/no-jquery-constructor': 'warn',
-
-				// methods
-				'no-jquery/no-animate': 'warn',
-				'no-jquery/no-bind': 'warn',
-				'no-jquery/no-class': 'warn',
-				'no-jquery/no-closest': 'warn',
-				'no-jquery/no-delegate': 'warn',
-				'no-jquery/no-each-collection': 'warn',
-				'no-jquery/no-event-shorthand': 'warn',
-				'no-jquery/no-fade': 'warn',
-				'no-jquery/no-find-collection': 'warn',
-				'no-jquery/no-has': 'warn',
-				'no-jquery/no-html': 'warn',
-				'no-jquery/no-is': 'warn',
-				'no-jquery/no-live': 'warn',
-				'no-jquery/no-load': 'warn',
-				'no-jquery/no-map-collection': 'warn',
-				'no-jquery/no-parent': 'warn',
-				'no-jquery/no-parents': 'warn',
-				'no-jquery/no-ready-shorthand': 'warn',
-				'no-jquery/no-serialize': 'warn',
-				'no-jquery/no-size': 'warn',
-				'no-jquery/no-slide': 'warn',
-				'no-jquery/no-trigger': 'warn',
-				'no-jquery/no-val': 'warn',
-				'no-jquery/no-visibility': 'warn',
-				'no-jquery/no-wrap': 'warn',
-
-				// Utils
-				'no-jquery/no-ajax': 'warn',
-				'no-jquery/no-camel-case': 'warn',
-				'no-jquery/no-contains': 'warn',
-				'no-jquery/no-deferred': 'warn',
-				'no-jquery/no-deferred-get-stack-hook': 'warn',
-				'no-jquery/no-each-util': 'warn',
-				'no-jquery/no-error': 'warn',
-				'no-jquery/no-escape-selector': 'warn',
-				'no-jquery/no-extend': 'warn',
-				'no-jquery/no-find-util': 'warn',
-				'no-jquery/no-global-eval': 'warn',
-				'no-jquery/no-grep': 'warn',
-				'no-jquery/no-hold-ready': 'warn',
-				'no-jquery/no-in-array': 'warn',
-				'no-jquery/no-is-array': 'warn',
-				'no-jquery/no-is-empty-object': 'warn',
-				'no-jquery/no-is-function': 'warn',
-				'no-jquery/no-is-numeric': 'warn',
-				'no-jquery/no-is-plain-object': 'warn',
-				'no-jquery/no-is-window': 'warn',
-				'no-jquery/no-map-util': 'warn',
-				'no-jquery/no-merge': 'warn',
-				'no-jquery/no-node-name': 'warn',
-				'no-jquery/no-noop': 'warn',
-				'no-jquery/no-now': 'warn',
-				'no-jquery/no-param': 'warn',
-				'no-jquery/no-parse-html': 'warn',
-				'no-jquery/no-parse-json': 'warn',
-				'no-jquery/no-parse-xml': 'warn',
-				'no-jquery/no-proxy': 'warn',
-				'no-jquery/no-trim': 'warn',
-				'no-jquery/no-type': 'warn',
-				'no-jquery/no-unique': 'warn',
-				'no-jquery/no-when': 'warn',
-
-				// Method+utils
-				'no-jquery/no-attr': 'warn',
-				'no-jquery/no-clone': 'warn',
-				'no-jquery/no-css': 'warn',
-				'no-jquery/no-data': 'warn',
-				'no-jquery/no-filter': 'warn',
-				'no-jquery/no-prop': 'warn',
-				'no-jquery/no-sub': 'warn',
-				'no-jquery/no-text': 'warn',
-
-				// Other methods
-				'no-jquery/no-done-fail': 'warn'
-			}
+			rules: {}
 		}
 	}
 };
+
+// Rules deliberately excluded from the `all` config, with the reason for each.
+// Every other rule is included automatically, so new rules are covered by
+// default. Most exclusions are rules whose reports would duplicate another
+// rule already in the config: either a broader rule that covers the same API,
+// or one of the `no-other-methods`/`no-other-utils`/`no-jquery-constructor`
+// catch-alls which report any method/utility/constructor call without a more
+// specific rule. See https://github.com/wikimedia/eslint-plugin-no-jquery/issues/338
+const notInAllConfig = {
+	// Not a jQuery API rule; enforces a variable naming convention.
+	'variable-pattern': true,
+
+	// Broad rules superseded by the narrower split rules, which are included.
+	'no-each': true, // no-each-collection + no-each-util
+	'no-find': true, // no-find-collection + no-find-util
+	'no-map': true, // no-map-collection + no-map-util
+
+	// Narrow rules superseded by a broader rule which is included.
+	'no-class-state': true, // no-class
+	'no-unbind': true, // no-bind
+	'no-undelegate': true, // no-delegate
+	'no-show': true, // no-visibility
+	'no-hide': true, // no-visibility
+	'no-toggle': true, // no-visibility
+	'no-animate-toggle': true, // no-visibility
+	'no-fx-interval': true, // no-fx
+	'no-parse-html-literal': true, // no-parse-html
+	'no-die': true, // no-live
+	'no-load-shorthand': true, // no-load
+
+	// Covered by the no-jquery-constructor catch-all.
+	'no-constructor-attributes': true,
+	'no-global-selector': true,
+	'no-sizzle': true,
+	'no-ready': true,
+
+	// Covered by the no-event-shorthand rule, which is included.
+	'no-ajax-events': true,
+	'no-submit': true,
+
+	// Covered by the no-other-methods catch-all.
+	'no-and-self': true,
+	'no-append-html': true,
+	'no-error-shorthand': true,
+	'no-internal-array-methods': true,
+	'no-unload-shorthand': true,
+	'no-on-ready': true,
+	'no-jquery-ui': true
+};
+
+Object.keys( module.exports.rules ).forEach( ( name ) => {
+	if ( !notInAllConfig[ name ] ) {
+		module.exports.configs.all.rules[ 'no-jquery/' + name ] = 'warn';
+	}
+} );

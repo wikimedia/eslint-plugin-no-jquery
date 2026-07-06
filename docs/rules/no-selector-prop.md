@@ -8,6 +8,8 @@ Disallows the [`.selector`](https://api.jquery.com/selector/) property.
 
 📋 This rule is enabled as a warning in `plugin:no-jquery/deprecated-1.7`.
 
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
+
 ## Rule details
 
 ❌ Examples of **incorrect** code:
