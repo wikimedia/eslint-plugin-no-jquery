@@ -120,7 +120,7 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-error-shorthand`](docs/rules/no-error-shorthand.md) 🔧 `1.8`, **`3.0`**
 * [`no-jquery/no-escape-selector`](docs/rules/no-escape-selector.md) 🔧 `all`
 * [`no-jquery/no-event-shorthand`](docs/rules/no-event-shorthand.md) ⚙️ 🔧 `all`, `3.3†`, `3.5`
-* [`no-jquery/no-extend`](docs/rules/no-extend.md) ⚙️ 🔧 `all`
+* [`no-jquery/no-extend`](docs/rules/no-extend.md) ⚙️ `all`
 * [`no-jquery/no-fade`](docs/rules/no-fade.md) **`slim`**, `all`
 * [`no-jquery/no-filter`](docs/rules/no-filter.md) `all`
 * [`no-jquery/no-find`](docs/rules/no-find.md)

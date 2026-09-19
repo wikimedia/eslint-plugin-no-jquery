@@ -8,9 +8,10 @@ module.exports = {
 		docs: {
 			description:
 				'Disallows the ' + utils.jQueryGlobalLink( 'extend' ) + ' utility. Prefer `Object.assign` or the spread operator. ' +
-				'Use the `allowDeep` option to allow using the method with the `deep` argument.'
+				'Use the `allowDeep` option to allow using the method with the `deep` argument.\n\n' +
+				'This rule does not autofix because `$.extend` skips properties with `undefined` values, ' +
+				'while `Object.assign` and the spread operator copy them.'
 		},
-		fixable: 'code',
 		schema: [
 			{
 				type: 'object',
@@ -55,14 +56,7 @@ module.exports = {
 
 			context.report( {
 				node,
-				messageId: 'default',
-				fix: function ( fixer ) {
-					// Only auto-fix if we are sure the first argument is an object.
-					// If it is undefined or null variable, then Object.assign will throw.
-					if ( !isDeep && node.arguments[ 0 ] && node.arguments[ 0 ].type === 'ObjectExpression' ) {
-						return fixer.replaceText( node.callee, 'Object.assign' );
-					}
-				}
+				messageId: 'default'
 			} );
 		}
 	} )

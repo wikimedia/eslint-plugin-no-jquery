@@ -4,9 +4,9 @@
 
 Disallows the [`$.extend`](https://api.jquery.com/jQuery.extend/) utility. Prefer `Object.assign` or the spread operator. Use the `allowDeep` option to allow using the method with the `deep` argument.
 
-📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
+This rule does not autofix because `$.extend` skips properties with `undefined` values, while `Object.assign` and the spread operator copy them.
 
-🔧 The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+📋 This rule is enabled as a warning in `plugin:no-jquery/all`.
 
 ## Rule details
 
@@ -33,16 +33,6 @@ $.extend( fooCouldBeNull, doesNotAutofix );
 ✔️ Examples of **correct** code with `[{"allowDeep":true}]` options:
 ```js
 $.extend( true, {}, foo );
-```
-
-🔧 Examples of code **fixed** by this rule:
-```js
-$.extend( {}, foo ); /* → */ Object.assign( {}, foo );
-```
-
-🔧 Examples of code **fixed** by this rule with `[{"allowDeep":true}]` options:
-```js
-$.extend( {}, foo ); /* → */ Object.assign( {}, foo );
 ```
 
 ## Resources

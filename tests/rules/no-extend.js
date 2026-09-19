@@ -19,20 +19,35 @@ ruleTester.run( 'no-extend', rule, {
 	],
 	invalid: [
 		{
-			code: '$.extend({}, foo)',
-			output: 'Object.assign({}, foo)'
+			code: '$.extend({}, foo)'
 		},
 		{
 			code: '$.extend(true, {}, foo)'
 		},
 		{
 			code: '$.extend({}, foo)',
-			options: [ { allowDeep: true } ],
-			output: 'Object.assign({}, foo)'
+			options: [ { allowDeep: true } ]
 		},
 		{
 			code: '$.extend(fooCouldBeNull, doesNotAutofix)',
 			options: [ { allowDeep: true } ]
+		},
+		{
+			code: '$.extend({ disabletalk: true }, { disabletalk: undefined })',
+			docgen: false
+		},
+		{
+			code: '$.extend({ disabletalk: true }, { disabletalk: undefined })',
+			options: [ { allowDeep: true } ],
+			docgen: false
+		},
+		{
+			code: 'const options = { disabletalk: undefined }; $.extend({ disabletalk: true }, options)',
+			docgen: false
+		},
+		{
+			code: 'jQuery.extend({ disabletalk: true }, { disabletalk: undefined })',
+			docgen: false
 		}
-	].map( ( obj ) => ( { ...obj, errors: [ error ] } ) )
+	].map( ( obj ) => ( { ...obj, errors: [ error ], output: null } ) )
 } );
