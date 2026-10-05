@@ -1,5 +1,8 @@
 # eslint-plugin-no-jquery release history
 
+## v6.0.1
+* Rule fix: Remove unsafe `no-extend` autofix (Maria Khan)
+
 ## v6.0.0
 * Support jQuery 4.0
 * [BREAKING CHANGE] configs: Upgrade deprecation warnings to errors when a feature is removed
