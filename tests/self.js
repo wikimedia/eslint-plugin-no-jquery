@@ -12,20 +12,34 @@ const assert = require( 'assert' );
 const fs = require( 'fs' );
 const path = require( 'path' );
 const eslint = require( 'eslint' );
-const { LegacyESLint } = require( 'eslint/use-at-your-own-risk' );
 const plugin = require( '../src/index' );
 
 const testSelfDir = path.join( __dirname, '../test-self' );
-// ESLint 8 uses eslintrc by default, ESLint 9 provides LegacyESLint,
-// and ESLint 10 doesn't support eslintrc
-const EslintrcESLint = eslint.Linter.version.startsWith( '8.' ) ? eslint.ESLint : LegacyESLint;
+// ESLint 8 uses eslintrc, ESLint 9+ uses flat config
+const useFlatConfig = !eslint.Linter.version.startsWith( '8.' );
 
 /**
  * @param {string} configName
  * @return {Object} ESLint instance
  */
 function getESLint( configName ) {
-	return new EslintrcESLint( {
+	if ( useFlatConfig ) {
+		return new eslint.ESLint( {
+			ignore: false,
+			overrideConfigFile: true,
+			overrideConfig: [
+				plugin.configs[ 'flat/' + configName ],
+				{
+					languageOptions: {
+						sourceType: 'script',
+						globals: { $: 'readonly' }
+					},
+					linterOptions: { reportUnusedDisableDirectives: 'error' }
+				}
+			]
+		} );
+	}
+	return new eslint.ESLint( {
 		ignore: false,
 		useEslintrc: false,
 		plugins: { 'no-jquery': plugin },
@@ -42,10 +56,7 @@ function getESLint( configName ) {
 /* eslint-disable mocha/no-setup-in-describe */
 describe( 'test-self', () => {
 	fs.readdirSync( testSelfDir ).forEach( ( configName ) => {
-		it( `${ configName } config`, async function () {
-			if ( !EslintrcESLint ) {
-				this.skip();
-			}
+		it( `${ configName } config`, async () => {
 			const results = await getESLint( configName ).lintFiles(
 				path.join( testSelfDir, configName, '*.js' )
 			);

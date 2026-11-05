@@ -374,3 +374,37 @@ Object.keys( module.exports.rules ).forEach( ( name ) => {
 		module.exports.configs.all.rules[ 'no-jquery/' + name ] = 'warn';
 	}
 } );
+
+const plugin = module.exports;
+
+plugin.meta = {
+	name: require( '../package.json' ).name,
+	version: require( '../package.json' ).version
+};
+
+/**
+ * Get all the rules for an eslintrc config, including those from configs it extends
+ *
+ * @param {string} name Config name
+ * @return {Object} Rules
+ */
+function getRulesWithExtends( name ) {
+	const config = plugin.configs[ name ];
+	const parentRules = config.extends ?
+		getRulesWithExtends( config.extends.replace( /^plugin:no-jquery\//, '' ) ) :
+		{};
+	return Object.assign( {}, parentRules, config.rules );
+}
+
+// Flat config (ESLint 9) versions of the configs above, e.g. `flat/recommended`.
+// Flat config doesn't support `extends`, so each config includes all the rules
+// from the configs it extends.
+Object.keys( plugin.configs ).forEach( ( name ) => {
+	plugin.configs[ 'flat/' + name ] = {
+		name: 'no-jquery/' + name,
+		plugins: {
+			'no-jquery': plugin
+		},
+		rules: getRulesWithExtends( name )
+	};
+} );
