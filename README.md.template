@@ -33,6 +33,16 @@ Add `no-jquery` to the plugins section of your `.eslintrc` configuration file. Y
 }
 ```
 
+With flat config (`eslint.config.js`, ESLint 9+), use the `flat/` version of a config, which also adds the plugin:
+
+```js
+const noJquery = require( 'eslint-plugin-no-jquery' );
+
+module.exports = [
+  noJquery.configs[ 'flat/deprecated' ]
+];
+```
+
 ## 📋 Configs
 
 The config **`plugin:no-jquery/recommended`** includes the recommended rule [`no-jquery/variable-pattern`](docs/rules/variable-pattern.md) which is required for method rules to work correctly.
@@ -42,6 +52,8 @@ The config **`plugin:no-jquery/deprecated`** includes all known deprecated and r
 The config **`plugin:no-jquery/slim`** includes all features excluded from the official "slim" build of jQuery, specifically the [ajax](https://api.jquery.com/category/ajax/) and [effects](https://api.jquery.com/category/effects/) modules.
 
 The config **`plugin:no-jquery/all`** includes all methods and utilities and should be used when you are aiming to remove all jQuery usage from your code.
+
+Each config is also available as a flat config, with a `flat/` prefix, e.g. `flat/recommended`.
 
 Alternatively, you can pick out rules individually (see below).
 
