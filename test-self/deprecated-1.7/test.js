@@ -23,15 +23,15 @@ $.support;
 $x.andSelf();
 
 /* 1.7 */
-// eslint-disable-next-line self/no-live
+// eslint-disable-next-line no-jquery/no-live
 $x.live( fn );
 
-// eslint-disable-next-line self/no-sub
+// eslint-disable-next-line no-jquery/no-sub
 $.sub();
 
-// eslint-disable-next-line self/no-selector-prop
+// eslint-disable-next-line no-jquery/no-selector-prop
 $x.selector;
 
 /* 1.3 */
-// eslint-disable-next-line self/no-browser
+// eslint-disable-next-line no-jquery/no-browser
 $.browser;

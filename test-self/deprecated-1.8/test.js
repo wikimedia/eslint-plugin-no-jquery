@@ -20,28 +20,28 @@ $x.context;
 $.support;
 
 /* 1.8 */
-// eslint-disable-next-line self/no-and-self
+// eslint-disable-next-line no-jquery/no-and-self
 $x.andSelf();
 
-// eslint-disable-next-line self/no-error-shorthand
+// eslint-disable-next-line no-jquery/no-error-shorthand
 $x.error( fn );
 
-// eslint-disable-next-line self/no-load-shorthand
+// eslint-disable-next-line no-jquery/no-load-shorthand
 $x.load( () => {} );
 
-// eslint-disable-next-line self/no-on-ready
+// eslint-disable-next-line no-jquery/no-on-ready
 $( document ).on( 'ready', () => {} );
 
-// eslint-disable-next-line self/no-size
+// eslint-disable-next-line no-jquery/no-size
 $x.size();
 
-// eslint-disable-next-line self/no-unload-shorthand
+// eslint-disable-next-line no-jquery/no-unload-shorthand
 $x.unload( () => {} );
 
 /* 1.7 */
-// eslint-disable-next-line self/no-live
+// eslint-disable-next-line no-jquery/no-live
 $x.live( fn );
 
 /* 1.3 */
-// eslint-disable-next-line self/no-browser
+// eslint-disable-next-line no-jquery/no-browser
 $.browser;
