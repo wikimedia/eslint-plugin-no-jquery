@@ -1,5 +1,9 @@
 # eslint-plugin-no-jquery release history
 
+## v6.0.2
+* build: Upgrade eslint-docgen from ^0.8.0 to ^0.8.1 (James D. Forrester)
+* tests: Replace eslint-plugin-self with a test which lints test-self (Ed Sanders)
+
 ## v6.0.1
 * Rule fix: Remove unsafe `no-extend` autofix (Maria Khan)
 
