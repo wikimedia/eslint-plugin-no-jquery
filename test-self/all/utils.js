@@ -6,12 +6,9 @@
  * the file.
  *
  * It should also be removed from the no-other-utils rule.
- *
- * The rule prefix is renamed from no-jquery to self as the
- * rules are loaded directly via the self plugin.
  */
 
-/* eslint-disable self/no-other-utils */
+/* eslint-disable no-jquery/no-other-utils */
 $._data();
 $._evalUrl();
 $._queueHooks();
@@ -37,103 +34,103 @@ $.style();
 $.Tween();
 $.uniqueSort();
 $.myPlugin();
-/* eslint-enable self/no-other-utils */
+/* eslint-enable no-jquery/no-other-utils */
 
-// eslint-disable-next-line self/no-ajax
+// eslint-disable-next-line no-jquery/no-ajax
 $.ajax();
-// eslint-disable-next-line self/no-attr
+// eslint-disable-next-line no-jquery/no-attr
 $.attr();
-// eslint-disable-next-line self/no-camel-case
+// eslint-disable-next-line no-jquery/no-camel-case
 $.camelCase();
-// eslint-disable-next-line self/no-clone
+// eslint-disable-next-line no-jquery/no-clone
 $.clone();
-// eslint-disable-next-line self/no-contains
+// eslint-disable-next-line no-jquery/no-contains
 $.contains();
-// eslint-disable-next-line self/no-css
+// eslint-disable-next-line no-jquery/no-css
 $.css();
-// eslint-disable-next-line self/no-data
+// eslint-disable-next-line no-jquery/no-data
 $.data();
-// eslint-disable-next-line self/no-deferred
+// eslint-disable-next-line no-jquery/no-deferred
 $.Deferred();
-// eslint-disable-next-line self/no-each-util
+// eslint-disable-next-line no-jquery/no-each-util
 $.each();
-// eslint-disable-next-line self/no-error
+// eslint-disable-next-line no-jquery/no-error
 $.error();
-// eslint-disable-next-line self/no-escape-selector
+// eslint-disable-next-line no-jquery/no-escape-selector
 $.escapeSelector();
-// eslint-disable-next-line self/no-extend
+// eslint-disable-next-line no-jquery/no-extend
 $.extend();
-// eslint-disable-next-line self/no-filter
+// eslint-disable-next-line no-jquery/no-filter
 $.filter();
-// eslint-disable-next-line self/no-find-util
+// eslint-disable-next-line no-jquery/no-find-util
 $.find();
-// eslint-disable-next-line self/no-fx
+// eslint-disable-next-line no-jquery/no-fx
 $.fx();
-// eslint-disable-next-line self/no-ajax
+// eslint-disable-next-line no-jquery/no-ajax
 $.get();
-// eslint-disable-next-line self/no-ajax
+// eslint-disable-next-line no-jquery/no-ajax
 $.getJSON();
-// eslint-disable-next-line self/no-ajax
+// eslint-disable-next-line no-jquery/no-ajax
 $.getScript();
-// eslint-disable-next-line self/no-global-eval
+// eslint-disable-next-line no-jquery/no-global-eval
 $.globalEval();
-// eslint-disable-next-line self/no-grep
+// eslint-disable-next-line no-jquery/no-grep
 $.grep();
-// eslint-disable-next-line self/no-data
+// eslint-disable-next-line no-jquery/no-data
 $.hasData();
-// eslint-disable-next-line self/no-hold-ready
+// eslint-disable-next-line no-jquery/no-hold-ready
 $.holdReady();
-// eslint-disable-next-line self/no-in-array
+// eslint-disable-next-line no-jquery/no-in-array
 $.inArray();
-// eslint-disable-next-line self/no-is-array
+// eslint-disable-next-line no-jquery/no-is-array
 $.isArray();
-// eslint-disable-next-line self/no-is-empty-object
+// eslint-disable-next-line no-jquery/no-is-empty-object
 $.isEmptyObject();
-// eslint-disable-next-line self/no-is-function
+// eslint-disable-next-line no-jquery/no-is-function
 $.isFunction();
-// eslint-disable-next-line self/no-is-numeric
+// eslint-disable-next-line no-jquery/no-is-numeric
 $.isNumeric();
-// eslint-disable-next-line self/no-is-plain-object
+// eslint-disable-next-line no-jquery/no-is-plain-object
 $.isPlainObject();
-// eslint-disable-next-line self/no-is-window
+// eslint-disable-next-line no-jquery/no-is-window
 $.isWindow();
-// eslint-disable-next-line self/no-map-util
+// eslint-disable-next-line no-jquery/no-map-util
 $.map();
-// eslint-disable-next-line self/no-merge
+// eslint-disable-next-line no-jquery/no-merge
 $.merge();
-// eslint-disable-next-line self/no-node-name
+// eslint-disable-next-line no-jquery/no-node-name
 $.nodeName();
-// eslint-disable-next-line self/no-noop
+// eslint-disable-next-line no-jquery/no-noop
 $.noop();
-// eslint-disable-next-line self/no-now
+// eslint-disable-next-line no-jquery/no-now
 $.now();
-// eslint-disable-next-line self/no-param
+// eslint-disable-next-line no-jquery/no-param
 $.param();
-// eslint-disable-next-line self/no-parse-html
+// eslint-disable-next-line no-jquery/no-parse-html
 $.parseHTML();
-// eslint-disable-next-line self/no-parse-json
+// eslint-disable-next-line no-jquery/no-parse-json
 $.parseJSON();
-// eslint-disable-next-line self/no-parse-xml
+// eslint-disable-next-line no-jquery/no-parse-xml
 $.parseXML();
-// eslint-disable-next-line self/no-ajax
+// eslint-disable-next-line no-jquery/no-ajax
 $.post();
-// eslint-disable-next-line self/no-prop
+// eslint-disable-next-line no-jquery/no-prop
 $.prop();
-// eslint-disable-next-line self/no-proxy
+// eslint-disable-next-line no-jquery/no-proxy
 $.proxy();
-// eslint-disable-next-line self/no-attr
+// eslint-disable-next-line no-jquery/no-attr
 $.removeAttr();
-// eslint-disable-next-line self/no-data
+// eslint-disable-next-line no-jquery/no-data
 $.removeData();
-// eslint-disable-next-line self/no-sub
+// eslint-disable-next-line no-jquery/no-sub
 $.sub();
-// eslint-disable-next-line self/no-text
+// eslint-disable-next-line no-jquery/no-text
 $.text();
-// eslint-disable-next-line self/no-trim
+// eslint-disable-next-line no-jquery/no-trim
 $.trim();
-// eslint-disable-next-line self/no-type
+// eslint-disable-next-line no-jquery/no-type
 $.type();
-// eslint-disable-next-line self/no-unique
+// eslint-disable-next-line no-jquery/no-unique
 $.unique();
-// eslint-disable-next-line self/no-when
+// eslint-disable-next-line no-jquery/no-when
 $.when();

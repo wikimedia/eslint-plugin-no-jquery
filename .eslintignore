@@ -1,2 +1,4 @@
 docs/
 .eslintrc.js
+# Linted by tests/self.js, using each of the plugin's configs
+test-self/

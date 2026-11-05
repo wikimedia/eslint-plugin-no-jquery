@@ -26,8 +26,8 @@ $x.andSelf();
 $x.live( fn );
 
 /* 1.3 */
-// eslint-disable-next-line self/no-box-model
+// eslint-disable-next-line no-jquery/no-box-model
 $.boxModel.style;
 
-// eslint-disable-next-line self/no-browser
+// eslint-disable-next-line no-jquery/no-browser
 $.browser;
