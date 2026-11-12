@@ -26,6 +26,14 @@ ruleTester.run( 'no-append-html', rule, {
 		'$div.append(test ? $el1 : null)',
 		'$div.append(test ? $el1 : undefined)',
 		'$div.append(test ? $el1 : "")',
+		'$div.append(document.createTextNode(userInput))',
+		'$div.append(window.document.createTextNode(userInput))',
+		'$div.append($el, document.createTextNode(userInput))',
+		'$div.append(test ? $el : document.createTextNode(userInput))',
+		'$div.prepend(document.createTextNode(userInput))',
+		'$div.before(document.createTextNode(userInput))',
+		'$div.after(document.createTextNode(userInput))',
+		'$div.replaceWith(document.createTextNode(userInput))',
 		'$el=getSomething();\n$div.append($el);',
 		'$div.add(".foo")',
 		'$div.appendTo(".foo")',
@@ -52,6 +60,8 @@ ruleTester.run( 'no-append-html', rule, {
 		'$div.append($el, "<xss>")',
 		'$div.append(this.$el.someProp)',
 		'$div.append(userInput)',
-		'$div.append(getSomething())'
+		'$div.append(getSomething())',
+		'$div.append(foo.createTextNode(userInput))',
+		'$div.append(document.createElement(userInput))'
 	].map( ( code ) => ( { code, errors: [ error ] } ) )
 } );
