@@ -27,7 +27,6 @@ module.exports = {
 		'no-deferred': require( './rules/no-deferred' ),
 		'no-deferred-get-stack-hook': require( './rules/no-deferred-get-stack-hook' ),
 		'no-delegate': require( './rules/no-delegate' ),
-		'no-die': require( './rules/no-die' ),
 		'no-done-fail': require( './rules/no-done-fail' ),
 		'no-each': require( './rules/no-each' ),
 		'no-each-collection': require( './rules/no-each-collection' ),
@@ -48,7 +47,6 @@ module.exports = {
 		'no-global-selector': require( './rules/no-global-selector' ),
 		'no-grep': require( './rules/no-grep' ),
 		'no-has': require( './rules/no-has' ),
-		'no-hide': require( './rules/no-hide' ),
 		'no-hold-ready': require( './rules/no-hold-ready' ),
 		'no-html': require( './rules/no-html' ),
 		'no-in-array': require( './rules/no-in-array' ),
@@ -88,20 +86,15 @@ module.exports = {
 		'no-ready-shorthand': require( './rules/no-ready-shorthand' ),
 		'no-selector-prop': require( './rules/no-selector-prop' ),
 		'no-serialize': require( './rules/no-serialize' ),
-		'no-show': require( './rules/no-show' ),
 		'no-size': require( './rules/no-size' ),
 		'no-sizzle': require( './rules/no-sizzle' ),
 		'no-slide': require( './rules/no-slide' ),
 		'no-sub': require( './rules/no-sub' ),
-		'no-submit': require( './rules/no-submit' ),
 		'no-support': require( './rules/no-support' ),
 		'no-text': require( './rules/no-text' ),
-		'no-toggle': require( './rules/no-toggle' ),
 		'no-trigger': require( './rules/no-trigger' ),
 		'no-trim': require( './rules/no-trim' ),
 		'no-type': require( './rules/no-type' ),
-		'no-unbind': require( './rules/no-unbind' ),
-		'no-undelegate': require( './rules/no-undelegate' ),
 		'no-unique': require( './rules/no-unique' ),
 		'no-unload-shorthand': require( './rules/no-unload-shorthand' ),
 		'no-val': require( './rules/no-val' ),
@@ -338,15 +331,9 @@ const notInAllConfig = {
 
 	// Narrow rules superseded by a broader rule which is included.
 	'no-class-state': true, // no-class
-	'no-unbind': true, // no-bind
-	'no-undelegate': true, // no-delegate
-	'no-show': true, // no-visibility
-	'no-hide': true, // no-visibility
-	'no-toggle': true, // no-visibility
 	'no-animate-toggle': true, // no-visibility
 	'no-fx-interval': true, // no-fx
 	'no-parse-html-literal': true, // no-parse-html
-	'no-die': true, // no-live
 	'no-load-shorthand': true, // no-load
 
 	// Covered by the no-jquery-constructor catch-all.
@@ -357,7 +344,6 @@ const notInAllConfig = {
 
 	// Covered by the no-event-shorthand rule, which is included.
 	'no-ajax-events': true,
-	'no-submit': true,
 
 	// Covered by the no-other-methods catch-all.
 	'no-and-self': true,

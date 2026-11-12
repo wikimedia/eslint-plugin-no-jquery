@@ -200,15 +200,11 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 * [`no-jquery/no-wrap`](docs/rules/no-wrap.md) `all`
 * [`no-jquery/variable-pattern`](docs/rules/variable-pattern.md) **`recommended`**
 
+<!-- Deprecation list is currently empty, uncomment if this changes
 ### ⚠️ Deprecated
 
-* [`no-jquery/no-die`](docs/rules/no-die.md) (use [`no-jquery/no-live`](docs/rules/no-live.md))
-* [`no-jquery/no-hide`](docs/rules/no-hide.md) (use [`no-jquery/no-visibility`](docs/rules/no-visibility.md))
-* [`no-jquery/no-show`](docs/rules/no-show.md) (use [`no-jquery/no-visibility`](docs/rules/no-visibility.md))
-* [`no-jquery/no-submit`](docs/rules/no-submit.md) (use [`no-jquery/no-event-shorthand`](docs/rules/no-event-shorthand.md))
-* [`no-jquery/no-toggle`](docs/rules/no-toggle.md) (use [`no-jquery/no-visibility`](docs/rules/no-visibility.md))
-* [`no-jquery/no-unbind`](docs/rules/no-unbind.md) (use [`no-jquery/no-bind`](docs/rules/no-bind.md))
-* [`no-jquery/no-undelegate`](docs/rules/no-undelegate.md) (use [`no-jquery/no-delegate`](docs/rules/no-delegate.md))
+
+-->
 
 ## 🤖 Development
 
