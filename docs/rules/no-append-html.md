@@ -23,6 +23,8 @@ $div.append( $el, '<xss>' );
 $div.append( this.$el.someProp );
 $div.append( userInput );
 $div.append( getSomething() );
+$div.append( foo.createTextNode( userInput ) );
+$div.append( document.createElement( userInput ) );
 ```
 
 ✔️ Examples of **correct** code:
@@ -45,6 +47,14 @@ $div.append( test ? $el1 : $el2 );
 $div.append( test ? $el1 : null );
 $div.append( test ? $el1 : undefined );
 $div.append( test ? $el1 : '' );
+$div.append( document.createTextNode( userInput ) );
+$div.append( window.document.createTextNode( userInput ) );
+$div.append( $el, document.createTextNode( userInput ) );
+$div.append( test ? $el : document.createTextNode( userInput ) );
+$div.prepend( document.createTextNode( userInput ) );
+$div.before( document.createTextNode( userInput ) );
+$div.after( document.createTextNode( userInput ) );
+$div.replaceWith( document.createTextNode( userInput ) );
 
 $el = getSomething();
 $div.append( $el );

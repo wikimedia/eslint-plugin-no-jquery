@@ -7,6 +7,22 @@ const htmlOrCollectionMethods = [ 'append', 'prepend', 'before', 'after', 'repla
 const htmlOrSelectorOrCollectionMethods = [ 'add', 'appendTo', 'prependTo', 'insertBefore', 'insertAfter' ];
 const allMethods = htmlOrCollectionMethods.concat( htmlOrSelectorOrCollectionMethods );
 
+function isCreateTextNode( node ) {
+	if ( !(
+		node.type === 'CallExpression' &&
+		node.callee.type === 'MemberExpression' &&
+		!node.callee.computed &&
+		node.callee.property.name === 'createTextNode'
+	) ) {
+		return false;
+	}
+	const object = node.callee.object;
+	return (
+		( object.type === 'Identifier' && object.name === 'document' ) ||
+		( object.type === 'MemberExpression' && !object.computed && object.property.name === 'document' )
+	);
+}
+
 function alljQueryOrEmpty( context, node ) {
 	if ( node.type === 'ConditionalExpression' ) {
 		return alljQueryOrEmpty( context, node.consequent ) &&
@@ -16,6 +32,9 @@ function alljQueryOrEmpty( context, node ) {
 			typeof node.value === 'string' && node.value.match( /^\s*$/ )
 		);
 	} else if ( node.type === 'Identifier' && node.name === 'undefined' ) {
+		return true;
+	} else if ( isCreateTextNode( node ) ) {
+		// Text nodes are never parsed as HTML
 		return true;
 	} else {
 		return utils.isjQuery( context, node );
