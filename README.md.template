@@ -100,9 +100,11 @@ Configs which cause the rule to report an error are shown in **`bold`**.
 
 <!-- rules -->
 
+<!-- Deprecation list is currently empty, uncomment if this changes
 ### ⚠️ Deprecated
 
 <!-- deprecated -->
+-->
 
 ## 🤖 Development
 
