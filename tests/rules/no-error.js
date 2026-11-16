@@ -13,6 +13,36 @@ ruleTester.run( 'no-error', rule, {
 			code: '$.error(msg)',
 			errors: [ error ],
 			output: 'throw new Error(msg)'
+		},
+		{
+			code: 'if (a) $.error(msg)',
+			errors: [ error ],
+			output: 'if (a) throw new Error(msg)',
+			docgen: false
+		},
+		{
+			code: 'ready || $.error(msg)',
+			errors: [ error ],
+			output: null,
+			docgen: false
+		},
+		{
+			code: 'f = () => $.error(msg)',
+			errors: [ error ],
+			output: null,
+			docgen: false
+		},
+		{
+			code: 'x = cond ? 1 : $.error(msg)',
+			errors: [ error ],
+			output: null,
+			docgen: false
+		},
+		{
+			code: '($.error(msg));',
+			errors: [ error ],
+			output: null,
+			docgen: false
 		}
 	]
 } );

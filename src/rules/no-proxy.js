@@ -8,27 +8,28 @@ module.exports = utils.createUtilMethodRule(
 	{
 		fixable: 'code',
 		fix: ( node, context, fixer ) => {
+			const args = node.arguments;
 			if (
-				node.arguments.length >= 2 &&
-				node.arguments[ 1 ].type !== 'Literal'
+				args.length < 2 ||
+				args[ 0 ].type === 'SpreadElement' ||
+				args[ 1 ].type === 'SpreadElement' ||
+				// `$.proxy( context, name )` form
+				args[ 1 ].type === 'Literal' ||
+				args[ 1 ].type === 'TemplateLiteral'
 			) {
-				// check can be removed when ESLint v8 support is dropped,
-				// as `context.sourceCode` will always be defined.
-				// `getSourceCode` is deprecated in ESLint v9, and removed in ESLint v10,
-				// so we need to support both APIs for now.
-				// istanbul ignore next
-				const sourceCode = context.sourceCode !== undefined ?
-					context.sourceCode :
-					context.getSourceCode();
-				const fnText = sourceCode.getText( node.arguments[ 0 ] );
-				return [
-					fixer.replaceText( node.callee, fnText + '.bind' ),
-					fixer.removeRange( [
-						node.arguments[ 0 ].range[ 0 ],
-						node.arguments[ 1 ].range[ 0 ]
-					] )
-				];
+				return null;
 			}
+			const sourceCode = utils.getSourceCode( context );
+			const fnText = utils.getOperandText( args[ 0 ], sourceCode );
+			// Remove the first argument and its comma. Use tokens and not
+			// node ranges, so that parentheses around arguments stay balanced.
+			const openParen = sourceCode.getTokenAfter( node.callee );
+			const comma = sourceCode.getTokenBefore( args[ 1 ], ( token ) => token.value === ',' );
+			const afterComma = sourceCode.getTokenAfter( comma, { includeComments: true } );
+			return [
+				fixer.replaceText( node.callee, fnText + '.bind' ),
+				fixer.removeRange( [ openParen.range[ 1 ], afterComma.range[ 0 ] ] )
+			];
 		}
 	}
 );
