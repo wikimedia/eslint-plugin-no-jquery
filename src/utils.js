@@ -607,6 +607,48 @@ function createUniversalMethodRule( methods, message, linkGenerator, options ) {
 	} ), description, options.fixable, options.deprecated, [], messages );
 }
 
+/**
+ * Get the SourceCode object of a rule context
+ *
+ * @param {Object} context Rule context
+ * @return {Object} SourceCode object
+ */
+function getSourceCode( context ) {
+	// The check can be removed when ESLint v8 support is dropped,
+	// as `context.sourceCode` will always be defined.
+	// `getSourceCode` is deprecated in ESLint v9, and removed in ESLint v10,
+	// so we need to support both APIs for now.
+	// istanbul ignore next
+	return context.sourceCode !== undefined ?
+		context.sourceCode :
+		context.getSourceCode();
+}
+
+/**
+ * Get the source text of an expression, safe to use as an operand
+ *
+ * Add parentheses to the text when the expression is not a simple
+ * identifier, member access, call or `this`. The text is then safe
+ * to use as the operand of a unary operator or as the object of a
+ * member access.
+ *
+ * @param {Object} node Expression node
+ * @param {Object} sourceCode SourceCode object
+ * @return {string} Source text
+ */
+function getOperandText( node, sourceCode ) {
+	const text = sourceCode.getText( node );
+	switch ( node.type ) {
+		case 'Identifier':
+		case 'MemberExpression':
+		case 'CallExpression':
+		case 'ThisExpression':
+			return text;
+		default:
+			return '(' + text + ')';
+	}
+}
+
 function eventShorthandFixer( node, context, fixer ) {
 	const name = node.callee.property.name;
 	if ( node.callee.parent.arguments.length ) {
@@ -662,6 +704,8 @@ module.exports = {
 	createCollectionOrUtilMethodRule,
 	createUniversalMethodRule,
 	eventShorthandFixer,
+	getSourceCode,
+	getOperandText,
 	jQueryCollectionLink,
 	jQueryGlobalLink,
 	allLiteral,
